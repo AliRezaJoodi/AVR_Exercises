@@ -1,10 +1,10 @@
 /*
-Title:              Thermometer with LM35
-MCU:                ATMEGA32
-Clock Frequency:    1.000000 MHz  
-VREF:               AVCC
-IDE:                CodeVisionAVR v3.12
-GitHub Account:     GitHub.com/AliRezaJoodi
+    Title:              Thermometer with LM35
+    MCU:                ATMEGA32
+    Clock Frequency:    1.000000 MHz  
+    VREF:               AVCC
+    IDE:                CodeVisionAVR v3.12
+    GitHub Account:     GitHub.com/AliRezaJoodi
 */
 
 #include <mega32.h>

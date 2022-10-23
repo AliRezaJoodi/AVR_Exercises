@@ -22,4 +22,5 @@ Obj
 *.fct
 *.rom
 Main.txt
+*.c~
 *.cci
