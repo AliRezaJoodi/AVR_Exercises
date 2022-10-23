@@ -33,24 +33,23 @@ My GitHub Account: [GitHub.com/AliRezaJoodi](https://github.com/AliRezaJoodi)
 
 ```
 
-## IDE_BascomAVR
+## Code_BascomAVR
 It's a folder and will be included code with **Basic Language**. We should create a file inside this folder. Included:
 - `ReadMe.md`   
 Its content is:	
 ```
 ### Description
-
 v1.0:
 - Last opened with BascomAVR v2.0.7.5
 ```
 
-## IDE_CodeVisionAVR
+## Code_CodeVisionAVR
 It's a folder and will be included code with **C Language**. We should create a file inside this folder. Included:
 - `ReadMe.md`   
 Its content is:	
 ```
 ### Description
-
+V1.0:
 - Last opened with CodeVisionAVR v3.12
 ```
 
@@ -60,7 +59,6 @@ It's a folder and will be included simulator file. We should create a file insid
 Its content is:	
 ```
 ### Description
-
 V1.0:
 - Last opened with Proteus 8 Professional v8.13 SP0
 ```
