@@ -49,7 +49,7 @@ It's a folder and will be included code with **C Language**. We should create a 
 Its content is:	
 ```
 ### Description
-V1.0:
+v1.0:
 - Last opened with CodeVisionAVR v3.12
 ```
 
@@ -59,7 +59,7 @@ It's a folder and will be included simulator file. We should create a file insid
 Its content is:	
 ```
 ### Description
-V1.0:
+v1.0:
 - Last opened with Proteus 8 Professional v8.13 SP0
 - Usable for `Code_BascomAVR` and `Code_CodeVisionAVR`
 ```
