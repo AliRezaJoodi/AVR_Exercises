@@ -1,11 +1,4 @@
-/*
-    Title:              Thermometer with LM35
-    MCU:                ATMEGA32
-    Clock Frequency:    1.000000 MHz  
-    VREF:               AVCC
-    IDE:                CodeVisionAVR v3.12
-    GitHub Account:     GitHub.com/AliRezaJoodi
-*/
+// GitHub Account:  GitHub.com/AliRezaJoodi
 
 #include <mega32.h>
 #include <delay.h>
@@ -18,6 +11,8 @@
    .equ __lcd_port=0x12 ;PORTD
 #endasm
 #include <lcd.h>
+
+#define GAIN    5000/1023
 
 typedef unsigned char byte;
 flash byte char0[8]={
@@ -104,7 +99,7 @@ float Read_adc(unsigned char adc_input){
     // Wait for the AD conversion to complete
     while ((ADCSRA & 0x10)==0);
     ADCSRA|=0x10;
-    x=ADCW; x= x*4.8828125;
+    x=ADCW; x= x*GAIN;
     return x;
 }
 
@@ -117,7 +112,7 @@ float Convert(float x){
 //********************************************************
 void Display_LCD_1(float x){
     char buffer[16];
-    lcd_gotoxy(0,0); 
+    lcd_gotoxy(0,1); 
     lcd_putsf("Temp: ");
     ftoa(x,1,buffer); lcd_puts(buffer); 
     lcd_putsf(" ");
@@ -128,7 +123,7 @@ void Display_LCD_1(float x){
 //********************************************************
 void Display_LCD_2(unsigned int x){
     char buffer[16];
-    lcd_gotoxy(0,1); 
+    lcd_gotoxy(0,0); 
     lcd_putsf("Input: ");
     ftoa(x,1,buffer); lcd_puts(buffer);
     lcd_putsf(" mV");

@@ -1,5 +1,4 @@
-' GitHub Account: GitHub.com/AliRezaJoodi
-
+'Github Account: Github.com/Alirezajoodi
 
 $regfile = "m32def.dat"
 $crystal = 1000000
@@ -15,15 +14,13 @@ Const Gain = 5000 / 1023
 
 Dim W As Word
 Dim Input_mv As Single
-'Dim Input_v As Single
-Dim Temp As Single
+Dim Input_v As Single
 
 Gosub Display_lcd_start_text
 
 Do
    Gosub Read_the_adc
-   Gosub Convert
-   Gosub Display_
+   Gosub Display_in
    Waitms 200
 Loop
 
@@ -40,17 +37,11 @@ Return
 Read_the_adc:
    W = Getadc(7)
    Input_mv = W * Gain
-   'Input_v = Input_mv / 1000
+   Input_v= Input_mv/1000
 Return
 
 '**********************************************
-Convert:
-   Temp = Input_mv / 10                                     'Lm35 outputs 10mv for each C degree
-Return
-
-'**********************************************
-Display_:
-   Deflcdchar 0 , 7 , 5 , 7 , 32 , 32 , 32 , 32 , 32
-   Locate 1 , 1 : Lcd "Input: " ; Fusing(input_mv , "#.#") ; "mV"
-   Locate 2 , 1 : Lcd "Temp: " ; Fusing(temp , "#.#") ; Chr(0) ; "C  "
+Display_in:
+   Locate 1 , 1 : Lcd "In(0-1023):" ; W ; " "
+   Locate 2 , 1 : Lcd "In(V):" ; Fusing(input_v , "#.###") ; " "
 Return

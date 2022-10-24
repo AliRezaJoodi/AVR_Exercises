@@ -1,13 +1,12 @@
 ### Project Information
-Title:               0~5V Voltmeter  
+Title:               ADC Config with Internal VREF   
 MCU:                 ATmega32  
 Clock Frequency:     1.000000 MHz  
-Voltage References:  AVCC  
+Voltage References:  Internal (2.56V)  
 
 ### Folder and Files Information
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
-- `Code_CodeVisionAVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0

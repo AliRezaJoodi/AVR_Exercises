@@ -1,10 +1,4 @@
-/*
-    Title:               0~5V Voltmeter
-    MCU:                 ATmega32  
-    Clock Frequency:     1.000000 MHz  
-    Voltage References:  AVCC  
-    GitHub Account:     GitHub.com/AliRezaJoodi
-*/
+// GitHub Account:     GitHub.com/AliRezaJoodi
 
 #include <mega32.h>
 #include <stdio.h>
@@ -31,14 +25,17 @@ unsigned int read_adc(unsigned char adc_input){
     ADCSRA|=0x10;
     return ADCW;
 }
+#define GAIN    5000/1023
 
 void Configuration_LCD(void);
 void Configuration_ADC(void);
 void Display_LCD_Start(void);
-float Read_the_adc(unsigned char);
-void Display_LCD(float);
+void Get_ADC(unsigned char);
+void Display_In(void);
 
+float w=0;
 float Input_mV=0;
+float Input_V=0;
 
 void main(void){
     Configuration_ADC();
@@ -46,9 +43,9 @@ void main(void){
     Display_LCD_Start(); 
     
     while (1){
-        Input_mV=Read_the_adc(7);
-        Display_LCD(Input_mV);
-        delay_ms(300);                                        
+        Get_ADC(7);
+        Display_In();
+        delay_ms(200);                                        
     };
 }
 
@@ -81,32 +78,29 @@ void Display_LCD_Start(void){
 }
 
 //********************************************************
-float Read_the_adc(unsigned char ch){
-     float x=0; 
-     x=read_adc(ch);
-     x= x*4.8828125;
-     return x;
+void Get_ADC(unsigned char ch){
+     w=read_adc(ch);
+     Input_mV= w*GAIN;
+     Input_V= Input_mV/1000;
 }
 
 //********************************************************
-void Display_LCD(float x){
+void Display_In(void){
     char buffer[16];
     //char txt[16];
     
     lcd_gotoxy(0,0); 
-    lcd_putsf("Input(mV): ");
-    ftoa(x,0,buffer); lcd_puts(buffer);
-    lcd_putsf(" ");
+    lcd_putsf("In(0-1023):");
+    itoa(w,buffer); lcd_puts(buffer); lcd_putsf(" ");
+    
     //strcat(txt, "Input(mV): ");
     //strcat(txt, buffer);
     //strcat(txt, " ");
     //lcd_puts(txt); 
     
-    x=x/1000;
     lcd_gotoxy(0,1); 
-    lcd_putsf("Input(V): ");
-    ftoa(x,2,buffer); lcd_puts(buffer);
-    lcd_putsf(" ");   
+    lcd_putsf("In(V):");
+    ftoa(Input_V,3,buffer); lcd_puts(buffer); lcd_putsf(" ");   
 }
 
 

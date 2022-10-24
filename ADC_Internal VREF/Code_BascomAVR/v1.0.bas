@@ -1,10 +1,4 @@
-'(
-   Title:               0~5V Voltmeter
-   MCU:                 ATmega32
-   Clock Frequency:     1.000000 MHz
-   Voltage References:  AVCC
-   GitHub Account:     GitHub.com/AliRezaJoodi
-')
+' GitHub Account:      GitHub.com/AliRezaJoodi
 
 $regfile = "m32def.dat"
 $crystal = 1000000
@@ -14,8 +8,9 @@ Config Lcd = 16 * 2
 Cursor Off
 Cls
 
-Config Adc = Single , Prescaler = Auto , Reference = Avcc
+Config Adc = Single , Prescaler = Auto , Reference = Internal
 Start Adc
+Const Gain = 2560 / 1023
 
 Dim W As Word
 Dim Input_mv As Single
@@ -25,7 +20,7 @@ Gosub Display_lcd_start_text
 
 Do
    Gosub Read_the_adc
-   Gosub Display_lcd
+   Gosub Display_in
    Waitms 200
 Loop
 
@@ -41,13 +36,13 @@ Return
 '**********************************************
 Read_the_adc:
    W = Getadc(7)
-   Input_mv = W * 4.8828125
+   Input_mv = W * Gain
    Input_v = Input_mv / 1000
 Return
 
 
 '**********************************************
-Display_lcd:
-   Locate 2 , 1 : Lcd "Input(mV): " ; Fusing(input_mv , "#.#") ; " " 
-   Locate 1 , 1 : Lcd "Input(V): " ; Fusing(input_v , "#.#") ; " "
+Display_in:
+   Locate 1 , 1 : Lcd "In(0-1023):" ; W ; " "
+   Locate 2 , 1 : Lcd "In(V):" ; Fusing(input_v , "#.###") ; " "
 Return
