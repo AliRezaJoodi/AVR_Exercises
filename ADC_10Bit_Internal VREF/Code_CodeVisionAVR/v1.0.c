@@ -12,7 +12,8 @@
 #endasm
 #include <lcd.h>
 
-#define ADC_VREF_TYPE 0x40
+#define ADC_VREF_TYPE 0xC0
+#define GAIN    2560/1023
 // Read the AD conversion result
 unsigned int read_adc(unsigned char adc_input){
     ADMUX=adc_input | (ADC_VREF_TYPE & 0xff);
@@ -25,7 +26,6 @@ unsigned int read_adc(unsigned char adc_input){
     ADCSRA|=0x10;
     return ADCW;
 }
-#define GAIN    5000/1023
 
 void Configuration_LCD(void);
 void Configuration_ADC(void);
@@ -38,8 +38,8 @@ float Input_mV=0;
 float Input_V=0;
 
 void main(void){
-    Configuration_ADC();
     Configuration_LCD();
+    Configuration_ADC();
     Display_LCD_Start(); 
     
     while (1){
