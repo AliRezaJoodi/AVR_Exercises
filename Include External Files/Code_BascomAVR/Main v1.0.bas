@@ -3,7 +3,7 @@
 $regfile = "m32def.dat"
 $crystal = 1000000
 
-$include "Config_Hardware.txt"
+$include "Config_Hardware_v1.0.txt"
 
 Dim A As Byte
 
