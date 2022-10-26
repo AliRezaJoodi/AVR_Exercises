@@ -35,7 +35,7 @@ ActiveEditorPanel=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1431873085
+TimeStamp1=1432004473
 PageIndex1=1
 [Compiler]
 Chip=ATmega32
@@ -102,7 +102,7 @@ WarningDataStackUsage=1
 WarningDataStackRecursion=1
 WarningHardwareStackLow=1
 DebugBootLoader=0
-Build=5
+Build=7
 UseEEPROMLocation0=1
 OutputFormat=1
 AVR8LHardwareStackSize=16
@@ -140,7 +140,7 @@ WarningStaticRamEepromStorageAllocConstStrLit=0
 WatchAVR8LAutoVariables=0
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1431873088
+COFFileTimeStamp=1432004474
 IncludePath0=
 IncludePath1=
 IncludePath2=
@@ -446,7 +446,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=5
+Build=7
 [DefinedSymbolsDebug]
 Count=0
 [StartUp]
@@ -484,8 +484,8 @@ L13=Enhanced function parameters passing: Yes
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 4
-L18=10847 line(s) compiled
+L17=Build: 6
+L18=10857 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -505,49 +505,37 @@ L34=Heap size: 0 byte(s)
 L35=
 Lines=38
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 1461 words (2922 bytes), 8.9% of FLASH
-L38=45 words (90 bytes), 3.0% reduced by Code Compression
+L37=Program size: 1490 words (2980 bytes), 9.1% of FLASH
+L38=52 words (104 bytes), 3.4% reduced by Code Compression
 [BuildInfoAssembler]
 Lines=12
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GoogleDriveWork\GitHub\AVR_Exercises\ADC_Internal VREF\Code_CodeVisionAVR\Release\List\Main.asm(2828): No EEPROM data, deleting F:\GoogleDriveWork\GitHub\AVR_Exercises\ADC_Internal VREF\Code_CodeVisionAVR\Main.eep
+L4=F:\GoogleDriveWork\GitHub\AVR_Exercises\ADC_10Bit_Internal VREF\Code_CodeVisionAVR\Release\List\Main.asm(2857): No EEPROM data, deleting F:\GoogleDriveWork\GitHub\AVR_Exercises\ADC_10Bit_Internal VREF\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32 memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000b6a   2830     92   2922   32768   8.9%
+L9=[.cseg] 0x000000 0x000ba4   2854    126   2980   32768   9.1%
 L10=[.dseg] 0x000060 0x000274      0     20     20    2048   1.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
-[HeadersList]
-Files=1
-F1=F:\GoogleDriveWork\GitHub\AVR_Exercises\ADC_Internal VREF\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=7
-F1=C:\Program Files (x86)\CVAVR\inc\mega32.h
-F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
-F3=C:\Program Files (x86)\CVAVR\inc\io.h
-F4=C:\Program Files (x86)\CVAVR\inc\stdarg.h
-F5=C:\Program Files (x86)\CVAVR\inc\stdlib.h
-F6=C:\Program Files (x86)\CVAVR\inc\delay.h
-F7=C:\Program Files (x86)\CVAVR\inc\lcd.h
 [Bookmarks0]
 Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1431873106
+TimeStamp=1432004669
 [BookmarksFoldedCode]
 Files=1
 F1=v1.0.c
 [Bookmarks1]
-TimeStamp=1431873085
-Row=89
-Column=84
+TimeStamp=1432004473
+Row=111
+Column=24
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=88
 BK0=-1
 BK1=-1
 BK2=-1
@@ -558,5 +546,17 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=F:\GoogleDriveWork\GitHub\AVR_Exercises\ADC_10Bit_Internal VREF\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=7
+F1=C:\Program Files (x86)\CVAVR\inc\mega32.h
+F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
+F3=C:\Program Files (x86)\CVAVR\inc\io.h
+F4=C:\Program Files (x86)\CVAVR\inc\stdarg.h
+F5=C:\Program Files (x86)\CVAVR\inc\stdlib.h
+F6=C:\Program Files (x86)\CVAVR\inc\delay.h
+F7=C:\Program Files (x86)\CVAVR\inc\lcd.h
 [FoldedCode1]
 Blocks=0

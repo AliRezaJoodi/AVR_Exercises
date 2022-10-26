@@ -12,9 +12,10 @@
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (1<<ADLAR))
 #define GAIN    5000/256
 
-void Configuration_LCD(void);
-void Display_LCD_Start(void);
-void Configuration_ADC(void);
+void Config_LCD(void);
+void Display_loading(void);
+void Display_Advertising(void);
+void Config_ADC(void);
 unsigned char read_adc(unsigned char);
 void Get_ADC(unsigned char);
 void Display_In(void);
@@ -25,9 +26,10 @@ float Input_V=0;
 
 void main(void){
 
-    Configuration_LCD(); 
-    Display_LCD_Start();
-    Configuration_ADC(); 
+    Config_LCD();
+    Display_loading();  
+    Display_Advertising();
+    Config_ADC(); 
 
     while(1){
         Get_ADC(7);
@@ -52,20 +54,28 @@ void Display_In(void){
     itoa(w,buffer); lcd_puts(buffer); lcd_putsf(" ");
     
     lcd_gotoxy(0,1); 
-    lcd_putsf("In(V):");
+    lcd_putsf("In(0-5V):");
     ftoa(Input_V,3,buffer); lcd_puts(buffer); lcd_putsf(" ");   
 }
 
 //********************************************************
-void Display_LCD_Start(void){
+void Display_loading(void){
     lcd_clear(); 
-    lcd_gotoxy(0,0); lcd_putsf("GitHub.com");
-    lcd_gotoxy(0,1); lcd_putsf("AliRezaJoodi");
-    delay_ms(1000); lcd_clear();
+    lcd_gotoxy(0,0); lcd_putsf("Testing the LCD");
+    lcd_gotoxy(0,1); lcd_putsf("Loading ...");
+    delay_ms(500); lcd_clear();
 }
 
 //********************************************************
-void Configuration_ADC(void){
+void Display_Advertising(void){
+    lcd_clear(); 
+    lcd_gotoxy(0,0); lcd_putsf("GitHub.com");
+    lcd_gotoxy(0,1); lcd_putsf("AliRezaJoodi");
+    delay_ms(500); lcd_clear();
+}
+
+//********************************************************
+void Config_ADC(void){
     // ADC initialization
     // ADC Clock frequency: 125.000 kHz
     // ADC Voltage Reference: AVCC pin
@@ -93,7 +103,7 @@ unsigned char read_adc(unsigned char adc_input){
 }
 
 //********************************************************
-void Configuration_LCD(void){
+void Config_LCD(void){
     // Alphanumeric LCD initialization
     // Connections are specified in the
     // Project|Configure|C Compiler|Libraries|Alphanumeric LCD menu:

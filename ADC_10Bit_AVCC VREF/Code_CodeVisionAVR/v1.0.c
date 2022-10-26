@@ -27,9 +27,10 @@ unsigned int read_adc(unsigned char adc_input){
     return ADCW;
 }
 
-void Configuration_LCD(void);
-void Configuration_ADC(void);
-void Display_LCD_Start(void);
+void Config_LCD(void);
+void Display_loading(void);
+void Display_Advertising(void);
+void Config_ADC(void);
 void Get_ADC(unsigned char);
 void Display_In(void);
 
@@ -38,11 +39,12 @@ float Input_mV=0;
 float Input_V=0;
 
 void main(void){
-    Configuration_LCD();
-    Display_LCD_Start(); 
-    Configuration_ADC();
+    Config_LCD();
+    Display_loading();
+    Display_Advertising(); 
+    Config_ADC();
     
-    while (1){
+    while(1){
         Get_ADC(7);
         Display_In();
         delay_ms(200);                                        
@@ -50,12 +52,12 @@ void main(void){
 }
 
 //********************************************************
-void Configuration_LCD(void){
+void Config_LCD(void){
     lcd_init(16); lcd_clear();   
 }
 
 //********************************************************
-void Configuration_ADC(void){
+void Config_ADC(void){
     // Analog Comparator initialization
     // Analog Comparator: Off
     // Analog Comparator Input Capture by Timer/Counter 1: Off
@@ -70,11 +72,19 @@ void Configuration_ADC(void){
 }
 
 //********************************************************
-void Display_LCD_Start(void){
+void Display_loading(void){
+    lcd_clear(); 
+    lcd_gotoxy(0,0); lcd_putsf("Testing the LCD");
+    lcd_gotoxy(0,1); lcd_putsf("Loading ...");
+    delay_ms(500); lcd_clear();
+}
+
+//********************************************************
+void Display_Advertising(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("GitHub.com");
     lcd_gotoxy(0,1); lcd_putsf("AliRezaJoodi");
-    delay_ms(1000); lcd_clear();
+    delay_ms(500); lcd_clear();
 }
 
 //********************************************************
@@ -99,7 +109,7 @@ void Display_In(void){
     //lcd_puts(txt); 
     
     lcd_gotoxy(0,1); 
-    lcd_putsf("In(V):");
+    lcd_putsf("In(0-5V):");
     ftoa(Input_V,3,buffer); lcd_puts(buffer); lcd_putsf(" ");   
 }
 

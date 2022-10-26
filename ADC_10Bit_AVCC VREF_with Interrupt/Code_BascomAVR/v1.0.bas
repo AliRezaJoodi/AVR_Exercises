@@ -6,7 +6,8 @@ $crystal = 1000000
 Config Lcdpin = Pin , Rs = Pind.0 , E = Pind.2 , Db4 = Pind.4 , Db5 = Pind.5 , Db6 = Pind.6 , Db7 = Pind.7
 Config Lcd = 16 * 2
 Cursor Off
-Gosub Display_lcd_start_text
+Gosub Display_loading
+Gosub Display_advertising
 
 Enable Interrupts
 
@@ -32,13 +33,22 @@ Adc_isr:
    Input_mv = W * Gain
    Input_v = Input_mv / 1000
    Locate 1 , 1 : Lcd "In(0-1023):" ; W ; " "
-   Locate 2 , 1 : Lcd "In(V):" ; Fusing(input_v , "#.###") ; " "
+   Locate 2 , 1 : Lcd "In(0-5V):" ; Fusing(input_v , "#.###") ; " "
+Return
+
+
+'**********************************************
+Display_loading:
+   Cls
+   Locate 1 , 1 : Lcd "Testing the LCD"
+   Locate 2 , 1 : Lcd "Loading ..."
+   Waitms 500 : Cls
 Return
 
 '**********************************************
-Display_lcd_start_text:
+Display_advertising:
    Cls
    Locate 1 , 1 : Lcd "GitHub.com"
    Locate 2 , 1 : Lcd "AliRezaJoodi"
-   Wait 1 : Cls
+   Waitms 500 : Cls
 Return

@@ -24,3 +24,14 @@ Obj
 Main.txt
 *.c~
 *.cci
+
+# mikroC PRO for AVR folders and files for ignore
+*.dbg
+*.dct
+*.dlt
+*.log
+*.lst
+*.dic
+*.cp
+*.mcl
+

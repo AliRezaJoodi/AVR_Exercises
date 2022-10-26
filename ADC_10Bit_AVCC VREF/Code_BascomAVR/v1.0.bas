@@ -16,7 +16,8 @@ Dim W As Word
 Dim Input_mv As Single
 Dim Input_v As Single
 
-Gosub Display_lcd_start_text
+Gosub Display_loading
+Gosub Display_advertising
 
 Do
    Gosub Read_the_adc
@@ -27,21 +28,29 @@ Loop
 End
 
 '**********************************************
-Display_lcd_start_text:
-   Locate 1 , 1 : Lcd "GitHub.com"
-   Locate 2 , 1 : Lcd "AliRezaJoodi"
-   Wait 1 : Cls
-Return
-
-'**********************************************
 Read_the_adc:
    W = Getadc(7)
    Input_mv = W * Gain
-   Input_v= Input_mv/1000
+   Input_v = Input_mv / 1000
 Return
 
 '**********************************************
 Display_in:
    Locate 1 , 1 : Lcd "In(0-1023):" ; W ; " "
-   Locate 2 , 1 : Lcd "In(V):" ; Fusing(input_v , "#.###") ; " "
+   Locate 2 , 1 : Lcd "In(0-5V):" ; Fusing(input_v , "#.###") ; " "
+Return
+
+'**********************************************
+Display_loading:
+   Cls
+   Locate 1 , 1 : Lcd "Testing the LCD"
+   Locate 2 , 1 : Lcd "Loading ..."
+   Waitms 500 : Cls
+Return
+
+'**********************************************
+Display_advertising:
+   Locate 1 , 1 : Lcd "GitHub.com"
+   Locate 2 , 1 : Lcd "AliRezaJoodi"
+   Waitms 500 : Cls
 Return
