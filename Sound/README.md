@@ -1,7 +1,7 @@
 ### Project Information
-Title:			Create a BIB sound using buzzer 
+Title:			Create a BIB sound using buzzer  
 MCU:			ATmega32  
-Clock Frequency:     	8.000000 MHz   
+Frequency:     		8.000000 MHz   
 
 ### Folder and Files Information
 It has included:

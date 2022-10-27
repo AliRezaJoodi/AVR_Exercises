@@ -1,7 +1,7 @@
 ### Project Information
-Title:               LCD Syntax 
-MCU:                 ATmega32  
-Clock Frequency:     1.000000 MHz   
+Title: 		LCD Syntax  
+MCU:            ATmega32  
+Frequency:     	1.000000 MHz   
 
 ### Folder and Files Information
 It has included:
