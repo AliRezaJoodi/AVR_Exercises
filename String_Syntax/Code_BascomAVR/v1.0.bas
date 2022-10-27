@@ -15,6 +15,8 @@ Deflcdchar 3 , 32 , 32 , 32 , 1 , 1 , 2 , 4 , 24
 
 Gosub Display_loading
 Gosub Display_advertising
+
+Gosub Syntax_fusing : Waitms 500 : Cls  
 Gosub Syntax_format
 
 Do
@@ -22,6 +24,12 @@ Do
 Loop
 
 End
+
+'**********************************************
+Syntax_fusing:
+   Dim F1 As Single : F1 = 12.345678
+   Lcd Fusing(f1 , "#.###") ; "  "
+Return
 
 '**********************************************
 Syntax_format:
