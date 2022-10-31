@@ -1,5 +1,5 @@
 ### Project Information
-Title:               Software UART
+Title:               Software UART  
 MCU:                 ATmega32  
 Clock Frequency:     8.000000 MHz    
 

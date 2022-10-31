@@ -15,32 +15,12 @@ Deflcdchar 3 , 32 , 32 , 32 , 1 , 1 , 2 , 4 , 24
 
 Gosub Display_loading
 Gosub Display_advertising
-Gosub Syntax_format
 
 Do
 
 Loop
 
 End
-
-'**********************************************
-Syntax_format:
-   Dim S1 As String * 3 : S1 = "123"
-   Dim S2 As String * 16
-   Cls
-
-   S2 = Format(s1 , "+")
-   Locate 1 , 1 : Lcd S2
-
-   S2 = Format(s1 , "00000")
-   Locate 1 , 8 : Lcd S2
-
-   S2 = Format(s1 , "000.00")
-   Locate 2 , 1 : Lcd S2
-
-   S2 = Format(s1 , " +000.00")
-   Locate 2 , 8 : Lcd S2
-Return
 
 '**********************************************
 Display_loading:
@@ -58,7 +38,7 @@ Display_advertising:
 Return
 
 '**********************************************
-Display_Persian:
+Display_persian:
    Cls
    Lcd Chr(3)
    Lcd Chr(2)
