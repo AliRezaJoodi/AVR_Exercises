@@ -1,5 +1,5 @@
 ### Project Information
-Title:               ADC Config with AVCC VREF 
+Title:               ADC Config with AVCC VREF   
 MCU:                 ATmega32  
 Clock Frequency:     1.000000 MHz  
 Voltage References:  AVCC (5V)  
