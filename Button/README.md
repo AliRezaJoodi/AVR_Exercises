@@ -1,5 +1,5 @@
 ### Project Information
-Title:		Create a BIB sound using buzzer  
+Title:		**Get Button**  
 MCU:		ATmega32  
 Frequency:     	8.000000 MHz   
 
