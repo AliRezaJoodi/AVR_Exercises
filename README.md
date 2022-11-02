@@ -10,4 +10,5 @@ I'm uploading my old files on the repository now.
 ![](Display_LCD_Syntax/Simulate/Album.png)
 ![](String_Syntax/Simulate/Album.png)
 ![](Keypad_4x4/Simulate/Album.png)
+![](EEPROM/Simulate/Album.png)
 
