@@ -19,7 +19,6 @@ Do
    Numer_initial = Getkbd()
    Numer_correct = Lookup(numer_initial , Read_key)
    If Numer_correct < 16 Then
-      'Locate 1 , 8 : Lcd A ; "   "
       Gosub Dispaly_value
    End If
 Loop
