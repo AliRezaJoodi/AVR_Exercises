@@ -33,8 +33,9 @@ End
 
 '****************************************
 Display_value:
-   Locate 1 , 1 : Lcd "Num(Normal)=" ; I1 ; "   "
-   Locate 2 , 1 : Lcd "Num(Int)=" ; I2 ; "   "
+   Locate 1 , 1 : Lcd "Num(Int)=" ; I2 ; "   "
+   Locate 1 , 14 : Lcd I1 ; " "
+   Locate 2 , 1 : Lcd "Input Interrupts"
 Return
 
 '****************************************
