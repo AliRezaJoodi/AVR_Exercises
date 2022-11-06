@@ -16,7 +16,7 @@ Deflcdchar 3 , 32 , 32 , 32 , 1 , 1 , 2 , 4 , 24
 Gosub Display_loading
 Gosub Display_advertising
 
-Gosub Syntax_fusing : Waitms 500 : Cls  
+Gosub Syntax_fusing : Waitms 500 : Cls
 Gosub Syntax_format
 
 Do
@@ -28,26 +28,31 @@ End
 '**********************************************
 Syntax_fusing:
    Dim F1 As Single : F1 = 12.345678
+   Cls
+
    Lcd Fusing(f1 , "#.###") ; "  "
 Return
 
 '**********************************************
 Syntax_format:
-   Dim S1 As String * 3 : S1 = "123"
-   Dim S2 As String * 16
+   Dim Number As Integer : Number = 123
+   Dim S1 As String * 3
+   Dim Txt As String * 16
    Cls
 
-   S2 = Format(s1 , "+")
-   Locate 1 , 1 : Lcd S2
+   S1 = Str(number)
 
-   S2 = Format(s1 , "00000")
-   Locate 1 , 8 : Lcd S2
+   Txt = Format(s1 , "+")
+   Locate 1 , 1 : Lcd Txt
 
-   S2 = Format(s1 , "000.00")
-   Locate 2 , 1 : Lcd S2
+   Txt = Format(s1 , "00000")
+   Locate 1 , 8 : Lcd Txt
 
-   S2 = Format(s1 , " +000.00")
-   Locate 2 , 8 : Lcd S2
+   Txt = Format(s1 , "000.00")
+   Locate 2 , 1 : Lcd Txt
+
+   Txt = Format(s1 , " +0.000")
+   Locate 2 , 8 : Lcd Txt
 Return
 
 '**********************************************
