@@ -16,6 +16,7 @@ void Display_Advertising(void);
 unsigned char Keypad_Get(void);
 char Converter(char);
 void Display_Number(char, char);
+void Display2_Number(char, char);
 
 char numer_initial, numer_correct;   
 char numer_old=0;
@@ -25,17 +26,29 @@ void main(void){
     Display_loading(); 
     Display_Advertising();
      
-    Display_Number(numer_initial, numer_correct);
+    Display2_Number(numer_initial, numer_correct);
    
     while(1){
         numer_initial=Keypad_Get(); 
         numer_correct=Converter(numer_initial);
         
         if(numer_correct<12 && numer_old!=numer_correct){
-            Display_Number(numer_initial, numer_correct);
+            Display2_Number(numer_initial, numer_correct);
             numer_old= numer_correct;
   	    }
     }
+}
+
+//*******************************************************
+void Display2_Number(char x1, char x2){
+    char buffer[16]; 
+    lcd_clear();
+    
+    lcd_gotoxy(0,0); itoa(x1,buffer); lcd_puts(buffer); lcd_putsf("  ");
+    lcd_gotoxy(4,0); lcd_putsf("=>"); 
+    lcd_gotoxy(7,0); itoa(x2,buffer); lcd_puts(buffer); lcd_putsf("  ");
+        
+    lcd_gotoxy(0,1); lcd_putsf("4x4Keypad Driver"); 
 }
 
 //*******************************************************
