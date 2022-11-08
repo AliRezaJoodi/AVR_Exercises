@@ -1,4 +1,5 @@
-It's my **AVR Programming** exercises.  
+## AVR Programming Exercises
+
 I'm uploading my old files on the repository now.
 
 ### Gallery of the Repository
@@ -24,25 +25,25 @@ I'm uploading my old files on the repository now.
 |:----------------------------------|:---------:|:-------------:|:-----------------:|
 |Access to Bits                     | Y         | -             | -                 |
 |ADC_08Bit_AVCC VREF                | -         | Y             | -                 |
-|ADC_10Bit_AVCC VREF                | -         | -             | -                 |
-|ADC_10Bit_AVCC VREF_with Interrupt | -         | -             | -                 |
-|ADC_10Bit_Internal VREF            | -         | -             | -                 |
-|Button                             | -         | -             | -                 |
-|Display_LCD_Syntax                 | -         | -             | -                 |
-|EEPROM                             | -         | -             | -                 |
-|Include External Files             | -         | -             | -                 |
-|IO_Input                           | -         | -             | -                 |
-|IO_Input Interrupts                | -         | -             | -                 |
-|IO_Output                          | -         | -             | -                 |
-|Keypad_4x3                         | -         | -             | -                 |
-|Keypad_4x4                         | -         | -             | -                 |
-|Keypad_4x4_Using 74922             | -         | -             | -                 |
-|Keypad_4x6                         | -         | -             | -                 |
-|Sound                              | -         | -             | -                 |
-|String_Syntax                      | -         | -             | -                 |
-|UART_Software UART                 | -         | -             | -                 |
-|UART_Syntax                        | -         | -             | -                 |
-|UART_with Interrupt                | -         | -             | -                 |
+|ADC_10Bit_AVCC VREF                | Y         | Y             | -                 |
+|ADC_10Bit_AVCC VREF_with Interrupt | Y         | -             | -                 |
+|ADC_10Bit_Internal VREF            | Y         | Y             | -                 |
+|Button                             | Y         | Y             | Y                 |
+|Display_LCD_Syntax                 | Y         | Y             | Y                 |
+|EEPROM                             | Y         | Y             | -                 |
+|Include External Files             | Y         | Y             | -                 |
+|IO_Input                           | Y         | -             | -                 |
+|IO_Input Interrupts                | Y         | -             | -                 |
+|IO_Output                          | Y         | Y             | -                 |
+|Keypad_4x3                         | Y         | Y             | -                 |
+|Keypad_4x4                         | Y         | Y             | -                 |
+|Keypad_4x4_Using 74922             | Y         | -             | -                 |
+|Keypad_4x6                         | Y         | -             | -                 |
+|Sound                              | Y         | Y             | Y                 |
+|String_Syntax                      | Y         | Y             | -                 |
+|UART_Software UART                 | Y         | Y             | -                 |
+|UART_Syntax                        | Y         | Y             | -                 |
+|UART_with Interrupt                | Y         | Y             | -                 |
 
 
 
