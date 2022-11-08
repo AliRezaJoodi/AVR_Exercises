@@ -1,5 +1,5 @@
-### Project Information
-Title:               Access to Bits  
+## Access to Bits
+
 MCU:                 ATmega32  
 Clock Frequency:     1.000000 MHz  
 
