@@ -1,6 +1,6 @@
 ## AVR Programming Exercises
 
-I'm uploading my old files on the repository now.
+I'm uploading my old files on the repository.
 
 ### Gallery of the Repository
 ![](ADC_08Bit_AVCC%20VREF/Simulate/Album.png)
