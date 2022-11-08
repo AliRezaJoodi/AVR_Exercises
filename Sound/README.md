@@ -1,9 +1,9 @@
-### Project Information
-Title:			**Create a Beeb Sound Using Buzzer**  
-MCU:			ATmega32  
-Frequency:     		8.000000 MHz   
+## Create a Beeb Sound Using Buzzer
+  
+MCU:		ATmega32  
+Frequency:   	8.000000 MHz   
 
-### Folder and Files Information
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Code_CodeVisionAVR` (Code with C Language)

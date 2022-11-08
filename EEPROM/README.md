@@ -1,9 +1,9 @@
-### Project Information
-Title:		Read and write on the Internal EEPROM   
+## Read and write on the Internal EEPROM
+	   
 MCU:		ATmega32  
 Frequency:     	1.000000 MHz   
 
-### Folder and Files Information
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Code_CodeVisionAVR` (Code with C Language)

@@ -1,9 +1,9 @@
-### Project Information
-Title:               Input Interrupts    
-MCU:                 ATmega32  
-Clock Frequency:     1.000000 MHz  
+## Input Interrupts
+   
+MCU:       	ATmega32  
+Frequency:     	1.000000 MHz  
 
-### Folder and Files Information
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Simulate` (Simulator File)

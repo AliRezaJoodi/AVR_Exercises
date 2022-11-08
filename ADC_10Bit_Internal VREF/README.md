@@ -1,10 +1,10 @@
-### Project Information
-Title:               ADC Config with Internal VREF   
-MCU:                 ATmega32  
-Clock Frequency:     1.000000 MHz  
-Voltage References:  Internal (2.56V)  
+## ADC Config with Internal VREF
+   
+MCU:     	ATmega32  
+Frequency:     	1.000000 MHz  
+VREF:  		Internal (2.56V)  
 
-### Folder and Files Information
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Simulate` (Simulator File)

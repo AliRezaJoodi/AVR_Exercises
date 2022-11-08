@@ -1,9 +1,9 @@
-### Project Information
-Title:         4x6 Keypad Driver  
+## 4x6 Keypad Driver 
+ 
 MCU:           ATmega32  
 Frequency:     1.000000 MHz  
 
-### Folder and Files Information
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Simulate` (Simulator File)

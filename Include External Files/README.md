@@ -1,9 +1,9 @@
-### Project Information
-Title:               Include External Files for modular programming  
-MCU:                 ATmega32  
-Clock Frequency:     1.000000 MHz  
+## Include External Files for modular programming  
 
-### Folder and Files Information
+MCU:       	ATmega32  
+Frequency: 	1.000000 MHz  
+
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Simulate` (Simulator File)

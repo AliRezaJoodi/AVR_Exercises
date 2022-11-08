@@ -1,10 +1,10 @@
-### Project Information
-Title:               ADC Config with AVCC VREF   
-MCU:                 ATmega32  
-Clock Frequency:     1.000000 MHz  
-Voltage References:  AVCC (5V)  
+## ADC Config with AVCC VREF  
+              
+MCU:     	ATmega32  
+Frequency:     	1.000000 MHz  
+VREF:  		AVCC (5V)  
 
-### Folder and Files Information
+### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Code_CodeVisionAVR` (Code with C Language)
