@@ -23,11 +23,11 @@ I'm uploading my old files on the repository now.
 
 |Title                              |BascomAVR  |CodeVisionAVR  |mikroC PRO for AVR |
 |:----------------------------------|:---------:|:-------------:|:-----------------:|
-|Access to Bits                     | Y         | -             | -                 |
 |ADC_08Bit_AVCC VREF                | -         | Y             | -                 |
 |ADC_10Bit_AVCC VREF                | Y         | Y             | -                 |
 |ADC_10Bit_AVCC VREF_with Interrupt | Y         | -             | -                 |
 |ADC_10Bit_Internal VREF            | Y         | Y             | -                 |
+|Access to Bits                     | Y         | -             | -                 |
 |Button                             | Y         | Y             | Y                 |
 |Display_LCD_Syntax                 | Y         | Y             | Y                 |
 |EEPROM                             | Y         | Y             | -                 |
