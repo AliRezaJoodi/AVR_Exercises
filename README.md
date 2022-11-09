@@ -16,6 +16,7 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x4_Using%2074922/Simulate/Album.png)
 ![](Keypad_4x6/Simulate/Album.png)
 
+![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Syntax/Simulate/Album.png)
 ![](UART_Software%20UART/Simulate/Album.png)
 
@@ -29,6 +30,7 @@ I'm uploading my old files on the repository.
 |ADC_10Bit_Internal VREF            | Y         | Y             | -                 |
 |Access to Bits                     | Y         | -             | -                 |
 |Button                             | Y         | Y             | Y                 |
+|Data Looking_Syntax                | Y         | -             | -                 |
 |Display_LCD_Syntax                 | Y         | Y             | Y                 |
 |EEPROM                             | Y         | Y             | -                 |
 |Include External Files             | Y         | Y             | -                 |
