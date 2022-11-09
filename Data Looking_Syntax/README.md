@@ -1,4 +1,4 @@
-## Syntax Exercise for List of Data 
+## Syntax Exercise for Data Looking
              	  
 MCU:    	ATmega32  
 Frequency:	1.000000 MHz   
