@@ -1,7 +1,7 @@
-## Config Timer2 for Async 
+## Config Timer2 in Asynchronous Mode 
 
 MCU:        ATmega32  
-Frequency:  1.000000 MHz  
+Frequency:  8.000000 MHz  
 Display:    16x2 Character LCD  
 
 ### Folder and Files Description
