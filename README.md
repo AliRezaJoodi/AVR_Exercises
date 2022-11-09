@@ -16,6 +16,7 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x4_Using%2074922/Simulate/Album.png)
 ![](Keypad_4x6/Simulate/Album.png)
 ![](Timer0/Simulate/Album.png)
+![](Timer2_Async/Simulate/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Syntax/Simulate/Album.png)
@@ -45,6 +46,7 @@ I'm uploading my old files on the repository.
 |Sound                              | Y         | Y             | Y                 |
 |String_Syntax                      | Y         | Y             | -                 |
 |Timer0                             | Y         | -             | -                 |
+|Timer2_Async                       | Y         | -             | -                 |
 |UART_Software UART                 | Y         | Y             | -                 |
 |UART_Syntax                        | Y         | Y             | -                 |
 |UART_with Interrupt                | Y         | Y             | -                 |
