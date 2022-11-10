@@ -18,6 +18,7 @@ I'm uploading my old files on the repository.
 ![](Timer0/Simulate/Album.png)
 ![](Timer2_Async/Simulate/Album.png)
 ![](Timer2_Clock&Calender/Simulate/Album.png)
+![](Counter0/Simulate/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Syntax/Simulate/Album.png)
@@ -33,6 +34,7 @@ I'm uploading my old files on the repository.
 |ADC_10Bit_Internal VREF            | Y         | Y             | -                 |
 |Access to Bits                     | Y         | -             | -                 |
 |Button                             | Y         | Y             | Y                 |
+|Counter0                           | Y         | -             | -                 |
 |Data Looking_Syntax                | Y         | -             | -                 |
 |Display_LCD_Syntax                 | Y         | Y             | Y                 |
 |EEPROM                             | Y         | Y             | -                 |
