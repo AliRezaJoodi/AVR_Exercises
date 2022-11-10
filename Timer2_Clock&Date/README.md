@@ -1,4 +1,4 @@
-## Config Timer2 for Clock and Calender
+## Config Timer2 in Clock and Date Mode
 
 MCU:        ATmega32  
 Frequency:  8.000000 MHz  

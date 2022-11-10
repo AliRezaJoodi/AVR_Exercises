@@ -1,4 +1,4 @@
-## Config Counter0
+## Config Timer0 in Counter Mode
 
 MCU:        ATmega32  
 Frequency:  8.000000 MHz  

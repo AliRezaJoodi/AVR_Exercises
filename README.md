@@ -17,7 +17,7 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x6/Simulate/Album.png)
 ![](Timer0_Timer/Simulate/Album.png)
 ![](Timer2_Async%20Timer/Simulate/Album.png)
-![](Timer2_Clock&Calender/Simulate/Album.png)
+![](Timer2_Clock&Date/Simulate/Album.png)
 ![](Timer0_Counter/Simulate/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
@@ -50,7 +50,7 @@ I'm uploading my old files on the repository.
 |Timer0_Counter                     | Y         | -             | -                 |
 |Timer0_Timer                       | Y         | -             | -                 |
 |Timer2_Async Timer                 | Y         | -             | -                 |
-|Timer2_Clock&Calender              | Y         | -             | -                 |
+|Timer2_Clock&Date                  | Y         | -             | -                 |
 |UART_Software UART                 | Y         | Y             | -                 |
 |UART_Syntax                        | Y         | Y             | -                 |
 |UART_with Interrupt                | Y         | Y             | -                 |
