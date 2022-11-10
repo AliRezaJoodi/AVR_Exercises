@@ -33,9 +33,8 @@ End
 
 '**************************
 Display_value:
-   Locate 1 , 1 : Lcd "TCNT0=" ; Tcnt0 ; "  "
-   Locate 1 , 11 : Lcd "i=" ; I ; " "
-   Locate 2 , 1 : Lcd "Config Counter0"
+   Locate 1 , 1 : Lcd "Counter0=" ; Tcnt0 ; "   "
+   Locate 2 , 1 : Lcd "i=" ; I ; "  "
 Return
 
 '**************************
