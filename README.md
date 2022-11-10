@@ -19,6 +19,7 @@ I'm uploading my old files on the repository.
 ![](Timer2_Async%20Timer/Simulate/Album.png)
 ![](Timer2_Clock&Date/Simulate/Album.png)
 ![](Timer0_Counter/Simulate/Album.png)
+![](Timer1_Counter/Simulate/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Syntax/Simulate/Album.png)
@@ -49,6 +50,7 @@ I'm uploading my old files on the repository.
 |String_Syntax                      | Y         | Y             | -                 |
 |Timer0_Counter                     | Y         | -             | -                 |
 |Timer0_Timer                       | Y         | -             | -                 |
+|Timer1_Counter                     | Y         | -             | -                 |
 |Timer2_Async Timer                 | Y         | -             | -                 |
 |Timer2_Clock&Date                  | Y         | -             | -                 |
 |UART_Software UART                 | Y         | Y             | -                 |
