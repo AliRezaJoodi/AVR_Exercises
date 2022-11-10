@@ -15,10 +15,10 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x4/Simulate/Album.png)
 ![](Keypad_4x4_Using%2074922/Simulate/Album.png)
 ![](Keypad_4x6/Simulate/Album.png)
-![](Timer0/Simulate/Album.png)
-![](Timer2_Async/Simulate/Album.png)
+![](Timer0_Timer/Simulate/Album.png)
+![](Timer2_Async%20Timer/Simulate/Album.png)
 ![](Timer2_Clock&Calender/Simulate/Album.png)
-![](Counter0/Simulate/Album.png)
+![](Timer0_Counter/Simulate/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Syntax/Simulate/Album.png)
@@ -34,7 +34,6 @@ I'm uploading my old files on the repository.
 |ADC_10Bit_Internal VREF            | Y         | Y             | -                 |
 |Access to Bits                     | Y         | -             | -                 |
 |Button                             | Y         | Y             | Y                 |
-|Counter0                           | Y         | -             | -                 |
 |Data Looking_Syntax                | Y         | -             | -                 |
 |Display_LCD_Syntax                 | Y         | Y             | Y                 |
 |EEPROM                             | Y         | Y             | -                 |
@@ -48,8 +47,9 @@ I'm uploading my old files on the repository.
 |Keypad_4x6                         | Y         | -             | -                 |
 |Sound                              | Y         | Y             | Y                 |
 |String_Syntax                      | Y         | Y             | -                 |
-|Timer0                             | Y         | -             | -                 |
-|Timer2_Async                       | Y         | -             | -                 |
+|Timer0_Counter                     | Y         | -             | -                 |
+|Timer0_Timer                       | Y         | -             | -                 |
+|Timer2_Async Timer                 | Y         | -             | -                 |
 |Timer2_Clock&Calender              | Y         | -             | -                 |
 |UART_Software UART                 | Y         | Y             | -                 |
 |UART_Syntax                        | Y         | Y             | -                 |

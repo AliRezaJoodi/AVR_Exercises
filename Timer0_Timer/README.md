@@ -1,4 +1,4 @@
-## Config Timer0 
+## Config Timer0 in Timer Mode
 
 MCU:        ATmega32  
 Frequency:  1.000000 MHz  

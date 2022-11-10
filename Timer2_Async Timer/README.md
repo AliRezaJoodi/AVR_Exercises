@@ -1,4 +1,4 @@
-## Config Timer2 in Asynchronous Mode 
+## Config Timer2 in Asynchronous Timer Mode 
 
 MCU:        ATmega32  
 Frequency:  8.000000 MHz  
