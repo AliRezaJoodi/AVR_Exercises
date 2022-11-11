@@ -51,6 +51,7 @@ I'm uploading my old files on the repository.
 |Timer0_Counter                     | Y         | -             | -                 |
 |Timer0_Timer                       | Y         | -             | -                 |
 |Timer1_Counter                     | Y         | -             | -                 |
+|Timer1_PWM                         | Y         | Y             | -                 |
 |Timer2_Async Timer                 | Y         | -             | -                 |
 |Timer2_Clock&Date                  | Y         | -             | -                 |
 |UART_Software UART                 | Y         | Y             | -                 |
