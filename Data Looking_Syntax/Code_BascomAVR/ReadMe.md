@@ -5,3 +5,4 @@ v1.0:
 - Syntax: LookDown
 - Syntax: LookUp
 - Syntax: LookupStr
+- Syntax: Restore
