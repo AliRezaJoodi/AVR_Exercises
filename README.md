@@ -39,6 +39,7 @@ I'm uploading my old files on the repository.
 |[Button](Button)|Y|Y|Y|
 |[Converter_Integer to MSB and LSB](Converter_Integer%20to%20MSB%20and%20LSB)|Y|-|-|
 |[Data Looking_Syntax](Data%20Looking_Syntax)|Y|-|-|
+|[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|-|-|
 |[Display_LCD_Syntax](Display_LCD_Syntax)|Y|Y|Y|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Include External Files](Include%20External%20Files)|Y|Y|-|
