@@ -42,6 +42,7 @@ I'm uploading my old files on the repository.
 |[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|-|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|-|-|
 |[Display_7Segment_Using 7447](Display_7Segment_Using%207447)|Y|-|-|
+|[Display_7Segment_Using 74164](Display_7Segment_Using%2074164)|Y|-|-|
 |[Display_LCD_Syntax](Display_LCD_Syntax)|Y|Y|Y|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Include External Files](Include%20External%20Files)|Y|Y|-|
