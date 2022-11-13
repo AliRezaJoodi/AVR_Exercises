@@ -41,6 +41,7 @@ I'm uploading my old files on the repository.
 |[Data Looking_Syntax](Data%20Looking_Syntax)|Y|-|-|
 |[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|-|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|-|-|
+|[Display_7Segment_Using 4026](Display_7Segment_Using%204026)|Y|-|-|
 |[Display_7Segment_Using 7447](Display_7Segment_Using%207447)|Y|-|-|
 |[Display_7Segment_Using 74164](Display_7Segment_Using%2074164)|Y|-|-|
 |[Display_LCD_Syntax](Display_LCD_Syntax)|Y|Y|Y|
