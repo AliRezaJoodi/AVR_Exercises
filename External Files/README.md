@@ -1,4 +1,4 @@
-## Include External Files for modular programming  
+## Import External File 
 
 MCU:       	ATmega32  
 Frequency: 	1.000000 MHz  
