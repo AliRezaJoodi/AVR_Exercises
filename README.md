@@ -50,6 +50,7 @@ I'm uploading my old files on the repository.
 |[IO_Input](IO_Input)|Y|-|-|
 |[IO_Input Interrupts](IO_Input%20Interrupts)|Y|-|-|
 |[IO_Output](IO_Output)|Y|Y|-|
+|[IO_PortG and PortF](IO_PortG%20and%20PortF)|-|Y|-|
 |[Keypad_4x3](Keypad_4x3)|Y|Y|-|
 |[Keypad_4x4](Keypad_4x4)|Y|Y|-|
 |[Keypad_4x4_Using 74922](Keypad_4x4_Using%2074922)|Y|-|-|
