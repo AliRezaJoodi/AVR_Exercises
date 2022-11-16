@@ -3,12 +3,7 @@
 #include <mega32.h>
 #include <delay.h>
 
-#define OUTPUT 1
-#define INPOUT 0
-#define PULL_UP 1
-#define PULL_DOWN 0
-
-#include "Attachment\Hardware_v1.0.txt"
+#include "Attachment\Hardware_v1.0.h"
 void Config_IO(void);
 
 bit button1_status=1;
@@ -32,10 +27,15 @@ void main(void){
 }
 
 //******************************************
-void Config_IO(void){
-    BUTTON1_DDR=INPOUT; BUTTON1=PULL_UP;
-    BUTTON2_DDR=INPOUT; BUTTON2=PULL_UP;
-    LED1_DDR=OUTPUT; LED1=DEFAULT_LED;
+void Config_IO(void){    
+    #define OUTPUT 1
+    #define INPOUT 0
+    #define PULL_UP 1
+    #define PULL_DOWN 0
+    
+    BUTTON1_DDR=INPOUT; BUTTON1_PORT=PULL_UP;
+    BUTTON2_DDR=INPOUT; BUTTON2_PORT=PULL_UP;
+    LED1_DDR=OUTPUT; LED1_PORT=DEFAULT_LED;
 }
 
 
