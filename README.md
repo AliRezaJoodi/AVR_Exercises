@@ -35,7 +35,7 @@ I'm uploading my old files on the repository.
 |[ADC_10Bit_AVCC VREF](ADC_10Bit_AVCC%20VREF)|Y|Y|-|
 |[ADC_10Bit_AVCC VREF_with Interrupt](ADC_10Bit_AVCC%20VREF_with%20Interrupt)|Y|-|-|
 |[ADC_10Bit_Internal VREF](ADC_10Bit_Internal%20VREF)|Y|Y|-|
-|[Access to Bits](Access%20to%20Bits)|Y|-|-|
+|[Access to Bits](Access%20to%20Bits)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
 |[Converter_Integer to MSB and LSB](Converter_Integer%20to%20MSB%20and%20LSB)|Y|-|-|
 |[Data Looking_Syntax](Data%20Looking_Syntax)|Y|-|-|
