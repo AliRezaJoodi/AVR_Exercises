@@ -1,4 +1,4 @@
-## 1 digit 7Segment Driver Using 7447
+## A Digit 7Segment Driver Using 7447
 
 MCU:            ATmega32  
 Frequency:     	1.000000 MHz   
