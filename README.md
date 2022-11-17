@@ -61,7 +61,7 @@ I'm uploading my old files on the repository.
 |[Timer0_Timer](Timer0_Timer)|Y|-|-|
 |[Timer1_Counter](Timer1_Counter)|Y|-|-|
 |[Timer1_PWM](Timer1_PWM)|Y|Y|-|
-|[Timer2_Async Timer](Timer2_Async%20Timer)|Y|-|-|
+|[Timer2_Async Timer](Timer2_Async%20Timer)|Y|Y|-|
 |[Timer2_Clock&Date](Timer2_Clock&Date)|Y|-|-|
 |[UART_Software UART](UART_Software%20UART)|Y|Y|-|
 |[UART_Syntax](UART_Syntax)|Y|Y|-|
