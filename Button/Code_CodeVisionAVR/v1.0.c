@@ -14,12 +14,22 @@ void Config_LCD(void){
     lcd_init(16); lcd_clear();   
 }
 
-#define BUTTON1 PINB.0
-#define BUTTON_INCR BUTTON1
-void Config_Inputs(void){
-    DDRB.0=0; PORTB.0=1;
+#define BUTTON1_DDR DDRB.0
+#define BUTTON1_PORT PORTB.0
+#define BUTTON1_PIN PINB.0
+#define BUTTON_INCR BUTTON1_PIN
+
+#define PRESS_BUTTON 0
+#define DEFAULT_BUTTON !PRESS_BUTTON
+
+void Config_IO(void){
+    #define INPUT 0   
+    #define OUTPUT !INPUT
+    #define PULL_UP 1
+    #define PULL_DOWN !PULL_UP
+    
+    BUTTON1_DDR=INPUT; BUTTON1_PORT=PULL_UP;
 }
-bit button_incr_status=1;
 
 void Display_Value(void);
 void Get_Button(void);
@@ -28,7 +38,7 @@ unsigned char value;
 
 void main(void){  
     Config_LCD(); Display_Value();
-    Config_Inputs();
+    Config_IO();
    
     while(1){
         Get_Button();
@@ -37,14 +47,15 @@ void main(void){
 
 //********************************************************
 void Get_Button(void){
-    if(BUTTON_INCR==0 && button_incr_status==1){
+    bit status_button1=1;
+    if(BUTTON_INCR==PRESS_BUTTON && status_button1==DEFAULT_BUTTON){
         delay_ms(30);
-        if(BUTTON_INCR==0){
+        if(BUTTON_INCR==PRESS_BUTTON){
             ++value; Display_Value();
-            button_incr_status=0;
+            status_button1=PRESS_BUTTON;
         } 
     }
-    if(BUTTON_INCR==1){button_incr_status=1;}
+    if(BUTTON_INCR==DEFAULT_BUTTON){status_button1=DEFAULT_BUTTON;}
 }
 
 //********************************************************
