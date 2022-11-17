@@ -1,4 +1,4 @@
-'Github Account: Github.com/AliRezaJoodi
+'GitHub Account: GitHub.com/AliRezaJoodi
 
 $regfile = "m32def.dat"
 $crystal = 8000000
@@ -11,9 +11,9 @@ Enable Interrupts
 
 Dim S As String * 16
 
-'Gosub Test1
-'Gosub Test2
-Gosub Test3
+Gosub Test1
+Gosub Test2
+'Gosub Test3
 
 Do
 
