@@ -1,5 +1,10 @@
 ### Description
 
+v2.1:
+- Last opened with BascomAVR v2.0.7.5
+- It didn't use of the delay in the function.
+- **Best Version**
+
 v2.0:
 - Last opened with BascomAVR v2.0.7.5
 - It didn't use of the delay in the function.
