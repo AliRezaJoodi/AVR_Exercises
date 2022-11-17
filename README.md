@@ -26,6 +26,7 @@ I'm uploading my old files on the repository.
 ![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Syntax/Simulate/Album.png)
 ![](UART_Software%20UART/Simulate/Album.png)
+![](Servo%20Motor/Simulate/Album.png)
 
 ### List of the Repository
 
@@ -55,6 +56,7 @@ I'm uploading my old files on the repository.
 |[Keypad_4x4](Keypad_4x4)|Y|Y|-|
 |[Keypad_4x4_Using 74922](Keypad_4x4_Using%2074922)|Y|-|-|
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
+|[Servo Motor](Servo%20Motor)|Y|-|-|
 |[Sound](Sound)|Y|Y|Y|
 |[String_Syntax](String_Syntax)|Y|Y|-|
 |[Timer0_Counter](Timer0_Counter)|Y|-|-|
