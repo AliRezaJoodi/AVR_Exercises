@@ -40,11 +40,11 @@ I'm uploading my old files on the repository.
 |[Button](Button)|Y|Y|Y|
 |[Converter_Integer to MSB and LSB](Converter_Integer%20to%20MSB%20and%20LSB)|Y|-|-|
 |[Data Looking_Syntax](Data%20Looking_Syntax)|Y|-|-|
-|[Display_7Segment](Display_7Segment)|Y|Y|-|
+|[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|Y|-|
+|[Display_7Segment_1Digit Using 4026](Display_7Segment_1Digit%20Using%204026)|Y|-|-|
+|[Display_7Segment_1Digit Using 7447](Display_7Segment_1Digit%20Using%207447)|Y|-|-|
+|[Display_7Segment_1Digit Using 74164](Display_7Segment_1Digit%20Using%2074164)|Y|-|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|-|-|
-|[Display_7Segment_Using 4026](Display_7Segment_Using%204026)|Y|-|-|
-|[Display_7Segment_Using 7447](Display_7Segment_Using%207447)|Y|-|-|
-|[Display_7Segment_Using 74164](Display_7Segment_Using%2074164)|Y|-|-|
 |[Display_LCD_Syntax](Display_LCD_Syntax)|Y|Y|Y|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[External Files](External%20Files)|Y|Y|-|
