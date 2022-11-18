@@ -146,7 +146,7 @@ unsigned char Convert_7Segment(unsigned char digit){
 }
 
 //**************************************
-unsigned char Invert_7Segment(unsigned char x){
+unsigned char Reverse_7Segment(unsigned char x){
     return x ^ 0b11111111; 
 }
 
@@ -178,7 +178,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/1;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S1=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
@@ -187,7 +187,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/10;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S2=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
@@ -196,7 +196,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/100;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S3=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
@@ -205,7 +205,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/1000;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S4=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
@@ -214,7 +214,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/10000;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S5=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
@@ -223,7 +223,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/100000;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S6=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
@@ -232,7 +232,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/1000000;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S7=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
@@ -241,7 +241,7 @@ void Drive_7Segment(unsigned long int value){
             value_temporary=value/10000000;
             digit=value_temporary%10;
             digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Invert_7Segment(digit);}
+            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
             Set_7Segment(digit);
             S8=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}

@@ -24,6 +24,8 @@ Obj
 Main.txt
 *.c~
 *.cci
+*.h~
+*.hci
 
 # mikroC PRO for AVR folders and files for ignore
 *.dbg

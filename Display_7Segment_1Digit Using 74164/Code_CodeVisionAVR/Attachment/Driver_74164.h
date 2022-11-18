@@ -74,7 +74,7 @@ unsigned char Convert_7Segment(unsigned char digit){
 }
 
 //**************************************
-unsigned char Invert_7Segment(unsigned char x){
+unsigned char Reverse_7Segment(unsigned char x){
     return x ^ 0b11111111; 
 }
 
@@ -88,7 +88,7 @@ void Drive_74164(unsigned char value){
     Config_74164();
     Reset_74164();
     value=Convert_7Segment(value);
-    value=Invert_7Segment(value);
+    value=Reverse_7Segment(value);
      
     for (i=0; i<=7; ++i){
         DATA=CHKBIT(value,7-i);
