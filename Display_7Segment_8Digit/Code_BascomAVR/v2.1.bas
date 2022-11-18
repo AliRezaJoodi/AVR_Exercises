@@ -13,16 +13,16 @@ S_g Alias Portd.6 : Config S_g = Output : S_g = 1
 S_dp Alias Portd.7 : Config S_dp = Output : S_dp = 1
 
 Active Alias 1
-deactive Alias 0
+Deactive Alias 0
 
-S1 Alias Portb.0 : Config S1 = Output : S1 = deactive
-S2 Alias Portb.1 : Config S2 = Output : S2 = deactive
-S3 Alias Portb.2 : Config S3 = Output : S3 = deactive
-S4 Alias Portb.3 : Config S4 = Output : S4 = deactive
-S5 Alias Portb.4 : Config S5 = Output : S5 = deactive
-S6 Alias Portb.5 : Config S6 = Output : S6 = deactive
-S7 Alias Portb.6 : Config S7 = Output : S7 = deactive
-S8 Alias Portb.7 : Config S8 = Output : S8 = deactive
+S1 Alias Portb.0 : Config S1 = Output : S1 = Deactive
+S2 Alias Portb.1 : Config S2 = Output : S2 = Deactive
+S3 Alias Portb.2 : Config S3 = Output : S3 = Deactive
+S4 Alias Portb.3 : Config S4 = Output : S4 = Deactive
+S5 Alias Portb.4 : Config S5 = Output : S5 = Deactive
+S6 Alias Portb.5 : Config S6 = Output : S6 = Deactive
+S7 Alias Portb.6 : Config S7 = Output : S7 = Deactive
+S8 Alias Portb.7 : Config S8 = Output : S8 = Deactive
 
 Dim Value As Long : Value = 12345678
 Dim I As Byte : I = 0
@@ -99,7 +99,8 @@ Sub Show()
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
          S8 = Active
-         Incr I : If Value_temporary < 10 Then I = 0
+         'Incr I : If Value_temporary < 10 Then I = 0
+         I = 0
    End Select
 End Sub
 
@@ -109,5 +110,5 @@ End Sub
 ' - , Dp
 Data_7segment:
 Data &B00111111 , &B00000110 , &B01011011 , &B01001111 , &B01100110 , &B01101101 , &B01111101 , &B00000111 , &B01111111 , &B01101111 _
- , &B01110111 , &B01111100 , &B00111001 , &B01011110 , &B01111001 , &B01110001 _
-  , &B01000000 , &B10000000
+  , &B01110111 , &B01111100 , &B00111001 , &B01011110 , &B01111001 , &B01110001 _
+   , &B01000000 , &B10000000
