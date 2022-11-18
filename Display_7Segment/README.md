@@ -2,10 +2,12 @@
 
 MCU:            ATmega32  
 Frequency:     	1.000000 MHz   
+Display:        1-Digit 7-Segment   
 
 ### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
+- `Code_CodeVisionAVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0

@@ -40,7 +40,7 @@ I'm uploading my old files on the repository.
 |[Button](Button)|Y|Y|Y|
 |[Converter_Integer to MSB and LSB](Converter_Integer%20to%20MSB%20and%20LSB)|Y|-|-|
 |[Data Looking_Syntax](Data%20Looking_Syntax)|Y|-|-|
-|[Display_7Segment](Display_7Segment)|Y|-|-|
+|[Display_7Segment](Display_7Segment)|Y|Y|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|-|-|
 |[Display_7Segment_Using 4026](Display_7Segment_Using%204026)|Y|-|-|
 |[Display_7Segment_Using 7447](Display_7Segment_Using%207447)|Y|-|-|
