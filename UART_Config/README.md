@@ -1,4 +1,4 @@
-## UART Syntax
+## UART Configuration
                 
 MCU:         	ATmega32  
 Frequency:     8.000000 MHz    

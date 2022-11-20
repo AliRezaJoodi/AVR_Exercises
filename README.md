@@ -24,7 +24,7 @@ I'm uploading my old files on the repository.
 ![](Converter_Integer%20to%20MSB%20and%20LSB/Simulate/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
-![](UART_Syntax/Simulate/Album.png)
+![](UART_Config/Simulate/Album.png)
 ![](UART_Software%20UART/Simulate/Album.png)
 ![](Servo%20Motor/Simulate/Album.png)
 
@@ -66,8 +66,8 @@ I'm uploading my old files on the repository.
 |[Timer1_PWM](Timer1_PWM)|Y|Y|-|
 |[Timer2_Async Timer](Timer2_Async%20Timer)|Y|Y|-|
 |[Timer2_Clock&Date](Timer2_Clock&Date)|Y|-|-|
+|[UART_Config](UART_Config)|Y|Y|-|
 |[UART_Software UART](UART_Software%20UART)|Y|Y|-|
-|[UART_Syntax](UART_Syntax)|Y|Y|-|
 |[UART_with Interrupt](UART_with%20Interrupt)|Y|Y|-|
 
 
