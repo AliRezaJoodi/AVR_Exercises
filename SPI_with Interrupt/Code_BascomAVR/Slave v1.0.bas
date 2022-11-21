@@ -7,7 +7,7 @@ Config Portd = Output
 
 Enable Interrupts
 
-Config Spi = Hard , Interrupt = On , Data Order = Msb , Master = No , Polarity = High , Phase = 0 , Clockrate = 128       ', Noss = 0
+Config Spi = Hard , Interrupt = On , Data Order = Msb , Master = No , Polarity = low , Phase = 0 , Clockrate = 128       ', Noss = 0
 Enable Spi
 On Spi Int_sub
 Spiinit

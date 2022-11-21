@@ -58,9 +58,9 @@ I'm uploading my old files on the repository.
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
 |[Servo Motor](Servo%20Motor)|Y|-|-|
 |[Sound](Sound)|Y|Y|Y|
-|[SPI_Config](SPI_Config)|Y|-|-|
+|[SPI_Config](SPI_Config)|Y|Y|-|
 |[SPI_Software SPI](SPI_Software%20SPI)|Y|-|-|
-|[SPI_with Interrupt](SPI_with%20Interrupt)|Y|-|-|
+|[SPI_with Interrupt](SPI_with%20Interrupt)|Y|Y|-|
 |[Stepper Motor_Unipolar Using ULN2003](Stepper%20Motor_Unipolar%20Using%20ULN2003)|Y|-|-|
 |[String_Syntax](String_Syntax)|Y|Y|-|
 |[Timer0_Counter](Timer0_Counter)|Y|-|-|

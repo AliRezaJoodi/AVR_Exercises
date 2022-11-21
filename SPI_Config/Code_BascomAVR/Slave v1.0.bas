@@ -9,7 +9,7 @@ Config Portd = Output
 'Config Portb.5 = Input : Portb.5 = 0
 'Config Portb.6 = Output : Portb.6 = 0
 'Config Portb.7 = Input : Portb.7 = 0
-Config Spi = Hard , Interrupt = On , Data Order = Msb , Master = No , Polarity = High , Phase = 0 , Clockrate = 128       ', Noss = 0
+Config Spi = Hard , Interrupt = On , Data Order = Msb , Master = No , Polarity = low , Phase = 0 , Clockrate = 128       ', Noss = 0
 Spiinit
 
 Dim I As Byte : I = 0
