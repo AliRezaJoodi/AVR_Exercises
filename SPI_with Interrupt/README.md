@@ -1,7 +1,7 @@
 ## SPI Configuration with Interrupt
                 
 MCU:         	ATmega32  
-Frequency:      8.000000 MHz    
+Frequency:      1.000000 MHz    
 
 ### Folder and Files Description
 It has included:

@@ -1,7 +1,7 @@
 'GitHub Account: GitHub.com/AliRezaJoodi
 
 $regfile = "m32def.dat"
-$crystal = 8000000
+$crystal = 1000000
 
 Config Portd = Output
 

@@ -1,7 +1,7 @@
 'GitHub Account: GitHub.com/AliRezaJoodi
 
 $regfile = "m32def.dat"
-$crystal = 8000000
+$crystal = 1000000
 
 Config Spi = Soft , Din = Pinb.6 , Dout = Portb.5 , Ss = None , Clock = Portb.7 , Setup = 40 , Mode = 1
 
@@ -22,5 +22,4 @@ Do
 Loop
 
 End
-
 
