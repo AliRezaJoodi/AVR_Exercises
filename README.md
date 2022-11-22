@@ -49,6 +49,7 @@ I'm uploading my old files on the repository.
 |[Display_LCD_Syntax](Display_LCD_Syntax)|Y|Y|Y|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[External Files](External%20Files)|Y|Y|-|
+|[IO_External_PCF8574_I2C](IO_External_PCF8574_I2C)|Y|-|-|
 |[IO_Input](IO_Input)|Y|-|-|
 |[IO_Input Interrupts](IO_Input%20Interrupts)|Y|-|-|
 |[IO_Output](IO_Output)|Y|Y|-|
