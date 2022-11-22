@@ -1,4 +1,4 @@
-## ADC Config with AVCC VREF and Interruptn
+## ADC Config with AVCC VREF and Interrupt
  	  
 MCU:      	ATmega32  
 Frequency:   	1.000000 MHz  

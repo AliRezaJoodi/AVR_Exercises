@@ -21,7 +21,7 @@ I'm uploading my old files on the repository.
 ![](Timer0_Counter/Simulate/Album.png)
 ![](Timer1_Counter/Simulate/Album.png)
 ![](Button/Simulate/Album.png)
-![](Converter_Integer%20to%20MSB%20and%20LSB/Simulate/Album.png)
+![](Converter_MSB%20and%20LSB/Simulate/Album.png)
 ![](PC%20Keyboard/Hardware/Album.png)
 
 ![](Data%20Looking_Syntax/Simulate/Album.png)
@@ -39,8 +39,8 @@ I'm uploading my old files on the repository.
 |[ADC_10Bit_Internal VREF](ADC_10Bit_Internal%20VREF)|Y|Y|-|
 |[Access to Bits](Access%20to%20Bits)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
-|[Converter_Integer to MSB and LSB](Converter_Integer%20to%20MSB%20and%20LSB)|Y|-|-|
-|[Data Looking_Syntax](Data%20Looking_Syntax)|Y|-|-|
+|[Converter_Data Table](Converter_Data%20Table)|Y|-|-|
+|[Converter_MSB and LSB](Converter_MSB%20and%20LSB)|Y|-|-|
 |[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|Y|-|
 |[Display_7Segment_1Digit Using 4026](Display_7Segment_1Digit%20Using%204026)|Y|Y|-|
 |[Display_7Segment_1Digit Using 7447](Display_7Segment_1Digit%20Using%207447)|Y|Y|-|
