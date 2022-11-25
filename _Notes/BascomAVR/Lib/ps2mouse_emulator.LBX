@@ -1,0 +1,207 @@
+Comment = Compiled LIB file, no comment included
+
+copyright = MCS Electronics
+www       = http://www.mcselec.com
+email     = avr@mcselec.com
+comment   = AVR compiler library
+libversion   = 1.00
+date         = 14 sep 2002
+statement    = No SOURCE code from the library may be distributed in any form
+statement    = Of course this does not applie for the COMPILED code when you have a BASCOM-AVR license
+history      = No known bugs.
+[_AT_MOUSE]
+_AT_MOUSE_INIT:
+.OBJ EA8A
+  rcall _write_AT_byte
+.OBJ E080
+_write_AT_byte:
+.OBJ 94E8
+* In r1,sreg
+.OBJ 94F8
+_write_at_byte0:
+* sbis _at_in_CL, _at_clock
+  rjmp _write_at_byte0
+  @genus(50)
+* sbis _at_in_CL, _at_clock
+  rjmp _write_at_byte0
+* sbis _at_in_DT,_at_data
+  rjmp _at_exit
+  @genus(20)
+.OBJ E098
+.OBJ 9488
+  rcall _w_AT_bit
+  brts _AT_EXIT
+.OBJ 2400
+_write_at_byte1:
+.OBJ 9587
+  rcall _w_AT_bit
+  brts _AT_EXIT
+.OBJ 959A
+  brne  _write_at_byte1
+.OBJ 9488
+.OBJ FE00
+.OBJ 9408
+  rcall _w_AT_bit
+  brts _AT_EXIT
+.OBJ 9408
+  rcall _w_AT_bit
+  BrTs _at_exit
+  @genus(30)
+_at_exit:
+.OBJ 2788
+.OBJ F980
+* out sreg,r1
+.OBJ 9508
+_w_at_bit:
+  brcs  _w_AT_bit1
+* sbi _at_ddr_DT,_at_data
+  rjmp _w_AT_bit2
+_w_at_bit1:
+* cbi _at_ddr_DT,_at_data
+.OBJ 9403
+_w_at_bit2:
+  @genus(20)
+* sbi _at_ddr_CL,_at_clock
+  @genus(40)
+* cbi _at_ddr_CL,_at_clock
+  @genus(20)
+* cbi _at_ddr_DT,_at_data
+* sbis _at_in_CL, _at_clock
+.OBJ 9468
+.OBJ 0
+.OBJ 9508
+_read_at_byte:
+* in r1,sreg
+.OBJ 94F8
+.OBJ 9468
+.OBJ 2400
+.OBJ 2788
+_read_at_byte1:
+* sbis _at_in_CL,_at_clock
+  rjmp _read_AT_byte1
+* sbic _at_in_DT,_at_data
+  rjmp _read_AT_byte_exit
+.OBJ E098
+_read_at_byte2:
+  @genus(20)
+* sbi _at_ddr_CL,_at_clock
+  @genus(45)
+* cbi _at_ddr_CL,_at_clock
+  @genus(20)
+.OBJ 9488
+* sbis _at_in_DT, _at_data
+  rjmp _read_at_byte5
+.OBJ 9403
+.OBJ 9408
+_read_at_byte5:
+.OBJ 9587
+.OBJ 959A
+  brne _read_AT_byte2
+.OBJ E092
+_read_at_byte3:
+  @genus(20)
+* sbi _at_ddr_CL,_at_clock
+  @genus(40)
+* cbi _at_ddr_CL,_at_clock
+  @genus(20)
+.OBJ 9488
+* sbic _at_in_DT, _at_data
+.OBJ 9408
+.OBJ 9507
+.OBJ 959A
+  brne _read_AT_byte3
+  @genus(15)
+* sbi _at_ddr_DT,_at_data
+  @genus(5)
+* sbi _at_ddr_CL,_at_clock
+  @genus(40)
+* cbi _at_ddr_CL,_at_clock
+  @genus(5)
+* cbi _at_ddr_DT,_at_data
+  @genus(45)
+.OBJ FD06
+.OBJ 9403
+.OBJ FC00
+.OBJ 94E8
+.OBJ 2799
+.OBJ F990
+_read_at_byte_exit:
+* out sreg,r1
+.OBJ 9508
+_AT_MOUSE_PROCESS:
+  rcall _read_AT_byte
+.OBJ 2399
+  Breq _AT_MOUSE_PROCESS1
+.OBJ 9508
+_AT_MOUSE_PROCESS1:
+.OBJ 3F82
+  brne _AT_MOUSE_PROCESS2
+.OBJ EF8A
+  rcall  _write_AT_byte
+.OBJ 2788
+  rjmp   _write_AT_byte
+_AT_MOUSE_PROCESS2:
+.OBJ 3E89
+  Brne _AT_MOUSE_PROCESS3
+.OBJ EF8A
+  rcall  _write_AT_byte
+.OBJ E080
+  rcall  _write_AT_byte
+.OBJ E082
+  rcall  _write_AT_byte
+.OBJ E684
+  rjmp  _write_AT_byte
+_AT_MOUSE_PROCESS3:
+.OBJ 3F8F
+  Brne _AT_MOUSE_PROCESS4
+.OBJ EF8A
+  rcall  _write_AT_byte
+  rjmp _AT_MOUSE_INIT
+_AT_MOUSE_PROCESS4:
+.OBJ EF8A
+  Rjmp  _write_AT_byte
+_at_emu_isr:
+.OBJ 920F
+.OBJ 921F
+.OBJ 930F
+.OBJ 938F
+.OBJ 939F
+*  IN R24,SREG
+.OBJ 938F
+   RCALL _AT_MOUSE_PROCESS
+.OBJ 918F
+*  OUT SREG,R24
+.OBJ 919F
+.OBJ 918F
+.OBJ 910F
+.OBJ 901F
+.OBJ 900F
+.OBJ 9518
+[END]
+[_SEND_SCAN]
+$EXTERNAL _LPMBYTE, _AT_MOUSE
+_send_Scan:
+.OBJ 931F
+  call _LPMbyte
+.OBJ 2D10
+_send_Scan1:
+  call _LPMbyte
+.OBJ 2D80
+  rcall  _write_AT_byte
+.OBJ 2399
+  Brne _send_Scan2
+.OBJ 951A
+  Brne _send_Scan1
+_send_Scan2:
+.OBJ 911F
+.OBJ 9508
+[END]
+[_PS2MXY]
+$EXTERNAL _AT_MOUSE
+_PS2MXY:
+   rcall  _write_AT_byte
+.OBJ 9189
+   rcall  _write_AT_byte
+.OBJ 9189
+   rjmp  _write_AT_byte
+[END]

@@ -1,0 +1,216 @@
+copyright = MCS Electronics
+www       = http://www.mcselec.com
+email     = avr@mcselec.com
+comment   = AVR compiler library
+libversion   = 1.00
+date         = 14 sep 2002
+statement    = No SOURCE code from the library may be distributed in any form
+statement    = Of course this does not applie for the COMPILED code when you have a BASCOM-AVR license
+history      = No known bugs.
+
+[_AT_KBD]
+$EXTERNAL _LPMBYTE
+_AT_KBD_INIT:
+  Ldi r24,$AA                             ; init command
+  rjmp _write_ATKBD_byte                  ; write it
+
+; send a byte in R24 to the host(PC)
+; destroys r0,r1,r25
+; returns R24=0 when succes, 1 if error
+_write_ATKBD_byte:
+  clt                                     ; clear error
+* In r1,sreg                              ; save SREG
+  cli                                     ; disable ints
+_write_atKBD_byte0:
+* sbis _atkbd_in_CL, _atkbd_clock         ; skip if 1
+  rjmp _write_atKBD_byte0
+  @genus(50)
+* sbis _atkbd_in_CL, _atkbd_clock         ; skip if 1
+  rjmp _write_atKBD_byte0
+* sbis _atkbd_in_DT,_atkbd_data           ; if data is 0 then exit
+  rjmp _at_KBD_exit                        ; it is 0
+
+  @genus(20)
+  ldi r25,8                               ; send 8 bits
+  clc                                     ; send start bit first
+  rcall _w_ATKBD_bit                      ; send start bit
+  brts _AT_KBD_EXIT                        ; error?
+  clr r0                                  ; parity counter
+_write_atKBD_byte1:
+  ror r24                                 ; rotate right
+  rcall _w_ATKBD_bit                      ; LS bit first
+  brts _AT_KBD_EXIT                        ; error?
+  dec r25                                 ; next bit
+  brne  _write_atKBD_byte1                ; done 8 bits?
+  clc                                     ; clear carry
+  sbrs r0,0                               ; if it is odd skip
+  Sec                                     ; set carry
+  rcall _w_ATKBD_bit                      ; send parity bit
+  brts _AT_KBD_EXIT                        ; error ?
+  sec                                     ; stop bit is 1
+  rcall _w_ATKBD_bit                      ; send stop bit
+  BrTs _at_KBD_exit                        ; error?
+  @genus(30)
+_at_KBD_exit:
+  clr r24                                 ; clear return reg
+  bld r24,0                               ; save T flag
+* out sreg,r1                             ; restore SREG
+ret
+
+_w_atKBD_bit:
+  brcs  _w_ATKBD_bit1                     ; if we need to send 0 skip
+* sbi _atkbd_ddr_DT,_atkbd_data          ;  we need to write a 0
+  rjmp _w_ATKBD_bit2
+_w_atkbd_bit1:
+* cbi _atkbd_ddr_DT,_atkbd_data          ; write 1
+  inc r0                                 ; parity counter
+_w_atkbd_bit2:
+  @genus(20)
+* sbi _atkbd_ddr_CL,_atkbd_clock         ; clock low
+  @genus(40)
+* cbi _atkbd_ddr_CL,_atkbd_clock         ; release clock
+  @genus(20)
+* cbi _atkbd_ddr_DT,_atkbd_data          ; release data
+* sbis _atkbd_in_CL, _atkbd_clock        ; test clock
+  set                                     ; clock pulled low so exit
+  nop                                     ; for long calls
+ret
+
+;uses r0,r1,r25,r16
+;returns byte in R24
+_read_atKBD_byte:
+* in r1,sreg                              ; save SREG
+  cli                                     ; disable ints
+  set                                     ; set error by default
+  clr r0                                  ; clear some regs
+  clr r24
+_read_atKBD_byte1:
+* sbis _atkbd_in_CL,_atkbd_clock          ; if clock 1
+  rjmp _read_ATKBD_byte1                  ; it was 0
+* sbic _atkbd_in_DT,_atkbd_data           ; if data 0
+  rjmp _read_ATKBD_byte_exit              ; data was 1
+  ldi r25,8                               ; get 8 bits
+_read_atKBD_byte2:
+  @genus(20)
+* sbi _atkbd_ddr_CL,_atkbd_clock          ;  make clock low
+  @genus(45)
+* cbi _atkbd_ddr_CL,_atkbd_clock          ; make high
+  @genus(20)
+  clc
+* sbis _atkbd_in_DT, _atkbd_data          ; if data 1
+  rjmp _read_atKBD_byte5                  ; it was 0
+
+  inc r0                                  ; it is 1, inc parity
+  sec
+_read_atKBD_byte5:
+  ror r24                                 ; rotate carry into reg
+  dec r25                                 ; next bit
+  brne _read_ATKBD_byte2                     ; all done?
+
+  ldi r25,2                               ; parity and stop bit
+_read_atKBD_byte3:
+  @genus(20)
+* sbi _atkbd_ddr_CL,_atkbd_clock          ;  make clock low
+  @genus(40)
+* cbi _atkbd_ddr_CL,_atkbd_clock          ;  release clock
+  @genus(20)
+  clc
+* sbic _atkbd_in_DT, _atkbd_data
+  sec
+  ror r16                                 ; get into r16
+  dec r25                                 ; next bit
+  brne _read_ATKBD_byte3                  ; all done?
+ ;send ack
+  @genus(15)
+* sbi _atkbd_ddr_DT,_atkbd_data
+  @genus(5)
+* sbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(40)
+* cbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(5)
+* cbi _atkbd_ddr_DT,_atkbd_data
+  @genus(45)
+
+  sbrc r16,6                               ; skip if parity is 0
+  inc r0                                   ; inc parity counter
+  sbrc r0,0                                ; if even skip next instruction
+  clt                                      ; clear error
+  Clr r25
+  Bld r25,0
+_read_atKBD_byte_exit:
+* out sreg,r1                              ; restore SREG
+ret
+
+;call this routine when data become low
+_AT_KBD_PROCESS:
+  rcall _read_ATKBD_byte                   ; read the byte from the host(PC)
+  Tst r25
+  Breq _AT_KBD_PROCESS1                    ; if it is ok
+  Ret                                      ; error
+_AT_KBD_PROCESS1:
+;push r24
+;push r25
+;sts {key},r24
+;*BASIC: Print hex(key)
+;pop r25
+;pop r24
+  Cpi r24,$F2                              ; is it send keyboard ID?
+  brne _AT_KBD_PROCESS2                    ; no
+  Ldi r24,$AB                              ; send byte back
+  rcall  _write_ATKBD_byte
+  Ldi r24,$83                              ; send back
+  rjmp  _write_ATKBD_byte
+
+_AT_KBD_PROCESS2:
+  Cpi r24,$EE                              ; keyboard echo?
+  Brne _AT_KBD_PROCESS3                    ; no
+  rjmp  _write_ATKBD_byte                 ; send same back
+
+_AT_KBD_PROCESS3:
+  Cpi r24,$FF                              ; is it keyboard reset?
+  Brne _AT_KBD_PROCESS4                    ; no
+
+  Ldi r24,&HFA                             ; send acknowledge
+  rcall  _write_ATKBD_byte
+
+  Rjmp _AT_KBD_INIT                       ; send keyboard ok code
+_AT_KBD_PROCESS4:
+  Ldi r24,&HFA                             ; if we get here we just need to acknowledge
+  Rjmp _write_ATKBD_byte
+
+
+_at_KBD_isr:
+   PUSH R0
+   PUSH R1
+   PUSH R16
+   PUSH R24
+   PUSH R25
+*  IN R24,SREG
+   PUSH R24
+   RCALL _AT_KBD_PROCESS
+   POP R24
+*  OUT SREG,R24
+   POP R25
+   POP R24
+   POP R16
+   POP R1
+   POP R0
+Reti
+
+; Z points to data, first byte contains number of bytes to send
+_send_Scan_KBD:
+  Push r17
+  call _LPMbyte                            ; get byte in r0
+  Mov r17,r0                               ; num of bytes
+_send_ScanKBD1:
+  call _LPMbyte                            ; get byte in r0
+  Mov r24,r0
+  rcall  _write_ATKBD_byte                 ; write byte
+  Tst r25
+  Brne _send_ScanKBD2
+  Dec r17                                  ; byte counter
+  Brne _send_ScanKBD1                      ; for all bytes
+_send_ScanKBD2:
+  Pop r17
+Ret
+[END]

@@ -1,0 +1,241 @@
+copyright = MCS Electronics
+www       = http://www.mcselec.com
+email     = avr@mcselec.com
+comment   = AVR compiler library
+libversion   = 1.00
+date         = 14 sep 2002
+statement    = No SOURCE code from the library may be distributed in any form
+statement    = Of course this does not applie for the COMPILED code when you have a BASCOM-AVR license
+history      = No known bugs.
+
+[_AT_MOUSE]
+_AT_MOUSE_INIT:
+  Ldi r24,$AA                             ; init command
+  rcall _write_AT_byte                    ; write it
+  Ldi r24,0                             ; init command
+
+; send a byte in R24 to the host(PC)
+; destroys r0,r1,r25
+; returns R24=0 when succes, 1 if error
+_write_AT_byte:
+  clt                                     ; clear error
+* In r1,sreg                              ; save SREG
+  cli                                     ; disable ints
+_write_at_byte0:
+* sbis _at_in_CL, _at_clock               ; skip if 1
+  rjmp _write_at_byte0
+  @genus(50)
+* sbis _at_in_CL, _at_clock               ; skip if 1
+  rjmp _write_at_byte0
+* sbis _at_in_DT,_at_data                 ; if data is 0 then exit
+  rjmp _at_exit                           ; it is 0
+
+  @genus(20)
+  ldi r25,8                               ; send 8 bits
+  clc                                     ; send start bit first
+  rcall _w_AT_bit                         ; send start bit
+  brts _AT_EXIT                           ; error?
+  clr r0                                  ; parity counter
+_write_at_byte1:
+  ror r24                                 ; rotate right
+  rcall _w_AT_bit                         ; LS bit first
+  brts _AT_EXIT                           ; error?
+  dec r25                                 ; next bit
+  brne  _write_at_byte1                   ; done 8 bits?
+  clc                                     ; clear carry
+  sbrs r0,0                               ; if it is odd skip
+  Sec                                     ; set carry
+  rcall _w_AT_bit                         ; send parity bit
+  brts _AT_EXIT                           ; error ?
+
+  sec                                     ; stop bit is 1
+  rcall _w_AT_bit                         ; send stop bit
+  BrTs _at_exit                           ; error?
+  @genus(30)
+_at_exit:
+  clr r24                                 ; clear return reg
+  bld r24,0                               ; save T flag
+* out sreg,r1                             ; restore SREG
+ret
+
+_w_at_bit:
+  brcs  _w_AT_bit1                        ; if we need to send 0 skip
+* sbi _at_ddr_DT,_at_data                 ;  we need to write a 0
+  rjmp _w_AT_bit2
+_w_at_bit1:
+* cbi _at_ddr_DT,_at_data                 ; write 1
+  inc r0                                  ; parity counter
+_w_at_bit2:
+  @genus(20)
+* sbi _at_ddr_CL,_at_clock                ; clock low
+  @genus(40)
+* cbi _at_ddr_CL,_at_clock                ; release clock
+  @genus(20)
+* cbi _at_ddr_DT,_at_data                 ; release data
+* sbis _at_in_CL, _at_clock               ; test clock
+  set                                     ; clock pulled low so exit
+  nop                                     ; for long calls
+ret
+
+
+
+;uses r0,r1,r25,r16
+;returns byte in R24
+_read_at_byte:
+* in r1,sreg                              ; save SREG
+  cli                                     ; disable ints
+  set                                     ; set error by default
+  clr r0                                  ; clear some regs
+  clr r24
+_read_at_byte1:
+* sbis _at_in_CL,_at_clock                ; if clock 1
+  rjmp _read_AT_byte1                     ; it was 0
+* sbic _at_in_DT,_at_data                 ; if data 0
+  rjmp _read_AT_byte_exit                 ; data was 1
+  ldi r25,8                               ; get 8 bits
+_read_at_byte2:
+  @genus(20)
+* sbi _at_ddr_CL,_at_clock                ;  make clock low
+  @genus(45)
+* cbi _at_ddr_CL,_at_clock                ; make high
+  @genus(20)
+  clc
+* sbis _at_in_DT, _at_data                ; if data 1
+  rjmp _read_at_byte5                     ; it was 0
+
+  inc r0                                  ; it is 1, inc parity
+  sec
+_read_at_byte5:
+  ror r24                                 ; rotate carry into reg
+  dec r25                                 ; next bit
+  brne _read_AT_byte2                     ; all done?
+
+  ldi r25,2                               ; parity and stop bit
+_read_at_byte3:
+  @genus(20)
+* sbi _at_ddr_CL,_at_clock                ;  make clock low
+  @genus(40)
+* cbi _at_ddr_CL,_at_clock                ;  release clock
+  @genus(20)
+  clc
+* sbic _at_in_DT, _at_data
+  sec
+  ror r16                                 ; get into r16
+  dec r25                                 ; next bit
+  brne _read_AT_byte3                     ; all done?
+
+ ;send ack
+  @genus(15)
+* sbi _at_ddr_DT,_at_data
+  @genus(5)
+* sbi _at_ddr_CL,_at_clock
+  @genus(40)
+* cbi _at_ddr_CL,_at_clock
+  @genus(5)
+* cbi _at_ddr_DT,_at_data
+  @genus(45)
+
+  sbrc r16,6                               ; skip if parity is 0
+  inc r0                                   ; inc parity counter
+  sbrc r0,0                                ; if even skip next instruction
+  clt                                      ; clear error
+  Clr r25
+  Bld r25,0
+_read_at_byte_exit:
+* out sreg,r1                              ; restore SREG
+ret
+
+;call this routine when data become low
+_AT_MOUSE_PROCESS:
+  rcall _read_AT_byte                      ; read the byte from the host(PC)
+  Tst r25
+  Breq _AT_MOUSE_PROCESS1                    ; if it is ok
+  ret                                      ; error
+_AT_MOUSE_PROCESS1:
+;* sts {key},r24
+;  push r24
+;  push r25
+;*BASIC:   Print Hex(key)
+;  pop r25
+;  pop r24
+  Cpi r24,$F2                              ; is it send mouse ID?
+  brne _AT_MOUSE_PROCESS2                    ; no
+  ldi r24,$FA                              ; yes
+  rcall  _write_AT_byte                    ;send ack
+  Clr r24                                 ; for PS 2 mouse
+  rjmp   _write_AT_byte
+
+_AT_MOUSE_PROCESS2:
+  Cpi r24,$E9                              ; status reques
+  Brne _AT_MOUSE_PROCESS3                    ; no
+  ldi r24,$FA
+  rcall  _write_AT_byte                    ; send statut request data back
+  ldi r24,$00
+  rcall  _write_AT_byte
+  ldi r24,2
+  rcall  _write_AT_byte
+  ldi r24,$64
+  rjmp  _write_AT_byte
+
+_AT_MOUSE_PROCESS3:
+  Cpi r24,$FF                              ; is it mouse reset?
+  Brne _AT_MOUSE_PROCESS4                    ; no
+
+  Ldi r24,$FA                             ; send acknowledge
+  rcall  _write_AT_byte
+  rjmp _AT_MOUSE_INIT                       ; send keyboard ok code
+
+_AT_MOUSE_PROCESS4:
+  Ldi r24,$FA                             ; if we get here we just need to acknowledge
+  Rjmp  _write_AT_byte
+
+_at_emu_isr:
+   PUSH R0
+   PUSH R1
+   PUSH R16
+   PUSH R24
+   PUSH R25
+*  IN R24,SREG
+   PUSH R24
+   RCALL _AT_MOUSE_PROCESS
+   POP R24
+*  OUT SREG,R24
+   POP R25
+   POP R24
+   POP R16
+   POP R1
+   POP R0
+Reti
+[END]
+
+[_SEND_SCAN]
+$EXTERNAL _LPMBYTE, _AT_MOUSE
+; Z points to data, first byte contains number of bytes to send
+_send_Scan:
+  Push r17
+  call _LPMbyte                            ; get byte in r0
+  Mov r17,r0                               ; num of bytes
+_send_Scan1:
+  call _LPMbyte                            ; get byte in r0
+  Mov r24,r0
+  rcall  _write_AT_byte                    ; write byte
+  Tst r25
+  Brne _send_Scan2
+  Dec r17                                  ; byte counter
+  Brne _send_Scan1                         ; for all bytes
+_send_Scan2:
+  Pop r17
+Ret
+[END]
+
+;send X and Y movement data with button state
+[_PS2MXY]
+$EXTERNAL _AT_MOUSE
+_PS2MXY:
+   rcall  _write_AT_byte                    ; write byte
+   Ld r24,y+                                ; y movement
+   rcall  _write_AT_byte                    ; write byte
+   Ld r24,y+                                ; X movement byte
+   rjmp  _write_AT_byte                    ; write byte
+[END]
+

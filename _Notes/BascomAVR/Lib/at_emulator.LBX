@@ -1,0 +1,188 @@
+Comment = Compiled LIB file, no comment included
+
+copyright = MCS Electronics
+www       = http://www.mcselec.com
+email     = avr@mcselec.com
+comment   = AVR compiler library
+libversion   = 1.00
+date         = 14 sep 2002
+statement    = No SOURCE code from the library may be distributed in any form
+statement    = Of course this does not applie for the COMPILED code when you have a BASCOM-AVR license
+history      = No known bugs.
+[_AT_KBD]
+$EXTERNAL _LPMBYTE
+_AT_KBD_INIT:
+.OBJ EA8A
+  rjmp _write_ATKBD_byte
+_write_ATKBD_byte:
+.OBJ 94E8
+* In r1,sreg
+.OBJ 94F8
+_write_atKBD_byte0:
+* sbis _atkbd_in_CL, _atkbd_clock
+  rjmp _write_atKBD_byte0
+  @genus(50)
+* sbis _atkbd_in_CL, _atkbd_clock
+  rjmp _write_atKBD_byte0
+* sbis _atkbd_in_DT,_atkbd_data
+  rjmp _at_KBD_exit
+  @genus(20)
+.OBJ E098
+.OBJ 9488
+  rcall _w_ATKBD_bit
+  brts _AT_KBD_EXIT
+.OBJ 2400
+_write_atKBD_byte1:
+.OBJ 9587
+  rcall _w_ATKBD_bit
+  brts _AT_KBD_EXIT
+.OBJ 959A
+  brne  _write_atKBD_byte1
+.OBJ 9488
+.OBJ FE00
+.OBJ 9408
+  rcall _w_ATKBD_bit
+  brts _AT_KBD_EXIT
+.OBJ 9408
+  rcall _w_ATKBD_bit
+  BrTs _at_KBD_exit
+  @genus(30)
+_at_KBD_exit:
+.OBJ 2788
+.OBJ F980
+* out sreg,r1
+.OBJ 9508
+_w_atKBD_bit:
+  brcs  _w_ATKBD_bit1
+* sbi _atkbd_ddr_DT,_atkbd_data
+  rjmp _w_ATKBD_bit2
+_w_atkbd_bit1:
+* cbi _atkbd_ddr_DT,_atkbd_data
+.OBJ 9403
+_w_atkbd_bit2:
+  @genus(20)
+* sbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(40)
+* cbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(20)
+* cbi _atkbd_ddr_DT,_atkbd_data
+* sbis _atkbd_in_CL, _atkbd_clock
+.OBJ 9468
+.OBJ 0
+.OBJ 9508
+_read_atKBD_byte:
+* in r1,sreg
+.OBJ 94F8
+.OBJ 9468
+.OBJ 2400
+.OBJ 2788
+_read_atKBD_byte1:
+* sbis _atkbd_in_CL,_atkbd_clock
+  rjmp _read_ATKBD_byte1
+* sbic _atkbd_in_DT,_atkbd_data
+  rjmp _read_ATKBD_byte_exit
+.OBJ E098
+_read_atKBD_byte2:
+  @genus(20)
+* sbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(45)
+* cbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(20)
+.OBJ 9488
+* sbis _atkbd_in_DT, _atkbd_data
+  rjmp _read_atKBD_byte5
+.OBJ 9403
+.OBJ 9408
+_read_atKBD_byte5:
+.OBJ 9587
+.OBJ 959A
+  brne _read_ATKBD_byte2
+.OBJ E092
+_read_atKBD_byte3:
+  @genus(20)
+* sbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(40)
+* cbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(20)
+.OBJ 9488
+* sbic _atkbd_in_DT, _atkbd_data
+.OBJ 9408
+.OBJ 9507
+.OBJ 959A
+  brne _read_ATKBD_byte3
+  @genus(15)
+* sbi _atkbd_ddr_DT,_atkbd_data
+  @genus(5)
+* sbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(40)
+* cbi _atkbd_ddr_CL,_atkbd_clock
+  @genus(5)
+* cbi _atkbd_ddr_DT,_atkbd_data
+  @genus(45)
+.OBJ FD06
+.OBJ 9403
+.OBJ FC00
+.OBJ 94E8
+.OBJ 2799
+.OBJ F990
+_read_atKBD_byte_exit:
+* out sreg,r1
+.OBJ 9508
+_AT_KBD_PROCESS:
+  rcall _read_ATKBD_byte
+.OBJ 2399
+  Breq _AT_KBD_PROCESS1
+.OBJ 9508
+_AT_KBD_PROCESS1:
+.OBJ 3F82
+  brne _AT_KBD_PROCESS2
+.OBJ EA8B
+  rcall  _write_ATKBD_byte
+.OBJ E883
+  rjmp  _write_ATKBD_byte
+_AT_KBD_PROCESS2:
+.OBJ 3E8E
+  Brne _AT_KBD_PROCESS3
+  rjmp  _write_ATKBD_byte
+_AT_KBD_PROCESS3:
+.OBJ 3F8F
+  Brne _AT_KBD_PROCESS4
+.OBJ EF8A
+  rcall  _write_ATKBD_byte
+  Rjmp _AT_KBD_INIT
+_AT_KBD_PROCESS4:
+.OBJ EF8A
+  Rjmp _write_ATKBD_byte
+_at_KBD_isr:
+.OBJ 920F
+.OBJ 921F
+.OBJ 930F
+.OBJ 938F
+.OBJ 939F
+*  IN R24,SREG
+.OBJ 938F
+   RCALL _AT_KBD_PROCESS
+.OBJ 918F
+*  OUT SREG,R24
+.OBJ 919F
+.OBJ 918F
+.OBJ 910F
+.OBJ 901F
+.OBJ 900F
+.OBJ 9518
+_send_Scan_KBD:
+.OBJ 931F
+  call _LPMbyte
+.OBJ 2D10
+_send_ScanKBD1:
+  call _LPMbyte
+.OBJ 2D80
+  rcall  _write_ATKBD_byte
+.OBJ 2399
+  Brne _send_ScanKBD2
+.OBJ 951A
+  Brne _send_ScanKBD1
+_send_ScanKBD2:
+.OBJ 911F
+.OBJ 9508
+[END]

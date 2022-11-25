@@ -26,6 +26,7 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x4_Using%20ADC/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
+![](Display_GLCD_T6963/Simulate/Album.png)
 ![](Data%20Looking_Syntax/Simulate/Album.png)
 ![](UART_Config/Simulate/Album.png)
 ![](UART_Software%20UART/Simulate/Album.png)
@@ -49,7 +50,8 @@ I'm uploading my old files on the repository.
 |[Display_7Segment_1Digit Using 7447](Display_7Segment_1Digit%20Using%207447)|Y|Y|-|
 |[Display_7Segment_1Digit Using 74164](Display_7Segment_1Digit%20Using%2074164)|Y|Y|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|Y|-|
-|[Display_GLCD_KS0108](Display_GLCD_KS0108)|Y|-|-|
+|[Display_GLCD_KS0108](Display_GLCD_KS0108)|-|Y|-|
+|[Display_GLCD_T6963](Display_GLCD_T6963)|Y|-|-|
 |[Display_LCD](Display_LCD)|Y|Y|Y|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[External Files](External%20Files)|Y|Y|-|

@@ -1,0 +1,143 @@
+//#ifndef _DELAY_INCLUDED_
+#include <delay.h>
+//WWW.NE-IR.COM
+#pragma used+
+static unsigned char _base_y[4]={0x80,0xc0};
+unsigned char _lcd_x=0,_lcd_y=0,_lcd_maxx=0;
+#pragma used-
+
+#define e PORTB.2
+#define rs PORTB.0
+#define d4 PORTB.4
+#define d5 PORTB.5
+#define d6 PORTB.6
+#define d7 PORTB.7
+
+void lcd_write(unsigned char data)
+{ 
+ char dd;
+      dd=data;
+   dd&=0xf0;
+    
+   if((dd&0x10)==0) d4=0; else d4=1;
+   if((dd&0x20)==0) d5=0; else d5=1;
+   if((dd&0x40)==0) d6=0; else d6=1;
+   if((dd&0x80)==0) d7=0; else d7=1;
+   e=1;
+   delay_ms(1);
+   e=0;
+   delay_ms(1); 
+ dd=data;
+   dd&=0x0f;
+    
+   if((dd&0x01)==0) d4=0; else d4=1;
+   if((dd&0x02)==0) d5=0; else d5=1;
+   if((dd&0x04)==0) d6=0; else d6=1;
+   if((dd&0x08)==0) d7=0; else d7=1;
+   e=1;
+   delay_ms(1);
+   e=0;
+   delay_ms(1);
+   //---------------------------//  
+   
+
+}
+ 
+ /* set the LCD display position x=0..39 y=0..3 */
+void lcd_gotoxy(unsigned char x, unsigned char y)
+{
+rs=0;
+lcd_write(_base_y[y]+x);
+_lcd_x=x;
+_lcd_y=y;
+}
+
+
+
+void lcd_putchar(char c)
+{
+ rs=1;
+_lcd_x++; 
+
+if(_lcd_x>_lcd_maxx)
+  {
+   _lcd_x=0;
+   _lcd_y=0;
+   lcd_gotoxy(0,0);
+  }  
+  
+   lcd_write(c);
+}
+
+
+// clear the LCD
+void lcd_clear(void)
+{ 
+rs=0;
+lcd_write(2);        // cursor home
+lcd_write(0xc); // cursor off
+lcd_write(1);        // clear
+_lcd_x=_lcd_y=0;
+}
+
+
+void lcd_puts(char *str)
+{
+char k; 
+rs=1;
+while (k=*str++) lcd_putchar(k);
+} 
+                                  
+
+
+
+void lcd_putsf(char flash *str)
+{
+char k;
+rs=1;
+while (k=*str++) lcd_putchar(k);
+}  
+
+// initialize the LCD controller
+void lcd_init(unsigned char lcd_columns)
+{  
+
+//DDRC.3=1;
+DDRB.0=1;
+DDRB.2=1;
+DDRB.4=1;
+DDRB.5=1;
+DDRB.6=1;
+DDRB.7=1;
+
+    e=0;
+    rs=1;
+    //PORTD.7=0; 
+    
+    
+        _lcd_maxx=lcd_columns;
+        _base_y[2]=lcd_columns+0x80;
+        _base_y[3]=lcd_columns+0xc0; 
+        
+        
+        delay_ms(10);
+        lcd_write(0x30);
+        delay_ms(10);
+        lcd_write(0x30);
+        delay_ms(10);
+        lcd_write(0x30);
+        delay_ms(10);
+        lcd_write(0x20);
+        delay_ms(10);
+        lcd_write(0x28);
+        delay_ms(10);
+        lcd_write(4);
+        delay_ms(10);
+        lcd_write(0x85); 
+        delay_ms(10);  
+        lcd_write(6);     
+        lcd_clear();
+        delay_ms(10);   
+
+}
+
