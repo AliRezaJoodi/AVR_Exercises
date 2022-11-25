@@ -6,7 +6,7 @@ I'm uploading my old files on the repository.
 ![](ADC_08Bit_AVCC%20VREF/Simulate/Album.png)
 ![](ADC_10Bit_AVCC%20VREF/Simulate/Album.png)
 ![](ADC_10Bit_Internal%20VREF/Simulate/Album.png)
-![](Display_LCD_Syntax/Simulate/Album.png)
+![](Display_LCD/Simulate/Album.png)
 ![](String_Syntax/Simulate/Album.png)
 ![](EEPROM/Simulate/Album.png)
 ![](IO_Input/Simulate/Album.png)
@@ -50,7 +50,7 @@ I'm uploading my old files on the repository.
 |[Display_7Segment_1Digit Using 74164](Display_7Segment_1Digit%20Using%2074164)|Y|Y|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|Y|-|
 |[Display_GLCD_KS0108](Display_GLCD_KS0108)|Y|-|-|
-|[Display_LCD_Syntax](Display_LCD_Syntax)|Y|Y|Y|
+|[Display_LCD](Display_LCD)|Y|Y|Y|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[External Files](External%20Files)|Y|Y|-|
 |[IO_External_PCF8574_I2C](IO_External_PCF8574_I2C)|Y|-|-|

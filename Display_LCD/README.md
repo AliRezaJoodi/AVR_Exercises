@@ -1,4 +1,4 @@
-## LCD Syntax 
+## 16×2 Character LCD
 
 MCU:            ATmega32  
 Frequency:     	1.000000 MHz   
