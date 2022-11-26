@@ -1,0 +1,18 @@
+//GitHub Account:     GitHub.com/AliRezaJoodi
+
+#include <mega32.h>
+#include <delay.h>   
+#include "Attachment\Hardware_v1.0.h"
+#include "Attachment\LED.h"
+
+void main(void){  
+      
+    On_Leds(); delay_ms(500); Off_Leds(); delay_ms(500);
+    On_Led(0); delay_ms(500); Off_Led(0); delay_ms(500);
+    On_Led(ALARM1); delay_ms(500); Off_Led(ALARM1); delay_ms(500); 
+    Flasher_Led(ALARM2,500);
+    
+    while(1){ 
+    }
+}
+
