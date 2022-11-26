@@ -1,5 +1,5 @@
 ## LED Driver Library  
-
+It's a practice for modular programing.  
 MCU:       	ATmega32  
 Frequency: 	1.000000 MHz  
 

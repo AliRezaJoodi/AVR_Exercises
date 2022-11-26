@@ -3,23 +3,27 @@
 $regfile = "m32def.dat"
 $crystal = 8000000
 
-Config Portd.0 = Output : Portd.0 = 0 : Data_0 Alias Portd.0
-Config Portd.1 = Output : Portd.1 = 0 : Data_1 Alias Portd.1
-Config Portd.2 = Output : Portd.2 = 0 : Data_2 Alias Portd.2
-Config Portd.3 = Output : Portd.3 = 0 : Data_3 Alias Portd.3
-Config Portd.4 = Output : Portd.4 = 0 : Data_4 Alias Portd.4
-Config Portd.5 = Output : Portd.5 = 0 : Data_5 Alias Portd.5
-Config Portd.6 = Output : Portd.6 = 0 : Data_6 Alias Portd.6
-Config Portd.7 = Output : Portd.7 = 0 : Data_7 Alias Portd.7
+Activate_data Alias 1
+Deactivate_data Alias 0
+Data_0 Alias Portd.0 : Config Data_0 = Output : Data_0 = Deactivate_data
+Data_1 Alias Portd.1 : Config Data_1 = Output : Data_1 = Deactivate_data
+Data_2 Alias Portd.2 : Config Data_2 = Output : Data_2 = Deactivate_data
+Data_3 Alias Portd.3 : Config Data_3 = Output : Data_3 = Deactivate_data
+Data_4 Alias Portd.4 : Config Data_4 = Output : Data_4 = Deactivate_data
+Data_5 Alias Portd.5 : Config Data_5 = Output : Data_5 = Deactivate_data
+Data_6 Alias Portd.6 : Config Data_6 = Output : Data_6 = Deactivate_data
+Data_7 Alias Portd.7 : Config Data_7 = Output : Data_7 = Deactivate_data
 
-Config Porta.0 = Output : Porta.0 = 0 : Column_a Alias Porta.0
-Config Porta.1 = Output : Porta.1 = 0 : Column_b Alias Porta.1
-Config Porta.2 = Output : Porta.2 = 0 : Column_c Alias Porta.2
-Config Porta.3 = Output : Porta.3 = 0 : Column_d Alias Porta.3
-Config Porta.4 = Output : Porta.4 = 0 : Column_e Alias Porta.4
-Config Porta.5 = Output : Porta.5 = 0 : Column_f Alias Porta.5
-Config Porta.6 = Output : Porta.6 = 0 : Column_g Alias Porta.6
-Config Porta.7 = Output : Porta.7 = 0 : Column_h Alias Porta.7
+Activate_column Alias 1
+Deactivate_column Alias 0
+Column_a Alias Porta.0 : Config Column_a = Output : Column_a = Deactivate_column
+Column_b Alias Porta.1 : Config Column_b = Output : Column_b = Deactivate_column
+Column_c Alias Porta.2 : Config Column_c = Output : Column_c = Deactivate_column
+Column_d Alias Porta.3 : Config Column_d = Output : Column_d = Deactivate_column
+Column_e Alias Porta.4 : Config Column_e = Output : Column_e = Deactivate_column
+Column_f Alias Porta.5 : Config Column_f = Output : Column_f = Deactivate_column
+Column_g Alias Porta.6 : Config Column_g = Output : Column_g = Deactivate_column
+Column_h Alias Porta.7 : Config Column_h = Output : Column_h = Deactivate_column
 
 Dim S As String * 1 : S = "X"
 Dim Scan As Word : Scan = &B00000001
@@ -62,7 +66,14 @@ End
 
 '**************************************
 Off_segment:
-   Reset Column_h : Reset Column_g : Reset Column_f : Reset Column_e : Reset Column_d : Reset Column_c : Reset Column_b : Reset Column_a
+   Column_a = Deactivate_column
+   Column_b = Deactivate_column
+   Column_c = Deactivate_column
+   Column_d = Deactivate_column
+   Column_e = Deactivate_column
+   Column_f = Deactivate_column
+   Column_g = Deactivate_column
+   Column_h = Deactivate_column
 Return
 
 '**************************************
