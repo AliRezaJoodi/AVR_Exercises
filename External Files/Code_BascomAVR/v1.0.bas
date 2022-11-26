@@ -16,10 +16,10 @@ End
 
 '**********************************
 Led_on:
-   Led1 = Active
+   Led1 = Activate
 Return
 
 '**********************************
 Led_off:
-   Led1 = Deactive
+   Led1 = Deactivate
 Return
