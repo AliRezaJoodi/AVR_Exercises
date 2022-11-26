@@ -42,4 +42,8 @@ AVR_Exercises\Include External Files\Code_CodeVisionAVR\Attachment\Hardware_v1.0
 AVR_Exercises\Include External Files\Code_CodeVisionAVR\Attachment\Hardware_v1.0  
 AVR_Exercises\Include External Files\Code_BascomAVR\Attachment\Hardware_v1.0
 
+### LED Driver
+AVR_Exercises\Display_LED\Code_CodeVisionAVR
+-  Library for LED driver
+
 

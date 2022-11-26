@@ -53,6 +53,7 @@ I'm uploading my old files on the repository.
 |[Display_GLCD_KS0108](Display_GLCD_KS0108)|-|Y|-|
 |[Display_GLCD_T6963](Display_GLCD_T6963)|Y|-|-|
 |[Display_LCD](Display_LCD)|Y|Y|Y|
+|[Display_LED](Display_LED)|-|Y|-|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[External Files](External%20Files)|Y|Y|-|
 |[IO_External_PCF8574_I2C](IO_External_PCF8574_I2C)|Y|-|-|
