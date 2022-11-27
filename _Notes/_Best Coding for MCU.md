@@ -1,3 +1,6 @@
+### 8×8 Dot Matrix Driver
+AVR_Exercises\Display_Matrix_8x8\Code_BascomAVR
+
 ### Multiplexed 7-segment display
 AVR_Exercises\Display_7Segment_8Digit\Code_BascomAVR\v2.0.bas  
 AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR
