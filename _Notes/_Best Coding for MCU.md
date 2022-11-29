@@ -1,3 +1,6 @@
+### Config_ADC.h
+AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
+
 ### Define_Char.h (Display ^c)
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
 
