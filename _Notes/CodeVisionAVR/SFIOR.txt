@@ -1,0 +1,2 @@
+After config ADC for config Input:
+CLRBIT(SFIOR,PUD);
