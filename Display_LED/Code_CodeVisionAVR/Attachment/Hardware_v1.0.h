@@ -13,6 +13,11 @@
 #define LED2_PORT PORTA.2
 #define LED2_PIN PINA.2 
 #define ALARM2 LED2_INDEX
+
+#define LED3_DDR DDRA.3
+#define LED3_PORT PORTA.3
+#define LED3_PIN PINA.3 
+#define ALARM3 LED3_INDEX
         
 #define ACTIVATE_LED 1
 

@@ -10,7 +10,8 @@ void main(void){
     On_Leds(); delay_ms(500); Off_Leds(); delay_ms(500);
     On_Led(0); delay_ms(500); Off_Led(0); delay_ms(500);
     On_Led(ALARM1); delay_ms(500); Off_Led(ALARM1); delay_ms(500); 
-    Flasher_Led(ALARM2,500);
+    Flasher_Led(ALARM2,500); delay_ms(500); 
+    Set_Led(ALARM3,ACTIVATE_LED); delay_ms(500); Set_Led(ALARM3,DEACTIVATE_LED); delay_ms(500); 
     
     while(1){ 
     }

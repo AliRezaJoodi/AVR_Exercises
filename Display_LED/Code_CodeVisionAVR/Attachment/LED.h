@@ -119,6 +119,13 @@ void Off_Led(unsigned char index){
 }
 
 //**********************************   
+void Set_Led(unsigned char index, char status){
+    Config_Leds();
+	if (status==0){Off_Led(index);} 
+        else {On_Led(index);}      
+}
+
+//**********************************   
 void Flasher_Led(unsigned char index, unsigned int t){
     Config_Leds();
     switch (index){
@@ -143,6 +150,8 @@ void On_Leds(void){
 void Off_Leds(void){
     unsigned char i=0;
     for(i=0;i<=7;++i){Off_Led(i);}
-}          
+}
+
+          
 
 
