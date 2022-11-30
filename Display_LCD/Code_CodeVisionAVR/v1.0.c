@@ -11,13 +11,13 @@
 #include <lcd.h>
 
 void Configuration_LCD(void);
-void Display_loading(void);
+void Display_Loading(void);
 void Display_Advertising(void);
 
 void main(void){
 
     Configuration_LCD();
-    Display_loading(); 
+    Display_Loading(); 
     Display_Advertising();
     
     while(1){
@@ -30,7 +30,7 @@ void Configuration_LCD(void){
 }
 
 //********************************************************
-void Display_loading(void){
+void Display_Loading(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("Testing the LCD");
     lcd_gotoxy(0,1); lcd_putsf("Loading ...");

@@ -5,8 +5,9 @@
 
 #define SETBIT(ADDRESS,BIT)  (ADDRESS|=1<<BIT)
 #define CLRBIT(ADDRESS,BIT)  (ADDRESS &=~(1<<BIT))
-#define CHKBIT(ADDRESS,BIT)  ((ADDRESS &(1<<BIT))>>BIT)
+#define TOGGLEBIT(ADDRESS,BIT) (ADDRESS^=(1<<BIT))
 #define EQUBIT(ADDRESS,BIT,value) {if (value) SETBIT(ADDRESS,BIT); else CLRBIT(ADDRESS,BIT);}
+#define CHKBIT(ADDRESS,BIT)  ((ADDRESS &(1<<BIT))>>BIT)
 
 char value;
 
