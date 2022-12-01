@@ -1,3 +1,6 @@
+### Keypad_4x4.h
+AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.0.c
+
 ### ControlSystem_OnOff.h
 AVR_Projects_Beginning\Control Systems_OnOff\Code_CodeVisionAVR
 
@@ -28,9 +31,6 @@ AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR
 
 ### Create Menu
 AVR_Projects_Beginning\Clock and Date with Internal Timer\Code_BascomAVR\v1.0.bas
-
-### Keypad Reading
-AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.0.c
 
 ### ADC Reading
 AVR_Projects_Beginning\Thermometer_LM35\Code_BascomAVR\v3.1.bas
