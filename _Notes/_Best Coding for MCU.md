@@ -1,26 +1,39 @@
-### Keypad_4x4.h
+### Keypad
 AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.0.c
+- Keypad_4x4.h
 
-### ControlSystem_OnOff.h
+### ON/OFF Control System
 AVR_Projects_Beginning\Control Systems_OnOff\Code_CodeVisionAVR
+- ControlSystem_OnOff.h
 
-### LM35.h
+### LM35
 AVR_Projects_Beginning\Thermometer Using LM35\Code_CodeVisionAVR 
+- LM35.h
 
 ### Config_ADC.h
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
+- Config_ADC.h
 
-### Define_Char.h (Display ^c)
+### ADC Reading
+AVR_Projects_Beginning\Thermometer_LM35\Code_BascomAVR\v3.1.bas
+- Included sampling and averaging
+
+### Display ^c
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
+- Define_Char.h
+AVR_Projects_Beginning\Thermometer Using DS18B20\Code_BascomAVR\v1.0.bas
 
-### Table_Thermocouple_K.h
+### Type K Thermocouple
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
+- Table_Thermocouple_K.h
 
-### LED.h
+### LED
 AVR_Exercises\Display_LED\Code_CodeVisionAVR
+- LED.h
 
-### shtxx.h
+### shtxx
 AVR_Projects_Beginning\Hygrometer and Thermometer Using SHT10\Code_CodeVisionAVR
+- shtxx.h
 
 ### 8×8 Dot Matrix Driver
 AVR_Exercises\Display_Matrix_8x8\Code_BascomAVR
@@ -31,13 +44,6 @@ AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR
 
 ### Create Menu
 AVR_Projects_Beginning\Clock and Date with Internal Timer\Code_BascomAVR\v1.0.bas
-
-### ADC Reading
-AVR_Projects_Beginning\Thermometer_LM35\Code_BascomAVR\v3.1.bas
-- Included sampling and averaging
-
-### Display ^c
-AVR_Projects_Beginning\Thermometer Using DS18B20\Code_BascomAVR\v1.0.bas
 
 ### Get Button
 AVR_Exercises\Button\Code_BascomAVR\v1.0.bas
