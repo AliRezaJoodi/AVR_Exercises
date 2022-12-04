@@ -4,17 +4,17 @@ $regfile = "M32def.dat"
 $crystal = 1000000
 
 Active_segment Alias 1
-Deactive_segment_segment Alias 0
-S1 Alias Portb.0 : Config S1 = Output : S1 = DeActive_Segment_Segment
-S2 Alias Portb.1 : Config S2 = Output : S2 = DeActive_Segment_Segment
-S3 Alias Portb.2 : Config S3 = Output : S3 = DeActive_Segment_Segment
-S4 Alias Portb.3 : Config S4 = Output : S4 = DeActive_Segment_Segment
-S5 Alias Portb.4 : Config S5 = Output : S5 = DeActive_Segment_Segment
-S6 Alias Portb.5 : Config S6 = Output : S6 = DeActive_Segment_Segment
-S7 Alias Portb.6 : Config S7 = Output : S7 = DeActive_Segment_Segment
-S8 Alias Portb.7 : Config S8 = Output : S8 = Deactive_segment_segment
+Deactive_segment Alias 0
+S1 Alias Portb.0 : Config S1 = Output : S1 = Deactive_segment
+S2 Alias Portb.1 : Config S2 = Output : S2 = Deactive_segment
+S3 Alias Portb.2 : Config S3 = Output : S3 = Deactive_segment
+S4 Alias Portb.3 : Config S4 = Output : S4 = Deactive_segment
+S5 Alias Portb.4 : Config S5 = Output : S5 = Deactive_segment
+S6 Alias Portb.5 : Config S6 = Output : S6 = Deactive_segment
+S7 Alias Portb.6 : Config S7 = Output : S7 = Deactive_segment
+S8 Alias Portb.7 : Config S8 = Output : S8 = Deactive_segment
 
-Active_Digit Alias 0
+Active_digit Alias 0
 Deactive_digit Alias 1
 S_a Alias Portd.0 : Config S_a = Output : S_a = Deactive_digit
 S_b Alias Portd.1 : Config S_b = Output : S_b = Deactive_digit
@@ -43,7 +43,14 @@ Sub Show(byval Value As Long)
    Local Digit As Long
    Local Buffer As Byte
    Dim I As Byte
-   S8 = DeActive_Segment_Segment : S7 = DeActive_Segment_Segment : S6 = DeActive_Segment_Segment : S5 = DeActive_Segment_Segment : S4 = DeActive_Segment_Segment : S3 = DeActive_Segment_Segment : S2 = DeActive_Segment_Segment : S1 = DeActive_Segment_Segment
+   S1 = Deactive_segment
+   S2 = Deactive_segment
+   S3 = Deactive_segment
+   S4 = Deactive_segment
+   S5 = Deactive_segment
+   S6 = Deactive_segment
+   S7 = Deactive_segment
+   S8 = Deactive_segment
 
    Select Case I
       Case 0:
@@ -51,56 +58,56 @@ Sub Show(byval Value As Long)
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S1 = Active_Segment
+         S1 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 1:
          Value_temporary = Value / 10
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S2 = Active_Segment
+         S2 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 2:
          Value_temporary = Value / 100
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S3 = Active_Segment
+         S3 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 3:
          Value_temporary = Value / 1000
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S4 = Active_Segment
+         S4 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 4:
          Value_temporary = Value / 10000
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S5 = Active_Segment
+         S5 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 5:
          Value_temporary = Value / 100000
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S6 = Active_Segment
+         S6 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 6:
          Value_temporary = Value / 1000000
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S7 = Active_Segment
+         S7 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
       Case 7:
          Value_temporary = Value / 10000000
          Digit = Value_temporary Mod 10
          Buffer = Lookup(digit , Data_7segment) : Buffer = Not Buffer
          S_a = Buffer.0 : S_b = Buffer.1 : S_c = Buffer.2 : S_d = Buffer.3 : S_e = Buffer.4 : S_f = Buffer.5 : S_g = Buffer.6 : S_dp = Buffer.7
-         S8 = Active_Segment
+         S8 = Active_segment
          Incr I : If Value_temporary < 10 Then I = 0
          I = 0
    End Select
