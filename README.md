@@ -34,7 +34,7 @@ I'm uploading my old files on the repository.
 ![](UART_Software%20UART/Simulate/Album.png)
 ![](Servo%20Motor/Simulate/Album.jpg)
 
-![](VB6_Send%20Byte%20from%20MCU%20To%20VB6/Code_VB6/Album.jpg) 
+![](VB6_Receive%20Bytes/Code_VB6/Album.jpg) 
 
 ### List of the Repository
 
@@ -89,7 +89,7 @@ I'm uploading my old files on the repository.
 |[UART_Config](UART_Config)|Y|Y|-|
 |[UART_Software UART](UART_Software%20UART)|Y|Y|-|
 |[UART_with Interrupt](UART_with%20Interrupt)|Y|Y|-|
-|[VB6_Send Byte from MCU To VB6](VB6_Send%20Byte%20from%20MCU%20To%20VB6)|Y|-|-|
+|[VB6_Receive Bytes](VB6_Receive%20Bytes)|Y|-|-|
 
 
 
