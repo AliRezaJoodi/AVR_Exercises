@@ -25,7 +25,7 @@ I'm uploading my old files on the repository.
 ![](PC%20Keyboard/Hardware/Album.png)
 ![](Keypad_4x4_Using%20ADC/Simulate/Album.png)
 ![](Converter_DAC/Simulate/Album.png)
-![](VB6_Send%20Byte%20from%20MCU%20To%20VB6/Code_VB6/Album.png) 
+![](VB6_Send%20Byte%20from%20MCU%20To%20VB6/Code_VB6/Album.jpg) 
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -33,7 +33,7 @@ I'm uploading my old files on the repository.
 ![](Converter_Data%20Table/Simulate/Album.png)
 ![](UART_Config/Simulate/Album.png)
 ![](UART_Software%20UART/Simulate/Album.png)
-![](Servo%20Motor/Simulate/Album.png)
+![](Servo%20Motor/Simulate/Album.jpg)
 
 ### List of the Repository
 
