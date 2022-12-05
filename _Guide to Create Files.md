@@ -6,6 +6,8 @@ We need to create few folders and files on the main page. Included:
   - `ReadMe.md`
 - `Code_CodeVisionAVR`
   - `ReadMe.md`
+- `Code_VB6`
+  - `ReadMe.md`
 - `Simulate`
   - `ReadMe.md`
 - `Pictures`
@@ -26,12 +28,16 @@ Display:    16x2 Character LCD
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Code_CodeVisionAVR` (Code with C Language)
+- `Code_VB6` (Softwar with Visual Basic)
 - `Hardware` (Hardware Layers)
 - `Pictures` (Photos Samples Made)
 - `Simulate` (Simulator File)
 
 ### Pictures: v1.0
 ![](Pictures/v1.0.jpg)
+
+### Software: v1.0
+![](Code_VB6/v1.0.png)
 
 ### Simulate: v1.0
 ![](Simulate/v1.0.png)
