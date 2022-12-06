@@ -1,4 +1,4 @@
-## VB6 Coding for Receive Byte Type Numbers from MCU
+## VB6 Coding for Receive Byte Data Type from MCU
 ![](Frame%20Format.png)
 
 MCU:        ATmega32  

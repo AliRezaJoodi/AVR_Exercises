@@ -18,6 +18,7 @@ We need to create few folders and files on the main page. Included:
 Its content is:	
 ```
 ## Title
+I tested it and worked great.
 
 MCU:        ATmega32  
 Frequency:  1.000000 MHz  
