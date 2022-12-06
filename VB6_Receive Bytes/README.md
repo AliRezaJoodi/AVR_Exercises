@@ -10,6 +10,7 @@ Note: RS232 to UART and USB to UART converter is usable for connection the proje
 ### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
+- `Code_CodeVisionAVR` (Code with C Language)
 - `Code_VB6` (Software with Visual Basic)
 - `Simulate` (Simulator File)
 

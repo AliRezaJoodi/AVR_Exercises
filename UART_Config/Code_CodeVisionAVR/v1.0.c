@@ -21,6 +21,7 @@ void main(void){
     }
 }
 
+//********************************************************
 void test2(void){
     char txt[2];
     putsf("\r*** Function ***");
@@ -29,6 +30,7 @@ void test2(void){
     puts(txt);
 }
 
+//********************************************************
 void test1(void){
     putsf("\r*** Function ***");
     putsf("\rPress any key:"); 
@@ -38,6 +40,7 @@ void test1(void){
     putsf("\r");
 }
 
+//********************************************************
 void Config_USART(void){
     // USART initialization
     // Communication Parameters: 8 Data, 1 Stop, No Parity

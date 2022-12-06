@@ -89,7 +89,7 @@ I'm uploading my old files on the repository.
 |[UART_Config](UART_Config)|Y|Y|-|
 |[UART_Software UART](UART_Software%20UART)|Y|Y|-|
 |[UART_with Interrupt](UART_with%20Interrupt)|Y|Y|-|
-|[VB6_Receive Bytes](VB6_Receive%20Bytes)|Y|-|-|
+|[VB6_Receive Bytes](VB6_Receive%20Bytes)|Y|Y|-|
 
 
 

@@ -1,5 +1,6 @@
 ### Description
 
-V1.0:
+v1.0:
 - Last opened with Proteus 8 Professional v8.13 SP0
 - Usable for `Code_BascomAVR`
+- `Code_CodeVisionAVR` (Code with C Language)
