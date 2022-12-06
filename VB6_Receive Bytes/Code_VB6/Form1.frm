@@ -4,15 +4,15 @@ Begin VB.Form Form1
    BackColor       =   &H00C0E0FF&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Monitoring Tools"
-   ClientHeight    =   1770
+   ClientHeight    =   3000
    ClientLeft      =   5100
    ClientTop       =   3675
-   ClientWidth     =   8370
+   ClientWidth     =   3825
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1770
-   ScaleWidth      =   8370
+   ScaleHeight     =   3000
+   ScaleWidth      =   3825
    Begin VB.Frame Frame1 
       BackColor       =   &H00C0C0FF&
       Caption         =   "Monitoring"
@@ -25,14 +25,14 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1800
-      Left            =   4200
+      Height          =   1680
+      Left            =   0
       TabIndex        =   5
-      Top             =   0
-      Width           =   4200
-      Begin VB.TextBox Txt1 
-         Alignment       =   2  'Center
-         Appearance      =   0  'Flat
+      Top             =   1320
+      Width           =   3840
+      Begin VB.Label Label2 
+         BackStyle       =   0  'Transparent
+         Caption         =   "GitHub.com/AliRezaJoodi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -42,73 +42,54 @@ Begin VB.Form Form1
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   375
-         Left            =   3000
-         Locked          =   -1  'True
-         TabIndex        =   7
-         Top             =   240
-         Width           =   915
-      End
-      Begin VB.TextBox Txt2 
-         Alignment       =   2  'Center
-         Appearance      =   0  'Flat
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Left            =   3000
-         Locked          =   -1  'True
-         TabIndex        =   6
-         Top             =   750
-         Width           =   915
-      End
-      Begin VB.Label Label1 
-         BackColor       =   &H00C0C0FF&
-         Caption         =   "Relay Status"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   330
-         Index           =   2
+         ForeColor       =   &H8000000B&
+         Height          =   255
          Left            =   240
+         TabIndex        =   11
+         Top             =   1320
+         Width           =   2535
+      End
+      Begin VB.Label Label_Num2 
+         BackColor       =   &H00C0C0FF&
+         Caption         =   "255"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   13.5
+            Charset         =   178
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   300
+         Left            =   2800
          TabIndex        =   10
-         Top             =   1300
-         Width           =   1335
+         Top             =   550
+         Width           =   450
       End
-      Begin VB.Label Label1 
+      Begin VB.Label Label_Num1 
          BackColor       =   &H00C0C0FF&
-         Caption         =   "Number2 (Byte)"
+         Caption         =   "255"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   13.5
             Charset         =   178
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   330
-         Index           =   1
-         Left            =   240
+         ForeColor       =   &H00000000&
+         Height          =   300
+         Left            =   2800
          TabIndex        =   9
-         Top             =   750
-         Width           =   1455
+         Top             =   200
+         Width           =   450
       End
-      Begin VB.Label Label1 
+      Begin VB.Label Label5 
          BackColor       =   &H00C0C0FF&
-         Caption         =   "Number1 (Byte)"
+         Caption         =   "Relay Status:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -118,21 +99,56 @@ Begin VB.Form Form1
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   330
-         Index           =   0
+         Height          =   250
          Left            =   240
          TabIndex        =   8
-         Top             =   240
-         Width           =   1455
+         Top             =   950
+         Width           =   1500
+      End
+      Begin VB.Label Label3 
+         BackColor       =   &H00C0C0FF&
+         Caption         =   "Number1 (Byte):"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   178
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   250
+         Left            =   240
+         TabIndex        =   7
+         Top             =   250
+         Width           =   1500
+      End
+      Begin VB.Label Label4 
+         BackColor       =   &H00C0C0FF&
+         Caption         =   "Number2 (Byte):"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   178
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   250
+         Left            =   240
+         TabIndex        =   6
+         Top             =   600
+         Width           =   1500
       End
       Begin VB.Shape Relay 
          BackColor       =   &H00C0C0C0&
          BackStyle       =   1  'Opaque
          FillColor       =   &H00C0C0C0&
          Height          =   285
-         Left            =   3360
+         Left            =   2850
          Shape           =   3  'Circle
-         Top             =   1300
+         Top             =   950
          Width           =   330
       End
    End
@@ -148,26 +164,26 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1800
+      Height          =   1320
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   4200
+      Width           =   3840
       Begin VB.CommandButton Button2 
          Caption         =   "Disconnect"
          Height          =   375
          Left            =   2160
          TabIndex        =   4
-         Top             =   960
-         Width           =   1935
+         Top             =   840
+         Width           =   1500
       End
       Begin VB.CommandButton Button1 
          Caption         =   "Connect"
          Height          =   375
          Left            =   120
          TabIndex        =   3
-         Top             =   960
-         Width           =   1935
+         Top             =   840
+         Width           =   1500
       End
       Begin VB.ComboBox Combo1 
          BeginProperty Font 
@@ -180,15 +196,15 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   2640
+         Left            =   2400
          TabIndex        =   1
          Text            =   "1"
          Top             =   350
          Width           =   1215
       End
       Begin MSCommLib.MSComm MSComm1 
-         Left            =   2040
-         Top             =   0
+         Left            =   120
+         Top             =   240
          _ExtentX        =   1005
          _ExtentY        =   1005
          _Version        =   393216
@@ -198,25 +214,7 @@ Begin VB.Form Form1
          RThreshold      =   1
          SThreshold      =   1
       End
-      Begin VB.Label Label2 
-         BackStyle       =   0  'Transparent
-         Caption         =   "GitHub.com/AliRezaJoodi"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   120
-         TabIndex        =   11
-         Top             =   1440
-         Width           =   2535
-      End
-      Begin VB.Label Label7 
+      Begin VB.Label Label1 
          BackColor       =   &H00FFFFC0&
          Caption         =   "COM Port Number"
          BeginProperty Font 
@@ -228,7 +226,7 @@ Begin VB.Form Form1
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   375
+         Height          =   250
          Left            =   240
          TabIndex        =   2
          Top             =   350
@@ -259,8 +257,7 @@ Private Sub Form_Load()
     Combo1.Text = Combo1.List(0)
     
     Button1.Enabled = True: Button2.Enabled = False
-    Txt1.Text = "": Txt2.Text = ""
-    Relay.BackColor = RGB(160, 160, 160)
+    Call Setting_Default
 End Sub
 Private Sub Button1_Click()
     Dim CPN As Byte
@@ -272,8 +269,7 @@ Private Sub Button2_Click()
     MSComm1.PortOpen = False
     Combo1.Enabled = True
     Button1.Enabled = True: Button2.Enabled = False
-    Txt1.Text = "": Txt2.Text = ""
-    Relay.BackColor = RGB(160, 160, 160)
+    Call Setting_Default
 End Sub
 Private Sub MSComm1_OnComm()
     Select Case MSComm1.CommEvent
@@ -293,8 +289,8 @@ Private Sub MSComm1_OnComm()
                 If counter = 5 Then
                     cs = cs And 255
                     If data(5) = cs Then
-                        Txt1.Text = data(2)
-                        Txt2.Text = data(3)
+                        Label_Num1.Caption = data(2)
+                        Label_Num2.Caption = data(3)
                         If data(4) = 0 Then Relay.BackColor = RGB(160, 160, 160) Else Relay.BackColor = RGB(255, 0, 0) 'relay out
                     End If
                     counter = 0
@@ -302,6 +298,10 @@ Private Sub MSComm1_OnComm()
                 cs = cs + buf
             End If
     End Select
+End Sub
+Public Sub Setting_Default()
+    Label_Num1.Caption = "xxx": Label_Num2.Caption = "xxx"
+    Relay.BackColor = RGB(160, 160, 160)
 End Sub
 
 
