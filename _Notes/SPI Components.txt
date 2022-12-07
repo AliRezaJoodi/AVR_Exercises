@@ -1,0 +1,7 @@
+### SPI Components on the Proteus
+- MCP23S08
+- MCP23S17
+- MCP4921
+- MMC
+- TC72
+- TC77
