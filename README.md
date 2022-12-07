@@ -35,6 +35,7 @@ I'm uploading my old files on the repository.
 ![](Servo%20Motor/Simulate/Album.jpg)
 
 ![](VB6_Receive%20Bytes/Code_VB6/Album.jpg) 
+![](VB6_Receive%20Integer/Code_VB6/Album.jpg) 
 
 ### List of the Repository
 
@@ -48,7 +49,7 @@ I'm uploading my old files on the repository.
 |[Button](Button)|Y|Y|Y|
 |[Converter_DAC](Converter_DAC)|-|Y|-|
 |[Converter_Data Table](Converter_Data%20Table)|Y|-|-|
-|[Converter_MSB and LSB](Converter_MSB%20and%20LSB)|Y|-|-|
+|[Converter_MSB and LSB](Converter_MSB%20and%20LSB)|Y|Y|-|
 |[Dialing](Dialing)|Y|-|-|
 |[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|Y|-|
 |[Display_7Segment_1Digit Using 4026](Display_7Segment_1Digit%20Using%204026)|Y|Y|-|
@@ -90,6 +91,7 @@ I'm uploading my old files on the repository.
 |[UART_Software UART](UART_Software%20UART)|Y|Y|-|
 |[UART_with Interrupt](UART_with%20Interrupt)|Y|Y|-|
 |[VB6_Receive Bytes](VB6_Receive%20Bytes)|Y|Y|-|
+|[VB6_Receive Integer](VB6_Receive%20Integer)|Y|Y|-|
 
 
 
