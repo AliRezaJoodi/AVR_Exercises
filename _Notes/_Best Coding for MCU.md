@@ -40,16 +40,16 @@ AVR_Exercises\Display_LED\Code_CodeVisionAVR
 AVR_Projects_Beginning\Hygrometer and Thermometer Using SHT10\Code_CodeVisionAVR
 - shtxx.h
 
-### Int Converter to MSB and LSB
+### Int to MSB and LSB Converter
 AVR_Exercises\Converter_MSB and LSB\Code_CodeVisionAVR
 - Converter_MsbLsb.h
 
 AVR_Exercises\Converter_MSB and LSB\Code_BascomAVR\v1.0.bas
 
-### 8×8 Dot Matrix Driver
+### 8Ã—8 Dot Matrix Driver
 AVR_Exercises\Display_Matrix_8x8\Code_BascomAVR
 
-### Multiplexed 7-segment display
+### Multiplexed 7-Segment Display
 AVR_Exercises\Display_7Segment_8Digit\Code_BascomAVR\v2.0.bas  
 AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR
 - Driver_7Segment
