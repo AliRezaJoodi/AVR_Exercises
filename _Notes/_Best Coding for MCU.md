@@ -6,7 +6,7 @@ AVR_Projects_Beginning\Control Systems_PID\Code_CodeVisionAVR
 AVR_Projects_Beginning\Control Systems_OnOff\Code_CodeVisionAVR
 - ControlSystem_OnOff.h
 
-### Keypad
+### 4x4 Keypad
 AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.0.c
 - Keypad_4x4.h
 
@@ -30,7 +30,7 @@ AVR_Projects_Beginning\Thermometer Using DS18B20\Code_BascomAVR\v1.0.bas
 
 ### Type K Thermocouple
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
-- Table_Thermocouple_K.h
+- Thermocouple_K.h
 
 ### LED
 AVR_Exercises\Display_LED\Code_CodeVisionAVR
