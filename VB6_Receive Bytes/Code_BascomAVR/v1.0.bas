@@ -11,21 +11,21 @@ Cls
 
 $baud = 9600
 
-Active_led Alias 1
-Deactive_led Alias 0
+Active_rly Alias 1
+Deactive_rly Alias 0
 
-'Rly0 Alias Portc.1 : Config Rly0 = Output : Rly0 = Deactive_led
-Rly0 Alias Portb.0 : Config Rly0 = Output : Rly0 = Deactive_led
+'Rly0 Alias Portc.1 : Config Rly0 = Output : Rly0 = Deactive_Rly
+Rly0 Alias Portb.0 : Config Rly0 = Output : Rly0 = Deactive_rly
 
 Dim Number1 As Byte : Number1 = 0
 Dim Number2 As Byte : Number2 = 100
-Dim Relay_out As Bit
+Dim Relay_status As Bit
 Dim Cs_temp As Byte
 
 Do
    Incr Number1
    Decr Number2
-   Toggle Relay_out : Rly0 = Relay_out
+   Toggle Relay_status : Rly0 = Relay_status
 
    Gosub Display_lcd
    Gosub Display_uart
@@ -50,8 +50,8 @@ Display_uart:
    Udr = &HEB : Waitms 5                                    'send first byte of frame
    Udr = Number1 : Waitms 5
    Udr = Number2 : Waitms 5
-   Buffer = Relay_out : Udr = Buffer : Waitms 5
-   Cs_temp = &HEB + Number1 : Cs_temp = Cs_temp + Number2 : Cs_temp = Cs_temp + Relay_out       'calculate check sum                             '
+   Buffer = Relay_status : Udr = Buffer : Waitms 5
+   Cs_temp = &HEB + Number1 : Cs_temp = Cs_temp + Number2 : Cs_temp = Cs_temp + Relay_status       'calculate check sum                             '
    Udr = Cs_temp : Waitms 5                                 'send check sum of previous 4 byte
    Cs_temp = 0
 Return

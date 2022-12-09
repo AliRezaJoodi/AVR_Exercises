@@ -38,6 +38,7 @@ I'm uploading my old files on the repository.
 ![](VB6_Receive%20Integer/Code_VB6/Album.jpg) 
 ![](VB6_Send%20Integer/Code_VB6/Album.jpg) 
 ![](VB6_Send%20Byte/Code_VB6/Album.jpg) 
+![](VB6_Send%20Text/Code_VB6/Album.jpg) 
 
 ### List of the Repository
 
@@ -96,6 +97,7 @@ I'm uploading my old files on the repository.
 |[VB6_Receive Integer](VB6_Receive%20Integer)|Y|Y|-|
 |[VB6_Send Byte](VB6_Send%20Byte)|Y|-|-|
 |[VB6_Send Integer](VB6_Send%20Integer)|Y|-|-|
+|[VB6_Send Text](VB6_Send%20Text)|Y|-|-|
 
 
 
