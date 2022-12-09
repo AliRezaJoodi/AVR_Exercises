@@ -37,6 +37,7 @@ AVR_Exercises\Display_LED\Code_CodeVisionAVR
 - LED.h
 
 AVR_Exercises\Display_LED\Code_BascomAVR
+- LED_Functions.inc
 
 ### shtxx
 AVR_Projects_Beginning\Hygrometer and Thermometer Using SHT10\Code_CodeVisionAVR
@@ -75,11 +76,7 @@ AVR_Exercises\Display_LCD_Syntax\Code_CodeVisionAVR\v1.0.c
 
 AVR_Exercises\Display_LCD_Syntax\Code_mikroC PRO for AVR\v1_0.c
 - Included `Display_loading` and `Display_Advertising`
-
-### Include External Files
-AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\Attachment\Driver_4026.h  
-AVR_Exercises\Include External Files\Code_CodeVisionAVR\Attachment\Hardware_v1.0  
-
+ 
 ### Alias for IO
 AVR_Exercises\Include External Files\Code_CodeVisionAVR\Attachment\Hardware_v1.0  
 AVR_Exercises\Include External Files\Code_BascomAVR\Attachment\Hardware_v1.0

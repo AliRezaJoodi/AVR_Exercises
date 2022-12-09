@@ -6,7 +6,8 @@
 #include "Attachment\LED.h"
 
 void main(void){  
-      
+    Set_Leds(0b00000000); delay_ms(500); 
+    Set_Leds(0b10101010); delay_ms(500); Set_Leds(0b00000000); delay_ms(500); 
     On_Leds(); delay_ms(500); Off_Leds(); delay_ms(500);
     On_Led(0); delay_ms(500); Off_Led(0); delay_ms(500);
     On_Led(ALARM1); delay_ms(500); Off_Led(ALARM1); delay_ms(500); 

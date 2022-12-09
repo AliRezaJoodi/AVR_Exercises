@@ -126,6 +126,34 @@ void Set_Led(unsigned char index, char status){
 }
 
 //**********************************   
+void On_Leds(void){
+    unsigned char i=0;
+    for(i=0;i<=7;++i){On_Led(i);}
+}
+
+//**********************************   
+void Off_Leds(void){
+    unsigned char i=0;
+    for(i=0;i<=7;++i){Off_Led(i);}
+}
+
+//**********************************   
+void Set_Leds(unsigned char value){
+    #ifndef CHKBIT
+        #define CHKBIT(ADDRESS,BIT)  ((ADDRESS &(1<<BIT))>>BIT)
+    #endif
+    Config_Leds();
+    LED0_PORT=CHKBIT(value,LED0_INDEX); 
+    LED1_PORT=CHKBIT(value,LED1_INDEX);
+    LED2_PORT=CHKBIT(value,LED2_INDEX);
+    LED3_PORT=CHKBIT(value,LED3_INDEX);
+    LED4_PORT=CHKBIT(value,LED4_INDEX);
+    LED5_PORT=CHKBIT(value,LED5_INDEX);
+    LED6_PORT=CHKBIT(value,LED6_INDEX);
+    LED7_PORT=CHKBIT(value,LED7_INDEX);
+}
+
+//**********************************   
 void Flasher_Led(unsigned char index, unsigned int t){
     Config_Leds();
     switch (index){
@@ -138,18 +166,6 @@ void Flasher_Led(unsigned char index, unsigned int t){
         case 6: LED6_PORT=ACTIVATE_LED; delay_ms(t); LED6_PORT=DEACTIVATE_LED; break;
         case 7: LED7_PORT=ACTIVATE_LED; delay_ms(t); LED7_PORT=DEACTIVATE_LED; break;
     }        
-}
-
-//**********************************   
-void On_Leds(void){
-    unsigned char i=0;
-    for(i=0;i<=7;++i){On_Led(i);}
-}
-
-//**********************************   
-void Off_Leds(void){
-    unsigned char i=0;
-    for(i=0;i<=7;++i){Off_Led(i);}
 }
 
           
