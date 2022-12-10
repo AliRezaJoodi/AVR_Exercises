@@ -1,4 +1,9 @@
-﻿### PID Control System
+﻿### Converter
+AVR_Exercises\Timer1_PWM\Code_CodeVisionAVR\Attachment
+- unsigned int Get_0to1023(float x)
+- unsigned char Get_0to255(float x)
+
+### PID Control System
 AVR_Projects_Beginning\Control Systems_PID\Code_CodeVisionAVR
 - ControlSystem_PID.h
 

@@ -1,15 +1,18 @@
+#include "Attachment\Converter.h"
+
 #include <mega32a.h>
 #include <delay.h>
 
 void Config_Timer1_PWM(void);
 
 void main(void){
-    unsigned value1=250;
-    unsigned value2=250;
+    unsigned int value1;
+    unsigned int value2;
     
-    Config_Timer1_PWM();    
-    OCR1A=value1; //0~1023 
-    OCR1B=value2; //0~1023 
+    Config_Timer1_PWM();
+     
+    value1=Get_0to1023(50); OCR1A=value1; //0~1023 
+    value2=Get_0to1023(75); OCR1B=value2; //0~1023 
     
     while(1){          
     }
