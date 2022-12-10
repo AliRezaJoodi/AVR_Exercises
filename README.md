@@ -26,7 +26,7 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x4_Using%20ADC/Simulate/Album.png)
 ![](Converter_DAC/Simulate/Album.png)
 ![](Sensor_LDR/Simulate/Album.png)
-![](Display_BarGraph/Simulate/Album.png)
+![](Display_LCD_BarGraph/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
