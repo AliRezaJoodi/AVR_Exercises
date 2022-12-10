@@ -1,4 +1,8 @@
-﻿### Converter
+﻿### BarGraph on the 16x2 LCD
+AVR_Exercises\Display_LCD_BarGraph\Code_BascomAVR
+- BarGraph_Functions.inc
+
+### Converter
 AVR_Exercises\Timer1_PWM\Code_CodeVisionAVR\Attachment
 - unsigned int Get_0to1023(float x)
 - unsigned char Get_0to255(float x)
