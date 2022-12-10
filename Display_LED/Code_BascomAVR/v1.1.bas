@@ -3,7 +3,7 @@
 $regfile = "m32def.dat"
 $crystal = 1000000
 
-$include "Attachment\LED_Config.inc"
+$include "Attachment\LED_Define.inc"
 
 Dim Value As Byte
 Dim I As Byte

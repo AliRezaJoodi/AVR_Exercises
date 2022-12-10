@@ -86,5 +86,8 @@ AVR_Exercises\Display_LCD_Syntax\Code_mikroC PRO for AVR\v1_0.c
 AVR_Exercises\Include External Files\Code_CodeVisionAVR\Attachment\Hardware_v1.0  
 AVR_Exercises\Include External Files\Code_BascomAVR\Attachment\Hardware_v1.0
 
+### Avrege
+AVR_Projects_Beginning\Thermometer Using LM35\Code_BascomAVR\v3.1.bas
+
 
 
