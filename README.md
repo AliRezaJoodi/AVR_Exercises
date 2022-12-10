@@ -26,6 +26,7 @@ I'm uploading my old files on the repository.
 ![](Keypad_4x4_Using%20ADC/Simulate/Album.png)
 ![](Converter_DAC/Simulate/Album.png)
 ![](Sensor_LDR/Simulate/Album.png)
+![](Display_BarGraph/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -63,6 +64,7 @@ I'm uploading my old files on the repository.
 |[Display_GLCD_KS0108](Display_GLCD_KS0108)|-|Y|-|
 |[Display_GLCD_T6963](Display_GLCD_T6963)|Y|-|-|
 |[Display_LCD](Display_LCD)|Y|Y|Y|
+|[Display_LCD_BarGraph](Display_LCD_BarGraph)|Y|-|-|
 |[Display_LED](Display_LED)|Y|Y|-|
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
