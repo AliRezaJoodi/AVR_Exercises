@@ -8,20 +8,22 @@ Config Lcd = 16 * 2
 Cursor Off
 Cls
 
-Dim Value As Single : Value = 95
+Dim Value As Single : Value = 0
 
 $include "Attachment\BarGraph_Define.inc"
+
+Call Test_bargraph
 
 Do
    Incr Value : If Value > 100 Then Value = 0
    Gosub Display_value
-   Call Display_bar(value)
-   Waitms 250
+   Call Display_bargraph(value)
+   Waitms 50
 Loop
 
 End
 
-$include "Attachment\BarGraph_Functions.inc"
+$include "Attachment\BarGraph_Function.inc"
 
 
 '**********************************************

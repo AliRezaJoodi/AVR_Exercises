@@ -1,6 +1,9 @@
 ﻿### BarGraph on the 16x2 LCD
+AVR_Exercises\Display_LCD_BarGraph\Code_CodeVisionAVR
+- BarGraph.h
+ 
 AVR_Exercises\Display_LCD_BarGraph\Code_BascomAVR
-- BarGraph_Functions.inc
+- BarGraph_Function.inc
 
 ### Converter
 AVR_Exercises\Timer1_PWM\Code_CodeVisionAVR\Attachment

@@ -8,5 +8,7 @@ Deflcdchar 5 , 31 , 31 , 31 , 31 , 31 , 31 , 31 , 31
 
 Const Lcd_column = 16
 Const Maximum_bars = Lcd_column * 5
+Const Display_row = 2
 
-Declare Sub Display_bar(byval percent As Byte)
+Declare Sub Display_bargraph(byval Percent As Byte)
+Declare Sub Test_bargraph()

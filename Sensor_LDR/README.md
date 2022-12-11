@@ -1,4 +1,4 @@
-## LDR Driver
+## LDR Sensor Driver
  
 MCU:        ATmega32  
 Frequency:  1.000000 MHz  
