@@ -67,7 +67,7 @@ AVR_Exercises\Display_Matrix_8x8\Code_BascomAVR
 ### Multiplexed 7-Segment Display
 AVR_Exercises\Display_7Segment_8Digit\Code_BascomAVR\v2.0.bas  
 AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR
-- Driver_7Segment
+- Driver_7Segment.h
 
 ### Create Menu
 AVR_Projects_Beginning\Clock and Date with Internal Timer\Code_BascomAVR\v1.0.bas
