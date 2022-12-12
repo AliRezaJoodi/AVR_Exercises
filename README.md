@@ -51,6 +51,7 @@ I'm uploading my old files on the repository.
 |[ADC_10Bit_AVCC VREF_with Interrupt](ADC_10Bit_AVCC%20VREF_with%20Interrupt)|Y|-|-|
 |[ADC_10Bit_Internal VREF](ADC_10Bit_Internal%20VREF)|Y|Y|-|
 |[Access to Bits](Access%20to%20Bits)|Y|Y|-|
+|[ATtiny13](ATtiny13)|Y|-|-|
 |[Button](Button)|Y|Y|Y|
 |[Converter_DAC](Converter_DAC)|-|Y|-|
 |[Converter_Data Table](Converter_Data%20Table)|Y|-|-|

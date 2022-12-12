@@ -29,6 +29,7 @@ Display:    16x2 Character LCD
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Code_CodeVisionAVR` (Code with C Language)
+- `Code_mikroC PRO for AVR` (Code with C Language)
 - `Code_VB6` (Softwar with Visual Basic)
 - `Hardware` (Hardware Layers)
 - `Pictures` (Photos Samples Made)
