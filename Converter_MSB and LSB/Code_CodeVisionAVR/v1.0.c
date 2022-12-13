@@ -18,9 +18,10 @@ unsigned char number_lsb;
 void main(void){
     Config_LCD(); 
     
-    number_msb=Get_Msb(number);
-    number_lsb=Get_Lsb(number);
-    number=Get_Int(number_msb,number_lsb);
+    //number_msb=Get_Msb(number);
+    //number_lsb=Get_Lsb(number);
+    Convert_IntToMsbLsb(number,&number_msb,&number_lsb); 
+    number=Convert_MsbLsbToInt(number_msb,number_lsb);
     Display_MainPage();  
         
     while(1){ 

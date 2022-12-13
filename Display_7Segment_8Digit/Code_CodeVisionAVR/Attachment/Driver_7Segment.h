@@ -1,3 +1,8 @@
+// GitHub Account:     GitHub.com/AliRezaJoodi
+
+//#ifndef S1_DDR
+//#endif
+
 #define S1_DDR DDRB.0
 #define S1_PORT PORTB.0
 #define S1_PIN PINB.0
@@ -110,7 +115,7 @@ void Config_7Segment(void){
 }
 
 //**************************************
-void Deactivate_7Segment(void){
+void _Deactivate_7Segments(void){
     S1=DEACTIVATE_SEGMENT; 
     S2=DEACTIVATE_SEGMENT; 
     S3=DEACTIVATE_SEGMENT; 
@@ -131,7 +136,7 @@ void Deactivate_7Segment(void){
 }
 
 //**************************************
-unsigned char Convert_7Segment(unsigned char digit){
+unsigned char _Convert_Data(unsigned char digit){
     unsigned char out=0;
     //0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     //A , B , C , D , E , F,
@@ -146,12 +151,12 @@ unsigned char Convert_7Segment(unsigned char digit){
 }
 
 //**************************************
-unsigned char Reverse_7Segment(unsigned char x){
+unsigned char _Reverse_Data(unsigned char x){
     return x ^ 0b11111111; 
 }
 
 //**************************************
-void Set_7Segment(unsigned char digit){
+void _Drive_Data(unsigned char digit){
     #ifndef CHKBIT(ADDRESS,BIT)
         #define CHKBIT(ADDRESS,BIT)  ((ADDRESS &(1<<BIT))>>BIT) 
     #endif 
@@ -167,82 +172,85 @@ void Set_7Segment(unsigned char digit){
 }
 
 //**************************************
-void Drive_7Segment(unsigned long int value){
+void Display_7Segment(unsigned long int value){
     unsigned long int value_temporary=0;
     unsigned char digit=0;
-    static unsigned char i = 0;
+    static unsigned char i = 0; 
     
-    Deactivate_7Segment();
+    static char status = 0;
+    if (status==0){Config_7Segment(); status=1;}
+    
+    _Deactivate_7Segments();
     switch(i){ 
         case 0:
             value_temporary=value/1;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S1=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
             break;
         case 1:
             value_temporary=value/10;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S2=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
             break;
         case 2:
             value_temporary=value/100;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S3=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
             break;
         case 3:
             value_temporary=value/1000;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S4=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
             break;
         case 4:
             value_temporary=value/10000;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S5=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
             break;
         case 5:
             value_temporary=value/100000;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S6=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
             break;
         case 6:
             value_temporary=value/1000000;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S7=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;} 
             break;
         case 7:
             value_temporary=value/10000000;
             digit=value_temporary%10;
-            digit=Convert_7Segment(digit);
-            if(ACTIVATE_DIGIT==0){digit=Reverse_7Segment(digit);}
-            Set_7Segment(digit);
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
             S8=ACTIVATE_SEGMENT; 
             i++; if(value_temporary<10){i=0;}
             i=0; 

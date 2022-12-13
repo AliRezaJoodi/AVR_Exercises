@@ -6,12 +6,9 @@
 
 unsigned long int value=87654321;
 
-void Drive_7Segment(unsigned long int);
-
 void main(void){
-    Config_7Segment();
     
     while(1){
-        Drive_7Segment(value); delay_us(500);
+        Display_7Segment(value); delay_us(500);
     };
 }
