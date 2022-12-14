@@ -1,4 +1,8 @@
-﻿### BarGraph on the 16x2 LCD
+﻿### Encoder
+AVR_Exercises\Encoder\Code_CodeVisionAVR
+- Encoder.h
+
+### BarGraph on the 16x2 LCD
 AVR_Exercises\Display_LCD_BarGraph\Code_CodeVisionAVR
 - BarGraph.h
  

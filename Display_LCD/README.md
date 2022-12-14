@@ -1,7 +1,8 @@
 ## 16×2 Character LCD
 
 MCU:            ATmega32  
-Frequency:     	1.000000 MHz   
+Frequency:     	1.000000 MHz 
+Display:        16x2 Character LCD  
 
 ### Folder and Files Description
 It has included:
