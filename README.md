@@ -27,6 +27,7 @@ I'm uploading my old files on the repository.
 ![](Converter_DAC/Simulate/Album.png)
 ![](Sensor_LDR/Simulate/Album.png)
 ![](Display_LCD_BarGraph/Simulate/Album.png)
+![](Encoder/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -69,6 +70,7 @@ I'm uploading my old files on the repository.
 |[Display_LED](Display_LED)|Y|Y|-|
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
+|[Encoder](Encoder)|-|Y|-|
 |[External Files](External%20Files)|Y|Y|-|
 |[IO_External_PCF8574_I2C](IO_External_PCF8574_I2C)|Y|-|-|
 |[IO_Input](IO_Input)|Y|-|-|

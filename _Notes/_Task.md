@@ -1,7 +1,7 @@
 - [ ] merge Converter_MsbLsb.h with Converter.h
 - [ ] Send Data with ASK RF Module
 - [ ] DS1307
-- [ ] Encoder
+- [x] Encoder
 - [x] Bar Display Library
 - [ ] Avrege Library
 - [ ] find a reserve register on the AVR
