@@ -49,7 +49,7 @@ I'm uploading my old files on the repository.
 |Title|BascomAVR|CodeVisionAVR|mikroC PRO for AVR|
 |:----|:-------:|:-----------:|:----------------:|
 |[ADC_08Bit_AVCC VREF](ADC_08Bit_AVCC%20VREF)|-|Y|-|
-|[ADC_10Bit_AREF VREF](ADC_10Bit_AREF%20VREF)|-|Y|-|
+|[ADC_10Bit_AREF VREF](ADC_10Bit_AREF%20VREF)|Y|Y|-|
 |[ADC_10Bit_AVCC VREF](ADC_10Bit_AVCC%20VREF)|Y|Y|-|
 |[ADC_10Bit_AVCC VREF_with Interrupt](ADC_10Bit_AVCC%20VREF_with%20Interrupt)|Y|-|-|
 |[ADC_10Bit_Internal VREF](ADC_10Bit_Internal%20VREF)|Y|Y|-|
