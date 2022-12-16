@@ -1,7 +1,6 @@
 ## Tasks
-- [ ] Clock and Date with Internal Timer (CodeVisionAVR)
+- [x] Clock and Date with Internal Timer (CodeVisionAVR)
 - [x] Frequency Meter with LCD Display (CodeVisionAVR)
-- [ ] merge Converter_MsbLsb.h with Converter.h
 - [ ] Send Data with ASK RF Module
 - [ ] DS1307
 - [x] Encoder

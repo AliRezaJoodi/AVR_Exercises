@@ -98,7 +98,7 @@ I'm uploading my old files on the repository.
 |[Timer1_Counter](Timer1_Counter)|Y|-|-|
 |[Timer1_PWM](Timer1_PWM)|Y|Y|-|
 |[Timer2_Async Timer](Timer2_Async%20Timer)|Y|Y|-|
-|[Timer2_Clock&Date](Timer2_Clock&Date)|Y|-|-|
+|[Timer2_Clock&Date](Timer2_Clock&Date)|Y|Y|-|
 |[Timer2_PWM](Timer2_PWM)|-|Y|-|
 |[UART_Config](UART_Config)|Y|Y|-|
 |[UART_Software UART](UART_Software%20UART)|Y|Y|-|
