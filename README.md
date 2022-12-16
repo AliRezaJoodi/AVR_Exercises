@@ -24,7 +24,7 @@ I'm uploading my old files on the repository.
 ![](Converter_MSB%20and%20LSB/Simulate/Album.png)
 ![](PC%20Keyboard/Hardware/Album.png)
 ![](Keypad_4x4_Using%20ADC/Simulate/Album.png)
-![](Converter_DAC/Simulate/Album.png)
+![](DAC_with%20PWM/Simulate/Album.png)
 ![](Sensor_LDR/Simulate/Album.png)
 ![](Display_LCD_BarGraph/Simulate/Album.png)
 ![](Encoder/Simulate/Album.png)
@@ -56,9 +56,9 @@ I'm uploading my old files on the repository.
 |[Access to Bits](Access%20to%20Bits)|Y|Y|-|
 |[ATtiny13](ATtiny13)|Y|-|-|
 |[Button](Button)|Y|Y|Y|
-|[Converter_DAC](Converter_DAC)|-|Y|-|
 |[Converter_Data Table](Converter_Data%20Table)|Y|-|-|
 |[Converter_MSB and LSB](Converter_MSB%20and%20LSB)|Y|Y|-|
+|[DAC_with PWM](DAC_with%20PWM)|-|Y|-|
 |[Dialing](Dialing)|Y|-|-|
 |[Display_7Segment_1Digit](Display_7Segment_1Digit)|Y|Y|-|
 |[Display_7Segment_1Digit Using 4026](Display_7Segment_1Digit%20Using%204026)|Y|Y|-|
