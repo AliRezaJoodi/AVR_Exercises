@@ -70,6 +70,7 @@ I'm uploading my old files on the repository.
 |[Display_LCD](Display_LCD)|Y|Y|Y|
 |[Display_LCD_BarGraph](Display_LCD_BarGraph)|Y|Y|-|
 |[Display_LED](Display_LED)|Y|Y|-|
+|[Display_LED_Flasher](Display_LED_Flasher)|Y|Y|-|
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Encoder](Encoder)|Y|Y|-|
