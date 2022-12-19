@@ -4,39 +4,30 @@
 #include <delay.h>
 #include <stdio.h>
 #include <alcd.h>
-flash char LCD_COLUMN=16;
+#include "Attachment\Converter.h"
 
 void Config_LCD(void);
-void Display_LCD_Loding(unsigned int);
-void Display_LCD(float);
+void Display_Loding(unsigned int);
+void Display_Value(void);
 void Config_Timer1(void);
-void DAC_Voltage(float);
 
-void main(void){
-    float out_persent=0;
-    unsigned int out_pwm=0;
+float out_persent=0;
+float out_voltage=0;
+unsigned int out_pwm=0;
     
+void main(void){    
     Config_Timer1();
     Config_LCD();
-    Display_LCD_Loding(500); 
+    //Display_Loding(500); 
     
-    out_persent=50; DAC_Voltage(out_persent);
-    Display_LCD(out_persent);
+    out_persent=50;     
+    out_voltage=Convert_0to100_1to5V(out_persent);
+    out_pwm=Convert_0to5V_0to1023(out_voltage);
+    OCR1A=out_pwm; 
+    Display_Value();
     
     while (1){
     }
-}
-
-//******************************************
-void DAC_Voltage(float x){
-    char buffer_lcd[LCD_COLUMN];
-    float y=0;     
-    if(x>100){x=100;};     //x=0~100%
-    //x=100-x;   //inverse 
-    y=((x*(5-1))/100)+1;   //y=1~5V
-    y=(y*1000)/4.8875855;    //y=204~1023
-    OCR1A=y;    
-    //sprintf(buffer_lcd,"PWM=%5.1f",y); lcd_gotoxy(0,1); lcd_puts(buffer_lcd); lcd_putsf("    "); 
 }
 
 //********************************************************
@@ -72,21 +63,23 @@ DDRD.5=1; PORTD.5=0;
 }
 
 //******************************************
-void Display_LCD(float x){
-    char txt[LCD_COLUMN]; 
-    sprintf(txt,"Out(1-5V):%2.1f%%",x); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putsf("  ");
-    lcd_gotoxy(0,1); lcd_putsf("DAC with PWM");
+void Display_Value(void){
+    char txt[16]; 
+    sprintf(txt,"Out:%.0f%%",out_persent); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putsf("  ");  
+    sprintf(txt," => %4d",out_pwm); lcd_gotoxy(7,0); lcd_puts(txt); lcd_putsf("  ");
+    sprintf(txt,"Out(1-5V):%.3fV",out_voltage); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
+    //lcd_gotoxy(0,1); lcd_putsf("DAC with PWM");  
 }
 
 //******************************************
-void Display_LCD_Loding(unsigned int x){
+void Display_Loding(unsigned int x){
     lcd_gotoxy(0,0); lcd_putsf("Please Wait ...");
     delay_ms(x); lcd_clear();
 } 
 
 //********************************************************
 void Config_LCD(void){
-    lcd_init(LCD_COLUMN);
+    lcd_init(16);
     lcd_clear();
 }
 

@@ -10,9 +10,8 @@ AVR_Exercises\Display_LCD_BarGraph\Code_BascomAVR
 - BarGraph_Function.inc
 
 ### Converter
-AVR_Exercises\Timer1_PWM\Code_CodeVisionAVR\Attachment
-- unsigned int Get_0to1023(float x)
-- unsigned char Get_0to255(float x)
+AVR_Exercises\DAC_with PWM\Code_CodeVisionAVR
+- Converter.h
 
 ### PID Control System
 AVR_Projects_Beginning\Control Systems_PID\Code_CodeVisionAVR
