@@ -3,14 +3,14 @@
 I'm uploading my old files on the repository.
 
 ### Gallery of the Repository
-![](ADC_08Bit_AVCC%20VREF/Simulate/Album.png)
-![](ADC_10Bit_AVCC%20VREF/Simulate/Album.png)
-![](ADC_10Bit_Internal%20VREF/Simulate/Album.png)
+![](ADC_08Bit_AVCC-VREF/Simulate/Album.png)
+![](ADC_10Bit_AVCC-VREF/Simulate/Album.png)
+![](ADC_10Bit_Internal-VREF/Simulate/Album.png)
 ![](Display_LCD/Simulate/Album.png)
 ![](String_Syntax/Simulate/Album.png)
 ![](EEPROM/Simulate/Album.png)
 ![](IO_Input/Simulate/Album.png)
-![](IO_Input%20Interrupts/Simulate/Album.png)
+![](IO_Input_Interrupt/Simulate/Album.png)
 ![](Keypad_4x3/Simulate/Album.png)
 ![](Keypad_4x4/Simulate/Album.png)
 ![](Keypad_4x4_Using%2074922/Simulate/Album.png)
@@ -22,41 +22,41 @@ I'm uploading my old files on the repository.
 ![](Timer1_Counter/Simulate/Album.png)
 ![](Button/Simulate/Album.png)
 ![](Converter_MSB&LSB/Simulate/Album.png)
-![](PC%20Keyboard/Hardware/Album.png)
+![](Keyboard_PC/Hardware/Album.png)
 ![](Keypad_4x4_Using%20ADC/Simulate/Album.png)
 ![](DAC_with%20PWM/Simulate/Album.png)
 ![](Sensor_LDR/Simulate/Album.png)
 ![](Display_LCD_BarGraph/Simulate/Album.png)
 ![](Encoder/Simulate/Album.png)
-![](ADC_10Bit_AREF%20VREF/Simulate/Album.png)
+![](ADC_10Bit_AREF-VREF/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
 
 ![](Converter_Data%20Table/Simulate/Album.png)
 ![](UART_Config/Simulate/Album.png)
-![](UART_Software%20UART/Simulate/Album.png)
+![](UART_SoftwareUART/Simulate/Album.png)
 ![](Servo%20Motor/Simulate/Album.jpg)
 
-![](VB6_Receive%20Bytes/Code_VB6/Album.jpg) 
-![](VB6_Receive%20Integer/Code_VB6/Album.jpg) 
-![](VB6_Send%20Integer/Code_VB6/Album.jpg) 
-![](VB6_Send%20Byte/Code_VB6/Album.jpg) 
-![](VB6_Send%20Text/Code_VB6/Album.jpg) 
+![](VB6_Receiver_Bytes/Code_VB6/Album.jpg) 
+![](VB6_Receiver_Integer/Code_VB6/Album.jpg) 
+![](VB6_Sender_Integer/Code_VB6/Album.jpg) 
+![](VB6_Sender_Byte/Code_VB6/Album.jpg) 
+![](VB6_Sender_Text/Code_VB6/Album.jpg) 
 
 ### List of the Repository
 
 |Title|BascomAVR|CodeVisionAVR|mikroC PRO for AVR|
 |:----|:-------:|:-----------:|:----------------:|
-|[ADC_08Bit_AVCC VREF](ADC_08Bit_AVCC%20VREF)|-|Y|-|
-|[ADC_10Bit_AREF VREF](ADC_10Bit_AREF%20VREF)|Y|Y|-|
-|[ADC_10Bit_AVCC VREF](ADC_10Bit_AVCC%20VREF)|Y|Y|-|
-|[ADC_10Bit_AVCC VREF_with Interrupt](ADC_10Bit_AVCC%20VREF_with%20Interrupt)|Y|-|-|
-|[ADC_10Bit_Internal VREF](ADC_10Bit_Internal%20VREF)|Y|Y|-|
-|[Access to Bits](Access%20to%20Bits)|Y|Y|-|
+|[ADC_08Bit_AVCC-VREF](ADC_08Bit_AVCC-VREF)|-|Y|-|
+|[ADC_10Bit_AREF-VREF](ADC_10Bit_AREF-VREF)|Y|Y|-|
+|[ADC_10Bit_AVCC-VREF](ADC_10Bit_AVCC-VREF)|Y|Y|-|
+|[ADC_10Bit_AVCC-VREF_Interrupt](ADC_10Bit_AVCC-VREF_Interrupt)|Y|-|-|
+|[ADC_10Bit_Internal-VREF](ADC_10Bit_Internal-VREF)|Y|Y|-|
 |[ATtiny13](ATtiny13)|Y|-|-|
+|[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
-|[Converter_Data Table](Converter_Data%20Table)|Y|-|-|
+|[Converter_DataTable](Converter_DataTable)|Y|-|-|
 |[Converter_MSB&LSB](Converter_MSB&LSB)|Y|Y|-|
 |[DAC_with PWM](DAC_with%20PWM)|-|Y|-|
 |[Dialing](Dialing)|Y|-|-|
@@ -74,41 +74,41 @@ I'm uploading my old files on the repository.
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Encoder](Encoder)|Y|Y|-|
-|[External Files](External%20Files)|Y|Y|-|
+|[Include](Include)|Y|Y|-|
 |[IO_External_PCF8574_I2C](IO_External_PCF8574_I2C)|Y|-|-|
 |[IO_Input](IO_Input)|Y|-|-|
-|[IO_Input Interrupts](IO_Input%20Interrupts)|Y|-|-|
+|[IO_Input_Interrupts](IO_Input_Interrupts)|Y|-|-|
 |[IO_Output](IO_Output)|Y|Y|-|
-|[IO_PortG and PortF](IO_PortG%20and%20PortF)|-|Y|-|
+|[IO_PortG&PortF](IO_PortG&PortF)|-|Y|-|
+|[Keyboard_PC](Keyboard_PC)|Y|-|-|
 |[Keypad_4x3](Keypad_4x3)|Y|Y|-|
 |[Keypad_4x4](Keypad_4x4)|Y|Y|-|
 |[Keypad_4x4_Using 74922](Keypad_4x4_Using%2074922)|Y|-|-|
 |[Keypad_4x4_Using ADC](Keypad_4x4_Using%20ADC)|Y|-|-|
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
-|[PC Keyboard](PC%20Keyboard)|Y|-|-|
+|[Motor_Servo](Motor_Servo)|Y|-|-|
+|[Motor_Stepper_Unipolar](Motor_Stepper_Unipolar)|Y|-|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
-|[Servo Motor](Servo%20Motor)|Y|-|-|
 |[Sound](Sound)|Y|Y|Y|
 |[SPI_Config](SPI_Config)|Y|Y|-|
-|[SPI_Software SPI](SPI_Software%20SPI)|Y|-|-|
-|[SPI_with Interrupt](SPI_with%20Interrupt)|Y|Y|-|
-|[Stepper Motor_Unipolar Using ULN2003](Stepper%20Motor_Unipolar%20Using%20ULN2003)|Y|-|-|
+|[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
+|[SPI_Interrupt](SPI_Interrupt)|Y|Y|-|
 |[String_Syntax](String_Syntax)|Y|Y|-|
 |[Timer0_Counter](Timer0_Counter)|Y|-|-|
 |[Timer0_Timer](Timer0_Timer)|Y|-|-|
 |[Timer1_Counter](Timer1_Counter)|Y|-|-|
 |[Timer1_PWM](Timer1_PWM)|Y|Y|-|
-|[Timer2_Async Timer](Timer2_Async%20Timer)|Y|Y|-|
+|[Timer2_AsyncTimer](Timer2_AsyncTimer)|Y|Y|-|
 |[Timer2_Clock&Date](Timer2_Clock&Date)|Y|Y|-|
 |[Timer2_PWM](Timer2_PWM)|-|Y|-|
 |[UART_Config](UART_Config)|Y|Y|-|
-|[UART_Software UART](UART_Software%20UART)|Y|Y|-|
-|[UART_with Interrupt](UART_with%20Interrupt)|Y|Y|-|
-|[VB6_Receive Bytes](VB6_Receive%20Bytes)|Y|Y|-|
-|[VB6_Receive Integer](VB6_Receive%20Integer)|Y|Y|-|
-|[VB6_Send Byte](VB6_Send%20Byte)|Y|-|-|
-|[VB6_Send Integer](VB6_Send%20Integer)|Y|-|-|
-|[VB6_Send Text](VB6_Send%20Text)|Y|-|-|
+|[UART_SoftwareUART](UART_SoftwareUART)|Y|Y|-|
+|[UART_Interrupt](UART_Interrupt)|Y|Y|-|
+|[VB6_Receiver_Bytes](VB6_Receiver_Bytes)|Y|Y|-|
+|[VB6_Receiver_Integer](VB6_Receiver_Integer)|Y|Y|-|
+|[VB6_Sender_Byte](VB6_Sender_Byte)|Y|-|-|
+|[VB6_Sender_Integer](VB6_Sender_Integer)|Y|-|-|
+|[VB6_Sender_Text](VB6_Sender_Text)|Y|-|-|
 
 
 
