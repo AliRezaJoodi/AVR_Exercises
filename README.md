@@ -36,7 +36,7 @@ I'm uploading my old files on the repository.
 ![](Converter_DataTable/Simulate/Album.png)
 ![](UART_Config/Simulate/Album.png)
 ![](UART_SoftwareUART/Simulate/Album.png)
-![](Motor_Servo/Simulate/Album.jpg)
+![](Motor_Servo/Simulate/Album.png)
 
 ![](VB6_Receiver_Bytes/Code_VB6/Album.jpg) 
 ![](VB6_Receiver_Integer/Code_VB6/Album.jpg) 
