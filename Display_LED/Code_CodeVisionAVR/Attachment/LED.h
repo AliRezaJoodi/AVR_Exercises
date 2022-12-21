@@ -1,4 +1,12 @@
+//GitHub Account:     GitHub.com/AliRezaJoodi
+
 #include <delay.h> 
+
+#ifndef ACTIVATE_LED
+    #define ACTIVATE_LED 1
+#endif
+#define DEACTIVATE_LED !ACTIVATE_LED
+#define DEFAULT_LED DEACTIVATE_LED
 
 #ifndef LED0_DDR
     #define LED0_DDR DDRA.0
@@ -63,12 +71,6 @@
 #endif
 #define LED7 LED7_PORT
 #define LED7_INDEX 7
-
-#ifndef ACTIVATE_LED
-    #define ACTIVATE_LED 1
-#endif
-#define DEACTIVATE_LED !ACTIVATE_LED
-#define DEFAULT_LED DEACTIVATE_LED
 
 //**********************************    
 void Config_Leds(void){

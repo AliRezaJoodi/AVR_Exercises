@@ -80,7 +80,7 @@ AVR_Exercises\Button\Code_BascomAVR\v1.0.bas
 - There are different moods
 
 AVR_Exercises\Button\Code_CodeVisionAVR\v1.0.c
-- There is a mood.
+- Button.h
 
 ### Start text on the LCD
 AVR_Exercises\Display_LCD_Syntax\Code_BascomAVR\v1.0.bas
