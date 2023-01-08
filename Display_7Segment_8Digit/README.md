@@ -1,4 +1,5 @@
-## 8-digit 7Segment Driver 
+## Display an Integers on the 8-Digit 7-segments
+
 
 MCU:            ATmega32  
 Frequency:     	1.000000 MHz   
