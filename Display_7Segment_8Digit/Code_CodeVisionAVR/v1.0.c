@@ -2,7 +2,7 @@
 
 #include <mega32.h>
 #include <delay.h>
-#include "Attachment\Driver_7Segment.h"
+#include "Attachment\DisplayOn7Segment.h"
 
 unsigned long int value=87654321;
 
