@@ -306,4 +306,119 @@ void DisplayOn7Segment_D2_Int(unsigned int value){
     }
 }
 
+//**************************************
+void DisplayOn7Segment_D1_Float(float value){
+    unsigned int value_temporary=0;
+    unsigned char digit=0;
+    static unsigned char i = 0; 
+    unsigned char dp=2;
+    
+    _Config_7Segment();
+    _Deactivate_7Segments();
+    
+    if (value<100){value=value*100; dp=2;}
+        else if (value<1000) {value=value*10; dp=1;}
+            else if (value<10000) {value=value*1; dp=0;}
+    
+    switch(i){ 
+        case 0:
+            value_temporary=value/1;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D1_0=ACTIVATE_SEGMENT; 
+            i++; //if(value_temporary<10){i=0;}
+            break;
+        case 1:
+            value_temporary=value/10;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if (dp==1){digit=digit | 0b10000000;}
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D1_1=ACTIVATE_SEGMENT; 
+            i++; //if(value_temporary<10){i=0;}
+            break;
+        case 2:
+            value_temporary=value/100;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if (dp==2){digit=digit | 0b10000000;} 
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D1_2=ACTIVATE_SEGMENT; 
+            i++; if(value_temporary<10){i=0;}
+            break;
+        case 3:
+            value_temporary=value/1000;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D1_3=ACTIVATE_SEGMENT; 
+            i++; if(value_temporary<10){i=0;} 
+            break;
+    }
+}
+
+//**************************************
+void DisplayOn7Segment_D2_Float(float value){
+    unsigned int value_temporary=0;
+    unsigned char digit=0;
+    static unsigned char i = 0; 
+    unsigned char dp=2;
+    
+    _Config_7Segment();
+    _Deactivate_7Segments();
+    
+    if (value<100){value=value*100; dp=2;}
+        else if (value<1000) {value=value*10; dp=1;}
+            else if (value<10000) {value=value*1; dp=0;}
+    
+    switch(i){ 
+        case 0:
+            value_temporary=value/1;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D2_0=ACTIVATE_SEGMENT; 
+            i++; //if(value_temporary<10){i=0;}
+            break;
+        case 1:
+            value_temporary=value/10;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if (dp==1){digit=digit | 0b10000000;}
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D2_1=ACTIVATE_SEGMENT; 
+            i++; //if(value_temporary<10){i=0;}
+            break;
+        case 2:
+            value_temporary=value/100;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if (dp==2){digit=digit | 0b10000000;} 
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D2_2=ACTIVATE_SEGMENT; 
+            i++; if(value_temporary<10){i=0;}
+            break;
+        case 3:
+            value_temporary=value/1000;
+            digit=value_temporary%10;
+            digit=_Convert_Data(digit);
+            if(ACTIVATE_DIGIT==0){digit=_Reverse_Data(digit);}
+            _Drive_Data(digit);
+            D2_3=ACTIVATE_SEGMENT; 
+            i++; if(value_temporary<10){i=0;} 
+            break;
+    }
+}
+
+
+
+
 

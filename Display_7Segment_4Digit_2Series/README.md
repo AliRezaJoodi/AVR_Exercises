@@ -1,4 +1,4 @@
-## Display 2 Integers on the 2-Series of 4-Digit 7-segments
+## Display 2-Number on the 2-Series of 4-Digit 7-segments
 
 MCU:            ATmega32  
 Frequency:     	1.000000 MHz   

@@ -23,7 +23,7 @@ Active1=1
 Row1=174
 Column1=9
 State1=2
-TimeStamp1=1445508726
+TimeStamp1=1445529005
 OF2=Attachment\DisplayOn7Segment.h
 Top2=149
 Left2=223
@@ -33,7 +33,7 @@ Active2=0
 Row2=8
 Column2=5
 State2=2
-TimeStamp2=1445508726
+TimeStamp2=1445528917
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -134,7 +134,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=418
+Build=457
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=
@@ -201,7 +201,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1445508740
+COFFileTimeStamp=1445529005
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -358,7 +358,7 @@ UserProgWorkDir=
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=418
+Build=457
 Chip=ATmega32
 CPUClock=1000000
 MemoryModel=1
@@ -474,16 +474,16 @@ L13=Enhanced function parameters passing: Yes
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 417
-L18=470 line(s) compiled
+L17=Build: 456
+L18=587 line(s) compiled
 L19=No errors
-L20=No warnings
+L20=2 warning(s)
 L21=
 L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 26 byte(s)
+L26=Estimated Data Stack usage: 28 byte(s)
 L27=
 L28=RAM Global variables area: 0x260 to 0x262
 L29=RAM Global variables size: 3 byte(s)
@@ -494,19 +494,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 569 words (1138 bytes), 3.5% of FLASH
-L38=95 words (190 bytes), 14.3% reduced by Code Compression
+L37=Program size: 926 words (1852 bytes), 5.7% of FLASH
+L38=114 words (228 bytes), 11.0% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=C:\Users\Home\Desktop\Display_7Segment_8Digit\Code_CodeVisionAVR\List\main.asm(1801): No EEPROM data, deleting C:\Users\Home\Desktop\Display_7Segment_8Digit\Code_CodeVisionAVR\main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_4Digit_2Series\Code_CodeVisionAVR\List\main.asm(2193): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_4Digit_2Series\Code_CodeVisionAVR\main.eep
 L5=
 L6=ATmega32 memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000472   1108     30   1138   32768   3.5%
+L9=[.cseg] 0x000000 0x00073c   1834     18   1852   32768   5.7%
 L10=[.dseg] 0x000060 0x000263      0      3      3    2048   0.1%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -536,7 +536,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1445508753
+TimeStamp=1445529014
 [BookmarksFoldedCode]
 Files=6
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
@@ -564,11 +564,11 @@ BK9=-1
 [FoldedCode1]
 Blocks=0
 [Bookmarks2]
-TimeStamp=1445508726
-Row=13
-Column=32
+TimeStamp=1445529005
+Row=15
+Column=36
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -633,22 +633,12 @@ BK8=-1
 BK9=-1
 [FoldedCode5]
 Blocks=0
-[HeadersList]
-Files=1
-F1=C:\Users\Home\Desktop\Display_7Segment_8Digit\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=3
-F1=C:\Program Files (x86)\CVAVR\inc\mega32.h
-F2=C:\Program Files (x86)\CVAVR\inc\delay.h
-F3=Attachment\DisplayOn7Segment.h
-[FoldedCode2]
-Blocks=0
 [Bookmarks6]
-TimeStamp=1445508726
-Row=260
-Column=29
+TimeStamp=1445528917
+Row=365
+Column=46
 ScrollPosX=0
-ScrollPosY=249
+ScrollPosY=372
 BK0=-1
 BK1=-1
 BK2=-1
@@ -659,5 +649,15 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Display_7Segment_4Digit_2Series\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=3
+F1=C:\Program Files (x86)\CVAVR\inc\mega32.h
+F2=C:\Program Files (x86)\CVAVR\inc\delay.h
+F3=Attachment\DisplayOn7Segment.h
+[FoldedCode2]
+Blocks=0
 [FoldedCode6]
 Blocks=0
