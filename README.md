@@ -75,8 +75,8 @@ I'm uploading my old files on the repository.
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Encoder](Encoder)|Y|Y|-|
+|[ExternalOutputs_PCF8574_I2C](ExternalOutputs_PCF8574_I2C)|Y|-|-|
 |[Include](Include)|Y|Y|-|
-|[IO_External_PCF8574_I2C](IO_External_PCF8574_I2C)|Y|-|-|
 |[IO_Input](IO_Input)|Y|-|-|
 |[IO_Input_Interrupt](IO_Input_Interrupt)|Y|-|-|
 |[IO_Output](IO_Output)|Y|Y|-|

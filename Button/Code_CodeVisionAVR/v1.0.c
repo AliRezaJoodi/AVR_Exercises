@@ -24,8 +24,10 @@ void main(void){
     
     Config_LCD(); Display_Value(value);
    
-    while(1){
-        GetIncr_Button(&value);
+    while(1){ 
+        //GetIncr_Button(&value);
+        //GetIncr2_Button(&value);   
+        GetIncr3_Button(&value);
         if(old_value!=value){Display_Value(value); old_value=value;}
     };
 }
