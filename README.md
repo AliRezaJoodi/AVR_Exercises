@@ -76,6 +76,8 @@ I'm uploading my old files on the repository.
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Encoder](Encoder)|Y|Y|-|
 |[ExternalOutputs_PCF8574_I2C](ExternalOutputs_PCF8574_I2C)|Y|-|-|
+|[Gyroscope&Accelerometer_CMPS10](Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
+|[Gyroscope&Accelerometer_MPU6050](Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Include](Include)|Y|Y|-|
 |[IO_Input](IO_Input)|Y|-|-|
 |[IO_Input_Interrupt](IO_Input_Interrupt)|Y|-|-|
