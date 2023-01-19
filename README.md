@@ -90,7 +90,7 @@ I'm uploading my old files on the repository.
 |[Keypad_4x4_UsingADC](Keypad_4x4_UsingADC)|Y|-|-|
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
 |[Motor_Servo](Motor_Servo)|Y|-|-|
-|[Motor_Stepper_Unipolar](Motor_Stepper_Unipolar)|Y|-|-|
+|[Motor_UnipolarStepper](Motor_UnipolarStepper)|Y|-|-|
 |[Sensor_Gyroscope&Accelerometer_CMPS10](Sensor_Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
 |[Sensor_Gyroscope&Accelerometer_MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
