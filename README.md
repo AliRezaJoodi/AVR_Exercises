@@ -29,6 +29,7 @@ I'm uploading my old files on the repository.
 ![](Display_LCD_BarGraph/Simulate/Album.png)
 ![](Encoder/Simulate/Album.png)
 ![](ADC_10Bit_AREF-VREF/Simulate/Album.png)
+![](Sensor_Thermometer_LM35/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -76,9 +77,7 @@ I'm uploading my old files on the repository.
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Encoder](Encoder)|Y|Y|-|
-|[ExternalOutputs_PCF8574_I2C](ExternalOutputs_PCF8574_I2C)|Y|-|-|
-|[Gyroscope&Accelerometer_CMPS10](Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
-|[Gyroscope&Accelerometer_MPU6050](Gyroscope&Accelerometer_MPU6050)|Y|-|-|
+|[IO_ExternalOutputs_PCF8574_I2C](IO_ExternalOutputs_PCF8574_I2C)|Y|-|-|
 |[Include](Include)|Y|Y|-|
 |[IO_Input](IO_Input)|Y|-|-|
 |[IO_Input_Interrupt](IO_Input_Interrupt)|Y|-|-|
@@ -92,7 +91,10 @@ I'm uploading my old files on the repository.
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
 |[Motor_Servo](Motor_Servo)|Y|-|-|
 |[Motor_Stepper_Unipolar](Motor_Stepper_Unipolar)|Y|-|-|
+|[Sensor_Gyroscope&Accelerometer_CMPS10](Sensor_Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
+|[Sensor_Gyroscope&Accelerometer_MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
+|[Sensor_Thermometer_LM35](Sensor_Thermometer_LM35)|Y|Y|-|
 |[Sound](Sound)|Y|Y|Y|
 |[SPI_Config](SPI_Config)|Y|Y|-|
 |[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
