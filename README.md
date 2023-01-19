@@ -37,6 +37,7 @@ I'm uploading my old files on the repository.
 ![](UART_Config/Simulate/Album.png)
 ![](UART_SoftwareUART/Simulate/Album.png)
 ![](Motor_Servo/Simulate/Album.png)
+![](UART_BaudRateFinder/Simulate/Album.png)
 
 ![](VB6_Receiver_Bytes/Code_VB6/Album.jpg) 
 ![](VB6_Receiver_Integer/Code_VB6/Album.jpg) 
@@ -104,6 +105,7 @@ I'm uploading my old files on the repository.
 |[Timer2_AsyncTimer](Timer2_AsyncTimer)|Y|Y|-|
 |[Timer2_Clock&Date](Timer2_Clock&Date)|Y|Y|-|
 |[Timer2_PWM](Timer2_PWM)|-|Y|-|
+|[UART_BaudRateFinder](UART_BaudRateFinder)|Y|-|-|
 |[UART_Config](UART_Config)|Y|Y|-|
 |[UART_SoftwareUART](UART_SoftwareUART)|Y|Y|-|
 |[UART_Interrupt](UART_Interrupt)|Y|Y|-|
