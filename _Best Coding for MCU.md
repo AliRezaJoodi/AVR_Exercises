@@ -26,7 +26,7 @@ AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.0.c
 - Keypad_4x4.h
 
 ### LM35
-AVR_Projects_Beginning\Thermometer Using LM35\Code_CodeVisionAVR 
+AVR_Exercises\Sensor_Thermometer_LM35\Code_CodeVisionAVR 
 - LM35.h
 
 ### Config_ADC.h

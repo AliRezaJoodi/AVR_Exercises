@@ -30,6 +30,7 @@ I'm uploading my old files on the repository.
 ![](Encoder/Simulate/Album.png)
 ![](ADC_10Bit_AREF-VREF/Simulate/Album.png)
 ![](Sensor_Thermometer_LM35/Simulate/Album.png)
+![](Sensor_Thermometer_LM335/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -95,6 +96,7 @@ I'm uploading my old files on the repository.
 |[Sensor_Gyroscope&Accelerometer_MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
 |[Sensor_Thermometer_LM35](Sensor_Thermometer_LM35)|Y|Y|-|
+|[Sensor_Thermometer_LM335](Sensor_Thermometer_LM335)|Y|Y|-|
 |[Sound](Sound)|Y|Y|Y|
 |[SPI_Config](SPI_Config)|Y|Y|-|
 |[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
