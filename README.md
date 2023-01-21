@@ -31,6 +31,8 @@ I'm uploading my old files on the repository.
 ![](ADC_10Bit_AREF-VREF/Simulate/Album.png)
 ![](Sensor_Thermometer_LM35/Simulate/Album.png)
 ![](Sensor_Thermometer_LM335/Simulate/Album.png)
+![](ADC_ExternalADC_MCP3202_SPI/Simulate/Album.png)
+![](ADC_ExternalADC_MCP3204_SPI/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -56,6 +58,8 @@ I'm uploading my old files on the repository.
 |[ADC_10Bit_AVCC-VREF](ADC_10Bit_AVCC-VREF)|Y|Y|-|
 |[ADC_10Bit_AVCC-VREF_Interrupt](ADC_10Bit_AVCC-VREF_Interrupt)|Y|-|-|
 |[ADC_10Bit_Internal-VREF](ADC_10Bit_Internal-VREF)|Y|Y|-|
+|[ADC_ExternalADC_MCP3202_SPI](ADC_ExternalADC_MCP3202_SPI)|-|Y|-|
+|[ADC_ExternalADC_MCP3204_SPI](ADC_ExternalADC_MCP3204_SPI)|-|Y|-|
 |[ATtiny13](ATtiny13)|Y|-|-|
 |[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
