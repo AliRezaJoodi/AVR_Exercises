@@ -1,25 +1,28 @@
 // GitHub Account:     GitHub.com/AliRezaJoodi
 
+#ifndef _MCP320X_INCLUDED_
+    #define _MCP320X_INCLUDED_
+
 #include <spi.h>
 
-#ifndef CS_DDR
-    #define CS_DDR DDRB.3
-    #define CS_PORT PORTB.3
-    #define CS_PIN PINB.3 
+#ifndef _MCP320X_PORTS_
+    #define _MCP320X_PORTS_
+    
+    #define CS_DDR              DDRB.3
+    #define CS_PORT             PORTB.3
+    #define CS_PIN              PINB.3 
+    #define CS_MCP320X          CS_PORT 
+    
+    #define SELECT              0
+    #define DESELECT            !SELECT
+    #define DEFAULT             DESELECT
+    
+    #define VREF_MCP320X        5       //Volt
+    #define RESOLUTION_MCP320X  4095    //12-Bit
+    #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X   
 #endif
-#define CS_MCP320X CS_PORT
 
-#ifndef SELECT
-    #define SELECT 0
-#endif
-#define DESELECT !SELECT
-#define DEFAULT DESELECT
-
-#ifndef GAIN_ADC
-    #define VREF        5000    //mV
-    #define RESOLUTION  4095    //12-Bit
-    #define GAIN_ADC    VREF/RESOLUTION
-#endif
+#pragma used+
 
 //********************************************************
 void _Config_SPI(void){
@@ -63,7 +66,7 @@ unsigned int _Get_MCP320x(char data1, char data2){
 //********************************************************
 float _ConvertToVolt_MCP320x(unsigned int x){
     float value=x;
-    value=value*GAIN_ADC/1000;
+    value=value*GAIN_MCP320X;
     return value;
 }
 
@@ -117,4 +120,8 @@ float GetSingle_MCP3208(char ch){
     value_float=_ConvertToVolt_MCP320x(value_int);
     return value_float;
 }
+
+#pragma used-
+
+#endif
 
