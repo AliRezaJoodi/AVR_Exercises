@@ -1,4 +1,4 @@
-### SPI Components on the Proteus
+### Components with SPI interfacing on the Proteus
 - MAX6675 (K Type TC)
 - MCP23S08
 - MCP23S17

@@ -1,4 +1,8 @@
-﻿### MCP3202/MCP3204/MCP3208
+﻿### Best format for library
+AVR_Exercises\ADC_ExternalADC_MCP3204_SPI\Code_CodeVisionAVR
+- MCP320x.h
+
+### MCP3202/MCP3204/MCP3208
 AVR_Exercises\ADC_ExternalADC_MCP3204_SPI\Code_CodeVisionAVR
 - MCP320x.h
 
