@@ -8,14 +8,10 @@
 #ifndef _MCP320X_PORTS_
     #define _MCP320X_PORTS_
     
-    #define CS_DDR              DDRB.3
-    #define CS_PORT             PORTB.3
-    #define CS_PIN              PINB.3 
-    #define CS_MCP320X          CS_PORT 
-    
-    #define SELECT              0
-    #define DESELECT            !SELECT
-    #define DEFAULT             DESELECT
+    #define CS_MCP320X_DDR      DDRB.3
+    #define CS_MCP320X_PORT     PORTB.3
+    #define CS_MCP320X_PIN      PINB.3 
+    #define CS_MCP320X          CS_MCP320X_PORT 
     
     #define VREF_MCP320X        5       //Volt
     #define RESOLUTION_MCP320X  4095    //12-Bit
@@ -44,7 +40,7 @@ SPSR=(0<<SPI2X);
 //********************************************************
 void Config_MCP320x(void){
     _Config_SPI();
-    CS_DDR=1; CS_PORT=DEFAULT;
+    CS_MCP320X_DDR=1; CS_MCP320X_PORT=1;
 }
 
 //********************************************************
@@ -53,11 +49,11 @@ unsigned int _Get_MCP320x(char data1, char data2){
     unsigned char value_msb=0;
     unsigned char value_lsb=0;
     
-    CS_MCP320X=SELECT;
+    CS_MCP320X=0;
     spi(data1);
     value_msb=spi(data2); value_msb=value_msb&0b00001111;
     value_lsb=spi(0xFF);
-    CS_MCP320X=DESELECT;
+    CS_MCP320X=1;
 
     value_int=(value_msb<<8)|value_lsb;    
     return value_int;

@@ -9,22 +9,15 @@
 #ifndef _MCP48xx_PORTS_
     #define _MCP48xx_PORTS_
     
-    #define CS_DDR              DDRB.3
-    #define CS_PORT             PORTB.3
-    #define CS_PIN              PINB.3
-    #define CS_MCP48XX          CS_PORT
+    #define CS_MCP48XX_DDR      DDRB.3
+    #define CS_MCP48XX_PORT     PORTB.3
+    #define CS_MCP48XX_PIN      PINB.3
+    #define CS_MCP48XX          CS_MCP48XX_PORT
     
     #define LDAC_DDR            DDRB.2
     #define LDAC_PORT           PORTB.2
     #define LDAC_PIN            PINB.2
     #define LDAC_MCP48XX        LDAC_PORT
-    
-    #define SELECT 0
-    #define DESELECT            !SELECT
-    #define DEFAULT             DESELECT
-    
-    #define SYNCH 0 
-    #define LATCH               !SYNCH
     
     #define VREF_MCP48XX        2.048   //V
     #define RESOLUTION_MCP4802  255   	//8-Bit  
@@ -55,17 +48,16 @@ void _Config_SPI(void){
 //********************************************************
 void Config_MCP48xx(void){
     _Config_SPI();
-    CS_DDR=1; CS_PORT=DEFAULT; 
-    LDAC_DDR=1; LDAC_PORT=LATCH;
+    CS_MCP48XX_DDR=1; CS_MCP48XX_PORT=1; 
+    LDAC_DDR=1; LDAC_PORT=1;
 }
 
 //********************************************************
 void _Set_MCP48xx(char data1, char data2){
-    CS_MCP48XX=SELECT;
-    spi(data1);
-    spi(data2); 
-    CS_MCP48XX=DESELECT;
-    LDAC_MCP48XX=SYNCH; delay_ms(2); LDAC_MCP48XX=LATCH;
+    CS_MCP48XX=0;
+    spi(data1); spi(data2); 
+    CS_MCP48XX=1;
+    LDAC_MCP48XX=0; delay_us(1); LDAC_MCP48XX=1;
 }
 
 //********************************************************
