@@ -34,9 +34,9 @@ void main(void){
 //********************************************************
 void Display_Values(void){
     char txt[16];
-    lcd_gotoxy(0,0); lcd_putsf("DAC with MCP4822"); 
-    lcd_gotoxy(0,1); lcd_putsf("A:"); ftoa(ch0_volt,2,txt); lcd_puts(txt); lcd_putsf("V"); lcd_putsf(" ");
-    lcd_gotoxy(8,1); lcd_putsf("B:"); ftoa(ch1_volt,2,txt); lcd_puts(txt); lcd_putsf("V"); lcd_putsf(" ");
+    lcd_gotoxy(0,0); lcd_putsf("A:"); ftoa(ch0_volt,2,txt); lcd_puts(txt); lcd_putsf("V"); lcd_putsf(" ");
+    lcd_gotoxy(8,0); lcd_putsf("B:"); ftoa(ch1_volt,2,txt); lcd_puts(txt); lcd_putsf("V"); lcd_putsf(" "); 
+    lcd_gotoxy(0,1); lcd_putsf("DAC with MCP4822"); 
 }
 
 //********************************************************
@@ -47,8 +47,8 @@ void Config_LCD(void){
 //********************************************************
 void Display_Loading(void){
     lcd_clear(); 
-    lcd_gotoxy(0,0); lcd_putsf("Testing the LCD");
-    lcd_gotoxy(0,1); lcd_putsf("Loading ...");
+    lcd_gotoxy(0,0); lcd_putsf("Loading ...");  
+    //lcd_gotoxy(0,1); lcd_putsf("Testing the LCD");
     //delay_ms(250);
     //lcd_clear();  
 }
