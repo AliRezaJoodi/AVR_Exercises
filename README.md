@@ -34,6 +34,7 @@ I'm uploading my old files on the repository.
 ![](ADC_ExternalADC_MCP3202_SPI/Simulate/Album.png)
 ![](ADC_ExternalADC_MCP3204_SPI/Simulate/Album.png)
 ![](DAC_ExternalDAC_MCP4822_SPI/Simulate/Album.png)
+![](Sensor_Thermometer_DS18B20/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -101,6 +102,7 @@ I'm uploading my old files on the repository.
 |[Sensor_Gyroscope&Accelerometer_CMPS10](Sensor_Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
 |[Sensor_Gyroscope&Accelerometer_MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
+|[Sensor_Thermometer_DS18B20](Sensor_Thermometer_DS18B20)|Y|Y|-|
 |[Sensor_Thermometer_LM35](Sensor_Thermometer_LM35)|Y|Y|-|
 |[Sensor_Thermometer_LM335](Sensor_Thermometer_LM335)|Y|Y|-|
 |[Sensor_Thermometer_SMT160](Sensor_Thermometer_SMT160)|Y|-|-|
