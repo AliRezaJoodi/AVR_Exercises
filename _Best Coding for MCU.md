@@ -49,7 +49,7 @@ AVR_Projects_Beginning\Thermometer_LM35\Code_BascomAVR\v3.1.bas
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
 - Define_Char.h
 
-AVR_Projects_Beginning\Thermometer Using DS18B20\Code_BascomAVR\v1.0.bas
+AVR_Exercises\Sensor_Thermometer_DS18B20\Code_BascomAVR\v1.0.bas
 
 ### Type K Thermocouple
 AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
