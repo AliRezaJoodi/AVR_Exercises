@@ -6,3 +6,4 @@
 - MMC
 - TC72
 - TC77
+- MAX7219 (8-Digit LED Display Drivers)
