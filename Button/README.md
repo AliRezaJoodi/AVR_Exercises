@@ -1,4 +1,4 @@
-## Read and write on the Internal EEPROM
+## Button
 	   
 MCU:		ATmega32  
 Frequency:     	1.000000 MHz   
