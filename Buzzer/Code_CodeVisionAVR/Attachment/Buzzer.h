@@ -22,6 +22,7 @@ void Config_Buzzer(void){
 }
 
 //*******************************************************
+//Called every 8mS
 void S1_Buzzer(char *status){
     static unsigned char i=0;
     if(*status){ 
@@ -31,6 +32,10 @@ void S1_Buzzer(char *status){
 }
 
 //*******************************************************
+//Called every 8mS
+//1-Beep every 625x8ms for mode=1
+//2-Beep every 625x8ms for mode=2
+//Continuous beep every 250x8ms for mode=3
 void S2_Buzzer(char mode){
     static unsigned int i1=0; 
     static unsigned int i2=0; 
@@ -41,7 +46,7 @@ void S2_Buzzer(char mode){
     switch (mode){ 
         case 1:
             ++i1;  
-            if(i1>=625){active=1;i1=0;} 
+            if(i1>=625){active=1;i1=0;}	
             break;
         case 2:
             ++i1; 
