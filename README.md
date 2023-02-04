@@ -64,6 +64,7 @@ I'm uploading my personal files on the repository.
 |[ATtiny13](ATtiny13)|Y|-|-|
 |[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
+|[Buzzer](Buzzer)|Y|Y|Y|
 |[Converter_DataTable](Converter_DataTable)|Y|-|-|
 |[Converter_MSB&LSB](Converter_MSB&LSB)|Y|Y|-|
 |[DAC_ExternalDAC_MCP4822_SPI](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
@@ -105,7 +106,6 @@ I'm uploading my personal files on the repository.
 |[Sensor_Thermometer_LM35](Sensor_Thermometer_LM35)|Y|Y|-|
 |[Sensor_Thermometer_LM335](Sensor_Thermometer_LM335)|Y|Y|-|
 |[Sensor_Thermometer_SMT160](Sensor_Thermometer_SMT160)|Y|-|-|
-|[Sound](Sound)|Y|Y|Y|
 |[SPI_Config](SPI_Config)|Y|Y|-|
 |[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
 |[SPI_Interrupt](SPI_Interrupt)|Y|Y|-|

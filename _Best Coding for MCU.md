@@ -2,6 +2,10 @@
 AVR_Exercises\ADC_ExternalADC_MCP3204_SPI\Code_CodeVisionAVR
 - MCP320x.h
 
+### Buzzer
+AVR_Exercises\Sound\Code_CodeVisionAVR
+- Buzzer.h
+
 ### MCP3202/MCP3204/MCP3208
 AVR_Exercises\ADC_ExternalADC_MCP3204_SPI\Code_CodeVisionAVR
 - MCP320x.h
