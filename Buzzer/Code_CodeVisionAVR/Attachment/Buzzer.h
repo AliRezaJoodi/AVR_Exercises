@@ -3,6 +3,8 @@
 #ifndef _BUZZER_INCLUDED_
     #define _BUZZER_INCLUDED_
 
+#include <delay.h>
+
 #ifndef _BUZZER_PORTS_
     #define _BUZZER_PORTS_
     
