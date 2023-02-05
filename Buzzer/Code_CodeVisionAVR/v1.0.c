@@ -14,7 +14,9 @@ char bs_pc=0;
 interrupt [TIM0_OVF] void timer0_ovf_isr(void){
     TCNT0=0x06; 
     Beep_Buzzer(&bs_beep);
+    P1_Buzzer(bs_p1);	
     P2_Buzzer(bs_p2);
+    PC_Buzzer(bs_pc);
 }
     
 void Config_Timer0(void);
