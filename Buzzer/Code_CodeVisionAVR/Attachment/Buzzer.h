@@ -8,12 +8,16 @@
 #ifndef _BUZZER_PORTS_
     #define _BUZZER_PORTS_
     
-    #define BUZZER_DDR      DDRB.0
-    #define BUZZER_PORT     PORTB.0
-    #define BUZZER_PIN      PINB.0 
-    #define BUZZER          BUZZER_PORT 
+    #define BUZZER_DDR          DDRB.1
+    #define BUZZER_PORT         PORTB.1
+    #define BUZZER_PIN          PINB.1 
+    #define BUZZER              BUZZER_PORT 
     
-    #define ACTIVE_BUZZER   1       
+    #define ACTIVE_BUZZER       1 
+    #define TIMER_PERIOD        8                   //ms
+    #define BEEZER_ACTIVE_TIME  80/TIMER_PERIOD     //ms 
+    #define PERIOD1             5000/TIMER_PERIOD   //ms 
+    #define PERIOD2             2000/TIMER_PERIOD   //ms      
 #endif
 
 #pragma used+
@@ -24,42 +28,57 @@ void Config_Buzzer(void){
 }
 
 //*******************************************************
-//Called every 8mS
-void S1_Buzzer(char *status){
+//Be Called Periodically
+//Single Beep
+void Beep_Buzzer(char *status){
     static unsigned char i=0;
     if(*status){ 
         BUZZER=ACTIVE_BUZZER; 
-        ++i; if(i>=10){BUZZER=!ACTIVE_BUZZER; i=0; *status=0;}   
+        ++i; if(i>=BEEZER_ACTIVE_TIME){BUZZER=!ACTIVE_BUZZER; i=0; *status=0;}   
     }
 }
 
 //*******************************************************
-//Called every 8mS
-//1-Beep every 625x8ms for mode=1
-//2-Beep every 625x8ms for mode=2
-//Continuous beep every 250x8ms for mode=3
-void S2_Buzzer(char mode){
-    static unsigned int i1=0; 
-    static unsigned int i2=0; 
-    static char active=0;
+//Be Called Periodically
+//Periodicall Single Beep
+void P1_Buzzer(char status){
+    static unsigned int i=0;
+    static char active=0; 
     
-    S1_Buzzer(&active);
-    
-    switch (mode){ 
-        case 1:
-            ++i1;  
-            if(i1>=625){active=1;i1=0;}	
-            break;
-        case 2:
-            ++i1; 
-            if(i1==625){active=1;}  
-            if(i1>=650){active=1;i1=0;} 
-            break;
-        case 3:
-            ++i1; 
-            if(i1>=250){active=1;}  
-            if(i1>=300){active=1;i1=0;}
-            break;  
+    if(status){
+        ++i;  
+        if(i>=PERIOD1){active=1;i=0;} 
+        Beep_Buzzer(&active);
+    }
+}
+
+//*******************************************************
+//Be Called Periodically
+//Periodicall 2-Beep
+void P2_Buzzer(char status){
+    static unsigned int i=0;
+    static char active=0; 
+
+    if(status){
+        ++i; 
+        if(i==PERIOD1){active=1;}  
+        if(i>=(PERIOD1+(2*BEEZER_ACTIVE_TIME))){active=1;i=0;}
+        Beep_Buzzer(&active);
+    }
+}
+
+//*******************************************************
+//Be Called Periodically
+//Periodicall Continuous Beep
+void PC_Buzzer(char status){
+    static unsigned int i=0;
+    static char active=0; 
+
+    if(status){
+        ++i; 
+        if(i>=PERIOD2){active=1;}  
+        if(i>=(PERIOD2+(5*BEEZER_ACTIVE_TIME))){active=1;i=0;}
+        Beep_Buzzer(&active);
     }
 }
 

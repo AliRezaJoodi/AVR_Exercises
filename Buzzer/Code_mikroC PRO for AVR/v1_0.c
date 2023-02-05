@@ -7,7 +7,7 @@ void Melody(void);
 void Melody2(void);
  
 void main() {
-  Sound_Init(&PORTB,0);          // Initialize sound pin
+  Sound_Init(&PORTB,1);          // Initialize sound pin
 
   Tone1(); Delay_ms(500);
   Tone2(); Delay_ms(500);

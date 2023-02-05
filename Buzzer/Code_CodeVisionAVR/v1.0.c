@@ -3,16 +3,18 @@
 #include <mega16a.h>
 #include <delay.h>
 
-char buzzer_status=0;
-char buzzer_mode=0;
+char bs_beep=0;
+char bs_p1=0;
+char bs_p2=0;
+char bs_pc=0;
 
 #include "Attachment\Buzzer.h"
 
 // Timer 0 overflow interrupt service routine
 interrupt [TIM0_OVF] void timer0_ovf_isr(void){
     TCNT0=0x06; 
-    S1_Buzzer(&buzzer_status);
-    S2_Buzzer(buzzer_mode);
+    Beep_Buzzer(&bs_beep);
+    P2_Buzzer(bs_p2);
 }
     
 void Config_Timer0(void);
@@ -25,8 +27,11 @@ void main(void){
     Sound2_Buzzer(); delay_ms(500);
     Sound3_Buzzer(); delay_ms(1000);
     
-    buzzer_status=1; 
-    buzzer_mode=2;      
+    bs_beep=1;
+    bs_p1=0;
+    bs_p2=1;
+    bs_pc=0;
+     
     while(1){
 
     }
