@@ -13,11 +13,10 @@
     #define BUZZER_PIN          PINB.1 
     #define BUZZER              BUZZER_PORT 
     
-    #define ACTIVE_BUZZER       1 
-    #define TIMER_PERIOD        8                   //ms
-    #define BEEZER_ACTIVE_TIME  80/TIMER_PERIOD     //ms 
-    #define PERIOD1             5000/TIMER_PERIOD   //ms 
-    #define PERIOD2             2000/TIMER_PERIOD   //ms      
+    #define ACTIVE_BUZZER           1 
+    #define BUZZER_ACTIVITY_TIME    10    // 80ms/Timer Period(8ms) 
+    #define PERIOD1                 625   // 5000ms/Timer Period(8ms) 
+    #define PERIOD2                 250   // 2000ms/Timer Period(8ms)      
 #endif
 
 #pragma used+
@@ -34,7 +33,7 @@ void Beep_Buzzer(char *status){
     static unsigned char i=0;
     if(*status){ 
         BUZZER=ACTIVE_BUZZER; 
-        ++i; if(i>=BEEZER_ACTIVE_TIME){BUZZER=!ACTIVE_BUZZER; i=0; *status=0;}   
+        ++i; if(i>=BUZZER_ACTIVITY_TIME){BUZZER=!ACTIVE_BUZZER; i=0; *status=0;}   
     }
 }
 
@@ -62,7 +61,7 @@ void P2_Buzzer(char status){
     if(status){
         ++i; 
         if(i==PERIOD1){active=1;}  
-        if(i>=(PERIOD1+(2*BEEZER_ACTIVE_TIME))){active=1;i=0;}
+        if(i>=(PERIOD1+(2*BUZZER_ACTIVITY_TIME))){active=1;i=0;}
         Beep_Buzzer(&active);
     }
 }
@@ -77,7 +76,7 @@ void PC_Buzzer(char status){
     if(status){
         ++i; 
         if(i>=PERIOD2){active=1;}  
-        if(i>=(PERIOD2+(5*BEEZER_ACTIVE_TIME))){active=1;i=0;}
+        if(i>=(PERIOD2+(5*BUZZER_ACTIVITY_TIME))){active=1;i=0;}
         Beep_Buzzer(&active);
     }
 }
