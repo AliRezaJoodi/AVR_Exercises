@@ -19,12 +19,13 @@
     #define PERIOD2                 250   // 2000ms/Timer Period(8ms)      
 #endif
 
-#pragma used+
 
 //********************************************************
 void Config_Buzzer(void){
     BUZZER_DDR=1; BUZZER_PORT=!ACTIVE_BUZZER;
 }
+
+#pragma used+
 
 //*******************************************************
 //Be Called Periodically

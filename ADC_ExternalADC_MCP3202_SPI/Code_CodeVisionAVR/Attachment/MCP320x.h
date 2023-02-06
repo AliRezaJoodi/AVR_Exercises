@@ -18,8 +18,6 @@
     #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X   
 #endif
 
-#pragma used+
-
 //********************************************************
 void _Config_SPI(void){
     DDRB.4=1; PORTB.4=0;    //SS
@@ -42,6 +40,8 @@ void Config_MCP320x(void){
     _Config_SPI();
     CS_MCP320X_DDR=1; CS_MCP320X_PORT=1;
 }
+
+#pragma used+
 
 //********************************************************
 unsigned int _Get_MCP320x(char data1, char data2){

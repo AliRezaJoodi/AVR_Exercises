@@ -1,5 +1,5 @@
 ## AVR Programming Exercises
-I'm uploading my personal files on the repository.
+A repository for my personal exercises.
 
 ### Gallery of the Repository
 ![](ADC_08Bit_AVCC-VREF/Simulate/Album.png)
@@ -50,8 +50,7 @@ I'm uploading my personal files on the repository.
 ![](VB6_Sender_Byte/Code_VB6/Album.jpg) 
 ![](VB6_Sender_Text/Code_VB6/Album.jpg) 
 
-### List of the Repository
-
+### Table of Contents
 |Title|BascomAVR|CodeVisionAVR|mikroC PRO for AVR|
 |:----|:-------:|:-----------:|:----------------:|
 |[ADC_08Bit_AVCC-VREF](ADC_08Bit_AVCC-VREF)|-|Y|-|
