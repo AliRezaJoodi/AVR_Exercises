@@ -34,7 +34,7 @@ void Config_Button(void){
 #pragma used+
 
 //*************************************************
-unsigned char Set_Button(void){
+char Set_Button(void){
     static bit last_status=!PRESSED; 
     
     if(BUTTON3==PRESSED && last_status==!PRESSED){

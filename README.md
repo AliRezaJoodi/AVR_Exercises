@@ -82,6 +82,7 @@ A repository for my personal exercises.
 |[Display_LCD_BarGraph](Display_LCD_BarGraph)|Y|Y|-|
 |[Display_LED](Display_LED)|Y|Y|-|
 |[Display_LED_Flasher](Display_LED_Flasher)|Y|Y|-|
+|[Display_LED_RGB](Display_LED_RGB)|Y|-|-|
 |[Display_Matrix_8x8](Display_Matrix_8x8)|Y|-|-|
 |[EEPROM](EEPROM)|Y|Y|-|
 |[Encoder](Encoder)|Y|Y|-|
