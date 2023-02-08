@@ -1,6 +1,6 @@
 //GitHub Account:     GitHub.com/AliRezaJoodi
 
-#include <mega16a.h>
+#include <mega32a.h>
 #include <delay.h>
 
 char bs_beep=0;

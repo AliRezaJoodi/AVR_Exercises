@@ -19,15 +19,17 @@ void Config_LCD(void){
 void Display_Value(unsigned char);
 
 void main(void){  
-    unsigned char value=0;
+    unsigned char value=100;
     unsigned char old_value=0;
     
+    Config_Button();
     Config_LCD(); Display_Value(value);
    
     while(1){ 
-        //GetIncr_Button(&value);
-        //GetIncr2_Button(&value);   
-        GetIncr3_Button(&value);
+        IncreaseOneStep_Button(&value);
+        IncreaseContinuously_Button(&value);   
+        if(Set_Button()){value=0;}
+        
         if(old_value!=value){Display_Value(value); old_value=value;}
     };
 }
