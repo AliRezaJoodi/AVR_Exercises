@@ -45,6 +45,7 @@ A repository for my personal exercises.
 ![](UART_SoftwareUART/Simulate/Album.png)
 ![](Motor_Servo/Simulate/Album.png)
 ![](UART_BaudRateFinder/Simulate/Album.png)
+![](RelayController_UART_1CH/Simulate/Album.png)
 
 ![](VB6_Receiver_Bytes/Code_VB6/Album.jpg) 
 ![](VB6_Receiver_Integer/Code_VB6/Album.jpg) 
@@ -101,6 +102,7 @@ A repository for my personal exercises.
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
 |[Motor_Servo](Motor_Servo)|Y|-|-|
 |[Motor_UnipolarStepper](Motor_UnipolarStepper)|Y|-|-|
+|[RelayController_UART_1CH](RelayController_UART_1CH)|Y|-|
 |[Sensor_Gyroscope&Accelerometer_CMPS10](Sensor_Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
 |[Sensor_Gyroscope&Accelerometer_MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
