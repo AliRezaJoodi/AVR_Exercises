@@ -114,6 +114,7 @@ A repository for my personal exercises.
 |[Sensor_Thermometer_LM35](Sensor_Thermometer_LM35)|Y|Y|-|
 |[Sensor_Thermometer_LM335](Sensor_Thermometer_LM335)|Y|Y|-|
 |[Sensor_Thermometer_SMT160](Sensor_Thermometer_SMT160)|Y|-|-|
+|[Sound_MusicPlayer](Sound_MusicPlayer)|Y|-|-|
 |[SPI_Config](SPI_Config)|Y|Y|-|
 |[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
 |[SPI_Interrupt](SPI_Interrupt)|Y|Y|-|
