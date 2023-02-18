@@ -36,6 +36,7 @@ A repository for my personal exercises.
 ![](Sensor_Thermometer_DS18B20/Simulate/Album.png)
 ![](Sensor_Thermometer_DS18B20_4Sensors/Simulate/Album.png)
 ![](Sensor_Thermocouple_TypeK/Simulate/Album.png)
+![](Motor_DC/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -101,6 +102,7 @@ A repository for my personal exercises.
 |[Keypad_4x4_Using74922](Keypad_4x4_Using74922)|Y|-|-|
 |[Keypad_4x4_UsingADC](Keypad_4x4_UsingADC)|Y|-|-|
 |[Keypad_4x6](Keypad_4x6)|Y|-|-|
+|[Motor_DC](Motor_DC)|Y|-|-|
 |[Motor_Servo](Motor_Servo)|Y|-|-|
 |[Motor_UnipolarStepper](Motor_UnipolarStepper)|Y|-|-|
 |[RelayController_UART_1CH](RelayController_UART_1CH)|Y|-|-|
