@@ -1,12 +1,12 @@
 // GitHub Account:     GitHub.com/AliRezaJoodi
 
-#ifndef _MCP320X_INCLUDED_
-    #define _MCP320X_INCLUDED_
+#ifndef INCLUDED_MCP320X
+    #define INCLUDED_MCP320X
 
 #include <spi.h>
 
-#ifndef _MCP320X_PORTS_
-    #define _MCP320X_PORTS_
+#ifndef PORTS_MCP320X
+    #define PORTS_MCP320X
     
     #define CS_MCP320X_DDR      DDRB.3
     #define CS_MCP320X_PORT     PORTB.3
@@ -17,8 +17,6 @@
     #define RESOLUTION_MCP320X  4095    //12-Bit
     #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X   
 #endif
-
-#pragma used+
 
 //********************************************************
 void _Config_SPI(void){
@@ -39,9 +37,11 @@ SPSR=(0<<SPI2X);
 
 //********************************************************
 void Config_MCP320x(void){
-    _Config_SPI();
+    _Config_SPI(); 
     CS_MCP320X_DDR=1; CS_MCP320X_PORT=1;
 }
+
+#pragma used+
 
 //********************************************************
 unsigned int _Get_MCP320x(char data1, char data2){

@@ -37,6 +37,7 @@ A repository for my personal exercises.
 ![](Sensor_Thermometer_DS18B20_4Sensors/Simulate/Album.png)
 ![](Sensor_Thermocouple_TypeK/Simulate/Album.png)
 ![](Motor_DC/Simulate/Album.png)
+![](Display_LCD_BulletinBoard/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -84,6 +85,7 @@ A repository for my personal exercises.
 |[Display_GLCD_T6963](Display_GLCD_T6963)|Y|-|-|
 |[Display_LCD](Display_LCD)|Y|Y|Y|
 |[Display_LCD_BarGraph](Display_LCD_BarGraph)|Y|Y|-|
+|[Display_LCD_BulletinBoard](Display_LCD_BulletinBoard)|Y|-|-|
 |[Display_LED](Display_LED)|Y|Y|-|
 |[Display_LED_Flasher](Display_LED_Flasher)|Y|Y|-|
 |[Display_LED_RGB](Display_LED_RGB)|Y|-|-|

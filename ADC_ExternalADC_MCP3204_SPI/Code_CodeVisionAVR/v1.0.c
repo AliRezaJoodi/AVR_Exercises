@@ -7,7 +7,6 @@
 ///#include <stdio.h>
 #include <stdlib.h>
 
-#include <Attachment\MCP320x.h>
 void Config_LCD(void);
 void Display_Loading(void); 
 void Display_Values();
@@ -16,6 +15,8 @@ float ch0_volt=0;
 float ch1_volt=0;
 //float ch2_volt=0;
 //float ch3_volt=0;
+
+#include <Attachment\MCP320x.h>
         
 void main(void){
     Config_LCD();
