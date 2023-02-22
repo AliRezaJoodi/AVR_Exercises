@@ -8,10 +8,10 @@
 #ifndef PORTS_MCP320X
     #define PORTS_MCP320X
     
-    #define CS_MCP320X_DDR      DDRB.3
-    #define CS_MCP320X_PORT     PORTB.3
-    #define CS_MCP320X_PIN      PINB.3 
-    #define CS_MCP320X          CS_MCP320X_PORT 
+    #define CS_DDR_MCP320X      DDRB.3
+    #define CS_PORT_MCP320X     PORTB.3
+    #define CS_PIN_MCP320X      PINB.3 
+    #define CS_MCP320X          CS_PORT_MCP320X 
     
     #define VREF_MCP320X        5       //Volt
     #define RESOLUTION_MCP320X  4095    //12-Bit
@@ -38,7 +38,7 @@ SPSR=(0<<SPI2X);
 //********************************************************
 void Config_MCP320x(void){
     _Config_SPI(); 
-    CS_MCP320X_DDR=1; CS_MCP320X_PORT=1;
+    CS_DDR_MCP320X=1; CS_PORT_MCP320X=1;
 }
 
 #pragma used+

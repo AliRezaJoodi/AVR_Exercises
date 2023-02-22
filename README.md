@@ -107,6 +107,7 @@ A repository for my personal exercises.
 |[Motor_DC](Motor_DC)|Y|-|-|
 |[Motor_Servo](Motor_Servo)|Y|-|-|
 |[Motor_UnipolarStepper](Motor_UnipolarStepper)|Y|-|-|
+|[PWM_CustomMadeChannels](PWM_CustomMadeChannels)|Y|-|-|
 |[RelayController_UART_1CH](RelayController_UART_1CH)|Y|-|-|
 |[RelayController_UART_8CH](RelayController_UART_8CH)|Y|-|-|
 |[Sensor_Gyroscope&Accelerometer_CMPS10](Sensor_Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
