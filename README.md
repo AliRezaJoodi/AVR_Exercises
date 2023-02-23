@@ -115,12 +115,12 @@ A repository for my personal exercises.
 |[Sensor_Gyroscope&Accelerometer_MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
 |[Sensor_Humidity_SHT10](Sensor_Humidity_SHT10)|Y|Y|-|
 |[Sensor_LDR](Sensor_LDR)|Y|Y|-|
-|[Sensor_Thermocouple_TypeK](Sensor_Thermocouple_TypeK)|-|Y|-|
 |[Sensor_Temperature_DS18B20](Sensor_Temperature_DS18B20)|Y|Y|-|
 |[Sensor_Temperature_DS18B20_4Sensors](Sensor_Temperature_DS18B20_4Sensors)|Y|Y|-|
 |[Sensor_Temperature_LM35](Sensor_Temperature_LM35)|Y|Y|-|
 |[Sensor_Temperature_LM335](Sensor_Temperature_LM335)|Y|Y|-|
 |[Sensor_Temperature_SMT160](Sensor_Temperature_SMT160)|Y|-|-|
+|[Sensor_Thermocouple_TypeK](Sensor_Thermocouple_TypeK)|-|Y|-|
 |[Sound_MusicPlayer](Sound_MusicPlayer)|Y|-|-|
 |[SPI_Config](SPI_Config)|Y|Y|-|
 |[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
