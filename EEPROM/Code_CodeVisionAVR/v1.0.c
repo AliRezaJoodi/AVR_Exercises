@@ -14,34 +14,35 @@
 #define Key_up PINB.1
 #define Key_down PINB.0
 
+char i;
+
+#include "Attachment\_EEPROM.h"
 void Config_LCD(void);
 void Display_Value(void);
-void EEPROM_Load(void);
-void EEPROM_Save(void);
-
-unsigned char i;
-eeprom unsigned char i_eeprom; 
 
 void main(void){
     DDRB.1=0; PORTB.1=1;
     DDRB.0=0; PORTB.0=1;
     Config_LCD();
     
-    EEPROM_Load();
+    CheckValidity_EEPROM();
+    ///Default_EEPROM();
+    Load_EEPROM();
     Display_Value();
     
     while (1){
         if (Key_up==0){
             i=i+1;
-            EEPROM_Save();
-            Display_Value();
-            delay_ms(200);
+            delay_ms(50);
         }
         if (Key_down==0){
             i=i-1;
-            EEPROM_Save();
-            Display_Value();
-            delay_ms(200);
+            delay_ms(50);
+        }
+        
+        if(CheckNewChange_EEPROM(i)){
+            Save_EEPROM();
+            Display_Value(); 
         }
     };
 }
@@ -58,16 +59,6 @@ void Display_Value(void){
     itoa(i,buffer);
     lcd_gotoxy(0,0); lcd_putsf("Number= "); lcd_puts(buffer);
     lcd_gotoxy(0,1); lcd_putsf("Internal EEPROM");
-}
-
-//********************************************************
-void EEPROM_Load(void){
-    i=i_eeprom; ///delay_ms(10);
-}
-
-//********************************************************
-void EEPROM_Save(void){
-    i_eeprom=i; delay_ms(10);
 }
 
 

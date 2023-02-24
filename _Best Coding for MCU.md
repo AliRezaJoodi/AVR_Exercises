@@ -2,6 +2,10 @@
 AVR_Exercises\ADC_ExternalADC_MCP3204_SPI\Code_CodeVisionAVR
 - MCP320x.h
 
+### Internal EEPROM
+AVR_Exercises\EEPROM\Code_CodeVisionAVR
+- _EEPROM.h
+
 ### Buzzer
 AVR_Exercises\Sound\Code_CodeVisionAVR
 - Buzzer.h
@@ -38,7 +42,7 @@ AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.0.c
 - Keypad_4x4.h
 
 ### LM35
-AVR_Exercises\Sensor_Thermometer_LM35\Code_CodeVisionAVR 
+AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR 
 - LM35.h
 
 ### Config_ADC.h
@@ -46,17 +50,17 @@ AVR_Exercises\ADC_10Bit_AREF VREF\Code_CodeVisionAVR
 - Config_ADC.h
 
 ### ADC Reading
-AVR_Projects_Beginning\Thermometer_LM35\Code_BascomAVR\v3.1.bas
+AVR_Exercises\Sensor_Temperature_LM35\Code_BascomAVR\v3.1.bas
 - Included sampling and averaging
 
 ### Display ^c
-AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
+AVR_Exercises\Sensor_Thermocouple_TypeK\Code_CodeVisionAVR
 - Define_Char.h
 
-AVR_Exercises\Sensor_Thermometer_DS18B20\Code_BascomAVR\v1.0.bas
+AVR_Exercises\Sensor_Temperature_DS18B20\Code_BascomAVR\v1.0.bas
 
 ### Type K Thermocouple
-AVR_Projects_Beginning\Thermometer Using Type K Thermocouple\Code_CodeVisionAVR
+Sensor_Thermocouple_TypeK\Code_CodeVisionAVR
 - Thermocouple_K.h
 
 ### LED
@@ -67,7 +71,7 @@ AVR_Exercises\Display_LED\Code_BascomAVR
 - LED_Functions.inc
 
 ### shtxx
-AVR_Projects_Beginning\Hygrometer and Thermometer Using SHT10\Code_CodeVisionAVR
+AVR_Exercises\Sensor_Humidity_SHT10\Code_CodeVisionAVR
 - shtxx.h
 
 ### Int to MSB and LSB Converter
@@ -109,7 +113,7 @@ AVR_Exercises\Include External Files\Code_CodeVisionAVR\Attachment\Hardware_v1.0
 AVR_Exercises\Include External Files\Code_BascomAVR\Attachment\Hardware_v1.0
 
 ### Avrege
-AVR_Projects_Beginning\Thermometer Using LM35\Code_BascomAVR\v3.1.bas
+AVR_Exercises\Sensor_Temperature_LM35\Code_BascomAVR\v3.1.bas
 
 
 
