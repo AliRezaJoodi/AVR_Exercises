@@ -39,6 +39,7 @@ A repository for my personal exercises.
 ![](Motor_DC/Simulate/Album.png)
 ![](Display_LCD_BulletinBoard/Simulate/Album.png)
 ![](Sensor_Humidity_SHT10/Simulate/Album.png)
+![](Chronometer/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -71,6 +72,7 @@ A repository for my personal exercises.
 |[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
 |[Buzzer](Buzzer)|Y|Y|Y|
+|[Chronometer](Chronometer)|Y|-|-|
 |[Converter_DataTable](Converter_DataTable)|Y|-|-|
 |[Converter_MSB&LSB](Converter_MSB&LSB)|Y|Y|-|
 |[DAC_ExternalDAC_MCP4822_SPI](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
