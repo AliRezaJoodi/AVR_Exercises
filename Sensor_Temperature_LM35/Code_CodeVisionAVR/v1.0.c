@@ -56,7 +56,7 @@ void Display_temp(float mv,float temp){
 void Display2_temp(float temp){
     char txt[16]; 
     lcd_gotoxy(0,0); lcd_putsf("Temp:"); ftoa(temp,1,txt); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" "); 
-    lcd_gotoxy(0,1); lcd_putsf("LM35 Sensor:");  
+    lcd_gotoxy(0,1); lcd_putsf("LM35 Sensor");  
 }
 
 
