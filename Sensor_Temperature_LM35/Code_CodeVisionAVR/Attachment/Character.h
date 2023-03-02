@@ -10,6 +10,8 @@
     #define CHAR1               char1
 #endif
 
+#pragma used+
+
 typedef unsigned char byte;
 flash byte char0[8]={
     0b10000111,
@@ -41,5 +43,7 @@ void define_char(byte flash *pc,byte char_code){
     a=(char_code<<3) | 0x40;
     for (i=0; i<8; i++) {lcd_write_byte(a++,*pc++);}
 }
+
+#pragma used-
 
 #endif

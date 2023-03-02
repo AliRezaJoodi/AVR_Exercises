@@ -40,6 +40,7 @@ A repository for my personal exercises.
 ![](Display_LCD_BulletinBoard/Simulate/Album.png)
 ![](Sensor_Humidity_SHT10/Simulate/Album.png)
 ![](Chronometer/Simulate/Album.png)
+![](Average/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -69,6 +70,7 @@ A repository for my personal exercises.
 |[ADC_ExternalADC_MCP3202_SPI](ADC_ExternalADC_MCP3202_SPI)|-|Y|-|
 |[ADC_ExternalADC_MCP3204_SPI](ADC_ExternalADC_MCP3204_SPI)|-|Y|-|
 |[ATtiny13](ATtiny13)|Y|-|-|
+|[Average](Average)|Y|-|-|
 |[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
 |[Buzzer](Buzzer)|Y|Y|Y|
