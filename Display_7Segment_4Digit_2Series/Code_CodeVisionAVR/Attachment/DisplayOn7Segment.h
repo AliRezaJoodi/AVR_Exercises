@@ -333,6 +333,63 @@ void Float_RightToLeft_Display2(float value){
     }
 }
 
+//**************************************
+void Float_LefToRight_Display2(float value){
+    unsigned int value_int=0;
+    unsigned char digit=0;
+    unsigned char dp=0;
+    static char i=3;     
+    static char status=0;
+
+    _Off_7Segment();
+    if(value<10){value=value*1000; dp=3;}
+        else if(value<100){value=value*100; dp=2;}
+            else if(value<1000){value=value*10; dp=1;}
+                else if(value<10000){value=value*1; dp=0;}
+    
+    switch(i){
+        case 3:
+            value_int=value/1000;
+            digit=value_int%10; 
+            digit=_DataConverter(digit);
+            if(dp==3){digit=digit | 0b10000000;}
+            if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);}
+            _DataDriver(digit);
+            D2_3=ACTIVATE_DIGIT;
+            i--; 
+            break; 
+        case 2:
+            value_int=value/100;
+            digit=value_int%10;
+            digit=_DataConverter(digit);
+            if(dp==2){digit=digit | 0b10000000;} 
+            if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);}
+            _DataDriver(digit);
+            D2_2=ACTIVATE_DIGIT;
+            i--; 
+            break;   
+        case 1:
+            value_int=value/10;
+            digit=value_int%10; 
+            digit=_DataConverter(digit);
+            if(dp==1){digit=digit | 0b10000000;}
+            if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);}
+            _DataDriver(digit);
+            D2_1=ACTIVATE_DIGIT;  
+            i--; 
+            break; 
+        case 0:
+            value_int=value/1;
+            digit=value_int%10;
+            digit=_DataConverter(digit);
+            if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);}
+            _DataDriver(digit);
+            D2_0=ACTIVATE_DIGIT; 
+            i--; if(value_int<10000){i=3; status=0;}   
+            break;
+    }
+}
+
 #pragma used+
 
 

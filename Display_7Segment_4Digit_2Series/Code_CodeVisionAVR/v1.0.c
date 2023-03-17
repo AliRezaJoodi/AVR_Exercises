@@ -9,7 +9,7 @@ void main(void){
     Config_7Segment();
       
     while(1){
-        //Int_LefToRight_Display1(4321); delay_ms(300);
-        Float_RightToLeft_Display2(9.123); delay_ms(300);
+        Int_LefToRight_Display1(4321); delay_ms(5);
+        Float_LefToRight_Display2(0.123); delay_ms(5);
     };
 }
