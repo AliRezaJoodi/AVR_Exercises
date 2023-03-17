@@ -1,4 +1,4 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 
 #ifndef PORTS_7SEGMENTS
     #define PORTS_7SEGMENTS
@@ -386,6 +386,181 @@ void Float_LefToRight_Display2(float value){
             _DataDriver(digit);
             D2_0=ACTIVATE_DIGIT; 
             i--; if(value_int<10000){i=3; status=0;}   
+            break;
+    }
+}
+
+//**************************************
+char Display1(float value, char decimal){
+    unsigned int value_int=0;
+    unsigned char digit=0;
+    static char i=3;     
+    static char status=0;
+    
+    if(value>=10000){i=3; return i;}
+    
+    if(value<10){if(decimal>3){decimal=3;}}
+        else if(10<=value && value<100){if(decimal>2){decimal=2;}}
+            else if(100<=value && value<1000){if(decimal>1){decimal=1;}}
+                else if(1000<=value && value<10000){if(decimal>0){decimal=0;}}
+        
+    if(decimal==3){value=value*1000;}
+        else if(decimal==2){value=value*100;}
+            else if(decimal==1){value=value*10;}
+                else if(decimal==0){value=value*1;} 
+
+    value_int=value;  
+    
+    switch(i){
+        case 3:
+            value_int=value/1000;
+            digit=value_int%10; 
+            if(digit>0 || decimal==3){status=1;}
+            if(status){
+                digit=_DataConverter(digit); 
+                if(decimal==3){digit=digit | 0b10000000;}
+                if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);} 
+                _Off_7Segment();
+                _DataDriver(digit);
+                D1_3=ACTIVATE_DIGIT;
+                i--; break; 
+            }
+            i--; 
+        case 2:
+            value_int=value/100;
+            digit=value_int%10;
+            if(digit>0 || decimal==2){status=1;} 
+            if(status){
+                digit=_DataConverter(digit);
+                if(decimal==2){digit=digit | 0b10000000;}
+                if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);} 
+                _Off_7Segment();
+                _DataDriver(digit);
+                D1_2=ACTIVATE_DIGIT;
+                i--; break;   
+            }
+            i--; 
+        case 1:
+            value_int=value/10;
+            digit=value_int%10;
+            if(digit>0 || decimal==1){status=1;}  
+            if(status){
+                digit=_DataConverter(digit);  
+                if(decimal==1){digit=digit | 0b10000000;}
+                if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);} 
+                _Off_7Segment();
+                _DataDriver(digit);
+                D1_1=ACTIVATE_DIGIT;  
+                i--; break;
+            } 
+            i--;
+        case 0:
+            value_int=value/1;
+            digit=value_int%10;
+            digit=_DataConverter(digit);
+            if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);}  
+            _Off_7Segment();
+            _DataDriver(digit);
+            D1_0=ACTIVATE_DIGIT; 
+            //i--; if(value_int<10000){i=3; status=0;}
+            i=3; status=0;   
+            break;
+    } 
+    
+    return i;
+}
+
+//**************************************
+char Display2(float value, char decimal){
+    unsigned int value_int=0;
+    unsigned char digit=0;
+    static char i=3;     
+    static char status=0;
+    
+    if(value>=10000){i=3; return i;}
+    
+    if(value<10){if(decimal>3){decimal=3;}}
+        else if(10<=value && value<100){if(decimal>2){decimal=2;}}
+            else if(100<=value && value<1000){if(decimal>1){decimal=1;}}
+                else if(1000<=value && value<10000){if(decimal>0){decimal=0;}}
+        
+    if(decimal==3){value=value*1000;}
+        else if(decimal==2){value=value*100;}
+            else if(decimal==1){value=value*10;}
+                else if(decimal==0){value=value*1;} 
+
+    value_int=value;  
+    
+    switch(i){
+        case 3:
+            value_int=value/1000;
+            digit=value_int%10; 
+            if(digit>0 || decimal==3){status=1;}
+            if(status){
+                digit=_DataConverter(digit); 
+                if(decimal==3){digit=digit | 0b10000000;}
+                if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);} 
+                _Off_7Segment();
+                _DataDriver(digit);
+                D2_3=ACTIVATE_DIGIT;
+                i--; break; 
+            }
+            i--; 
+        case 2:
+            value_int=value/100;
+            digit=value_int%10;
+            if(digit>0 || decimal==2){status=1;} 
+            if(status){
+                digit=_DataConverter(digit);
+                if(decimal==2){digit=digit | 0b10000000;}
+                if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);} 
+                _Off_7Segment();
+                _DataDriver(digit);
+                D2_2=ACTIVATE_DIGIT;
+                i--; break;   
+            }
+            i--; 
+        case 1:
+            value_int=value/10;
+            digit=value_int%10;
+            if(digit>0 || decimal==1){status=1;}  
+            if(status){
+                digit=_DataConverter(digit);  
+                if(decimal==1){digit=digit | 0b10000000;}
+                if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);} 
+                _Off_7Segment();
+                _DataDriver(digit);
+                D2_1=ACTIVATE_DIGIT;  
+                i--; break;
+            } 
+            i--;
+        case 0:
+            value_int=value/1;
+            digit=value_int%10;
+            digit=_DataConverter(digit);
+            if(ACTIVATE_SEGMENT==0){digit=_DataReverser(digit);}  
+            _Off_7Segment();
+            _DataDriver(digit);
+            D2_0=ACTIVATE_DIGIT; 
+            //i--; if(value_int<10000){i=3; status=0;}
+            i=3; status=0;   
+            break;
+    } 
+    
+    return i;
+}
+
+//**********************************************
+void DisplayAll(float value1, float value2){
+    char refresh_display=0;
+    static char i_display = 0;
+    
+    switch(i_display){ 
+        case 0:
+            refresh_display = Display1(value1, 3); if(refresh_display==3){++i_display;}  
+            break;
+        case 1: 
+            refresh_display = Display2(value2, 3); if(refresh_display==3){i_display=0;} 
             break;
     }
 }
