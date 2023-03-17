@@ -23,7 +23,9 @@ List
 Obj
 *.cbi
 *.cof
+*.elf
 *.fct
+*.prj~
 *.rom
 Main.txt
 *.c~
