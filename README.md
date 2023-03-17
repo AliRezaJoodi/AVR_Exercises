@@ -84,7 +84,7 @@ A repository for my personal exercises.
 |[Display_7Segment_1Digit_Using4026](Display_7Segment_1Digit_Using4026)|Y|Y|-|
 |[Display_7Segment_1Digit_Using7447](Display_7Segment_1Digit_Using7447)|Y|Y|-|
 |[Display_7Segment_1Digit_Using74164](Display_7Segment_1Digit_Using74164)|Y|Y|-|
-|[Display_7Segment_4Digit_2Series](Display_7Segment_4Digit_2Series)|-|Y|-|
+|[Display_7Segment_4Digit_2Display](Display_7Segment_4Digit_2Display)|-|Y|-|
 |[Display_7Segment_8Digit](Display_7Segment_8Digit)|Y|Y|-|
 |[Display_GLCD_KS0108](Display_GLCD_KS0108)|-|Y|-|
 |[Display_GLCD_T6963](Display_GLCD_T6963)|Y|-|-|
