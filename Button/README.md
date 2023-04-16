@@ -7,6 +7,7 @@ Frequency:     	1.000000 MHz
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
 - `Code_CodeVisionAVR` (Code with C Language)
+- `Code_mikroC PRO for AVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0
