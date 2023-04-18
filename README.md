@@ -100,7 +100,7 @@ A repository for my personal exercises.
 |[Encoder](Encoder)|Y|Y|-|
 |[FrequencyMeter_Timer0_0.1S_4MHz](FrequencyMeter_Timer0_0.1S_4MHz)|-|Y|-|
 |[FrequencyMeter_Timer0_1S_11.059200MHz](FrequencyMeter_Timer0_1S_11.059200MHz)|Y|-|-|
-|[FrequencyMeter_Timer0_1S_11.059200MHz_7SegmentDisplay](FrequencyMeter_Timer0_1S_11.059200MHz_7SegmentDisplay)|Y|-|-|
+|[FrequencyMeter_Timer0_1S_11.059200MHz_7Segment](FrequencyMeter_Timer0_1S_11.059200MHz_7Segment)|Y|-|-|
 |[IO_ExternalOutputs_PCF8574_I2C](IO_ExternalOutputs_PCF8574_I2C)|Y|-|-|
 |[Include](Include)|Y|Y|-|
 |[IO_Input](IO_Input)|Y|-|-|
