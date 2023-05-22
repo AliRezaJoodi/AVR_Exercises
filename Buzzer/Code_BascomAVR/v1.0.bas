@@ -3,7 +3,7 @@
 $regfile = "m32def.dat"
 $crystal = 8000000
 
-Config Portb.1 = Output : Portb.0 = 1 : Buzzer Alias Portb.1
+Config Portb.1 = Output : Portb.1 = 1 : Buzzer Alias Portb.1
 
 Gosub Sound_number : Waitms 500
 Gosub Sound_menu : Waitms 500
