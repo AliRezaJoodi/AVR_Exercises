@@ -35,6 +35,8 @@ Main.txt
 *.hci
 
 # mikroC PRO for AVR folders and files for ignore
+*.cproj
+*.cfg
 *.dbg
 *.dct
 *.dlt
