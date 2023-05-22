@@ -1,4 +1,4 @@
-## Create a Beeb Sound Using Buzzer
+## Create a Beeb Sound With Buzzer
   
 MCU:		ATmega32  
 Frequency:   	8.000000 MHz   
