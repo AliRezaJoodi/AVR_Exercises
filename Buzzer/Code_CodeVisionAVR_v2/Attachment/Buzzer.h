@@ -43,16 +43,6 @@ interrupt [TIM0_OVF] void timer0_ovf_isr(void){
 }
 
 //******************************
-void _EnableTimer0(void){
-    SETBIT(TIMSK,TOIE0);
-}
-
-//******************************
-void _DisableTimer0(void){
-    CLRBIT(TIMSK,TOIE0);
-}
-
-//******************************
 void _ConfigTimer0(void){
 // Timer/Counter 0 initialization
 // Clock source: System Clock
@@ -67,7 +57,6 @@ OCR0=0x00;
     // Timer(s)/Counter(s) Interrupt(s) initialization
     //TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
     #asm("sei") // Global enable interrupts 
-    //_EnableTimer0();
 }
 
 //******************************
@@ -77,6 +66,16 @@ void ConfigBuzzer(void){
 }
 
 #pragma used+
+
+//******************************
+void _EnableTimer0(void){
+    SETBIT(TIMSK,TOIE0);
+}
+
+//******************************
+void _DisableTimer0(void){
+    CLRBIT(TIMSK,TOIE0);
+}
 
 //******************************
 char _Cunt100ms(void){
