@@ -15,6 +15,10 @@
     #define BUZZER          BUZZER_PORT 
 #endif
 
+//Single beep_mode
+#define UP_DOWN_BEEP    1
+#define SET_BEEP        2
+#define ERROR_BEEP      3
 
 //********************************************************
 void ConfigBuzzer(void){
@@ -24,31 +28,41 @@ void ConfigBuzzer(void){
 #pragma used+
 
 //*******************************************************
-void MakeBeep1(void){
-    unsigned int i;
-    for (i=0;i<=350;++i) {
-        BUZZER=ACTIVE_BUZZER; delay_us(150);
-        BUZZER=!ACTIVE_BUZZER; delay_us(150);
-    };   
+void _MakeUpOrDownBeep(void){
+    BUZZER=ACTIVE_BUZZER;
+    delay_ms(80);
+    BUZZER=!ACTIVE_BUZZER;  
 }
 
 //*******************************************************
-void MakeBeep2(void){
-    unsigned int i;
-    for (i=0;i<=100;++i) {
-        BUZZER=ACTIVE_BUZZER; delay_us(400);
-        BUZZER=!ACTIVE_BUZZER; delay_us(400);
-    };  
+void _MakeSetBeep(void){    
+    BUZZER=ACTIVE_BUZZER;
+    delay_ms(220);
+    BUZZER=!ACTIVE_BUZZER;
 }
 
 //*******************************************************
-void MakeBeep3(void){
-    unsigned int i;
-    for (i=0;i<=30;++i) {
-        BUZZER=ACTIVE_BUZZER; delay_ms(2);
-        BUZZER=!ACTIVE_BUZZER; delay_ms(2);
-    };   
+void _MakeErrorBeep(void){
+    BUZZER=ACTIVE_BUZZER;
+    delay_ms(500);
+    BUZZER=!ACTIVE_BUZZER;  
 }
+
+//*******************************************************
+// Call in Main
+void DriveBuzzer(char mode){    
+    switch(mode){
+        case UP_DOWN_BEEP:
+            _MakeUpOrDownBeep();
+            break;
+        case SET_BEEP: 
+            _MakeSetBeep();
+            break;
+        case ERROR_BEEP: 
+            _MakeErrorBeep();
+            break;
+    }
+} 
 
 #pragma used-
 
