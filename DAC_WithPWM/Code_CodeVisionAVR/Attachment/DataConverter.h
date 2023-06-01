@@ -1,4 +1,4 @@
-//GitHub Account:     GitHub.com/AliRezaJoodi
+//GitHub Account: GitHub.com/AliRezaJoodi
 
 //******************************************
 float Fix_0to100(float x){
@@ -29,6 +29,14 @@ unsigned char Convert_0to100_0to255(float x){
 }
 
 //******************************************
+float Convert_0to100_0to5V(float x){
+    float y=0; 
+    x=Fix_0to100(x); 
+    y=x/100*5; 
+    return y;       
+}
+
+//******************************************
 float Convert_0to100_1to5V(float x){
     float y=0; 
     x=Fix_0to100(x); 
@@ -47,28 +55,28 @@ float Convert_0to100_0to3V3(float x){
 //******************************************
 unsigned int Convert_0to5V_0to1023(float x){
     unsigned int y=0;  
-    y=(x/5)*1023;
+    x=(x/5)*1023; y=x;
     return y;       
 }
 
 //******************************************
 unsigned char Convert_0to5V_0to255(float x){
     unsigned char y=0;  
-    y=(x/5)*255;
+    x=(x/5)*255; y=x;
     return y;       
 }
 
 //******************************************
 unsigned int Convert_0to3V3_0to1023(float x){
     unsigned int y=0;  
-    y=(x/3.3)*1023;
+    x=(x/3.3)*1023; y=x;
     return y;       
 }
 
 //******************************************
 unsigned char Convert_0to3V3_0to255(float x){
     unsigned char y=0;  
-    y=(x/3.3)*255;
+    x=(x/3.3)*255; y=x;
     return y;       
 }
 

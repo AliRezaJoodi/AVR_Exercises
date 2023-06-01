@@ -42,6 +42,7 @@ A repository for my personal exercises.
 ![](Chronometer/Simulate/Album.png)
 ![](Average/Simulate/Album.png)
 ![](FrequencyMeter_Timer0_0.1S_4MHz/Simulate/Album.png)
+![](ControlSystems_OnOff/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -76,6 +77,7 @@ A repository for my personal exercises.
 |[Button](Button)|Y|Y|Y|
 |[Buzzer](Buzzer)|Y|Y|Y|
 |[Chronometer](Chronometer)|Y|-|-|
+|[ControlSystems_OnOff](ControlSystems_OnOff)|-|Y|-|
 |[Converter_DataTable](Converter_DataTable)|Y|-|-|
 |[Converter_MSB&LSB](Converter_MSB&LSB)|Y|Y|-|
 |[DAC_ExternalDAC_MCP4822_SPI](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
