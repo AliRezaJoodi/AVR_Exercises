@@ -23,7 +23,7 @@ A repository for my personal exercises.
 ![](Converter_MSB&LSB/Simulate/Album.png)
 ![](Keyboard_PC/Hardware/Album.png)
 ![](Keypad_4x4_UsingADC/Simulate/Album.png)
-![](DAC_UsingPWM/Simulate/Album.png)
+![](DAC_WithPWM/Simulate/Album.png)
 ![](Sensor_LDR/Simulate/Album.png)
 ![](Display_LCD_BarGraph/Simulate/Album.png)
 ![](Encoder/Simulate/Album.png)
