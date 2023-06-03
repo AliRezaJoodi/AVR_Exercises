@@ -43,6 +43,7 @@ A repository for my personal exercises.
 ![](Average/Simulate/Album.png)
 ![](FrequencyMeter_Timer0_0.1S_4MHz/Simulate/Album.png)
 ![](ControlSystems_OnOff/Simulate/Album.png)
+![](ControlSystems_PID/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
