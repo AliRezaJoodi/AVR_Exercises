@@ -1,6 +1,6 @@
 ## PID Control Systems
-It's a PID Temperature Controller for a oven.   
-It's an example for practice. So, We use constant value for the `setpoint` variables.  
+It's a free library for PID Controller.  
+It's an example to control oven temperature.
 
 MCU:        ATmega32  
 Frequency:  8.000000 MHz  
