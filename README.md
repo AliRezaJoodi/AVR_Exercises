@@ -79,6 +79,7 @@ A repository for my personal exercises.
 |[Buzzer](Buzzer)|Y|Y|Y|
 |[Chronometer](Chronometer)|Y|-|-|
 |[ControlSystems_OnOff](ControlSystems_OnOff)|-|Y|-|
+|[ControlSystems_PID](ControlSystems_PID)|-|Y|-|
 |[Converter_DataTable](Converter_DataTable)|Y|-|-|
 |[Converter_MSB&LSB](Converter_MSB&LSB)|Y|Y|-|
 |[DAC_ExternalDAC_MCP4822_SPI](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
