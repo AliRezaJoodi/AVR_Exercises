@@ -1,4 +1,4 @@
-## Create menu On The LCD
+## Create Menu On The LCD
 
 MCU:            ATmega32  
 Frequency:     	8.000000 MHz 
