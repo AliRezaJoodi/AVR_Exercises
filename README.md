@@ -45,6 +45,7 @@ A repository for my personal exercises.
 ![](ControlSystems_OnOff/Simulate/Album.png)
 ![](ControlSystems_PID/Simulate/Album.png)
 ![](ControlSystems_PID-OnOFF/Simulate/Album.png)
+![](Display_LCD_Menu/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -98,6 +99,7 @@ A repository for my personal exercises.
 |[Display_LCD](Display_LCD)|Y|Y|Y|
 |[Display_LCD_BarGraph](Display_LCD_BarGraph)|Y|Y|-|
 |[Display_LCD_BulletinBoard](Display_LCD_BulletinBoard)|Y|-|-|
+|[Display_LCD_Menu](Display_LCD_Menu)|-|Y|-|
 |[Display_LED](Display_LED)|Y|Y|-|
 |[Display_LED_Flasher](Display_LED_Flasher)|Y|Y|-|
 |[Display_LED_RGB](Display_LED_RGB)|Y|-|-|
