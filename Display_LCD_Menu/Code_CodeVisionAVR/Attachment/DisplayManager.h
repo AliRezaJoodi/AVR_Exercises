@@ -12,6 +12,9 @@
     #define TURN_ON_THE_LCD
 #endif
 
+#define BILLBOARD_PAGE  0
+#define MAIN_PAGE       1
+
 struct display_data{
     char text1[16]; 
     char text2[16];
@@ -26,7 +29,7 @@ void ConfigLCD(void){
 }
 
 //********************************************************
-void DisplayMainMenu(void){
+void DisplayMainPage(void){
     char txt[16];
     lcd_clear(); 
     lcd_gotoxy(0,0); ftoa(display.valu1,3,txt); lcd_putsf("Volt(V):"); lcd_puts(txt); 
@@ -34,7 +37,7 @@ void DisplayMainMenu(void){
 }
 
 //********************************************************
-void DisplayBillboardMenu(void){
+void DisplayBillboardPage(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_puts(display.text1);
     lcd_gotoxy(0,1); lcd_puts(display.text2);
@@ -44,7 +47,7 @@ void DisplayBillboardMenu(void){
 void DisplayLoading(void){
     strcpy(display.text1, "Test LCD"); 
     strcpy(display.text2, "Loding ...");
-    DisplayBillboardMenu();
+    DisplayBillboardPage();
 }
 
 //********************************************************
@@ -54,16 +57,16 @@ void SyncronValues(void){
 }
 
 //********************************************************
-void DisplayValuesOnTheLCD(char mode){
+void DisplayValuesOnTheLCD(char page){
     #ifdef TURN_ON_THE_LCD
         SyncronValues();
      
-        switch (mode){
-            case 0: 
+        switch (page){
+            case BILLBOARD_PAGE: 
                 DisplayLoading();
                 break;
-            case 1:  
-                DisplayMainMenu();
+            case MAIN_PAGE:  
+                DisplayMainPage();
                 break;
         }
     #endif

@@ -1,7 +1,6 @@
 //GitHub Account:     GitHub.com/AliRezaJoodi
 
 #include <mega32.h>
-#include <lcd.h>
 #include <delay.h>
 
 // Alphanumeric LCD Module functions
