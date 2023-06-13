@@ -75,7 +75,7 @@ A repository for my personal exercises.
 |[ADC_ExternalADC_MCP3202_SPI](ADC_ExternalADC_MCP3202_SPI)|-|Y|-|
 |[ADC_ExternalADC_MCP3204_SPI](ADC_ExternalADC_MCP3204_SPI)|-|Y|-|
 |[ATtiny13](ATtiny13)|Y|-|-|
-|[Average](Average)|Y|-|-|
+|[Average](Average)|-|Y|-|
 |[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
 |[Buzzer](Buzzer)|Y|Y|Y|
