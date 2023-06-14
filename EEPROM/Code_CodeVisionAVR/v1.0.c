@@ -28,7 +28,7 @@ void main(void){
     
     ValidateEEPROM();
     //SetDefaultValuesInEEPROM();
-    LoadValuesOfEEPROM();
+    LoadValuesFromEEPROM();
     
     DisplayValue();
     

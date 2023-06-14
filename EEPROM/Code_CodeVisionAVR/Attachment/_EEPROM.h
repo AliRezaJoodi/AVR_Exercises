@@ -20,7 +20,7 @@ void SetDefaultValuesInEEPROM(void){
 }
 
 //******************************
-void LoadValuesOfEEPROM(void){
+void LoadValuesFromEEPROM(void){
     #ifdef ENABLE_EEPROM
         i=i_eeprom; 
     #endif
