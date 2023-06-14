@@ -1,42 +1,43 @@
-// GitHub Account:  GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 // A local library
+
+//define DISABLE_EEPROM
+#ifndef DISABLE_EEPROM
+    #define ENABLE_EEPROM
+#endif
+
+#pragma used+
 
 eeprom char i_eeprom; 
 eeprom char empty_eeprom;
 
-#pragma used+
-
 //******************************
-void Default_EEPROM(void){
-    i_eeprom=100; delay_ms(10);
-    empty_eeprom=1; delay_ms(10);
+void SetDefaultValuesInEEPROM(void){
+    #ifdef ENABLE_EEPROM
+        i_eeprom=100; delay_ms(10);
+        empty_eeprom=1; delay_ms(10);
+    #endif
 }
 
 //******************************
-void Load_EEPROM(void){
-    i=i_eeprom;
+void LoadValuesOfEEPROM(void){
+    #ifdef ENABLE_EEPROM
+        i=i_eeprom; 
+    #endif
 }
 
 //******************************
-void Save_EEPROM(void){
-    i_eeprom=i; delay_ms(10);    
+void SaveNewChangesInEEPROM(void){
+    #ifdef ENABLE_EEPROM
+        if(i!=i_eeprom){i_eeprom=i; delay_ms(10);}
+    #endif    
 }
 
 //******************************
-void SaveChanges_EEPROM(void){
-    if(i!=i_eeprom){i_eeprom=i; delay_ms(10);}    
-}
-
-//******************************
-char CheckNewChange_EEPROM(char value){
-    static char value_old=0;
-    if(value!=value_old){value_old=value; return 1;}
-    return 0;
-}
-
-//******************************
-void CheckValidity_EEPROM(void){
-    if(empty_eeprom!=1){Default_EEPROM();}
+void ValidateEEPROM(void){
+    #ifdef ENABLE_EEPROM
+        if(empty_eeprom!=1){SetDefaultValuesInEEPROM();} 
+    #endif 
 }
 
 #pragma used-
