@@ -1,123 +1,194 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
-
-#ifndef _MCP320X_INCLUDED_
-    #define _MCP320X_INCLUDED_
-
-#include <spi.h>
-
-#ifndef _MCP320X_PORTS_
-    #define _MCP320X_PORTS_
-    
-    #define CS_MCP320X_DDR      DDRB.3
-    #define CS_MCP320X_PORT     PORTB.3
-    #define CS_MCP320X_PIN      PINB.3 
-    #define CS_MCP320X          CS_MCP320X_PORT 
-    
-    #define VREF_MCP320X        5       //Volt
-    #define RESOLUTION_MCP320X  4095    //12-Bit
-    #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X   
-#endif
-
-//********************************************************
-void _Config_SPI(void){
-    DDRB.4=1; PORTB.4=0;    //SS
-    DDRB.5=1; PORTB.5=0;    //MOSI
-    DDRB.6=0; PORTB.6=0;    //MISO
-    DDRB.7=1; PORTB.7=0;    //SCK
-
-// SPI initialization
-// SPI Type: Master
-// SPI Clock Rate: 2000.000 kHz
-// SPI Clock Phase: Cycle Start
+// GitHub Account: GitHub.com/AliRezaJoodi
+// This library use of the SPI interfacing
 // SPI Clock Polarity: Low
 // SPI Data Order: MSB First
-SPCR=(0<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
-SPSR=(0<<SPI2X);
-}
+
+#ifndef _INCLUDED_MCP320X
+    #define _INCLUDED_MCP320X
+    
+    //#define DISABLE_MCP320X
+    #ifndef DISABLE_MCP320X
+        #define _ENABLE_MCP320X
+    #endif
+
+    #define CS_DDR_MCP320X      DDRB.4
+    #define CS_PORT_MCP320X     PORTB.4
+    #define CS_PIN_MCP320X      PINB.4 
+    #define CS_MCP320X          CS_PORT_MCP320X 
+    
+    #define VREF_MCP320X        5000    //MilliVolt
+    #define RESOLUTION_MCP320X  4096    //12-Bit
+    #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X   
 
 //********************************************************
-void Config_MCP320x(void){
-    _Config_SPI();
-    CS_MCP320X_DDR=1; CS_MCP320X_PORT=1;
+void ConfigMCP320x(void){
+    #ifdef _ENABLE_MCP320X
+        CS_DDR_MCP320X=1; CS_PORT_MCP320X=1;
+    #endif    
 }
 
 #pragma used+
 
 //********************************************************
-unsigned int _Get_MCP320x(char data1, char data2){
-    unsigned int value_int=0;
-    unsigned char value_msb=0;
-    unsigned char value_lsb=0;
-    
-    CS_MCP320X=0;
-    spi(data1);
-    value_msb=spi(data2); value_msb=value_msb&0b00001111;
-    value_lsb=spi(0xFF);
-    CS_MCP320X=1;
-
-    value_int=(value_msb<<8)|value_lsb;    
-    return value_int;
+unsigned int _ConvertMsbLsbToInt(unsigned char msb, unsigned char lsb){
+    return (msb<<8)|lsb;        
 }
 
 //********************************************************
-float _ConvertToVolt_MCP320x(unsigned int x){
+float _ConvertIntToMillivolt(unsigned int x){
     float value=x;
     value=value*GAIN_MCP320X;
     return value;
 }
 
 //********************************************************
-float GetSingle_MCP3202(char ch){
-    char data1=0;
-    char data2=0;
-    unsigned int value_int=0;
-    float value_float=0;
+unsigned int _CommunicationWithMCP3201(void){
+    #ifdef _ENABLE_MCP320X
+        unsigned int value=0;
+        unsigned char msb=0;
+        unsigned char lsb=0;
     
-    if(ch>1){return -1;}
+        CS_MCP320X=0;
+        msb=spi(0xFF); 
+        lsb=spi(0xFF);
+        CS_MCP320X=1;
     
-    data1=0b00000001; 
-    data2=(ch|0b00000010)<<6;
-    
-    value_int=_Get_MCP320x(data1, data2);
-    value_float=_ConvertToVolt_MCP320x(value_int);
-    return value_float;
+        msb=msb&0b00011111;
+        lsb=lsb&0b11111110; 
+        value=_ConvertMsbLsbToInt(msb, lsb);
+        value=value>>1;   
+        return value;
+    #else
+        return 0;
+    #endif
 }
 
 //********************************************************
-float GetSingle_MCP3204(char ch){
-    char data1=0;
-    char data2=0;
-    unsigned int value_int=0;
-    float value_float=0;
+unsigned int _CommunicationWithMCP320x(char data1, char data2){
+    #ifdef _ENABLE_MCP320X
+        unsigned int value=0;
+        unsigned char msb=0;
+        unsigned char lsb=0;
     
-    if(ch>3){return -1;}
+        CS_MCP320X=0;
+        spi(data1);
+        msb=spi(data2); 
+        lsb=spi(0xFF);
+        CS_MCP320X=1;
     
-    data1=(ch|0b00011000)>>2; 
-    data2=ch<<6; 
-
-    value_int=_Get_MCP320x(data1, data2);
-    value_float=_ConvertToVolt_MCP320x(value_int);
-    return value_float;
+        msb=msb&0b00001111; 
+        value=_ConvertMsbLsbToInt(msb, lsb);   
+        return value;
+    #else
+        return 0;
+    #endif
 }
 
 //********************************************************
-float GetSingle_MCP3208(char ch){
-    char data1=0;
-    char data2=0;
-    unsigned int value_int=0;
-    float value_float=0;
-    
-    if(ch>7){return -1;}
-    
-    data1=(ch|0b00011000)>>2; 
-    data2=ch<<6; 
+float GetDiffChannelFromMCP3201(void){
+    #ifdef _ENABLE_MCP320X
+        unsigned int value_int=0;
+        float millivolt=0;
 
-    value_int=_Get_MCP320x(data1, data2);
-    value_float=_ConvertToVolt_MCP320x(value_int);
-    return value_float;
+        value_int=_CommunicationWithMCP3201();
+        millivolt=_ConvertIntToMillivolt(value_int);
+        return millivolt;
+    #else
+        return 0;
+    #endif
+}
+
+//********************************************************
+float GetDiffChannelFromMCP3202(char ch){
+    #ifdef _ENABLE_MCP320X
+        char data1=0;
+        char data2=0;
+        unsigned int value_int=0;
+        float millivolt=0;
+    
+        switch (ch){
+            case 01:
+                ch=0; break;
+            case 10:
+                ch=1; break;
+            default:
+                return 0;
+        }
+    
+        data1=0b00000001; 
+        data2=(0b00000000 | ch)<<6;
+    
+        value_int=_CommunicationWithMCP320x(data1, data2);
+        millivolt=_ConvertIntToMillivolt(value_int);
+        return millivolt;
+    #else
+        return 0;
+    #endif
+}
+
+//********************************************************
+float GetSingleChannelFromMCP3202(char ch){
+    #ifdef _ENABLE_MCP320X
+        char data1=0;
+        char data2=0;
+        unsigned int value_int=0;
+        float millivolt=0;
+    
+        if(ch>1){return 0;}
+    
+        data1=0b00000001; 
+        data2=(0b00000010 | ch)<<6;
+    
+        value_int=_CommunicationWithMCP320x(data1, data2);
+        millivolt=_ConvertIntToMillivolt(value_int);
+        return millivolt;
+    #else
+        return 0;
+    #endif
+}
+
+//********************************************************
+float GetSingleChannelFromMCP3204(char ch){
+    #ifdef _ENABLE_MCP320X
+        char data1=0;
+        char data2=0;
+        unsigned int value_int=0;
+        float millivolt=0;
+    
+        if(ch>3){return 0;}
+    
+        data1=(0b00011000 | ch)>>2; 
+        data2=ch<<6; 
+
+        value_int=_CommunicationWithMCP320x(data1, data2);
+        millivolt=_ConvertIntToMillivolt(value_int);
+        return millivolt;
+    #else
+        return 0;
+    #endif
+}
+
+//********************************************************
+float GetSingleChannelFromMCP3208(char ch){
+    #ifdef _ENABLE_MCP320X
+        char data1=0;
+        char data2=0;
+        unsigned int value_int=0;
+        float millivolt=0;
+    
+        if(ch>7){return 0;}
+    
+        data1=(0b00011000 | ch)>>2; 
+        data2=ch<<6; 
+
+        value_int=_CommunicationWithMCP320x(data1, data2);
+        millivolt=_ConvertIntToMillivolt(value_int);
+        return millivolt;
+    #else
+        return 0;
+    #endif
 }
 
 #pragma used-
-
 #endif
 
