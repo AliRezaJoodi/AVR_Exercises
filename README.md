@@ -30,8 +30,7 @@ A repository for my personal exercises.
 ![](ADC_10Bit_AREF-VREF/Simulate/Album.png)
 ![](Sensor_Temperature_LM35/Simulate/Album.png)
 ![](Sensor_Temperature_LM335/Simulate/Album.png)
-![](ADC_ExternalADC_MCP3202_SPI/Simulate/Album.png)
-![](ADC_ExternalADC_MCP3204_SPI/Simulate/Album.png)
+![](ADC_ExternalADC_MCP320x_SPI/Simulate/Album.png)
 ![](DAC_ExternalDAC_MCP4822_SPI/Simulate/Album.png)
 ![](Sensor_Temperature_DS18B20/Simulate/Album.png)
 ![](Sensor_Temperature_DS18B20_4Sensors/Simulate/Album.png)
@@ -72,8 +71,7 @@ A repository for my personal exercises.
 |[ADC_10Bit_AVCC-VREF](ADC_10Bit_AVCC-VREF)|Y|Y|-|
 |[ADC_10Bit_AVCC-VREF_Interrupt](ADC_10Bit_AVCC-VREF_Interrupt)|Y|-|-|
 |[ADC_10Bit_Internal-VREF](ADC_10Bit_Internal-VREF)|Y|Y|-|
-|[ADC_ExternalADC_MCP3202_SPI](ADC_ExternalADC_MCP3202_SPI)|-|Y|-|
-|[ADC_ExternalADC_MCP3204_SPI](ADC_ExternalADC_MCP3204_SPI)|-|Y|-|
+|[ADC_ExternalADC_MCP320x_SPI](ADC_ExternalADC_MCP320x_SPI)|-|Y|-|
 |[ATtiny13](ATtiny13)|Y|-|-|
 |[Average](Average)|-|Y|-|
 |[BitAccess](BitAccess)|Y|Y|-|

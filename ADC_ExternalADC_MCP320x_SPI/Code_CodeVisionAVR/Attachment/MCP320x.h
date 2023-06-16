@@ -18,7 +18,10 @@
     
     #define VREF_MCP320X        5000    //MilliVolt
     #define RESOLUTION_MCP320X  4096    //12-Bit
-    #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X   
+    #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X
+    
+    #define SINGLE_CHANNEL      1 
+    #define DIFF_CHANNEL        0  
 
 //********************************************************
 void ConfigMCP320x(void){
@@ -104,13 +107,14 @@ float GetSingleChannelFromMCP3202(char ch){
         char data1=0;
         char data2=0;
         unsigned int value_int=0;
-        float millivolt=0;
+        float millivolt=0; 
+        char type=SINGLE_CHANNEL;
     
         if(ch>1){return 0;}
     
         data1=0b00000001; 
-        data2=(0b00000010 | ch)<<6;
-    
+        data2=(type<<7) | (ch<<6);
+        
         value_int=_CommunicationWithMCP320x(data1, data2);
         millivolt=_ConvertIntToMillivolt(value_int);
         return millivolt;
@@ -126,18 +130,19 @@ float GetDiffChannelFromMCP3202(char ch){
         char data2=0;
         unsigned int value_int=0;
         float millivolt=0;
-    
+        char type=DIFF_CHANNEL;
+        
         switch (ch){
             case 01:
-                ch=0; break;
+                ch=0b00000000; break;
             case 10:
-                ch=1; break;
+                ch=0b00000001; break;
             default:
                 return 0;
         }
     
         data1=0b00000001; 
-        data2=(0b00000000 | ch)<<6;
+        data2=(type<<7) | (ch<<6);
     
         value_int=_CommunicationWithMCP320x(data1, data2);
         millivolt=_ConvertIntToMillivolt(value_int);
@@ -153,11 +158,12 @@ float GetSingleChannelFromMCP3204(char ch){
         char data1=0;
         char data2=0;
         unsigned int value_int=0;
-        float millivolt=0;
+        float millivolt=0; 
+        char type=SINGLE_CHANNEL;
     
         if(ch>3){return 0;}
-    
-        data1=0b00000110; 
+
+        data1=0b00000100 | (type<<1);
         data2=ch<<6; 
 
         value_int=_CommunicationWithMCP320x(data1, data2);
@@ -175,21 +181,22 @@ float GetDiffChannelFromMCP3204(char ch){
         char data2=0;
         unsigned int value_int=0;
         float millivolt=0;
-    
+        char type=DIFF_CHANNEL;
+        
         switch (ch){
             case 01:
-                ch=0; break;
+                ch=0b00000000; break;
             case 10:
-                ch=1; break; 
+                ch=0b00000001; break; 
             case 23:
-                ch=10; break;
+                ch=0b00000010; break;
             case 32:
-                ch=11; break;
+                ch=0b00000011; break;
             default:
                 return 0;
         }
-    
-        data1=0b00000100; 
+        
+        data1=0b00000100 | (type<<1);
         data2=ch<<6;
 
         value_int=_CommunicationWithMCP320x(data1, data2);
@@ -206,13 +213,55 @@ float GetSingleChannelFromMCP3208(char ch){
         char data1=0;
         char data2=0;
         unsigned int value_int=0;
-        float millivolt=0;
+        float millivolt=0; 
+        char type=SINGLE_CHANNEL;
     
         if(ch>7){return 0;}
     
-        data1=(0b00011000 | ch)>>2; 
+        data1=0b00000100 | (type<<1) | (ch>>2); 
         data2=ch<<6; 
 
+        value_int=_CommunicationWithMCP320x(data1, data2);
+        millivolt=_ConvertIntToMillivolt(value_int);
+        return millivolt;
+    #else
+        return 0;
+    #endif
+}
+
+//********************************************************
+float GetDiffChannelFromMCP3208(char ch){
+    #ifdef _ENABLE_MCP320X
+        char data1=0;
+        char data2=0;
+        unsigned int value_int=0;
+        float millivolt=0;
+        char type=DIFF_CHANNEL;
+        
+        switch (ch){
+            case 01:
+                ch=0b00000000; break;
+            case 10:
+                ch=0b00000001; break; 
+            case 23:
+                ch=0b00000010; break;
+            case 32:
+                ch=0b00000011; break;
+            case 45:
+                ch=0b00000100; break;
+            case 54:
+                ch=0b00000101; break;
+            case 67:
+                ch=0b00000110; break;
+            case 76:
+                ch=0b00000111; break;
+            default:
+                return 0;
+        }
+    
+        data1=0b00000100 | (type<<1) | (ch>>2); 
+        data2=ch<<6; 
+        
         value_int=_CommunicationWithMCP320x(data1, data2);
         millivolt=_ConvertIntToMillivolt(value_int);
         return millivolt;

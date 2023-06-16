@@ -1,8 +1,10 @@
-## External ADC Using MCP3202 For SPI-Bus   
+## External ADC With MCP3208 For SPI-Bus   
               
 MCU:     	ATmega32  
 Frequency:     	8.000000 MHz (Internal)  
 Display:        16x2 Character LCD
+
+Note: This library is usable for MCP3201/MCP3202/MCP3204 
 
 ### Folder and Files Description
 It has included:

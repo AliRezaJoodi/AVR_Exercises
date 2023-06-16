@@ -24,8 +24,15 @@ void main(void){
     DisplayLoading(); delay_ms(500); lcd_clear();
 
     while (1){
-        volt1=GetSingleChannelFromMCP3204(0); 
-        volt2=GetDiffChannelFromMCP3204(32);
+        //volt1=GetSingleChannelFromMCP3202(0); 
+        //volt2=GetDiffChannelFromMCP3202(01);  
+        
+        //volt1=GetSingleChannelFromMCP3204(0); 
+        //volt2=GetDiffChannelFromMCP3204(32);
+        
+        volt1=GetSingleChannelFromMCP3208(0); 
+        volt2=GetDiffChannelFromMCP3208(32);  
+        
         DisplayValues();
         delay_ms(500);
     }
@@ -35,7 +42,7 @@ void main(void){
 void DisplayValues(void){
     char txt[16];
     lcd_gotoxy(0,0); lcd_putsf("CH0(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf(" ");
-    lcd_gotoxy(0,1); lcd_putsf("CH2-3(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf(" ");
+    lcd_gotoxy(0,1); lcd_putsf("Diff(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf(" ");
 }
 
 //********************************************************
@@ -47,7 +54,7 @@ void ConfigLCD(void){
 void DisplayLoading(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("External ADC");
-    lcd_gotoxy(0,1); lcd_putsf("With MCP3202"); 
+    lcd_gotoxy(0,1); lcd_putsf("With MCP320x"); 
 }
 
 //********************************************************
