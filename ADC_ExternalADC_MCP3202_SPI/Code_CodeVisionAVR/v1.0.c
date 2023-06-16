@@ -4,8 +4,6 @@
 #include <spi.h>
 #include <delay.h>
 #include <alcd.h>
-///#include <spi.h>
-///#include <stdio.h>
 #include <stdlib.h>
 
 #include <Attachment\MCP320x.h>
