@@ -1,5 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 // This library use of the SPI interfacing
+// SPI Clock Phase: Cycle Start
 // SPI Clock Polarity: Low
 // SPI Data Order: MSB First
 

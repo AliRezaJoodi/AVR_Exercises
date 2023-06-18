@@ -1,4 +1,4 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32.h>
 #include <stdio.h>
@@ -22,13 +22,13 @@ void main(void){
     unsigned char value=100;
     unsigned char old_value=0;
     
-    Config_Button();
+    ConfigButtons();
     Config_LCD(); Display_Value(value);
    
     while(1){ 
-        IncreaseOneStep_Button(&value);
-        IncreaseContinuously_Button(&value);   
-        if(Set_Button()){value=0;}
+        if(CheckIncrButton_OneStep()){++value;}
+        if(CheckIncrButton_Continuously()){++value;}   
+        if(CheckSetButton()){value=0;}
         
         if(old_value!=value){Display_Value(value); old_value=value;}
     };
