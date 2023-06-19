@@ -21,6 +21,7 @@ Debug
 Linker
 List
 Obj
+*.cfg
 *.cbi
 *.cof
 *.elf
