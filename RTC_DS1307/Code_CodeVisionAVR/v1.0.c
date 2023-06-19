@@ -19,14 +19,14 @@ unsigned char second=30;
 void ConfigLCD(void);
 void DisplayMainPage(void);
 void ConfigI2C(void);
-void ConfiDS1307(void);
+void ConfigDS1307(void);
 
 void main(void){
     //ACSR=0x80; 
     //SFIOR=0x00; 
 
     ConfigI2C();
-    ConfiDS1307();      
+    ConfigDS1307();      
     ConfigLCD(); 
 
     //rtc_set_time(12,30,00);
@@ -61,7 +61,7 @@ void ConfigI2C(void){
 }
 
 //*********************************************
-void ConfiDS1307(void){
+void ConfigDS1307(void){
     #define _1HZ                0
     #define _4K096HZ            1
     #define _8K192HZ            2
