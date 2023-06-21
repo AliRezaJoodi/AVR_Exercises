@@ -158,6 +158,7 @@ A repository for my personal exercises.
 |[VB6_Sender_Byte](VB6_Sender_Byte)|Y|-|-|
 |[VB6_Sender_Integer](VB6_Sender_Integer)|Y|-|-|
 |[VB6_Sender_Text](VB6_Sender_Text)|Y|-|-|
+|[Watchdog](Watchdog)|-|Y|-|
 
 
 

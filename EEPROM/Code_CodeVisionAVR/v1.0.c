@@ -4,12 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <delay.h>
-
-// Alphanumeric LCD Module functions
-#asm
-   .equ __lcd_port=0x12 ;PORTD
-#endasm
-#include <lcd.h>
+#include <alcd.h>
 
 #define UP_BUTTON   PINB.1
 #define DOWN_BUTTON PINB.0
@@ -21,13 +16,14 @@ void ConfigLCD(void);
 void DisplayValue(void);
 char CheckNewChange(char value);
 
+
 void main(void){
     DDRB.1=0; PORTB.1=1;
     DDRB.0=0; PORTB.0=1;
     ConfigLCD();
     
     ValidateEEPROM();
-    //SetDefaultValuesInEEPROM();
+    //SaveDefaultValuesInEEPROM();
     LoadValuesFromEEPROM();
     
     DisplayValue();
@@ -70,6 +66,7 @@ void DisplayValue(void){
     lcd_gotoxy(0,0); lcd_putsf("Number= "); lcd_puts(txt);
     lcd_gotoxy(0,1); lcd_putsf("Internal EEPROM");
 }
+
 
 
 
