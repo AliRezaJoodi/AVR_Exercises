@@ -57,6 +57,7 @@ A repository for my personal exercises.
 ![](UART_BaudRateFinder/Simulate/Album.png)
 ![](RelayController_UART_1CH/Simulate/Album.png)
 ![](RelayController_UART_8CH/Simulate/Album.png)
+![](CounterForUsedClock/Simulate/Album.png)
 
 ![](VB6_Receiver_Bytes/Code_VB6/Album.jpg) 
 ![](VB6_Receiver_Integer/Code_VB6/Album.jpg) 
@@ -84,6 +85,7 @@ A repository for my personal exercises.
 |[ControlSystems_PID-OnOFF](ControlSystems_PID-OnOFF)|-|Y|-|
 |[Converter_DataTable](Converter_DataTable)|Y|-|-|
 |[Converter_MSB&LSB](Converter_MSB&LSB)|Y|Y|-|
+|[CounterForUsedClock](CounterForUsedClock)|-|Y|-|
 |[DAC_ExternalDAC_MCP4822_SPI](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
 |[DAC_UsingPWM](DAC_UsingPWM)|-|Y|-|
 |[Dialing](Dialing)|Y|-|-|
