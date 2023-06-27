@@ -13,14 +13,14 @@
 
 #define INTERRUPTS_ENABLE           #asm("sei")
 #define INTERRUPTS_DISABLE          #asm("cli")
+#define TIMER1_RESET                TCNT1H=0x00; TCNT1L=0x00;
 #define TIMER1_CLOCK_STOP           TCCR1B&=~0b00000111;
-#define TIMER1_CLOCK_P1             TIMER1_CLOCK_STOP; TCCR1B|=0b00000001;
-#define TIMER1_CLOCK_P8             TIMER1_CLOCK_STOP; TCCR1B|=0b00000010;
-#define TIMER1_CLOCK_P64            TIMER1_CLOCK_STOP; TCCR1B|=0b00000011;
-#define TIMER1_CLOCK_P256           TIMER1_CLOCK_STOP; TCCR1B|=0b00000100;
+#define TIMER1_CLOCK_P1             TIMER1_CLOCK_STOP; TIMER1_RESET; TCCR1B|=0b00000001;
+#define TIMER1_CLOCK_P8             TIMER1_CLOCK_STOP; TIMER1_RESET; TCCR1B|=0b00000010;
+#define TIMER1_CLOCK_P64            TIMER1_CLOCK_STOP; TIMER1_RESET; TCCR1B|=0b00000011;
+#define TIMER1_CLOCK_P256           TIMER1_CLOCK_STOP; TIMER1_RESET; TCCR1B|=0b00000100;
 #define TIMER1_INTERRUPT_ENABLE     TIMSK|=0b00000100;
-#define TIMER1_INTERRUPT_DISABLE    TIMSK&=~0b00000100;
-#define TIMER1_RESET                TCNT1H=0x00; TCNT1L=0x00;  
+#define TIMER1_INTERRUPT_DISABLE    TIMSK&=~0b00000100;  
 
 unsigned int i2=0; 
 #define VALUES_RESET                i2=0;
@@ -32,6 +32,8 @@ void EnableTimer1(void);
 void DisableTimer1(void);
 void TestFunction1(void);
 void TestFunction2(void);
+void TestFunction3(void);
+void TestFunction4(void);
 
 // Timer1 overflow interrupt service routine
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
@@ -44,18 +46,34 @@ void main(void){
     INTERRUPTS_ENABLE;    
     ConfigTimer1();
     
-    TIMER1_RESET; TIMER1_CLOCK_P1; TIMER1_INTERRUPT_ENABLE;
+    TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1; 
     TestFunction1();
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
     putsf("\rFunction1="); DisplayValues(TCNT1); 
     
-    TIMER1_RESET; TIMER1_CLOCK_P1; TIMER1_INTERRUPT_ENABLE;
+    VALUES_RESET;
+    TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1;
     TestFunction2();
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
     putsf("\rFunction2="); DisplayValues(TCNT1);
     	
     while(1){ 
     }
+}
+
+//********************************************************
+void TestFunction4(void){
+    float value=12.3;
+    char txt[16]; 
+    ftoa(value,1,txt);
+}
+
+//********************************************************
+void TestFunction3(void){
+    float value=12.3;
+    char value_str[16];
+    char txt[16];
+    ftoa(value,1,value_str); sprintf(txt,"Value:%02s",value_str,); 
 }
 
 //********************************************************
