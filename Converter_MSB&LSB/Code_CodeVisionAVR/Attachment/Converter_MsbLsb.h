@@ -1,4 +1,10 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#define GET_INT(MSB,LSB)    (MSB<<8)+LSB;     
+#define GET_MSB(INT)        INT>>8;
+#define GET_LSB(INT)        INT&0x00FF;
+
+#pragma used+
 
 //***************************************
 void Convert_IntToMsbLsb(unsigned int number, char *msb, char *lsb){
@@ -28,3 +34,6 @@ char Get_Lsb(unsigned int number){
     //lsb=number;
     return lsb;   
 }
+
+#pragma used-
+

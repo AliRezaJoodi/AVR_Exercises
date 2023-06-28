@@ -11,6 +11,8 @@
 #define EQUBIT(ADDRESS,BIT,value)   {if (value) SETBIT(ADDRESS,BIT); else CLRBIT(ADDRESS,BIT);}
 #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
 
+#include "Attachment\TestFunctions.h"
+
 #define INTERRUPTS_ENABLE           #asm("sei")
 #define INTERRUPTS_DISABLE          #asm("cli")
 #define TIMER1_RESET                TCNT1H=0x00; TCNT1L=0x00;
@@ -30,10 +32,6 @@ void DisplayValues(unsigned int);
 void ConfigTimer1(void);
 void EnableTimer1(void);
 void DisableTimer1(void);
-void TestFunction1(void);
-void TestFunction2(void);
-void TestFunction3(void);
-void TestFunction4(void);
 
 // Timer1 overflow interrupt service routine
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
@@ -47,61 +45,18 @@ void main(void){
     ConfigTimer1();
     
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1; 
-    TestFunction1();
+    Test3_A();
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
-    putsf("\rFunction1="); DisplayValues(TCNT1); 
+    putsf("\rFunction_A="); DisplayValues(TCNT1-18); 
     
     VALUES_RESET;
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1;
-    TestFunction2();
+    Test3_B();
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
-    putsf("\rFunction2="); DisplayValues(TCNT1);
+    putsf("\rFunction_B="); DisplayValues(TCNT1-18);
     	
     while(1){ 
     }
-}
-
-//********************************************************
-void TestFunction4(void){
-    float value=12.3;
-    char txt[16]; 
-    ftoa(value,1,txt);
-}
-
-//********************************************************
-void TestFunction3(void){
-    float value=12.3;
-    char value_str[16];
-    char txt[16];
-    ftoa(value,1,value_str); sprintf(txt,"Value:%02s",value_str,); 
-}
-
-//********************************************************
-void TestFunction2(void){
-    unsigned char data=3;
-    DDRA=0b11111111;
-    PORTA.0 = data & 0b00000000;
-    PORTA.1 = data & 0b00000010;
-    PORTA.2 = data & 0b00000100;
-    PORTA.3 = data & 0b00001000;
-    PORTA.4 = data & 0b00010000;
-    PORTA.5 = data & 0b00100000;
-    PORTA.6 = data & 0b01000000;
-    PORTA.7 = data & 0b10000000;   
-}
-
-//********************************************************
-void TestFunction1(void){
-    unsigned char data=3;
-    DDRA=0b11111111;
-    PORTA.0 = CHKBIT(data,0);
-    PORTA.1 = CHKBIT(data,1);
-    PORTA.2 = CHKBIT(data,2);
-    PORTA.3 = CHKBIT(data,3);
-    PORTA.4 = CHKBIT(data,4);
-    PORTA.5 = CHKBIT(data,5);
-    PORTA.6 = CHKBIT(data,6);
-    PORTA.7 = CHKBIT(data,7);   
 }
 
 //********************************************************
