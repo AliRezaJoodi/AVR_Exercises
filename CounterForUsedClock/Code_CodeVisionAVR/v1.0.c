@@ -24,8 +24,8 @@
 #define TIMER1_INTERRUPT_ENABLE     TIMSK|=0b00000100;
 #define TIMER1_INTERRUPT_DISABLE    TIMSK&=~0b00000100;  
 
-unsigned int i2=0; 
-#define VALUES_RESET                i2=0;
+unsigned int t2=0; 
+#define VALUES_RESET                t2=0;
 
 void ConfigUSART(void);
 void DisplayValues(unsigned int);
@@ -35,7 +35,7 @@ void DisableTimer1(void);
 
 // Timer1 overflow interrupt service routine
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
-    ++i2;
+    ++t2;
 }
     
 void main(void){    	
@@ -105,7 +105,7 @@ void DisplayValues(unsigned int x){
     char txt[16];     
     //putsf("\rCount="); 
     itoa(x,txt); puts(txt);
-    //putsf("\ri2="); itoa(i2,txt); puts(txt); 
+    //putsf("\rt2="); itoa(t2,txt); puts(txt); 
     //putsf("\r");
 }
 
