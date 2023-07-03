@@ -1,13 +1,8 @@
 
 #ifndef _INCLUDED_CALENDAR
     #define _INCLUDED_CALENDAR
+    #pragma used+
     
-    //#define DISABLE_CALENDAR
-    #ifndef DISABLE_CALENDAR
-        #define ENABLE_CALENDAR
-    #endif
-
-    #ifdef ENABLE_CALENDAR
     flash unsigned char table_jalaali[6][12]={
         {11,10,10, 9, 9, 9, 8, 9, 9,10,11, 9},
         {20,20,21,21,22,22,22,22,21,21,20,19},
@@ -25,13 +20,9 @@
         {20,19,20,20,21,21,22,22,22,22,21,21},
         {10,11, 9,11,10,10, 9, 9, 9, 8, 9, 9}
     };    
-    #endif
-            
-#pragma used+
 
 //*********************************************
 struct time ConvertGregorianToJalaali(struct time gc){
-#ifdef ENABLE_CALENDAR
     struct time jc;
     unsigned char k,t1,t2;
     unsigned int z=0;
@@ -55,14 +46,10 @@ struct time ConvertGregorianToJalaali(struct time gc){
        jc.month=(gc.month+9)%12+1;
     }    
     return jc;
-#else
-   return jalaali; 
-#endif 
 } 
 
 //*********************************************
 struct time ConvertJalaaliToGregorian(struct time jc){
-#ifdef ENABLE_CALENDAR
     struct time gc;
     unsigned char k,t1,t2; 
     
@@ -87,10 +74,7 @@ struct time ConvertJalaaliToGregorian(struct time jc){
        gc.day= jc.day-t1;
        gc.month= (jc.month+2)%12+1;
     }   
-    return gc;
-#else
-   return gregorian;
-#endif 
+    return gc; 
 }
    
 #pragma used-
