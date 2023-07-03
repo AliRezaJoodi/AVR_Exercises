@@ -46,6 +46,7 @@ A repository for my personal exercises.
 ![](ControlSystems_PID-OnOFF/Simulate/Album.png)
 ![](Display_LCD_Menu/Simulate/Album.png)
 ![](RTC_DS1307/Simulate/Album.png)
+![](CalendarConverter/Simulate/Album.png)
 
 ![](Display_GLCD_KS0108/Simulate/Album.png)
 ![](Display_GLCD_T6963/Simulate/Album.png)
@@ -79,6 +80,7 @@ A repository for my personal exercises.
 |[BitAccess](BitAccess)|Y|Y|-|
 |[Button](Button)|Y|Y|Y|
 |[Buzzer](Buzzer)|Y|Y|Y|
+|[CalendarConverter](CalendarConverter)|-|Y|-|
 |[Chronometer](Chronometer)|Y|-|-|
 |[ControlSystems_OnOff](ControlSystems_OnOff)|-|Y|-|
 |[ControlSystems_PID](ControlSystems_PID)|-|Y|-|
