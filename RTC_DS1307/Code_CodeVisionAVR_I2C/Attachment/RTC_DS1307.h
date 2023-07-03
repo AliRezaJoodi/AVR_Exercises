@@ -23,10 +23,10 @@
 
     #pragma used+
     struct ds1307{
-        unsigned char day;
+        unsigned char year;  
         unsigned char month;
-        unsigned char year;
         unsigned char week;
+        unsigned char day;
         unsigned char hour;
         unsigned char minute;
         unsigned char second;
