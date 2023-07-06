@@ -8,19 +8,20 @@
 #endasm
 #include <lcd.h>
 
-#ifndef TURN_OFF_THE_LCD
-    #define TURN_ON_THE_LCD
+#ifndef TURN_OFF_LCD
+    #define TURN_ON_LCD
 #endif
 
-#define BILLBOARD_PAGE  0
-#define MAIN_PAGE       1
+#define LOADING_PAGE    0
+#define AD_PAGE         1
+#define MAIN_PAGE       2
+#define SETVOLT_PAGE    3
+#define SETAMP_PAGE     4
 
-struct display_data{
-    char text1[16]; 
-    char text2[16];
-    float valu1;
-    float valu2;  
-}display={"Lin 1","Lin 2",0,0};
+struct displayvalues{
+    char mode;
+    unsigned int delay;  
+}display={MAIN_PAGE,500};
         
 //********************************************************
 void ConfigLCD(void){
@@ -29,44 +30,61 @@ void ConfigLCD(void){
 }
 
 //********************************************************
-void DisplayMainPage(void){
+void DisplayLoadingPage(void){
+    lcd_clear(); 
+    lcd_gotoxy(0,0); lcd_putsf("Test LCD");
+    lcd_gotoxy(0,1); lcd_putsf("Loding ...");
+}
+
+//********************************************************
+void DisplayAdvertagePage(void){
+    lcd_clear(); 
+    lcd_gotoxy(0,0); lcd_putsf("GitHub.com");
+    lcd_gotoxy(0,1); lcd_putsf("AliRezaJoodi");
+}
+
+//********************************************************
+void DisplayMainPage(struct load value){
     char txt[16];
     lcd_clear(); 
-    lcd_gotoxy(0,0); ftoa(display.valu1,3,txt); lcd_putsf("Volt(V):"); lcd_puts(txt); 
-    lcd_gotoxy(0,1); ftoa(display.valu2,3,txt); lcd_putsf("Amp(A):"); lcd_puts(txt);
+    lcd_gotoxy(0,0); ftoa(value.volt,2,txt); lcd_putsf("Volt(V):"); lcd_puts(txt); 
+    lcd_gotoxy(0,1); ftoa(value.amp,2,txt); lcd_putsf("Amp(A):"); lcd_puts(txt);
 }
 
 //********************************************************
-void DisplayBillboardPage(void){
+void DisplaySetPage_Volt(struct load value){
+    char txt[16];
     lcd_clear(); 
-    lcd_gotoxy(0,0); lcd_puts(display.text1);
-    lcd_gotoxy(0,1); lcd_puts(display.text2);
+    lcd_gotoxy(0,0); ftoa(value.volt_sp,2,txt); lcd_putsf("Volt(V):"); lcd_puts(txt); 
+    lcd_gotoxy(0,1); lcd_putsf("Set Point");
 }
 
 //********************************************************
-void DisplayLoading(void){
-    strcpy(display.text1, "Test LCD"); 
-    strcpy(display.text2, "Loding ...");
-    DisplayBillboardPage();
+void DisplaySetPage_Amp(struct load value){
+    char txt[16];
+    lcd_clear(); 
+    lcd_gotoxy(0,0); ftoa(value.amp_sp,2,txt); lcd_putsf("Amp(A):"); lcd_puts(txt); 
+    lcd_gotoxy(0,1); lcd_putsf("Set Point");
 }
 
 //********************************************************
-void SyncronValues(void){
-    display.valu1=device1.volt;
-    display.valu2=device1.amp;
-}
-
-//********************************************************
-void DisplayValuesOnTheLCD(char page){
-    #ifdef TURN_ON_THE_LCD
-        SyncronValues();
-     
-        switch (page){
-            case BILLBOARD_PAGE: 
-                DisplayLoading();
+void DisplayValuesOnTheLCD(void){
+    #ifdef TURN_ON_LCD
+        switch (display.mode){
+            case LOADING_PAGE:
+                DisplayLoadingPage(); delay_ms(display.delay); //lcd_clear();
+                break;
+            case AD_PAGE: 
+                DisplayAdvertagePage(); delay_ms(display.delay); //lcd_clear();
                 break;
             case MAIN_PAGE:  
-                DisplayMainPage();
+                DisplayMainPage(device1);
+                break;
+            case SETVOLT_PAGE:
+                DisplaySetPage_Volt(device1);
+                break;
+            case SETAMP_PAGE:
+                DisplaySetPage_Amp(device1);
                 break;
         }
     #endif
