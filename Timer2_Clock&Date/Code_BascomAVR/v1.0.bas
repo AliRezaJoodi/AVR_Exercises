@@ -10,11 +10,10 @@ Cls
 
 Enable Interrupts
 
-Config Clock = Soft , Gosub = Sectic
-Time$ = "23:59:50"
-
-Config Date = Ymd , Separator = /
-Date$ = "22/11/10"
+Config Clock = Soft , Gosub = Sectic : Time$ = "23:59:50"
+Config Date = Ymd , Separator = / : Date$ = "23/11/10"
+'Enable Timer2
+'Start Timer2
 
 Dim Weekday_b As Byte
 Dim Weekday_str As String * 10
@@ -22,11 +21,9 @@ Dim Weekday_str As String * 10
 Do
 
 Loop
-
 End
 
-
-'*****************    Sectic   **************
+'*****************************************
 Sectic:
    Weekday_b = Dayofweek()
    Weekday_str = Lookupstr(weekday_b , Data_weekdays)
