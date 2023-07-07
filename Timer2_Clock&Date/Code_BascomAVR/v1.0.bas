@@ -17,16 +17,24 @@ Config Date = Ymd , Separator = / : Date$ = "23/11/10"
 
 Dim Weekday_b As Byte
 Dim Weekday_str As String * 10
+Dim Task As Byte
 
 Do
-
+   If Task = 1 Then
+      Task = 0
+      Gosub Display_time
+   End If
 Loop
 End
 
 '*****************************************
 Sectic:
-   Weekday_b = Dayofweek()
-   Weekday_str = Lookupstr(weekday_b , Data_weekdays)
+   Task = 1
+Return
+
+'*****************************************
+Display_time:
+   Weekday_b = Dayofweek() : Weekday_str = Lookupstr(weekday_b , Data_weekdays)
    Locate 1 , 1 : Lcd Time$ ; "  "
    Locate 2 , 1 : Lcd Date$ ; "  "
    Locate 2 , 12 : Lcd Weekday_str ; "  "
