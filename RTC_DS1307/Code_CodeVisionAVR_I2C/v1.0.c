@@ -34,7 +34,7 @@ void main(void){
     //rtc_set_date(week_day,day,month,year);
     //DisableOscillatorOfDS1307();
     //EnableOscillatorOfDS1307(); 
-    //Set24hFormat();
+    //SetHourFormatTo24();
     //DisableSquareWaveOfDS1307();
     //EnableSquareWaveOfDS1307();
     

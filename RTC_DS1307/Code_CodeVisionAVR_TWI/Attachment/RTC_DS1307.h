@@ -95,7 +95,7 @@ void EnableOscillatorOfDS1307(void){
 }
 
 //*********************************************
-void Set24hFormat(void){
+void SetHourFormatTo24(void){
     unsigned char buffer=0;
     buffer=rtc_read(2);  
     rtc_write(2,CLRBIT(buffer,6));
