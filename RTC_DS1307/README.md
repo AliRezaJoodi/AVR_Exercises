@@ -5,8 +5,9 @@ Frequency:     	8MHz
 
 ### Folder and Files Description
 It has included:
-- `Code_CodeVisionAVR_I2C` (Code with C Language)
-- `Code_CodeVisionAVR_TWI` (Code with C Language)
+- `Code_BascomAVR_I2C` (Code with Basic Language, Software Library For I2C)
+- `Code_CodeVisionAVR_I2C` (Code with C Language, Software Library For I2C)
+- `Code_CodeVisionAVR_TWI` (Code with C Language, Hardware Library For TWI)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0
