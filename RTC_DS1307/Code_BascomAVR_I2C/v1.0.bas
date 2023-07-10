@@ -18,6 +18,7 @@ Enable Int2
 
 Config Scl = Portc.0
 Config Sda = Portc.1
+I2cinit
 Const Ds1307w = &HD0
 Const Ds1307r = &HD1
 
@@ -142,4 +143,3 @@ Display_time:
    Strg_x = Str(_month) : Strg_x = Format(strg_x , "00") : Lcd Strg_x : Lcd "-"
    Strg_x = Str(_year) : Strg_x = Format(strg_x , "00") : Lcd Strg_x : Lcd ""
 Return
-
