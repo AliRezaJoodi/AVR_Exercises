@@ -1,4 +1,4 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32a.h>
 #include <delay.h>
@@ -20,7 +20,7 @@ void main(void){
     Config_LCD();
     //Display_Loding(500); 
     
-    out_persent=50;     
+    out_persent=50;   
     out_voltage=Convert_0to100_1to5V(out_persent);
     out_pwm=Convert_0to5V_0to1023(out_voltage);
     OCR1A=out_pwm; 

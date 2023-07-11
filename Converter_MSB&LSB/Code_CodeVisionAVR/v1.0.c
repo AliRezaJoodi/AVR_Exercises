@@ -6,37 +6,37 @@
 #include <delay.h>
 #include <stdlib.h>
 
-#include <Attachment\Converter_MsbLsb.h>
+#include <Attachment\DataConverter.h>
 
-void Config_LCD(void);
-void Display_MainPage(void);
+void ConfigLCD(void);
+void DisplayMainPage(void);
 
 unsigned int number=589;
 unsigned char number_msb;
 unsigned char number_lsb;
 
 void main(void){
-    Config_LCD(); 
+    ConfigLCD(); 
     
-    number_msb=Get_Msb(number);
-    number_lsb=Get_Lsb(number);
+    number_msb=Get_MsbFromInt(number);
+    number_lsb=Get_LsbFromInt(number);
     Convert_IntToMsbLsb(number,&number_msb,&number_lsb); 
     number=Convert_MsbLsbToInt(number_msb,number_lsb);
-    Display_MainPage(); 
+    DisplayMainPage(); 
     
     delay_ms(1000); lcd_clear(); delay_ms(500);
     
     number_msb=GET_MSB(number); 
     number_lsb=GET_LSB(number); 
     number=GET_INT(number_msb,number_lsb);
-    Display_MainPage();  
+    DisplayMainPage();  
         
     while(1){ 
     }     
 }
 
 //**************************************************
-void Display_MainPage(void){
+void DisplayMainPage(void){
     char txt[16];
     lcd_gotoxy(0,0); lcd_putsf("Value  MSB   LSB");
     itoa(number,txt); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");  
@@ -45,6 +45,6 @@ void Display_MainPage(void){
 }
 
 //********************************************************
-void Config_LCD(void){
+void ConfigLCD(void){
     lcd_init(16); lcd_clear();   
 }
