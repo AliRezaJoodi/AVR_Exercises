@@ -5,21 +5,20 @@
 
 #include "Attachment\Converter.h"
 
-void Config_Timer2(void);
+void ConfigTimer2ForPWM(void);
 
 void main(void){ 
     unsigned char value; 
-    Config_Timer2(); 
+    ConfigTimer2ForPWM(); 
     
-    value=Get_0to255(50);
-    OCR2=value;
+    value=Convert_0to100_0to255(50); OCR2=value;
      
-    while (1){   
+    while(1){   
     }
 }
 
 //******************************************
-void Config_Timer2(void){
+void ConfigTimer2ForPWM(void){
     DDRD.7=1; PORTD.7=0;  
     
     // Timer/Counter 2 initialization

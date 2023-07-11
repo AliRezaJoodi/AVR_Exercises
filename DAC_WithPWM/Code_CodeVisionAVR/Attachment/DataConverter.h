@@ -1,5 +1,7 @@
 //GitHub Account: GitHub.com/AliRezaJoodi
 
+#pragma used+
+
 //******************************************
 float Fix_0to100(float x){
     if(x<0){x=0;} else if(x>100){x=100;};
@@ -107,3 +109,5 @@ float Convert_0to255_0to2V56(unsigned char x){
     y=(y/255)*2.56;
     return y;       
 }
+
+#pragma used-
