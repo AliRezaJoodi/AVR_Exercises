@@ -1,7 +1,7 @@
 ## Config Timer2 in 10Bit PWM Mode
 
 MCU:        ATmega32  
-Frequency:  8.000000 MHz  
+Frequency:  8MHz  
 
 ### Folder and Files Description
 It has included:
