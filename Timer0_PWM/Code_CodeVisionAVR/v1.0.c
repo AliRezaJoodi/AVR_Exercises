@@ -7,7 +7,7 @@ void ConfigTimer0ForPWM(void);
 void main(void){
  
     ConfigTimer0ForPWM(); 
-    OCR0=125;   //0~255
+    OCR0=50;   //0~255
     while(1){   
     }
 }

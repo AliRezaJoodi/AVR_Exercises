@@ -1,4 +1,4 @@
-## Config Timer0 in 8Bit PWM Mode
+## Config Timer0 in PWM Mode
 
 MCU:        ATmega32  
 Frequency:  8MHz  
