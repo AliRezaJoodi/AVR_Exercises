@@ -1,7 +1,7 @@
 ## PWM creator with custom-made channels
  
 MCU:        ATmega32  
-Frequency:  8.000000 MHz   
+Frequency:  8MHz   
 
 ### Folder and Files Description
 It has included:
