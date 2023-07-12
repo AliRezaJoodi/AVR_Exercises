@@ -3,6 +3,13 @@
 MCU:        ATmega32  
 Frequency:  8MHz  
 
+The PWM frequency for the output can be calculated by the following equation:
+
+$$ FrequencyForPWM(OC1x) = {clk \over Prescaler * (1+TOP) } $$
+
+Prescaler: 1, 8, 64, 256 or 1024  
+TOP: 0x00FF, 0x01FF or 0x03FF  
+
 ### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
