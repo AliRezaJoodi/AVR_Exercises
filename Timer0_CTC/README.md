@@ -2,7 +2,6 @@
 
 MCU:        ATmega32  
 Frequency:  8MHz  
-Timer0:     CTC Mode 
 
 The waveform frequency is defined by the following equation:
 
