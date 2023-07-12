@@ -7,7 +7,7 @@ The waveform frequency is defined by the following equation:
 
 $$ Frequency(OC2) = {clk \over 2 * Prescaler * ( 1 + OCR2 ) } $$
 
-Prescaler: 1, 8, 64, 256 or 1024
+Prescaler: 1, 8, 32, 64, 128, 256 or 1024
 
 ### Folder and Files Description
 It has included:

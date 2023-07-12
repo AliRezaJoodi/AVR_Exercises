@@ -7,7 +7,7 @@ The PWM frequency for the output can be calculated by the following equation:
 
 $$ FrequencyForPWM(OC2) = {clk \over Prescaler * 256 } $$
 
-Prescaler: 1, 8, 64, 256 or 1024
+Prescaler: 1, 8, 32, 64, 128, 256 or 1024
 
 ### Folder and Files Description
 It has included:
