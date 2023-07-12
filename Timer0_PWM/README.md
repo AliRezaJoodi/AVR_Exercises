@@ -3,6 +3,12 @@
 MCU:        ATmega32  
 Frequency:  8MHz  
 
+The PWM frequency for the output can be calculated by the following equation:
+
+$$ FrequencyForPWM(OC0) = {clk \over Prescaler * 256 } $$
+
+Prescaler: 1, 8, 64, 256 or 1024
+
 ### Folder and Files Description
 It has included:
 - `Code_CodeVisionAVR` (Code with C Language)
