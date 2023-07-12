@@ -2,6 +2,13 @@
 
 MCU:        ATmega32  
 Frequency:  8MHz  
+Timer0:     CTC Mode 
+
+The waveform frequency is defined by the following equation:
+
+$$ Frequency(OC0) = {clk \over 2 * Prescaler * ( 1 + OCR0 ) } $$
+
+Prescaler: 1, 8, 64, 256 or 1024
 
 ### Folder and Files Description
 It has included:
