@@ -1,7 +1,13 @@
-## Config Timer2 in 10Bit PWM Mode
+## Config Timer2 in PWM Mode
 
 MCU:        ATmega32  
 Frequency:  8MHz  
+
+The PWM frequency for the output can be calculated by the following equation:
+
+$$ FrequencyForPWM(OC2) = {clk \over Prescaler * 256 } $$
+
+Prescaler: 1, 8, 64, 256 or 1024
 
 ### Folder and Files Description
 It has included:
