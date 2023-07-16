@@ -17,7 +17,7 @@ unsigned char value=0;
 void ConfigLCD(void);
 void DisplayMainPage(char);
 
-#include "Attachment\Timer1_TimerMode.h"
+#include "Attachment\Timer1.h"
 
 void main(void){
     
@@ -25,8 +25,8 @@ void main(void){
     DisplayMainPage(value);
      
     #asm("sei") // Global enable interrupts 
-    ConfigTimer1ForTimerMode(); 
-    SetPerscalerForTimer1(PERSCALER_8);
+    ConfigTimer1ForTimer(); 
+    SetPerscalerFromTimer1(PERSCALER_8);
     DisableOverflowInterruptFromTimer1();
     ResetTimer1();
     EnableOverflowInterruptFromTimer1();
