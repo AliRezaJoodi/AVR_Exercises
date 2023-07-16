@@ -93,6 +93,7 @@ A repository for my personal exercises.
 |![](Timer1_Counter/Simulate/Album.png)|[Timer1_Counter](Timer1_Counter)|Y|-|-|
 |![](Timer1_CTC/Simulate/Album.png)|[Timer1_CTC](Timer1_CTC)|-|Y|-|
 |![](Timer1_PWM/Simulate/Album.png)|[Timer1_PWM](Timer1_PWM)|Y|Y|-|
+|![](Timer1_Timer/Simulate/Album.png)|[Timer1_Timer](Timer1_Timer)|-|Y|-|
 |![](Timer2_AsyncTimer/Simulate/Album.png)|[Timer2_AsyncTimer](Timer2_AsyncTimer)|Y|Y|-|
 |![](Timer2_Clock&Date/Simulate/Album.png)|[Timer2_Clock&Date](Timer2_Clock&Date)|Y|Y|-|
 |![](Timer2_CTC/Simulate/Album.png)|[Timer2_CTC](Timer2_CTC)|-|Y|-|
