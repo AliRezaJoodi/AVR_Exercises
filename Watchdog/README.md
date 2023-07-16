@@ -4,6 +4,8 @@ MCU:            ATmega16
 Frequency:     	8MHz  
 Display:        16x2 Character LCD  
 
+Note: It don't work after deley_ms() function 
+
 ### Folder and Files Description
 It has included:
 - `Code_CodeVisionAVR` (Code with C Language)
