@@ -86,10 +86,10 @@ A repository for my personal exercises.
 |![]()|[SPI_SoftwareSPI](SPI_SoftwareSPI)|Y|-|-|
 |![]()|[SPI_Interrupt](SPI_Interrupt)|Y|Y|-|
 |![](String_Syntax/Simulate/Album.png)|[String_Syntax](String_Syntax)|Y|Y|-|
-|![](Timer0_Counter/Simulate/Album.png)|[Config Timer0 in Counter Mode](Timer0_Counter)|Y|-|-|
+|![](Timer0_Counter/Simulate/Album.png)|[Config Timer0 in Counter Mode](Timer0_Counter)|Y|Y|-|
 |![](Timer0_CTC/Simulate/Album.png)|[Config Timer0 in CTC Mode](Timer0_CTC)|-|Y|-|
 |![](Timer0_PWM/Simulate/Album.png)|[Config Timer0 in PWM Mode](Timer0_PWM)|-|Y|-|
-|![](Timer0_Timer/Simulate/Album.png)|[Config Timer0 in Timer Mode](Timer0_Timer)|Y|-|-|
+|![](Timer0_Timer/Simulate/Album.png)|[Config Timer0 in Timer Mode](Timer0_Timer)|Y|Y|-|
 |![](Timer1_Counter/Simulate/Album.png)|[Config Timer1 in Counter Mode](Timer1_Counter)|Y|Y|-|
 |![](Timer1_CTC/Simulate/Album.png)|[Config Timer1 in CTC Mode](Timer1_CTC)|-|Y|-|
 |![](Timer1_PWM/Simulate/Album.png)|[Config Timer1 in PWM Mode](Timer1_PWM)|Y|Y|-|
@@ -98,6 +98,7 @@ A repository for my personal exercises.
 |![](Timer2_Clock&Date/Simulate/Album.png)|[Clock & Date With Timer2](Timer2_Clock&Date)|Y|Y|-|
 |![](Timer2_CTC/Simulate/Album.png)|[Config Timer2 in CTC Mode](Timer2_CTC)|-|Y|-|
 |![](Timer2_PWM/Simulate/Album.png)|[Config Timer2 in PWM Mode](Timer2_PWM)|-|Y|-|
+|![](Timer2_Timer/Simulate/Album.png)|[Config Timer2 in Timer Mode](Timer2_Timer)|-|Y|-|
 |![](UART_BaudRateFinder/Simulate/Album.png)|[UART_BaudRateFinder](UART_BaudRateFinder)|Y|-|-|
 |![](UART_Config/Simulate/Album.png)|[UART_Config](UART_Config)|Y|Y|-|
 |![](UART_SoftwareUART/Simulate/Album.png)|[UART_SoftwareUART](UART_SoftwareUART)|Y|Y|-|

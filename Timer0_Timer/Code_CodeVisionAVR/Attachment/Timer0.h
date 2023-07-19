@@ -1,3 +1,4 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
 
 #ifndef SETBIT
     #define SETBIT(ADDRESS,BIT)         (ADDRESS|=1<<BIT)

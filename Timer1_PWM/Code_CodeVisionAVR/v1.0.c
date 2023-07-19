@@ -7,9 +7,9 @@
 void main(void){ 
  
     ConfigTimer1ForPWM();
-    SetNonInvertedOutputFromOC1A();
-    SetInvertedOutputFromOC1B();
-    Set10BitPWM();
+    T1_OC1A_NONINVERTED;
+    T1_OC1B_INVERTED;
+    T1_PWM_10BIT;
     OCR1A=100;      //0~1023 
     OCR1B=100;     //0~1023  
     
