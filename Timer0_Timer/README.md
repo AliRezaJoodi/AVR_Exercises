@@ -1,12 +1,13 @@
 ## Config Timer0 in Timer Mode
 
 MCU:        ATmega32  
-Frequency:  1.000000 MHz  
+Frequency:  1MHz  
 Display:    16x2 Character LCD  
 
 ### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
+- `Code_CodeVisionAVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0

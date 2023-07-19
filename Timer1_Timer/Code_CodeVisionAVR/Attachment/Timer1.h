@@ -11,10 +11,14 @@
 #ifndef _INCLUDED_TIMER1
     #define _INCLUDED_TIMER1
     
-    #define PERSCALER_1                 (0<<CS12) | (0<<CS11) | (1<<CS10)
-    #define PERSCALER_8                 (0<<CS12) | (1<<CS11) | (0<<CS10)
-    #define PERSCALER_64                (0<<CS12) | (1<<CS11) | (1<<CS10)
-    #define PERSCALER_256               (1<<CS12) | (0<<CS11) | (0<<CS10)
+    #define T1CLOCK_STOP                  (0<<CS12) | (0<<CS11) | (0<<CS10)   // No clock source (Timer/Counter stopped)
+    #define T1CLOCK_P1                    (0<<CS12) | (0<<CS11) | (1<<CS10)   // Clock/1 (No prescaling)
+    #define T1CLOCK_P8                    (0<<CS12) | (1<<CS11) | (0<<CS10)   // Clock/8 (From prescaler)
+    #define T1CLOCK_P64                   (0<<CS12) | (1<<CS11) | (1<<CS10)   // Clock/64 (From prescaler)
+    #define T1CLOCK_P256                  (1<<CS12) | (0<<CS11) | (0<<CS10)   // Clock/256 (From prescaler)  
+    #define T1CLOCK_P1024                 (1<<CS12) | (0<<CS11) | (1<<CS10)   // Clock/1024 (From prescaler)
+    #define T1CLOCK_EXTERNAL_FALLING      (1<<CS12) | (1<<CS11) | (0<<CS10)   // External clock source on T1 pin. Clock on falling edge.
+    #define T1CLOCK_EXTERNAL_RISING       (1<<CS12) | (1<<CS11) | (1<<CS10)   // External clock source on T1 pin. Clock on rising edge.
      
     char task_t1=0;
     
@@ -110,13 +114,13 @@ OCR1BH=0x00; OCR1BL=0x00;
 }
 
 //******************************
-void SetPerscalerFromTimer1(char prescaler){
+void SetClockSourceFromTimer1(char prescaler){
     TCCR1B=(TCCR1B & 0b11111000) | prescaler;        
 }
 
 //******************************
 void DisableClockSourceFromTimer1(void){
-    TCCR1B=TCCR1B & 0b11111000;        
+    SetClockSourceFromTimer1(T1CLOCK_STOP);        
 }
 
 //******************************

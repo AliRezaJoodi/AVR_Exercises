@@ -7,7 +7,7 @@ A=
 C=
 D=11/9/2016
 Files=1
-OpenedFiles=2
+OpenedFiles=1
 OF1=v1.0.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -26,7 +26,7 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1458636469
+TimeStamp1=1458735121
 PageIndex1=1
 OF2=Attachment\Timer1.h
 Active2=0
@@ -149,8 +149,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1458636488
-Build=508
+COFFileTimeStamp=1458735722
+Build=519
 GlobalVarAddr=608
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -254,7 +254,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=508
+Build=519
 IncludePath0=
 IncludePath1=
 IncludePath2=
@@ -502,8 +502,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 508
-L18=899 line(s) compiled
+L17=Build: 519
+L18=903 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -552,7 +552,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1458636490
+TimeStamp=1458735910
 [BookmarksFoldedCode]
 Files=26
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
@@ -960,9 +960,9 @@ BK9=-1
 [FoldedCode21]
 Blocks=0
 [Bookmarks22]
-TimeStamp=1458636469
-Row=0
-Column=0
+TimeStamp=1458735121
+Row=11
+Column=18
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1030,9 +1030,9 @@ Blocks=0
 [FoldedCode23]
 Blocks=0
 [Bookmarks26]
-TimeStamp=1458636428
-Row=0
-Column=0
+TimeStamp=1458735718
+Row=15
+Column=14
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1053,7 +1053,7 @@ Files=3
 F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=Attachment\Timer1.h
-[FoldedCode22]
-Blocks=0
 [FoldedCode26]
+Blocks=0
+[FoldedCode22]
 Blocks=0

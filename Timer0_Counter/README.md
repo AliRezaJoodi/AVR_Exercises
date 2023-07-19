@@ -1,12 +1,13 @@
 ## Config Timer0 in Counter Mode
 
 MCU:        ATmega32  
-Frequency:  8.000000 MHz  
+Frequency:  8MHz  
 Display:    16x2 Character LCD  
 
 ### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
+- `Code_CodeVisionAVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0

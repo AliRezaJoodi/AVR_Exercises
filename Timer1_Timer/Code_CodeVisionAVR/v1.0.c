@@ -26,7 +26,7 @@ void main(void){
      
     #asm("sei") // Global enable interrupts 
     ConfigTimer1ForTimer(); 
-    SetPerscalerFromTimer1(PERSCALER_8);
+    SetClockSourceFromTimer1(T1CLOCK_P8);
     DisableOverflowInterruptFromTimer1();
     ResetTimer1();
     EnableOverflowInterruptFromTimer1();

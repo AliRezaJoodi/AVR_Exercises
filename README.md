@@ -90,7 +90,7 @@ A repository for my personal exercises.
 |![](Timer0_CTC/Simulate/Album.png)|[Config Timer0 in CTC Mode](Timer0_CTC)|-|Y|-|
 |![](Timer0_PWM/Simulate/Album.png)|[Config Timer0 in PWM Mode](Timer0_PWM)|-|Y|-|
 |![](Timer0_Timer/Simulate/Album.png)|[Config Timer0 in Timer Mode](Timer0_Timer)|Y|-|-|
-|![](Timer1_Counter/Simulate/Album.png)|[Config Timer1 in Counter Mode](Timer1_Counter)|Y|-|-|
+|![](Timer1_Counter/Simulate/Album.png)|[Config Timer1 in Counter Mode](Timer1_Counter)|Y|Y|-|
 |![](Timer1_CTC/Simulate/Album.png)|[Config Timer1 in CTC Mode](Timer1_CTC)|-|Y|-|
 |![](Timer1_PWM/Simulate/Album.png)|[Config Timer1 in PWM Mode](Timer1_PWM)|Y|Y|-|
 |![](Timer1_Timer/Simulate/Album.png)|[Config Timer1 in Timer Mode](Timer1_Timer)|-|Y|-|
