@@ -20,21 +20,28 @@
     #define T0_CLOCK_P1024                  TCCR0=(TCCR0 & 0b11111000) | 0b101; 
     #define T0_CLOCK_EXTERNAL_FALLING       TCCR0=(TCCR0 & 0b11111000) | 0b110;  
     #define T0_CLOCK_EXTERNAL_RISING        TCCR0=(TCCR0 & 0b11111000) | 0b111;
-    #define T0_INT_ENABLE                   SETBIT(TIMSK,TOIE0);
-    #define T0_INT_DISABLE                  CLRBIT(TIMSK,TOIE0);
+    #define T0_INT_OVF_ENABLE               SETBIT(TIMSK,TOIE0);
+    #define T0_INT_OVF_DISABLE              CLRBIT(TIMSK,TOIE0); 
+    #define T0_INT_COMP_ENABLE              SETBIT(TIMSK,OCIE0);
+    #define T0_INT_COMP_DISABLE             CLRBIT(TIMSK,OCIE0);
     #define T0_RESET                        TCNT0=0x00;
     #define T0_OC0_DISCONNECT               TCCR0=(TCCR0 & 0b11001111) | (0b00<<4);
     #define T0_OC0_NONINVERTED              TCCR0=(TCCR0 & 0b11001111) | (0b10<<4); 
     #define T0_OC0_INVERTED                 TCCR0=(TCCR0 & 0b11001111) | (0b11<<4); 
  
-    char task_t0=0;
+    char task_t0_ovf=0;
+    char task_t0_comp=0;
     
 #pragma used+
 
 //******************************
-// Timer 0 overflow interrupt service routine
 interrupt [TIM0_OVF] void timer0_ovf_isr(void){
-    task_t0=1; 
+    task_t0_ovf=1; 
+}
+
+//**************************************
+interrupt [TIM0_COMP] void timer0_comp_isr(void){
+    task_t0_comp=1;
 }
     
 //**************************************

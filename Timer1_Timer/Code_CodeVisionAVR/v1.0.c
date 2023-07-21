@@ -27,14 +27,14 @@ void main(void){
     #asm("sei") // Global enable interrupts 
     ConfigTimer1ForTimer(); 
     T1_CLOCK_P8;
-    T1_INT_DISABLE;
+    T1_INT_OVF_DISABLE;
     T1_RESET;
-    T1_INT_ENABLE;
+    T1_INT_OVF_ENABLE;
     //T1_CLOCK_STOP;
          
     while(1){ 
-        if(task_t1){
-            task_t1=0; 
+        if(task_t1_ovf){
+            task_t1_ovf=0; 
             ++value;
             DisplayMainPage(value); 
         }      

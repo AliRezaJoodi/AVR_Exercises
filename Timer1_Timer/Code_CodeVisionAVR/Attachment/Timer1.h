@@ -20,8 +20,12 @@
     #define T1_CLOCK_P1024                  TCCR1B=(TCCR1B & 0b11111000) | 0b101; 
     #define T1_CLOCK_EXTERNAL_FALLING       TCCR1B=(TCCR1B & 0b11111000) | 0b110;  
     #define T1_CLOCK_EXTERNAL_RISING        TCCR1B=(TCCR1B & 0b11111000) | 0b111;
-    #define T1_INT_ENABLE                   SETBIT(TIMSK,TOIE1);
-    #define T1_INT_DISABLE                  CLRBIT(TIMSK,TOIE1);
+    #define T1_INT_OVF_ENABLE               SETBIT(TIMSK,TOIE1);
+    #define T1_INT_OVF_DISABLE              CLRBIT(TIMSK,TOIE1); 
+    #define T1_INT_COMPA_ENABLE             SETBIT(TIMSK,OCIE1A);
+    #define T1_INT_COMPA_DISABLE            CLRBIT(TIMSK,OCIE1A); 
+    #define T1_INT_COMPB_ENABLE             SETBIT(TIMSK,OCIE1B);
+    #define T1_INT_COMPB_DISABLE            CLRBIT(TIMSK,OCIE1B);
     #define T1_RESET                        TCNT1H=0x00; TCNT1L=0x00;
     #define T1_OC1A_DISCONNECT              TCCR1A=(TCCR1A & 0b00111111) | (0<<COM1A1) | (0<<COM1A0);
     #define T1_OC1A_NONINVERTED             TCCR1A=(TCCR1A & 0b00111111) | (1<<COM1A1) | (0<<COM1A0); 
@@ -33,14 +37,25 @@
     #define T1_PWM_9BIT             	    TCCR1A=(TCCR1A & 0b11111100) | (1<<WGM11) | (0<<WGM10); 
     #define T1_PWM_10BIT                    TCCR1A=(TCCR1A & 0b11111100) | (1<<WGM11) | (1<<WGM10);
     
-    char task_t1=0;
+    char task_t1_ovf=0;
+    char task_t1_compa=0;
+    char task_t1_compb=0;
     
 #pragma used+
 
-//******************************
-// Timer1 overflow interrupt service routine
+//**************************************
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
-    task_t1=1; 
+    task_t1_ovf=1; 
+}
+
+//**************************************
+interrupt [TIM1_COMPA] void timer1_compa_isr(void){
+    task_t1_compa=1;
+}
+
+//**************************************
+interrupt [TIM1_COMPB] void timer1_compb_isr(void){
+     task_t1_compb=1;
 }
     
 //**************************************

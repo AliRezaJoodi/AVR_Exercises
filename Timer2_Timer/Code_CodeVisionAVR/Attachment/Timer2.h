@@ -20,21 +20,30 @@
     #define T2_CLOCK_P128                   TCCR2=(TCCR2 & 0b11111000) | 0b101; 
     #define T2_CLOCK_P256                   TCCR2=(TCCR2 & 0b11111000) | 0b110;
     #define T2_CLOCK_P1024                  TCCR2=(TCCR2 & 0b11111000) | 0b111;
-    #define T2_INT_ENABLE                   SETBIT(TIMSK,TOIE2);
-    #define T2_INT_DISABLE                  CLRBIT(TIMSK,TOIE2);
+    #define T2_INT_OVF_ENABLE               SETBIT(TIMSK,TOIE2);
+    #define T2_INT_OVF_DISABLE              CLRBIT(TIMSK,TOIE2); 
+    #define T2_INT_COMP_ENABLE              SETBIT(TIMSK,OCIE2);
+    #define T2_INT_COMP_DISABLE             CLRBIT(TIMSK,OCIE2);
     #define T2_RESET                        TCNT2=0x00;
+    #define T2_SET(VALUE)                   TCNT2=VALUE;
+    #define T2_END                          TCNT2=255;
     #define T2_OC2_DISCONNECT               TCCR2=(TCCR2 & 0b11001111) | (0b00<<4);
     #define T2_OC2_NONINVERTED              TCCR2=(TCCR2 & 0b11001111) | (0b10<<4); 
     #define T2_OC2_INVERTED                 TCCR2=(TCCR2 & 0b11001111) | (0b11<<4); 
  
-    char task_t2=0;
+    char task_t2_ovf=0;
+    char task_t2_comp=0;
     
 #pragma used+
 
-//******************************
-// Timer 2 overflow interrupt service routine
+//**************************************
 interrupt [TIM2_OVF] void timer2_ovf_isr(void){
-    task_t2=1; 
+    task_t2_ovf=1; 
+}
+
+//**************************************
+interrupt [TIM2_COMP] void timer2_comp_isr(void){
+    task_t2_comp=1;
 }
     
 //**************************************

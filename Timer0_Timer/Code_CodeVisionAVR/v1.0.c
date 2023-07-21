@@ -21,14 +21,14 @@ void main(void){
     #asm("sei") // Global enable interrupts 
     ConfigTimer0ForTimer(); 
     T0_CLOCK_P1024;
-    T0_INT_DISABLE;
+    T0_INT_OVF_DISABLE;
     T0_RESET;
-    T0_INT_ENABLE;
+    T0_INT_OVF_ENABLE;
     //T0_CLOCK_STOP;
          
     while(1){ 
-        if(task_t0){
-            task_t0=0; 
+        if(task_t0_ovf){
+            task_t0_ovf=0; 
             ++value;
             DisplayMainPage(value); 
         }    
