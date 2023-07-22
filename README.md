@@ -68,6 +68,7 @@ A repository for my personal exercises.
 |![]()|[Motor_UnipolarStepper](Motor_UnipolarStepper)|Y|-|-|
 |![](PulseGenerator_PWM&FrequencyControlled_31.250KHz/Simulate/Album.png)|[PulseGenerator_PWM&FrequencyControlled_31.250KHz](PulseGenerator_PWM&FrequencyControlled_31.250KHz)|-|Y|-|
 |![]()|[PulseGenerator_PWMwithCustomizeChannel](PulseGenerator_PWMwithCustomizeChannel)|Y|-|-|
+|![](PulseGenerator_TriacTriggerPulseWithPWM/Simulate/Album.png)|[Triac Trigger Pulse with PWM](PulseGenerator_TriacTriggerPulseWithPWM)|-|Y|-|
 |![](RelayController_UART_1CH/Simulate/Album.png)|[RelayController_UART_1CH](RelayController_UART_1CH)|Y|-|-|
 |![](RelayController_UART_8CH/Simulate/Album.png)|[RelayController_UART_8CH](RelayController_UART_8CH)|Y|-|-|
 |![](RTC_DS1307/Simulate/Album.png)|[RTC_DS1307](RTC_DS1307)|Y|Y|-|
