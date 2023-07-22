@@ -66,8 +66,8 @@ A repository for my personal exercises.
 |![](Motor_DC/Simulate/Album.png)|[Motor_DC](Motor_DC)|Y|-|-|
 |![](Motor_Servo/Simulate/Album.png)|[Motor_Servo](Motor_Servo)|Y|-|-|
 |![]()|[Motor_UnipolarStepper](Motor_UnipolarStepper)|Y|-|-|
-|![](PulseGenerator_PWM&FrequencyControlled_31.250KHz/Simulate/Album.png)|[PulseGenerator_PWM&FrequencyControlled_31.250KHz](PulseGenerator_PWM&FrequencyControlled_31.250KHz)|-|Y|-|
-|![]()|[PulseGenerator_PWMwithCustomizeChannel](PulseGenerator_PWMwithCustomizeChannel)|Y|-|-|
+|![](PulseGenerator_PWM&FrequencyControlled_31.250KHz/Simulate/Album.png)|[PWM and Frequency Controlled Maximum to 31.250KHz](PulseGenerator_PWM&FrequencyControlled_31.250KHz)|-|Y|-|
+|![]()|[PWM Generator With Customize Channel](PulseGenerator_PWMwithCustomizeChannel)|Y|-|-|
 |![](PulseGenerator_TriacTriggerPulseWithPWM/Simulate/Album.png)|[Triac Trigger Pulse with PWM](PulseGenerator_TriacTriggerPulseWithPWM)|-|Y|-|
 |![](RelayController_UART_1CH/Simulate/Album.png)|[RelayController_UART_1CH](RelayController_UART_1CH)|Y|-|-|
 |![](RelayController_UART_8CH/Simulate/Album.png)|[RelayController_UART_8CH](RelayController_UART_8CH)|Y|-|-|
