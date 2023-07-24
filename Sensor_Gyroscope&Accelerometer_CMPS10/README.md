@@ -1,4 +1,4 @@
-## Gyroscope and Accelerometer using CMPS10
+## Gyroscope and Accelerometer With CMPS10
 
 MCU:        ATmega8   
 Frequency:  8.000000 MHz  

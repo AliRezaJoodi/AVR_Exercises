@@ -1,4 +1,4 @@
-## Gyroscope and Accelerometer using MPU6050
+## Gyroscope and Accelerometer With MPU6050
 
 MCU:        ATmega32   
 Frequency:  4.000000 MHz  
