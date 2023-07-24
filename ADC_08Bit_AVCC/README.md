@@ -1,8 +1,9 @@
-## ADC Config with AVCC VREF
+## Config ADC With 8Bit Resolution and AVCC Voltage Reference
  
 MCU:          	ATmega32  
-Frequency:     	1.000000 MHz  
+Frequency:     	1MHz  
 VREF:  		AVCC (5V)  
+Display:        16x2 Character LCD  
 
 ### Folder and Files Description
 It has included:

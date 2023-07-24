@@ -1,7 +1,7 @@
-## ADC Config with AREF VREF  
+## Config ADC For 10Bit Resolution And AREF Voltage Reference 
               
 MCU:     	ATmega32  
-Frequency:     	1.000000 MHz  
+Frequency:     	1MHz  
 VREF:  		AVCC (5V)  
 Display:        16x2 Character LCD
 

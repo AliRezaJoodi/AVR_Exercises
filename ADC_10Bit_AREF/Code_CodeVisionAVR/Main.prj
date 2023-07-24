@@ -7,7 +7,7 @@ A=
 C=
 D=2016/11/06
 Files=1
-OpenedFiles=2
+OpenedFiles=1
 OF1=v1.0.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -39,6 +39,7 @@ EditorPanel3=0
 TimeStamp3=1132887471
 PageIndex3=3
 F1=v1.0.c
+ActiveTab=1
 [CompilerDebug]
 Chip=ATmega32
 CPUClock=1000000
@@ -575,7 +576,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1435406858
+TimeStamp=1459162772
 [USBLibrary]
 UseSuspend=0
 CDCVirtualSerialPort=0
@@ -966,7 +967,7 @@ TimeStamp=1435406790
 Row=27
 Column=15
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=24
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1007,7 +1008,7 @@ F6=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F7=C:\Program Files (x86)\CVAVR\inc\delay.h
 F8=C:\Program Files (x86)\CVAVR\inc\alcd.h
 F9=Attachment\Config_ADC.h
-[FoldedCode23]
-Blocks=0
 [FoldedCode24]
+Blocks=0
+[FoldedCode23]
 Blocks=0

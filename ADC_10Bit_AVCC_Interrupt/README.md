@@ -1,7 +1,7 @@
-## ADC Config with AVCC VREF and Interrupt
+## Config ADC For 10Bit Resolution, AVCC Voltage Reference and Interrupt
  	  
 MCU:      	ATmega32  
-Frequency:   	1.000000 MHz  
+Frequency:   	1MHz  
 VREF:  		AVCC (5V)  
 
 ### Folder and Files Description

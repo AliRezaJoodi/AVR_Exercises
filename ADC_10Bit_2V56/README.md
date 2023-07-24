@@ -1,8 +1,9 @@
-## ADC Config with Internal VREF
+## Config ADC For 10Bit Resolution And Internal Voltage Reference
    
 MCU:     	ATmega32  
-Frequency:     	1.000000 MHz  
+Frequency:     	1MHz  
 VREF:  		Internal (2.56V)  
+Display:        16x2 Character LCD  
 
 ### Folder and Files Description
 It has included:
