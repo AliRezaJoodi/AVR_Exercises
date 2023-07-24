@@ -23,7 +23,7 @@ A repository for my personal exercises.
 |![](Chronometer/Simulate/Album.png)|[Chronometer](Chronometer)|Y|-|-|
 |![](ControlSystems_OnOff/Simulate/Album.png)|[On/Off Control Systems](ControlSystems_OnOff)|-|Y|-|
 |![](ControlSystems_PID/Simulate/Album.png)|[PID Control Systems](ControlSystems_PID)|-|Y|-|
-|![](ControlSystems_PIDwithOnOffMode/Simulate/Album.png)|[PID Control Systems With On/OFF Mode](ControlSystems_PIDwithOnOffMode)|-|Y|-|
+|![](ControlSystems_PID_OnOffMode/Simulate/Album.png)|[PID Control Systems With On/Off Mode](ControlSystems_PID_OnOffMode)|-|Y|-|
 |![](Converter_DataTable/Simulate/Album.png)|[Data Table Converter](Converter_DataTable)|Y|-|-|
 |![](Converter_MSB&LSB/Simulate/Album.png)|[MSB & LSB Converter](Converter_MSB&LSB)|Y|Y|-|
 |![](CounterForUsedClock/Simulate/Album.png)|[Counter For Used Clock](CounterForUsedClock)|-|Y|-|
@@ -40,7 +40,7 @@ A repository for my personal exercises.
 |![](Display_GLCD_T6963/Simulate/Album.png)|[T6963 GLCD Display](Display_GLCD_T6963)|Y|-|-|
 |![](Display_LCD/Simulate/Album.png)|[LCD Display](Display_LCD)|Y|Y|Y|
 |![](Display_LCD_BarGraph/Simulate/Album.png)|[BarGraph Display On A LCD](Display_LCD_BarGraph)|Y|Y|-|
-|![](Display_LCD_BulletinBoard/Simulate/Album.png)|[Bulletin Board With LCD Display](Display_LCD_BulletinBoard)|Y|-|-|
+|![](Display_LCD_Billboard/Simulate/Album.png)|[Billboard With LCD Display](Display_LCD_Billboard)|Y|-|-|
 |![](Display_LCD_Menu/Simulate/Album.png)|[Create Menu On LCD Display](Display_LCD_Menu)|-|Y|-|
 |![]()|[LED Display](Display_LED)|Y|Y|-|
 |![]()|[Flasher With LED](Display_LED_Flasher)|Y|Y|-|
@@ -58,7 +58,7 @@ A repository for my personal exercises.
 |![](Interrupt_INT1/Simulate/Album.png)|[External Interrupt INT1](Interrupt_INT1)|Y|Y|-|
 |![](Interrupt_INT2/Simulate/Album.png)|[External Interrupt INT2](Interrupt_INT2)|Y|Y|-|
 |![]()|[Digital Output](IO_Output)|Y|Y|-|
-|![]()|[Use Of The PortG & PortF](IO_PortG&PortF)|-|Y|-|
+|![]()|[Use of PortG & PortF](IO_PortG&PortF)|-|Y|-|
 |![](Keyboard_PC/Hardware/Album.png)|[PC Keyboard](Keyboard_PC)|Y|-|-|
 |![](Keypad_4x3/Simulate/Album.png)|[4x3 Keypad](Keypad_4x3)|Y|Y|-|
 |![](Keypad_4x4/Simulate/Album.png)|[4x4 Keypad](Keypad_4x4)|Y|Y|-|

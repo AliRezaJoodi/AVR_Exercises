@@ -1,9 +1,9 @@
-## ON/OFF PID Control Systems
+## PID Control Systems With On/Off Mode
 It's a ON/OFF PID Temperature Controller for a oven.   
 It's an example for practice. So, We use constant value for the `setpoint` variables.  
 
 MCU:        ATmega32  
-Frequency:  8.000000 MHz  
+Frequency:  8MHz  
 Display:    16x2 Character LCD   
 
 Note: `ControlSystem_PID.h` is a header file for pid control system function. It usable for other uses.
