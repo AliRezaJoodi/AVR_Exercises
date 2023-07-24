@@ -8,11 +8,11 @@ A repository for my personal exercises.
 ### Table of Contents
 |Picture|Title|1|2|3|
 |:------|:----|:----:|:--------:|:----:|
-|![](ADC_08Bit_AVCC-VREF/Simulate/Album.png)|[ADC_08Bit_AVCC-VREF](ADC_08Bit_AVCC-VREF)|-|Y|-|
-|![](ADC_10Bit_AREF-VREF/Simulate/Album.png)|[ADC_10Bit_AREF-VREF](ADC_10Bit_AREF-VREF)|Y|Y|-|
-|![](ADC_10Bit_AVCC-VREF/Simulate/Album.png)|[ADC_10Bit_AVCC-VREF](ADC_10Bit_AVCC-VREF)|Y|Y|-|
-|![](ADC_10Bit_AVCC-VREF_Interrupt/Simulate/Album.png)|[ADC_10Bit_AVCC-VREF_Interrupt](ADC_10Bit_AVCC-VREF_Interrupt)|Y|-|-|
-|![](ADC_10Bit_Internal-VREF/Simulate/Album.png)|[ADC_10Bit_Internal-VREF](ADC_10Bit_Internal-VREF)|Y|Y|-|
+|![](ADC_08Bit_AVCC/Simulate/Album.png)|[Config ADC For 08Bit And AVCC Voltage Reference](ADC_08Bit_AVCC)|-|Y|-|
+|![](ADC_10Bit_AREF/Simulate/Album.png)|[Config ADC For 10Bit And AREF Voltage Reference](ADC_10Bit_AREF)|Y|Y|-|
+|![](ADC_10Bit_AVCC/Simulate/Album.png)|[Config ADC For 10Bit And AVCC Voltage Reference](ADC_10Bit_AVCC)|Y|Y|-|
+|![](ADC_10Bit_AVCC_Interrupt/Simulate/Album.png)|[Config ADC For 10Bit, AVCC Voltage Reference and Interrupt](ADC_10Bit_AVCC-VREF_Interrupt)|Y|-|-|
+|![](ADC_10Bit_2V56/Simulate/Album.png)|[Config ADC For 10Bit, Internal Voltage Reference](ADC_10Bit_2V56)|Y|Y|-|
 |![](ADC_ExternalADC_MCP320x_SPI/Simulate/Album.png)|[External ADC With MCP320x On SPI Bus](ADC_ExternalADC_MCP320x_SPI)|-|Y|-|
 |![]()|[ATtiny13](ATtiny13)|Y|-|-|
 |![](Average/Simulate/Album.png)|[Average](Average)|-|Y|-|
