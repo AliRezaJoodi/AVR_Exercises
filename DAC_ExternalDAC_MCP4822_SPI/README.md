@@ -1,4 +1,4 @@
-## External DAC With MCP4822 For SPI-Bus   
+## MCP4822 External DAC With SPI Interface
               
 MCU:     	ATmega32  
 Frequency:     	8MHz (Internal)  

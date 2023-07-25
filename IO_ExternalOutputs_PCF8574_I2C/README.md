@@ -1,7 +1,7 @@
-## External Outputs Using PCF8574 For I2C-Bus 
+## PCF8574 External Output With I2C Interface
                 
 MCU:   		ATmega32  
-Frequency:     1.000000 MHz  
+Frequency:     	1MHz  
 
 ### Folder and Files Description
 It has included:

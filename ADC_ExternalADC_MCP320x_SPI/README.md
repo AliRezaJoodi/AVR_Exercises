@@ -1,4 +1,4 @@
-## External ADC With MCP3208 For SPI-Bus   
+## MCP3208 External ADC With SPI Interface
               
 MCU:     	ATmega32  
 Frequency:     	8.000000 MHz (Internal)  

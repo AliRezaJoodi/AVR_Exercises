@@ -1,8 +1,8 @@
-## Gyroscope and Accelerometer With CMPS10
+## CMPS10 Gyroscope and Accelerometer With I2C Interfac
 
 MCU:        ATmega8   
-Frequency:  8.000000 MHz  
-Interface:  UART   
+Frequency:  8MHz  
+Interface:  I2C   
 
 ### Folder and Files Description
 It has included:

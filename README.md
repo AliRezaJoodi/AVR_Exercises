@@ -13,7 +13,7 @@ A repository for my personal exercises.
 |![](ADC_10Bit_AREF/Simulate/Album.png)|[Config ADC, 10Bit Resolution, AREF VREF](ADC_10Bit_AREF)|Y|Y|-|
 |![](ADC_10Bit_AVCC/Simulate/Album.png)|[Config ADC, 10Bit Resolution, AVCC VREF](ADC_10Bit_AVCC)|Y|Y|-|
 |![](ADC_10Bit_AVCC_Interrupt/Simulate/Album.png)|[Config ADC, 10Bit Resolution, AVCC VREF, Interrupt](ADC_10Bit_AVCC_Interrupt)|Y|-|-|
-|![](ADC_ExternalADC_MCP320x_SPI/Simulate/Album.png)|[External ADC With MCP320x On SPI Bus](ADC_ExternalADC_MCP320x_SPI)|-|Y|-|
+|![](ADC_ExternalADC_MCP320x_SPI/Simulate/Album.png)|[MCP3208 External ADC With SPI Interface](ADC_ExternalADC_MCP320x_SPI)|-|Y|-|
 |![]()|[ATtiny13](ATtiny13)|Y|-|-|
 |![](Average/Simulate/Album.png)|[Average](Average)|-|Y|-|
 |![]()|[Access to a bit from a byte](BitAccess)|Y|Y|-|
@@ -27,7 +27,7 @@ A repository for my personal exercises.
 |![](Converter_DataTable/Simulate/Album.png)|[Data Table Converter](Converter_DataTable)|Y|-|-|
 |![](Converter_MSB&LSB/Simulate/Album.png)|[MSB & LSB Converter](Converter_MSB&LSB)|Y|Y|-|
 |![](CounterForUsedClock/Simulate/Album.png)|[Counter For Used Clock](CounterForUsedClock)|-|Y|-|
-|![](DAC_ExternalDAC_MCP4822_SPI/Simulate/Album.png)|[External DAC With MCP4822 On SPI Bus](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
+|![](DAC_ExternalDAC_MCP4822_SPI/Simulate/Album.png)|[MCP4822 External DAC With SPI Interface](DAC_ExternalDAC_MCP4822_SPI)|-|Y|-|
 |![](DAC_WithPWM/Simulate/Album.png)|[DAC With PWM and RC](DAC_WithPWM)|-|Y|-|
 |![]()|[Dialing](Dialing)|Y|-|-|
 |![]()|[7-Segment Display For 1Digit](Display_7Segment_1Digit)|Y|Y|-|
@@ -51,12 +51,12 @@ A repository for my personal exercises.
 |![](FrequencyMeter_Timer0_0.1S_4MHz/Simulate/Album.png)|[Frequency Meter, Timer0, 0.1S, 4MHz](FrequencyMeter_Timer0_0.1S_4MHz)|-|Y|-|
 |![]()|[FrequencyMeter, Timer0, 1S, 11.059200MHz](FrequencyMeter_Timer0_1S_11.059200MHz)|Y|-|-|
 |![]()|[FrequencyMeter, Timer0, 1S, 11.059200MHz, 7Segment Display](FrequencyMeter_Timer0_1S_11.059200MHz_7Segment)|Y|-|-|
-|![]()|[External Outputs With PCF8574 On I2C Bus](IO_ExternalOutputs_PCF8574_I2C)|Y|-|-|
 |![]()|[Add External File In Code](Include)|Y|Y|-|
 |![](IO_Input/Simulate/Album.png)|[Digital Input](IO_Input)|Y|-|-|
 |![](Interrupt_INT0/Simulate/Album.png)|[External Interrupt INT0](Interrupt_INT0)|Y|Y|-|
 |![](Interrupt_INT1/Simulate/Album.png)|[External Interrupt INT1](Interrupt_INT1)|Y|Y|-|
 |![](Interrupt_INT2/Simulate/Album.png)|[External Interrupt INT2](Interrupt_INT2)|Y|Y|-|
+|![]()|[PCF8574 External Output With I2C Interface](IO_ExternalOutputs_PCF8574_I2C)|Y|-|-|
 |![]()|[Digital Output](IO_Output)|Y|Y|-|
 |![]()|[Use of PortG & PortF](IO_PortG&PortF)|-|Y|-|
 |![](Keyboard_PC/Hardware/Album.png)|[PC Keyboard](Keyboard_PC)|Y|-|-|
@@ -74,8 +74,8 @@ A repository for my personal exercises.
 |![](RelayController_UART_1CH/Simulate/Album.png)|[1CH Relay Controller With UART](RelayController_UART_1CH)|Y|-|-|
 |![](RelayController_UART_8CH/Simulate/Album.png)|[8CH Relay Controller With UART](RelayController_UART_8CH)|Y|-|-|
 |![](RTC_DS1307/Simulate/Album.png)|[External RTC with DS1307 For I2C Bus](RTC_DS1307)|Y|Y|-|
-|![]()|[Gyroscope and Accelerometer With CMPS10](Sensor_Gyroscope&Accelerometer_CMPS10)|Y|Y|-|
-|![]()|[Gyroscope and Accelerometer With MPU6050](Sensor_Gyroscope&Accelerometer_MPU6050)|Y|-|-|
+|![]()|[CMPS10 Gyroscope and Accelerometer With I2C Interfac](Sensor_Gyroscope_CMPS10_I2C)|Y|Y|-|
+|![]()|[MPU6050 Gyroscope And Accelerometer With I2C Interface](Sensor_Gyroscope_MPU6050_I2C)|Y|-|-|
 |![](Sensor_Humidity_SHT10/Simulate/Album.png)|[Humidity Sensor With SHT10](Sensor_Humidity_SHT10)|Y|Y|-|
 |![](Sensor_LDR/Simulate/Album.png)|[LDR Sensor](Sensor_LDR)|Y|Y|-|
 |![](Sensor_Temperature_DS18B20/Simulate/Album.png)|[Temperature Sensor With DS18B20](Sensor_Temperature_DS18B20)|Y|Y|-|
