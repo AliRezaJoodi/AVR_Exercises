@@ -6,8 +6,8 @@ A repository for my personal exercises.
 3: mikroC PRO for AVR 
 
 ### Table of Contents
-|Picture									|Title														|1|2|3|
-|:------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|:-:|:-:|:-:|
+|Picture|Title|1|2|3|
+|:------|:----|:----:|:--------:|:----:|
 |![](ADC_08Bit_AVCC/Simulate/Album.png)						|[Config ADC, 8Bit Resolution, AVCC VREF](ADC_08Bit_AVCC)							|-|Y|-|
 |![](ADC_10Bit_2V56/Simulate/Album.png)						|[Config ADC, 10Bit Resolution, Internal VREF](ADC_10Bit_2V56)							|Y|Y|-|
 |![](ADC_10Bit_AREF/Simulate/Album.png)						|[Config ADC, 10Bit Resolution, AREF VREF](ADC_10Bit_AREF)							|Y|Y|-|
