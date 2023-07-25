@@ -1,10 +1,11 @@
-## 31.250KHz Pulse Generator With Frequency Control And PWM
+##  Pulse Generator With Frequency Control And PWM
 
 MCU:       	ATmega32  
 Frequency:  	16MHz (External Crystal)  
 Timer2: 	CTC Mode  
 Timer0:		PWM Mode With External Clock Source  
 
+Note: The maximum frequency is 31.250KHz
 Note: The Timer2 output at pin OC2 is the clock source for Timer0
 
 ### Folder and Files Description
