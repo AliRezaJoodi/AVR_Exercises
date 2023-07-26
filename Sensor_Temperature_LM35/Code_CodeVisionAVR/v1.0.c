@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 #pragma used+
-unsigned int input_int=0;
+
 float input_mv=0;
 float input_v=0;
 float temp=0;
@@ -18,15 +18,16 @@ float temp=0;
 #include <Attachment\Character.h>
 
 void main(void){
+
     Config_LCD();
-    Config_ADC();
-    define_char(CHAR1,0); 
-    
+    define_char(CHAR1,0);
+    ConfigADC_Default();
+
     while(1){ 
-        input_mv=GetMilliVolt_ADC(CH_LM35); 
+        input_mv=GetFromADC_mV(CH_LM35); 
         temp=Convert_mVtoTemp_LM35(input_mv);
         Display_LCD(input_mv,temp);
-        delay_ms(300);                                        
+        delay_ms(250);                                       
     };
 }
 

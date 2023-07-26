@@ -12,7 +12,7 @@ A repository for my personal exercises.
 |![](ADC_10Bit_2V56/Simulate/Album.png)					|[Config ADC, 10Bit Resolution, Internal VREF](ADC_10Bit_2V56)							|Y|Y|-|
 |![](ADC_10Bit_AREF/Simulate/Album.png)					|[Config ADC, 10Bit Resolution, AREF VREF](ADC_10Bit_AREF)							|Y|Y|-|
 |![](ADC_10Bit_AVCC/Simulate/Album.png)					|[Config ADC, 10Bit Resolution, AVCC VREF](ADC_10Bit_AVCC)							|Y|Y|-|
-|![](ADC_10Bit_AVCC_Interrupt/Simulate/Album.png)			|[Config ADC, 10Bit Resolution, AVCC VREF, Interrupt](ADC_10Bit_AVCC_Interrupt)					|Y|-|-|
+|![](ADC_10Bit_AVCC_Interrupt/Simulate/Album.png)			|[Config ADC, 10Bit Resolution, AVCC VREF, Interrupt](ADC_10Bit_AVCC_Interrupt)					|Y|Y|-|
 |![](ADC_ExternalADC_MCP320x_SPI/Simulate/Album.png)			|[MCP3208 External ADC With SPI Interface](ADC_ExternalADC_MCP320x_SPI)						|-|Y|-|
 |![]()									|[ATtiny13](ATtiny13)												|Y|-|-|
 |![](Average/Simulate/Album.png)					|[Average](Average)												|-|Y|-|
@@ -39,7 +39,7 @@ A repository for my personal exercises.
 |![](Display_GLCD_KS0108/Simulate/Album.png)				|[KS0108 GLCD Display](Display_GLCD_KS0108)									|-|Y|-|
 |![](Display_GLCD_T6963/Simulate/Album.png)				|[T6963 GLCD Display](Display_GLCD_T6963)									|Y|-|-|
 |![](Display_LCD/Simulate/Album.png)					|[LCD Display](Display_LCD)											|Y|Y|Y|
-|![](Display_LCD_BarGraph/Simulate/Album.png)				|[BarGraph Display On A LCD](Display_LCD_BarGraph)								|Y|Y|-|
+|![](Display_LCD_BarGraph/Simulate/Album.png)				|[BarGraph Display On LCD](Display_LCD_BarGraph)								|Y|Y|-|
 |![](Display_LCD_Billboard/Simulate/Album.png)				|[Billboard With LCD Display](Display_LCD_Billboard)								|Y|-|-|
 |![](Display_LCD_Menu/Simulate/Album.png)				|[Create Menu On LCD Display](Display_LCD_Menu)									|-|Y|-|
 |![]()									|[LED Display](Display_LED)											|Y|Y|-|
@@ -87,7 +87,7 @@ A repository for my personal exercises.
 |![]()									|[Music Player](Sound_MusicPlayer)										|Y|-|-|
 |![]()									|[Config SPI](SPI_Config)											|Y|Y|-|
 |![]()									|[Config Software SPI](SPI_SoftwareSPI)										|Y|-|-|
-|![]()									|[Interrupt In SPI](SPI_Interrupt)										|Y|Y|-|
+|![]()									|[Config SPI With Interrupt](SPI_Interrupt)										|Y|Y|-|
 |![](String_Syntax/Simulate/Album.png)					|[String Syntax](String_Syntax)											|Y|Y|-|
 |![](Timer0_Counter/Simulate/Album.png)					|[Config Timer0 in Counter Mode](Timer0_Counter)								|Y|Y|-|
 |![](Timer0_CTC/Simulate/Album.png)					|[Config Timer0 in CTC Mode](Timer0_CTC)									|-|Y|-|
@@ -105,7 +105,7 @@ A repository for my personal exercises.
 |![](UART_BaudRateFinder/Simulate/Album.png)				|[Baud Rate Finder In UART](UART_BaudRateFinder)								|Y|-|-|
 |![](UART_Config/Simulate/Album.png)					|[Config UART](UART_Config)											|Y|Y|-|
 |![](UART_SoftwareUART/Simulate/Album.png)				|[Config Software UART](UART_SoftwareUART)									|Y|Y|-|
-|![]()									|[Interrupt In UART](UART_Interrupt)										|Y|Y|-|
+|![]()									|[Config UART With Interrupt](UART_Interrupt)										|Y|Y|-|
 |![](VB6_Receiver_Bytes/Code_VB6/Album.jpg)				|[VB6_Receiver_Bytes](VB6_Receiver_Bytes)									|Y|Y|-|
 |![](VB6_Receiver_Integer/Code_VB6/Album.jpg)				|[VB6_Receiver_Integer](VB6_Receiver_Integer)									|Y|Y|-|
 |![](VB6_Sender_Byte/Code_VB6/Album.jpg)				|[VB6_Sender_Byte](VB6_Sender_Byte)										|Y|-|-|

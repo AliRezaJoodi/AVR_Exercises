@@ -5,8 +5,8 @@ Frequency:  	16MHz (External Crystal)
 Timer2: 	CTC Mode  
 Timer0:		PWM Mode With External Clock Source  
 
-Note: The maximum frequency is 31.250KHz
-Note: The Timer2 output at pin OC2 is the clock source for Timer0
+Note: The maximum frequency is 31.250KHz  
+Note: The Timer2 output at pin OC2 is the clock source for Timer0  
 
 ### Folder and Files Description
 It has included:

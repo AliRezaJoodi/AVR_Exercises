@@ -1,10 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-// Alphanumeric LCD Module functions
-#asm
-   .equ __lcd_port=0x12 ;PORTD
-#endasm
-#include <lcd.h>
+#include <alcd.h>
 
 //********************************************************
 void Config_LCD(void){

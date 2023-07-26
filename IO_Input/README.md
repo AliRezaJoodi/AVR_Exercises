@@ -1,7 +1,7 @@
-## Input Test
+## Digital Input
                 
 MCU:    	ATmega32  
-Frequency: 	1.000000 MHz  
+Frequency: 	1MHz  
 
 ### Folder and Files Description
 It has included:
