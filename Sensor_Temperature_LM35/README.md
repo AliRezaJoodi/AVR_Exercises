@@ -1,7 +1,7 @@
-## Thermometer Using LM35
+## Thermometer With LM35
  
 MCU:        ATmega32  
-Frequency:  1.000000 MHz  
+Frequency:  1MHz  
 Display:    16x2 Alphanumeric LCD    
 
 ### Folder and Files Description
