@@ -1,5 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include <delay.h>
+
 #ifndef SETBIT
     #define SETBIT(ADDRESS,BIT)         (ADDRESS|=1<<BIT)
 #endif 
@@ -89,7 +91,7 @@
     #define ENABLE_ADC_AUTOTRIG(STATUS)     if(STATUS){SETBIT(ADCSRA,ADATE);} else{CLRBIT(ADCSRA,ADATE);}
     #define SET_ADC_CHANNEL(CH)             ADMUX=(ADMUX & 0b11100000) | CH; 
     #define ENABLE_ADC(STATUS)              if(STATUS){SETBIT(ADCSRA,ADEN);} else{CLRBIT(ADCSRA,ADEN);}        
-    #define START_ADC_CONVERSION(STATUS)    if(STATUS){delay_us(10); SETBIT(ADCSRA,ADSC);} else{CLRBIT(ADCSRA,ADSC);}
+    #define START_ADC_CONVERSION(STATUS)    if(STATUS){SETBIT(ADCSRA,ADSC);} else{CLRBIT(ADCSRA,ADSC);}
     
     // Checks
     #define CHECK_ADC_ENABLE                CHKBIT(ADCSRA,ADEN)
@@ -118,6 +120,7 @@ void ConfigADC_Interrupt(unsigned char ch){
     ENABLE_ADC_AUTOTRIG(1);    
     SET_ADC_CHANNEL(ch); 
     ENABLE_ADC(1);
+    delay_us(10);
     START_ADC_CONVERSION(1);
     
     ENABLE_GLOBAL_INTERRUPT(1);
@@ -140,6 +143,7 @@ void ConfigADC_Default(void){
 unsigned int GetFromADC_Int(unsigned char ch){
     if(CHECK_ADC_ENABLE){
         SET_ADC_CHANNEL(ch);
+        delay_us(10);
         START_ADC_CONVERSION(1);
         while(END_ADC_CONVERSION);
         SETBIT(ADCSRA,ADIF);
