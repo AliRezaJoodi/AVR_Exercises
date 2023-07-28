@@ -12,8 +12,8 @@
     #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
 #endif
 
-#ifndef INT_GLOBAL_ENABLE
-    #define INT_GLOBAL_ENABLE          #asm("sei")
+#ifndef ENABLE_GLOBAL_INTERRUPT
+    #define ENABLE_GLOBAL_INTERRUPT(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
 
 #ifndef INCLUDED_ADC
@@ -21,6 +21,7 @@
     
     #define ADC_GAIN                        5/1023
     
+    // Analog Channel and Gain Selections
     #define SINGLE0                         0b00000
     #define SINGLE1                         0b00001
     #define SINGLE2                         0b00010
@@ -49,77 +50,52 @@
     #define DIF12_1x                        0b11001
     #define DIF22_1x                        0b11010
     #define DIF32_1x                        0b11011
-    #define DIF42_1x                        0b11100
+    #define DIF42_1x                        0b11100  
     
-    #define SET_ADC_CHANNEL(CH)             ADMUX=(ADMUX & 0b11100000) | CH; delay_us(10);
-    /*
-    #define ADC_CHANNEL_SINGLE0             ADMUX=(ADMUX & 0b11100000) | 0b00000; delay_us(10);
-    #define ADC_CHANNEL_SINGLE1             ADMUX=(ADMUX & 0b11100000) | 0b00001; delay_us(10);
-    #define ADC_CHANNEL_SINGLE2             ADMUX=(ADMUX & 0b11100000) | 0b00010; delay_us(10);
-    #define ADC_CHANNEL_SINGLE3             ADMUX=(ADMUX & 0b11100000) | 0b00011; delay_us(10);
-    #define ADC_CHANNEL_SINGLE4             ADMUX=(ADMUX & 0b11100000) | 0b00100; delay_us(10);
-    #define ADC_CHANNEL_SINGLE5             ADMUX=(ADMUX & 0b11100000) | 0b00101; delay_us(10);
-    #define ADC_CHANNEL_SINGLE6             ADMUX=(ADMUX & 0b11100000) | 0b00110; delay_us(10);
-    #define ADC_CHANNEL_SINGLE7             ADMUX=(ADMUX & 0b11100000) | 0b00111; delay_us(10);
-    #define ADC_CHANNEL_DIF00_10x           ADMUX=(ADMUX & 0b11100000) | 0b01000; delay_us(10);
-    #define ADC_CHANNEL_DIF10_10x           ADMUX=(ADMUX & 0b11100000) | 0b01001; delay_us(10);
-    #define ADC_CHANNEL_DIF00_200x          ADMUX=(ADMUX & 0b11100000) | 0b01010; delay_us(10);
-    #define ADC_CHANNEL_DIF10_200x          ADMUX=(ADMUX & 0b11100000) | 0b01011; delay_us(10);
-    #define ADC_CHANNEL_DIF22_10x           ADMUX=(ADMUX & 0b11100000) | 0b01100; delay_us(10);
-    #define ADC_CHANNEL_DIF32_10x           ADMUX=(ADMUX & 0b11100000) | 0b01101; delay_us(10);
-    #define ADC_CHANNEL_DIF22_200x          ADMUX=(ADMUX & 0b11100000) | 0b01110; delay_us(10);
-    #define ADC_CHANNEL_DIF32_200x          ADMUX=(ADMUX & 0b11100000) | 0b01111; delay_us(10);
-    #define ADC_CHANNEL_DIF01_1x            ADMUX=(ADMUX & 0b11100000) | 0b10000; delay_us(10);
-    #define ADC_CHANNEL_DIF11_1x            ADMUX=(ADMUX & 0b11100000) | 0b10001; delay_us(10);
-    #define ADC_CHANNEL_DIF21_1x            ADMUX=(ADMUX & 0b11100000) | 0b10010; delay_us(10);
-    #define ADC_CHANNEL_DIF31_1x            ADMUX=(ADMUX & 0b11100000) | 0b10011; delay_us(10);
-    #define ADC_CHANNEL_DIF41_1x            ADMUX=(ADMUX & 0b11100000) | 0b10100; delay_us(10);
-    #define ADC_CHANNEL_DIF51_1x            ADMUX=(ADMUX & 0b11100000) | 0b10101; delay_us(10);
-    #define ADC_CHANNEL_DIF61_1x            ADMUX=(ADMUX & 0b11100000) | 0b10110; delay_us(10);
-    #define ADC_CHANNEL_DIF71_1x            ADMUX=(ADMUX & 0b11100000) | 0b10111; delay_us(10);
-    #define ADC_CHANNEL_DIF02_1x            ADMUX=(ADMUX & 0b11100000) | 0b11000; delay_us(10);
-    #define ADC_CHANNEL_DIF12_1x            ADMUX=(ADMUX & 0b11100000) | 0b11001; delay_us(10);
-    #define ADC_CHANNEL_DIF22_1x            ADMUX=(ADMUX & 0b11100000) | 0b11010; delay_us(10);
-    #define ADC_CHANNEL_DIF32_1x            ADMUX=(ADMUX & 0b11100000) | 0b11011; delay_us(10);
-    #define ADC_CHANNEL_DIF42_1x            ADMUX=(ADMUX & 0b11100000) | 0b11100; delay_us(10);
-    */
+    // Voltage Reference Selections
+    #define AREF_PIN                        (0<<REFS1) | (0<<REFS0)
+    #define AVCC_PIN                        (0<<REFS1) | (1<<REFS0) 
+    #define INTERNAL_2V56                   (1<<REFS1) | (1<<REFS0)
     
-    #define ADC_VREF_AREF                   ADMUX=(ADMUX & 0b00111111) | (0<<REFS1) | (0<<REFS0); delay_us(10);      
-    #define ADC_VREF_AVCC                   ADMUX=(ADMUX & 0b00111111) | (0<<REFS1) | (1<<REFS0); delay_us(10);
-    #define ADC_VREF_INTERNAL_2V56          ADMUX=(ADMUX & 0b00111111) | (1<<REFS1) | (1<<REFS0); delay_us(10);
+    // Resolution Selections
+    #define R1024                           (0<<ADLAR)
+    #define R256                            (1<<ADLAR)
     
-    #define ADC_RESOLUTION_8BIT             SETBIT(ADMUX,ADLAR); delay_us(10);
-    #define ADC_RESOLUTION_10BIT            CLRBIT(ADMUX,ADLAR); delay_us(10);
+    // ADC Trigger Source Selections
+    #define FREE_RUNNING                    (0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0) 
+    #define ANALOG_COMPARATOR               (0<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
+    #define EXTERNAL_NTERRUPT_REQUEST_0     (0<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
+    #define T0_COMPARE_MATCH               	(0<<ADTS2) | (1<<ADTS1) | (1<<ADTS0)
+    #define T0_OVERFLOW               	    (1<<ADTS2) | (0<<ADTS1) | (0<<ADTS0)
+    #define T_COMPARE_MATCHB               	(1<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
+    #define T1_OVERFLOW               	    (1<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
+    #define T1_CAPTURE_EVENT               	(1<<ADTS2) | (1<<ADTS1) | (1<<ADTS0) 
+      
+    // ADC Prescaler Selections
+    #define P2               	            (0<<ADPS2) | (0<<ADPS1) | (1<<ADPS0)
+    #define P4               	            (0<<ADPS2) | (1<<ADPS1) | (0<<ADPS0)
+    #define P8               	            (0<<ADPS2) | (1<<ADPS1) | (1<<ADPS0)
+    #define P16               	            (1<<ADPS2) | (0<<ADPS1) | (0<<ADPS0)
+    #define P32               	            (1<<ADPS2) | (0<<ADPS1) | (1<<ADPS0)
+    #define P64               	            (1<<ADPS2) | (1<<ADPS1) | (0<<ADPS0)
+    #define P128               	            (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0)
+
+    // Commands
+    #define SET_ADC_PRESCALER(MODE)         ADCSRA=(ADCSRA & 0b11111000) | MODE; 
+    #define SET_ADC_VREF(MODE)              ADMUX=(ADMUX & 0b00111111) | MODE; 
+    #define SET_ADC_RESOLUTION(MODE)        ADMUX=(ADMUX & 0b11011111) | MODE; 
+    #define ENABLE_ADC_INTERRUPT(STATUS)    if(STATUS){SETBIT(ADCSRA,ADIE);} else{CLRBIT(ADCSRA,ADIE);}
+    #define SET_ADC_TRIGGER(MODE)           SFIOR=(SFIOR & 0b00011111) | MODE;
+    #define ENABLE_ADC_AUTOTRIG(STATUS)     if(STATUS){SETBIT(ADCSRA,ADATE);} else{CLRBIT(ADCSRA,ADATE);}
+    #define SET_ADC_CHANNEL(CH)             ADMUX=(ADMUX & 0b11100000) | CH; 
+    #define ENABLE_ADC(STATUS)              if(STATUS){SETBIT(ADCSRA,ADEN);} else{CLRBIT(ADCSRA,ADEN);}        
+    #define START_ADC_CONVERSION(STATUS)    if(STATUS){delay_us(10); SETBIT(ADCSRA,ADSC);} else{CLRBIT(ADCSRA,ADSC);}
     
-    #define ADC_TRIGGER_FREE            	SFIOR=(SFIOR & 0b00011111) | (0b000<<5);
-    #define ADC_TRIGGER_ANALOG_COMPARATOR   SFIOR=(SFIOR & 0b00011111) | (0b001<<5);
-    #define ADC_TRIGGER_INT0            	SFIOR=(SFIOR & 0b00011111) | (0b010<<5);
-    #define ADC_TRIGGER_T0_COMPARE_MATCH    SFIOR=(SFIOR & 0b00011111) | (0b011<<5);
-    #define ADC_TRIGGER_T0_OVERFLOW      	SFIOR=(SFIOR & 0b00011111) | (0b100<<5);
-    #define ADC_TRIGGER_T_COMPARE_MATCHB    SFIOR=(SFIOR & 0b00011111) | (0b101<<5);
-    #define ADC_TRIGGER_T1_OVERFLOW    	    SFIOR=(SFIOR & 0b00011111) | (0b110<<5);
-    #define ADC_TRIGGER_T1_CAPTURE_EVENT    SFIOR=(SFIOR & 0b00011111) | (0b111<<5);
-    
-    #define ADC_AUTO_TRIGGER_ENABLE         SETBIT(ADCSRA,ADATE);
-    #define ADC_AUTO_TRIGGER_DISABLE        CLRBIT(ADCSRA,ADATE);
-    
-    #define ADC_CLOCK_P1                    ADCSRA=(ADCSRA & 0b11111000) | 0b000;
-    #define ADC_CLOCK_P2                    ADCSRA=(ADCSRA & 0b11111000) | 0b001;
-    #define ADC_CLOCK_P4                    ADCSRA=(ADCSRA & 0b11111000) | 0b010;
-    #define ADC_CLOCK_P8                    ADCSRA=(ADCSRA & 0b11111000) | 0b011;
-    #define ADC_CLOCK_P16                   ADCSRA=(ADCSRA & 0b11111000) | 0b100;
-    #define ADC_CLOCK_P32                   ADCSRA=(ADCSRA & 0b11111000) | 0b101;
-    #define ADC_CLOCK_P64                   ADCSRA=(ADCSRA & 0b11111000) | 0b110;
-    #define ADC_CLOCK_P128                  ADCSRA=(ADCSRA & 0b11111000) | 0b111; 
-    
-    #define ADC_ENABLE                      SETBIT(ADCSRA,ADEN);
-    #define ADC_DISABLE                     CLRBIT(ADCSRA,ADEN);
-    
-    #define ADC_INTERRUPT_ENABLE            SETBIT(ADCSRA,ADIE);
-    #define ADC_INTERRUPT_DISABLE           CLRBIT(ADCSRA,ADIE);
-    
-    #define ADC_START                       SETBIT(ADCSRA,ADSC);
-    
+    // Checks
+    #define CHECK_ADC_ENABLE                CHKBIT(ADCSRA,ADEN)
+    #define CHECK_ADC_RESOLUTION_256        CHKBIT(ADMUX,ADLAR) 
+    #define CHECK_ADC_RESOLUTION_1024       CHKBIT(ADMUX,ADLAR) ^ 0b00000001 
+    #define END_ADC_CONVERSION              CHKBIT(ADCSRA,ADIF) ^ 0b00000001
 #pragma used+
 
     unsigned int input_int;
@@ -127,47 +103,49 @@
 
 //******************************************    
 interrupt [ADC_INT] void adc_isr(void){
-    if(CHKBIT(ADMUX,ADLAR)==0){input_int=ADCW;}    // 10Bit Resolution
-            else{input_int=ADCH;}                  // 8Bit Resolution 
+    if(CHECK_ADC_RESOLUTION_1024){input_int=ADCW;}      // 10Bit Resolution
+            else{input_int=ADCH;}                       // 8Bit Resolution 
     task_adc=1;
 }
 
 //******************************************
-void ConfigADC_Interrupt(unsigned char ch){
-    INT_GLOBAL_ENABLE;
-        
+void ConfigADC_Interrupt(unsigned char ch){    
+    SET_ADC_PRESCALER(P16);
+    SET_ADC_VREF(AVCC_PIN);
+    SET_ADC_RESOLUTION(R1024);
+    ENABLE_ADC_INTERRUPT(1);
+    SET_ADC_TRIGGER(T0_OVERFLOW);
+    ENABLE_ADC_AUTOTRIG(1);    
     SET_ADC_CHANNEL(ch); 
-    ADC_VREF_AVCC;
-    ADC_RESOLUTION_10BIT;
-    ADC_CLOCK_P16;
-    ADC_AUTO_TRIGGER_ENABLE;
-    ADC_TRIGGER_T0_OVERFLOW;
-    ADC_INTERRUPT_ENABLE;
-    ADC_ENABLE;
-    ADC_START;
+    ENABLE_ADC(1);
+    START_ADC_CONVERSION(1);
+    
+    ENABLE_GLOBAL_INTERRUPT(1);
 }
 
 //******************************************
 void ConfigADC_Default(void){
-    ADC_VREF_AVCC;
-    ADC_RESOLUTION_10BIT; 
-    ADC_CLOCK_P8; 
-    ADC_TRIGGER_FREE;
-    ADC_INTERRUPT_DISABLE;
-    ADC_ENABLE;
+    SET_ADC_PRESCALER(P16);
+    SET_ADC_VREF(AVCC_PIN);
+    SET_ADC_RESOLUTION(R1024);
+    ENABLE_ADC_INTERRUPT(0);
+    SET_ADC_TRIGGER(FREE_RUNNING);
+    ENABLE_ADC_AUTOTRIG(0);    
+    //SET_ADC_CHANNEL(ch); 
+    ENABLE_ADC(1);
+    START_ADC_CONVERSION(0);
 }
 
 //******************************************
 unsigned int GetFromADC_Int(unsigned char ch){
-    if(CHKBIT(ADCSRA,ADEN)){
-        //ADMUX=(ADMUX & 0b11100000) | ch; delay_us(10);
+    if(CHECK_ADC_ENABLE){
         SET_ADC_CHANNEL(ch);
-        ADC_START;  // Start the AD conversion
-        while(CHKBIT(ADCSRA,ADIF)==0);  // Wait for the AD conversion to complete 
+        START_ADC_CONVERSION(1);
+        while(END_ADC_CONVERSION);
         SETBIT(ADCSRA,ADIF);
         
-        if(CHKBIT(ADMUX,ADLAR)==0){return ADCW;}    // 10Bit Resolution
-            else{return ADCH;}                      // 8Bit Resolution
+        if(CHECK_ADC_RESOLUTION_1024){return ADCW;}     // 10Bit Resolution
+            else{return ADCH;}                          // 8Bit Resolution
     }
     else{
         return 0;

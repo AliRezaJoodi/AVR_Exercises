@@ -19,7 +19,7 @@ void main(void){
     
     while(1){
         input_int=GetFromADC_Int(SINGLE7); 
-        input_v=GetFromADC_Volt(SINGLE7);
+        input_v=GetFromADC_Volt(SINGLE7); 
         DisplayMainPage();
         delay_ms(250);                                        
     };
