@@ -15,17 +15,16 @@ void DisplayMainPage(void);
 #include <Attachment\Timer0.h>
 
 void main(void){
-
     ConfigLCD();
-    ConfigADC_Interrupt();
+    ConfigADC_Interrupt(SINGLE7);
     ConfigTimer0ForTimer();
      
-    INT_GLOBAL_ENABLE;
+    ENABLE_GLOBAL_INTERRUPT(1);
     
     while(1){
         if(task_adc){
             task_adc=0;
-            input_v=input_int; input_v=input_v*GAIN_ADC;
+            input_v=input_int; input_v=input_v*ADC_GAIN;
             DisplayMainPage();
         }                                         
     };
