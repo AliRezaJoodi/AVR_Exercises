@@ -16,10 +16,8 @@ void main(void){
     ConfigLCD();
     DisplayMainPage();
     
-    INT_GLOBAL_ENABLE;
+    ENABLE_GLOBAL_INTERRUPT(1);
     ConfigExternalInterrupts(); 
-    INT0_MODE_RISINGEDGE; 
-    //INT0_DISABLE;
          
     while(1){
         if(task_int0){
