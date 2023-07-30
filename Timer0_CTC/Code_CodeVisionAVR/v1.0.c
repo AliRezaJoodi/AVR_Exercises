@@ -5,9 +5,9 @@
 #include "Attachment\Timer0.h"
 
 void main(void){
-    ConfigTimer0ForCTC();
-    OCR0=0;    //0~255 
-
+    ConfigTimer0ForCTC(); 
+    SetCompareOutputValueFromTimer0(0);	//255~0
+    
     while(1){          
     }
 }

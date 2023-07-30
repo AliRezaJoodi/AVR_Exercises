@@ -8,8 +8,8 @@
     #define CLRBIT(ADDRESS,BIT)         (ADDRESS &=~(1<<BIT))
 #endif
 
-#ifndef ENABLE_GLOBAL_INTERRUPT
-    #define ENABLE_GLOBAL_INTERRUPT(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
+#ifndef EnableGlobalInterrupt
+    #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
 
 #ifndef _INCLUDED_INTRUPTS
@@ -64,7 +64,7 @@ void ConfigExternalInterrupts(void){
     SET_INT2_SENS(RISING_EDGE);
     ENABLE_INT2(0);
 
-    ENABLE_GLOBAL_INTERRUPT(1);
+    EnableGlobalInterrupt(1);
 }    
 
 #pragma used-    

@@ -14,12 +14,10 @@ void DisplayMainPage(char);
 #include "Attachment\Timer0.h"
 
 void main(void){
-    
     ConfigLCD();
     DisplayMainPage(value);
      
     ConfigTimer0ForTimer(); 
-    ENABLE_GLOBAL_INTERRUPT(1);
          
     while(1){ 
         if(task_t0_ovf){

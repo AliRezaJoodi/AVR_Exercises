@@ -16,7 +16,7 @@ void main(void){
     ConfigLCD();
     DisplayMainPage();
     
-    ENABLE_GLOBAL_INTERRUPT(1); 
+    EnableGlobalInterrupt(1); 
     ConfigExternalInterrupts();
          
     while(1){

@@ -14,8 +14,8 @@
     #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
 #endif
 
-#ifndef ENABLE_GLOBAL_INTERRUPT
-    #define ENABLE_GLOBAL_INTERRUPT(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
+#ifndef EnableGlobalInterrupt
+    #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
 
 #ifndef INCLUDED_ADC
@@ -123,7 +123,7 @@ void ConfigADC_Interrupt(unsigned char ch){
     delay_us(10);
     START_ADC_CONVERSION(1);
     
-    ENABLE_GLOBAL_INTERRUPT(1);
+    EnableGlobalInterrupt(1);
 }
 
 //******************************************

@@ -19,7 +19,7 @@ void main(void){
     ConfigADC_Interrupt(SINGLE7);
     ConfigTimer0ForTimer();
      
-    ENABLE_GLOBAL_INTERRUPT(1);
+    EnableGlobalInterrupt(1);
     
     while(1){
         if(task_adc){

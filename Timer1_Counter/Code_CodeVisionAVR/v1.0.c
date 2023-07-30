@@ -1,4 +1,4 @@
-//GitHub Account: GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32a.h>
 #include <delay.h>
@@ -15,7 +15,7 @@
 unsigned int value=0;
 
 void ConfigLCD(void);
-void DisplayMainPage(int,int);
+void DisplayMainPage(unsigned int, unsigned int);
 
 #include "Attachment\Timer1.h"
 
@@ -25,30 +25,23 @@ void main(void){
     ConfigLCD();
     DisplayMainPage(0,value);
      
-    #asm("sei") // Global enable interrupts 
     ConfigTimer1ForCounter();
-    //T1_INT_DISABLE;
-    //T1_RESET; 
-    //T1_CLOCK_P1024;
-    //T1_INT_ENABLE;
-    //T1_CLOCK_STOP;
-    TCNT1=0;
          
     while(1){ 
-        if(task_t1){
-            task_t1=0; 
+        if(task_t1_ovf){
+            task_t1_ovf=0; 
             ++value;
         }
         
         if(old_value!=TCNT1L){
             old_value=TCNT1L;
-            DisplayMainPage((TCNT1H*256)+TCNT1L,value);    
+            DisplayMainPage(TCNT1,value);  
         }      
     };
 }
 
 //**********************************
-void DisplayMainPage(int x1,int x2){
+void DisplayMainPage(unsigned int x1,unsigned int x2){
     char txt[16]; 
     //lcd_clear();
     lcd_gotoxy(0,0); lcd_putsf("TCNT1="); itoa(x1,txt); lcd_puts(txt); lcd_putsf("  ");

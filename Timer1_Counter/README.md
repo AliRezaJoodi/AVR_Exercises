@@ -1,7 +1,7 @@
 ## Config Timer1 in Counter Mode
 
 MCU:        ATmega32  
-Frequency:  8.000000 MHz  
+Frequency:  8MHz  
 Display:    16x2 Character LCD  
 
 ### Folder and Files Description

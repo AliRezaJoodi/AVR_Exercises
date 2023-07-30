@@ -18,17 +18,12 @@ void main(void){
     ConfigLCD();
     DisplayMainPage(TCNT0,value);
      
-    #asm("sei") // Global enable interrupts 
     ConfigTimer0ForCounter(); 
-    TCNT0=250;
-    //T0_INT_DISABLE;
-    //T0_RESET;
-    //T0_INT_ENABLE;
-    //T0_CLOCK_STOP;
+    SetTimerValueFromTimer0(250);
          
     while(1){ 
-        if(task_t0){
-            task_t0=0; 
+        if(task_t0_ovf){
+            task_t0_ovf=0; 
             ++value;
             //DisplayMainPage(value); 
         }
