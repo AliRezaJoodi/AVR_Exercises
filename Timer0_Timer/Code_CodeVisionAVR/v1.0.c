@@ -18,13 +18,8 @@ void main(void){
     ConfigLCD();
     DisplayMainPage(value);
      
-    #asm("sei") // Global enable interrupts 
     ConfigTimer0ForTimer(); 
-    T0_CLOCK_P1024;
-    T0_INT_OVF_DISABLE;
-    T0_RESET;
-    T0_INT_OVF_ENABLE;
-    //T0_CLOCK_STOP;
+    ENABLE_GLOBAL_INTERRUPT(1);
          
     while(1){ 
         if(task_t0_ovf){

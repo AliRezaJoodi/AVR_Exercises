@@ -20,17 +20,11 @@ void DisplayMainPage(char);
 #include "Attachment\Timer1.h"
 
 void main(void){
-    
     ConfigLCD();
     DisplayMainPage(value);
      
-    #asm("sei") // Global enable interrupts 
-    ConfigTimer1ForTimer(); 
-    T1_CLOCK_P8;
-    T1_INT_OVF_DISABLE;
-    T1_RESET;
-    T1_INT_OVF_ENABLE;
-    //T1_CLOCK_STOP;
+    ConfigTimer1ForTimer();
+    ENABLE_GLOBAL_INTERRUPT(1);
          
     while(1){ 
         if(task_t1_ovf){
