@@ -1,5 +1,7 @@
 ## Config Timer1 in Timer Mode
 
+$Run Time={{(Timer Prescale)(Timer Overflow)\over Clock Frequency}}
+
 MCU:        ATmega32  
 Frequency:  1MHz  
 Display:    16x2 Character LCD  
