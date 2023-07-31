@@ -6,9 +6,8 @@
 
 void main(void){
     ConfigTimer2ForCTC();
-    //T2_CLOCK_STOP;
-    OCR2=0;    //0~255 
-
+    SetCompareOutputValueFromTimer2(100);
+    
     while(1){          
     }
 }

@@ -14,16 +14,14 @@ void DisplayMainPage(char);
 #include "Attachment\Timer2.h"
 
 void main(void){
-    
     ConfigLCD();
     DisplayMainPage(value);
     
-    #asm("sei")     //Global enable interrupts 
     ConfigTimer2ForAsyncTimer();
          
     while(1){
-        if(task_t2){
-            task_t2=0;
+        if(task_t2_ovf){
+            task_t2_ovf=0;
             ++value;
             DisplayMainPage(value); 
         }      

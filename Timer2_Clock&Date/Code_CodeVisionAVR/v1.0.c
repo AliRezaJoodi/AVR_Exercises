@@ -19,14 +19,13 @@ void main(void){
     
     ConfigLCD();
     
-    #asm("sei") // Global enable interrupts 
     ConfigTimer2ForAsyncTimer();
     SetClockWithDefaultValues();
     DisplayClock(); 
            
     while(1){ 
-        if(task_t2){
-            task_t2=0;
+        if(task_t2_ovf){
+            task_t2_ovf=0;
             ClockCounter();
             DisplayClock();
         }      

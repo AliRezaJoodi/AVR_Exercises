@@ -14,15 +14,13 @@ void DisplayMainPage(char);
 #include "Attachment\Timer2.h"
 
 void main(void){
-    
     ConfigLCD();
     DisplayMainPage(value);
     
-    #asm("sei")     //Global enable interrupts 
     ConfigTimer2ForTimer();
     //T2_CLOCK_STOP;
-    T2_INT_OVF_DISABLE;
-    T2_INT_OVF_ENABLE;
+    //T2_INT_OVF_DISABLE;
+    //T2_INT_OVF_ENABLE;
          
     while(1){ 
         if(task_t2_ovf){
