@@ -39,7 +39,7 @@
     
     // Commands
     #define SetOperationModeFromTimer2(MODE)            TCCR2=(TCCR2 & 0b10110111) | MODE; 
-    #define SetAsynchronStatusFromTimer2(STATUS)        if(STATUS){SETBIT(ASSR,AS2);} else{CLRBIT(ASSR,AS2);}
+    #define EnableAsynchronStatusFromTimer2(STATUS)     if(STATUS){SETBIT(ASSR,AS2);} else{CLRBIT(ASSR,AS2);}
     #define SetClockSourceFromTimer2(MODE)              TCCR2=(TCCR2 & 0b11111000) | MODE; 
     #define SetCompareOutputModeFromTimer2(MODE)        TCCR2=(TCCR2 & 0b11001111) | (MODE<<4);
     #define SetTimerValueFromTimer2(VALUE)              TCNT2=VALUE;
@@ -65,7 +65,7 @@ interrupt [TIM2_COMP] void timer2_comp_isr(void){
 //**************************************
 void ConfigTimer2ForTimer(void){
     SetOperationModeFromTimer2(T2_NORMAL);
-    SetAsynchronStatusFromTimer2(0);
+    EnableAsynchronStatusFromTimer2(0);
     SetClockSourceFromTimer2(T2CLK_P1024);
     SetCompareOutputModeFromTimer2(T2_DISCONNECT);
     SetTimerValueFromTimer2(0);
@@ -79,7 +79,7 @@ void ConfigTimer2ForTimer(void){
 //**************************************
 void ConfigTimer2ForAsyncTimer(void){
     SetOperationModeFromTimer2(T2_NORMAL);
-    SetAsynchronStatusFromTimer2(1);
+    EnableAsynchronStatusFromTimer2(1);
     SetClockSourceFromTimer2(T2CLK_P128);
     SetCompareOutputModeFromTimer2(T2_DISCONNECT);
     SetTimerValueFromTimer2(0);
@@ -95,7 +95,7 @@ void ConfigTimer2ForPWM(void){
     DDRD.7=1; PORTD.7=0;  
     
     SetOperationModeFromTimer2(T2_FAST_PWM);
-    SetAsynchronStatusFromTimer2(0);
+    EnableAsynchronStatusFromTimer2(0);
     SetClockSourceFromTimer2(T2CLK_P1);
     SetCompareOutputModeFromTimer2(T2_NONINVERTED);
     SetTimerValueFromTimer2(0);
@@ -111,7 +111,7 @@ void ConfigTimer2ForCTC(void){
     DDRD.7=1; PORTD.7=0;
     
     SetOperationModeFromTimer2(T2_CTC);
-    SetAsynchronStatusFromTimer2(0);
+    EnableAsynchronStatusFromTimer2(0);
     SetClockSourceFromTimer2(T2CLK_P1);
     SetCompareOutputModeFromTimer2(T2_TOGGLE);
     SetTimerValueFromTimer2(0);

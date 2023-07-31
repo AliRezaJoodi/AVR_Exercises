@@ -2,7 +2,6 @@
 
 #include <mega32a.h>
 #include <delay.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <alcd.h>
 
@@ -18,9 +17,6 @@ void main(void){
     DisplayMainPage(value);
     
     ConfigTimer2ForTimer();
-    //T2_CLOCK_STOP;
-    //T2_INT_OVF_DISABLE;
-    //T2_INT_OVF_ENABLE;
          
     while(1){ 
         if(task_t2_ovf){
