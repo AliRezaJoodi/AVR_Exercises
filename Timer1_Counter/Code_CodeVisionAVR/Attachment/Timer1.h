@@ -64,24 +64,10 @@
     // Input Capture Edge Select on the ICP1 Pin
     #define ICP1PIN_FALLING_EDGE            (0<<ICES1)
     #define ICP1PIN_RISING_EDGE             (1<<ICES1)
-
-    // Commands
-    #define SET_TIMER1_OPERATIONMODE(MODE)      TCCR1A=(TCCR1A & 0b11111100) | (MODE & 0b0011); TCCR1B=(TCCR1B & 0b11100111) | ((MODE & 0b1100)<<1);
-    #define SET_TIMER1_CLOCKSOURCE(MODE)        TCCR1B=(TCCR1B & 0b11111000) | MODE;
-    #define SET_TIMER1_OC1APIN(MODE)            TCCR1A=(TCCR1A & 0b00111111) | (MODE<<6);
-    #define SET_TIMER1_OC1BPIN(MODE)            TCCR1A=(TCCR1A & 0b11001111) | (MODE<<4);
-    #define SET_TIMER1_TCNT0VALUE(VALUE)        TCNT1H=GET_MSB(VALUE); TCNT1L=GET_LSB(VALUE);  
-    #define SET_TIMER1_OCR1AVALUE(VALUE)        OCR1AH=GET_MSB(VALUE); OCR1AL=GET_LSB(VALUE);
-    #define SET_TIMER1_OCR1BVALUE(VALUE)        OCR1BH=GET_MSB(VALUE); OCR1BL=GET_LSB(VALUE);
-    #define SET_TIMER1_CAPTUREVALUE(VALUE)      ICR1H=GET_MSB(VALUE); ICR1L=GET_LSB(VALUE);
-    #define SET_TIMER1_CAPTUREMODE(MODE)        TCCR1B=(TCCR1B & 0b10111111) | MODE;
-    #define ENABLE_TIMER1_INT_OVF(STATUS)       if(STATUS){SETBIT(TIMSK,TOIE1);} else{CLRBIT(TIMSK,TOIE1);}
-    #define ENABLE_TIMER1_INT_COMPA(STATUS)     if(STATUS){SETBIT(TIMSK,OCIE1A);} else{CLRBIT(TIMSK,OCIE1A);}
-    #define ENABLE_TIMER1_INT_COMPB(STATUS)     if(STATUS){SETBIT(TIMSK,OCIE1B);} else{CLRBIT(TIMSK,OCIE1B);}
-    #define ENABLE_TIMER1_INT_CAPTURE(STATUS)   if(STATUS){SETBIT(TIMSK,TICIE1);} else{CLRBIT(TIMSK,TICIE1);}
     
-    // Commands: Different type    
-    #define SetOperationModeFromTimer1(MODE)                    TCCR1A=(TCCR1A & 0b11111100) | (MODE & 0b0011); TCCR1B=(TCCR1B & 0b11100111) | ((MODE & 0b1100)<<1);
+    // Commands  
+    #define SetOperationModeFromTimer1(MODE)                    TCCR1A=(TCCR1A & 0b11111100) | (MODE & 0b0011); \
+                                                                TCCR1B=(TCCR1B & 0b11100111) | ((MODE & 0b1100)<<1);
     #define SetClockSourceFromTimer1(MODE)                      TCCR1B=(TCCR1B & 0b11111000) | MODE;
     #define SetCompare1AOutputModeFromTimer1(MODE)              TCCR1A=(TCCR1A & 0b00111111) | (MODE<<6);
     #define SetCompare1BOutputModeFromTimer1(MODE)              TCCR1A=(TCCR1A & 0b11001111) | (MODE<<4);

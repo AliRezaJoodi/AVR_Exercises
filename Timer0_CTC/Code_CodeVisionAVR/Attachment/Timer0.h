@@ -15,7 +15,7 @@
 #ifndef _INCLUDED_TIMER0
     #define _INCLUDED_TIMER0
     
-    // Waveform Generation Mode
+    // Operation Mode
     #define T0_NORMAL                       (0<<WGM01) | (0<<WGM00)
     #define T0_PHASE_CORRECT_PWM            (0<<WGM01) | (1<<WGM00)
     #define T0_CTC                          (1<<WGM01) | (0<<WGM00)
@@ -38,22 +38,13 @@
     #define T0_INVERTED                     0b11
     
     // Commands
-    #define SET_TIMER0_OPERATIONMODE(MODE)  TCCR0=(TCCR0 & 0b10110111) | MODE;
-    #define SET_TIMER0_CLOCKSOURCE(MODE)    TCCR0=(TCCR0 & 0b11111000) | MODE; 
-    #define SET_TIMER0_TCNT0VALUE(VALUE)    TCNT0=VALUE;
-    #define SET_TIMER0_OC0PIN(MODE)         TCCR0=(TCCR0 & 0b11001111) | (MODE<<4);
-    #define SET_TIMER0_OCR0VALUE(VALUE)     OCR0=VALUE;
-    #define ENABLE_TIMER0_INT_OVF(STATUS)   if(STATUS){SETBIT(TIMSK,TOIE0);} else{CLRBIT(TIMSK,TOIE0);}
-    #define ENABLE_TIMER0_INT_COMP(STATUS)  if(STATUS){SETBIT(TIMSK,OCIE0);} else{CLRBIT(TIMSK,OCIE0);}
-    
-    // Commands: Different type
     #define SetOperationModeFromTimer0(MODE)            TCCR0=(TCCR0 & 0b10110111) | MODE; 
     #define SetClockSourceFromTimer0(MODE)              TCCR0=(TCCR0 & 0b11111000) | MODE;      
     #define SetCompareOutputModeFromTimer0(MODE)        TCCR0=(TCCR0 & 0b11001111) | (MODE<<4); 
     #define SetTimerValueFromTimer0(VALUE)              TCNT0=VALUE;
     #define SetCompareOutputValueFromTimer0(VALUE)      OCR0=VALUE;
     #define EnableOverflowInterruptFromTimer0(STATUS)   if(STATUS){SETBIT(TIMSK,TOIE0);} else{CLRBIT(TIMSK,TOIE0);}
-    #define EnableCompareInterruptFromTimer0(STATUS)    if(STATUS){SETBIT(TIMSK,OCIE0);} else{CLRBIT(TIMSK,OCIE0);} 
+    #define EnableCompareInterruptFromTimer0(STATUS)    if(STATUS){SETBIT(TIMSK,OCIE0);} else{CLRBIT(TIMSK,OCIE0);}
     
     char task_t0_ovf=0;
     char task_t0_comp=0;

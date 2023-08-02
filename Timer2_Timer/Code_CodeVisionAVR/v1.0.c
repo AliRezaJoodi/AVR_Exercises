@@ -5,14 +5,14 @@
 #include <stdlib.h>
 #include <alcd.h>
 
-unsigned char value=0;
-
 void ConfigLCD(void);
 void DisplayMainPage(char);
 
 #include "Attachment\Timer2.h"
 
 void main(void){
+    unsigned char value=0;
+    
     ConfigLCD();
     DisplayMainPage(value);
     
