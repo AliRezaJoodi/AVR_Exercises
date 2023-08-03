@@ -47,13 +47,13 @@ void main(void){
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1; 
     Test3_A();
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
-    putsf("\rFunction_A="); DisplayValues(TCNT1-18); 
+    putsf("\rFunction_A="); DisplayValues(TCNT1); 
     
     VALUES_RESET;
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1;
     Test3_B();
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
-    putsf("\rFunction_B="); DisplayValues(TCNT1-18);
+    putsf("\rFunction_B="); DisplayValues(TCNT1);
     	
     while(1){ 
     }

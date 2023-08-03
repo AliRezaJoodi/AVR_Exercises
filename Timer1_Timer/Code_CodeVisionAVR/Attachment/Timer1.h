@@ -9,15 +9,15 @@
 #endif
 
 #ifndef GET_INT
-    #define GET_INT(MSB,LSB)            (MSB<<8)+LSB;
+    #define GET_INT(MSB,LSB)            ((MSB<<8)+(LSB&0x00FF))
 #endif
 
 #ifndef GET_MSB     
-    #define GET_MSB(INT)                INT>>8;
+    #define GET_MSB(INT)                ((INT&0xFF00)>>8)
 #endif
 
 #ifndef GET_LSB
-    #define GET_LSB(INT)                INT&0x00FF;
+    #define GET_LSB(INT)                (INT&0x00FF)
 #endif
 
 #ifndef EnableGlobalInterrupt

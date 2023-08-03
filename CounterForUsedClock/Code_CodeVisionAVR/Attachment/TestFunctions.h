@@ -3,22 +3,16 @@
 
 //********************************************************
 void Test3_A(void){
-    unsigned int number=589;
-    unsigned char msb=0;
-    unsigned char lsb=0;
+    float number=589;
     
-    number=(msb<<8)+lsb;
-    //msb=number/256;
+    number=number*6;
 }
 
 //********************************************************
 void Test3_B(void){
-    unsigned int number=589;
-    unsigned char msb=0;
-    unsigned char lsb=0; 
+    float number=589;
     
-    number=(msb*256)+lsb;
-    //msb=number>>8; 
+    number=number*2*3;
 }
 
 //********************************************************

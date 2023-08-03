@@ -4,16 +4,20 @@
 #include <delay.h>
 #include <stdio.h>
 #include <alcd.h>
+#include <stdlib.h>
 #include "Attachment\DataConverter.h"
 
 void Config_LCD(void);
-void Display_Loding(unsigned int);
 void Display_Value(void);
 void Config_Timer1(void);
 
 float out_persent=0;
 float out_voltage=0;
 unsigned int out_pwm=0;
+
+unsigned char input_char=0;
+unsigned int input_int=0;
+float input_v=0;
     
 void main(void){    
     Config_Timer1();
@@ -70,12 +74,6 @@ void Display_Value(void){
     sprintf(txt,"Out(1-5V):%.3fV",out_voltage); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
     //lcd_gotoxy(0,1); lcd_putsf("DAC with PWM");  
 }
-
-//******************************************
-void Display_Loding(unsigned int x){
-    lcd_gotoxy(0,0); lcd_putsf("Please Wait ...");
-    delay_ms(x); lcd_clear();
-} 
 
 //********************************************************
 void Config_LCD(void){
