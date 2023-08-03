@@ -1,11 +1,11 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#define SetBit(ADDRESS,BIT)                 (ADDRESS|=(1<<BIT))
-#define ClearBit(ADDRESS,BIT)               (ADDRESS&=~(1<<BIT))
-#define ToggleBit(ADDRESS,BIT)              (ADDRESS^=(1<<BIT))
-#define CheckBit(ADDRESS,BIT)               ((ADDRESS&(1<<BIT))>>BIT)
+#define SetBit(ADDRESS,BIT)                 ADDRESS = ADDRESS | (1<<BIT);
+#define ClearBit(ADDRESS,BIT)               ADDRESS = ADDRESS & (~(1<<BIT));
+#define ToggleBit(ADDRESS,BIT)              ADDRESS = ADDRESS ^ (1<<BIT);
 #define EqualBit(ADDRESS,BIT,STATUS)        if(STATUS){SetBit(ADDRESS,BIT);} else{ClearBit(ADDRESS,BIT);}
-#define ToggleByte(VALUE)                   (VALUE^0b11111111) 
+#define CheckBit(ADDRESS,BIT)               ((ADDRESS & (1<<BIT)) >>BIT)
+#define ToggleByte(VALUE)                   VALUE = ~VALUE;
 
 #define GetMsb(INT)                         ((INT&0xFF00)>>8)
 #define GetLsb(INT)                         (INT&0x00FF)

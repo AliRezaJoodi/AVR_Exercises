@@ -21,8 +21,8 @@ void main(void){
     number_lsb=GetLsb(number);
     number=GetInt(number_msb,number_lsb);
     DisplayMainPage();  
-   
-    while(1){ 
+
+    while(1){  
     }     
 }
 
