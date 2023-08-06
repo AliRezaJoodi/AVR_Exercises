@@ -1,6 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32a.h>
+#include <mega32_bits.h>
 #include <stdlib.h>
 #include <delay.h>
 #include <alcd.h>
@@ -16,7 +17,10 @@ void DisplayMainPage(void);
 void main(void){
     ConfigLCD();
     ConfigADC_Default();
+    EnableADC(1);
     
+    DDRB.0=1;
+    PORTB.0=CHECK_ADC_ENABLE;
     while(1){
         input_int=GetFromADC_Int(SINGLE7); 
         input_v=GetFromADC_Volt(SINGLE7); 

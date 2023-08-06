@@ -1,5 +1,8 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#ifndef _CONVERTER_INCLUDED
+    #define _CONVERTER_INCLUDED
+
 #define SetBit(ADDRESS,BIT)                 ADDRESS = ADDRESS | (1<<BIT);
 #define ClearBit(ADDRESS,BIT)               ADDRESS = ADDRESS & (~(1<<BIT));
 #define ToggleBit(ADDRESS,BIT)              ADDRESS = ADDRESS ^ (1<<BIT);
@@ -29,3 +32,6 @@
 #define Convert_0to255_0to5V(VALUE)         (VALUE*0.0196078)
 #define Convert_0to1023_0to2V56(VALUE)      (VALUE*0.002502444)
 #define Convert_0to255_0to2V56(VALUE)       (VALUE*0.0100391936)
+
+#endif
+
