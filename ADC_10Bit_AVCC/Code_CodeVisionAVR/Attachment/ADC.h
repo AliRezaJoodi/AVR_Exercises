@@ -112,7 +112,7 @@ interrupt [ADC_INT] void adc_isr(void){
 }
 
 //******************************************
-void ConfigADC_Interrupt(unsigned char ch){    
+void ConfigADCwithInterrupt(unsigned char ch){    
     SetClockSourceFromADC(P16);
     SetVoltageReferenceFromADC(AVCC_PIN);
     SetResolutionFromADC(R1024);
@@ -128,20 +128,23 @@ void ConfigADC_Interrupt(unsigned char ch){
 }
 
 //******************************************
-void ConfigADC_Default(void){
+void ConfigADC(void){
     SetClockSourceFromADC(P16);
     SetVoltageReferenceFromADC(AVCC_PIN);
     SetResolutionFromADC(R1024);
     EnableInterruptFromADC(0);
     SetAutoTriggerSourceFromADC(FREE_RUNNING);
     EnableAutoTriggerFromADC(0);    
-    //SetInputChannelAndGainSelectionsFromADC(ch); 
+    SetInputChannelAndGainSelectionsFromADC(0); 
     EnableADC(1);
-    StartConversionFromADC(0);
+    delay_us(10);
+    StartConversionFromADC(0); 
+    
+    EnableGlobalInterrupt(0);
 }
 
 //******************************************
-unsigned int GetFromADC_Int(unsigned char ch){
+unsigned int GetIntValueFromADC(unsigned char ch){
     if(CHECK_ADC_ENABLE){
         SetInputChannelAndGainSelectionsFromADC(ch);
         delay_us(10);
@@ -157,21 +160,8 @@ unsigned int GetFromADC_Int(unsigned char ch){
     }   
 }
 
-//******************************************
-float GetFromADC_Volt(unsigned char ch){
-    float volt=0;
-    volt=GetFromADC_Int(ch); 
-    volt=volt*ADC_GAIN; 
-    return volt;
-}
-
-//******************************************
-float GetFromADC_mV(unsigned char ch){
-    float mv=0;
-    mv=GetFromADC_Int(ch);
-    mv=mv*ADC_GAIN*1000;  
-    return mv;
-}
+#define GetVoltFromADC(CH)                  (GetIntValueFromADC(CH)*ADC_GAIN)
+#define GetMilliVoltFromADC(CH)             (GetVoltFromADC(CH)*1000)
 
 #pragma used-
 #endif

@@ -16,14 +16,14 @@ void DisplayMainPage(void);
 
 void main(void){
     ConfigLCD();
-    ConfigADC_Default();
+    ConfigADC();
     EnableADC(1);
     
     DDRB.0=1;
     PORTB.0=CHECK_ADC_ENABLE;
     while(1){
-        input_int=GetFromADC_Int(SINGLE7); 
-        input_v=GetFromADC_Volt(SINGLE7); 
+        input_int=GetIntValueFromADC(SINGLE7); 
+        input_v=GetMilliVoltFromADC(SINGLE7); 
         DisplayMainPage();
         delay_ms(250);                                        
     };

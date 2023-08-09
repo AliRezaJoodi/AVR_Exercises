@@ -14,14 +14,14 @@
     #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
 #endif
 
-#ifndef ENABLE_GLOBAL_INTERRUPT
-    #define ENABLE_GLOBAL_INTERRUPT(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
+#ifndef EnableGlobalInterrupt
+    #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
 
-#ifndef INCLUDED_ADC
-    #define INCLUDED_ADC
+#ifndef _ADC_INCLUDED
+    #define _ADC_INCLUDED
     
-    #define ADC_GAIN                        5/1023
+    #define ADC_GAIN                        0.0048875855    // 5/1023
     
     // Analog Channel and Gain Selections
     #define SINGLE0                         0b00000
@@ -67,13 +67,13 @@
     #define FREE_RUNNING                    (0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0) 
     #define ANALOG_COMPARATOR               (0<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
     #define EXTERNAL_NTERRUPT_REQUEST_0     (0<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
-    #define T0_COMPARE_MATCH               	(0<<ADTS2) | (1<<ADTS1) | (1<<ADTS0)
-    #define T0_OVERFLOW               	    (1<<ADTS2) | (0<<ADTS1) | (0<<ADTS0)
-    #define T_COMPARE_MATCHB               	(1<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
-    #define T1_OVERFLOW               	    (1<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
-    #define T1_CAPTURE_EVENT               	(1<<ADTS2) | (1<<ADTS1) | (1<<ADTS0) 
+    #define TIMER0_COMPARE_MATCH            (0<<ADTS2) | (1<<ADTS1) | (1<<ADTS0)
+    #define TIMER0_OVERFLOW               	(1<<ADTS2) | (0<<ADTS1) | (0<<ADTS0)
+    #define TIMER_COMPARE_MATCH_B           (1<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
+    #define TIMER1_OVERFLOW               	(1<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
+    #define TIMER1_CAPTURE_EVENT            (1<<ADTS2) | (1<<ADTS1) | (1<<ADTS0) 
       
-    // ADC Prescaler Selections
+    // ADC Clock Prescaler Selections
     #define P2               	            (0<<ADPS2) | (0<<ADPS1) | (1<<ADPS0)
     #define P4               	            (0<<ADPS2) | (1<<ADPS1) | (0<<ADPS0)
     #define P8               	            (0<<ADPS2) | (1<<ADPS1) | (1<<ADPS0)
@@ -82,22 +82,23 @@
     #define P64               	            (1<<ADPS2) | (1<<ADPS1) | (0<<ADPS0)
     #define P128               	            (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0)
 
-    // Commands
-    #define SET_ADC_PRESCALER(MODE)         ADCSRA=(ADCSRA & 0b11111000) | MODE; 
-    #define SET_ADC_VREF(MODE)              ADMUX=(ADMUX & 0b00111111) | MODE; 
-    #define SET_ADC_RESOLUTION(MODE)        ADMUX=(ADMUX & 0b11011111) | MODE; 
-    #define ENABLE_ADC_INTERRUPT(STATUS)    if(STATUS){SETBIT(ADCSRA,ADIE);} else{CLRBIT(ADCSRA,ADIE);}
-    #define SET_ADC_TRIGGER(MODE)           SFIOR=(SFIOR & 0b00011111) | MODE;
-    #define ENABLE_ADC_AUTOTRIG(STATUS)     if(STATUS){SETBIT(ADCSRA,ADATE);} else{CLRBIT(ADCSRA,ADATE);}
-    #define SET_ADC_CHANNEL(CH)             ADMUX=(ADMUX & 0b11100000) | CH; 
-    #define ENABLE_ADC(STATUS)              if(STATUS){SETBIT(ADCSRA,ADEN);} else{CLRBIT(ADCSRA,ADEN);}        
-    #define START_ADC_CONVERSION(STATUS)    if(STATUS){SETBIT(ADCSRA,ADSC);} else{CLRBIT(ADCSRA,ADSC);}
+    // Configuration Commands
+    #define SetClockSourceFromADC(MODE)                 ADCSRA=(ADCSRA & 0b11111000) | MODE; 
+    #define SetVoltageReferenceFromADC(MODE)            ADMUX=(ADMUX & 0b00111111) | MODE; 
+    #define SetResolutionFromADC(MODE)                  ADMUX=(ADMUX & 0b11011111) | MODE; 
+    #define EnableInterruptFromADC(STATUS)              if(STATUS){SETBIT(ADCSRA,ADIE);} else{CLRBIT(ADCSRA,ADIE);}
+    #define SetAutoTriggerSourceFromADC(MODE)           SFIOR=(SFIOR & 0b00011111) | MODE;
+    #define EnableAutoTriggerFromADC(STATUS)            if(STATUS){SETBIT(ADCSRA,ADATE);} else{CLRBIT(ADCSRA,ADATE);}
+    #define SetInputChannelAndGainSelectionsFromADC(CH) ADMUX=(ADMUX & 0b11100000) | CH; 
+    #define EnableADC(STATUS)                           if(STATUS){SETBIT(ADCSRA,ADEN);} else{CLRBIT(ADCSRA,ADEN);}        
+    #define StartConversionFromADC(STATUS)              if(STATUS){SETBIT(ADCSRA,ADSC);} else{CLRBIT(ADCSRA,ADSC);}
     
-    // Checks
+    // Check Commands
     #define CHECK_ADC_ENABLE                CHKBIT(ADCSRA,ADEN)
     #define CHECK_ADC_RESOLUTION_256        CHKBIT(ADMUX,ADLAR) 
-    #define CHECK_ADC_RESOLUTION_1024       CHKBIT(ADMUX,ADLAR) ^ 0b00000001 
-    #define END_ADC_CONVERSION              CHKBIT(ADCSRA,ADIF) ^ 0b00000001
+    #define CHECK_ADC_RESOLUTION_1024       (CHKBIT(ADMUX,ADLAR) ^ 0b00000001) 
+    #define END_ADC_CONVERSION              (CHKBIT(ADCSRA,ADIF) ^ 0b00000001) 
+    
 #pragma used+
 
     unsigned int input_int;
@@ -112,39 +113,39 @@ interrupt [ADC_INT] void adc_isr(void){
 
 //******************************************
 void ConfigADC_Interrupt(unsigned char ch){    
-    SET_ADC_PRESCALER(P16);
-    SET_ADC_VREF(AVCC_PIN);
-    SET_ADC_RESOLUTION(R1024);
-    ENABLE_ADC_INTERRUPT(1);
-    SET_ADC_TRIGGER(T0_OVERFLOW);
-    ENABLE_ADC_AUTOTRIG(1);    
-    SET_ADC_CHANNEL(ch); 
-    ENABLE_ADC(1);
+    SetClockSourceFromADC(P16);
+    SetVoltageReferenceFromADC(AVCC_PIN);
+    SetResolutionFromADC(R1024);
+    EnableInterruptFromADC(1);
+    SetAutoTriggerSourceFromADC(TIMER0_OVERFLOW);
+    EnableAutoTriggerFromADC(1);    
+    SetInputChannelAndGainSelectionsFromADC(ch); 
+    EnableADC(1);
     delay_us(10);
-    START_ADC_CONVERSION(1);
+    StartConversionFromADC(1);
     
-    ENABLE_GLOBAL_INTERRUPT(1);
+    EnableGlobalInterrupt(1);
 }
 
 //******************************************
 void ConfigADC_Default(void){
-    SET_ADC_PRESCALER(P16);
-    SET_ADC_VREF(AVCC_PIN);
-    SET_ADC_RESOLUTION(R1024);
-    ENABLE_ADC_INTERRUPT(0);
-    SET_ADC_TRIGGER(FREE_RUNNING);
-    ENABLE_ADC_AUTOTRIG(0);    
-    //SET_ADC_CHANNEL(ch); 
-    ENABLE_ADC(1);
-    START_ADC_CONVERSION(0);
+    SetClockSourceFromADC(P16);
+    SetVoltageReferenceFromADC(AVCC_PIN);
+    SetResolutionFromADC(R1024);
+    EnableInterruptFromADC(0);
+    SetAutoTriggerSourceFromADC(FREE_RUNNING);
+    EnableAutoTriggerFromADC(0);    
+    //SetInputChannelAndGainSelectionsFromADC(ch); 
+    EnableADC(1);
+    StartConversionFromADC(0);
 }
 
 //******************************************
-unsigned int GetFromADC_Int(unsigned char ch){
+unsigned int GetIntValueFromADC(unsigned char ch){
     if(CHECK_ADC_ENABLE){
-        SET_ADC_CHANNEL(ch);
+        SetInputChannelAndGainSelectionsFromADC(ch);
         delay_us(10);
-        START_ADC_CONVERSION(1);
+        StartConversionFromADC(1);
         while(END_ADC_CONVERSION);
         SETBIT(ADCSRA,ADIF);
         
@@ -156,21 +157,8 @@ unsigned int GetFromADC_Int(unsigned char ch){
     }   
 }
 
-//******************************************
-float GetFromADC_Volt(unsigned char ch){
-    float volt=0;
-    volt=GetFromADC_Int(ch); 
-    volt=volt*ADC_GAIN; 
-    return volt;
-}
-
-//******************************************
-float GetFromADC_mV(unsigned char ch){
-    float mv=0;
-    mv=GetFromADC_Int(ch);
-    mv=mv*ADC_GAIN*1000;  
-    return mv;
-}
+#define GetVoltFromADC(CH)                  (GetIntValueFromADC(CH)*ADC_GAIN)
+#define GetMilliVoltFromADC(CH)             (GetVoltFromADC(CH)*1000)
 
 #pragma used-
 #endif

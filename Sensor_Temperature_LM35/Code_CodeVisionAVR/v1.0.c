@@ -24,8 +24,8 @@ void main(void){
     ConfigADC_Default();
 
     while(1){ 
-        input_mv=GetFromADC_mV(CH_LM35); 
-        temp=Convert_mVtoTemp_LM35(input_mv);
+        input_mv=GetMilliVoltFromADC(LM35_CH); 
+        temp=ConvertMilliVoltToTempFromLM35(input_mv);
         Display_LCD(input_mv,temp);
         delay_ms(250);                                       
     };
