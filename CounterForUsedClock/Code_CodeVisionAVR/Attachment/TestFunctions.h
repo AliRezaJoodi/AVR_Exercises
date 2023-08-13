@@ -1,18 +1,22 @@
 
+#define Test3_C(VALUE)           (VALUE*0.0048875855)
+
 #pragma used+
 
 //********************************************************
-void Test3_A(void){
-    float number=589;
+float Test3_A(unsigned int x){
+    //float number=589.1;
     
-    number=number*6;
+    //number=number*6.1;
+    return x*0.0048875855;
 }
 
 //********************************************************
-void Test3_B(void){
-    float number=589;
+static inline float Test3_B(unsigned int x){
+    float y=0;
     
-    number=number*2*3;
+    y=x*0.0048875855;
+    return y;
 }
 
 //********************************************************

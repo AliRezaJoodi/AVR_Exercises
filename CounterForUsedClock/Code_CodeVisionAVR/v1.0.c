@@ -38,22 +38,29 @@ interrupt [TIM1_OVF] void timer1_ovf_isr(void){
     ++t2;
 }
     
-void main(void){    	
+void main(void){
+    float buffer=0;
+    char txt[16];
+         	
     ConfigUSART(); putsf("Clock Used In The Functions\r");  
 
     INTERRUPTS_ENABLE;    
-    ConfigTimer1();
+    ConfigTimer1(); TIMER1_INTERRUPT_DISABLE;
     
+    TIMER1_CLOCK_STOP; TIMER1_RESET; VALUES_RESET;
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1; 
-    Test3_A();
+    //buffer=Test3_A(512);
+    buffer=Test3_C(512);
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
-    putsf("\rFunction_A="); DisplayValues(TCNT1); 
+    putsf("\rFunction_C="); DisplayValues(TCNT1); 
+    ftoa(buffer,3,txt); putsf("\rBuffer="); puts(txt);    
     
-    VALUES_RESET;
+    TIMER1_CLOCK_STOP; TIMER1_RESET; VALUES_RESET;
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1;
-    Test3_B();
+    buffer=Test3_B(512);
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
     putsf("\rFunction_B="); DisplayValues(TCNT1);
+    ftoa(buffer,3,txt); putsf("\rBuffer="); puts(txt);
     	
     while(1){ 
     }
