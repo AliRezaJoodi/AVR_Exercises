@@ -7,7 +7,7 @@
 
 #include <Attachment\DataConverter.h>
 
-void ConfigLCD(void);
+void ConfigureLCD(void);
 void DisplayMainPage(void);
 
 unsigned int number=589;
@@ -15,8 +15,8 @@ unsigned char number_msb;
 unsigned char number_lsb;
 
 void main(void){
-    ConfigLCD(); 
-
+    ConfigureLCD(); 
+    
     number_msb=GetMsb(number);
     number_lsb=GetLsb(number);
     number=GetInt(number_msb,number_lsb);
@@ -36,6 +36,6 @@ void DisplayMainPage(void){
 }
 
 //********************************************************
-void ConfigLCD(void){
+void ConfigureLCD(void){
     lcd_init(16); lcd_clear();   
 }
