@@ -1,7 +1,7 @@
 ## 8-Digit 7Segment Driver
 
 MCU:            ATmega32  
-Frequency:     	1.000000 MHz   
+Frequency:     	1MHz   
 
 ### Folder and Files Description
 It has included:
