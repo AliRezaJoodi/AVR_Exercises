@@ -107,7 +107,7 @@
 #define _Convert_Data(VALUE)                (table_7segment[VALUE])
 #define ToggleByte(VALUE)                   VALUE = ~VALUE;
 
-#define _TurnOff7Segments \
+#define _TurnOffDigits \
     DIGIT0=!ACTIVATE_DIGIT;\
     DIGIT1=!ACTIVATE_DIGIT;\
     DIGIT2=!ACTIVATE_DIGIT;\
@@ -154,7 +154,7 @@ void Display_7Segment(unsigned long int value){
     unsigned char digit=0;
     static unsigned char i = 0; 
 
-    _TurnOff7Segments; 
+    _TurnOffDigits; 
     
     switch(i){ 
         case 0:
