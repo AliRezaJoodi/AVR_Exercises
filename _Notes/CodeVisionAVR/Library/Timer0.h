@@ -15,39 +15,41 @@
 #ifndef _INCLUDED_TIMER0
     #define _INCLUDED_TIMER0
     
-    // Operation Mode
-    #define T0_NORMAL                       (0<<WGM01) | (0<<WGM00)
-    #define T0_PHASE_CORRECT_PWM            (0<<WGM01) | (1<<WGM00)
-    #define T0_CTC                          (1<<WGM01) | (0<<WGM00)
-    #define T0_FAST_PWM                     (1<<WGM01) | (1<<WGM00)
+// Operation Mode
+#define T0_NORMAL               (0<<WGM01) | (0<<WGM00)
+#define T0_PHASE_CORRECT_PWM    (0<<WGM01) | (1<<WGM00)
+#define T0_CTC                  (1<<WGM01) | (0<<WGM00)
+#define T0_FAST_PWM             (1<<WGM01) | (1<<WGM00)
+#define SetOperationModeFromTimer0(MODE) \
+    TCCR0=(TCCR0 & 0b10110111) | MODE;
     
-    // Clock Source Selections
-    #define T0CLK_STOP                      0b000 
-    #define T0CLK_P1                        0b001 
-    #define T0CLK_P8                        0b010 
-    #define T0CLK_P64                       0b011 
-    #define T0CLK_P256                      0b100 
-    #define T0CLK_P1024                     0b101 
-    #define T0PIN_FALLING_EDGE              0b110
-    #define T0PIN_RISING_EDGE               0b111
+// Clock Source Selections
+#define T0CLK_STOP          0b000 
+#define T0CLK_P1            0b001 
+#define T0CLK_P8            0b010 
+#define T0CLK_P64           0b011 
+#define T0CLK_P256          0b100 
+#define T0CLK_P1024         0b101 
+#define T0PIN_FALLING_EDGE  0b110
+#define T0PIN_RISING_EDGE   0b111
+#define SetClockSourceFromTimer0(MODE) \
+    TCCR0=(TCCR0 & 0b11111000) | MODE; 
     
-    // Compare Output Mode
-    #define T0_DISCONNECT                   0b00
-    #define T0_TOGGLE                       0b01
-    #define T0_NONINVERTED                  0b10
-    #define T0_INVERTED                     0b11
+// Compare Output Mode
+#define T0_DISCONNECT       0b00
+#define T0_TOGGLE           0b01
+#define T0_NONINVERTED      0b10
+#define T0_INVERTED         0b11
+#define SetCompareOutputModeFromTimer0(MODE) \
+    TCCR0=(TCCR0 & 0b11001111) | (MODE<<4);
     
-    // Commands
-    #define SetOperationModeFromTimer0(MODE)            TCCR0=(TCCR0 & 0b10110111) | MODE; 
-    #define SetClockSourceFromTimer0(MODE)              TCCR0=(TCCR0 & 0b11111000) | MODE;      
-    #define SetCompareOutputModeFromTimer0(MODE)        TCCR0=(TCCR0 & 0b11001111) | (MODE<<4); 
-    #define SetTimerValueFromTimer0(VALUE)              TCNT0=VALUE;
-    #define SetCompareOutputValueFromTimer0(VALUE)      OCR0=VALUE;
-    #define EnableOverflowInterruptFromTimer0(STATUS)   if(STATUS){SETBIT(TIMSK,TOIE0);} else{CLRBIT(TIMSK,TOIE0);}
-    #define EnableCompareInterruptFromTimer0(STATUS)    if(STATUS){SETBIT(TIMSK,OCIE0);} else{CLRBIT(TIMSK,OCIE0);}
+#define SetTimerValueFromTimer0(VALUE)              TCNT0=VALUE;
+#define SetCompareOutputValueFromTimer0(VALUE)      OCR0=VALUE;
+#define EnableOverflowInterruptFromTimer0(STATUS)   if(STATUS){SETBIT(TIMSK,TOIE0);} else{CLRBIT(TIMSK,TOIE0);}
+#define EnableCompareInterruptFromTimer0(STATUS)    if(STATUS){SETBIT(TIMSK,OCIE0);} else{CLRBIT(TIMSK,OCIE0);}
     
-    char task_t0_ovf=0;
-    char task_t0_comp=0;
+char task_t0_ovf=0;
+char task_t0_comp=0;
     
 #pragma used+
 

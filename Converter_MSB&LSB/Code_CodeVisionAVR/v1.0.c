@@ -5,14 +5,14 @@
 #include <delay.h>
 #include <stdlib.h>
 
-#include <Attachment\DataConverter.h>
-
 void ConfigureLCD(void);
 void DisplayMainPage(void);
 
 unsigned int number=589;
 unsigned char number_msb;
 unsigned char number_lsb;
+
+#include "Attachment\Utility.h"
 
 void main(void){
     ConfigureLCD(); 
