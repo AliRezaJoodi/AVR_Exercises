@@ -1,4 +1,4 @@
-## USART Congif with Interrupt
+## UART Congif with Interrupt
           
 MCU:        	ATmega32  
 Frequency:     	8.000000 MHz    
