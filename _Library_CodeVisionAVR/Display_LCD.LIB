@@ -106,13 +106,10 @@ DDRB.7=1;
         _base_y[3]=lcd_columns+0xc0; 
         
         
-        delay_ms(10);
-        lcd_write(0x30);
-        delay_ms(10);
-        lcd_write(0x30);
-        delay_ms(10);
-        lcd_write(0x30);
-        delay_ms(10);
+        delay_ms(15);
+        lcd_write(0x30); delay_ms(10);
+        lcd_write(0x30); delay_ms(10);
+        lcd_write(0x30); delay_ms(10);
         lcd_write(0x20);
         delay_ms(10);
         lcd_write(0x28);
