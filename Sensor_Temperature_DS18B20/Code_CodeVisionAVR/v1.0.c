@@ -1,4 +1,4 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32.h>               
 #include <delay.h>                                      
@@ -13,10 +13,10 @@
 #include <lcd.h>
              
 // 1 Wire Bus functions
-#asm
-   .equ __w1_port=0x1B ;PORTA
-   .equ __w1_bit=0
-#endasm
+//#asm
+   //.equ __w1_port=0x1B ;PORTA
+   //.equ __w1_bit=0
+//#endasm
 #include <1wire.h>
 
 typedef unsigned char byte;
