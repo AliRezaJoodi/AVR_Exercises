@@ -54,7 +54,7 @@ void main(void){
     while(w1_init()>0){
         temp=ds18b20_temperature(0);    
         Display_Temp(temp);
-        delay_ms(250);                              
+        //delay_ms(250);                              
     }
 }
 

@@ -19,6 +19,8 @@
 #include <1wire.h>
 #include <ds18b20.h> 
 
+//#define TOGGLEBIT(ADDRESS,BIT)      (ADDRESS^=(1<<BIT))
+
 unsigned char maximum_number;
 unsigned char rom_codes[8][9];
 
@@ -44,10 +46,11 @@ float temp[4];
                
 void main(void){       
     int i=0;
-                          
+    
+    //DDRA.1=1;                      
     Configuration_LCD();
     define_char(char0,0);
-    Display_loading();
+    //Display_loading();
     
     w1_init();
     maximum_number=w1_search(0xf0,rom_codes);      
@@ -57,7 +60,7 @@ void main(void){
             temp[i]= ds18b20_temperature(rom_codes[i]);
         } 
         Display2_Temps();
-        delay_ms(250);                                        
+        //TOGGLEBIT(PORTA,1);                                        
     }
 }
 
