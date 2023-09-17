@@ -1,17 +1,8 @@
-/*******************************************************
-Chip type               : ATmega32
-AVR Core Clock frequency: 8.000000 MHz
-Memory model            : Small
-External RAM size       : 0
-Data Stack size         : 512
-*******************************************************/
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <mega32.h>
-#include <stdio.h>  // Standard Input/Output functions
+#include <mega32a.h>
+#include <stdio.h>
 #include <stdlib.h>
-
-// Declare your global variables here
 
 void test(char buffer_uart){ 
     char buffer_txt[16];       
