@@ -3,7 +3,7 @@
 $regfile = "m32def.dat"
 $crystal = 1000000
 
-$include "Attachment\Hardware_v1.0.txt"
+$include "Attachment\Hardware_v1.0_A.inc"
 
 Config Debounce = 30
 
