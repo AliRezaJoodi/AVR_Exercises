@@ -7,7 +7,7 @@ A=
 C=
 D=10/24/2022
 Files=1
-OpenedFiles=2
+OpenedFiles=1
 OF1=v1.0.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -18,7 +18,7 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -29,7 +29,7 @@ EditorPanel1=0
 TimeStamp1=1459389103
 PageIndex1=1
 F1=v1.0.c
-ActiveTab=2
+ActiveTab=1
 OF2=Attachment\ADC.h
 TimeStamp2=1459534597
 [CompilerDebug]
@@ -490,7 +490,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1459534606
+TimeStamp=1486385973
 [BookmarksFoldedCode]
 Files=2
 F1=v1.0.c
@@ -594,10 +594,10 @@ ReservedRegister14=0
 UseMangledNames=0
 [Bookmarks2]
 TimeStamp=1459534597
-Row=125
-Column=25
+Row=11
+Column=32
 ScrollPosX=0
-ScrollPosY=123
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -619,7 +619,7 @@ F3=C:\cvavr\inc\delay.h
 F4=C:\cvavr\inc\stdlib.h
 F5=C:\cvavr\inc\alcd.h
 F6=Attachment\ADC.h
-[FoldedCode1]
-Blocks=0
 [FoldedCode2]
+Blocks=0
+[FoldedCode1]
 Blocks=0
