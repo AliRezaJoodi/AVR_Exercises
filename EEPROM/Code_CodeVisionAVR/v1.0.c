@@ -22,9 +22,9 @@ void main(void){
     DDRB.0=0; PORTB.0=1;
     ConfigLCD();
     
-    ValidateEEPROM();
-    //SaveDefaultValuesInEEPROM();
-    LoadValuesFromEEPROM();
+    EEPROM_Validate();
+    //EEPROM_Default();
+    EEPROM_Load();
     
     DisplayValue();
     
@@ -40,7 +40,7 @@ void main(void){
         
         if(CheckNewChange(i)){
             DisplayValue();
-            SaveNewChangesInEEPROM(); 
+            EEPROM_SaveNewChanges(); 
         }
     };
 }
