@@ -28,7 +28,7 @@
     #define BUTTON3             BUTTON3_PIN  
       
 //*************************************************
-void ConfigButtons(void){
+void Button_Config(void){
     #ifndef INPUT
         #define INPUT   0
     #endif
@@ -43,7 +43,7 @@ void ConfigButtons(void){
 #pragma used+
 
 //*************************************************
-char CheckSetButton(void){
+char Button_ResetButton_OneStep(void){
     static bit last_status=!PRESSED; 
     
     if(BUTTON3==PRESSED && last_status==!PRESSED){
@@ -53,12 +53,13 @@ char CheckSetButton(void){
             return 1;
         } 
     }
-    if(BUTTON3==!PRESSED){last_status=!PRESSED;} 
+    if(BUTTON3==!PRESSED){last_status=!PRESSED;}
+     
     return 0;
 }
 
 //*************************************************
-char CheckIncrButton_OneStep(void){
+char Button_UpButton_OneStep(void){
     static bit last_status=!PRESSED; 
     
     if(BUTTON1==PRESSED && last_status==!PRESSED){
@@ -77,13 +78,14 @@ char CheckIncrButton_OneStep(void){
 char _CreateDelayForButtons(void){
     static unsigned int i=0;
     
-    ++i; if(i>=BUTTONLAG){i=0; return 1;}
+    ++i;
+    if(i>BUTTONLAG){i=0; return 1;}
     
     return 0;    
 }
 
 //*************************************************
-char CheckIncrButton_Continuously(void){    
+char Button_UpButton_Continuous(void){    
     if(BUTTON2==PRESSED){
         if(_CreateDelayForButtons()){return 1;} 
     }

@@ -10,32 +10,32 @@
    .equ __lcd_port=0x12 ;PORTD
 #endasm
 #include <lcd.h>
-void Config_LCD(void){
+void LCD_Config(void){
     lcd_init(16); lcd_clear();   
 }
 
 #include "Attachment\Button.h"
 
-void Display_Value(unsigned char);
+void LCD_Display_MainPage(unsigned char);
 
 void main(void){  
     unsigned char value=100;
     unsigned char old_value=0;
     
-    ConfigButtons();
-    Config_LCD(); Display_Value(value);
+    Button_Config();
+    LCD_Config(); LCD_Display_MainPage(value);
    
     while(1){ 
-        if(CheckIncrButton_OneStep()){++value;}
-        if(CheckIncrButton_Continuously()){++value;}   
-        if(CheckSetButton()){value=0;}
+        if(Button_UpButton_OneStep()){++value;}
+        if(Button_UpButton_Continuous()){++value;}   
+        if(Button_ResetButton_OneStep()){value=0;}
         
-        if(old_value!=value){Display_Value(value); old_value=value;}
+        if(old_value!=value){LCD_Display_MainPage(value); old_value=value;}
     };
 }
 
 //********************************************************
-void Display_Value(unsigned char value){
+void LCD_Display_MainPage(unsigned char value){
     char txt[16];
     itoa(value,txt);
     lcd_clear();
