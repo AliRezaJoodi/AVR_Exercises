@@ -9,28 +9,28 @@
 float input_mv=0;
 float input_v=0;
 
-void ConfigLCD(void);
-void DisplayMainPage(void);
+void LCD_Config(void);
+void LCD_DisplayMainPage(void);
 
 #include <Attachment\ADC.h>
 
 void main(void){
-    ConfigLCD();
-    ConfigADC();
-    EnableADC(1);
+    LCD_Config();
+    ADC_Config();
+    ADC_Enable(1);
     
     DDRB.0=1;
     PORTB.0=CHECK_ADC_ENABLE;
     while(1){
-        input_int=GetIntValueFromADC(SINGLE7); 
-        input_v=GetMilliVoltFromADC(SINGLE7); 
-        DisplayMainPage();
+        input_int=ADC_GetInt(SINGLE7); 
+        input_v=ADC_GetMilliVolt(SINGLE7); 
+        LCD_DisplayMainPage();
         delay_ms(250);                                        
     };
 }
 
 //********************************************************
-void DisplayMainPage(void){
+void LCD_DisplayMainPage(void){
     char txt[16];
     
     lcd_gotoxy(0,0); 
@@ -43,7 +43,7 @@ void DisplayMainPage(void){
 }
 
 //********************************************************
-void ConfigLCD(void){
+void LCD_Config(void){
     lcd_init(16); lcd_clear();   
 }
 
