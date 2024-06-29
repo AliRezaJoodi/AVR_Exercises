@@ -8,6 +8,7 @@
 #define ToggleBit(ADDRESS,BIT)              ADDRESS= (ADDRESS) ^ (1<<(BIT));
 #define WriteBit(ADDRESS,BIT,STATUS)        ADDRESS= ((ADDRESS) & (~(0b1<<(BIT)))) | (((STATUS)&0b1) << (BIT));
 #define GetBit(ADDRESS,BIT)                 (((ADDRESS) >> (BIT)) & 0b1)
+
 #define ToggleByte(VALUE)                   VALUE= ~(VALUE);
 
 #define GetMsb(INT)                         (((INT)&0xFF00) >> 8)

@@ -1,18 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <delay.h>
-
-#ifndef SETBIT
-    #define SETBIT(ADDRESS,BIT)         (ADDRESS|=1<<BIT)
-#endif 
-    
-#ifndef CLRBIT
-    #define CLRBIT(ADDRESS,BIT)         (ADDRESS &=~(1<<BIT))
-#endif
-
-#ifndef CHKBIT
-    #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
-#endif
+#include <Utility.h>
 
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
@@ -86,18 +75,18 @@
     #define ADC_SetClockSource(MODE)                 ADCSRA=(ADCSRA & 0b11111000) | MODE; 
     #define ADC_SetVoltageReference(MODE)            ADMUX=(ADMUX & 0b00111111) | MODE; 
     #define ADC_SetResolution(MODE)                  ADMUX=(ADMUX & 0b11011111) | MODE; 
-    #define ADC_EnableInterrupt(STATUS)              if(STATUS){SETBIT(ADCSRA,ADIE);} else{CLRBIT(ADCSRA,ADIE);}
+    #define ADC_EnableInterrupt(STATUS)              if(STATUS){SetBit(ADCSRA,ADIE);} else{ClearBit(ADCSRA,ADIE);}
     #define ADC_SetAutoTriggerSource(MODE)           SFIOR=(SFIOR & 0b00011111) | MODE;
-    #define ADC_EnableAutoTrigger(STATUS)            if(STATUS){SETBIT(ADCSRA,ADATE);} else{CLRBIT(ADCSRA,ADATE);}
+    #define ADC_EnableAutoTrigger(STATUS)            if(STATUS){SetBit(ADCSRA,ADATE);} else{ClearBit(ADCSRA,ADATE);}
     #define ADC_SetInputChannelAndGainSelections(CH) ADMUX=(ADMUX & 0b11100000) | CH; 
-    #define ADC_Enable(STATUS)                       if(STATUS){SETBIT(ADCSRA,ADEN);} else{CLRBIT(ADCSRA,ADEN);}        
-    #define ADC_StartConversion(STATUS)              if(STATUS){SETBIT(ADCSRA,ADSC);} else{CLRBIT(ADCSRA,ADSC);}
+    #define ADC_Enable(STATUS)                       if(STATUS){SetBit(ADCSRA,ADEN);} else{ClearBit(ADCSRA,ADEN);}        
+    #define ADC_StartConversion(STATUS)              if(STATUS){SetBit(ADCSRA,ADSC);} else{ClearBit(ADCSRA,ADSC);}
     
     // Check Commands
-    #define CHECK_ADC_ENABLE                CHKBIT(ADCSRA,ADEN)
-    #define CHECK_ADC_RESOLUTION_256        CHKBIT(ADMUX,ADLAR) 
-    #define CHECK_ADC_RESOLUTION_1024       (CHKBIT(ADMUX,ADLAR) ^ 0b00000001) 
-    #define END_ADC_CONVERSION              (CHKBIT(ADCSRA,ADIF) ^ 0b00000001) 
+    #define CHECK_ADC_ENABLE                GetBit(ADCSRA,ADEN)
+    #define CHECK_ADC_RESOLUTION_256        GetBit(ADMUX,ADLAR) 
+    #define CHECK_ADC_RESOLUTION_1024       (GetBit(ADMUX,ADLAR) ^ 0b00000001) 
+    #define END_ADC_CONVERSION              (GetBit(ADCSRA,ADIF) ^ 0b00000001) 
     
 #pragma used+
 
@@ -128,7 +117,7 @@ void ADC_ConfigwithInterrupt(unsigned char ch){
 }
 
 //******************************************
-void ADC_Config(void){
+void ADC_Config_10Bit_AVCC(void){
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AVCC_PIN);
     ADC_SetResolution(R1024);
@@ -150,7 +139,7 @@ unsigned int ADC_GetInt(unsigned char ch){
         delay_us(10);
         ADC_StartConversion(1);
         while(END_ADC_CONVERSION);
-        SETBIT(ADCSRA,ADIF);
+        SetBit(ADCSRA,ADIF);
         
         if(CHECK_ADC_RESOLUTION_1024){return ADCW;}     // 10Bit Resolution
             else{return ADCH;}                          // 8Bit Resolution

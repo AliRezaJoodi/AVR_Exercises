@@ -78,6 +78,7 @@ A repository for my personal exercises.
 |![]()									|[MPU6050 Gyroscope And Accelerometer With I2C Interface](Sensor_Gyroscope_MPU6050_I2C)				|Y|-|-|
 |![](Sensor_Humidity_SHT10/Simulate/Album.png)				|[Humidity Sensor With SHT10](Sensor_Humidity_SHT10)								|Y|Y|-|
 |![](Sensor_LDR/Simulate/Album.png)					|[LDR Sensor](Sensor_LDR)											|Y|Y|-|
+|![](Sensor_NTC_100K/Simulate/Album.png)				|[100K NTC Sensor](Sensor_NTC_100K)										|-|Y|-|
 |![](Sensor_Temperature_DS18B20/Simulate/Album.png)			|[Temperature Sensor With DS18B20](Sensor_Temperature_DS18B20)							|Y|Y|-|
 |![](Sensor_Temperature_DS18B20_4Sensors/Simulate/Album.png)		|[Temperature Sensor With DS18B20, 4Sensors](Sensor_Temperature_DS18B20_4Sensors)				|Y|Y|-|
 |![](Sensor_Temperature_LM35/Simulate/Album.png)			|[Temperature Sensor With LM35](Sensor_Temperature_LM35)							|Y|Y|-|
@@ -87,7 +88,7 @@ A repository for my personal exercises.
 |![]()									|[Music Player](Sound_MusicPlayer)										|Y|-|-|
 |![]()									|[Config SPI](SPI_Config)											|Y|Y|-|
 |![]()									|[Config Software SPI](SPI_SoftwareSPI)										|Y|-|-|
-|![]()									|[Config SPI With Interrupt](SPI_Interrupt)										|Y|Y|-|
+|![]()									|[Config SPI With Interrupt](SPI_Interrupt)									|Y|Y|-|
 |![](String_Syntax/Simulate/Album.png)					|[String Syntax](String_Syntax)											|Y|Y|-|
 |![](Timer0_Counter/Simulate/Album.png)					|[Config Timer0 in Counter Mode](Timer0_Counter)								|Y|Y|-|
 |![](Timer0_CTC/Simulate/Album.png)					|[Config Timer0 in CTC Mode](Timer0_CTC)									|-|Y|-|
@@ -105,7 +106,7 @@ A repository for my personal exercises.
 |![](UART_BaudRateFinder/Simulate/Album.png)				|[Baud Rate Finder In UART](UART_BaudRateFinder)								|Y|-|-|
 |![](UART_Config/Simulate/Album.png)					|[Config UART](UART_Config)											|Y|Y|-|
 |![](UART_SoftwareUART/Simulate/Album.png)				|[Config Software UART](UART_SoftwareUART)									|Y|Y|-|
-|![]()									|[Config UART With Interrupt](UART_Interrupt)										|Y|Y|-|
+|![]()									|[Config UART With Interrupt](UART_Interrupt)									|Y|Y|-|
 |![](VB6_Receiver_Bytes/Code_VB6/Album.jpg)				|[VB6_Receiver_Bytes](VB6_Receiver_Bytes)									|Y|Y|-|
 |![](VB6_Receiver_Integer/Code_VB6/Album.jpg)				|[VB6_Receiver_Integer](VB6_Receiver_Integer)									|Y|Y|-|
 |![](VB6_Sender_Byte/Code_VB6/Album.jpg)				|[VB6_Sender_Byte](VB6_Sender_Byte)										|Y|-|-|
