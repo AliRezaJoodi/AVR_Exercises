@@ -1,7 +1,7 @@
 ## AVR Programming Exercises
 A repository for my personal exercises.
 
-Note:
+Note: Setting on CodeVision AVR  
 ![Setting on CodeVision AVR](_Library_CodeVisionAVR/_Setting1.png)
 
 1: Bascom AVR  
