@@ -3,8 +3,8 @@
 #ifndef _LM35_INCLUDED
     #define _LM35_INCLUDED
 
-    #ifndef _LM35_PORTS
-        #define _LM35_PORTS
+    #ifndef LM35_PORTS
+        #define LM35_PORTS
     
         #define LM35_CH             7 
         #define _LM35_GAIN          0.1
