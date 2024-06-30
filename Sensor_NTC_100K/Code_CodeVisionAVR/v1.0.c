@@ -13,7 +13,7 @@ void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
 #include <ADC.h>
-#include <NTC_100K.h>
+#include <Sensor_NTC_100K.h>
 
 void main(void){
     LCD_Config();

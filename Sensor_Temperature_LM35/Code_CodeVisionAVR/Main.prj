@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=3
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=v1.0.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1460243567
+TimeStamp1=1490951246
 PageIndex1=1
 Top0=200
 Left0=438
@@ -45,12 +45,12 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=3
-F1=v1.0.c
+ActiveTab=1
 OF3=Attachment\LM35.h
 TimeStamp3=1460243410
 OF4=Attachment\_LCD.h
 TimeStamp4=1459258853
+F1=v1.0.c
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -143,10 +143,10 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=284
+Build=289
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=
+IncludePath1=..\..\_Library_CodeVisionAVR
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -209,7 +209,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1460243650
+COFFileTimeStamp=1490951248
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -403,9 +403,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1460873577
+TimeStamp=1490951335
 [BookmarksFoldedCode]
-Files=9
+Files=11
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -415,6 +415,8 @@ F6=Attachment\Character.h
 F7=Attachment\_LCD.h
 F8=C:\cvavr\inc\mega32_bits.h
 F9=Attachment\ADC.h
+F10=..\..\_Library_CodeVisionAVR\ADC.h
+F11=..\..\_Library_CodeVisionAVR\Sensor_LM35.h
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -450,7 +452,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=284
+Build=289
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -572,8 +574,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 284
-L18=14801 line(s) compiled
+L17=Build: 289
+L18=14813 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -592,19 +594,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 1431 words (2862 bytes), 8.7% of FLASH
-L38=62 words (124 bytes), 4.2% reduced by Code Compression
+L37=Program size: 1439 words (2878 bytes), 8.8% of FLASH
+L38=63 words (126 bytes), 4.2% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\List\Main.asm(2700): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\List\Main.asm(2706): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000b2e   2768     94   2862   32768   8.7%
+L9=[.cseg] 0x000000 0x000b3e   2784     94   2878   32768   8.8%
 L10=[.dseg] 0x000060 0x000270      0     16     16    2048   0.8%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -623,11 +625,11 @@ HIDJoystick=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks3]
-TimeStamp=1460243567
-Row=28
-Column=69
+TimeStamp=1490951246
+Row=15
+Column=39
 ScrollPosX=0
-ScrollPosY=13
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -677,7 +679,7 @@ TimeStamp=1449305091
 Row=12
 Column=0
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=27
 BK0=-1
 BK1=-1
 BK2=-1
@@ -708,8 +710,6 @@ ReservedRegister13=0
 ReservedRegister14=0
 [Debugger]
 UseMangledNames=0
-[FoldedCode6]
-Blocks=0
 [Bookmarks7]
 TimeStamp=1459258853
 Row=9
@@ -760,11 +760,35 @@ BK8=-1
 BK9=-1
 [FoldedCode8]
 Blocks=0
+[FoldedCode7]
+Blocks=0
+[FoldedCode9]
+Blocks=0
+[FoldedCode4]
+Blocks=0
+[Bookmarks10]
+TimeStamp=1490946862
+Row=152
+Column=24
+ScrollPosX=0
+ScrollPosY=136
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode10]
+Blocks=0
 [HeadersList]
 Files=1
 F1=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\v1.0.c
 [Header1]
-Files=12
+Files=13
 F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=C:\cvavr\inc\delay.h
@@ -774,14 +798,29 @@ F6=C:\cvavr\inc\stdarg.h
 F7=C:\cvavr\inc\stdlib.h
 F8=Attachment\_LCD.h
 F9=C:\cvavr\inc\alcd.h
-F10=Attachment\ADC.h
-F11=Attachment\LM35.h
-F12=Attachment\Character.h
-[FoldedCode7]
+F10=..\..\_Library_CodeVisionAVR\ADC.h
+F11=..\..\_Library_CodeVisionAVR\Utility.h
+F12=..\..\_Library_CodeVisionAVR\Sensor_LM35.h
+F13=Attachment\Character.h
+[Bookmarks11]
+TimeStamp=1490951246
+Row=16
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode11]
+Blocks=0
+[FoldedCode6]
 Blocks=0
 [FoldedCode3]
-Blocks=0
-[FoldedCode4]
-Blocks=0
-[FoldedCode9]
 Blocks=0
