@@ -3,7 +3,8 @@
 
 #include <mega16.h>
 #include <delay.h>
-#include "Attachment\Buzzer.h"
+
+#include <Buzzer_v2.0.h>
 
 void main(void){ 
     ConfigBuzzer(); 

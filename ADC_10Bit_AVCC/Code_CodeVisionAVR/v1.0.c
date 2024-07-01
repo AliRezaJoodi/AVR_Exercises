@@ -12,18 +12,18 @@ float input_v=0;
 void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
-#include <Attachment\ADC.h>
+#include "Attachment\HardwarePorting_v1.0.h"
+#include <ADC.h>
 
 void main(void){
     LCD_Config();
-    ADC_Config();
+    ADC_Config_10Bit_AVCC();
     ADC_Enable(1);
+    DDRB.0=1; PORTB.0=CHECK_ADC_ENABLE;
     
-    DDRB.0=1;
-    PORTB.0=CHECK_ADC_ENABLE;
     while(1){
-        input_int=ADC_GetInt(SINGLE7); 
-        input_v=ADC_GetMilliVolt(SINGLE7); 
+        input_int=ADC_GetInt(7); 
+        input_v=ADC_GetMilliVolt(7); 
         LCD_DisplayMainPage();
         delay_ms(250);                                        
     };

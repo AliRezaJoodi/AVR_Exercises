@@ -13,6 +13,7 @@ float temp=0;
 void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
+#include "Attachment\HardwarePorting_v1.0.h"
 #include <ADC.h>
 #include <Sensor_NTC.h>
 #include <Sensor_NTC_100K.h>
@@ -37,15 +38,15 @@ void LCD_DisplayMainPage(void){
         
     ///lcd_gotoxy(0,0); 
     ///lcd_putsf("In(V):");
-    ///ftoa(input_v,3,txt); lcd_puts(txt); lcd_putsf(" ");
+    ///ftoa(input_v,3,txt); lcd_puts(txt); lcd_putsf("  ");
     
     lcd_gotoxy(0,0); 
     lcd_putsf("Ohm:");
-    ftoa(ohm,1,txt); lcd_puts(txt); lcd_putsf(" "); 
+    ftoa(ohm,1,txt); lcd_puts(txt); lcd_putsf("  "); 
     
     lcd_gotoxy(0,1); 
     lcd_putsf("Temp(C):");
-    ftoa(temp,0,txt); lcd_puts(txt); lcd_putsf(" ");  
+    ftoa(temp,0,txt); lcd_puts(txt); lcd_putsf("  ");  
 }
 
 //********************************************************

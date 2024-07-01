@@ -3,8 +3,8 @@
 #ifndef _NTC_INCLUDED
     #define _NTC_INCLUDED
     
-    #ifndef NTC_PORTS
-        #define NTC_PORTS 
+    #ifndef _NTC_PORTS
+        #define _NTC_PORTS 
         
         #define VCC     	5
         #define R2      	1500

@@ -8,14 +8,14 @@
 //float input_mv=0;
 float input_v=0;
 
-void ConfigLCD(void);
-void DisplayMainPage(void);
+void LCD_Config(void);
+void LCD_DisplayMainPage(void);
 
 #include <Attachment\ADC.h>
 #include <Attachment\Timer0.h>
 
 void main(void){
-    ConfigLCD();
+    LCD_Config();
     ConfigADC_Interrupt(SINGLE7);
     ConfigTimer0ForTimer();
      
@@ -25,13 +25,13 @@ void main(void){
         if(task_adc){
             task_adc=0;
             input_v=input_int; input_v=input_v*ADC_GAIN;
-            DisplayMainPage();
+            LCD_DisplayMainPage();
         }                                         
     };
 }
 
 //********************************************************
-void DisplayMainPage(void){
+void LCD_DisplayMainPage(void){
     char txt[16];
     
     lcd_gotoxy(0,0); 
@@ -44,7 +44,7 @@ void DisplayMainPage(void){
 }
 
 //********************************************************
-void ConfigLCD(void){
+void LCD_Config(void){
     lcd_init(16); lcd_clear();   
 }
 

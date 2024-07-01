@@ -7,11 +7,11 @@ Beep modes:
     3:  Making  A Periodical Continuous Beep
 */
 
-#ifndef INCLUDED_BUZZER
-    #define INCLUDED_BUZZER
+#ifndef _BUZZER_INCLUDED
+    #define _BUZZER_INCLUDED
 
-#ifndef PORTS_BUZZER
-    #define PORTS_BUZZER
+#ifndef _BUZZER_PORTS
+    #define _BUZZER_PORTS
     
     #define BUZZER_DDR      DDRB.1
     #define BUZZER_PORT     PORTB.1

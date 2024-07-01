@@ -1,20 +1,20 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 // MCU Frequency:   8Mhz
 
+#include <delay.h>
+
 #ifndef _BUZZER_INCLUDED
     #define _BUZZER_INCLUDED
 
-#include <delay.h>
+    #ifndef _BUZZER_PORTS
+        #define _BUZZER_PORTS
 
-#ifndef BUZZER_PORTS
-    #define BUZZER_PORTS
-
-    #define BUZZER_ACTIVE   1     
-    #define BUZZER_DDR      DDRB.1
-    #define BUZZER_PORT     PORTB.1
-    #define BUZZER_PIN      PINB.1 
-    #define BUZZER          BUZZER_PORT 
-#endif
+        #define BUZZER_ACTIVE   1     
+        #define BUZZER_DDR      DDRB.1
+        #define BUZZER_PORT     PORTB.1
+        #define BUZZER_PIN      PINB.1 
+        #define BUZZER          BUZZER_PORT 
+    #endif
 
 #define BEEP_UP         0
 #define BEEP_DOWN       1
