@@ -17,7 +17,7 @@ void LCD_DisplayMainPage(void);
 
 void main(void){
    LCD_Config();
-   ADC_Config_10Bit_AREF();
+   ADC_Config_AREF_10Bit();
 
     while (1){
         input_int=ADC_GetInt(7);

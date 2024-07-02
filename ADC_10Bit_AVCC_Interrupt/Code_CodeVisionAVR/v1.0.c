@@ -11,12 +11,13 @@ float input_v=0;
 void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
-#include <Attachment\ADC.h>
+#include "Attachment\HardwarePorting_v1.0.h"
+#include <ADC.h>
 #include <Attachment\Timer0.h>
 
 void main(void){
     LCD_Config();
-    ConfigADC_Interrupt(SINGLE7);
+    ADC_ConfigwithInterrupt(SINGLE7);
     ConfigTimer0ForTimer();
      
     EnableGlobalInterrupt(1);

@@ -1,7 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #ifndef _NTC100K_INCLUDED
-    #define _NTC100K_INCLUDED
+#define _NTC100K_INCLUDED
 
 flash float Table_NTC_100K[]={
 333964, 318871, 303778, 288685, 273592,

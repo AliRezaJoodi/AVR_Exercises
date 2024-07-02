@@ -8,17 +8,17 @@
 #endif
 
 #ifndef _ADC_INCLUDED
-    #define _ADC_INCLUDED
+#define _ADC_INCLUDED
     
-    #define ADC_GAIN_5V_10Bit               0.0048875855    // 5/1023
-    #define ADC_GAIN_3V3_10Bit              0.00322580645   // 3.3/1023
-    #define ADC_GAIN_2V56_10Bit             0.00250244      // 2.56/1023 
-    #define ADC_GAIN_5V_08Bit               0.01953125      // 5/256 
+#define ADC_GAIN_5V_10Bit               0.0048875855    // 5/1023
+#define ADC_GAIN_3V3_10Bit              0.00322580645   // 3.3/1023
+#define ADC_GAIN_2V56_10Bit             0.00250244      // 2.56/1023 
+#define ADC_GAIN_5V_08Bit               0.01953125      // 5/256 
 
-    #ifndef _ADC_PORTS
-        #define _ADC_PORTS
-        #define ADC_GAIN                    ADC_GAIN_5V_10Bit    
-    #endif
+#ifndef _ADC_PORTS
+#define _ADC_PORTS
+    #define ADC_GAIN                    ADC_GAIN_5V_10Bit    
+#endif
     
     // Analog Channel and Gain Selections
     #define SINGLE0                         0b00000
@@ -125,7 +125,7 @@ void ADC_ConfigwithInterrupt(unsigned char ch){
 }
 
 //******************************************
-void ADC_Config_10Bit_AVCC(void){
+void ADC_Config_AVCC_10Bit(void){
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AVCC_PIN);
     ADC_SetResolution(R1024);
@@ -141,7 +141,7 @@ void ADC_Config_10Bit_AVCC(void){
 }
 
 //******************************************
-void ADC_Config_10Bit_AREF(void){
+void ADC_Config_AREF_10Bit(void){
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AREF_PIN);
     ADC_SetResolution(R1024);
@@ -157,7 +157,7 @@ void ADC_Config_10Bit_AREF(void){
 }
 
 //******************************************
-void ADC_Config_10Bit_2V56(void){
+void ADC_Config_2V56_10Bit(void){
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(INTERNAL_2V56);
     ADC_SetResolution(R1024);
@@ -173,7 +173,7 @@ void ADC_Config_10Bit_2V56(void){
 }
 
 //******************************************
-void ADC_Config_08Bit_AVCC(void){
+void ADC_Config_AVCC_08Bit(void){
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AVCC_PIN);
     ADC_SetResolution(R256);

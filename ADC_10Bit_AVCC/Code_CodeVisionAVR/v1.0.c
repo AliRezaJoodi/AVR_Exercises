@@ -17,7 +17,7 @@ void LCD_DisplayMainPage(void);
 
 void main(void){
     LCD_Config();
-    ADC_Config_10Bit_AVCC();
+    ADC_Config_AVCC_10Bit();
     ADC_Enable(1);
     DDRB.0=1; PORTB.0=CHECK_ADC_ENABLE;
     

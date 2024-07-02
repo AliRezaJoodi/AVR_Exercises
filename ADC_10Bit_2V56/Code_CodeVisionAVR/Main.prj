@@ -34,14 +34,14 @@ ActiveEditorPanel=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1491189622
+TimeStamp1=1491251570
 PageIndex1=1
-ActiveTab=3
+ActiveTab=1
 OF2=Attachment\HardwarePorting_v1.0.h
 TimeStamp2=1491206738
 F1=v1.0.c
 OF3=..\..\_Library_CodeVisionAVR\ADC.h
-TimeStamp3=1491206855
+TimeStamp3=1491251536
 [Compiler]
 Chip=ATmega32A
 CPUClock=1000000
@@ -107,7 +107,7 @@ WarningDataStackUsage=1
 WarningDataStackRecursion=1
 WarningHardwareStackLow=1
 DebugBootLoader=0
-Build=17
+Build=18
 UseEEPROMLocation0=1
 OutputFormat=1
 AVR8LHardwareStackSize=16
@@ -145,7 +145,7 @@ WarningStaticRamEepromStorageAllocConstStrLit=0
 WatchAVR8LAutoVariables=0
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1491206884
+COFFileTimeStamp=1491251571
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_Library_CodeVisionAVR
 IncludePath2=
@@ -465,7 +465,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=17
+Build=18
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -526,8 +526,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 17
-L18=14030 line(s) compiled
+L17=Build: 18
+L18=14047 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -568,7 +568,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1491206917
+TimeStamp=1491251580
 [BookmarksFoldedCode]
 Files=4
 F1=v1.0.c
@@ -576,11 +576,11 @@ F2=Attachment\ADC.h
 F3=..\..\_Library_CodeVisionAVR\ADC.h
 F4=Attachment\HardwarePorting_v1.0.h
 [Bookmarks1]
-TimeStamp=1491189622
-Row=6
-Column=22
+TimeStamp=1491251570
+Row=18
+Column=25
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=13
 BK0=-1
 BK1=-1
 BK2=-1
@@ -629,25 +629,10 @@ BK8=-1
 BK9=-1
 [FoldedCode2]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\ADC_10Bit_2V56\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\stdlib.h
-F4=C:\cvavr\inc\delay.h
-F5=C:\cvavr\inc\alcd.h
-F6=Attachment\HardwarePorting_v1.0.h
-F7=..\..\_Library_CodeVisionAVR\ADC.h
-F8=..\..\_Library_CodeVisionAVR\Utility.h
-[FoldedCode1]
-Blocks=0
 [Bookmarks3]
-TimeStamp=1491206855
-Row=13
-Column=4
+TimeStamp=1491251536
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=6
 BK0=-1
@@ -660,8 +645,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode3]
-Blocks=0
 [Bookmarks4]
 TimeStamp=1491206738
 Row=2
@@ -678,5 +661,22 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\ADC_10Bit_2V56\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\stdlib.h
+F4=C:\cvavr\inc\delay.h
+F5=C:\cvavr\inc\alcd.h
+F6=Attachment\HardwarePorting_v1.0.h
+F7=..\..\_Library_CodeVisionAVR\ADC.h
+F8=..\..\_Library_CodeVisionAVR\Utility.h
+[FoldedCode1]
+Blocks=0
+[FoldedCode3]
+Blocks=0
 [FoldedCode4]
 Blocks=0

@@ -12,21 +12,21 @@ float input_v=0;
 float temp=0;
 #pragma used-
 
-#include <Attachment\_LCD.h>
+#include "Attachment\HardwarePorting_v1.0.h"
 #include <ADC.h>
 #include <Sensor_LM35.h>
-#include <Attachment\Character.h>
+#include "Attachment\LCD.h"
+#include <Display_LCD_Char.h>
 
 void main(void){
-
-    Config_LCD();
-    define_char(CHAR1,0);
-    ADC_Config_10Bit_AVCC();
+    LCD_Config();
+    Char_Define(char0, 0);
+    ADC_Config_AVCC_10Bit();
 
     while(1){ 
         input_mv=ADC_GetMilliVolt(LM35_CH); 
         temp=LM35_ConvertMilliVoltToTemp(input_mv);
-        Display_LCD(input_mv,temp);
+        LCD_DisplayMainPage(input_mv,temp);
         delay_ms(250);                                       
     };
 }

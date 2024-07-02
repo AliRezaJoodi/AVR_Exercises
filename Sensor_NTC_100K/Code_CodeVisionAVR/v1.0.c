@@ -15,16 +15,16 @@ void LCD_DisplayMainPage(void);
 
 #include "Attachment\HardwarePorting_v1.0.h"
 #include <ADC.h>
-#include <Sensor_NTC.h>
-#include <Sensor_NTC_100K.h>
+#include <Sensor_Thermistor.h>
+#include <Sensor_Thermistor_NTC_100K.h>
 
 void main(void){
     LCD_Config();
     ADC_Config_10Bit_AVCC();
     
     while(1){
-        input_v=ADC_GetVolt(NTC_CH);
-        ohm=NTC_ConvertVoltToOhm_PullUp(input_v);
+        input_v=ADC_GetVolt(THERMISTOR_CH);
+        ohm=Thermistor_ConvertVoltToOhm_PullUp(input_v);
         ///ohm=201.1;
         temp=NTC100K_ConvertOhmToTemp(ohm);
         LCD_DisplayMainPage();

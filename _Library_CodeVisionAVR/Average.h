@@ -1,56 +1,47 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef INCLUDED_AVERAGE
-    #define INCLUDED_AVERAGE
+#ifndef _AVERAGE_INCLUDED
+#define _AVERAGE_INCLUDED
     
-    #ifndef TURN_OFF_AVERAGE
-        #define TURN_ON_AVERAGE
-    #endif  
-    
-    #define COUNTER     10
+#ifndef _AVERAGE_PORTS
+#define _AVERAGE_PORTS 
+    #define AVERAGE_COUNT     10
+#endif  
 
 #pragma used+
 
 //***********************************
 float Average(float value){
-    #ifdef TURN_ON_AVERAGE
-        static float sum=0;
-        static float average=0;
-        static unsigned char i=0;
+    static float sum=0;
+    static float average=0;
+    static unsigned char i=0;
     
-        sum=sum+value; ++i;
-        if(i>=COUNTER){
-            average=sum/COUNTER;
-            sum=0; i=0;
-        } 
+    sum=sum+value; ++i;
+    if(i>=AVERAGE_COUNT){
+        average=sum/AVERAGE_COUNT;
+        sum=0; i=0;
+    } 
     
-        return average;
-    #else 
-        return value;
-    #endif   
+    return average;  
 }
     
 //***********************************
 float Average2(float value){
-    #ifdef TURN_ON_AVERAGE
-        static float d[COUNTER];
-        float average=0;
-        unsigned char i=0; 
+    static float d[AVERAGE_COUNT];
+    float average=0;
+    unsigned char i=0; 
     
-        for (i=1; i<COUNTER; ++i){
-            d[i-1]=d[i];    
-        }
-        d[COUNTER-1]=value;
+    for (i=1; i<AVERAGE_COUNT; ++i){
+        d[i-1]=d[i];    
+    }
+    d[AVERAGE_COUNT-1]=value;
     
-        for(i=0; i<COUNTER; ++i){
-            average=average+d[i];
-        } 
-        average=average/COUNTER;
+    for(i=0; i<AVERAGE_COUNT; ++i){
+        average=average+d[i];
+    } 
+    average=average/AVERAGE_COUNT;
     
-        return average;
-    #else
-        return value; 
-    #endif 
+    return average;
 }
 
 #pragma used-

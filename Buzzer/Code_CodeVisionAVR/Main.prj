@@ -28,13 +28,15 @@ PageIndex0=0
 EditorPanel1=0
 TimeStamp1=1491186535
 PageIndex1=1
-OF2=..\..\_Library_CodeVisionAVR\Buzzer.h
+OF2=Attachment\HardwarePorting_v1.0.h
 Active2=1
 EditorPanel2=0
-TimeStamp2=1491184625
+TimeStamp2=1491242757
 PageIndex2=2
 ActiveTab=2
 F1=v1.0.c
+OF3=Attachment\HardwarePorting_v1.0.h
+TimeStamp3=1491242757
 [CompilerDebug]
 Chip=ATmega16A
 CPUClock=8000000
@@ -133,8 +135,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1491186479
-Build=120
+COFFileTimeStamp=1491245144
+Build=123
 GlobalVarAddr=608
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -244,7 +246,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=120
+Build=123
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_Library_CodeVisionAVR
 IncludePath2=
@@ -489,8 +491,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 120
-L18=874 line(s) compiled
+L17=Build: 123
+L18=872 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -531,7 +533,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1491186549
+TimeStamp=1491245154
 [BookmarksFoldedCode]
 Files=4
 F1=v1.0.c
@@ -600,11 +602,11 @@ UseMangledNames=0
 [FoldedCode2]
 Blocks=0
 [Bookmarks3]
-TimeStamp=1491184625
-Row=9
-Column=0
+TimeStamp=1491245081
+Row=16
+Column=4
 ScrollPosX=0
-ScrollPosY=12
+ScrollPosY=15
 BK0=-1
 BK1=-1
 BK2=-1
@@ -616,9 +618,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks4]
-TimeStamp=1491186400
-Row=6
-Column=36
+TimeStamp=1491242757
+Row=5
+Column=30
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -631,7 +633,7 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode4]
+[FoldedCode3]
 Blocks=0
 [HeadersList]
 Files=1
@@ -645,5 +647,5 @@ F4=Attachment\HardwarePorting_v1.0.h
 F5=..\..\_Library_CodeVisionAVR\Buzzer.h
 [FoldedCode1]
 Blocks=0
-[FoldedCode3]
+[FoldedCode4]
 Blocks=0
