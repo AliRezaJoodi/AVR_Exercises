@@ -5,7 +5,7 @@
 // SPI Data Order: MSB First
 
 #ifndef _INCLUDED_MCP320X
-    #define _INCLUDED_MCP320X
+#define _INCLUDED_MCP320X
     
     //#define DISABLE_MCP320X
     #ifndef DISABLE_MCP320X

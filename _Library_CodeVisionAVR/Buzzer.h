@@ -13,7 +13,8 @@
     #define BUZZER_PORT     PORTB.1
     #define BUZZER_PIN      PINB.1  
 #endif
-    #define BUZZER          BUZZER_PORT
+
+#define BUZZER          BUZZER_PORT
 
 #define BEEP_UP         0
 #define BEEP_DOWN       1
