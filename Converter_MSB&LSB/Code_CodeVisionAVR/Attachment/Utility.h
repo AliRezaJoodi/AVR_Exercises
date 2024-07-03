@@ -10,10 +10,6 @@
 #define GetBit(ADDRESS,BIT)                 ((ADDRESS >> BIT) & 0b1)
 #define ToggleByte(VALUE)                   VALUE= ~VALUE;
 
-#define GetMsb(INT)                         ((INT&0xFF00) >> 8)
-#define GetLsb(INT)                         (INT&0x00FF)
-#define GetInt(MSB,LSB)                     ((MSB<<8)+(LSB&0x00FF))
-
 #endif
 
     

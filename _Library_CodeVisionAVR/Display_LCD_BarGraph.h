@@ -1,16 +1,24 @@
-//GitHub Account:     GitHub.com/AliRezaJoodi
+//GitHub Account:   GitHub.com/AliRezaJoodi
 
 #include <delay.h>
 
-#define LCD_COLUMN      16
-#define MAXIMUM_BAR     LCD_COLUMN * 5
-#define DISPLAY_ROW     1
+#ifndef _BARGRAPH_INCLUDED
+#define _BARGRAPH_INCLUDED
+
+#ifndef _BARGRAPH_PORTS
+#define _BARGRAPH_PORTS
+    #define LCD_COLUMN      16
+    #define MAXIMUM_BAR     LCD_COLUMN * 5
+    #define DISPLAY_ROW     1    
+#endif
 
 #define BAR1       2
 #define BAR2       3
 #define BAR3       4
 #define BAR4       5
 #define BAR5       6
+
+#pragma used+
 
 typedef unsigned char byte;
 flash byte bar1[8]={
@@ -73,7 +81,7 @@ void _define_char(byte flash *pc,byte char_code){
 }
 
 //********************************************************
-void _Config_BarGraph(void){
+void _BarGraph_DefineAllChars(void){
     _define_char(bar1,BAR1);
     _define_char(bar2,BAR2);
     _define_char(bar3,BAR3);
@@ -83,7 +91,7 @@ void _Config_BarGraph(void){
 
 // Input(float):    0~100%
 //********************************************************
-void Display_BarGraph(float percent){
+void BarGraph_DisplayBarGraph(float percent){
     float bars_float=0; 
     unsigned char bars=0;
     unsigned char n5=0;
@@ -92,7 +100,7 @@ void Display_BarGraph(float percent){
     unsigned char null=0;
     
     static char status=0;
-    if(status==0){_Config_BarGraph(); status=1;}
+    if(status==0){_BarGraph_DefineAllChars(); status=1;}
     
     lcd_gotoxy(0,DISPLAY_ROW); 
      
@@ -113,20 +121,24 @@ void Display_BarGraph(float percent){
 }
 
 //********************************************************
-void Test_BarGraph(void){
+void _BarGraph_Test(void){
     unsigned char i=0;
     float value=0;
        
     for(i=0; i<=100; ++i){ 
         value=i;
-        Display_BarGraph(value); 
+        BarGraph_DisplayBarGraph(value); 
         delay_ms(2);
     } 
     
     for(i=100; i>0; --i){
         value=i;
-        Display_BarGraph(value); 
+        BarGraph_DisplayBarGraph(value); 
         delay_ms(2);
     }   
 }
+
+#pragma used-
+#endif
+
 

@@ -5,29 +5,29 @@
 #include <delay.h>
 #include <stdlib.h>
 
-void ConfigureLCD(void);
-void DisplayMainPage(void);
+void LCD_Config(void);
+void LCD_DisplayMainPage(void);
 
 unsigned int number=589;
 unsigned char number_msb;
 unsigned char number_lsb;
 
-#include "Attachment\Utility.h"
+#include <Converter.h>
 
 void main(void){
-    ConfigureLCD(); 
+    LCD_Config(); 
     
-    number_msb=GetMsb(number);
-    number_lsb=GetLsb(number);
-    number=GetInt(number_msb,number_lsb);
-    DisplayMainPage();  
+    number_msb=Converter_GetMsb(number);
+    number_lsb=Converter_GetLsb(number);
+    number=Converter_GetInt(number_msb,number_lsb);
+    LCD_DisplayMainPage();  
 
     while(1){  
     }     
 }
 
 //**************************************************
-void DisplayMainPage(void){
+void LCD_DisplayMainPage(void){
     char txt[16];
     lcd_gotoxy(0,0); lcd_putsf("Value  MSB   LSB");
     itoa(number,txt); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");  
@@ -36,6 +36,6 @@ void DisplayMainPage(void){
 }
 
 //********************************************************
-void ConfigureLCD(void){
+void LCD_Config(void){
     lcd_init(16); lcd_clear();   
 }
