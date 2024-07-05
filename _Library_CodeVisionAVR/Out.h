@@ -7,7 +7,7 @@
 
 #ifndef _OUT_PORTS
 #define _OUT_PORTS
-    #define OUT_ACTIVATE   1
+    #define OUT_ACTIVATE    1
     
     #define OUT1_DDR        DDRA.1
     #define OUT1_PORT       PORTA.1
@@ -45,33 +45,47 @@
     #define OUT7_ACTIVATE   1 
 #endif 
 
-#define OUT1                OUT1_PORT
-#define OUT1_TURNON         OUT1=OUT1_ACTIVATE
-#define OUT1_TURNOFF        OUT1=!OUT1_ACTIVATE
+#ifdef OUT1_PORT
+    #define OUT1                OUT1_PORT
+    #define OUT1_TURNON         OUT1=OUT1_ACTIVATE
+    #define OUT1_TURNOFF        OUT1=!OUT1_ACTIVATE
+#endif
 
-#define OUT2                OUT2_PORT
-#define OUT2_TURNON         OUT2=OUT2_ACTIVATE
-#define OUT2_TURNOFF        OUT2=!OUT2_ACTIVATE
+#ifdef OUT2_PORT
+    #define OUT2                OUT2_PORT
+    #define OUT2_TURNON         OUT2=OUT2_ACTIVATE
+    #define OUT2_TURNOFF        OUT2=!OUT2_ACTIVATE
+#endif
 
-#define OUT3                OUT3_PORT
-#define OUT3_TURNON         OUT3=OUT3_ACTIVATE
-#define OUT3_TURNOFF        OUT3=!OUT3_ACTIVATE
+#ifdef OUT3_PORT
+    #define OUT3                OUT3_PORT
+    #define OUT3_TURNON         OUT3=OUT3_ACTIVATE
+    #define OUT3_TURNOFF        OUT3=!OUT3_ACTIVATE
+#endif
 
-#define OUT4                OUT4_PORT
-#define OUT4_TURNON         OUT4=OUT4_ACTIVATE
-#define OUT4_TURNOFF        OUT4=!OUT4_ACTIVATE
+#ifdef OUT4_PORT
+    #define OUT4                OUT4_PORT
+    #define OUT4_TURNON         OUT4=OUT4_ACTIVATE
+    #define OUT4_TURNOFF        OUT4=!OUT4_ACTIVATE
+#endif
 
-#define OUT5                OUT5_PORT
-#define OUT5_TURNON         OUT5=OUT5_ACTIVATE
-#define OUT5_TURNOFF        OUT5=!OUT5_ACTIVATE
+#ifdef OUT5_PORT
+    #define OUT5                OUT5_PORT
+    #define OUT5_TURNON         OUT5=OUT5_ACTIVATE
+    #define OUT5_TURNOFF        OUT5=!OUT5_ACTIVATE
+#endif
 
-#define OUT6                OUT6_PORT
-#define OUT6_TURNON         OUT6=OUT6_ACTIVATE
-#define OUT6_TURNOFF        OUT6=!OUT6_ACTIVATE
+#ifdef OUT6_PORT
+    #define OUT6                OUT6_PORT
+    #define OUT6_TURNON         OUT6=OUT6_ACTIVATE
+    #define OUT6_TURNOFF        OUT6=!OUT6_ACTIVATE
+#endif
 
-#define OUT7                OUT7_PORT
-#define OUT7_TURNON         OUT7=OUT7_ACTIVATE
-#define OUT7_TURNOFF        OUT7=!OUT7_ACTIVATE
+#ifdef OUT7_PORT
+    #define OUT7                OUT7_PORT
+    #define OUT7_TURNON         OUT7=OUT7_ACTIVATE
+    #define OUT7_TURNOFF        OUT7=!OUT7_ACTIVATE
+#endif 
 
 //**********************************    
 void Out_Config(void){ 
@@ -103,10 +117,7 @@ void Out_Config(void){
         OUT7_DDR=1; OUT7=!OUT7_ACTIVATE;
     #endif 
 }
-
-#pragma used+
-
-#pragma used- 
+ 
 #endif 
 
           

@@ -23,23 +23,36 @@
     #define BUTTON3_PIN         PINB.2  
 #endif
 
-#define BUTTON1             BUTTON1_PIN
-#define BUTTON2             BUTTON2_PIN
-#define BUTTON3             BUTTON3_PIN
+#ifdef BUTTON1_DDR
+    #define BUTTON1             BUTTON1_PIN
+#endif
+
+#ifdef BUTTON2_DDR
+    #define BUTTON2             BUTTON2_PIN
+#endif
+
+#ifdef BUTTON3_DDR
+    #define BUTTON3             BUTTON3_PIN
+#endif
           
 //*************************************************
 void Button_Config(void){
-    #ifndef INPUT
-        #define INPUT   0
+    #ifdef BUTTON1_DDR   
+        BUTTON1_DDR=0; BUTTON1_PORT=!PRESSED;
     #endif
 
-    BUTTON1_DDR=INPUT; BUTTON1_PORT=!PRESSED;  
-    BUTTON2_DDR=INPUT; BUTTON2_PORT=!PRESSED;
-    BUTTON3_DDR=INPUT; BUTTON3_PORT=!PRESSED;
+    #ifdef BUTTON2_DDR  
+        BUTTON2_DDR=0; BUTTON2_PORT=!PRESSED;
+    #endif
+
+    #ifdef BUTTON3_DDR
+        BUTTON3_DDR=0; BUTTON3_PORT=!PRESSED; 
+    #endif
 }
 
 #pragma used+
 
+#ifdef BUTTON1_DDR
 //*************************************************
 char Button1_OneStep(void){
     static bit last_status=!PRESSED; 
@@ -67,7 +80,9 @@ char Button1_Continuous(void){
     
     return 0; 
 }
+#endif
 
+#ifdef BUTTON2_DDR 
 //*************************************************
 char Button2_OneStep(void){
     static bit last_status=!PRESSED; 
@@ -95,7 +110,9 @@ char Button2_Continuous(void){
     
     return 0; 
 }
+#endif
 
+#ifdef BUTTON3_DDR 
 //*************************************************
 char Button3_OneStep(void){
     static bit last_status=!PRESSED; 
@@ -122,6 +139,7 @@ char Button3_Continuous(void){
     
     return 0; 
 }
+#endif
 
 #pragma used-
 #endif
