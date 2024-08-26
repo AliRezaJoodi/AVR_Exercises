@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=1
-OpenedFiles=2
+OpenedFiles=1
 OF1=v1.0.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -18,7 +18,7 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -33,7 +33,7 @@ Active2=1
 EditorPanel2=0
 TimeStamp2=1491242757
 PageIndex2=2
-ActiveTab=2
+ActiveTab=0
 F1=v1.0.c
 OF3=Attachment\HardwarePorting_v1.0.h
 TimeStamp3=1491242757
@@ -533,7 +533,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1491245154
+TimeStamp=1494923841
 [BookmarksFoldedCode]
 Files=4
 F1=v1.0.c
@@ -645,7 +645,7 @@ F2=C:\cvavr\inc\mega16_bits.h
 F3=C:\cvavr\inc\delay.h
 F4=Attachment\HardwarePorting_v1.0.h
 F5=..\..\_Library_CodeVisionAVR\Buzzer.h
-[FoldedCode1]
-Blocks=0
 [FoldedCode4]
+Blocks=0
+[FoldedCode1]
 Blocks=0

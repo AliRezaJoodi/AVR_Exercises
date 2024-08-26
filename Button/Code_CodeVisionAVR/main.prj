@@ -2,12 +2,12 @@
 Toolset=AVR
 FormatVersion=2
 Files=1
-OpenedFiles=3
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 Top0=200
 Left0=267
 Height0=337
@@ -68,7 +68,7 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=2
+ActiveTab=0
 F1=v1.0.c
 [Compiler]
 RebuildAll=0
@@ -579,7 +579,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1491468384
+TimeStamp=1494923811
 [BookmarksFoldedCode]
 Files=4
 F1=v1.0.c
@@ -686,9 +686,9 @@ F6=C:\cvavr\inc\delay.h
 F7=C:\cvavr\inc\lcd.h
 F8=Attachment\HardwarePorting_v1.0.h
 F9=..\..\_Library_CodeVisionAVR\Button.h
-[FoldedCode1]
+[FoldedCode4]
 Blocks=0
 [FoldedCode3]
 Blocks=0
-[FoldedCode4]
+[FoldedCode1]
 Blocks=0

@@ -1,24 +1,31 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
 #include <delay.h>
 
-#define OUTPUT 1
-#define INPUT 0
+#ifndef _SHTXX_INCLUDED
+#define _SHTXX_INCLUDED
 
-#define DATA_DDR DDRC.0
-#define DATA_PORT PORTC.0
-#define DATA_PIN PINC.0
+#ifndef _SHTXX_PORTS
+#define _SHTXX_PORTS
+    #define DATA_DDR    DDRC.0
+    #define DATA_PORT   PORTC.0
+    #define DATA_PIN    PINC.0
 
-#define SCK_DDR DDRC.1
-#define SCK_PORT PORTC.1
-#define SCK_PIN PINC.1
+    #define SCK_DDR     DDRC.1
+    #define SCK_PORT    PORTC.1
+    #define SCK_PIN     PINC.1
+#endif
 
 #define MEASURE_TEMP 0b00000011 
 #define MEASURE_HUMI 0b00000101 
 #define RESET        0b00011110 
 
+#pragma used+
+
 //****************************************************
 void Transmission_Start(void){ 
-    DATA_DDR=OUTPUT; DATA_PORT =1; 
-    SCK_DDR=OUTPUT; SCK_PORT=1; delay_us(1);
+    DATA_DDR=1; DATA_PORT =1; 
+    SCK_DDR=1; SCK_PORT=1; delay_us(1);
     DATA_PORT=0; delay_us(1);
     SCK_PORT=0; delay_us(1);
     SCK_PORT=1; delay_us(1);
@@ -29,8 +36,8 @@ void Transmission_Start(void){
 //****************************************************
 void Connection_Reset_Sequence(void){
     unsigned char i;
-    DATA_DDR=OUTPUT; DATA_PORT=1;
-    SCK_DDR=OUTPUT; //SCK_PORT=0; 
+    DATA_DDR=1; DATA_PORT=1;
+    SCK_DDR=1; //SCK_PORT=0; 
     for (i=0; i<9; i++){
         SCK_PORT=1; delay_us(1); 
         SCK_PORT=0; delay_us(1);
@@ -42,7 +49,7 @@ void Connection_Reset_Sequence(void){
 //****************************************************
 char Get_Ack(void){
     char ack=1;
-    DATA_DDR = INPUT;
+    DATA_DDR = 0;
     SCK_PORT = 1;
     ack = DATA_PIN;
     SCK_PORT = 0;
@@ -52,7 +59,7 @@ char Get_Ack(void){
 //****************************************************
 void Write(unsigned char command){ 
     unsigned char i;
-    DATA_DDR = OUTPUT; DATA_PORT=0; SCK_PORT=0; delay_us(1);
+    DATA_DDR = 1; DATA_PORT=0; SCK_PORT=0; delay_us(1);
     
     for(i = 0b10000000; i > 0; i /= 2){
         if(i & command){DATA_PORT=1;} else{DATA_PORT=0;} 
@@ -62,14 +69,14 @@ void Write(unsigned char command){
 
 //****************************************************
 void Send_Ack(char ack){
-    DATA_DDR = OUTPUT; DATA_PORT = ack;
+    DATA_DDR = 1; DATA_PORT = ack;
     SCK_PORT = 1; SCK_PORT = 0;
 }
 
 //****************************************************
 unsigned char Read(void){
     unsigned char i, value = 0;
-    DATA_DDR = INPUT;
+    DATA_DDR = 0;
     SCK_PORT = 0;
     
     for(i = 0b10000000; i > 0; i /= 2){
@@ -136,3 +143,7 @@ float Get_Humidity(void){
     
     return rh_true;
 }
+
+#pragma used-
+#endif
+

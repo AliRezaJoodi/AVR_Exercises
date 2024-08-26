@@ -10,18 +10,19 @@
 #endasm
 #include <lcd.h>
 
-#include <Attachment\shtxx.h>  
+#include "Attachment\HardwarePorting_v1.0.h"
+#include <Sensor_Shtxx.h>  
 
-float Temperature=0; 
-float Humidity=0;
+float temperature=0; 
+float humidity=0;
 void Display_Values(void);
                                 
 void main(void){                                
     lcd_init(16); lcd_clear();
                                        
     while(1){
-        Humidity=Get_Humidity(); 
-        Temperature= Get_Temp();
+        humidity=Get_Humidity(); 
+        temperature= Get_Temp();
         Display_Values();
         delay_ms(250);                                  
     }
@@ -31,7 +32,7 @@ void main(void){
 void Display_Values(void){
     char txt[16]; 
     lcd_clear();
-    sprintf(txt,"Humidity(%%)=%3.1f",Humidity); lcd_gotoxy(0,0); lcd_puts(txt);  
-    sprintf(txt,"Temp(C)=%3.1f",Temperature); lcd_gotoxy(0,1); lcd_puts(txt); 
+    sprintf(txt,"Humidity(%%)=%3.1f",humidity); lcd_gotoxy(0,0); lcd_puts(txt);  
+    sprintf(txt,"Temp(C)=%3.1f",temperature); lcd_gotoxy(0,1); lcd_puts(txt); 
 }
 
