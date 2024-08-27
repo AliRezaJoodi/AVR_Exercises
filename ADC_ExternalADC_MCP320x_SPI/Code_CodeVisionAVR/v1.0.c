@@ -14,24 +14,24 @@ void DisplayValues();
 float volt1=0;
 float volt2=0;
 
-#include <Attachment\MCP320x.h>
+#include <ADC_MCP320x.h>
         
 void main(void){
     ConfigSPI();
     ConfigLCD();
-    ConfigMCP320x();
+    MCP320x_Config();
     
     DisplayLoading(); delay_ms(500); lcd_clear();
 
     while (1){
-        //volt1=GetSingleChannelFromMCP3202(0); 
-        //volt2=GetDiffChannelFromMCP3202(01);  
+        //volt1=MCP3202_GetSingleADC(0); 
+        //volt2=MCP3202_GetDifferentialADC(01);  
         
-        //volt1=GetSingleChannelFromMCP3204(0); 
-        //volt2=GetDiffChannelFromMCP3204(32);
+        volt1=MCP3204_GetSingleADC(0); 
+        volt2=MCP3204_GetDifferentialADC(32);
         
-        volt1=GetSingleChannelFromMCP3208(0); 
-        volt2=GetDiffChannelFromMCP3208(32);  
+        //volt1=MCP3208_GetSingleADC(0); 
+        //volt2=MCP3208_GetDifferentialADC(32);  
         
         DisplayValues();
         delay_ms(500);

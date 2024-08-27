@@ -4,30 +4,30 @@
 // SPI Clock Polarity: Low
 // SPI Data Order: MSB First
 
-#ifndef _INCLUDED_MCP320X
-#define _INCLUDED_MCP320X
+#ifndef _MCP320X_INCLUDED
+#define _MCP320X_INCLUDED
     
     //#define DISABLE_MCP320X
     #ifndef DISABLE_MCP320X
         #define _ENABLE_MCP320X
     #endif
 
-    #define CS_DDR_MCP320X      DDRB.4
-    #define CS_PORT_MCP320X     PORTB.4
-    #define CS_PIN_MCP320X      PINB.4 
-    #define CS_MCP320X          CS_PORT_MCP320X 
+    #define MCP320X_CS_DDR      DDRB.4
+    #define MCP320X_CS_PORT     PORTB.4
+    #define MCP320X_CS_PIN      PINB.4 
+    #define MCP320X_CS          MCP320X_CS_PORT 
     
-    #define VREF_MCP320X        5000    //MilliVolt
-    #define RESOLUTION_MCP320X  4096    //12-Bit
-    #define GAIN_MCP320X        VREF_MCP320X/RESOLUTION_MCP320X
+    #define MCP320X_VREF        5000    //MilliVolt
+    #define _MCP320X_RESOLUTION  4096    //12-Bit
+    #define _MCP320X_GAIN        MCP320X_VREF/_MCP320X_RESOLUTION
     
     #define SINGLE_CHANNEL      1 
     #define DIFF_CHANNEL        0  
 
 //********************************************************
-void ConfigMCP320x(void){
+void MCP320x_Config(void){
     #ifdef _ENABLE_MCP320X
-        CS_DDR_MCP320X=1; CS_PORT_MCP320X=1;
+        MCP320X_CS_DDR=1; MCP320X_CS_PORT=1;
     #endif    
 }
 
@@ -41,7 +41,7 @@ unsigned int _ConvertMsbLsbToInt(unsigned char msb, unsigned char lsb){
 //********************************************************
 float _ConvertIntToMillivolt(unsigned int x){
     float value=x;
-    value=value*GAIN_MCP320X;
+    value=value*_MCP320X_GAIN;
     return value;
 }
 
@@ -52,10 +52,10 @@ unsigned int _CommunicationWithMCP3201(void){
         unsigned char msb=0;
         unsigned char lsb=0;
     
-        CS_MCP320X=0;
+        MCP320X_CS=0;
         msb=spi(0xFF); 
         lsb=spi(0xFF);
-        CS_MCP320X=1;
+        MCP320X_CS=1;
     
         msb=msb&0b00011111;
         lsb=lsb&0b11111110; 
@@ -74,11 +74,11 @@ unsigned int _CommunicationWithMCP320x(char data1, char data2){
         unsigned char msb=0;
         unsigned char lsb=0;
     
-        CS_MCP320X=0;
+        MCP320X_CS=0;
         spi(data1);
         msb=spi(data2); 
         lsb=spi(0xFF);
-        CS_MCP320X=1;
+        MCP320X_CS=1;
     
         msb=msb&0b00001111; 
         value=_ConvertMsbLsbToInt(msb, lsb);   
@@ -89,7 +89,7 @@ unsigned int _CommunicationWithMCP320x(char data1, char data2){
 }
 
 //********************************************************
-float GetDiffChannelFromMCP3201(void){
+float MCP3201_GetDifferentialADC(void){
     #ifdef _ENABLE_MCP320X
         unsigned int value_int=0;
         float millivolt=0;
@@ -103,7 +103,7 @@ float GetDiffChannelFromMCP3201(void){
 }
 
 //********************************************************
-float GetSingleChannelFromMCP3202(char ch){
+float MCP3202_GetSingleADC(char ch){
     #ifdef _ENABLE_MCP320X
         char data1=0;
         char data2=0;
@@ -125,7 +125,7 @@ float GetSingleChannelFromMCP3202(char ch){
 }
 
 //********************************************************
-float GetDiffChannelFromMCP3202(char ch){
+float MCP3202_GetDifferentialADC(char ch){
     #ifdef _ENABLE_MCP320X
         char data1=0;
         char data2=0;
@@ -154,7 +154,7 @@ float GetDiffChannelFromMCP3202(char ch){
 }
 
 //********************************************************
-float GetSingleChannelFromMCP3204(char ch){
+float MCP3204_GetSingleADC(char ch){
     #ifdef _ENABLE_MCP320X
         char data1=0;
         char data2=0;
@@ -176,7 +176,7 @@ float GetSingleChannelFromMCP3204(char ch){
 }
 
 //********************************************************
-float GetDiffChannelFromMCP3204(char ch){
+float MCP3204_GetDifferentialADC(char ch){
     #ifdef _ENABLE_MCP320X
         char data1=0;
         char data2=0;
@@ -209,7 +209,7 @@ float GetDiffChannelFromMCP3204(char ch){
 }
 
 //********************************************************
-float GetSingleChannelFromMCP3208(char ch){
+float MCP3208_GetSingleADC(char ch){
     #ifdef _ENABLE_MCP320X
         char data1=0;
         char data2=0;
@@ -231,7 +231,7 @@ float GetSingleChannelFromMCP3208(char ch){
 }
 
 //********************************************************
-float GetDiffChannelFromMCP3208(char ch){
+float MCP3208_GetDifferentialADC(char ch){
     #ifdef _ENABLE_MCP320X
         char data1=0;
         char data2=0;

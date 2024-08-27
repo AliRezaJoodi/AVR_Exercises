@@ -6,12 +6,12 @@ A=NeVaDa
 C=
 D=2013/04/18 11:19:58 È.Ù
 Files=1
-OpenedFiles=3
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -40,7 +40,7 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=1
+ActiveTab=0
 OF2=..\..\_Library_CodeVisionAVR\ADC.h
 TimeStamp2=1491251536
 F1=v1.0.c
@@ -398,7 +398,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1491251634
+TimeStamp=1494978355
 [BookmarksFoldedCode]
 Files=10
 F1=F:\Electronics\Projects Tools\AVR\Circuit & Source\ADC\Voltmeter_0-5V_Code Vision AVR\T1\T1.c
@@ -623,7 +623,7 @@ TimeStamp=1491251629
 Row=19
 Column=25
 ScrollPosX=0
-ScrollPosY=12
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -761,7 +761,7 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks10]
-TimeStamp=1491251536
+TimeStamp=1491253920
 Row=0
 Column=0
 ScrollPosX=0
@@ -789,9 +789,9 @@ F5=C:\cvavr\inc\alcd.h
 F6=Attachment\HardwarePorting_v1.0.h
 F7=..\..\_Library_CodeVisionAVR\ADC.h
 F8=..\..\_Library_CodeVisionAVR\Utility.h
-[FoldedCode3]
+[FoldedCode10]
 Blocks=0
 [FoldedCode9]
 Blocks=0
-[FoldedCode10]
+[FoldedCode3]
 Blocks=0
