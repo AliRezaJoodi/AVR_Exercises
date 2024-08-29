@@ -1,0 +1,58 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#include <mega32a.h>
+#include <spi.h>
+#include <delay.h>
+#include <alcd.h>
+#include <stdlib.h>
+
+void SPI_Config(void);
+void LCD_Config(void);
+void LCD_DisplayMainPage();
+
+float volt1=0;
+
+#include "Attachment\HardwarePorting_v1.0.h"
+#include <ADC_MCP3201.h>
+        
+void main(void){
+    SPI_Config();
+    LCD_Config();
+    MCP3201_Config();
+
+    while (1){ 
+        volt1=MCP3201_GetDifferentialADC();  
+        
+        LCD_DisplayMainPage();
+        delay_ms(500);
+    }
+}
+
+//********************************************************
+void LCD_DisplayMainPage(void){
+    char txt[16];
+    lcd_gotoxy(0,0); lcd_putsf("In(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf(" ");
+    lcd_gotoxy(0,1); lcd_putsf("ADC with MCP3201"); 
+}
+
+//********************************************************
+void LCD_Config(void){
+    lcd_init(16); lcd_clear();   
+}
+
+//********************************************************
+void SPI_Config(void){
+    DDRB.4=1; PORTB.4=0;    //SS
+    DDRB.5=1; PORTB.5=0;    //MOSI
+    DDRB.6=0; PORTB.6=0;    //MISO
+    DDRB.7=1; PORTB.7=0;    //SCK
+
+// SPI initialization
+// SPI Type: Master
+// SPI Clock Rate: 2000.000 kHz
+// SPI Clock Phase: Cycle Start
+// SPI Clock Polarity: Low
+// SPI Data Order: MSB First
+SPCR=(0<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+SPSR=(0<<SPI2X);
+}
