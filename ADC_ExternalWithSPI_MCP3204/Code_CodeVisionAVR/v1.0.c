@@ -20,7 +20,7 @@ float volt2=0;
 void main(void){
     SPI_Config();
     LCD_Config();
-    MCP320x_Config();
+    MCP3204_Config();
     
     LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
 
