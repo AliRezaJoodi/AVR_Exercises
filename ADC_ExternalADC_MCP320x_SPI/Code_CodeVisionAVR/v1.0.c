@@ -24,11 +24,11 @@ void main(void){
     DisplayLoading(); delay_ms(500); lcd_clear();
 
     while (1){
-        //volt1=MCP3202_GetSingleADC(0); 
-        //volt2=MCP3202_GetDifferentialADC(01);  
+        volt1=MCP3202_GetSingleADC(0); 
+        volt2=MCP3202_GetDifferentialADC(01);  
         
-        volt1=MCP3204_GetSingleADC(0); 
-        volt2=MCP3204_GetDifferentialADC(32);
+        //volt1=MCP3204_GetSingleADC(0); 
+        //volt2=MCP3204_GetDifferentialADC(32);
         
         //volt1=MCP3208_GetSingleADC(0); 
         //volt2=MCP3208_GetDifferentialADC(32);  
