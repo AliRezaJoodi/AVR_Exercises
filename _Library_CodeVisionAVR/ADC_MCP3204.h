@@ -44,7 +44,8 @@ unsigned int _MCP3204_Communication(char data1, char data2){
     MCP3204_CS=1;
     
     msb=msb&0b00001111; 
-    value=(msb<<8)|lsb;   
+    value=(msb<<8)|lsb;
+
     return value;
 }
 
@@ -63,6 +64,7 @@ float MCP3204_GetSingleEndedADC(char ch){
 
     value_int=_MCP3204_Communication(data1, data2); 
     mv=value_int; mv=mv*_MCP3204_GAIN;
+
     return mv;
 }
 
@@ -92,6 +94,7 @@ float MCP3204_GetDifferentialADC(char ch){
 
     value_int=_MCP3204_Communication(data1, data2); 
     mv=value_int; mv=mv*_MCP3204_GAIN;
+
     return mv;
 }
 

@@ -44,7 +44,8 @@ unsigned int _MCP3202_Communication(char data1, char data2){
     MCP3202_CS=1;
     
     msb=msb&0b00001111; 
-    value=(msb<<8)|lsb;   
+    value=(msb<<8)|lsb;
+
     return value;
 }
 

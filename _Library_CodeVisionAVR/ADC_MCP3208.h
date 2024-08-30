@@ -1,0 +1,111 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+// This library use of the SPI interfacing
+// SPI Clock Phase: Cycle Start
+// SPI Clock Polarity: Low
+// SPI Data Order: MSB First
+
+#ifndef _MCP3208_INCLUDED
+#define _MCP3208_INCLUDED
+
+#ifndef _MCP3208_PORTS
+#define _MCP3208_PORTS
+    #define MCP3208_CS_DDR      DDRB.4
+    #define MCP3208_CS_PORT     PORTB.4
+    #define MCP3208_CS_PIN      PINB.4 
+    #define MCP3208_CS          MCP3208_CS_PORT 
+    
+    #define MCP3208_VREF        5000     //mv
+#endif
+
+#define _MCP3208_RESOLUTION     4096     //12-Bit
+#define _MCP3208_GAIN           MCP3208_VREF/_MCP3208_RESOLUTION
+    
+#define _SINGLE_CHANNEL         1 
+#define _DIFF_CHANNEL           0  
+
+//********************************************************
+void MCP3208_Config(void){
+    MCP3208_CS_DDR=1; 
+    MCP3208_CS_PORT=1;   
+}
+
+#pragma used+
+
+//********************************************************
+unsigned int _MCP3208_Communication(char data1, char data2){
+    unsigned int value=0;
+    unsigned char msb=0;
+    unsigned char lsb=0;
+    
+    MCP3208_CS=0;
+    spi(data1);
+    msb=spi(data2); 
+    lsb=spi(0xFF);
+    MCP3208_CS=1;
+    
+    msb=msb&0b00001111; 
+    value=(msb<<8)|lsb;
+
+    return value;
+}
+
+//********************************************************
+float MCP3208_GetSingleEndedADC(char ch){
+    char data1=0;
+    char data2=0;
+    unsigned int value_int=0;
+    float mv=0; 
+    char type=_SINGLE_CHANNEL;
+    
+    if(ch>7){return 0;}
+
+    data1=0b00000100 | (type<<1) | (ch>>2);
+    data2=ch<<6; 
+
+    value_int=_MCP3208_Communication(data1, data2); 
+    mv=value_int; mv=mv*_MCP3208_GAIN;
+
+    return mv;
+}
+
+//********************************************************
+float MCP3208_GetDifferentialADC(char ch){
+    char data1=0;
+    char data2=0;
+    unsigned int value_int=0;
+    float mv=0;
+    char type=_DIFF_CHANNEL;
+        
+    switch (ch){
+        case 01:
+            ch=0b00000000; break;
+        case 10:
+            ch=0b00000001; break; 
+        case 23:
+            ch=0b00000010; break;
+        case 32:
+            ch=0b00000011; break;
+        case 45:
+            ch=0b00000100; break;
+        case 54:
+            ch=0b00000101; break;
+        case 67:
+            ch=0b00000110; break;
+        case 76:
+            ch=0b00000111; break;
+        default:
+            return 0;
+    }
+        
+    data1=0b00000100 | (type<<1) | (ch>>2); 
+    data2=ch<<6; 
+
+    value_int=_MCP3208_Communication(data1, data2); 
+    mv=value_int; mv=mv*_MCP3208_GAIN;
+
+    return mv;
+}
+
+#pragma used-
+#endif
+

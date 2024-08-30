@@ -16,10 +16,10 @@ Note: Setting on CodeVision AVR
 |![](ADC_AVCC_08Bit/Simulate/Album.png)					|[Config ADC, 8Bit Resolution, AVCC VREF](ADC_AVCC_08Bit)							|-|Y|-|
 |![](ADC_AVCC_10Bit/Simulate/Album.png)					|[Config ADC, 10Bit Resolution, AVCC VREF](ADC_AVCC_10Bit)							|Y|Y|-|
 |![](ADC_AVCC_10Bit_Interrupt/Simulate/Album.png)			|[Config ADC, 10Bit Resolution, AVCC VREF, Interrupt](ADC_AVCC_10Bit_Interrupt)					|Y|Y|-|
-|![](ADC_ExternalADC_MCP320x_SPI/Simulate/Album.png)			|[MCP3208 External ADC With SPI Interface](ADC_ExternalADC_MCP320x_SPI)						|-|Y|-|
 |![](ADC_ExternalWithSPI_MCP3201/Simulate/Album.png)			|[External ADC With SPI Interface, MCP3201](ADC_ExternalWithSPI_MCP3201)					|-|Y|-|
 |![](ADC_ExternalWithSPI_MCP3202/Simulate/Album.png)			|[External ADC With SPI Interface, MCP3202](ADC_ExternalWithSPI_MCP3202)					|-|Y|-|
 |![](ADC_ExternalWithSPI_MCP3204/Simulate/Album.png)			|[External ADC With SPI Interface, MCP3204](ADC_ExternalWithSPI_MCP3204)					|-|Y|-|
+|![](ADC_ExternalWithSPI_MCP3208/Simulate/Album.png)			|[External ADC With SPI Interface, MCP3208](ADC_ExternalWithSPI_MCP3208)					|-|Y|-|
 |![]()									|[ATtiny13](ATtiny13)												|Y|-|-|
 |![](Average/Simulate/Album.png)					|[Average](Average)												|-|Y|-|
 |![]()									|[Access to a bit from a byte](BitAccess)									|Y|Y|-|

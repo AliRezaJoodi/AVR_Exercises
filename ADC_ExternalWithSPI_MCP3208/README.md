@@ -1,7 +1,6 @@
-## MCP3208 External ADC With SPI Interface
+## External ADC With SPI Interface, MCP3208
               
-MCU:     	ATmega32  
-Frequency:     	8.000000 MHz (Internal)  
+MCU:     	ATmega32   
 Display:        16x2 Character LCD
 
 Note: This library is usable for MCP3201/MCP3202/MCP3204 
