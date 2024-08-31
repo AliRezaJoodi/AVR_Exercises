@@ -1,4 +1,4 @@
-## Config ADC For 10Bit Resolution And Internal Voltage Reference
+## Config ADC, 2.56V Internal Reference, 10Bit Resolution
    
 MCU:     	ATmega32  
 Frequency:     	1MHz  

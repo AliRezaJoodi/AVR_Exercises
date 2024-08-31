@@ -1,4 +1,4 @@
-## Config ADC For 10Bit Resolution And AREF Voltage Reference 
+## Config ADC, AREF Reference, 10Bit Resolution
               
 MCU:     	ATmega32  
 Frequency:     	1MHz  

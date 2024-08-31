@@ -1,4 +1,4 @@
-## Config ADC With 8Bit Resolution and AVCC Voltage Reference
+## Config ADC, AVCC Reference, 8Bit Resolution
  
 MCU:          	ATmega32  
 Frequency:     	1MHz  

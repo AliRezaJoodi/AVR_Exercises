@@ -1,4 +1,4 @@
-## Config ADC For 10Bit Resolution, AVCC Voltage Reference and Interrupt
+## Config ADC, AVCC Reference, 10Bit Resolution, Interrupt
  	  
 MCU:      	ATmega32  
 Frequency:   	1MHz  
