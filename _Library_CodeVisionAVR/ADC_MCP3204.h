@@ -12,16 +12,16 @@
     #define MCP3204_CS_DDR      DDRB.4
     #define MCP3204_CS_PORT     PORTB.4
     #define MCP3204_CS_PIN      PINB.4 
-    #define MCP3204_CS          MCP3204_CS_PORT 
     
     #define MCP3204_VREF        5000     //mv
 #endif
+#define MCP3204_CS              MCP3204_CS_PORT 
 
-#define _MCP3204_RESOLUTION 4096     //12-Bit
-#define _MCP3204_GAIN        MCP3204_VREF/_MCP3204_RESOLUTION
+#define _MCP3204_RESOLUTION     4096     //12-Bit
+#define _MCP3204_GAIN           MCP3204_VREF/_MCP3204_RESOLUTION
     
-#define _SINGLE_CHANNEL      1 
-#define _DIFF_CHANNEL        0  
+#define _SINGLE_CHANNEL         1 
+#define _DIFF_CHANNEL           0  
 
 //********************************************************
 void MCP3204_Config(void){

@@ -11,12 +11,12 @@
 #define _MCP3202_PORTS
     #define MCP3202_CS_DDR      DDRB.4
     #define MCP3202_CS_PORT     PORTB.4
-    #define MCP3202_CS_PIN      PINB.4 
-    #define MCP3202_CS          MCP3202_CS_PORT 
+    #define MCP3202_CS_PIN      PINB.4  
     
     #define MCP3202_VREF        5000     //mv
 #endif
-
+#define MCP3202_CS              MCP3202_CS_PORT
+    
 #define _MCP3202_RESOLUTION     4096     //12-Bit
 #define _MCP3202_GAIN           MCP3202_VREF/_MCP3202_RESOLUTION
     

@@ -12,10 +12,10 @@
     #define MCP3208_CS_DDR      DDRB.4
     #define MCP3208_CS_PORT     PORTB.4
     #define MCP3208_CS_PIN      PINB.4 
-    #define MCP3208_CS          MCP3208_CS_PORT 
     
     #define MCP3208_VREF        5000     //mv
 #endif
+#define MCP3208_CS              MCP3208_CS_PORT 
 
 #define _MCP3208_RESOLUTION     4096     //12-Bit
 #define _MCP3208_GAIN           MCP3208_VREF/_MCP3208_RESOLUTION
