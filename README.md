@@ -33,7 +33,7 @@ Note: Setting on CodeVision AVR
 |![](Converter_DataTable/Simulate/Album.png)				|[Data Table Converter](Converter_DataTable)									|Y|-|-|
 |![](Converter_MSB&LSB/Simulate/Album.png)				|[MSB & LSB Converter](Converter_MSB&LSB)									|Y|Y|-|
 |![](CounterForUsedClock/Simulate/Album.png)				|[Counter For Used Clock](CounterForUsedClock)									|-|Y|-|
-|![](DAC_ExternalDAC_MCP4822_SPI/Simulate/Album.png)			|[MCP4822 External DAC With SPI Interface](DAC_ExternalDAC_MCP4822_SPI)						|-|Y|-|
+|![](DAC_ExternalWithSPI_MCP4822/Simulate/Album.png)			|[External DAC With SPI Interface, MCP4822](DAC_ExternalWithSPI_MCP4822)						|-|Y|-|
 |![](DAC_WithPWM/Simulate/Album.png)					|[DAC With PWM and RC](DAC_WithPWM)										|-|Y|-|
 |![]()									|[Dialing](Dialing)												|Y|-|-|
 |![]()									|[7-Segment Display For 1Digit](Display_7Segment_1Digit)							|Y|Y|-|
