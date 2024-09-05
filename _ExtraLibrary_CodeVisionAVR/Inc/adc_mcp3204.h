@@ -10,8 +10,8 @@
 #ifndef _MCP3204_INCLUDED
 #define _MCP3204_INCLUDED
 
-#ifndef _MCP3204_PORTS
-#define _MCP3204_PORTS
+#ifndef _MCP3204_HARDWARE
+#define _MCP3204_HARDWARE
     #define MCP3204_CS_DDR      DDRB.4
     #define MCP3204_CS_PORT     PORTB.4
     #define MCP3204_CS_PIN      PINB.4 
