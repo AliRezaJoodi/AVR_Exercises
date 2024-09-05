@@ -14,8 +14,8 @@ void LCD_DisplayMainPage();
 float volt1=0;
 float volt2=0;
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <ADC_MCP3208.h>
+#include "Attachment\hardware_v1.0.h"
+#include <adc_mcp3208.h>
         
 void main(void){
     SPI_Config();

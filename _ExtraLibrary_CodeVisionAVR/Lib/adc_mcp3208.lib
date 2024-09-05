@@ -1,21 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
-// This library use of the SPI interfacing
-// SPI Clock Phase: Cycle Start
-// SPI Clock Polarity: Low
-// SPI Data Order: MSB First
 
-#ifndef _MCP3208_INCLUDED
-#define _MCP3208_INCLUDED
-
-#ifndef _MCP3208_PORTS
-#define _MCP3208_PORTS
-    #define MCP3208_CS_DDR      DDRB.4
-    #define MCP3208_CS_PORT     PORTB.4
-    #define MCP3208_CS_PIN      PINB.4 
-    
-    #define MCP3208_VREF        5000     //mv
-#endif
-#define MCP3208_CS              MCP3208_CS_PORT 
+#include <adc_mcp3208.h>
 
 #define _MCP3208_RESOLUTION     4096     //12-Bit
 #define _MCP3208_GAIN           MCP3208_VREF/_MCP3208_RESOLUTION
@@ -25,8 +10,7 @@
 
 //********************************************************
 void MCP3208_Config(void){
-    MCP3208_CS_DDR=1; 
-    MCP3208_CS_PORT=1;   
+    _MCP3208_CONFIG_CS;  
 }
 
 #pragma used+
@@ -37,11 +21,11 @@ unsigned int _MCP3208_Communication(char data1, char data2){
     unsigned char msb=0;
     unsigned char lsb=0;
     
-    MCP3208_CS=0;
+    _MCP3208_SELECT;
     spi(data1);
     msb=spi(data2); 
     lsb=spi(0xFF);
-    MCP3208_CS=1;
+    _MCP3208_DESELECT;
     
     msb=msb&0b00001111; 
     value=(msb<<8)|lsb;
@@ -107,5 +91,5 @@ float MCP3208_GetDifferentialADC(char ch){
 }
 
 #pragma used-
-#endif
+
 
