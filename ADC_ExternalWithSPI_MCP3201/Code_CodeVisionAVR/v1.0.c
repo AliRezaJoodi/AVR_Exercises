@@ -12,8 +12,8 @@ void LCD_DisplayMainPage();
 
 float volt1=0;
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <ADC_MCP3201.h>
+#include "Attachment\hardware_v1.0.h"
+#include <adc_mcp3201.h>
         
 void main(void){
     SPI_Config();
