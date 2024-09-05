@@ -14,9 +14,9 @@ void lcd_puts(char *str);
 void lcd_putsf(char flash *str);
 // initialize the LCD controller
 void lcd_init(unsigned char lcd_columns);
-
 #pragma used-
-#pragma library M32_LCD.lib
+
+#pragma library Display_LCD.lib
 
 #endif
 
