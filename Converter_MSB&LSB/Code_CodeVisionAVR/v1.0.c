@@ -12,14 +12,14 @@ unsigned int number=589;
 unsigned char number_msb;
 unsigned char number_lsb;
 
-#include <Converter.h>
+#include <utility.h>
 
 void main(void){
     LCD_Config(); 
     
-    number_msb=Converter_GetMsb(number);
-    number_lsb=Converter_GetLsb(number);
-    number=Converter_GetInt(number_msb,number_lsb);
+    number_msb=GetMsb(number);
+    number_lsb=GetLsb(number);
+    number=GetInt(number_msb,number_lsb);
     LCD_DisplayMainPage();  
 
     while(1){  

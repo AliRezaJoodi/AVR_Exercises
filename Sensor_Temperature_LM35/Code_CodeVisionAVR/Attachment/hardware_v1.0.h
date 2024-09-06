@@ -1,5 +1,5 @@
         
-#define _ADC_PORTS 
+#define _ADC_HARDWARE 
     #define ADC_GAIN        ADC_GAIN_5V_10Bit
 
 #define _LM35_HARDWARE 

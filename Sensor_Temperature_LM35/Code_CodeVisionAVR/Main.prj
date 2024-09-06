@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=2
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=v1.0.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1495689392
+TimeStamp1=1495699977
 PageIndex1=1
 Top0=200
 Left0=438
@@ -143,11 +143,11 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=320
+Build=328
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_Library_CodeVisionAVR
-IncludePath2=..\..\_ExtraLibrary_CodeVisionAVR\Inc
+IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
+IncludePath2=
 IncludePath3=
 IncludePath4=
 IncludePath5=
@@ -209,7 +209,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1495690301
+COFFileTimeStamp=1495699957
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -403,7 +403,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1495690328
+TimeStamp=1495699980
 [BookmarksFoldedCode]
 Files=18
 F1=T3.c
@@ -459,7 +459,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=320
+Build=328
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -581,8 +581,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 320
-L18=14865 line(s) compiled
+L17=Build: 328
+L18=14870 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -608,7 +608,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\List\Main.asm(2703): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\List\Main.asm(2722): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -632,11 +632,11 @@ HIDJoystick=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks3]
-TimeStamp=1495689392
-Row=16
-Column=24
+TimeStamp=1495699977
+Row=35
+Column=38
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=21
 BK0=-1
 BK1=-1
 BK2=-1
@@ -826,11 +826,11 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks13]
-TimeStamp=1491254896
-Row=11
-Column=22
+TimeStamp=1495699874
+Row=23
+Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=2
 BK0=-1
 BK1=-1
 BK2=-1
@@ -858,8 +858,6 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode14]
-Blocks=0
-[FoldedCode13]
 Blocks=0
 [FoldedCode12]
 Blocks=0
@@ -919,27 +917,6 @@ BK8=-1
 BK9=-1
 [FoldedCode17]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=14
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\delay.h
-F4=C:\cvavr\inc\stdio.h
-F5=C:\cvavr\inc\io.h
-F6=C:\cvavr\inc\stdarg.h
-F7=C:\cvavr\inc\stdlib.h
-F8=Attachment\hardware_v1.0.h
-F9=..\..\_Library_CodeVisionAVR\ADC.h
-F10=..\..\_Library_CodeVisionAVR\Utility.h
-F11=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_lm35.h
-F12=Attachment\LCD.h
-F13=C:\cvavr\inc\alcd.h
-F14=..\..\_Library_CodeVisionAVR\Display_LCD_Char.h
-[FoldedCode3]
-Blocks=0
 [Bookmarks18]
 TimeStamp=1495690293
 Row=13
@@ -957,4 +934,26 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode18]
+Blocks=0
+[FoldedCode13]
+Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Sensor_Temperature_LM35\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=13
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\delay.h
+F4=C:\cvavr\inc\stdio.h
+F5=C:\cvavr\inc\io.h
+F6=C:\cvavr\inc\stdarg.h
+F7=C:\cvavr\inc\stdlib.h
+F8=C:\cvavr\inc\alcd.h
+F9=Attachment\hardware_v1.0.h
+F10=..\..\_ExtraLibrary_CodeVisionAVR\Inc\adc.h
+F11=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
+F12=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_lm35.h
+F13=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_lcd_char.h
+[FoldedCode3]
 Blocks=0

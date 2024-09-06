@@ -5,8 +5,8 @@
 #ifndef _BARGRAPH_INCLUDED
 #define _BARGRAPH_INCLUDED
 
-#ifndef _BARGRAPH_PORTS
-#define _BARGRAPH_PORTS
+#ifndef _BARGRAPH_HARDWARE
+#define _BARGRAPH_HARDWARE
     #define LCD_COLUMN      16
     #define MAXIMUM_BAR     LCD_COLUMN * 5
     #define DISPLAY_ROW     1    

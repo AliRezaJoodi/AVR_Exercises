@@ -3,8 +3,8 @@
 #ifndef _AVERAGE_INCLUDED
 #define _AVERAGE_INCLUDED
     
-#ifndef _AVERAGE_PORTS
-#define _AVERAGE_PORTS 
+#ifndef _AVERAGE_HARDWARE
+#define _AVERAGE_HARDWARE 
     #define AVERAGE_COUNT     10
 #endif  
 

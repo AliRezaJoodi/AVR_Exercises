@@ -1,7 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <delay.h>
-#include <Utility.h>
+#include <utility.h>
 
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
@@ -15,8 +15,8 @@
 #define ADC_GAIN_2V56_10Bit             0.00250244      // 2.56/1023 
 #define ADC_GAIN_5V_08Bit               0.01953125      // 5/256 
 
-#ifndef _ADC_PORTS
-#define _ADC_PORTS
+#ifndef _ADC_HARDWARE
+#define _ADC_HARDWARE
     #define ADC_GAIN                    ADC_GAIN_5V_10Bit    
 #endif
     
@@ -109,7 +109,7 @@ interrupt [ADC_INT] void adc_isr(void){
 }
 
 //******************************************
-void ADC_ConfigwithInterrupt(unsigned char ch){    
+void ADC_ConfigWithInterrupt(unsigned char ch){    
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AVCC_PIN);
     ADC_SetResolution(R1024);
@@ -189,7 +189,7 @@ void ADC_Config_AVCC_08Bit(void){
 }
 
 //******************************************
-unsigned int ADC_GetInt(unsigned char ch){
+unsigned int ADC_GetIn(unsigned char ch){
     if(CHECK_ADC_ENABLE){
         ADC_SetInputChannelAndGainSelections(ch);
         delay_us(10);
@@ -205,7 +205,7 @@ unsigned int ADC_GetInt(unsigned char ch){
     }   
 }
 
-#define ADC_GetVolt(CH)                  (ADC_GetInt(CH)*ADC_GAIN)
+#define ADC_GetVolt(CH)                  (ADC_GetIn(CH)*ADC_GAIN)
 #define ADC_GetMilliVolt(CH)             (ADC_GetVolt(CH)*1000)
 
 #pragma used-

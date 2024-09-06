@@ -5,8 +5,8 @@
 #include <delay.h>
 #include <alcd.h>
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <ADC.h>
+#include "Attachment\hardware_v1.0.h"
+#include <adc.h>
 
 unsigned int input_int=0;
 float input_mv=0;
@@ -20,7 +20,7 @@ void main(void){
    ADC_Config_AREF_10Bit();
 
     while (1){
-        input_int=ADC_GetInt(7);
+        input_int=ADC_GetIn(7);
         input_mv=ADC_GetMilliVolt(7); 
         input_v=ADC_GetVolt(7); 
         LCD_DisplayMainPage();
