@@ -6,6 +6,7 @@
 
 #include <io.h>
 #include <spi.h>
+#include <utility.h>
 
 #ifndef _MCP3204_INCLUDED
 #define _MCP3204_INCLUDED

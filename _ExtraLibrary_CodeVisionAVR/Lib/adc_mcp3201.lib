@@ -25,7 +25,7 @@ unsigned int _MCP3201_Communication(void){
     
     msb=msb&0b00011111;
     lsb=lsb&0b11111110; 
-    value=(msb<<8)|lsb;
+    value=GetInt(msb,lsb);
     value=value>>1;
        
     return value;

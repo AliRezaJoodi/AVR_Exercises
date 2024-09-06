@@ -34,8 +34,8 @@ void MCP4822_Config(void){
 //********************************************************
 void _MCP4822_WriteCommand(unsigned int data){
     _MCP4822_SELECT;
-    spi((data&0xFF00)>>8);  //Send MSB 
-    spi(data&0x00FF);   //Send LSB 
+    spi(GetMsb(data));  //Send MSB 
+    spi(GetLsb(data));  //Send LSB 
     _MCP4822_DESELECT; 
     #asm 
         nop 
@@ -63,7 +63,7 @@ void MCP4822_SetOutput(char ch, float volt){
     
     if(ch<=1){
         WriteBit(data, _MCP4822_REGISTER_AB, ch);
-        SetBit(data,_MCP4822_REGISTER_SHDN) 
+        SetBit(data, _MCP4822_REGISTER_SHDN) 
         _MCP4822_WriteCommand(data);  
     }
 }

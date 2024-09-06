@@ -16,7 +16,7 @@ void LCD_DisplayLoadingPage(void);
 void LCD_DisplayMainPage();
 
 float ch0_volt=1.234;
-float ch1_volt=3.543;
+float ch1_volt=3.654;
         
 void main(void){
     LCD_Config();

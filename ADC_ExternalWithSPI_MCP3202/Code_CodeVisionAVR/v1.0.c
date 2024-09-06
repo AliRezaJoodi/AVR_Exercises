@@ -25,7 +25,7 @@ void main(void){
     LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
 
     while (1){ 
-        //volt1=MCP3202_GetSingleEndedADC(0); 
+        volt1=MCP3202_GetSingleEndedADC(0); 
         volt2=MCP3202_GetDifferentialADC(01);  
         
         LCD_DisplayMainPage();

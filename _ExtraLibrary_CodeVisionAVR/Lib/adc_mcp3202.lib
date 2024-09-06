@@ -28,7 +28,7 @@ unsigned int _MCP3202_Communication(char data1, char data2){
     _MCP3202_DESELECT;
     
     msb=msb&0b00001111; 
-    value=(msb<<8)|lsb;
+    value=GetInt(msb,lsb);
 
     return value;
 }
