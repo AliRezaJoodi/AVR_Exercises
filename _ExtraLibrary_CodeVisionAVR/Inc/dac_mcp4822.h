@@ -29,14 +29,19 @@
         MCP4822_CS_PORT=1; 
 
 #define _MCP4822_SELECT          MCP4822_CS_PORT=0;
-#define _MCP4822_DESELECT        MCP4822_CS_PORT=1;
+#define _MCP4822_DESELECT \        
+        MCP4822_CS_PORT=1;\ 
+        #asm("nop");            // Minimum Setup Time = 40ns
 
 #define _MCP4822_CONFIG_LDAC \
         MCP4822_LDAC_DDR=1;\ 
         MCP4822_LDAC_PORT=1;
 
-#define _MCP4822_SYNCHRONIZE    MCP4822_LDAC_PORT=0;
-#define _MCP4822_LATCH          MCP4822_LDAC_PORT=1;
+#define _MCP4822_SYNCHRONIZE \    
+        MCP4822_LDAC_PORT=0;\
+        #asm("nop");\ 
+        #asm("nop");\           // Minimum Pulse Width = 100ns 
+        MCP4822_LDAC_PORT=1;
                     
 void MCP4822_Config(void);
 

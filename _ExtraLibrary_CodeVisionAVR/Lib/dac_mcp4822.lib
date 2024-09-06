@@ -34,18 +34,10 @@ void MCP4822_Config(void){
 //********************************************************
 void _MCP4822_WriteCommand(unsigned int data){
     _MCP4822_SELECT;
-    spi(GetMsb(data));  //Send MSB 
-    spi(GetLsb(data));  //Send LSB 
-    _MCP4822_DESELECT; 
-    #asm 
-        nop 
-    #endasm  // Minimum Setup Time = 40ns 
+    spi(GetMsb(data));      //Send MSB 
+    spi(GetLsb(data));      //Send LSB 
+    _MCP4822_DESELECT;
     _MCP4822_SYNCHRONIZE;
-    #asm 
-        nop
-        nop
-    #endasm  // Minimum Pulse Width = 100ns
-    _MCP4822_LATCH;   
 }
 
 //********************************************************

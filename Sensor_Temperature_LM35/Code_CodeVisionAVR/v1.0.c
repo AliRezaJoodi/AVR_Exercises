@@ -12,9 +12,9 @@ float input_v=0;
 float temp=0;
 #pragma used-
 
-#include "Attachment\HardwarePorting_v1.0.h"
+#include "Attachment\hardware_v1.0.h"
 #include <ADC.h>
-#include <Sensor_LM35.h>
+#include <sensor_lm35.h>
 #include "Attachment\LCD.h"
 #include <Display_LCD_Char.h>
 
