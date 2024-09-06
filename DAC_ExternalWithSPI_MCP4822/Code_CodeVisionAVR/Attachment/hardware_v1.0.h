@@ -1,5 +1,5 @@
 
-#define _MCP4822_PORTS   
+#define _MCP4822_HARDWARE   
     #define MCP4822_CS_DDR      DDRB.3
     #define MCP4822_CS_PORT     PORTB.3
     #define MCP4822_CS_PIN      PINB.3

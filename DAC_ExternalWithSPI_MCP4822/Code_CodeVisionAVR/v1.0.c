@@ -7,8 +7,8 @@
 #include <stdlib.h>
 #include <delay.h>
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <DAC_MCP4822.h>
+#include "Attachment\hardware_v1.0.h"
+#include <dac_mcp4822.h>
 
 void SPI_Config(void);
 void LCD_Config(void);

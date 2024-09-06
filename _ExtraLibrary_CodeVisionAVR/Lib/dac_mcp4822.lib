@@ -4,25 +4,7 @@
 // SPI Clock Polarity: Low
 // SPI Data Order: MSB First
 
-#include <delay.h>
-#include <Utility.h>
-
-#ifndef _MCP4822_INCLUDED
-    #define _MCP4822_INCLUDED
-
-#ifndef _MCP4822_PORTS
-#define _MCP4822_PORTS   
-    #define MCP4822_CS_DDR      DDRB.3
-    #define MCP4822_CS_PORT     PORTB.3
-    #define MCP4822_CS_PIN      PINB.3
-    
-    #define MCP4822_LDAC_DDR    DDRB.2
-    #define MCP4822_LDAC_PORT   PORTB.2
-    #define MCP4822_LDAC_PIN    PINB.2            
-#endif
-
-#define MCP4822_CS          MCP4822_CS_PORT
-#define MCP4822_LDAC        MCP4822_LDAC_PORT
+#include <dac_mcp4822.h>
         
 /* DACA or DACB Select bit
 1 = Write to DACB
@@ -43,22 +25,27 @@
 
 //********************************************************
 void MCP4822_Config(void){
-    MCP4822_CS_DDR=1; 
-    MCP4822_CS_PORT=1; 
-    
-    MCP4822_LDAC_DDR=1; 
-    MCP4822_LDAC_PORT=1;
+    _MCP4822_CONFIG_CS;
+    _MCP4822_CONFIG_LDAC;
 }
 
 #pragma used+
 
 //********************************************************
 void _MCP4822_WriteCommand(unsigned int data){
-    MCP4822_CS=0;
+    _MCP4822_SELECT;
     spi((data&0xFF00)>>8);  //Send MSB 
     spi(data&0x00FF);   //Send LSB 
-    MCP4822_CS=1; delay_us(1);  // Minimum Setup Time = 40ns 
-    MCP4822_LDAC=0; delay_us(1); MCP4822_LDAC=1;    // Minimum Pulse Width = 100ns
+    _MCP4822_DESELECT; 
+    #asm 
+        nop 
+    #endasm  // Minimum Setup Time = 40ns 
+    _MCP4822_SYNCHRONIZE;
+    #asm 
+        nop
+        nop
+    #endasm  // Minimum Pulse Width = 100ns
+    _MCP4822_LATCH;   
 }
 
 //********************************************************
@@ -93,5 +80,4 @@ void MCP4822_ShutDown(char ch){
 }
 
 #pragma used-
-#endif
 
