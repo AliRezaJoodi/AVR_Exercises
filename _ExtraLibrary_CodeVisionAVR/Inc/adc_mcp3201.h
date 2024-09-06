@@ -19,7 +19,6 @@
     
     #define MCP3201_VREF        5000     //mv
 #endif
-//#define MCP3201_CS              MCP3201_CS_PORT
 
 #define _MCP3201_CONFIG_CS \
         MCP3201_CS_DDR=1;\ 
@@ -28,13 +27,11 @@
 #define _MCP3201_SELECT          MCP3201_CS_PORT=0;
 #define _MCP3201_DESELECT        MCP3201_CS_PORT=1;
 
-
 void MCP3201_Config(void);
 
 #pragma used+
 unsigned int _MCP3201_Communication(void);
 float MCP3201_GetDifferentialADC(void);
-
 #pragma used-
 
 #pragma library adc_mcp3201.lib

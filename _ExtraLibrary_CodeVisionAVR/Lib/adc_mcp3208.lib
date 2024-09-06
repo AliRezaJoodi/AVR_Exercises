@@ -13,8 +13,6 @@ void MCP3208_Config(void){
     _MCP3208_CONFIG_CS;  
 }
 
-#pragma used+
-
 //********************************************************
 unsigned int _MCP3208_Communication(char data1, char data2){
     unsigned int value=0;
@@ -89,7 +87,5 @@ float MCP3208_GetDifferentialADC(char ch){
 
     return mv;
 }
-
-#pragma used-
 
 

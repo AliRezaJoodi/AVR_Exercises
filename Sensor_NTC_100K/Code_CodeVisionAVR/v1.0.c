@@ -10,17 +10,20 @@ float input_v=0;
 float ohm=0;
 float temp=0;
 
-void LCD_Config(void);
-void LCD_DisplayMainPage(void);
+#include "Attachment\hardware_v1.0.h"
+#include <adc.h>
+#include <sensor_thermistor.h>
+#include <sensor_thermistor_ntc100k.h>
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <ADC.h>
-#include <Sensor_Thermistor.h>
-#include <Sensor_Thermistor_NTC_100K.h>
+void LCD_Config(void);
+
+#pragma used+
+void LCD_DisplayMainPage(void);
+#pragma used+
 
 void main(void){
     LCD_Config();
-    ADC_Config_10Bit_AVCC();
+    ADC_Config_AVCC_10Bit();
     
     while(1){
         input_v=ADC_GetVolt(THERMISTOR_CH);

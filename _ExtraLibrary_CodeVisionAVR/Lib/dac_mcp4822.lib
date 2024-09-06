@@ -29,8 +29,6 @@ void MCP4822_Config(void){
     _MCP4822_CONFIG_LDAC;
 }
 
-#pragma used+
-
 //********************************************************
 void _MCP4822_WriteCommand(unsigned int data){
     _MCP4822_SELECT;
@@ -70,6 +68,4 @@ void MCP4822_ShutDown(char ch){
         _MCP4822_WriteCommand(data);
     }
 }
-
-#pragma used-
 

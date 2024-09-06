@@ -1,9 +1,8 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef _NTC100K_INCLUDED
-#define _NTC100K_INCLUDED
+#include <sensor_thermistor_ntc100k.h>
 
-flash float Table_NTC_100K[]={
+flash float Table_NTC100K[]={
 333964, 318871, 303778, 288685, 273592,
 258497, 247129, 235761, 224393, 213026,
 201659, 192727, 184095, 175463, 166831,
@@ -67,7 +66,6 @@ flash float Table_NTC_100K[]={
 107.8
 };
     
-#pragma used+
 
 //******************************************
 //Input:    ohm
@@ -77,7 +75,7 @@ float NTC100K_ConvertOhmToTemp(float ohm){
     float temp=-1;
     char error=0;
     
-    while(Table_NTC_100K[index] > ohm){
+    while(Table_NTC100K[index] > ohm){
         ++index;
         if(index>300){error=1; break;};
     } 
@@ -85,7 +83,3 @@ float NTC100K_ConvertOhmToTemp(float ohm){
     
     return temp;
 }
-
-#pragma used-
-   
-#endif

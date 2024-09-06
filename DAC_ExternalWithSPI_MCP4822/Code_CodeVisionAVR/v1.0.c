@@ -10,14 +10,18 @@
 #include "Attachment\hardware_v1.0.h"
 #include <dac_mcp4822.h>
 
-void SPI_Config(void);
-void LCD_Config(void);
-void LCD_DisplayLoadingPage(void); 
-void LCD_DisplayMainPage();
-
 float ch0_volt=1.234;
 float ch1_volt=3.654;
-        
+ 
+void SPI_Config(void);
+void LCD_Config(void);
+
+#pragma used+
+void LCD_DisplayLoadingPage(void); 
+void LCD_DisplayMainPage();
+#pragma used-
+
+       
 void main(void){
     LCD_Config();
     LCD_DisplayLoadingPage();  //delay_ms(250);

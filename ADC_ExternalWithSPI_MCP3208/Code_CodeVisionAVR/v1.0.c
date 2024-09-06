@@ -6,16 +6,19 @@
 #include <alcd.h>
 #include <stdlib.h>
 
-void SPI_Config(void);
-void LCD_Config(void);
-void LCD_DisplayLoadingPage(void); 
-void LCD_DisplayMainPage();
-
 float volt1=0;
 float volt2=0;
 
 #include "Attachment\hardware_v1.0.h"
 #include <adc_mcp3208.h>
+
+void SPI_Config(void);
+void LCD_Config(void);
+
+#pragma used+
+void LCD_DisplayLoadingPage(void); 
+void LCD_DisplayMainPage();
+#pragma used-
         
 void main(void){
     SPI_Config();

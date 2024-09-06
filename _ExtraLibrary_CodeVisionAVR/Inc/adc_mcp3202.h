@@ -19,7 +19,6 @@
     
     #define MCP3202_VREF        5000     //mv
 #endif
-//#define MCP3202_CS              MCP3202_CS_PORT
     
 #define _MCP3202_CONFIG_CS \
         MCP3202_CS_DDR=1;\ 

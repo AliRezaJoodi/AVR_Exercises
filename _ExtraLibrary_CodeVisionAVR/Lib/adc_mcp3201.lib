@@ -10,8 +10,6 @@ void MCP3201_Config(void){
     _MCP3201_CONFIG_CS;    
 }
 
-#pragma used+
-
 //********************************************************
 unsigned int _MCP3201_Communication(void){
     unsigned int value=0;
@@ -41,7 +39,5 @@ float MCP3201_GetDifferentialADC(void){
     
     return mv;
 }
-
-#pragma used-
 
 

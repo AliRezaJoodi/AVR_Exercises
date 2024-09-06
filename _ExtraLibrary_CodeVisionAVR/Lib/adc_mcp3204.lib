@@ -13,8 +13,6 @@ void MCP3204_Config(void){
     _MCP3204_CONFIG_CS;  
 }
 
-#pragma used+
-
 //********************************************************
 unsigned int _MCP3204_Communication(char data1, char data2){
     unsigned int value=0;
@@ -81,7 +79,5 @@ float MCP3204_GetDifferentialADC(char ch){
 
     return mv;
 }
-
-#pragma used-
 
 

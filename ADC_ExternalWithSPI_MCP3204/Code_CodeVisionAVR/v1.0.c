@@ -6,16 +6,19 @@
 #include <alcd.h>
 #include <stdlib.h>
 
-void SPI_Config(void);
-void LCD_Config(void);
-void LCD_DisplayLoadingPage(void); 
-void LCD_DisplayMainPage();
-
 float volt1=0;
 float volt2=0;
 
 #include "Attachment\hardware_v1.0.h"
 #include <adc_mcp3204.h>
+
+void SPI_Config(void);
+void LCD_Config(void);
+
+#pragma used+
+void LCD_DisplayLoadingPage(void); 
+void LCD_DisplayMainPage();
+#pragma used-
         
 void main(void){
     SPI_Config();
@@ -25,10 +28,10 @@ void main(void){
     LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
 
     while (1){ 
-        volt1=MCP3204_GetSingleEndedADC(0); 
-        volt2=MCP3204_GetDifferentialADC(23);  
+        //volt1=MCP3204_GetSingleEndedADC(0); 
+        //volt2=MCP3204_GetDifferentialADC(23);  
         
-        LCD_DisplayMainPage();
+        //LCD_DisplayMainPage();
         delay_ms(500);
     }
 }
