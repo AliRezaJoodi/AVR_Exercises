@@ -5,10 +5,11 @@
 #include <alcd.h>
 flash char LCD_COLUMN=16;
 
-#include <Attachment\Define_Char.h>
-#include <Attachment\Config_ADC.h>
-#include <Attachment\LM35.h>
-#include <Attachment\ControlSystem_OnOff.h>
+#include "Attachment\hardware_v1.0.h"
+#include <adc.h>
+#include <sensor_lm35.h>
+#include <display_lcd_char.h>
+#include <controller_onoff.h>
 
 #ifndef RLY0_DDR
     #define RLY0_DDR DDRC.1
@@ -35,27 +36,31 @@ flash char LCD_COLUMN=16;
 #define DEFAULT_RLY DEACTIVATE_RLY
 
 void Config_LCD(void);
-void Display_Loading(void);
 void Config_IO(void);
+
+#pragma used+
+void Display_Loading(void);
 void Display_Temp(float,float);
 void Display2_Temp(float,float);
+#pragma used-
 
 void main(void){
     float in_mv=0; float temp=0;
     float sp=25; 
     float hystersis=10;
     
-    Config_ADC();      
+    ADC_Config_AVCC_10Bit();      
     Config_IO();
     Config_LCD(); 
-    define_char(CHAR_DEGREE,0);
+    Char_Define(char0, 0);
     Display_Loading(); 
     
     while (1){
-        in_mv=Get_ADC_mV(CH_LM35); temp=Get_Temp_LM35(in_mv);  
+        in_mv=ADC_GetMilliVolt(LM35_CH); 
+        temp=LM35_ConvertMilliVoltToTemp(in_mv);  
         Display_Temp(sp,temp);
-        HEATER_RLY=OnOff_ControlSystem2_Heater(sp,temp,hystersis);
-        COOLER_RLY=OnOff_ControlSystem2_Cooler(sp,temp,hystersis);
+        HEATER_RLY=Controller_OnOff2_Heater(sp,temp,hystersis);
+        COOLER_RLY=Controller_OnOff2_Cooler(sp,temp,hystersis);
     }
 }
 
