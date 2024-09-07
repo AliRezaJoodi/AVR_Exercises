@@ -1,6 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <mega32.h>
+#include <mega32a.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <delay.h>
@@ -11,8 +11,8 @@
 #endasm
 #include <lcd.h>
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <Button.h>
+#include "Attachment\hardware_v1.0.h"
+#include <button.h>
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);

@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <alcd.h>
 #include <stdlib.h>
-#include "Attachment\DataConverter.h"
+
+#include "converter.h"
 
 void Config_LCD(void);
 void Display_Value(void);
@@ -25,8 +26,8 @@ void main(void){
     //Display_Loding(500); 
     
     out_persent=50;   
-    out_voltage=Convert_0to100_1to5V(out_persent);
-    out_pwm=Convert_0to5V_0to1023(out_voltage);
+    out_voltage=Converter_0to100_1to5V(out_persent);
+    out_pwm=Converter_0to5V_0to1023(out_voltage);
     OCR1A=out_pwm; 
     Display_Value();
     

@@ -26,14 +26,14 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1491188178
+TimeStamp1=1495768864
 PageIndex1=1
-OF2=..\..\_Library_CodeVisionAVR\Buzzer_v2.0.h
+OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\buzzer_v2.0.h
 Active2=1
 EditorPanel2=0
-TimeStamp2=1491188247
+TimeStamp2=1495768754
 PageIndex2=2
-ActiveTab=2
+ActiveTab=1
 OF3=C:\cvavr\inc\delay.h
 TimeStamp3=711006688
 F1=v1.0.c
@@ -135,8 +135,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1491188251
-Build=193
+COFFileTimeStamp=1495768896
+Build=195
 GlobalVarAddr=618
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -246,9 +246,9 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=193
+Build=195
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_Library_CodeVisionAVR
+IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -312,7 +312,7 @@ IncludePath61=
 IncludePath62=
 IncludePath63=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=
+LibraryPath1=..\..\_ExtraLibrary_CodeVisionAVR\Lib
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -491,8 +491,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 193
-L18=938 line(s) compiled
+L17=Build: 195
+L18=937 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -533,17 +533,18 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1491188256
+TimeStamp=1495768898
 [BookmarksFoldedCode]
-Files=4
+Files=5
 F1=v1.0.c
 F2=Attachment\Buzzer.h
 F3=C:\cvavr\inc\delay.h
 F4=..\..\_Library_CodeVisionAVR\Buzzer_v2.0.h
+F5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\buzzer_v2.0.h
 [Bookmarks1]
-TimeStamp=1491188178
-Row=15
-Column=18
+TimeStamp=1495768864
+Row=6
+Column=11
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -619,17 +620,6 @@ BK9=-1
 Blocks=0
 [FoldedCode2]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR_v2\v1.0.c
-[Header1]
-Files=4
-F1=C:\cvavr\inc\mega16.h
-F2=C:\cvavr\inc\mega16_bits.h
-F3=C:\cvavr\inc\delay.h
-F4=..\..\_Library_CodeVisionAVR\Buzzer_v2.0.h
-[FoldedCode1]
-Blocks=0
 [Bookmarks4]
 TimeStamp=1491188247
 Row=13
@@ -647,4 +637,33 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode4]
+Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR_v2\v1.0.c
+[Header1]
+Files=4
+F1=C:\cvavr\inc\mega16.h
+F2=C:\cvavr\inc\mega16_bits.h
+F3=C:\cvavr\inc\delay.h
+F4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\buzzer_v2.0.h
+[FoldedCode1]
+Blocks=0
+[Bookmarks5]
+TimeStamp=1495768754
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode5]
 Blocks=0

@@ -3,12 +3,8 @@
 #ifndef _CONVERTER_INCLUDED
 #define _CONVERTER_INCLUDED
 
-#define Converter_GetMsb(INT)                         ((INT&0xFF00) >> 8)
-#define Converter_GetLsb(INT)                         (INT&0x00FF)
-#define Converter_GetInt(MSB,LSB)                     ((MSB<<8)+(LSB&0x00FF))
-
-#define Converter_FixValueBetween0To100(VALUE)        if(VALUE<0){VALUE=0;} else if(VALUE>100){VALUE=100;}
-#define Converter_InverseValueBetween0To100(VALUE)    VALUE= 100-VALUE;
+#define FixValue_0To100(VALUE)                if(VALUE<0){VALUE=0;} else if(VALUE>100){VALUE=100;}
+#define InverseValue_0To100(VALUE)    	      VALUE= 100-VALUE;
 
 #define Converter_0to100_0to1023(VALUE)       (VALUE*10.23)
 #define Converter_0to100_0to255(VALUE)        (VALUE*2.55)

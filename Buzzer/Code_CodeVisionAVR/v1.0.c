@@ -1,15 +1,15 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 // MCU Frequency:   8Mhz
 
-#include <mega16.h>
+#include <mega32a.h>
 #include <delay.h>
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <Buzzer.h>
+#include "Attachment\hardware_v1.0.h"
+#include <buzzer.h>
 
 void main(void){  
     Buzzer_Config(); 
-    Buzzer_MakeBeep(BEEP_SET);
+    Buzzer_MakeBeep_SetSound();
      
     while(1){
         delay_ms(3000);

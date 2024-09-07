@@ -20,12 +20,12 @@ OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Link
 AllowDisplayFunctionCallTree=1
 CleanUp=2
-TimeStamp1=1457788970
-F1=v1.0.c
-OF2=Attachment\CalendarConverter.h
-TimeStamp2=1457789020
+TimeStamp1=1495797036
+OF2=Attachment\RTC_DS1307.h
+TimeStamp2=1495797096
 OF3=Attachment\RTC_DS1307.h
 TimeStamp3=1457787493
+F1=v1.0.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=8000000
@@ -130,8 +130,8 @@ UseEEPROMLocation0=1
 DisplayCodeSizeError=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1457789029
-Build=167
+COFFileTimeStamp=1495797149
+Build=170
 GlobalVarAddr=645
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -241,9 +241,9 @@ DisplayCodeSizeError=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=167
+Build=170
 IncludePath0=C:\cvavr\inc
-IncludePath1=
+IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -308,7 +308,7 @@ IncludePath62=
 IncludePath63=
 IncludePath64=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=
+LibraryPath1=..\..\_ExtraLibrary_CodeVisionAVR\Lib
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -517,7 +517,7 @@ L13=Enhanced function parameters passing: Mode 2
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 167
+L17=Build: 170
 L18=18358 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -560,15 +560,17 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1457789037
+TimeStamp=1495797154
 [BookmarksFoldedCode]
-Files=6
+Files=8
 F1=C:\Users\Home\Desktop\RTC_DS1307\T1\v1.0.c
 F2=C:\cvavr\inc\ds1307_twi.h
 F3=v1.0.c
 F4=Attachment\RTC_DS1307.h
 F5=C:\cvavr\inc\twi.h
 F6=Attachment\CalendarConverter.h
+F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\converter_calendar.h
+F8=..\..\_ExtraLibrary_CodeVisionAVR\Lib\converter_calendar.lib
 [Bookmarks1]
 TimeStamp=1456775532
 Row=0
@@ -606,11 +608,11 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [Bookmarks3]
-TimeStamp=1457788970
-Row=29
-Column=8
+TimeStamp=1495797036
+Row=10
+Column=28
 ScrollPosX=0
-ScrollPosY=13
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -629,11 +631,11 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [Bookmarks4]
-TimeStamp=1457787493
-Row=33
-Column=25
+TimeStamp=1495797096
+Row=69
+Column=0
 ScrollPosX=0
-ScrollPosY=11
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -663,9 +665,9 @@ BK9=-1
 [FoldedCode5]
 Blocks=0
 [Bookmarks6]
-TimeStamp=1457789020
-Row=4
-Column=4
+TimeStamp=1495775481
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -678,7 +680,43 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode4]
+[FoldedCode6]
+Blocks=0
+[Bookmarks7]
+TimeStamp=1495796743
+Row=7
+Column=43
+ScrollPosX=0
+ScrollPosY=3
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode7]
+Blocks=0
+[Bookmarks8]
+TimeStamp=1495796800
+Row=50
+Column=45
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode8]
 Blocks=0
 [HeadersList]
 Files=1
@@ -696,9 +734,9 @@ F8=C:\cvavr\inc\twi.h
 F9=C:\cvavr\inc\stdbool.h
 F10=Attachment\RTC_DS1307.h
 F11=C:\cvavr\inc\ds1307_twi.h
-F12=Attachment\CalendarConverter.h
+F12=..\..\_ExtraLibrary_CodeVisionAVR\Inc\converter_calendar.h
 F13=C:\cvavr\inc\alcd.h
 [FoldedCode3]
 Blocks=0
-[FoldedCode6]
+[FoldedCode4]
 Blocks=0

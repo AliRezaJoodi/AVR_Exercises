@@ -1,0 +1,50 @@
+// GitHub Account:  GitHub.com/AliRezaJoodi
+// MCU Frequency:   8Mhz
+
+#include <buzzer.h>
+
+//********************************************************
+void Buzzer_Config(void){
+    _BUZZER_CONFIG;
+}
+
+//*******************************************************
+void Buzzer_MakeBeep_UpOrDownSound(void){
+    _BUZZER_ENABLE;
+    _BUZZER_Delay_ms(80);
+    _BUZZER_DISABLE;  
+}
+
+//*******************************************************
+void Buzzer_MakeBeep_SetSound(void){    
+    _BUZZER_ENABLE;
+    _BUZZER_Delay_ms(220);
+    _BUZZER_DISABLE;
+}
+
+//*******************************************************
+void Buzzer_MakeBeep_ErrorSound(void){
+    _BUZZER_ENABLE;
+    _BUZZER_Delay_ms(500);
+    _BUZZER_DISABLE;  
+}
+
+//*******************************************************
+// Call in Main
+void Buzzer_MakeBeep(char mode){    
+    switch(mode){  
+        case BEEP_UP:
+            Buzzer_MakeBeep_UpOrDownSound();
+            break;
+        case BEEP_DOWN:
+            Buzzer_MakeBeep_UpOrDownSound();
+            break;
+        case BEEP_SET: 
+            Buzzer_MakeBeep_SetSound();
+            break;
+        case BEEP_ERROR: 
+            Buzzer_MakeBeep_ErrorSound();
+            break;
+    }
+} 
+

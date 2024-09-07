@@ -10,8 +10,8 @@ Beep modes:
 #ifndef _BUZZER_INCLUDED
 #define _BUZZER_INCLUDED
 
-#ifndef _BUZZER_PORTS
-#define _BUZZER_PORTS
+#ifndef _BUZZER_HARDWARE
+#define _BUZZER_HARDWARE
     #define BUZZER_DDR      DDRB.1
     #define BUZZER_PORT     PORTB.1
     #define BUZZER_PIN      PINB.1 

@@ -8,7 +8,7 @@
 #include <twi.h>
 void ConfigTWI(void); 
 #include "Attachment\RTC_DS1307.h"
-#include "Attachment\CalendarConverter.h"
+#include <converter_calendar.h>
 
 #include <alcd.h>   
 void ConfigLCD(void);
