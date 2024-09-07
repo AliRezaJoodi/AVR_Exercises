@@ -10,8 +10,8 @@
 #include <delay.h>
 #include <utility.h>
 
-#ifndef _MCP4822_INCLUDED
-    #define _MCP4822_INCLUDED
+#ifndef MCP4822_INCLUDED
+    #define MCP4822_INCLUDED
 
 #ifndef _MCP4822_HARDWARE
 #define _MCP4822_HARDWARE   

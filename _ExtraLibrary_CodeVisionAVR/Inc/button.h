@@ -6,8 +6,8 @@
 #ifndef _BUTTON_INCLUDED
 #define _BUTTON_INCLUDED
     
-#ifndef _BUTTON_HARDWARE
-#define _BUTTON_HARDWARE
+#ifndef BUTTON_HARDWARE
+#define BUTTON_HARDWARE
     #define PRESSED             0 
     #define BUTTONLAG1          30        //ms 
     #define BUTTONLAG2          1000      //Button Lag

@@ -3,8 +3,8 @@
 #ifndef _LM35_INCLUDED
 #define _LM35_INCLUDED
 
-#ifndef _LM35_HARDWARE
-#define _LM35_HARDWARE 
+#ifndef LM35_HARDWARE
+#define LM35_HARDWARE 
     #define LM35_CH        7 
 #endif
 

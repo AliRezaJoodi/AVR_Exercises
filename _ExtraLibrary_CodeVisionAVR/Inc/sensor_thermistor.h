@@ -3,8 +3,8 @@
 #ifndef _THERMISTOR_INCLUDED
 #define _THERMISTOR_INCLUDED
     
-#ifndef _THERMISTOR_HARDWARE
-#define _THERMISTOR_HARDWARE 
+#ifndef THERMISTOR_HARDWARE
+#define THERMISTOR_HARDWARE 
     #define VCC     	    5
     #define R2      	    1500
     #define THERMISTOR_CH   0 

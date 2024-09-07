@@ -1,5 +1,5 @@
 
-#define _BUTTON_HARDWARE
+#define BUTTON_HARDWARE
     #define PRESSED             0
     #define BUTTONLAG1          30        //ms   
     #define BUTTONLAG           1000      //Button Lag: 0~65535

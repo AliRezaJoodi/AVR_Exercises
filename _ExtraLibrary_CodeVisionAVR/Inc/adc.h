@@ -15,8 +15,8 @@
 #define ADC_GAIN_2V56_10Bit             0.00250244      // 2.56/1023 
 #define ADC_GAIN_5V_08Bit               0.01953125      // 5/256 
 
-#ifndef _ADC_HARDWARE
-#define _ADC_HARDWARE
+#ifndef ADC_HARDWARE
+#define ADC_HARDWARE
     #define ADC_GAIN                    ADC_GAIN_5V_10Bit    
 #endif
     
