@@ -47,8 +47,8 @@ void Config_IO(void);
 #pragma used+
 void LCD_DisplayLoadingPage(void); 
 void LCD_DisplayMainPage(void);
-void Display_Temp(void);
-void Display2_Temp(void);
+void LCD_DisplayMainPage2(void);
+void LCD_DisplayMainPage3(void);
 #pragma used-
 
 void main(void){ 
@@ -59,7 +59,7 @@ void main(void){
     Char_Define(char0, 0);
     delay_ms(250); lcd_clear(); 
     
-    while (1){
+    while(1){
         in_v=ADC_GetVolt(TEMP_CH); 
         temp=in_v*TEMP_GAIN;  
         LCD_DisplayMainPage();
@@ -76,14 +76,14 @@ void LCD_DisplayMainPage(void){
 }
 
 //******************************************
-void Display_Temp(void){
+void LCD_DisplayMainPage2(void){
     char txt[16]; 
     sprintf(txt,"Temp=%3.1f",temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf("  ");
     sprintf(txt,"Setpoint=%3.1f",sp); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putchar(0); lcd_putsf("  ");
 }
 
 //******************************************
-void Display2_Temp(void){
+void LCD_DisplayMainPage3(void){
     char txt[16]; 
     sprintf(txt,"PV=%2.0f",temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" ");
     sprintf(txt,"SP=%2.0f",sp); lcd_gotoxy(8,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" ");
