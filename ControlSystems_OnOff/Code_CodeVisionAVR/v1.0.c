@@ -3,11 +3,9 @@
 #include <stdlib.h>
 #include <delay.h>
 #include <alcd.h>
-flash char LCD_COLUMN=16;
 
 #include "Attachment\hardware_v1.0.h"
 #include <adc.h>
-#include <sensor_lm35.h>
 #include <display_lcd_char.h>
 #include <controller_onoff.h>
 
@@ -35,45 +33,58 @@ flash char LCD_COLUMN=16;
 #define DEACTIVATE_RLY !ACTIVATE_RLY
 #define DEFAULT_RLY DEACTIVATE_RLY
 
+#pragma used+
+float in_v=0; 
+float in_mv=0; 
+float temp=0;
+float sp=250; 
+float hystersis=10;
+#pragma used-
+    
 void Config_LCD(void);
 void Config_IO(void);
 
 #pragma used+
-void Display_Loading(void);
-void Display_Temp(float,float);
-void Display2_Temp(float,float);
+void LCD_DisplayLoadingPage(void); 
+void LCD_DisplayMainPage(void);
+void Display_Temp(void);
+void Display2_Temp(void);
 #pragma used-
 
-void main(void){
-    float in_mv=0; float temp=0;
-    float sp=25; 
-    float hystersis=10;
-    
+void main(void){ 
+    LCD_DisplayLoadingPage();    
     ADC_Config_AVCC_10Bit();      
     Config_IO();
     Config_LCD(); 
     Char_Define(char0, 0);
-    Display_Loading(); 
+    delay_ms(250); lcd_clear(); 
     
     while (1){
-        in_mv=ADC_GetMilliVolt(LM35_CH); 
-        temp=LM35_ConvertMilliVoltToTemp(in_mv);  
-        Display_Temp(sp,temp);
+        in_v=ADC_GetVolt(TEMP_CH); 
+        temp=in_v*TEMP_GAIN;  
+        LCD_DisplayMainPage();
         HEATER_RLY=Controller_OnOff2_Heater(sp,temp,hystersis);
-        COOLER_RLY=Controller_OnOff2_Cooler(sp,temp,hystersis);
+        //COOLER_RLY=Controller_OnOff2_Cooler(sp,temp,hystersis);
     }
 }
 
 //******************************************
-void Display_Temp(float sp,float temp){
-    char txt[LCD_COLUMN]; 
+void LCD_DisplayMainPage(void){
+    char txt[16]; 
+    sprintf(txt,"Temp=%3.1f",temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf("  ");
+    sprintf(txt,"%3.0f<%3.0f<%3.0f",sp-(hystersis/2),sp,sp+(hystersis/2)); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("   ");
+}
+
+//******************************************
+void Display_Temp(void){
+    char txt[16]; 
     sprintf(txt,"Temp=%3.1f",temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf("  ");
     sprintf(txt,"Setpoint=%3.1f",sp); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putchar(0); lcd_putsf("  ");
 }
 
 //******************************************
-void Display2_Temp(float sp,float temp){
-    char txt[LCD_COLUMN]; 
+void Display2_Temp(void){
+    char txt[16]; 
     sprintf(txt,"PV=%2.0f",temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" ");
     sprintf(txt,"SP=%2.0f",sp); lcd_gotoxy(8,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" ");
     lcd_gotoxy(0,1); lcd_putsf("ON/OFF Control"); 
@@ -89,14 +100,13 @@ void Config_IO(void){
 
 //********************************************************
 void Config_LCD(void){
-    lcd_init(LCD_COLUMN);
+    lcd_init(16);
     lcd_clear();
 }
 
 //********************************************************
-void Display_Loading(void){
+void LCD_DisplayLoadingPage(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("Testing the LCD");
     lcd_gotoxy(0,1); lcd_putsf("Loading ...");
-    delay_ms(500); lcd_clear();
 }

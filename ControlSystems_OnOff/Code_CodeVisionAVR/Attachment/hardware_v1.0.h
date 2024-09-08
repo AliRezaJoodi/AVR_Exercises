@@ -2,10 +2,12 @@
 #define ADC_HARDWARE 
     #define ADC_GAIN        ADC_GAIN_5V_10Bit
 
-#define LM35_HARDWARE 
-    #define LM35_CH         0
+#define TEMP_CH             0
+#define TEMP_GAIN           1000 
     
 #define CONTROLLER_ONOFF_HARDWARE
     #define HEATER_ACTIVE         1
     #define COOLER_ACTIVE         1
+    
+
  
