@@ -1,19 +1,9 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef KP
-    #define KP 0.5
-#endif
-
-#ifndef KI
-    #define KI 0.000001
-#endif
-
-#ifndef KD
-    #define KD 0.1
-#endif
+#include <controller_pid.h>
 
 //******************************************
-float PID_ControlSystem(float sp,float pv,char status){
+float Controller_PID(float sp,float pv,char status){
     float error=0; 
     static float error_last=0;
     float value_p=0;
@@ -31,3 +21,4 @@ float PID_ControlSystem(float sp,float pv,char status){
     
     return value_pid; 
 }
+

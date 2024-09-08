@@ -3,12 +3,12 @@
 #include <stdlib.h>
 #include <delay.h>
 #include <alcd.h>
-flash char LCD_COLUMN=16;
 
-#include <Attachment\Define_Char.h>
-#include <Attachment\Config_ADC.h>
-#include <Attachment\Oven.h>
-#include <Attachment\ControlSystem_PID.h>
+#include "Attachment\hardware_v1.0.h"
+#include "Attachment\oven.h"
+#include <display_lcd_char.h>
+#include <adc.h>
+#include <controller_pid.h>
 
 #ifndef RLY0_DDR
     #define RLY0_DDR DDRD.5
@@ -25,11 +25,14 @@ flash char LCD_COLUMN=16;
 #define DEACTIVATE_RLY !ACTIVATE_RLY
 #define DEFAULT_RLY DEACTIVATE_RLY
 
-void Config_IO(void);
-void Config_LCD(void);
-void Display_LoadingPage(unsigned int);
-void Display_MainPage(float,float,float);
-void Config_Timer0(void);
+void IO_Config(void);
+void LCD_Config(void);
+
+#pragma used+
+void LCD_DisplayLoadingPage(unsigned int);
+void LCD_DisplayMainPage(float,float,float);
+void Timer0_Config(void);
+#pragma used-
 
 unsigned int count=0;
 // Timer 0 overflow interrupt service routine
@@ -43,28 +46,30 @@ void main(void){
     float temp=0;
     float sp=250;
     float output_power=0; 
+    //unsigned int display_counter=0;
     
-    unsigned int display_counter=0;
-    
-    Config_ADC();
-    Config_IO();     
-    Config_LCD(); 
-    define_char(CHAR_DEGREE,0);
-    Display_LoadingPage(250); 
+    ADC_Config_AVCC_10Bit(); 
+    IO_Config();     
+    LCD_Config(); 
+    Char_Define(char0, 0);
+    LCD_DisplayLoadingPage(250); 
     DDRD.5=1; PORTD.5=0;
-    Config_Timer0();
+    Timer0_Config();
     
     while (1){  
-        in_v=Get_ADC_V(CH_OVEN); temp=Get_OvenTemp(in_v);
-        output_power=PID_ControlSystem(sp,temp,1);
+        in_v=ADC_GetVolt(TEMP_CH); 
+        temp=Oven_ConvertVoltToTemp(in_v);
+        output_power=Controller_PID(sp,temp,1);
         if(count<=output_power){HEATER_RLY=ACTIVATE_RLY;} else {HEATER_RLY=DEACTIVATE_RLY;}   //Convert PID Controller to ON/OFF PID Controller 
          
-        ++display_counter; if(display_counter>100){Display_MainPage(sp,temp,output_power); display_counter=0;}      
+        //++display_counter; 
+        //if(display_counter>100){LCD_DisplayMainPage(sp,temp,output_power); display_counter=0;}
+        LCD_DisplayMainPage(sp,temp,output_power);      
     }
 }
 
 //******************************************
-void Config_Timer0(void){
+void Timer0_Config(void){
     // Timer/Counter 0 initialization
     // Clock source: System Clock
     // Clock value: 7.813 kHz
@@ -82,19 +87,19 @@ void Config_Timer0(void){
 }
 
 //******************************************
-void Config_IO(void){
+void IO_Config(void){
     #define INPUT 0   
     #define OUTPUT !INPUT
     RLY0_DDR=OUTPUT; RLY0_PORT=DEFAULT_RLY; 
 }
 
 //******************************************
-void Display_MainPage(float sp,float pv,float output_power){
-    char txt[LCD_COLUMN];
+void LCD_DisplayMainPage(float sp,float pv,float output_power){
+    char txt[16];
     //lcd_clear(); 
-    lcd_gotoxy(0,0); lcd_putsf("                ");
-    sprintf(txt,"SP:%3.0f",sp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); 
-    sprintf(txt,"PV:%3.0f",pv); lcd_gotoxy(8,0); lcd_puts(txt);  lcd_putchar(0);
+    lcd_gotoxy(0,0); //lcd_putsf("                ");
+    sprintf(txt,"SP:%3.0f",sp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" "); 
+    sprintf(txt,"PV:%3.0f",pv); lcd_gotoxy(8,0); lcd_puts(txt);  lcd_putchar(0); lcd_putsf(" ");
     
     if(output_power>100){sprintf(txt,"PID=%3.1f(100%%) ",output_power); lcd_gotoxy(0,1); lcd_puts(txt);}
         else {sprintf(txt,"PID=%3.1f%%       ",output_power); lcd_gotoxy(0,1); lcd_puts(txt);} 
@@ -102,14 +107,14 @@ void Display_MainPage(float sp,float pv,float output_power){
 }
 
 //******************************************
-void Display_LoadingPage(unsigned int t){
+void LCD_DisplayLoadingPage(unsigned int t){
     lcd_gotoxy(0,0); lcd_putsf("Please Wait ...");
     delay_ms(t); lcd_clear();
 } 
 
 //********************************************************
-void Config_LCD(void){
-    lcd_init(LCD_COLUMN);
+void LCD_Config(void){
+    lcd_init(16);
     lcd_clear();
 }
 

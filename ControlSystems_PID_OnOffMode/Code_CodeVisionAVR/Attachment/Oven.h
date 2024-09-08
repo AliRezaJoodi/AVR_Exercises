@@ -1,16 +1,23 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef CH_OVEN
-    #define CH_OVEN   0
+#ifndef _OVEN_INCLUDED
+#define _OVEN_INCLUDED
+
+#ifndef OVEN_HARDWARE
+#define OVEN_HARDWARE
+    #define TEMP_CH             0
+    #define TEMP_GAIN           1000 
 #endif
 
-#define GAIN_OVEN 200
+#pragma used+
 
 //******************************************
-//Input:    ADC Channel Voltage(mV)
-//Output:   Temp(^C)
-float Get_OvenTemp(float volt){
+float Oven_ConvertVoltToTemp(float volt){
     float temp=0;
-    temp = volt*GAIN_OVEN;
+    temp = volt*TEMP_GAIN;
     return temp;
 }
+
+#pragma used-
+
+#endif
