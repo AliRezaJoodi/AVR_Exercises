@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=1
-OpenedFiles=2
+OpenedFiles=3
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -23,8 +23,8 @@ Active1=1
 Row1=174
 Column1=9
 State1=2
-TimeStamp1=1460887996
-OF2=Attachment\Display_7Segment_8Digit.h
+TimeStamp1=1495949668
+OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_8digit.h
 Top2=149
 Left2=223
 Height2=393
@@ -33,7 +33,7 @@ Active2=0
 Row2=8
 Column2=5
 State2=2
-TimeStamp2=1460971638
+TimeStamp2=1495949860
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -48,12 +48,14 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-F1=v1.0.c
 ActiveTab=2
+F1=v1.0.c
+OF3=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
+TimeStamp3=1495674949
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
-Chip=ATmega32
+Chip=ATmega32A
 CPUClock=1000000
 MemoryModel=1
 OptimizeSize=1
@@ -135,11 +137,11 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=447
+Build=453
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
-IncludePath1=
+IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -171,7 +173,7 @@ IncludePath29=
 IncludePath30=
 IncludePath31=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=
+LibraryPath1=..\..\_ExtraLibrary_CodeVisionAVR\Lib
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -202,7 +204,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1460887997
+COFFileTimeStamp=1495949844
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -373,8 +375,8 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=447
-Chip=ATmega32
+Build=453
+Chip=ATmega32A
 CPUClock=1000000
 MemoryModel=1
 OptimizeSize=1
@@ -480,7 +482,7 @@ WarningNegativeShift=1
 DisplayCodeSizeError=1
 [BuildInfoCompiler]
 L1=Build configuration: Release
-L2=Chip: ATmega32
+L2=Chip: ATmega32A
 L3=Clock frequency: 1.000000 MHz
 L4=Program type: Application
 L5=Memory model: Small
@@ -495,8 +497,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 447
-L18=400 line(s) compiled
+L17=Build: 453
+L18=420 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -515,19 +517,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 802 words (1604 bytes), 4.9% of FLASH
+L37=Program size: 801 words (1602 bytes), 4.9% of FLASH
 L38=354 words (708 bytes), 30.6% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\List\main.asm(2077): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\List\main.asm(2075): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\main.eep
 L5=
-L6=ATmega32 memory use summary [bytes]:
+L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000644   1568     36   1604   32768   4.9%
+L9=[.cseg] 0x000000 0x000642   1566     36   1602   32768   4.9%
 L10=[.dseg] 0x000060 0x000277      0     23     23    2048   1.1%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -558,9 +560,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1460971687
+TimeStamp=1495951636
 [BookmarksFoldedCode]
-Files=8
+Files=10
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
 F2=v1.0.c
 F3=C:\Program Files (x86)\CVAVR\inc\math.h
@@ -569,6 +571,8 @@ F5=Attachment\DisplayOn7Segment.h
 F6=C:\cvavr\inc\delay.h
 F7=Attachment\Display_7Segment_1Digit.h
 F8=Attachment\Display_7Segment_8Digit.h
+F9=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
+F10=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_8digit.h
 [Bookmarks1]
 TimeStamp=1433472353
 Row=183
@@ -588,9 +592,9 @@ BK9=-1
 [FoldedCode1]
 Blocks=0
 [Bookmarks2]
-TimeStamp=1460887996
-Row=4
-Column=39
+TimeStamp=1495949668
+Row=13
+Column=38
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -713,16 +717,6 @@ BK8=-1
 BK9=-1
 [FoldedCode7]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=3
-F1=C:\cvavr\inc\mega32.h
-F2=C:\cvavr\inc\delay.h
-F3=Attachment\Display_7Segment_8Digit.h
-[FoldedCode2]
-Blocks=0
 [Bookmarks8]
 TimeStamp=1460971638
 Row=122
@@ -740,4 +734,51 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode8]
+Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=4
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\delay.h
+F3=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_8digit.h
+F4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
+[FoldedCode2]
+Blocks=0
+[Bookmarks9]
+TimeStamp=1495674949
+Row=15
+Column=18
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode9]
+Blocks=0
+[Bookmarks10]
+TimeStamp=1495949860
+Row=160
+Column=0
+ScrollPosX=0
+ScrollPosY=144
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode10]
 Blocks=0

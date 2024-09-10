@@ -1,8 +1,9 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <mega32.h>
+#include <mega32a.h>
 #include <delay.h>
-#include "Attachment\Display_7Segment_8Digit.h"
+
+#include <display_7segment_8digit.h>
 
 unsigned long int value=87654321;
 

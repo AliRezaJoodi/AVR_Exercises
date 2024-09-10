@@ -1,14 +1,12 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef CHKBIT(ADDRESS,BIT)
-    #define CHKBIT(ADDRESS,BIT)  ((ADDRESS >> BIT) & 0b1)
-#endif
+#include <utility.h>
     
 #ifndef _7SEGMENT_INCLOUDED
     #define _7SEGMENT_INCLOUDED
 
-#ifndef _7SEGMENT_PORT
-    #define _7SEGMENT_PORT 
+#ifndef SEGMENT_HARDWARE
+    #define SEGMENT_HARDWARE 
     
     #define DISPLAYLAG          5 //Display Lag
     #define ACTIVATE_DIGIT      1
@@ -105,7 +103,6 @@
  }; 
     
 #define _Convert_Data(VALUE)                (table_7segment[VALUE])
-#define ToggleByte(VALUE)                   VALUE = ~VALUE;
 
 #define _TurnOffDigits \
     DIGIT0=!ACTIVATE_DIGIT;\
@@ -118,14 +115,14 @@
     DIGIT7=!ACTIVATE_DIGIT; 
  
 #define _DriveDataOn7Segment(data) \
-    A_SEGMENT = CHKBIT(data,0);\
-    B_SEGMENT = CHKBIT(data,1);\
-    C_SEGMENT = CHKBIT(data,2);\
-    D_SEGMENT = CHKBIT(data,3);\
-    E_SEGMENT = CHKBIT(data,4);\
-    F_SEGMENT = CHKBIT(data,5);\
-    G_SEGMENT = CHKBIT(data,6);\
-    DP_SEGMENT = CHKBIT(data,7);
+    A_SEGMENT = GetBit(data,0);\
+    B_SEGMENT = GetBit(data,1);\
+    C_SEGMENT = GetBit(data,2);\
+    D_SEGMENT = GetBit(data,3);\
+    E_SEGMENT = GetBit(data,4);\
+    F_SEGMENT = GetBit(data,5);\
+    G_SEGMENT = GetBit(data,6);\
+    DP_SEGMENT = GetBit(data,7);
 
 //**************************************
 void Configure7Segment(void){    
