@@ -10,8 +10,8 @@
 #endasm
 #include <lcd.h>
 
-#include "Attachment\HardwarePorting_v1.0.h"
-#include <Sensor_Shtxx.h>  
+#include "Attachment\hardware_v1.0.h"
+#include <sensor_shtxx.h>  
 
 float temperature=0; 
 float humidity=0;

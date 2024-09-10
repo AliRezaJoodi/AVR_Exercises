@@ -11,15 +11,15 @@ unsigned char value=0;
 void ConfigLCD(void);
 void DisplayMainPage(char,char);
 
-#include "Attachment\Timer0.h"
+#include <timer0.h>
 
 void main(void){
     unsigned char old_value=0;
     ConfigLCD();
     DisplayMainPage(TCNT0,value);
      
-    ConfigTimer0ForCounter(); 
-    SetTimerValueFromTimer0(250);
+    Timer0_ConfigForCounter(); 
+    Timer0_SetTimerValue(250);
          
     while(1){ 
         if(task_t0_ovf){

@@ -1,0 +1,45 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+_seed (stdlib.lib)                                                                0x0260       4
+_base_y (lcd.lib)                                                                 0x0264       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+numer_initial                                                                     R5           1
+numer_correct                                                                     R4           1
+numer_old                                                                         R7           1
+_lcd_x                                                                            R6           1
+_lcd_y                                                                            R9           1
+_lcd_maxx                                                                         R8           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+Get_Port                                                                          0x000B8     20
+Converter_Data                                                                    0x000CC     48
+main                                                                              0x000FC     23
+Display2_Number                                                                   0x00113     32
+Configuration_LCD                                                                 0x00133      4
+Display_loading                                                                   0x00137     11
+Display_Advertising                                                               0x00142     19
+itoa                                                                              0x00155     46
+_lcd_delay_G101                                                                   0x00183      4
+_lcd_ready                                                                        0x00187     17
+_lcd_write_nibble_G101                                                            0x00198     10
+_lcd_write_data                                                                   0x001A2     15
+_lcd_read_nibble_G101                                                             0x001B1      9
+lcd_read_byte0_G101                                                               0x001BA      9
+lcd_gotoxy                                                                        0x001C3     16
+lcd_clear                                                                         0x001D3     19
+lcd_putchar                                                                       0x001E6     26
+lcd_puts                                                                          0x00200     15
+lcd_putsf                                                                         0x0020F     19
+_long_delay_G101                                                                  0x00222      5
+_lcd_init_write_G101                                                              0x00227     12
+lcd_init                                                                          0x00233     51

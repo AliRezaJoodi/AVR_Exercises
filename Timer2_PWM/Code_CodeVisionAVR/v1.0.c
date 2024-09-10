@@ -3,12 +3,12 @@
 #include <mega32a.h>
 #include <delay.h>
 
-#include "Attachment\Timer2.h"
+#include <timer2.h>
 
 void main(void){ 
  
-    ConfigTimer2ForPWM(); 
-    SetCompareOutputValueFromTimer2(25);
+    Timer2_ConfigForPWM(); 
+    Timer2_SetCompareOutputValue(25);
      
     while(1){   
     }

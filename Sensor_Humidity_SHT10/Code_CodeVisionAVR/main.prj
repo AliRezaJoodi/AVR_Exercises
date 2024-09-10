@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=1
-OpenedFiles=3
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -23,7 +23,7 @@ Active1=0
 Row1=36
 Column1=11
 State1=2
-TimeStamp1=1494923430
+TimeStamp1=1495968107
 OF2=..\..\_Library_CodeVisionAVR\Sensor_Shtxx.h
 Top2=-30
 Left2=-4
@@ -68,8 +68,8 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
+ActiveTab=1
 F1=v1.0.c
-ActiveTab=2
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -156,10 +156,10 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=239
+Build=240
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_Library_CodeVisionAVR
+IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -191,7 +191,7 @@ IncludePath29=
 IncludePath30=
 IncludePath31=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=
+LibraryPath1=..\..\_ExtraLibrary_CodeVisionAVR\Lib
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -222,7 +222,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1494923654
+COFFileTimeStamp=1495968174
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -393,7 +393,7 @@ UserProgCmdLine=
 UserProgWorkDir=
 WaitUserProgFinish=1
 [CompilerDebug]
-Build=239
+Build=240
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -515,7 +515,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 239
+L17=Build: 240
 L18=12496 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -574,7 +574,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1494923663
+TimeStamp=1495968244
 [BookmarksFoldedCode]
 Files=9
 F1=C1.c
@@ -696,11 +696,11 @@ BK9=-1
 [FoldedCode4]
 Blocks=0
 [Bookmarks5]
-TimeStamp=1494923430
-Row=26
-Column=51
+TimeStamp=1495968107
+Row=15
+Column=40
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -783,21 +783,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Sensor_Humidity_SHT10\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\mega32.h
-F2=C:\cvavr\inc\delay.h
-F3=C:\cvavr\inc\stdio.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\stdarg.h
-F6=C:\cvavr\inc\lcd.h
-F7=Attachment\HardwarePorting_v1.0.h
-F8=..\..\_Library_CodeVisionAVR\Sensor_Shtxx.h
-[FoldedCode5]
-Blocks=0
 [FoldedCode8]
 Blocks=0
 [Bookmarks9]
@@ -817,4 +802,19 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode9]
+Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Sensor_Humidity_SHT10\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\mega32.h
+F2=C:\cvavr\inc\delay.h
+F3=C:\cvavr\inc\stdio.h
+F4=C:\cvavr\inc\io.h
+F5=C:\cvavr\inc\stdarg.h
+F6=C:\cvavr\inc\lcd.h
+F7=Attachment\hardware_v1.0.h
+F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_shtxx.h
+[FoldedCode5]
 Blocks=0

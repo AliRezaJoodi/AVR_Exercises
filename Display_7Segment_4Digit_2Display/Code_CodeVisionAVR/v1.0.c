@@ -3,7 +3,7 @@
 #include <mega32a.h>
 #include <delay.h>
 
-#include "Attachment\DisplayOn7Segment.h"
+#include <display_7segment_4digit_2display.h>
 
 void main(void){  
     Config_7Segment();

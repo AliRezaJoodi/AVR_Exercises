@@ -1,19 +1,13 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef SETBIT
-    #define SETBIT(ADDRESS,BIT)         (ADDRESS|=1<<BIT)
-#endif 
-    
-#ifndef CLRBIT
-    #define CLRBIT(ADDRESS,BIT)         (ADDRESS &=~(1<<BIT))
-#endif
+#include <utility.h>
 
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
     
-#ifndef _INCLUDED_TIMER0
-    #define _INCLUDED_TIMER0
+#ifndef _TIMER0_INCLUDED
+    #define _TIMER0_INCLUDED
     
 // Operation Mode
 #define T0_NORMAL               (0<<WGM01) | (0<<WGM00)
@@ -43,10 +37,10 @@
 #define SetCompareOutputModeFromTimer0(MODE) \
     TCCR0=(TCCR0 & 0b11001111) | (MODE<<4);
     
-#define SetTimerValueFromTimer0(VALUE)              TCNT0=VALUE;
-#define SetCompareOutputValueFromTimer0(VALUE)      OCR0=VALUE;
-#define EnableOverflowInterruptFromTimer0(STATUS)   if(STATUS){SETBIT(TIMSK,TOIE0);} else{CLRBIT(TIMSK,TOIE0);}
-#define EnableCompareInterruptFromTimer0(STATUS)    if(STATUS){SETBIT(TIMSK,OCIE0);} else{CLRBIT(TIMSK,OCIE0);}
+#define Timer0_SetTimerValue(VALUE)              TCNT0=VALUE;
+#define Timer0_SetCompareOutputValue(VALUE)      OCR0=VALUE;
+#define Timer0_EnableOverflowInterrupt(STATUS)   if(STATUS){SetBit(TIMSK,TOIE0);} else{ClearBit(TIMSK,TOIE0);}
+#define Timer0_EnableCompareInterrupt(STATUS)    if(STATUS){SetBit(TIMSK,OCIE0);} else{ClearBit(TIMSK,OCIE0);}
     
 char task_t0_ovf=0;
 char task_t0_comp=0;
@@ -64,57 +58,57 @@ interrupt [TIM0_COMP] void timer0_comp_isr(void){
 }
     
 //**************************************
-void ConfigTimer0ForTimer(void){
+void Timer0_ConfigForTimer(void){
     SetOperationModeFromTimer0(T0_NORMAL);
     SetClockSourceFromTimer0(T0CLK_P1024);
     SetCompareOutputModeFromTimer0(T0_DISCONNECT);
-    SetTimerValueFromTimer0(0);
-    SetCompareOutputValueFromTimer0(0);
-    EnableOverflowInterruptFromTimer0(1);
-    EnableCompareInterruptFromTimer0(0); 
+    Timer0_SetTimerValue(0);
+    Timer0_SetCompareOutputValue(0);
+    Timer0_EnableOverflowInterrupt(1);
+    Timer0_EnableCompareInterrupt(0); 
     
     EnableGlobalInterrupt(1);
 }
 
 //**************************************
-void ConfigTimer0ForCounter(void){
+void Timer0_ConfigForCounter(void){
     SetOperationModeFromTimer0(T0_NORMAL);
     SetClockSourceFromTimer0(T0PIN_RISING_EDGE);
     SetCompareOutputModeFromTimer0(T0_DISCONNECT); 
-    SetTimerValueFromTimer0(0);
-    SetCompareOutputValueFromTimer0(0);
-    EnableOverflowInterruptFromTimer0(1);
-    EnableCompareInterruptFromTimer0(0); 
+    Timer0_SetTimerValue(0);
+    Timer0_SetCompareOutputValue(0);
+    Timer0_EnableOverflowInterrupt(1);
+    Timer0_EnableCompareInterrupt(0); 
     
     EnableGlobalInterrupt(1);
 }
 
 //**********************************
-void ConfigTimer0ForPWM(void){
+void Timer0_ConfigForPWM(void){
     DDRB.3=1;  
     
     SetOperationModeFromTimer0(T0_FAST_PWM);
     SetClockSourceFromTimer0(T0CLK_P1);
     SetCompareOutputModeFromTimer0(T0_NONINVERTED); 
-    SetTimerValueFromTimer0(0);
-    SetCompareOutputValueFromTimer0(0);
-    EnableOverflowInterruptFromTimer0(0);
-    EnableCompareInterruptFromTimer0(0); 
+    Timer0_SetTimerValue(0);
+    Timer0_SetCompareOutputValue(0);
+    Timer0_EnableOverflowInterrupt(0);
+    Timer0_EnableCompareInterrupt(0); 
     
     EnableGlobalInterrupt(0);
 }
 
 //**********************************
-void ConfigTimer0ForCTC(void){
+void Timer0_ConfigForCTC(void){
     DDRB.3=1; PORTB.3=0;
 
     SetOperationModeFromTimer0(T0_CTC);
     SetClockSourceFromTimer0(T0CLK_P8); 
     SetCompareOutputModeFromTimer0(T0_TOGGLE);
-    SetTimerValueFromTimer0(0);
-    SetCompareOutputValueFromTimer0(0);
-    EnableOverflowInterruptFromTimer0(0);
-    EnableCompareInterruptFromTimer0(0); 
+    Timer0_SetTimerValue(0);
+    Timer0_SetCompareOutputValue(0);
+    Timer0_EnableOverflowInterrupt(0);
+    Timer0_EnableCompareInterrupt(0); 
     
     EnableGlobalInterrupt(0);
 }

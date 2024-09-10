@@ -8,16 +8,17 @@
 
 unsigned char value=0;
 
+#include <timer2.h>
+
 void ConfigLCD(void);
 void DisplayMainPage(char);
 
-#include "Attachment\Timer2.h"
 
 void main(void){
     ConfigLCD();
     DisplayMainPage(value);
     
-    ConfigTimer2ForAsyncTimer();
+    Timer2_ConfigForAsyncTimer();
          
     while(1){
         if(task_t2_ovf){

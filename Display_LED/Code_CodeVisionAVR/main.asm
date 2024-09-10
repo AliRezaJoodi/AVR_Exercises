@@ -1175,8 +1175,8 @@ __CLEAR_SRAM:
 	#endif
 
 	.CSEG
-_Out_Config:
-; .FSTART _Out_Config
+_Output_Config:
+; .FSTART _Output_Config
 	SBI  0x1A,0
 	CBI  0x1B,0
 	SBI  0x1A,1
@@ -1187,10 +1187,10 @@ _Out_Config:
 ; 0000 0009 void main(void){
 _main:
 ; .FSTART _main
-; 0000 000A Out_Config();
-	RCALL _Out_Config
+; 0000 000A Output_Config();
+	RCALL _Output_Config
 ; 0000 000B 
-; 0000 000C LED1=OUT1_ACTIVATE;
+; 0000 000C LED1=OUT1_ACTIVE;
 	SBI  0x1B,0
 ; 0000 000D LED2_TURNON; delay_ms(1000); LED2_TURNOFF;
 	SBI  0x1B,1

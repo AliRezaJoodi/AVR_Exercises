@@ -1,10 +1,10 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32a.h>
-#include "Attachment\Timer1.h"
+#include <timer1.h>
 
 void main(void){  
-    ConfigTimer1ForPWM();
+    Timer1_ConfigForPWM();
     
     while(1){          
     }

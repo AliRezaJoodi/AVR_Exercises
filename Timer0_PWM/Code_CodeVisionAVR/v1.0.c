@@ -1,11 +1,12 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32a.h>
-#include "Attachment\Timer0.h"
+
+#include <timer0.h>
 
 void main(void){ 
-    ConfigTimer0ForPWM(); 
-    SetCompareOutputValueFromTimer0(50);   //0~255 
+    Timer0_ConfigForPWM(); 
+    Timer0_SetCompareOutputValue(50);   //0~255 
     
     while(1){   
     }

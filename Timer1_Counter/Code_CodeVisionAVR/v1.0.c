@@ -6,18 +6,14 @@
 #include <stdlib.h>
 #include <alcd.h>
 
-//#define SETBIT(ADDRESS,BIT)         (ADDRESS|=1<<BIT)
-//#define CLRBIT(ADDRESS,BIT)         (ADDRESS &=~(1<<BIT))
-//#define TOGGLEBIT(ADDRESS,BIT)      (ADDRESS^=(1<<BIT))
-//#define EQUBIT(ADDRESS,BIT,value)   {if (value) SETBIT(ADDRESS,BIT); else CLRBIT(ADDRESS,BIT);}
-//#define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
-
 unsigned int value=0;
+
+#include <timer1.h>
 
 void ConfigLCD(void);
 void DisplayMainPage(unsigned int, unsigned int);
 
-#include "Attachment\Timer1.h"
+
 
 void main(void){
     char old_value=0;
@@ -25,7 +21,7 @@ void main(void){
     ConfigLCD();
     DisplayMainPage(0,value);
      
-    ConfigTimer1ForCounter();
+    Timer1_ConfigForCounter();
          
     while(1){ 
         if(task_t1_ovf){

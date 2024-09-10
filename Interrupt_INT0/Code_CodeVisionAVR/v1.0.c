@@ -7,17 +7,17 @@
 
 unsigned char value=0;
 
+#include <intrupt_exti.h>
+
 void ConfigLCD(void);
 void DisplayMainPage(void);
 
-#include "Attachment\ExternalIntrupts.h"
 
 void main(void){
     ConfigLCD();
     DisplayMainPage();
     
-    EnableGlobalInterrupt(1);
-    ConfigExternalInterrupts(); 
+    INT0_Config(RISING_EDGE); 
          
     while(1){
         if(task_int0){

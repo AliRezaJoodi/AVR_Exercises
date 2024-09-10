@@ -1,31 +1,13 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef SETBIT
-    #define SETBIT(ADDRESS,BIT)         (ADDRESS|=1<<BIT)
-#endif 
-    
-#ifndef CLRBIT
-    #define CLRBIT(ADDRESS,BIT)         (ADDRESS &=~(1<<BIT))
-#endif
-
-#ifndef GET_INT
-    #define GET_INT(MSB,LSB)            (MSB<<8)+LSB;
-#endif
-
-#ifndef GET_MSB     
-    #define GET_MSB(INT)                INT>>8;
-#endif
-
-#ifndef GET_LSB
-    #define GET_LSB(INT)                INT&0x00FF;
-#endif
+#include <utility.h>
 
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
     
-#ifndef _INCLUDED_TIMER1
-    #define _INCLUDED_TIMER1
+#ifndef _TIMER1_INCLUDED
+    #define _TIMER1_INCLUDED
     
     // Operation Mode 
     #define T1_NORMAL                       0b0000
@@ -66,21 +48,21 @@
     #define ICP1PIN_RISING_EDGE             (1<<ICES1)
     
     // Commands  
-    #define SetOperationModeFromTimer1(MODE)                    TCCR1A=(TCCR1A & 0b11111100) | (MODE & 0b0011); \
-                                                                TCCR1B=(TCCR1B & 0b11100111) | ((MODE & 0b1100)<<1);
-    #define SetClockSourceFromTimer1(MODE)                      TCCR1B=(TCCR1B & 0b11111000) | MODE;
-    #define SetCompare1AOutputModeFromTimer1(MODE)              TCCR1A=(TCCR1A & 0b00111111) | (MODE<<6);
-    #define SetCompare1BOutputModeFromTimer1(MODE)              TCCR1A=(TCCR1A & 0b11001111) | (MODE<<4);
-    #define EnableInputCaptureNoiseCancelerFromTimer1(STATUS)   if(STATUS){SETBIT(TCCR1B,ICNC1);} else{CLRBIT(TCCR1B,ICNC1);}
-    #define SetInputCaptureEdgeSelectFromTimer1(MODE)           TCCR1B=(TCCR1B & 0b10111111) | MODE;
-    #define SetTimerValueFromTimer1(VALUE)                      TCNT1H=GET_MSB(VALUE); TCNT1L=GET_LSB(VALUE);  
-    #define SetCompareAValueFromTimer1(VALUE)                   OCR1AH=GET_MSB(VALUE); OCR1AL=GET_LSB(VALUE);
-    #define SetCompareBValueFromTimer1(VALUE)                   OCR1BH=GET_MSB(VALUE); OCR1BL=GET_LSB(VALUE);
-    #define SetInputCaptureValueFromTimer1(VALUE)               ICR1H=GET_MSB(VALUE); ICR1L=GET_LSB(VALUE);
-    #define EnableOverflowInterruptFromTimer1(STATUS)           if(STATUS){SETBIT(TIMSK,TOIE1);} else{CLRBIT(TIMSK,TOIE1);}
-    #define EnableCompareAInterruptFromTimer1(STATUS)           if(STATUS){SETBIT(TIMSK,OCIE1A);} else{CLRBIT(TIMSK,OCIE1A);}
-    #define EnableCompareBInterruptFromTimer1(STATUS)           if(STATUS){SETBIT(TIMSK,OCIE1B);} else{CLRBIT(TIMSK,OCIE1B);}
-    #define EnableInputCaptureInterruptFromTimer1(STATUS)       if(STATUS){SETBIT(TIMSK,TICIE1);} else{CLRBIT(TIMSK,TICIE1);}
+    #define Timer1_SetOperationMode(MODE)                    TCCR1A=(TCCR1A & 0b11111100) | (MODE & 0b0011); \
+                                                             TCCR1B=(TCCR1B & 0b11100111) | ((MODE & 0b1100)<<1);
+    #define Timer1_SetClockSource(MODE)                      TCCR1B=(TCCR1B & 0b11111000) | MODE;
+    #define Timer1_SetCompare1AOutputMode(MODE)              TCCR1A=(TCCR1A & 0b00111111) | (MODE<<6);
+    #define Timer1_SetCompare1BOutputMode(MODE)              TCCR1A=(TCCR1A & 0b11001111) | (MODE<<4);
+    #define Timer1_EnableInputCaptureNoiseCanceler(STATUS)   if(STATUS){SetBit(TCCR1B,ICNC1);} else{ClearBit(TCCR1B,ICNC1);}
+    #define Timer1_SetInputCaptureEdgeSelect(MODE)           TCCR1B=(TCCR1B & 0b10111111) | MODE;
+    #define Timer1_SetTimerValue(VALUE)                      TCNT1H=GetMsb(VALUE); TCNT1L=GetLsb(VALUE);  
+    #define Timer1_SetCompareAValue(VALUE)                   OCR1AH=GetMsb(VALUE); OCR1AL=GetLsb(VALUE);
+    #define Timer1_SetCompareBValue(VALUE)                   OCR1BH=GetMsb(VALUE); OCR1BL=GetLsb(VALUE);
+    #define Timer1_SetInputCaptureValue(VALUE)               ICR1H=GetMsb(VALUE); ICR1L=GetLsb(VALUE);
+    #define Timer1_EnableOverflowInterrupt(STATUS)           if(STATUS){SetBit(TIMSK,TOIE1);} else{ClearBit(TIMSK,TOIE1);}
+    #define Timer1_EnableCompareAInterrupt(STATUS)           if(STATUS){SetBit(TIMSK,OCIE1A);} else{ClearBit(TIMSK,OCIE1A);}
+    #define Timer1_EnableCompareBInterrupt(STATUS)           if(STATUS){SetBit(TIMSK,OCIE1B);} else{ClearBit(TIMSK,OCIE1B);}
+    #define Timer1_EnableInputCaptureInterrupt(STATUS)       if(STATUS){SetBit(TIMSK,TICIE1);} else{ClearBit(TIMSK,TICIE1);}
         
     char task_t1_ovf=0;
     char task_t1_compa=0;
@@ -110,87 +92,87 @@ interrupt [TIM1_CAPT] void timer1_capt_isr(void){
 }
     
 //**************************************
-void ConfigTimer1ForTimer(void){
-    SetOperationModeFromTimer1(T1_NORMAL);
-    SetClockSourceFromTimer1(T1CLK_P8);
-    SetCompare1AOutputModeFromTimer1(T1_DISCONNECT);
-    SetCompare1BOutputModeFromTimer1(T1_DISCONNECT); 
-    EnableInputCaptureNoiseCancelerFromTimer1(0);
-    SetInputCaptureEdgeSelectFromTimer1(ICP1PIN_FALLING_EDGE);
-    SetTimerValueFromTimer1(0);
-    SetCompareAValueFromTimer1(0);
-    SetCompareBValueFromTimer1(0);  
-    SetInputCaptureValueFromTimer1(0);
-    EnableOverflowInterruptFromTimer1(1); 
-    EnableCompareAInterruptFromTimer1(0);
-    EnableCompareBInterruptFromTimer1(0);
-    EnableInputCaptureInterruptFromTimer1(0); 
+void Timer1_ConfigForTimer(void){
+    Timer1_SetOperationMode(T1_NORMAL);
+    Timer1_SetClockSource(T1CLK_P8);
+    Timer1_SetCompare1AOutputMode(T1_DISCONNECT);
+    Timer1_SetCompare1BOutputMode(T1_DISCONNECT); 
+    Timer1_EnableInputCaptureNoiseCanceler(0);
+    Timer1_SetInputCaptureEdgeSelect(ICP1PIN_FALLING_EDGE);
+    Timer1_SetTimerValue(0);
+    Timer1_SetCompareAValue(0);
+    Timer1_SetCompareBValue(0);  
+    Timer1_SetInputCaptureValue(0);
+    Timer1_EnableOverflowInterrupt(1); 
+    Timer1_EnableCompareAInterrupt(0);
+    Timer1_EnableCompareBInterrupt(0);
+    Timer1_EnableInputCaptureInterrupt(0); 
     
     EnableGlobalInterrupt(1);
 }
 
 //**************************************
-void ConfigTimer1ForCounter(void){
-    SetOperationModeFromTimer1(T1_NORMAL);
-    SetClockSourceFromTimer1(T1PIN_RISING_EDGE);
-    SetCompare1AOutputModeFromTimer1(T1_DISCONNECT);
-    SetCompare1BOutputModeFromTimer1(T1_DISCONNECT); 
-    EnableInputCaptureNoiseCancelerFromTimer1(0);
-    SetInputCaptureEdgeSelectFromTimer1(ICP1PIN_FALLING_EDGE);
-    SetTimerValueFromTimer1(0);
-    SetCompareAValueFromTimer1(0);
-    SetCompareBValueFromTimer1(0);  
-    SetInputCaptureValueFromTimer1(0);
-    EnableOverflowInterruptFromTimer1(1); 
-    EnableCompareAInterruptFromTimer1(0);
-    EnableCompareBInterruptFromTimer1(0);
-    EnableInputCaptureInterruptFromTimer1(0); 
+void Timer1_ConfigForCounter(void){
+    Timer1_SetOperationMode(T1_NORMAL);
+    Timer1_SetClockSource(T1PIN_RISING_EDGE);
+    Timer1_SetCompare1AOutputMode(T1_DISCONNECT);
+    Timer1_SetCompare1BOutputMode(T1_DISCONNECT); 
+    Timer1_EnableInputCaptureNoiseCanceler(0);
+    Timer1_SetInputCaptureEdgeSelect(ICP1PIN_FALLING_EDGE);
+    Timer1_SetTimerValue(0);
+    Timer1_SetCompareAValue(0);
+    Timer1_SetCompareBValue(0);  
+    Timer1_SetInputCaptureValue(0);
+    Timer1_EnableOverflowInterrupt(1); 
+    Timer1_EnableCompareAInterrupt(0);
+    Timer1_EnableCompareBInterrupt(0);
+    Timer1_EnableInputCaptureInterrupt(0); 
     
     EnableGlobalInterrupt(1);
 }
 
 //**********************************
-void ConfigTimer1ForPWM(void){
+void Timer1_ConfigForPWM(void){
     DDRD.4=1;
     DDRD.5=1;
 
-    SetOperationModeFromTimer1(T1_FAST_PWM_10BIT);
-    SetClockSourceFromTimer1(T1CLK_P8);
-    SetCompare1AOutputModeFromTimer1(T1_NONINVERTED);
-    SetCompare1BOutputModeFromTimer1(T1_INVERTED); 
-    EnableInputCaptureNoiseCancelerFromTimer1(0);
-    SetInputCaptureEdgeSelectFromTimer1(ICP1PIN_FALLING_EDGE);
-    SetTimerValueFromTimer1(0);
-    SetCompareAValueFromTimer1(100);
-    SetCompareBValueFromTimer1(100);  
-    SetInputCaptureValueFromTimer1(0);
-    EnableOverflowInterruptFromTimer1(1); 
-    EnableCompareAInterruptFromTimer1(0);
-    EnableCompareBInterruptFromTimer1(0);
-    EnableInputCaptureInterruptFromTimer1(0); 
+    Timer1_SetOperationMode(T1_FAST_PWM_10BIT);
+    Timer1_SetClockSource(T1CLK_P8);
+    Timer1_SetCompare1AOutputMode(T1_NONINVERTED);
+    Timer1_SetCompare1BOutputMode(T1_INVERTED); 
+    Timer1_EnableInputCaptureNoiseCanceler(0);
+    Timer1_SetInputCaptureEdgeSelect(ICP1PIN_FALLING_EDGE);
+    Timer1_SetTimerValue(0);
+    Timer1_SetCompareAValue(100);
+    Timer1_SetCompareBValue(100);  
+    Timer1_SetInputCaptureValue(0);
+    Timer1_EnableOverflowInterrupt(1); 
+    Timer1_EnableCompareAInterrupt(0);
+    Timer1_EnableCompareBInterrupt(0);
+    Timer1_EnableInputCaptureInterrupt(0); 
     
     EnableGlobalInterrupt(0);
 }
 
 //**********************************
-void ConfigTimer1ForCTC(void){
+void Timer1_ConfigForCTC(void){
     DDRD.4=1;
     DDRD.5=1;
 
-    SetOperationModeFromTimer1(T1_CTC_OCR1A);
-    SetClockSourceFromTimer1(T1CLK_P8);
-    SetCompare1AOutputModeFromTimer1(T1_TOGGLE);
-    SetCompare1BOutputModeFromTimer1(T1_DISCONNECT); 
-    EnableInputCaptureNoiseCancelerFromTimer1(0);
-    SetInputCaptureEdgeSelectFromTimer1(ICP1PIN_FALLING_EDGE);
-    SetTimerValueFromTimer1(0);
-    SetCompareAValueFromTimer1(0);
-    SetCompareBValueFromTimer1(0);  
-    SetInputCaptureValueFromTimer1(0);
-    EnableOverflowInterruptFromTimer1(0); 
-    EnableCompareAInterruptFromTimer1(0);
-    EnableCompareBInterruptFromTimer1(0);
-    EnableInputCaptureInterruptFromTimer1(0); 
+    Timer1_SetOperationMode(T1_CTC_OCR1A);
+    Timer1_SetClockSource(T1CLK_P8);
+    Timer1_SetCompare1AOutputMode(T1_TOGGLE);
+    Timer1_SetCompare1BOutputMode(T1_DISCONNECT); 
+    Timer1_EnableInputCaptureNoiseCanceler(0);
+    Timer1_SetInputCaptureEdgeSelect(ICP1PIN_FALLING_EDGE);
+    Timer1_SetTimerValue(0);
+    Timer1_SetCompareAValue(0);
+    Timer1_SetCompareBValue(0);  
+    Timer1_SetInputCaptureValue(0);
+    Timer1_EnableOverflowInterrupt(0); 
+    Timer1_EnableCompareAInterrupt(0);
+    Timer1_EnableCompareBInterrupt(0);
+    Timer1_EnableInputCaptureInterrupt(0); 
     
     EnableGlobalInterrupt(0);
 }

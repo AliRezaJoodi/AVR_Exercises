@@ -8,7 +8,7 @@
 void ConfigLCD(void);
 void DisplayMainPage(char);
 
-#include "Attachment\Timer2.h"
+#include <timer2.h>
 
 void main(void){
     unsigned char value=0;
@@ -16,7 +16,7 @@ void main(void){
     ConfigLCD();
     DisplayMainPage(value);
     
-    ConfigTimer2ForTimer();
+    Timer2_ConfigForTimer();
          
     while(1){ 
         if(task_t2_ovf){

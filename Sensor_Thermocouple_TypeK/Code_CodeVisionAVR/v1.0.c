@@ -5,28 +5,31 @@
 #include <delay.h>
 #include <alcd.h>
 
-#include <Attachment\Hardware_v1.0.h>
-#include <Attachment\Thermocouple_K.h>
-#include <Attachment\Define_Char.h>
-#include <Attachment\Config_ADC.h>
+#include "Attachment\hardware_v1.0.h"
+#include <display_lcd_char.h>
+#include <adc.h>
+#include <sensor_thermocouple_k.h>
 
 float tc_mv=0;
 int tc_temp;
 
 void Config_LCD(void);
-void Config_ADC(void);
-float Get_ADC(unsigned char);
+
+#pragma used+
 void Display_Temp(float,int);
 void Test(void);
+#pragma used-
 
 void main(void){
     Config_LCD();
-    Config_ADC();
+    Char_Define(char0, 0);
+    ADC_Config_AVCC_10Bit();
     
     //Test();
      
     while (1){   
-        tc_mv=Get_ADC_mV(CH_TC); tc_temp=Get_Temp_TC(tc_mv);
+        tc_mv=ADC_GetMilliVolt(TC_CH); 
+        tc_temp=TC_ConvertMilliVoltToTemp(tc_mv);
         Display_Temp(tc_mv,tc_temp);       
         delay_ms(250);
     }
@@ -34,16 +37,16 @@ void main(void){
 
 //******************************************
 void Test(void){
-    tc_mv=Get_mV_TC(1000);
+    tc_mv=TC_ConvertTempToMilliVolt(1000);
     //tc_mv = -6.404; 
-    //tc_temp=Get_Temp_TC(tc_mv);
+    //tc_temp=TC_ConvertMilliVoltToTemp(tc_mv);
     Display_Temp(tc_mv,tc_temp); 
     while(1){}
 }
 
 //******************************************
 void Display_Temp(float in_mv,int temp){
-    char txt[LCD_COLUMN];
+    char txt[16];
     lcd_clear();
     //lcd_gotoxy(0,1); lcd_putsf("Type K TC"); 
     sprintf(txt,"TC:%4.3fmV",in_mv); lcd_gotoxy(0,0); lcd_puts(txt); //lcd_putsf("  ");
@@ -56,8 +59,7 @@ void Display_Temp(float in_mv,int temp){
 
 //********************************************************
 void Config_LCD(void){
-    lcd_init(LCD_COLUMN);
-    define_char(CHAR_DEGREE,0);
+    lcd_init(16);
     lcd_clear();
 }
 

@@ -1,12 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef CH_TC
-    #define CH_TC   0
-#endif
-
-#ifndef GAIN_TC
-    #define GAIN_TC 1/90
-#endif
+#include <sensor_thermocouple_k.h>
 
 flash float Table_TC_K[]={
 -6.458,-6.457,-6.456,-6.455,-6.453,-6.452,-6.450,-6.448,-6.446,-6.444,
@@ -178,14 +172,12 @@ flash float Table_TC_K[]={
 };
 
 //******************************************
-//Input:    ADC Channel Voltage(mV)
-//Output:   Temp(^C)
-int Get_Temp_TC(float mv){
+int TC_ConvertMilliVoltToTemp(float mv){
     unsigned int index=0;
     int temp=-271;
     char error=0;
     
-    mv=mv*GAIN_TC; 
+    mv=mv*TC_GAIN; 
     
     while(Table_TC_K[index] <= mv){
         ++index;
@@ -197,10 +189,10 @@ int Get_Temp_TC(float mv){
 }
 
 //******************************************
-//Input:    Temp(^C)
-//Output:   TC Voltage(mV)
-float Get_mV_TC(int temp){
+float TC_ConvertTempToMilliVolt(int temp){
     float mv=0;
     mv=Table_TC_K[temp+27]; 
     return mv;
 }
+
+

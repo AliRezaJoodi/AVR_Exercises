@@ -2,11 +2,11 @@
 
 #include <mega32a.h>
 
-#include "Attachment\Timer2.h"
+#include <timer2.h>
 
 void main(void){
-    ConfigTimer2ForCTC();
-    SetCompareOutputValueFromTimer2(100);
+    Timer2_ConfigForCTC();
+    Timer2_SetCompareOutputValue(100);
     
     while(1){          
     }

@@ -9,7 +9,7 @@
 
 //unsigned char second,minute,hour;
 
-#include "Attachment\Timer2.h"
+#include <timer2.h>
 #include "Attachment\RTC_Software.h"
 
 void ConfigLCD(void);
@@ -19,7 +19,7 @@ void main(void){
     
     ConfigLCD();
     
-    ConfigTimer2ForAsyncTimer();
+    Timer2_ConfigForAsyncTimer();
     SetClockWithDefaultValues();
     DisplayClock(); 
            

@@ -10,14 +10,13 @@ unsigned char value=0;
 void ConfigLCD(void);
 void DisplayMainPage(void);
 
-#include "Attachment\ExternalIntrupts.h"
+#include <intrupt_exti.h>
 
 void main(void){
     ConfigLCD();
     DisplayMainPage();
     
-    EnableGlobalInterrupt(1); 
-    ConfigExternalInterrupts();
+    INT2_Config(RISING_EDGE);
          
     while(1){
         if(task_int2){
