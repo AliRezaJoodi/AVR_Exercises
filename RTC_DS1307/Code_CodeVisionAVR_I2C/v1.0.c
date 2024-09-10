@@ -7,7 +7,7 @@
 //#include <stdlib.h>
 
 #include <i2c.h>
-#include "Attachment\RTC_DS1307.h"
+#include <rtc_ds1307.h>
 char task_1s=0;
 
 void ConfigINT2(void);     
