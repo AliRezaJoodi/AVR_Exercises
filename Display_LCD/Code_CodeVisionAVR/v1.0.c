@@ -1,6 +1,6 @@
 //GitHub Account:     GitHub.com/AliRezaJoodi
 
-#include <mega32.h>
+#include <mega32a.h>
 #include <delay.h>
 
 // Alphanumeric LCD Module functions
@@ -9,37 +9,36 @@
 #endasm
 #include <lcd.h>
 
-void Configuration_LCD(void);
-void Display_Loading(void);
-void Display_Advertising(void);
+void LCD_Config(void);
+void LCD_DisplayLoadingPage(void);
+void LCD_DisplayMainPage(void);
 
 void main(void){
 
-    Configuration_LCD();
-    Display_Loading(); 
-    Display_Advertising();
+    LCD_Config();
+    LCD_DisplayLoadingPage();
+    delay_ms(500); lcd_clear(); 
+    LCD_DisplayMainPage();
     
     while(1){
     };
 }
 
 //********************************************************
-void Configuration_LCD(void){
+void LCD_Config(void){
     lcd_init(16); lcd_clear();   
 }
 
 //********************************************************
-void Display_Loading(void){
+void LCD_DisplayLoadingPage(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("Testing the LCD");
     lcd_gotoxy(0,1); lcd_putsf("Loading ...");
-    delay_ms(500); lcd_clear();
 }
 
 //********************************************************
-void Display_Advertising(void){
+void LCD_DisplayMainPage(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("GitHub.com");
     lcd_gotoxy(0,1); lcd_putsf("AliRezaJoodi");
-    delay_ms(500); lcd_clear();
 }
