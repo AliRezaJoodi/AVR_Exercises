@@ -3,6 +3,7 @@ A repository for my personal exercises.
 
 Note: Setting on CodeVision AVR  
 ![Setting on CodeVision AVR](_ExtraLibrary_CodeVisionAVR/Setting1.png)
+
 ![Setting on CodeVision AVR](_ExtraLibrary_CodeVisionAVR/Setting2.png)
 
 1: Bascom AVR  

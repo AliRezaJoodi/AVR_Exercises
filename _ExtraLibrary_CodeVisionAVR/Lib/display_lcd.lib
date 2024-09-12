@@ -1,17 +1,10 @@
 
-#include <delay.h>
+#include <display_lcd.h>
 
 #pragma used+
 static unsigned char _base_y[4]={0x80,0xc0};
 unsigned char _lcd_x=0,_lcd_y=0,_lcd_maxx=0;
 #pragma used-
-
-#define e PORTB.2
-#define rs PORTB.0
-#define d4 PORTB.4
-#define d5 PORTB.5
-#define d6 PORTB.6
-#define d7 PORTB.7
 
 void lcd_write(unsigned char data){
  char dd;
@@ -89,12 +82,12 @@ while (k=*str++) lcd_putchar(k);
 void lcd_init(unsigned char lcd_columns){  
 
 //DDRC.3=1;
-DDRB.0=1;
-DDRB.2=1;
-DDRB.4=1;
-DDRB.5=1;
-DDRB.6=1;
-DDRB.7=1;
+DDRD.0=1;
+DDRD.2=1;
+DDRD.4=1;
+DDRD.5=1;
+DDRD.6=1;
+DDRD.7=1;
 
     e=0;
     rs=1;

@@ -1,5 +1,19 @@
-#ifndef _LCD_INCLUDED_
-#define _LCD_INCLUDED_
+
+#include <io.h>
+#include <delay.h>
+
+#ifndef _LCD_INCLUDED
+#define _LCD_INCLUDED
+
+#ifndef LCD_HARDWARE
+#define LCD_HARDWARE
+    #define rs  PORTD.0
+    #define e   PORTD.2
+    #define d4  PORTD.4
+    #define d5  PORTD.5
+    #define d6  PORTD.6
+    #define d7  PORTD.7
+#endif
 
 #pragma used+
 void lcd_write (unsigned char data);
@@ -16,7 +30,7 @@ void lcd_putsf(char flash *str);
 void lcd_init(unsigned char lcd_columns);
 #pragma used-
 
-#pragma library Display_LCD.lib
+#pragma library display_lcd.lib
 
 #endif
 
