@@ -25,17 +25,22 @@
 
 //********************************************************
 void MCP4822_Config(void){
-    _MCP4822_CONFIG_CS;
-    _MCP4822_CONFIG_LDAC;
+    MCP4822_CS_DDR=1;   MCP4822_CS_PORT=1;
+    MCP4822_LDAC_DDR=1; MCP4822_LDAC_PORT=1;
 }
 
 //********************************************************
 void _MCP4822_WriteCommand(unsigned int data){
-    _MCP4822_SELECT;
+    MCP4822_CS_PORT=0;
     spi(GetMsb(data));      //Send MSB 
     spi(GetLsb(data));      //Send LSB 
-    _MCP4822_DESELECT;
-    _MCP4822_SYNCHRONIZE;
+    MCP4822_CS_PORT=1; 
+    #asm("nop");            // Minimum Setup Time = 40ns
+    
+    MCP4822_LDAC_PORT=0;
+    #asm("nop");
+    #asm("nop");           // Minimum Pulse Width = 100ns 
+    MCP4822_LDAC_PORT=1;
 }
 
 //********************************************************

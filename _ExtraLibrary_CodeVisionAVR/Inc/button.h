@@ -24,39 +24,22 @@
     #define BUTTON3_PORT        PORTB.2
     #define BUTTON3_PIN         PINB.2  
 #endif
-
-#define _BUTTON_Delay_ms(VALUE) delay_ms(VALUE);
-
-#ifdef BUTTON1_DDR
-    #define BUTTON1             BUTTON1_PIN
-    #define BUTTON1_CONFIG      BUTTON1_DDR=0; BUTTON1_PORT=!PRESSED;
-#endif
-
-#ifdef BUTTON2_DDR
-    #define BUTTON2             BUTTON2_PIN 
-    #define BUTTON2_CONFIG      BUTTON2_DDR=0; BUTTON2_PORT=!PRESSED;
-#endif
-
-#ifdef BUTTON3_DDR
-    #define BUTTON3             BUTTON3_PIN
-    #define BUTTON3_CONFIG      BUTTON3_DDR=0; BUTTON3_PORT=!PRESSED;
-#endif
           
 void Button_Config(void);
 
 #pragma used+
 
-#ifdef BUTTON1
+#ifdef BUTTON1_PIN
     char Button1_OneStep(void);
     char Button1_Continuous(void);
 #endif
 
-#ifdef BUTTON2
+#ifdef BUTTON2_PIN
     char Button2_OneStep(void);
     char Button2_Continuous(void);
 #endif
 
-#ifdef BUTTON3 
+#ifdef BUTTON3_PIN 
     char Button3_OneStep(void);
     char Button3_Continuous(void);
 #endif

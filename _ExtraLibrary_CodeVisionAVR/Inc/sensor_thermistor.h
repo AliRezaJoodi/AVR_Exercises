@@ -5,25 +5,22 @@
     
 #ifndef THERMISTOR_HARDWARE
 #define THERMISTOR_HARDWARE 
-    #define VCC     	    5
-    #define R2      	    1500
-    #define THERMISTOR_CH   0 
+    #define VCC     	        5
+    #define RESISTOR      	    1500    //ohm
+    #define THERMISTOR_CH       0 
 #endif  
     
 
 //Pull-Up NTC
 /*
 VCC
-R1=NTC
-R2=1K5
+NTC
+RESISTOR
 GND
 */
 
 #pragma used+
-
-float Thermistor_ConvertVoltToOhm_PullUp(float);
-float Test(float);
-
+float Thermistor_ConvertVoltToOhm_PullUp(float volt);
 #pragma used-
 
 #pragma library sensor_thermistor.lib

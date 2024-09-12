@@ -10,17 +10,8 @@
 #endif
 
 #pragma used+
-
-//******************************************
-//Input:    ADC Channel Voltage(mV)
-//Output:   Temp(^C)
-int TC_ConvertMilliVoltToTemp(float);
-
-//******************************************
-//Input:    Temp(^C)
-//Output:   TC Voltage(mV)
-float TC_ConvertTempToMilliVolt(int);
-
+int TC_ConvertMilliVoltToTemp(float mv);
+float TC_ConvertTempToMilliVolt(int temp);
 #pragma used-
 
 #pragma library sensor_thermocouple_k.lib

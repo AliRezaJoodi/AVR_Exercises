@@ -4,7 +4,7 @@
 #define _NTC100K_INCLUDED
     
 #pragma used+
-float NTC100K_ConvertOhmToTemp(float);
+float NTC100K_ConvertOhmToTemp(float ohm);
 #pragma used-
 
 #pragma library sensor_thermistor_ntc100k.lib

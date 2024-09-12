@@ -5,28 +5,28 @@
 
 //********************************************************
 void Buzzer_Config(void){
-    _BUZZER_CONFIG;
+    BUZZER_DDR=1; BUZZER_PORT=!BUZZER_ACTIVE;
 }
 
 //*******************************************************
 void Buzzer_MakeBeep_UpOrDownSound(void){
-    _BUZZER_ENABLE;
-    _BUZZER_Delay_ms(80);
-    _BUZZER_DISABLE;  
+    BUZZER_PORT=BUZZER_ACTIVE;
+    delay_ms(80);
+    BUZZER_PORT=!BUZZER_ACTIVE;  
 }
 
 //*******************************************************
 void Buzzer_MakeBeep_SetSound(void){    
-    _BUZZER_ENABLE;
-    _BUZZER_Delay_ms(220);
-    _BUZZER_DISABLE;
+    BUZZER_PORT=BUZZER_ACTIVE;
+    delay_ms(220);
+    BUZZER_PORT=!BUZZER_ACTIVE;
 }
 
 //*******************************************************
 void Buzzer_MakeBeep_ErrorSound(void){
-    _BUZZER_ENABLE;
-    _BUZZER_Delay_ms(500);
-    _BUZZER_DISABLE;  
+    BUZZER_PORT=BUZZER_ACTIVE;
+    delay_ms(500);
+    BUZZER_PORT=!BUZZER_ACTIVE;  
 }
 
 //*******************************************************

@@ -21,17 +21,9 @@
 #endif
 //#define MCP3204_CS              MCP3204_CS_PORT
 
-#define _MCP3204_CONFIG_CS \
-        MCP3204_CS_DDR=1;\ 
-        MCP3204_CS_PORT=1;      
-
-#define _MCP3204_SELECT          MCP3204_CS_PORT=0;
-#define _MCP3204_DESELECT        MCP3204_CS_PORT=1;
-
 void MCP3204_Config(void);
 
 #pragma used+
-unsigned int _MCP3204_Communication(char data1, char data2);
 float MCP3204_GetSingleEndedADC(char ch);
 float MCP3204_GetDifferentialADC(char ch);
 #pragma used-

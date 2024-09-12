@@ -1,0 +1,51 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+tc_mv                                                                             0x0260       4
+_base_y (alcd.lib)                                                                0x0264       4
+_seed (stdlib.lib)                                                                0x0268       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+input_int                                                                         R4,R5        2
+task_adc                                                                          R7           1
+tc_temp                                                                           R8,R9        2
+_lcd_x                                                                            R6           1
+_lcd_y                                                                            R11          1
+_lcd_maxx                                                                         R10          1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+Char_Define                                                                       0x00D57     26
+adc_isr                                                                           0x00D71     23
+ADC_Config_AVCC_10Bit                                                             0x00D88     26
+ADC_GetIn                                                                         0x00DA2     46
+main                                                                              0x00DD0     63
+Display_Temp                                                                      0x00E0F     68
+Config_LCD                                                                        0x00E53      6
+put_buff_G100                                                                     0x00E59     58
+_ftoe_G100                                                                        0x00E93    210
+_print_G100                                                                       0x00F65    548
+sprintf                                                                           0x01189     60
+_lcd_write_nibble_G101                                                            0x011C5     20
+_lcd_write_data                                                                   0x011D9     12
+lcd_write_byte                                                                    0x011E5      8
+lcd_gotoxy                                                                        0x011ED     13
+lcd_clear                                                                         0x011FA     12
+lcd_putchar                                                                       0x01206     21
+lcd_puts                                                                          0x0121B     15
+lcd_putsf                                                                         0x0122A     19
+lcd_init                                                                          0x0123D     45
+TC_ConvertMilliVoltToTemp                                                         0x0126A     73
+strcpyf                                                                           0x012B3     13
+strlen                                                                            0x012C0     12
+strlenf                                                                           0x012CC     13
+ftrunc                                                                            0x012D9     49
+floor                                                                             0x0130A     23
+ftoa                                                                              0x01321    161

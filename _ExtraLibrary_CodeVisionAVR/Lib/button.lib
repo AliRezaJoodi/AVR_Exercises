@@ -6,31 +6,31 @@
 //*************************************************
 void Button_Config(void){
     #ifdef BUTTON1   
-        BUTTON1_CONFIG;
+        BUTTON1_DDR=0; BUTTON1_PORT=!PRESSED;
     #endif
 
     #ifdef BUTTON2  
-        BUTTON2_CONFIG;
+        BUTTON2_DDR=0; BUTTON2_PORT=!PRESSED;
     #endif
 
     #ifdef BUTTON3
-        BUTTON3_CONFIG;
+        BUTTON3_DDR=0; BUTTON3_PORT=!PRESSED;
     #endif
 }
 
-#ifdef BUTTON1
+#ifdef BUTTON1_PIN
 //*************************************************
 char Button1_OneStep(void){
     static bit last_status=!PRESSED; 
     
-    if(BUTTON1==PRESSED && last_status==!PRESSED){
-        _BUTTON_Delay_ms(BUTTONLAG1);
-        if(BUTTON1==PRESSED){
+    if(BUTTON1_PIN==PRESSED && last_status==!PRESSED){
+        delay_ms(BUTTONLAG1);
+        if(BUTTON1_PIN==PRESSED){
             last_status=PRESSED;
             return 1; 
         } 
     }
-    if(BUTTON1==!PRESSED){last_status=!PRESSED;}
+    if(BUTTON1_PIN==!PRESSED){last_status=!PRESSED;}
     
     return 0; 
 }
@@ -39,7 +39,7 @@ char Button1_OneStep(void){
 char Button1_Continuous(void){
     static unsigned int i=0;
         
-    if(BUTTON1==PRESSED){
+    if(BUTTON1_PIN==PRESSED){
         ++i;
         if(i>=BUTTONLAG2){i=0; return 1;} 
     }
@@ -48,19 +48,19 @@ char Button1_Continuous(void){
 }
 #endif
 
-#ifdef BUTTON2
+#ifdef BUTTON2_PIN
 //*************************************************
 char Button2_OneStep(void){
     static bit last_status=!PRESSED; 
     
-    if(BUTTON2==PRESSED && last_status==!PRESSED){
-        _BUTTON_Delay_ms(BUTTONLAG1);
-        if(BUTTON2==PRESSED){
+    if(BUTTON2_PIN==PRESSED && last_status==!PRESSED){
+        delay_ms(BUTTONLAG1);
+        if(BUTTON2_PIN==PRESSED){
             last_status=PRESSED;
             return 1; 
         } 
     }
-    if(BUTTON2==!PRESSED){last_status=!PRESSED;}
+    if(BUTTON2_PIN==!PRESSED){last_status=!PRESSED;}
     
     return 0; 
 }
@@ -69,7 +69,7 @@ char Button2_OneStep(void){
 char Button2_Continuous(void){
     static unsigned int i=0;
         
-    if(BUTTON2==PRESSED){
+    if(BUTTON2_PIN==PRESSED){
         ++i;
         if(i>=BUTTONLAG2){i=0; return 1;} 
     }
@@ -78,19 +78,19 @@ char Button2_Continuous(void){
 }
 #endif
 
-#ifdef BUTTON3 
+#ifdef BUTTON3_PIN 
 //*************************************************
 char Button3_OneStep(void){
     static bit last_status=!PRESSED; 
     
-    if(BUTTON3==PRESSED && last_status==!PRESSED){
-        _BUTTON_Delay_ms(BUTTONLAG1);
-        if(BUTTON3==PRESSED){
+    if(BUTTON3_PIN==PRESSED && last_status==!PRESSED){
+        delay_ms(BUTTONLAG1);
+        if(BUTTON3_PIN==PRESSED){
             last_status=PRESSED;
             return 1;
         } 
     }
-    if(BUTTON3==!PRESSED){last_status=!PRESSED;} 
+    if(BUTTON3_PIN==!PRESSED){last_status=!PRESSED;} 
     return 0;
 }
 
@@ -98,7 +98,7 @@ char Button3_OneStep(void){
 char Button3_Continuous(void){
     static unsigned int i=0;
         
-    if(BUTTON3==PRESSED){
+    if(BUTTON3_PIN==PRESSED){
         ++i;
         if(i>=BUTTONLAG2){i=0; return 1;} 
     }

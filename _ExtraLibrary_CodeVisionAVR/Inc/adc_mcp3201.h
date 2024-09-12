@@ -20,13 +20,6 @@
     #define MCP3201_VREF        5000     //mv
 #endif
 
-#define _MCP3201_CONFIG_CS \
-        MCP3201_CS_DDR=1;\ 
-        MCP3201_CS_PORT=1;      
-
-#define _MCP3201_SELECT          MCP3201_CS_PORT=0;
-#define _MCP3201_DESELECT        MCP3201_CS_PORT=1;
-
 void MCP3201_Config(void);
 
 #pragma used+

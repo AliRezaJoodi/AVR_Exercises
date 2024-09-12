@@ -9,10 +9,8 @@
 #endif  
 
 #pragma used+
-
 float Average(float);
 float Average2(float);
-
 #pragma used-
 
 #pragma library average.lib

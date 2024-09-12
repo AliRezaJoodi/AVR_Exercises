@@ -28,10 +28,10 @@ void main(void){
     LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
 
     while (1){ 
-        //volt1=MCP3204_GetSingleEndedADC(0); 
-        //volt2=MCP3204_GetDifferentialADC(23);  
+        volt1=MCP3204_GetSingleEndedADC(0); 
+        volt2=MCP3204_GetDifferentialADC(23);  
         
-        //LCD_DisplayMainPage();
+        LCD_DisplayMainPage();
         delay_ms(500);
     }
 }

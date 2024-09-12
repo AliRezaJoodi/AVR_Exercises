@@ -10,7 +10,7 @@
 
 //********************************************************
 void MCP3208_Config(void){
-    _MCP3208_CONFIG_CS;  
+    MCP3208_CS_DDR=1; MCP3208_CS_PORT=1;  
 }
 
 //********************************************************
@@ -19,11 +19,11 @@ unsigned int _MCP3208_Communication(char data1, char data2){
     unsigned char msb=0;
     unsigned char lsb=0;
     
-    _MCP3208_SELECT;
+    MCP3208_CS_PORT=0;
     spi(data1);
     msb=spi(data2); 
     lsb=spi(0xFF);
-    _MCP3208_DESELECT;
+    MCP3208_CS_PORT=1;
     
     msb=msb&0b00001111; 
     value=GetInt(msb,lsb);

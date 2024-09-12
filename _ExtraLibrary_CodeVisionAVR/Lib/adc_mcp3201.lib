@@ -7,7 +7,7 @@
 
 //********************************************************
 void MCP3201_Config(void){
-    _MCP3201_CONFIG_CS;    
+    MCP3201_CS_DDR=1; MCP3201_CS_PORT=1;    
 }
 
 //********************************************************
@@ -16,10 +16,10 @@ unsigned int _MCP3201_Communication(void){
     unsigned char msb=0;
     unsigned char lsb=0;
     
-    _MCP3201_SELECT;
+    MCP3201_CS_PORT=0;
     msb=spi(0xFF); 
     lsb=spi(0xFF);
-    _MCP3201_DESELECT;
+    MCP3201_CS_PORT=1;
     
     msb=msb&0b00011111;
     lsb=lsb&0b11111110; 

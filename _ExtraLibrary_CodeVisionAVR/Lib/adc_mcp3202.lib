@@ -10,7 +10,8 @@
 
 //********************************************************
 void MCP3202_Config(void){
-    _MCP3202_CONFIG_CS;  
+    MCP3202_CS_DDR=1; 
+    MCP3202_CS_PORT=1;  
 }
 
 //********************************************************
@@ -19,11 +20,11 @@ unsigned int _MCP3202_Communication(char data1, char data2){
     unsigned char msb=0;
     unsigned char lsb=0;
     
-    _MCP3202_SELECT;
+    MCP3202_CS_PORT=0;
     spi(data1);
     msb=spi(data2); 
     lsb=spi(0xFF);
-    _MCP3202_DESELECT;
+    MCP3202_CS_PORT=1;
     
     msb=msb&0b00001111; 
     value=GetInt(msb,lsb);

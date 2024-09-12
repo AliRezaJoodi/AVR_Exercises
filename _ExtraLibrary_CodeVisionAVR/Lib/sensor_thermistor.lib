@@ -2,26 +2,11 @@
 
 #include <sensor_thermistor.h>
 
-//Pull-Up NTC
-/*
-VCC
-R1=NTC
-R2=1K5
-GND
-*/
 //********************************************************
-float Thermistor_ConvertVoltToOhm_PullUp(float vr2){
-    float y=0;
+float Thermistor_ConvertVoltToOhm_PullUp(float volt){
+    float ohm=0;
     
-    y=R2*(VCC-vr2)/vr2; 
-    return y;
-}
-
-//********************************************************
-float Test(float vr2){
-    float y=0;
-    
-    y=R2*(VCC-vr2)/vr2; 
-    return y;
+    ohm=(VCC-volt)/(volt/RESISTOR); 
+    return ohm;
 }
 
