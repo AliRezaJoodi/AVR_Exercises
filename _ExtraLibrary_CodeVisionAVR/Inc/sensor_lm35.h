@@ -10,7 +10,7 @@
 
 #define LM35_GAIN          0.1      // 10mV=1^C
 
-#define LM35_ConvertMilliVoltToTemp(VALUE)       (VALUE*LM35_GAIN)
-#define LM35_ConvertVoltToTemp(VALUE)            (VALUE*1000*LM35_GAIN)
+#define LM35_ConvertMilliVoltToTemp_Celsius(VALUE)      (VALUE*LM35_GAIN)
+#define LM35_ConvertVoltToTemp_Celsius(VALUE)           (VALUE*1000*LM35_GAIN)
 
 #endif

@@ -32,7 +32,7 @@ void main(void){
 
     while(1){ 
         input_mv=ADC_GetMilliVolt(LM35_CH); 
-        temp=LM35_ConvertMilliVoltToTemp(input_mv);
+        temp=LM35_ConvertMilliVoltToTemp_Celsius(input_mv);
         LCD_DisplayMainPage(input_mv, temp);
         delay_ms(250);                                       
     };

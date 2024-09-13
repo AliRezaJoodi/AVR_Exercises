@@ -4,19 +4,19 @@
     #define KEYPAD4x4_PORT      PORTC
     #define KEYPAD4x4_PIN       PINC 
     
-    #define K00                 215
-    #define K01                 235
-    #define K02                 219
-    #define K03                 187
-    #define K04                 237
-    #define K05                 221
-    #define K06                 189
-    #define K07                 238
-    #define K08                 222
-    #define K09                 190
-    #define K10                 126
-    #define K11                 125
-    #define K12                 123
-    #define K13                 119
-    #define K14                 183
-    #define K15                 231
+    #define N00                 215
+    #define N01                 235
+    #define N02                 219
+    #define N03                 187
+    #define N04                 237
+    #define N05                 221
+    #define N06                 189
+    #define N07                 238
+    #define N08                 222
+    #define N09                 190
+    #define N10                 126
+    #define N11                 125
+    #define N12                 123
+    #define N13                 119
+    #define N14                 183
+    #define N15                 231
