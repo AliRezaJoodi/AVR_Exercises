@@ -1,6 +1,6 @@
-// GitHub Account:     GitHub.com/AliRezaJoodi
+// GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <mega32.h>
+#include <mega32a.h>
 #include <delay.h>
 #include <stdlib.h>
 
@@ -10,38 +10,37 @@
 #endasm
 #include <lcd.h>
 
+#include "Attachment\hardware_v1.0.h"
 #include <keypad4x4.h>
 
-void Configuration_LCD(void);
-void Display_loading(void);
-void Display_Advertising(void);
-void Display_Number(char, char);
-void Display2_Number(char, char);
+void LCD_Config(void);
+void LCD_DisplayloadingPage(void);
+void LCD_DisplayMainPage(char, char);
 
-unsigned char numer_initial, numer_correct;   
-unsigned char numer_old=0;
+unsigned char numer_initial, numer;   
 
 void main(void){ 
-    Configuration_LCD();
-    Display_loading(); 
-    Display_Advertising(); 
-    Display2_Number(numer_initial, numer_correct);
+    unsigned char numer_old=0;
+    
+    LCD_Config();
+    LCD_DisplayloadingPage(); delay_ms(250); lcd_clear(); 
+    LCD_DisplayMainPage(255, 16);
    
     while(1){
-        numer_initial=Get_Port(); 
-        numer_correct=Converter_Data(numer_initial);
-        //numer_correct=Get_Keypad();
+        numer_initial=_Keypad4x4_GetInitialNumber(); 
+        //numer=_Keypad4x4_ConvertNumber(numer_initial);
+        numer=Keypad4x4_GetNumber();
         
-        if(numer_correct<16 && numer_old!=numer_correct){
-            Display2_Number(numer_initial, numer_correct);
-            numer_old= numer_correct;
+        if(numer<16 && numer_old!=numer){ 
+            numer_old= numer;
+            LCD_DisplayMainPage(numer_initial, numer);
   	    }
     }
 }
 
 
 //*******************************************************
-void Display2_Number(char x1, char x2){
+void LCD_DisplayMainPage(unsigned char x1, unsigned char x2){
     char buffer[16]; 
     lcd_clear();
     
@@ -52,38 +51,18 @@ void Display2_Number(char x1, char x2){
     lcd_gotoxy(0,1); lcd_putsf("4x4Keypad Driver"); 
 }
 
-//*******************************************************
-void Display_Number(char x1, char x2){
-    char buffer[16];
-    lcd_clear(); 
-    
-    lcd_gotoxy(0,0); lcd_putsf("Num(Initial):"); 
-    lcd_gotoxy(13,0); itoa(x1,buffer); lcd_puts(buffer);
-    
-    lcd_gotoxy(0,1); lcd_putsf("Num(Correct):"); 
-    lcd_gotoxy(13,1); itoa(x2,buffer); lcd_puts(buffer);
-}
-
 //********************************************************
-void Configuration_LCD(void){
+void LCD_Config(void){
     lcd_init(16); lcd_clear();
 }
 
 //********************************************************
-void Display_loading(void){
+void LCD_DisplayloadingPage(void){
     lcd_clear(); 
     lcd_gotoxy(0,0); lcd_putsf("4x4Keypad Driver");
     lcd_gotoxy(0,1); lcd_putsf("Loading ...");
-    delay_ms(500); lcd_clear();
 }
 
-//********************************************************
-void Display_Advertising(void){
-    lcd_clear(); 
-    lcd_gotoxy(0,0); lcd_putsf("GitHub.com");
-    lcd_gotoxy(0,1); lcd_putsf("AliRezaJoodi");
-    delay_ms(500); lcd_clear();
-}
 
 
 

@@ -1,0 +1,40 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#include <keypad4x4.h> 
+
+                                   //__0,__1,__2,__3,__4,__5,__6,__7,__8,__9,_10,_11,_12,_13,_14,_15    
+//flash unsigned char keypad_data[16]={215,235,219,187,237,221,189,238,222,190,126,125,123,119,183,231};
+flash unsigned char keypad_data[16]={N00,N01,N02,N03,N04,N05,N06,N07,N08,N09,N10,N11,N12,N13,N14,N15};
+    
+//********************************************************
+unsigned char _Keypad4x4_GetInitialNumber(void){
+    unsigned char numer;
+    KEYPAD4x4_DDR=0b00001111; KEYPAD4x4_PORT=0b11110000; delay_us(5); numer=KEYPAD4x4_PIN; 
+    KEYPAD4x4_DDR=0b11110000; KEYPAD4x4_PORT=0b00001111; delay_us(5); numer=numer|KEYPAD4x4_PIN;
+    return numer;
+}
+
+//********************************************************
+unsigned char _Keypad4x4_ConvertNumber(unsigned char key){ 
+    unsigned char i=0;
+     
+    if(key!=0xff){ 
+        for(i=0; i<16; ++i){    
+  	        if(key==keypad_data[i]){return i;}   
+  	    }
+    }  
+    
+    return 16; 
+}
+
+//********************************************************
+unsigned char Keypad4x4_GetNumber(void){
+    unsigned char numer_initial=0;
+    unsigned char numer=0;
+    
+    numer_initial=_Keypad4x4_GetInitialNumber(); 
+    numer=_Keypad4x4_ConvertNumber(numer_initial);
+    
+    return numer;
+}
+
