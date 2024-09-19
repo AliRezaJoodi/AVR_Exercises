@@ -1,7 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <button.h>
-
           
 //*************************************************
 void Button_Config(void){
@@ -30,7 +29,10 @@ char Button1_OneStep(void){
             return 1; 
         } 
     }
-    if(BUTTON1_PIN==!PRESSED){last_status=!PRESSED;}
+    if(BUTTON1_PIN==!PRESSED  && last_status==PRESSED){ 
+        delay_ms(BUTTONLAG1);
+        if(BUTTON1_PIN==!PRESSED){last_status=!PRESSED;}
+    }
     
     return 0; 
 }
@@ -60,7 +62,10 @@ char Button2_OneStep(void){
             return 1; 
         } 
     }
-    if(BUTTON2_PIN==!PRESSED){last_status=!PRESSED;}
+    if(BUTTON2_PIN==!PRESSED  && last_status==PRESSED){
+        delay_ms(BUTTONLAG1);
+        if(BUTTON2_PIN==!PRESSED){last_status=!PRESSED;}
+    }
     
     return 0; 
 }
@@ -90,7 +95,10 @@ char Button3_OneStep(void){
             return 1;
         } 
     }
-    if(BUTTON3_PIN==!PRESSED){last_status=!PRESSED;} 
+    if(BUTTON3_PIN==!PRESSED && last_status==PRESSED){ 
+        delay_ms(BUTTONLAG1);
+        if(BUTTON3_PIN==!PRESSED){last_status=!PRESSED;}
+    } 
     return 0;
 }
 

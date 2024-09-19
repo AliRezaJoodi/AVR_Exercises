@@ -22,7 +22,9 @@ void main(void){
     unsigned char old_value=0;
     
     Button_Config();
-    LCD_Config(); LCD_DisplayMainPage(value);
+    LCD_Config(); 
+    
+    LCD_DisplayMainPage(value);
    
     while(1){ 
         if(Button1_OneStep()){++value;}
