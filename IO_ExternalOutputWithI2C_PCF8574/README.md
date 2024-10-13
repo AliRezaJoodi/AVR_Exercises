@@ -1,4 +1,4 @@
-## PCF8574 External Output With I2C Interface
+## External Output With I2C Interface, PCF8574
                 
 MCU:   		ATmega32  
 Frequency:     	1MHz  

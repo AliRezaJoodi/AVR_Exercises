@@ -64,7 +64,7 @@ Note: Setting on CodeVision AVR
 |![](Interrupt_INT0/Simulate/Album.png)					|[External Interrupt INT0](Interrupt_INT0)									|Y|Y|-|
 |![](Interrupt_INT1/Simulate/Album.png)					|[External Interrupt INT1](Interrupt_INT1)									|Y|Y|-|
 |![](Interrupt_INT2/Simulate/Album.png)					|[External Interrupt INT2](Interrupt_INT2)									|Y|Y|-|
-|![]()									|[PCF8574 External Output With I2C Interface](IO_ExternalOutputs_PCF8574_I2C)					|Y|-|-|
+|![]()									|[External Output With I2C Interface, PCF8574](IO_ExternalOutputWithI2C_PCF8574)					|Y|-|-|
 |![]()									|[Digital Output](IO_Output)											|Y|Y|-|
 |![]()									|[Use of PortG & PortF](IO_PortG&PortF)										|-|Y|-|
 |![](Keyboard_PC/Hardware/Album.png)					|[PC Keyboard](Keyboard_PC)											|Y|-|-|
