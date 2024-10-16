@@ -82,7 +82,7 @@ Note: Setting on CodeVision AVR
 |![](RelayController_UART_1CH/Simulate/Album.png)			|[1CH Relay Controller With UART](RelayController_UART_1CH)							|Y|-|-|
 |![](RelayController_UART_8CH/Simulate/Album.png)			|[8CH Relay Controller With UART](RelayController_UART_8CH)							|Y|-|-|
 |![](RTC_DS1307/Simulate/Album.png)					|[External RTC with DS1307 For I2C Bus](RTC_DS1307)								|Y|Y|-|
-|![]()									|[CMPS10 Gyroscope and Accelerometer With I2C Interfac](Sensor_Gyroscope_CMPS10_I2C)				|Y|Y|-|
+|![]()									|[CMPS10 Gyroscope and Accelerometer With I2C Interfac](Sensor_GyroscopeWithI2C_CMPS10)				|Y|Y|-|
 |![]()									|[MPU6050 Gyroscope And Accelerometer With I2C Interface](Sensor_Gyroscope_MPU6050_I2C)				|Y|-|-|
 |![](Sensor_Humidity_SHT10/Simulate/Album.png)				|[Humidity Sensor With SHT10](Sensor_Humidity_SHT10)								|Y|Y|-|
 |![](Sensor_LDR/Simulate/Album.png)					|[LDR Sensor](Sensor_LDR)											|Y|Y|-|
