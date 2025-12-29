@@ -8,9 +8,9 @@
 
 #include "converter.h"
 
-void Config_LCD(void);
+void LCD_Config(void);
 void Display_Value(void);
-void Config_Timer1(void);
+void Timer1_Config(void);
 
 float out_persent=0;
 float out_voltage=0;
@@ -21,8 +21,8 @@ unsigned int input_int=0;
 float input_v=0;
     
 void main(void){    
-    Config_Timer1();
-    Config_LCD();
+    Timer1_Config();
+    LCD_Config();
     //Display_Loding(500); 
     
     out_persent=50;   
@@ -31,12 +31,21 @@ void main(void){
     OCR1A=out_pwm; 
     Display_Value();
     
-    while (1){
+    while(1){
     }
 }
 
+//******************************************
+void Display_Value(void){
+    char txt[16]; 
+    sprintf(txt,"Out:%.0f%%",out_persent); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putsf("  ");  
+    sprintf(txt," => %4d",out_pwm); lcd_gotoxy(7,0); lcd_puts(txt); lcd_putsf("  ");
+    sprintf(txt,"Out(1-5V):%.3fV",out_voltage); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
+    //lcd_gotoxy(0,1); lcd_putsf("DAC with PWM");  
+}
+
 //********************************************************
-void Config_Timer1(void){
+void Timer1_Config(void){
 // Timer/Counter 1 initialization
 // Clock source: System Clock
 // Clock value: 8000.000 kHz
@@ -67,17 +76,8 @@ DDRD.4=1; PORTD.4=0;
 DDRD.5=1; PORTD.5=0;
 }
 
-//******************************************
-void Display_Value(void){
-    char txt[16]; 
-    sprintf(txt,"Out:%.0f%%",out_persent); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putsf("  ");  
-    sprintf(txt," => %4d",out_pwm); lcd_gotoxy(7,0); lcd_puts(txt); lcd_putsf("  ");
-    sprintf(txt,"Out(1-5V):%.3fV",out_voltage); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
-    //lcd_gotoxy(0,1); lcd_putsf("DAC with PWM");  
-}
-
 //********************************************************
-void Config_LCD(void){
+void LCD_Config(void){
     lcd_init(16);
     lcd_clear();
 }

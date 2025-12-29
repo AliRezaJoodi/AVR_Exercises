@@ -18,7 +18,7 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -26,12 +26,12 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1495962955
+TimeStamp1=1515261508
 PageIndex1=1
 OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\timer1.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1495962872
+TimeStamp2=1515261509
 PageIndex2=2
 OF3=C:\Program Files (x86)\CVAVR\inc\mega32a.h
 Active3=0
@@ -48,7 +48,7 @@ Active5=0
 EditorPanel5=0
 TimeStamp5=1032675656
 PageIndex5=5
-ActiveTab=1
+ActiveTab=2
 TimeStamp0=1458617400
 F1=v1.0.c
 [CompilerDebug]
@@ -571,9 +571,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1495962993
+TimeStamp=1537082639
 [BookmarksFoldedCode]
-Files=27
+Files=28
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
 F2=T3.c
 F3=P3_change LCD pin.c
@@ -601,6 +601,7 @@ F24=C:\Program Files (x86)\CVAVR\inc\mega32_bits.h
 F25=C:\Program Files (x86)\CVAVR\inc\mega32a.h
 F26=Attachment\Timer1.h
 F27=..\..\_ExtraLibrary_CodeVisionAVR\Inc\timer1.h
+F28=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 [Bookmarks1]
 TimeStamp=1231638592
 Row=358
@@ -980,9 +981,9 @@ BK9=-1
 [FoldedCode21]
 Blocks=0
 [Bookmarks22]
-TimeStamp=1495962955
-Row=6
-Column=11
+TimeStamp=1515261508
+Row=2
+Column=33
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1096,14 +1097,12 @@ F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=..\..\_ExtraLibrary_CodeVisionAVR\Inc\timer1.h
 F4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
-[FoldedCode22]
-Blocks=0
 [Bookmarks27]
-TimeStamp=1495962872
-Row=0
-Column=0
+TimeStamp=1515261509
+Row=146
+Column=61
 ScrollPosX=0
-ScrollPosY=145
+ScrollPosY=132
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1114,5 +1113,25 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[Bookmarks28]
+TimeStamp=1515261509
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode28]
+Blocks=0
+[FoldedCode22]
+Blocks=0
 [FoldedCode27]
 Blocks=0
