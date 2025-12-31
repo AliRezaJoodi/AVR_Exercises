@@ -98,7 +98,7 @@
     
 #pragma used+
 
-    unsigned int input_int;
+    uint16_t input_int;
     char task_adc=0;
 
 //******************************************    
@@ -189,7 +189,7 @@ void ADC_Config_AVCC_08Bit(void){
 }
 
 //******************************************
-unsigned int ADC_GetIn(unsigned char ch){
+uint16_t ADC_GetIn(unsigned char ch){
     if(CHECK_ADC_ENABLE){
         ADC_SetInputChannelAndGainSelections(ch);
         delay_us(10);
@@ -207,6 +207,8 @@ unsigned int ADC_GetIn(unsigned char ch){
 
 #define ADC_GetVolt(CH)                  (ADC_GetIn(CH)*ADC_GAIN)
 #define ADC_GetMilliVolt(CH)             (ADC_GetVolt(CH)*1000)
+
+#define ADC_ConvertInToVolt(VALUE)       (VALUE*ADC_GAIN)
 
 #pragma used-
 #endif

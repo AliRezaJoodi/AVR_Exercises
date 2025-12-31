@@ -1,6 +1,24 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <average.h>
+#include <average_static.h>
+
+//***********************************
+uint16_t Average_uint16(uint16_t value){
+    static uint16_t sum=0;
+    static uint16_t average=0;
+    static uint8_t i=0;
+    
+    sum = sum + value;
+    ++i; 
+    
+    if( (i==AVERAGE_COUNT) || (i==64) ){
+        average = sum / i;
+        sum=0;
+        i=0;
+    }
+    
+    return average;  
+}
 
 //***********************************
 float Average(float value){

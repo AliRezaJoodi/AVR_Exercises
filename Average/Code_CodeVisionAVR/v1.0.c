@@ -3,6 +3,7 @@
 #include <mega32a.h>
 #include <delay.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 // Alphanumeric LCD Module functions
 #asm
@@ -11,44 +12,54 @@
 #include <lcd.h>
 
 #pragma used+
-//unsigned int input_int=0;
-float input_mv=0;
-float input_v=0;
-float temp=0;
+//uint16_t input_int=0;
+//float input_mv=0;
+//float input_v=0;
+//float temp=0;
 #pragma used-
 
 #include "Attachment\hardware_v1.0.h"
 #include <adc.h>
 #include <sensor_lm35.h>
-#include <average.h>
+#include <average_static.h>
 #include <display_lcd_char.h>
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(float);
 
 void main(void){
+    uint16_t input_int=0;     
+    uint16_t input_int_hys=0;
+    float volt=0;  
+    float temp=0;
+    
     LCD_Config();
     ADC_Config_AVCC_10Bit();
     Char_Define(char0,0); 
     
-    while(1){ 
-        input_v=ADC_GetVolt(LM35_CH); 
-        temp=LM35_ConvertVoltToTemp(input_v);
-        temp=Average(temp);
-        LCD_DisplayMainPage(temp);
-        delay_ms(250);                                        
+    while(1){
+          input_int = ADC_GetIn(LM35_CH);
+          input_int = Average_uint16(input_int);
+          if(input_int_hys != input_int){
+            input_int_hys = input_int;
+            volt = ADC_ConvertInToVolt(input_int);
+            temp = LM35_ConvertVoltToTemp_Celsius(volt);
+            LCD_DisplayMainPage(temp);
+          }                                       
     };
 }
 
 //********************************************************
 void LCD_Config(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16);
+    lcd_clear();   
 }
 
 //********************************************************
 void LCD_DisplayMainPage(float temp){
-    char txt[16]; 
-    lcd_gotoxy(0,0); lcd_putsf("Temp:"); ftoa(temp,1,txt); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" "); 
+    char txt[16];
+     
+    lcd_gotoxy(0,0);lcd_putsf("Temp:"); ftoa(temp,1,txt); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" "); 
     lcd_gotoxy(0,1); lcd_putsf("Average");  
 }
 
