@@ -1,0 +1,19 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+main                                                                              0x00044      9
+Timer1_DAC_SetVoltage_ChA                                                         0x0004D     14
+Timer1_DAC_SetVoltage_ChB                                                         0x0005B     16
+Timer1_DAC_Config                                                                 0x0006B     18
