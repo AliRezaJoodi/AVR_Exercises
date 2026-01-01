@@ -3,7 +3,7 @@
 #include <average_static.h>
 
 //***********************************
-uint16_t Average_BlockUpdate_uint16(uint16_t value){
+uint16_t Average_BlockUpdate_u16(uint16_t value){
     static uint16_t sum=0;
     static uint16_t average=0;
     static uint8_t i=0;
@@ -22,7 +22,7 @@ uint16_t Average_BlockUpdate_uint16(uint16_t value){
 
 // Average Block Update
 //***********************************
-float Average_BlockUpdate_float(float value){
+float Average_BlockUpdate_f32(float value){
     static float sum=0;
     static float average=0;
     static unsigned char i=0;
@@ -41,7 +41,7 @@ float Average_BlockUpdate_float(float value){
  
 // Moving Average Method with Sliding Window (Shift-based)   
 //***********************************
-float Average_MovingWithShift_float(float value){
+float Average_MovingWithShift_f32(float value){
     static float d[AVERAGE_COUNT];
     float average=0;
     unsigned char i=0; 
@@ -61,7 +61,7 @@ float Average_MovingWithShift_float(float value){
 
 // Moving Average Method with Circular Buffer
 //***********************************
-float Average_MovingWithCircularBuffer_float(float value){
+float Average_MovingWithCircularBuffer_f32(float value){
     static float buf[AVERAGE_COUNT];
     static uint8_t i = 0;
     static uint8_t count = 0;
@@ -74,6 +74,6 @@ float Average_MovingWithCircularBuffer_float(float value){
     i++; if(i >= AVERAGE_COUNT) i = 0;
     if(count < AVERAGE_COUNT) count++;
 
-    return sum / count;
+    return (sum / count);
 }
 

@@ -1,5 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
 #include <delay.h>
 #include <utility.h>
 
@@ -109,7 +110,7 @@ interrupt [ADC_INT] void adc_isr(void){
 }
 
 //******************************************
-void ADC_ConfigWithInterrupt(unsigned char ch){    
+void ADC_Config_AVCC_10Bit_Interrupt(unsigned char ch){    
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AVCC_PIN);
     ADC_SetResolution(R1024);
@@ -189,7 +190,7 @@ void ADC_Config_AVCC_08Bit(void){
 }
 
 //******************************************
-uint16_t ADC_GetIn(unsigned char ch){
+uint16_t ADC_GetCounts(unsigned char ch){
     if(CHECK_ADC_ENABLE){
         ADC_SetInputChannelAndGainSelections(ch);
         delay_us(10);
@@ -205,11 +206,11 @@ uint16_t ADC_GetIn(unsigned char ch){
     }   
 }
 
-#define ADC_GetMilliVolt(CH)                (ADC_GetIn(CH)*ADC_GAIN)
-#define ADC_GetVolt(CH)                     (ADC_GetMilliVolt(CH)*0.001)
+#define ADC_GetMilliVolt(CH)                    (ADC_GetCounts(CH)*ADC_GAIN)
+#define ADC_GetVolt(CH)                         (ADC_GetMilliVolt(CH)*0.001)
 
-#define ADC_ConvertInToMilliVolt(VALUE)     (VALUE*ADC_GAIN)
-#define ADC_ConvertInToVolt(VALUE)          (ADC_ConvertInToMilliVolt(VALUE)*0.001)
+#define ADC_ConvertCountsToMilliVolt(VALUE)     (VALUE*ADC_GAIN)
+#define ADC_ConvertCountsToVolt(VALUE)          (ADC_ConvertCountsToMilliVolt(VALUE)*0.001)
 
 #pragma used-
 #endif

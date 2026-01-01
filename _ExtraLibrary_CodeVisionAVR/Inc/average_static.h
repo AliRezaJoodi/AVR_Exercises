@@ -11,10 +11,10 @@
 #endif
 
 #pragma used+
-uint16_t Average_BlockUpdate_uint16(uint16_t);  // AVERAGE_COUNT will be 1~64 for input from 0~1023 
-float Average_BlockUpdate_float(float);
-float Average_MovingWithCircularBuffer_float(float);
-float Average_MovingWithShift_float(float);
+uint16_t Average_BlockUpdate_u16(uint16_t);  // AVERAGE_COUNT will be 1~64 for input from 0~1023 
+float Average_BlockUpdate_f32(float);
+float Average_MovingWithCircularBuffer_f32(float);
+float Average_MovingWithShift_f32(float);
 #pragma used-
 
 #pragma library average_static.lib

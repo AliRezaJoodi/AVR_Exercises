@@ -71,10 +71,9 @@ float Average_MovingWithCircularBuffer_float(float value){
     buf[i] = value;
     sum = sum + value;
 
-    i++;
-    if(i >= AVERAGE_COUNT) i = 0;
+    i++; if(i >= AVERAGE_COUNT) i = 0;
     if(count < AVERAGE_COUNT) count++;
 
-    return sum / count;
+    return (sum / count);
 }
 
