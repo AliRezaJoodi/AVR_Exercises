@@ -30,7 +30,7 @@ void LCD_DisplayMainPage(float);
 void main(void){
     uint16_t input_int=0;     
     uint16_t input_int_hys=0;
-    float volt=0;  
+    float mv=0;  
     float temp=0;
     
     LCD_Config();
@@ -39,11 +39,11 @@ void main(void){
     
     while(1){
           input_int = ADC_GetIn(LM35_CH);
-          input_int = Average_uint16(input_int);
+          input_int = Average_BlockUpdate_uint16(input_int);
           if(input_int_hys != input_int){
             input_int_hys = input_int;
-            volt = ADC_ConvertInToVolt(input_int);
-            temp = LM35_ConvertVoltToTemp_Celsius(volt);
+            mv = ADC_ConvertInToMilliVolt(input_int);
+            temp = LM35_ConvertMilliVoltToTemp_Celsius(mv);
             LCD_DisplayMainPage(temp);
           }                                       
     };

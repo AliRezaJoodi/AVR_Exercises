@@ -10,10 +10,10 @@
 #ifndef _ADC_INCLUDED
 #define _ADC_INCLUDED
     
-#define ADC_GAIN_5V_10Bit               0.0048875855    // 5/1023
-#define ADC_GAIN_3V3_10Bit              0.00322580645   // 3.3/1023
-#define ADC_GAIN_2V56_10Bit             0.00250244      // 2.56/1023 
-#define ADC_GAIN_5V_08Bit               0.01953125      // 5/256 
+#define ADC_GAIN_5V_10Bit               4.8875855       // 5000mV/1023
+#define ADC_GAIN_3V3_10Bit              3.22580645      // 3300mV/1023
+#define ADC_GAIN_2V56_10Bit             2.50244         // 2560mV/1023 
+#define ADC_GAIN_5V_08Bit               19.53125        // 5000mV/256 
 
 #ifndef ADC_HARDWARE
 #define ADC_HARDWARE
@@ -205,10 +205,11 @@ uint16_t ADC_GetIn(unsigned char ch){
     }   
 }
 
-#define ADC_GetVolt(CH)                  (ADC_GetIn(CH)*ADC_GAIN)
-#define ADC_GetMilliVolt(CH)             (ADC_GetVolt(CH)*1000)
+#define ADC_GetMilliVolt(CH)                (ADC_GetIn(CH)*ADC_GAIN)
+#define ADC_GetVolt(CH)                     (ADC_GetMilliVolt(CH)*0.001)
 
-#define ADC_ConvertInToVolt(VALUE)       (VALUE*ADC_GAIN)
+#define ADC_ConvertInToMilliVolt(VALUE)     (VALUE*ADC_GAIN)
+#define ADC_ConvertInToVolt(VALUE)          (ADC_ConvertInToMilliVolt(VALUE)*0.001)
 
 #pragma used-
 #endif
