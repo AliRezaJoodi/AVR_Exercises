@@ -4,65 +4,71 @@
 #include <delay.h>
 #include <stdlib.h>
 #include <stdint.h>
-
-// Alphanumeric LCD Module functions
-#asm
-   .equ __lcd_port=0x12 ;PORTD
-#endasm
-#include <lcd.h>
-
-#pragma used+
-//uint16_t input_int=0;
-//float input_mv=0;
-//float input_v=0;
-//float temp=0;
-#pragma used-
+#include <stdio.h>
 
 #include "Attachment\hardware_v1.0.h"
 #include <adc.h>
 #include <sensor_lm35.h>
 #include <average_static.h>
 #include <changed_static.h>
-#include <display_lcd_char.h>
 
-void LCD_Config(void);
-void LCD_DisplayMainPage(float);
+#pragma used+
+void UART_Config(void);
+void UART_MonitorValue_u16(uint16_t value);
+void UART_MonitorValue_f32(float value);
+#pragma used-
 
 void main(void){
     uint16_t input_u16=0;     
     float mv=0;  
     float temp=0;
     
-    LCD_Config();
     ADC_Config_AVCC_10Bit();
-    Char_Define(char0,0); 
-       
+    UART_Config();     
+    putsf("Loading ...\r");  
+    delay_ms(500);
+           
     while(1){
           input_u16 = ADC_GetCounts(LM35_CH);
           input_u16 = Average_BlockUpdate_u16(input_u16);
           if(Changed_Exact_u16(input_u16)){
             mv = ADC_ConvertCountsToMilliVolt(input_u16);
             temp = LM35_ConvertMilliVoltToTemp_Celsius(mv);
-            LCD_DisplayMainPage(temp);
+            UART_MonitorValue_f32(temp);
           }                                       
     };
 
 }
 
 //********************************************************
-void LCD_Config(void){
-    lcd_init(16);
-    lcd_clear();   
+void UART_MonitorValue_u16(uint16_t value){ 
+    char txt[16];
+         
+    itoa(value,txt);
+    puts(txt);
 }
 
 //********************************************************
-void LCD_DisplayMainPage(float temp){
-    char txt[16];
-     
-    lcd_gotoxy(0,0);lcd_putsf("Temp:"); ftoa(temp,1,txt); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" "); 
-    lcd_gotoxy(0,1); lcd_putsf("Average");  
+void UART_MonitorValue_f32(float value){ 
+    char txt[16];     
+
+    ftoa(value,1,txt);
+    putsf("\rTemp(^C)= "); puts(txt);  
 }
 
-
+//********************************************************
+void UART_Config(void){
+    // USART initialization
+    // Communication Parameters: 8 Data, 1 Stop, No Parity
+    // USART Receiver: Off
+    // USART Transmitter: On
+    // USART Mode: Asynchronous
+    // USART Baud Rate: 9600
+    UCSRA=(0<<RXC) | (0<<TXC) | (0<<UDRE) | (0<<FE) | (0<<DOR) | (0<<UPE) | (0<<U2X) | (0<<MPCM);
+    UCSRB=(0<<RXCIE) | (0<<TXCIE) | (0<<UDRIE) | (0<<RXEN) | (1<<TXEN) | (0<<UCSZ2) | (0<<RXB8) | (0<<TXB8);
+    UCSRC=(1<<URSEL) | (0<<UMSEL) | (0<<UPM1) | (0<<UPM0) | (0<<USBS) | (1<<UCSZ1) | (1<<UCSZ0) | (0<<UCPOL);
+    UBRRH=0x00;
+    UBRRL=0x33;
+}
 
 
