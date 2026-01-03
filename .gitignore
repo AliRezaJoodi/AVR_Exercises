@@ -42,7 +42,7 @@ Main.txt
 *.sym1
 *.sym2
 *.sym3
-
+*.lib~
 
 # mikroC PRO for AVR folders and files for ignore
 *.cproj

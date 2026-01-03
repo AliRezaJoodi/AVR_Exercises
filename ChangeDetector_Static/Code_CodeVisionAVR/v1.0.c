@@ -20,8 +20,7 @@ void UART_MonitorValue_f32(float value);
 
 void main(void){
     uint16_t input_u16=0;     
-    float mv=0;  
-    float temp=0;
+    float buf=0;  
     
     ADC_Config_AVCC_10Bit();
     UART_Config();     
@@ -31,10 +30,11 @@ void main(void){
     while(1){
           input_u16 = ADC_GetCounts(LM35_CH);
           input_u16 = Average_BlockUpdate_u16(input_u16);
+          
           if(Changed_Exact_u16(input_u16)){
-            mv = ADC_ConvertCountsToMilliVolt(input_u16);
-            temp = LM35_ConvertMilliVoltToTemp_Celsius(mv);
-            UART_MonitorValue_f32(temp);
+            buf = ADC_ConvertCountsToMilliVolt(input_u16);
+            buf = LM35_ConvertMilliVoltToTemp_Celsius(buf);
+            UART_MonitorValue_f32(buf);
           }                                       
     };
 

@@ -5,7 +5,8 @@
 
 #ifndef LM35_HARDWARE
 #define LM35_HARDWARE 
-    #define LM35_CH        7 
+    #define LM35_CH        7
+    #define LM35_CH2       6  
 #endif
 
 #define LM35_GAIN           0.1     // 10mV=1^C

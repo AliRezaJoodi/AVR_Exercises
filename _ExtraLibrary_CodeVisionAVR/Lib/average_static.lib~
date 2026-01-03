@@ -2,19 +2,20 @@
 
 #include <average_static.h>
 
+// Average Block Update
 //***********************************
-uint16_t Average_BlockUpdate_uint16(uint16_t value){
-    static uint16_t sum=0;
+uint16_t Average_BlockUpdate_u16(uint16_t value){
+    static uint32_t sum=0;
     static uint16_t average=0;
     static uint8_t i=0;
     
     sum = sum + value;
     ++i; 
     
-    if( (i==AVERAGE_COUNT) || (i==64) ){
-        average = sum / i;
+    if(i==AVERAGE_COUNT){
         sum=0;
-        i=0;
+        i=0; 
+        average = (uint16_t)(sum / AVERAGE_COUNT);
     }
     
     return average;  
@@ -22,7 +23,7 @@ uint16_t Average_BlockUpdate_uint16(uint16_t value){
 
 // Average Block Update
 //***********************************
-float Average_BlockUpdate_float(float value){
+float Average_BlockUpdate_f32(float value){
     static float sum=0;
     static float average=0;
     static unsigned char i=0;
@@ -31,17 +32,57 @@ float Average_BlockUpdate_float(float value){
     ++i; 
     
     if(i>=AVERAGE_COUNT){
-        average=sum/AVERAGE_COUNT;
         sum=0;
-        i=0;
+        i=0; 
+        average=sum/AVERAGE_COUNT;
     } 
     
     return average;  
 }
+
+// Moving Average Method with Circular Buffer
+//***********************************
+uint16_t Average_MovingWithCircularBuffer_u16(uint16_t value){
+    static uint16_t buf[AVERAGE_COUNT];
+    static uint8_t i = 0;
+    static uint8_t count = 0;
+    static uint32_t sum = 0;
+
+    sum = sum - buf[i];
+    buf[i] = value;
+    sum = sum + value;
+
+    i++; 
+    if(i >= AVERAGE_COUNT) i = 0;
+
+    if(count < AVERAGE_COUNT) count++;
+
+    return (uint16_t)(sum / count);
+}
+
+// Moving Average Method with Circular Buffer
+//***********************************
+float Average_MovingWithCircularBuffer_f32(float value){
+    static float buf[AVERAGE_COUNT];
+    static uint8_t i = 0;
+    static uint8_t count = 0;
+    static float sum = 0;
+
+    sum = sum - buf[i];
+    buf[i] = value;
+    sum = sum + value;
+
+    i++;
+    if(i >= AVERAGE_COUNT) i = 0;
+    
+    if(count < AVERAGE_COUNT) count++;
+
+    return (float)(sum / count);
+}
  
 // Moving Average Method with Sliding Window (Shift-based)   
 //***********************************
-float Average_MovingWithShift_float(float value){
+float Average_MovingWithShift_f32(float value){
     static float d[AVERAGE_COUNT];
     float average=0;
     unsigned char i=0; 
@@ -58,22 +99,3 @@ float Average_MovingWithShift_float(float value){
     
     return average;
 }
-
-// Moving Average Method with Circular Buffer
-//***********************************
-float Average_MovingWithCircularBuffer_float(float value){
-    static float buf[AVERAGE_COUNT];
-    static uint8_t i = 0;
-    static uint8_t count = 0;
-    static float sum = 0;
-
-    sum = sum - buf[i];
-    buf[i] = value;
-    sum = sum + value;
-
-    i++; if(i >= AVERAGE_COUNT) i = 0;
-    if(count < AVERAGE_COUNT) count++;
-
-    return (sum / count);
-}
-
