@@ -1,17 +1,11 @@
-## Averaging From Analog Input
+## Averaging from Analog Input
  
-MCU:		ATmega32  
-Frequency:  	1.000000 MHz  
-Display:    	16x2 Alphanumeric LCD 
+MCU:		ATmega32   
+Display:    	16x2 Alphanumeric LCD  
 Sensor:	    	LM35   
 
-### Folder and Files Description
-It has included:
-- `Code_BascomAVR` (Code with Basic Language)
-- `Code_CodeVisionAVR` (Code with C Language)
-- `Simulate` (Simulator File)
-
-### Simulate: v1.0
+### Simulate
+v1.0  
 ![](Simulate/v1.0.png)
 
 My GitHub Account: [GitHub.com/AliRezaJoodi](https://github.com/AliRezaJoodi)  
