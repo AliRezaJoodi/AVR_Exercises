@@ -1,0 +1,35 @@
+// GitHub Account:  GitHub.com/AliRezaJoodi
+
+#include <average_pointer.h>
+
+// Average Block Update
+//******************************************************
+uint16_t Average_BlockUpdate_u16(uint16_t value, AverageBlock_u16_t *avg){
+    avg->sum += value;
+    avg->i++;
+
+    if(avg->i >= AVERAGE_COUNT){
+        avg->average = (uint16_t)(avg->sum / AVERAGE_COUNT);
+        avg->sum = 0;
+        avg->i = 0;
+    }
+
+    return avg->average;
+}
+
+// Moving Average Method with Circular Buffer
+//******************************************************
+uint16_t Average_MovingWithCircularBuffer_u16(uint16_t value, AverageMoving_u16_t *avg){
+    avg->sum -= avg->buf[avg->i];
+    avg->buf[avg->i] = value;
+    avg->sum += value;
+
+    avg->i++;
+    if(avg->i >= AVERAGE_COUNT)
+        avg->i = 0;
+
+    if(avg->count < AVERAGE_COUNT)
+        avg->count++;
+
+    return (uint16_t)(avg->sum / avg->count);
+}
