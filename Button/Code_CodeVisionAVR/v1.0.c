@@ -1,5 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include "_ExtraLibrary\_hardware_v1.0.h"
+
 #include <mega32a.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,8 +13,7 @@
 #endasm
 #include <lcd.h>
 
-#include "Attachment\hardware_v1.0.h"
-#include <button.h>
+#include <button_static.h>
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);

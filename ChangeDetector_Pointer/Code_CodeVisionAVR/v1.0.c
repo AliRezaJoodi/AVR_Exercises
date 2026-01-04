@@ -1,16 +1,17 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
+#include "_ExtraLibrary\_hardware_v1.0.h"
+
 #include <mega32a.h>
 #include <delay.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
 
-#include "Attachment\hardware_v1.0.h"
 #include <adc.h>
 #include <sensor_lm35.h>
 ///#include <average_static.h>
-#include <changed_pointer.h>
+#include <changed.h>
 
 #pragma used+
 void UART_Config(void);

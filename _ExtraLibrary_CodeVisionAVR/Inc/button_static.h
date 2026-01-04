@@ -3,8 +3,8 @@
 #include <io.h>
 #include <delay.h>
 
-#ifndef _BUTTON_INCLUDED
-#define _BUTTON_INCLUDED
+#ifndef _BUTTON_STATIC_INCLUDED
+#define _BUTTON_STATIC_INCLUDED
     
 #ifndef BUTTON_HARDWARE
 #define BUTTON_HARDWARE
@@ -46,6 +46,6 @@ void Button_Config(void);
 
 #pragma used-
 
-#pragma library button.lib
+#pragma library button_static.lib
 
 #endif

@@ -5,9 +5,9 @@
 #ifndef _AVERAGE_STATIC_INCLUDED
 #define _AVERAGE_STATIC_INCLUDED
     
-#ifndef AVERAGE_HARDWARE
-#define AVERAGE_HARDWARE 
-    #define AVERAGE_COUNT     10
+#ifndef AVERAGE_STATIC_HARDWARE
+#define AVERAGE_STATIC_HARDWARE 
+    #define AVERAGE_STATIC_COUNT     10
 #endif
 
 #pragma used+

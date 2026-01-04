@@ -1,6 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <average_pointer.h>
+#include <average.h>
 
 // Average Block Update
 //******************************************************

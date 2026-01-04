@@ -1,5 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
+#include "_ExtraLibrary\_hardware_v1.0.h"
+
 #include <mega32a.h>
 #include <delay.h>
 #include <stdlib.h>
@@ -11,11 +13,10 @@
 #endasm
 #include <lcd.h>
 
-#include "Attachment\hardware_v1.0.h"
 #include <adc.h>
 #include <sensor_lm35.h>
-#include <average_pointer.h>
-#include <changed_pointer.h>
+#include <average.h>
+#include <changed.h>
 #include <display_lcd_char.h>
 
 void LCD_Config(void);

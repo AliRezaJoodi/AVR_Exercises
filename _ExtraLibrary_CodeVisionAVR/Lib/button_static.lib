@@ -1,6 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <button.h>
+#include <button_static.h>
           
 //*************************************************
 void Button_Config(void){

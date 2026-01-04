@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 
-#ifndef _AVERAGE_POINTER_INCLUDED
-#define _AVERAGE_POINTER_INCLUDED
+#ifndef _AVERAGE_INCLUDED
+#define _AVERAGE_INCLUDED
     
 #ifndef AVERAGE_HARDWARE
 #define AVERAGE_HARDWARE 
@@ -28,6 +28,6 @@ uint16_t Average_BlockUpdate_u16(uint16_t value, AverageBlock_u16_t *avgBlock);
 uint16_t Average_MovingWithCircularBuffer_u16(uint16_t value, AverageMoving_u16_t *avgMoving);
 #pragma used-
 
-#pragma library average_pointer.lib
+#pragma library average.lib
     
 #endif

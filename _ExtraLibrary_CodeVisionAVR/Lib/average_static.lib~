@@ -12,10 +12,10 @@ uint16_t Average_BlockUpdate_u16(uint16_t value){
     sum = sum + value;
     ++i; 
     
-    if(i==AVERAGE_COUNT){
+    if(i==AVERAGE_STATIC_COUNT){ 
+        average = (uint16_t)(sum / AVERAGE_STATIC_COUNT);
         sum=0;
-        i=0; 
-        average = (uint16_t)(sum / AVERAGE_COUNT);
+        i=0;
     }
     
     return average;  
@@ -31,10 +31,10 @@ float Average_BlockUpdate_f32(float value){
     sum = sum + value;
     ++i; 
     
-    if(i>=AVERAGE_COUNT){
+    if(i>=AVERAGE_STATIC_COUNT){
+        average = sum / AVERAGE_STATIC_COUNT;
         sum=0;
         i=0; 
-        average=sum/AVERAGE_COUNT;
     } 
     
     return average;  

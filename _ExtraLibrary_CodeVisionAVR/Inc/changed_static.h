@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 
-#ifndef _CHANGED_INCLUDED
-#define _CHANGED_INCLUDED
+#ifndef _CHANGED_STATIC_INCLUDED
+#define _CHANGED_STATIC_INCLUDED
 
 #pragma used+
 uint8_t Changed_Exact_u16(uint16_t value);
