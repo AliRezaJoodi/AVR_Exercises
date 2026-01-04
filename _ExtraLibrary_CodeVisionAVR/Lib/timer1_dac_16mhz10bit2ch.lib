@@ -4,8 +4,8 @@
 
 //***********************************************
 void Timer1_DAC_SetVoltage_ChA (uint16_t mv){
-    if( (0<mv) && (mv<5000) ){ 
-        OCR1A = ((uint32_t)mv * 1023) / 5000;   //Converter 0~5V to 0~1023
+    if( (0<mv) && (mv<_TIMER1_DAC_MAXVOLT) ){ 
+        OCR1A = ((uint32_t)mv * 1023) / _TIMER1_DAC_MAXVOLT;   //Converter 0~5V to 0~1023
     }
     else{
         OCR1A = 0;
@@ -14,11 +14,24 @@ void Timer1_DAC_SetVoltage_ChA (uint16_t mv){
 
 //***********************************************
 void Timer1_DAC_SetVoltage_ChB (uint16_t mv){    
-    if( (0<mv) && (mv<5000) ){ 
-        OCR1B = ((uint32_t)mv * 1023) / 5000;   //Converter 0~5V to 0~1023
+    if( (0<mv) && (mv<_TIMER1_DAC_MAXVOLT) ){ 
+        OCR1B = ((uint32_t)mv * 1023) / _TIMER1_DAC_MAXVOLT;   //Converter 0~5V to 0~1023
     }
     else{
         OCR1B = 0;
+    }
+}
+
+//***********************************************
+void Timer1_DAC_SetVoltage (uint16_t mv, uint8_t ch){
+    switch (ch) {
+      case 1:
+        Timer1_DAC_SetVoltage_ChA(mv);
+        break;
+      case 2:
+        Timer1_DAC_SetVoltage_ChB(mv);
+        break;
+      default:
     }
 }
 

@@ -22,14 +22,14 @@ void LCD_Config(void);
 void LCD_DisplayMainPage(float temp, uint8_t line);
 
 void main(void){
-    uint16_t input1_u16=0; 
-    uint16_t input1_u16_last=0;
-    AverageBlock_u16_t sensor1_block_avg = {0};
-    //AverageMoving_u16_t sensor1_moving_avg = {0};
+    uint16_t temp1_u16=0; 
+    uint16_t temp1_u16_last=0;
+    AverageBlock_u16_t temp1_u16_t = {0};
+    //AverageMoving_u16_t temp1_u16_t = {0};
 
-    uint16_t input2_u16=0;
-    uint16_t input2_u16_last=0;
-    AverageBlock_u16_t sensor2_block_avg = {0};
+    uint16_t temp2_u16=0;
+    uint16_t temp2_u16_last=0;
+    AverageBlock_u16_t temp2_u16_t = {0};
     
     float buf=0;
     
@@ -38,21 +38,21 @@ void main(void){
     Char_Define(char0,0); 
       
     while(1){
-          input1_u16 = ADC_GetCounts(LM35_CH);
-          input1_u16 = Average_BlockUpdate_u16(input1_u16, &sensor1_block_avg);
-          //input1_u16 = Average_MovingWithCircularBuffer_u16(input1_u16, &sensor1_moving_avg);
+          temp1_u16 = ADC_GetCounts(LM35_CH);
+          temp1_u16 = Average_BlockUpdate_u16(temp1_u16, &temp1_u16_t);
+          //temp1_u16 = Average_MovingWithCircularBuffer_u16(temp1_u16, &temp1_u16_t);
 
-          if( Changed_Exact_u16(input1_u16, &input1_u16_last) ){
-            buf = ADC_ConvertCountsToMilliVolt(input1_u16);
+          if( Changed_Exact_u16(temp1_u16, &temp1_u16_last) ){
+            buf = ADC_ConvertCountsToMilliVolt(temp1_u16);
             buf = LM35_ConvertMilliVoltToTemp_Celsius(buf);
             LCD_DisplayMainPage(buf, 1);
           }
           
-          input2_u16 = ADC_GetCounts(LM35_CH2);
-          input2_u16 = Average_BlockUpdate_u16(input2_u16, &sensor2_block_avg);
+          temp2_u16 = ADC_GetCounts(LM35_CH2);
+          temp2_u16 = Average_BlockUpdate_u16(temp2_u16, &temp2_u16_t);
 
-          if( Changed_Exact_u16(input2_u16, &input2_u16_last) ){
-            buf = ADC_ConvertCountsToMilliVolt(input2_u16);
+          if( Changed_Exact_u16(temp2_u16, &temp2_u16_last) ){
+            buf = ADC_ConvertCountsToMilliVolt(temp2_u16);
             buf = LM35_ConvertMilliVoltToTemp_Celsius(buf);
             LCD_DisplayMainPage(buf, 2);
           }                                      

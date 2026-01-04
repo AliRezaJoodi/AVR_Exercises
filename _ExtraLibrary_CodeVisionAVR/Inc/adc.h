@@ -213,6 +213,9 @@ uint16_t ADC_GetCounts(unsigned char ch){
 #define ADC_ConvertCountsToVolt(VALUE)          (ADC_ConvertCountsToMilliVolt(VALUE)*0.001)
 
 #pragma used-
+
+///#pragma library adc.lib
+
 #endif
 
 
