@@ -1,0 +1,111 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#include <button.h>
+
+//*************************************************
+uint8_t Button_SingleClick(Button_SingleClick_t *btn){
+    if ( GetBit(*btn->pin_reg, btn->pin_bit) == !BUTTON_PRESSED ){
+        if(btn->last_status == BUTTON_PRESSED){
+            delay_ms(BUTTON_LAG1);
+            if (GetBit(*btn->pin_reg, btn->pin_bit) == !BUTTON_PRESSED){
+                btn->last_status = !BUTTON_PRESSED;
+            } 
+        }
+    }
+    else{
+        if(btn->last_status == !BUTTON_PRESSED){
+            delay_ms(BUTTON_LAG1);
+            if (GetBit(*btn->pin_reg, btn->pin_bit) == BUTTON_PRESSED){
+                btn->last_status = BUTTON_PRESSED;
+                return 1;
+            }
+        }
+    }
+
+    return 0;
+}
+
+////*************************************************
+//uint8_t Button_SingleClick_(Button_SingleClick_t *btn){
+//    // Button pressed
+//    if ( (GetBit(*btn->pin_reg, btn->pin_bit) == BUTTON_PRESSED) && (btn->last_status == !BUTTON_PRESSED) ){
+//        delay_ms(BUTTON_LAG1);
+//        if (GetBit(*btn->pin_reg, btn->pin_bit) == BUTTON_PRESSED){
+//            btn->last_status = BUTTON_PRESSED;
+//            return 1;
+//        }
+//    }
+//
+//    // Button released
+//    if ( (GetBit(*btn->pin_reg, btn->pin_bit) == !BUTTON_PRESSED) && (btn->last_status == BUTTON_PRESSED) ){
+//        delay_ms(BUTTON_LAG1);
+//        if (GetBit(*btn->pin_reg, btn->pin_bit) == !BUTTON_PRESSED){
+//            btn->last_status = !BUTTON_PRESSED;
+//        }
+//    }
+//
+//    return 0;
+//}
+
+//*************************************************
+uint8_t Button_AutoRepeat_NonBlocking(Button_AutoRepeat_t *btn){
+    if (GetBit(*btn->pin_reg, btn->pin_bit) == BUTTON_PRESSED){
+        btn->counter++;
+
+        if (btn->counter >= BUTTON_LAG2){
+            btn->counter = 0;
+            return 1;
+        }
+    }
+    else{
+        btn->counter = 0;
+    }
+
+    return 0;
+}
+
+//*************************************************
+uint8_t Button_LongPress_NonBlocking(Button_LongPress_t *btn){
+    if (GetBit(*btn->pin_reg, btn->pin_bit) == BUTTON_PRESSED){
+        if (btn->counter < BUTTON_LAG3)
+            btn->counter++;
+
+        if ((btn->counter >= BUTTON_LAG3) && (btn->triggered == 0)){
+            btn->triggered = 1;
+            return 1;
+        }
+    }
+    else{
+        btn->counter = 0;
+        btn->triggered = 0;
+    }
+
+    return 0;
+}
+
+
+////*************************************************   Doesn't work
+//uint8_t Button_SingleClick_NonBlocking(Button2_t *btn){
+//    uint8_t current = GetBit(*btn->pin_reg, btn->pin_bit);
+//
+//    static uint16_t tick = 0;
+//    tick++;
+//
+//    if (current != btn->last_status){
+//        if ((tick - btn->last_time) >= BUTTON_LAG2){
+//            btn->last_status = current;
+//
+//            // Button pressed
+//            if (current == BUTTON_PRESSED){
+//                // Single click detected
+//                btn->last_time = tick;
+//                return 1;
+//            }
+//        }
+//    }
+//
+//    btn->last_time = tick;
+//
+//    return 0;
+//}
+
