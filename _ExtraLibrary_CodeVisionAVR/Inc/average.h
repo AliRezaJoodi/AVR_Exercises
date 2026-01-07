@@ -1,10 +1,10 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <stdint.h>
-
 #ifndef _AVERAGE_INCLUDED
 #define _AVERAGE_INCLUDED
-    
+
+#include <stdint.h>
+   
 #ifndef AVERAGE_HARDWARE
 #define AVERAGE_HARDWARE 
     #define AVERAGE_COUNT     10 

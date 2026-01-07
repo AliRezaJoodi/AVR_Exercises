@@ -1,9 +1,9 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <stdint.h>
-
 #ifndef _CHANGED_STATIC_INCLUDED
 #define _CHANGED_STATIC_INCLUDED
+
+#include <stdint.h>
 
 #pragma used+
 uint8_t Changed_Exact_u16(uint16_t value);

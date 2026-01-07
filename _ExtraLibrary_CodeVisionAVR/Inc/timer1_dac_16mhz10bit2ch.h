@@ -7,12 +7,11 @@
 // B Channel:       OC1B, PIND.4
 // Output Type:     RC, Low Pass Filter 
 
-#include <io.h>  
-#include <stdint.h>
-
 #ifndef _TIMER1_DAC_INCLUDED
 #define _TIMER1_DAC_INCLUDED
 
+#include <io.h>  
+#include <stdint.h>
 
 #ifndef _TIMER1_DAC_HARDWARE
 #define _TIMER1_DAC_HARDWARE 

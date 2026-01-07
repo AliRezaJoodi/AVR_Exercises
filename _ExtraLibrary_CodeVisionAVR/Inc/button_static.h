@@ -1,10 +1,10 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <io.h>
-#include <delay.h>
-
 #ifndef _BUTTON_STATIC_INCLUDED
 #define _BUTTON_STATIC_INCLUDED
+
+#include <io.h>
+#include <delay.h>
     
 #ifndef BUTTON_HARDWARE
 #define BUTTON_HARDWARE

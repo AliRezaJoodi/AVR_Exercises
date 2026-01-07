@@ -1,9 +1,9 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <stdint.h>
-
 #ifndef _AVERAGE_STATIC_INCLUDED
 #define _AVERAGE_STATIC_INCLUDED
+
+#include <stdint.h>
     
 #ifndef AVERAGE_STATIC_HARDWARE
 #define AVERAGE_STATIC_HARDWARE 
