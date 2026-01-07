@@ -3,20 +3,34 @@
 #include <button.h>
 
 //*************************************************
+void Button_Config(Button_t *btn){
+    ClearBit(*btn->btn_ddr, btn->btn_bit);
+    //SetBit(*btn->btn_port, btn->btn_bit);
+    WriteBit(*btn->btn_port, btn->btn_bit, !BUTTON_PRESSED);
+    btn->status  = 0;
+    btn->counter = 0;
+}
+
+//*************************************************
+void Button_DisablePullUp(Button_t *btn){
+    ClearBit(*btn->btn_port, btn->btn_bit);
+}
+
+//*************************************************
 uint8_t Button_SingleClick(Button_t *btn){
-    if ( GetBit(*btn->btn_pin, btn->btn_bit) == !BUTTON_PRESSED ){
-        if(btn->status == BUTTON_PRESSED){
+    if ( GetBit(*btn->btn_pin, btn->btn_bit) != BUTTON_PRESSED ){
+        if(btn->status == 1){
             delay_ms(BUTTON_LAG1);
-            if (GetBit(*btn->btn_pin, btn->btn_bit) == !BUTTON_PRESSED){
-                btn->status = !BUTTON_PRESSED;
+            if (GetBit(*btn->btn_pin, btn->btn_bit) != BUTTON_PRESSED){
+                btn->status = 0;
             } 
         }
     }
     else{
-        if(btn->status == !BUTTON_PRESSED){
+        if(btn->status == 0){
             delay_ms(BUTTON_LAG1);
             if (GetBit(*btn->btn_pin, btn->btn_bit) == BUTTON_PRESSED){
-                btn->status = BUTTON_PRESSED;
+                btn->status = 1;
                 return 1;
             }
         }
@@ -24,28 +38,6 @@ uint8_t Button_SingleClick(Button_t *btn){
 
     return 0;
 }
-
-////*************************************************
-//uint8_t Button_SingleClick_(Button_SingleClick_t *btn){
-//    // Button pressed
-//    if ( (GetBit(*btn->btn_pin, btn->btn_bit) == BUTTON_PRESSED) && (btn->status == !BUTTON_PRESSED) ){
-//        delay_ms(BUTTON_LAG1);
-//        if (GetBit(*btn->btn_pin, btn->btn_bit) == BUTTON_PRESSED){
-//            btn->status = BUTTON_PRESSED;
-//            return 1;
-//        }
-//    }
-//
-//    // Button released
-//    if ( (GetBit(*btn->btn_pin, btn->btn_bit) == !BUTTON_PRESSED) && (btn->status == BUTTON_PRESSED) ){
-//        delay_ms(BUTTON_LAG1);
-//        if (GetBit(*btn->btn_pin, btn->btn_bit) == !BUTTON_PRESSED){
-//            btn->status = !BUTTON_PRESSED;
-//        }
-//    }
-//
-//    return 0;
-//}
 
 //*************************************************
 uint8_t Button_AutoRepeat_NonBlocking(Button_t *btn){
@@ -82,30 +74,3 @@ uint8_t Button_LongPress_NonBlocking(Button_t *btn){
 
     return 0;
 }
-
-
-////*************************************************   Doesn't work
-//uint8_t Button_SingleClick_NonBlocking(Button2_t *btn){
-//    uint8_t current = GetBit(*btn->btn_pin, btn->btn_bit);
-//
-//    static uint16_t tick = 0;
-//    tick++;
-//
-//    if (current != btn->status){
-//        if ((tick - btn->last_time) >= BUTTON_LAG2){
-//            btn->status = current;
-//
-//            // Button pressed
-//            if (current == BUTTON_PRESSED){
-//                // Single click detected
-//                btn->last_time = tick;
-//                return 1;
-//            }
-//        }
-//    }
-//
-//    btn->last_time = tick;
-//
-//    return 0;
-//}
-

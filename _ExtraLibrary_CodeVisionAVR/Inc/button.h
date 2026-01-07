@@ -1,12 +1,5 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-/*
-This library only reads the button state.
-The user must configure the button pin as input
-and enable the required pull-up or pull-down resistor
-before using this library.
-*/
-
 #ifndef _BUTTON_INCLUDED
 #define _BUTTON_INCLUDED
 
@@ -23,39 +16,21 @@ before using this library.
 #endif
 
 typedef struct{
-    volatile unsigned char *btn_pin;
-    uint8_t btn_bit;
-    uint8_t status;
-    uint16_t counter;
+    volatile unsigned char  *btn_ddr;
+    volatile unsigned char  *btn_pin;
+    volatile unsigned char  *btn_port;
+    uint8_t                 btn_bit;
+    uint8_t                 status;
+    uint16_t                counter;
 } Button_t;
 
-//typedef struct{
-//    volatile unsigned char *btn_pin;
-//    uint8_t btn_bit;
-//
-//    uint16_t counter;
-//} Button_AutoRepeat_t;
-
-//typedef struct{
-//    volatile unsigned char *btn_pin;
-//    uint8_t btn_bit;
-//    uint8_t status;  // prevents retrigger while holding
-//    uint16_t counter;   // press duration counter
-//} Button_LongPress_t;
-
-//typedef struct{
-//    volatile unsigned char *pin_reg;  
-//    uint8_t pin_bit;                  
-//
-//    uint8_t last_status;              
-//    uint16_t last_time;               
-//} Button2_t;
+void    Button_Config                   (Button_t *btn);
 
 #pragma used+
-uint8_t Button_SingleClick(Button_t *btn);
-uint8_t Button_AutoRepeat_NonBlocking(Button_t *btn);
-uint8_t Button_LongPress_NonBlocking(Button_t *btn);
-//uint8_t Button_SingleClick_NonBlocking(Button2_t *btn);
+void    Button_DisablePullUp            (Button_t *btn);
+uint8_t Button_SingleClick              (Button_t *btn);
+uint8_t Button_AutoRepeat_NonBlocking   (Button_t *btn);
+uint8_t Button_LongPress_NonBlocking    (Button_t *btn);
 #pragma used-
 
 #pragma library button.lib

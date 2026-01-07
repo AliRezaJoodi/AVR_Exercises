@@ -18,56 +18,43 @@
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
-void Button_Config(void);
 
 void main(void){  
     uint8_t value=100;
     uint8_t value_last=0;
-    
-    Button_t button1_t ={
-        &BUTTON1_PIN,
-        BUTTON1_BIT,
-        !BUTTON_PRESSED,
-        0
-    }; 
 
-    Button_t button2_t ={
-        &BUTTON2_PIN,
-        BUTTON2_BIT,
-        !BUTTON_PRESSED,
-        0
-    };
+Button_t button1_t = {
+    .btn_ddr  = &BUTTON1_DDR,
+    .btn_pin  = &BUTTON1_PIN,
+    .btn_port = &BUTTON1_PORT,
+    .btn_bit  = BUTTON1_BIT,
+    .status   = 0,
+    .counter  = 0
+};
 
-    Button_t button3_t ={
-        &BUTTON3_PIN,
-        BUTTON3_BIT,
-        0,
-        0
-    };
-            
-//    Button_AutoRepeat_t button2_t ={
-//        &BUTTON2_PIN,
-//        BUTTON2_BIT,
-//        0
-//    };
-    
-//    Button_LongPress_t button3_t ={
-//        &BUTTON3_PIN,
-//        BUTTON3_BIT,
-//        0,
-//        0
-//    };
-//
-//    Button2_t button2_t ={
-//        &BUTTON2_PIN,
-//        BUTTON2_BIT,
-//        !BUTTON_PRESSED,
-//        0
-//    };
-    
-    LCD_Config();    
-    Button_Config();
+Button_t button2_t = {
+    .btn_ddr  = &BUTTON2_DDR,
+    .btn_pin  = &BUTTON2_PIN,
+    .btn_port = &BUTTON2_PORT,
+    .btn_bit  = BUTTON2_BIT,
+    .status   = 0,
+    .counter  = 0
+};
 
+Button_t button3_t = {
+    .btn_ddr  = &BUTTON3_DDR,
+    .btn_pin  = &BUTTON3_PIN,
+    .btn_port = &BUTTON3_PORT,
+    .btn_bit  = BUTTON3_BIT,
+    .status   = 0,
+    .counter  = 0
+};
+
+    Button_Config(&button1_t); Button_DisablePullUp(&button1_t);
+    Button_Config(&button2_t);
+    Button_Config(&button3_t);
+        
+    LCD_Config();
     LCD_DisplayMainPage(value);
    
     while(1){ 
@@ -106,18 +93,6 @@ void LCD_DisplayMainPage(unsigned char value){
 //********************************************************
 void LCD_Config(void){
     lcd_init(16); lcd_clear();   
-}
-
-//********************************************************
-void Button_Config(void){
-    ClearBit(BUTTON1_DDR, BUTTON1_BIT)  //  Input 
-    SetBit(BUTTON1_PORT, BUTTON1_BIT)   // Pull_Up 
-
-    ClearBit(BUTTON2_DDR, BUTTON2_BIT)  //  Input 
-    SetBit(BUTTON2_PORT, BUTTON2_BIT)   // Pull_Up
-    
-    ClearBit(BUTTON3_DDR, BUTTON3_BIT)  //  Input 
-    SetBit(BUTTON3_PORT, BUTTON3_BIT)   // Pull_Up
 }
 
 
