@@ -24,24 +24,39 @@ void main(void){
     uint8_t value=100;
     uint8_t value_last=0;
     
-    Button_SingleClick_t button1_t ={
+    Button_t button1_t ={
         &BUTTON1_PIN,
         BUTTON1_BIT,
-        !BUTTON_PRESSED
+        !BUTTON_PRESSED,
+        0
     }; 
-    
-    Button_AutoRepeat_t button2_t ={
+
+    Button_t button2_t ={
         &BUTTON2_PIN,
         BUTTON2_BIT,
+        !BUTTON_PRESSED,
         0
     };
-    
-    Button_LongPress_t button3_t ={
+
+    Button_t button3_t ={
         &BUTTON3_PIN,
         BUTTON3_BIT,
         0,
         0
     };
+            
+//    Button_AutoRepeat_t button2_t ={
+//        &BUTTON2_PIN,
+//        BUTTON2_BIT,
+//        0
+//    };
+    
+//    Button_LongPress_t button3_t ={
+//        &BUTTON3_PIN,
+//        BUTTON3_BIT,
+//        0,
+//        0
+//    };
 //
 //    Button2_t button2_t ={
 //        &BUTTON2_PIN,

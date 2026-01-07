@@ -23,25 +23,25 @@ before using this library.
 #endif
 
 typedef struct{
-    volatile unsigned char *pin_reg;
-    uint8_t pin_bit;
-    uint8_t last_status;
-} Button_SingleClick_t;
+    volatile unsigned char *btn_pin;
+    uint8_t btn_bit;
+    uint8_t status;
+    uint16_t counter;
+} Button_t;
 
-typedef struct{
-    volatile unsigned char *pin_reg;
-    uint8_t pin_bit;
+//typedef struct{
+//    volatile unsigned char *btn_pin;
+//    uint8_t btn_bit;
+//
+//    uint16_t counter;
+//} Button_AutoRepeat_t;
 
-    uint16_t counter;   // auto repeat counter
-} Button_AutoRepeat_t;
-
-typedef struct{
-    volatile unsigned char *pin_reg;
-    uint8_t pin_bit;
-
-    uint16_t counter;   // press duration counter
-    uint8_t triggered;  // prevents retrigger while holding
-} Button_LongPress_t;
+//typedef struct{
+//    volatile unsigned char *btn_pin;
+//    uint8_t btn_bit;
+//    uint8_t status;  // prevents retrigger while holding
+//    uint16_t counter;   // press duration counter
+//} Button_LongPress_t;
 
 //typedef struct{
 //    volatile unsigned char *pin_reg;  
@@ -52,9 +52,9 @@ typedef struct{
 //} Button2_t;
 
 #pragma used+
-uint8_t Button_SingleClick(Button_SingleClick_t *btn);
-uint8_t Button_AutoRepeat_NonBlocking(Button_AutoRepeat_t *btn);
-uint8_t Button_LongPress_NonBlocking(Button_LongPress_t *btn);
+uint8_t Button_SingleClick(Button_t *btn);
+uint8_t Button_AutoRepeat_NonBlocking(Button_t *btn);
+uint8_t Button_LongPress_NonBlocking(Button_t *btn);
 //uint8_t Button_SingleClick_NonBlocking(Button2_t *btn);
 #pragma used-
 
