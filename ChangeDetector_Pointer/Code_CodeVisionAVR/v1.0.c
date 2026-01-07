@@ -10,7 +10,6 @@
 
 #include <adc.h>
 #include <sensor_lm35.h>
-///#include <average_static.h>
 #include <changed.h>
 
 #pragma used+
@@ -35,7 +34,6 @@ void main(void){
            
     while(1){
           input1_u16 = ADC_GetCounts(LM35_CH);
-          ///input1_u16 = Average_BlockUpdate_u16(input1_u16);
           if(Changed_Exact_u16(input1_u16, &input1_u16_last)){      //Difference = 0.488^c
             buf = ADC_ConvertCountsToMilliVolt(input1_u16);
             buf = LM35_ConvertMilliVoltToTemp_Celsius(buf);

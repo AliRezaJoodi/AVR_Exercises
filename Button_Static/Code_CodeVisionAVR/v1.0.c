@@ -1,7 +1,5 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include "_ExtraLibrary\_hardware_v1.0.h"
-
 #include <mega32a.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,9 +26,9 @@ void main(void){
     LCD_DisplayMainPage(value);
    
     while(1){ 
-        if(Button1_OneStep()){++value;}
-        if(Button2_Continuous()){++value;}   
-        if(Button3_OneStep()){value=0;}
+        if(Button1_SingleClick()){++value;}
+        if(Button2_AutoRepeat_NonBlocking()){++value;}   
+        if(Button3_SingleClick()){value=0;}
         
         if(old_value!=value){LCD_DisplayMainPage(value); old_value=value;}
     };

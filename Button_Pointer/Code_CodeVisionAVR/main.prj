@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=1
-OpenedFiles=5
+OpenedFiles=4
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -23,7 +23,7 @@ Active1=0
 Row1=87
 Column1=28
 State1=2
-TimeStamp1=1546105898
+TimeStamp1=1546107115
 OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\button.h
 Top2=149
 Left2=223
@@ -33,7 +33,7 @@ Active2=1
 Row2=9
 Column2=30
 State2=2
-TimeStamp2=1546105537
+TimeStamp2=1546127670
 OF3=..\..\_ExtraLibrary_CodeVisionAVR\Lib\button.lib
 Top3=149
 Left3=223
@@ -43,7 +43,7 @@ Active3=0
 Row3=72
 Column3=11
 State3=2
-TimeStamp3=1546106069
+TimeStamp3=1546127483
 OF4=_ExtraLibrary\_hardware_v1.0.h
 Top4=149
 Left4=223
@@ -53,7 +53,7 @@ Active4=0
 Row4=26
 Column4=6
 State4=2
-TimeStamp4=1546001750
+TimeStamp4=1546127528
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -68,7 +68,7 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=3
+ActiveTab=4
 F1=v1.0.c
 OF5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 TimeStamp5=1515261509
@@ -158,7 +158,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=265
+Build=271
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -238,7 +238,7 @@ WarningExternalDeclaredNeverDefined=1
 WarningUnknownPragma=1
 WarningStaticRamEepromStorageAllocConstStrLit=0
 WatchAVR8LAutoVariables=0
-COFFileTimeStamp=1546126368
+COFFileTimeStamp=1546127681
 IncludePath32=
 IncludePath33=
 IncludePath34=
@@ -493,7 +493,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=265
+Build=271
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -538,8 +538,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 265
-L18=12738 line(s) compiled
+L17=Build: 271
+L18=12726 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -581,7 +581,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1546106103
+TimeStamp=1546127786
 [BookmarksFoldedCode]
 Files=15
 F1=v1.0.c
@@ -600,11 +600,11 @@ F13=C:\cvavr\inc\stdio.h
 F14=C:\cvavr\inc\stdint.h
 F15=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 [Bookmarks1]
-TimeStamp=1546105898
-Row=119
-Column=0
+TimeStamp=1546107115
+Row=34
+Column=16
 ScrollPosX=0
-ScrollPosY=113
+ScrollPosY=27
 BK0=-1
 BK1=-1
 BK2=-1
@@ -706,11 +706,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks6]
-TimeStamp=1546105537
-Row=54
-Column=34
+TimeStamp=1546127670
+Row=9
+Column=20
 ScrollPosX=0
-ScrollPosY=41
+ScrollPosY=5
 BK0=-1
 BK1=-1
 BK2=-1
@@ -722,9 +722,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks7]
-TimeStamp=1546106069
+TimeStamp=1546127483
 Row=8
-Column=4
+Column=60
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -738,7 +738,7 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks8]
-TimeStamp=711006688
+TimeStamp=1537169696
 Row=0
 Column=0
 ScrollPosX=0
@@ -753,8 +753,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode8]
-Blocks=0
 [Bookmarks9]
 TimeStamp=1298953135
 Row=14
@@ -794,11 +792,11 @@ Blocks=0
 [FoldedCode10]
 Blocks=0
 [Bookmarks11]
-TimeStamp=1546001750
-Row=13
-Column=18
+TimeStamp=1546127528
+Row=19
+Column=0
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -863,8 +861,6 @@ BK8=-1
 BK9=-1
 [FoldedCode14]
 Blocks=0
-[FoldedCode1]
-Blocks=0
 [Bookmarks15]
 TimeStamp=1515261509
 Row=12
@@ -881,13 +877,9 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode11]
-Blocks=0
-[FoldedCode7]
-Blocks=0
-[FoldedCode6]
-Blocks=0
 [FoldedCode15]
+Blocks=0
+[FoldedCode8]
 Blocks=0
 [HeadersList]
 Files=1
@@ -905,3 +897,11 @@ F8=C:\cvavr\inc\stdint.h
 F9=C:\cvavr\inc\lcd.h
 F10=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 F11=..\..\_ExtraLibrary_CodeVisionAVR\Inc\button.h
+[FoldedCode1]
+Blocks=0
+[FoldedCode11]
+Blocks=0
+[FoldedCode7]
+Blocks=0
+[FoldedCode6]
+Blocks=0

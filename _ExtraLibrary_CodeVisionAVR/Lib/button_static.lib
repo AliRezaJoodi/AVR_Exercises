@@ -19,7 +19,7 @@ void Button_Config(void){
 
 #ifdef BUTTON1_PIN
 //*************************************************
-char Button1_OneStep(void){
+char Button1_SingleClick(void){
     static bit last_status=!PRESSED; 
     
     if(BUTTON1_PIN==PRESSED && last_status==!PRESSED){
@@ -38,7 +38,7 @@ char Button1_OneStep(void){
 }
 
 //*************************************************
-char Button1_Continuous(void){
+char Button1_AutoRepeat_NonBlocking(void){
     static unsigned int i=0;
         
     if(BUTTON1_PIN==PRESSED){
@@ -52,7 +52,7 @@ char Button1_Continuous(void){
 
 #ifdef BUTTON2_PIN
 //*************************************************
-char Button2_OneStep(void){
+char Button2_SingleClick(void){
     static bit last_status=!PRESSED; 
     
     if(BUTTON2_PIN==PRESSED && last_status==!PRESSED){
@@ -71,7 +71,7 @@ char Button2_OneStep(void){
 }
 
 //*************************************************
-char Button2_Continuous(void){
+char Button2_AutoRepeat_NonBlocking(void){
     static unsigned int i=0;
         
     if(BUTTON2_PIN==PRESSED){
@@ -85,7 +85,7 @@ char Button2_Continuous(void){
 
 #ifdef BUTTON3_PIN 
 //*************************************************
-char Button3_OneStep(void){
+char Button3_SingleClick(void){
     static bit last_status=!PRESSED; 
     
     if(BUTTON3_PIN==PRESSED && last_status==!PRESSED){
@@ -103,7 +103,7 @@ char Button3_OneStep(void){
 }
 
 //*************************************************
-char Button3_Continuous(void){
+char Button3_AutoRepeat_NonBlocking(void){
     static unsigned int i=0;
         
     if(BUTTON3_PIN==PRESSED){

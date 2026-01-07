@@ -5,10 +5,7 @@
 
 #include <stdint.h>
    
-#ifndef AVERAGE_HARDWARE
-#define AVERAGE_HARDWARE 
-    #define AVERAGE_COUNT     10 
-#endif
+#define AVERAGE_COUNT     10 
 
 #pragma used+
 typedef struct {

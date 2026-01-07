@@ -5,6 +5,3 @@
 #define LM35_HARDWARE 
     #define LM35_CH        7
     #define LM35_CH2       6 
-
-#define AVERAGE_HARDWARE 
-    #define AVERAGE_COUNT       10

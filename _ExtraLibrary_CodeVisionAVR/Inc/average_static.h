@@ -5,10 +5,7 @@
 
 #include <stdint.h>
     
-#ifndef AVERAGE_STATIC_HARDWARE
-#define AVERAGE_STATIC_HARDWARE 
-    #define AVERAGE_STATIC_COUNT     10
-#endif
+#define AVERAGE_STATIC_COUNT     10
 
 #pragma used+
 uint16_t Average_BlockUpdate_u16(uint16_t);

@@ -1,7 +1,5 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include "Attachment\hardware_v1.0.h"
-
 #include <mega32a.h>
 #include <delay.h>
 #include <stdlib.h>

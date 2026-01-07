@@ -7,13 +7,10 @@
 #include <stdint.h>
 #include <utility.h> 
 
-#ifndef BUTTON_HARDWARE
-#define BUTTON_HARDWARE
-    #define BUTTON_PRESSED      0
-    #define BUTTON_LAG1         30          //ms   
-    #define BUTTON_LAG2         500         //Button Lag: 0~65535
-    #define BUTTON_LAG3         10000       //Button Lag: 0~65535
-#endif
+#define BUTTON_PRESSED      0
+#define BUTTON_LAG1         30          // SingleClick  Lag, Value: 0~65535, Unit: ms  
+#define BUTTON_LAG2         500         // Auto Repeat Lag, Value: 0~65535
+#define BUTTON_LAG3         10000       // Long Press Lag, Value: 0~65535
 
 typedef struct{
     volatile unsigned char  *btn_ddr;

@@ -16,10 +16,7 @@
 #define ADC_GAIN_2V56_10Bit             2.50244         // 2560mV/1023 
 #define ADC_GAIN_5V_08Bit               19.53125        // 5000mV/256 
 
-#ifndef ADC_HARDWARE
-#define ADC_HARDWARE
-    #define ADC_GAIN                    ADC_GAIN_5V_10Bit    
-#endif
+#define ADC_GAIN                        ADC_GAIN_5V_10Bit    
     
     // Analog Channel and Gain Selections
     #define SINGLE0                         0b00000
