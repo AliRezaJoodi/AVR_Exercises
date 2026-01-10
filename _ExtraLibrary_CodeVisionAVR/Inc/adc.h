@@ -1,5 +1,9 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#ifndef _ADC_INCLUDED
+#define _ADC_INCLUDED
+
+
 #include <stdint.h>
 #include <delay.h>
 #include <utility.h>
@@ -7,9 +11,6 @@
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
-
-#ifndef _ADC_INCLUDED
-#define _ADC_INCLUDED
     
 #define ADC_GAIN_5V_10Bit               4.8875855       // 5000mV/1023
 #define ADC_GAIN_3V3_10Bit              3.22580645      // 3300mV/1023
