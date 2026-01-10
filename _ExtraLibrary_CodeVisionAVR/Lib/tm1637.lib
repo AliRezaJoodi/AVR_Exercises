@@ -1,0 +1,70 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#include <tm1637.h>
+
+//***************************************
+void TM1637_Config(void){
+    TM1637_CLK_SetInput();
+    TM1637_DIO_SetInput();
+}
+
+//***************************************
+void TM1637_Start(void){
+    TM1637_DIO_SetOutput(0);
+    TM1637_Delay();
+}
+
+//***************************************
+void TM1637_Stop(void){
+	TM1637_DIO_SetOutput(0);
+	TM1637_Delay();
+    TM1637_CLK_SetOutput(1);
+	TM1637_Delay();
+	TM1637_DIO_SetOutput(1);
+	TM1637_Delay();
+}
+
+//***************************************
+uint8_t TM1637_WriteByte(uint8_t d1){
+  uint8_t data = d1;
+  uint8_t i = 0;
+  uint8_t ack = 0;
+  
+  for(i = 0; i < 8; i++) {
+    TM1637_CLK_SetOutput(0);
+    TM1637_Delay();
+
+    if (data & 0x01){
+        TM1637_DIO_SetOutput(1);
+    }
+    else{ 
+        TM1637_DIO_SetOutput(0);
+    }
+    TM1637_Delay();
+
+    TM1637_CLK_SetOutput(1);
+    TM1637_Delay();
+    
+    data = data >> 1;
+  }
+
+  // Wait for acknowledge
+  TM1637_CLK_SetOutput(0);
+  TM1637_DIO_SetInput();
+  TM1637_Delay();
+
+  TM1637_CLK_SetOutput(1);
+  TM1637_Delay(); 
+  
+  ack = TM1637_DIO_GetInput();
+  if(ack == 0){ 
+    TM1637_DIO_SetOutput(0);
+  }
+  TM1637_Delay();
+  
+  TM1637_CLK_SetOutput(0);
+  TM1637_Delay();
+  ///TM1637_CLK_SetOutput(1);
+  
+  return ack;
+}
