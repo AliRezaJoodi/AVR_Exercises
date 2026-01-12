@@ -6,26 +6,92 @@
 void TM1637_Config(void){
     TM1637_CLK_SetInput();
     TM1637_DIO_SetInput();
+    
+    TM1637_Start();
+    TM1637_WriteByte(TM1637_I2C_COMM1); 
+    TM1637_Stop();
+    
+    TM1637_Start();
+    TM1637_WriteByte(0b10001111);  //Display and control command setting
+    TM1637_Stop();
 }
 
 //***************************************
 void TM1637_Start(void){
+//    TM1637_CLK_SetOutput(1);
+//    TM1637_DIO_SetOutput(1);
+//    TM1637_Delay_x2();
+    
     TM1637_DIO_SetOutput(0);
-    TM1637_Delay();
+    TM1637_Delay_x2();
 }
 
 //***************************************
 void TM1637_Stop(void){
 	TM1637_DIO_SetOutput(0);
-	TM1637_Delay();
     TM1637_CLK_SetOutput(1);
-	TM1637_Delay();
+	TM1637_Delay_x2();
+    
 	TM1637_DIO_SetOutput(1);
+	TM1637_Delay_x2();
+}
+
+//***************************************
+void TM1637_Stop_(void){
+    TM1637_CLK_SetOutput(0); // pending
+	TM1637_DIO_SetOutput(0);
 	TM1637_Delay();
+    
+    TM1637_CLK_SetOutput(1);
+	TM1637_Delay_x2();
+	TM1637_DIO_SetOutput(1);
+	TM1637_Delay_x2();
 }
 
 //***************************************
 uint8_t TM1637_WriteByte(uint8_t d1){
+  uint8_t data = d1;
+  uint8_t i = 0;
+  uint8_t ack = 0;
+  
+  for(i = 0; i < 8; i++) {
+    TM1637_CLK_SetOutput(0);
+    TM1637_Delay_x1();
+
+    if (data & 0x01){
+        TM1637_DIO_SetOutput(1);
+    }
+    else{ 
+        TM1637_DIO_SetOutput(0);
+    }
+    TM1637_Delay_x1();
+
+    TM1637_CLK_SetOutput(1);
+    TM1637_Delay_x2();
+
+    data = data >> 1;
+  }
+
+  // Prepare for receiving acknowledgement
+  TM1637_CLK_SetOutput(0);
+  TM1637_DIO_SetInput();
+  TM1637_Delay_x4();
+
+  // Read acknowledgement  
+  TM1637_CLK_SetOutput(1);
+  TM1637_Delay_x2(); 
+  ack = TM1637_DIO_GetInput();
+  if(ack == 0){ 
+    TM1637_DIO_SetOutput(0);
+  } 
+  TM1637_CLK_SetOutput(0);
+  TM1637_Delay_x2();
+
+  return ack;
+}
+
+//***************************************
+uint8_t TM1637_WriteByte_(uint8_t d1){
   uint8_t data = d1;
   uint8_t i = 0;
   uint8_t ack = 0;
@@ -44,26 +110,28 @@ uint8_t TM1637_WriteByte(uint8_t d1){
 
     TM1637_CLK_SetOutput(1);
     TM1637_Delay();
+    ///TM1637_Delay();
     
     data = data >> 1;
   }
 
-  // Wait for acknowledge
+  // Prepare for receiving acknowledgement
   TM1637_CLK_SetOutput(0);
   TM1637_DIO_SetInput();
   TM1637_Delay();
+  TM1637_Delay();
 
+  // Read acknowledgement  
   TM1637_CLK_SetOutput(1);
   TM1637_Delay(); 
-  
   ack = TM1637_DIO_GetInput();
   if(ack == 0){ 
     TM1637_DIO_SetOutput(0);
   }
   TM1637_Delay();
   
-  TM1637_CLK_SetOutput(0);
-  TM1637_Delay();
+  //TM1637_CLK_SetOutput(0);
+  //TM1637_Delay();
   ///TM1637_CLK_SetOutput(1);
   
   return ack;

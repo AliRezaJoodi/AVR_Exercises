@@ -18,13 +18,27 @@
 #define TM1637_DIO_PORT        PORTB
 #define TM1637_DIO_BIT         1
 
-#define TM1637_I2C_COMM1    0x40	//01	Data command setting
-#define TM1637_I2C_COMM2    0xC0	//11	Address command setting
+#define TM1637_DELAY            (uint8_t)100  //  uS
+
+#define TM1637_I2C_COMM1    0x40    //01    Data command setting
+#define TM1637_I2C_COMM2    0xC0    //11    Address command setting
 #define TM1637_I2C_COMM3    0x80	//10	Display and control command setting
 
 void TM1637_Config(void);
 
 #pragma used+
+static inline void TM1637_Delay_x1(void){
+    delay_us(TM1637_DELAY);
+}
+
+static inline void TM1637_Delay_x2(void){
+    delay_us(TM1637_DELAY*2);
+} 
+
+static inline void TM1637_Delay_x4(void){
+    delay_us(TM1637_DELAY*4);
+}  
+
 static inline void TM1637_Delay(void){
     delay_us(100);
 } 
@@ -60,7 +74,7 @@ static inline void TM1637_DIO_SetOutput(uint8_t status){
 }
 
 static inline uint8_t TM1637_DIO_GetInput(void){
-    TM1637_DIO_SetInput();
+    //TM1637_DIO_SetInput();
     return GetBit(TM1637_DIO_PIN, TM1637_DIO_BIT);
 }
 
