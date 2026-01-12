@@ -5,7 +5,7 @@
 #include <delay.h>
 
 #include <utility.h>
-#include <display_7segment_data.h>
+#include <display_7segment_decoder.h>
 
 void IO_Config(void);
 

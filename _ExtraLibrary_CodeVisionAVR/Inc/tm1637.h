@@ -3,85 +3,34 @@
 #ifndef _TM1637_INCLUDED
 #define _TM1637_INCLUDED
 
+
 #include <io.h>
 #include <delay.h>
 #include <stdint.h>
+
 #include <utility.h> 
 
-#define TM1637_CLK_DDR         DDRB
-#define TM1637_CLK_PIN         PINB
-#define TM1637_CLK_PORT        PORTB
+#define TM1637_CLK_DDR         DDRC
+#define TM1637_CLK_PIN         PINC
+#define TM1637_CLK_PORT        PORTC
 #define TM1637_CLK_BIT         0
 
-#define TM1637_DIO_DDR         DDRB
-#define TM1637_DIO_PIN         PINB
-#define TM1637_DIO_PORT        PORTB
+#define TM1637_DIO_DDR         DDRC
+#define TM1637_DIO_PIN         PINC
+#define TM1637_DIO_PORT        PORTC
 #define TM1637_DIO_BIT         1
 
-#define TM1637_DELAY            (uint8_t)100  //  uS
-
-#define TM1637_I2C_COMM1    0x40    //01    Data command setting
-#define TM1637_I2C_COMM2    0xC0    //11    Address command setting
-#define TM1637_I2C_COMM3    0x80	//10	Display and control command setting
+#define TM1637_DELAY            (uint8_t)100  // uS
 
 void TM1637_Config(void);
 
 #pragma used+
-static inline void TM1637_Delay_x1(void){
-    delay_us(TM1637_DELAY);
-}
-
-static inline void TM1637_Delay_x2(void){
-    delay_us(TM1637_DELAY*2);
-} 
-
-static inline void TM1637_Delay_x4(void){
-    delay_us(TM1637_DELAY*4);
-}  
-
-static inline void TM1637_Delay(void){
-    delay_us(100);
-} 
-
-static inline void TM1637_CLK_SetInput(void){
-    ClearBit(TM1637_CLK_DDR, TM1637_CLK_BIT);
-    ClearBit(TM1637_CLK_PORT, TM1637_CLK_BIT);
-}
-
-static inline void TM1637_CLK_SetOutput(uint8_t status){
-    if(status){
-        TM1637_CLK_SetInput();
-    }
-    else{
-        SetBit(TM1637_CLK_DDR, TM1637_CLK_BIT);
-        ClearBit(TM1637_CLK_PORT, TM1637_CLK_BIT);    
-    }
-}
-
-static inline void TM1637_DIO_SetInput(void){
-    ClearBit(TM1637_DIO_DDR, TM1637_DIO_BIT);
-    ClearBit(TM1637_DIO_PORT, TM1637_DIO_BIT);
-}
-
-static inline void TM1637_DIO_SetOutput(uint8_t status){
-    if(status){
-        TM1637_DIO_SetInput();
-    }
-    else{
-        SetBit(TM1637_DIO_DDR, TM1637_DIO_BIT);
-        ClearBit(TM1637_DIO_PORT, TM1637_DIO_BIT);    
-    }
-}
-
-static inline uint8_t TM1637_DIO_GetInput(void){
-    //TM1637_DIO_SetInput();
-    return GetBit(TM1637_DIO_PIN, TM1637_DIO_BIT);
-}
-
 void TM1637_Start(void);
 void TM1637_Stop(void);
-uint8_t TM1637_WriteByte(uint8_t b);
-
+uint8_t TM1637_WriteByte(uint8_t data);
+void TM1637_SetOnOff(uint8_t status);
+void TM1637_SetBrightness(uint8_t value_1To7);
+void TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t pos);
 #pragma used-
 
 
