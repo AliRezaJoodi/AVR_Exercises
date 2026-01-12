@@ -10,6 +10,8 @@
 #define SetBit(ADDRESS,BIT)                 ADDRESS= (ADDRESS) | (1<<(BIT));
 #define ClearBit(ADDRESS,BIT)               ADDRESS= (ADDRESS) & (~(1<<(BIT)));
 #define ToggleBit(ADDRESS,BIT)              ADDRESS= (ADDRESS) ^ (1<<(BIT));
+#define ToggleData(ADDRESS)        			ADDRESS = ~(ADDRESS);
+
 #define WriteBit(ADDRESS,BIT,STATUS)        ADDRESS= ((ADDRESS) & (~(0b1<<(BIT)))) | (((STATUS)&0b1) << (BIT));
 #define GetBit(ADDRESS,BIT)                 (((ADDRESS) >> (BIT)) & 0b1)
 
