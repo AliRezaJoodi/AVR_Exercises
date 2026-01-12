@@ -1,0 +1,52 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#ifndef _DISPLAY_7SEGMENT_DATA_INCLOUDED
+    #define _DISPLAY_7SEGMENT_DATA_INCLOUDED
+
+
+#include <stdint.h>
+
+#pragma used+
+const uint8_t _7Segment_Data_0To9[10]={
+    0b00111111,     // 0     
+    0b00000110,     // 1
+    0b01011011,     // 2
+    0b01001111,     // 3
+    0b01100110,     // 4
+    0b01101101,     // 5
+    0b01111101,     // 6
+    0b00000111,     // 7
+    0b01111111,     // 8
+    0b01101111,     // 9
+ };
+
+const uint8_t _7Segment_Data_chr[12]={
+    0b01000000,     // 0:   - 
+    0b01110111,     // 1,   A
+    0b01111100,     // 2,   b
+    0b00111001,     // 3,   C
+    0b01011110,     // 4,   d
+    0b01111001,     // 5,   E
+    0b01110001,     // 6,   F
+    0b01110110,     // 7,   H
+    0b00111000,     // 8,   L
+    0b01010000,     // 9,   r
+    0b01111000,     // 10,  t
+    0b00111110      // 11,  U
+};
+
+static inline uint8_t Display_DecoderDigitTo7Segment(uint8_t digit){
+    return _7Segment_Data_0To9[digit];
+}
+
+static inline uint8_t Display_DecoderChrTo7Segment(uint8_t chr){
+    return _7Segment_Data_chr[chr];
+}
+
+static inline uint8_t Display_Toggle7Segment(uint8_t data){
+    return ~data;
+}
+#pragma used-
+
+
+#endif
