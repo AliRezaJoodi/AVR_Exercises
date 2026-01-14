@@ -9,78 +9,26 @@
 uint8_t tm1637_display = 0b10001111; 
 
 //***************************************
-static inline void TM1637_Delay_x1(void){
-    delay_us(TM1637_DELAY);
-}
-
-//***************************************
-static inline void TM1637_Delay_x2(void){
-    delay_us(TM1637_DELAY*2);
-} 
-
-//***************************************
-static inline void TM1637_Delay_x4(void){
-    delay_us(TM1637_DELAY*4);
-}  
-
-//***************************************
-static inline void TM1637_CLK_SetInput(void){
-    ClearBit(TM1637_CLK_DDR, TM1637_CLK_BIT);
-    ClearBit(TM1637_CLK_PORT, TM1637_CLK_BIT);
-}
-
-//***************************************
-static inline void TM1637_CLK_SetOutput(uint8_t status){
-    if(status){
-        TM1637_CLK_SetInput();
-    }
-    else{
-        SetBit(TM1637_CLK_DDR, TM1637_CLK_BIT);
-        ClearBit(TM1637_CLK_PORT, TM1637_CLK_BIT);    
-    }
-}
-
-//***************************************
-static inline void TM1637_DIO_SetInput(void){
-    ClearBit(TM1637_DIO_DDR, TM1637_DIO_BIT);
-    ClearBit(TM1637_DIO_PORT, TM1637_DIO_BIT);
-}
-
-//***************************************
-static inline void TM1637_DIO_SetOutput(uint8_t status){
-    if(status){
-        TM1637_DIO_SetInput();
-    }
-    else{
-        SetBit(TM1637_DIO_DDR, TM1637_DIO_BIT);
-        ClearBit(TM1637_DIO_PORT, TM1637_DIO_BIT);    
-    }
-}
-
-//***************************************
-static inline uint8_t TM1637_DIO_GetInput(void){
-    //TM1637_DIO_SetInput();
-    return GetBit(TM1637_DIO_PIN, TM1637_DIO_BIT);
-}
-
-//***************************************
 void TM1637_Start(void){
 //    TM1637_CLK_SetOutput(1);
 //    TM1637_DIO_SetOutput(1);
 //    TM1637_Delay_x2();
     
     TM1637_DIO_SetOutput(0);
-    TM1637_Delay_x2();
+    //TM1637_Delay_x2();
+    TM1637_Delay_us(TM1637_DELAY*2);
 }
 
 //***************************************
 void TM1637_Stop(void){
 	TM1637_DIO_SetOutput(0);
     TM1637_CLK_SetOutput(1);
-	TM1637_Delay_x2();
+	//TM1637_Delay_x2();
+    TM1637_Delay_us(TM1637_DELAY*2);
     
 	TM1637_DIO_SetOutput(1);
-	TM1637_Delay_x2();
+	//TM1637_Delay_x2();
+    TM1637_Delay_us(TM1637_DELAY*2);
 }
 
 //***************************************
@@ -91,7 +39,8 @@ uint8_t TM1637_WriteByte(uint8_t data){
   
   for(i = 0; i < 8; i++) {
     TM1637_CLK_SetOutput(0);
-    TM1637_Delay_x1();
+    //TM1637_Delay_x1();
+    TM1637_Delay_us(TM1637_DELAY);
 
     if (data & 0x01){
         TM1637_DIO_SetOutput(1);
@@ -99,10 +48,12 @@ uint8_t TM1637_WriteByte(uint8_t data){
     else{ 
         TM1637_DIO_SetOutput(0);
     }
-    TM1637_Delay_x1();
+    //TM1637_Delay_x1(); 
+    TM1637_Delay_us(TM1637_DELAY);
 
     TM1637_CLK_SetOutput(1);
-    TM1637_Delay_x2();
+    //TM1637_Delay_x2();
+    TM1637_Delay_us(TM1637_DELAY*2);
 
     data = data >> 1;
   }
@@ -110,18 +61,21 @@ uint8_t TM1637_WriteByte(uint8_t data){
   // Prepare for receiving acknowledgement
   TM1637_CLK_SetOutput(0);
   TM1637_DIO_SetInput();
-  TM1637_Delay_x4();
+  //TM1637_Delay_x4();
+  TM1637_Delay_us(TM1637_DELAY*4);
 
   // Read acknowledgement  
   TM1637_CLK_SetOutput(1);
-  TM1637_Delay_x2(); 
+  //TM1637_Delay_x2();
+  TM1637_Delay_us(TM1637_DELAY*2); 
   ack = TM1637_DIO_GetInput();
   if(ack == 0){ 
     TM1637_DIO_SetOutput(0);
   } 
   TM1637_CLK_SetOutput(0);
-  TM1637_Delay_x2();
-
+  //TM1637_Delay_x2();
+  TM1637_Delay_us(TM1637_DELAY*2);
+  
   return ack;
 }
 

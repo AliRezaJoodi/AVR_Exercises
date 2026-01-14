@@ -4,23 +4,12 @@
 #define _TM1637_INCLUDED
 
 
-#include <io.h>
-#include <delay.h>
 #include <stdint.h>
 
 #include <utility.h> 
 
-#define TM1637_CLK_DDR         DDRC
-#define TM1637_CLK_PIN         PINC
-#define TM1637_CLK_PORT        PORTC
-#define TM1637_CLK_BIT         0
-
-#define TM1637_DIO_DDR         DDRC
-#define TM1637_DIO_PIN         PINC
-#define TM1637_DIO_PORT        PORTC
-#define TM1637_DIO_BIT         1
-
-#define TM1637_DELAY            (uint8_t)100  // uS
+#include <tm1637_hw.h> 
+#include <tm1637_avr.h>
 
 void TM1637_Config(void);
 
