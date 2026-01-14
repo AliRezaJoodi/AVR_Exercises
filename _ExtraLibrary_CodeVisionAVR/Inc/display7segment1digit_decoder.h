@@ -1,7 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef _DISPLAY_7SEGMENT_1DIGIT_INCLOUDED
-    #define _DISPLAY_7SEGMENT_1DIGIT_INCLOUDED
+#ifndef _DISPLAY7SEGMENT1DIGIT_DECODER_INCLOUDED
+    #define _DISPLAY7SEGMENT1DIGIT_DECODER_INCLOUDED
 
 
 #include <stdint.h>
@@ -17,5 +17,5 @@ void Display7Segment1Digit_ToggleSegments(uint8_t *seg);
 #pragma used-
 
 
-#pragma library display_7segment_1digit.lib
+#pragma library display7segment1digit_decoder.lib
 #endif

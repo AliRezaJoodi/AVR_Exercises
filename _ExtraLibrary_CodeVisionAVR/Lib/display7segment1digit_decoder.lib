@@ -1,6 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <display_7segment_1digit.h>
+#include <display7segment1digit_decoder.h>
 
 const uint8_t _7Segment_Data_0To9[10]={
     0b00111111,     // 0     
