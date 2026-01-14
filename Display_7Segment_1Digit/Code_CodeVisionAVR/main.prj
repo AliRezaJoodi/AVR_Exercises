@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=1
-OpenedFiles=1
+OpenedFiles=2
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -23,8 +23,8 @@ Active1=1
 Row1=174
 Column1=9
 State1=2
-TimeStamp1=1546529531
-OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_decoder.h
+TimeStamp1=1546587907
+OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
 Top2=149
 Left2=223
 Height2=393
@@ -33,7 +33,7 @@ Active2=0
 Row2=8
 Column2=5
 State2=2
-TimeStamp2=1546529175
+TimeStamp2=1546563165
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -135,7 +135,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=369
+Build=370
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
@@ -202,7 +202,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1546529557
+COFFileTimeStamp=1546587908
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -373,7 +373,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=369
+Build=370
 Chip=ATmega32
 CPUClock=1000000
 MemoryModel=1
@@ -495,7 +495,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 369
+L17=Build: 370
 L18=489 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -558,9 +558,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1546529594
+TimeStamp=1546587912
 [BookmarksFoldedCode]
-Files=9
+Files=10
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
 F2=v1.0.c
 F3=C:\cvavr\inc\stdint.h
@@ -570,6 +570,7 @@ F6=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_data.h
 F7=..\..\_ExtraLibrary_CodeVisionAVR\Lib\display_7segment_data.lib
 F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_decoder.h
 F9=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_1digit.h
+F10=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
 [Bookmarks1]
 TimeStamp=1433472353
 Row=183
@@ -589,11 +590,11 @@ BK9=-1
 [FoldedCode1]
 Blocks=0
 [Bookmarks2]
-TimeStamp=1546529531
-Row=13
-Column=19
+TimeStamp=1546587907
+Row=20
+Column=45
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -732,16 +733,6 @@ BK8=-1
 BK9=-1
 [FoldedCode8]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Display_7Segment_1Digit\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=5
-F1=C:\cvavr\inc\mega32.h
-F2=C:\cvavr\inc\stdint.h
-F3=C:\cvavr\inc\delay.h
-F4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
-F5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_7segment_1digit.h
 [Bookmarks9]
 TimeStamp=1546529571
 Row=3
@@ -760,5 +751,33 @@ BK8=-1
 BK9=-1
 [FoldedCode9]
 Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Display_7Segment_1Digit\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=5
+F1=C:\cvavr\inc\mega32.h
+F2=C:\cvavr\inc\stdint.h
+F3=C:\cvavr\inc\delay.h
+F4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
+F5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
 [FoldedCode2]
+Blocks=0
+[Bookmarks10]
+TimeStamp=1546563165
+Row=10
+Column=36
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode10]
 Blocks=0

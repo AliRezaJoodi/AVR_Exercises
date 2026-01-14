@@ -5,7 +5,7 @@
 #include <delay.h>
 
 #include <utility.h>
-#include <display_7segment_1digit.h>
+#include <display7segment1digit_decoder.h>
 
 void IO_Config(void);
 
@@ -17,8 +17,8 @@ void main(void){
     
     while (1){
         for(value=0; value<=9; ++value){ 
-            Display7Segment1Digit_DecoderDigitToSegments(value, &segment[0]);
-            //Display7Segment1Digit_DecoderChrToSegments(value, &segment[0]);
+            Display7Segment1Digit_DecodeDigit(value, &segment[0]);
+            //Display7Segment1Digit_DecodeChr(value, &segment[0]);
             PORTD = segment[0];
             
             Display7Segment1Digit_ToggleSegments(&segment[0]);
