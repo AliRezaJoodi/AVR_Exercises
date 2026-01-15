@@ -5,11 +5,10 @@
 
 
 #include <stdint.h>
+#include <delay.h>
 
 #include <utility.h> 
-
 #include <tm1637_hw.h> 
-#include <tm1637_avr.h>
 
 void TM1637_Config(void);
 
