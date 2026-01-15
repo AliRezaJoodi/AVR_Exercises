@@ -3,16 +3,30 @@
 #include <mega32a.h>
 #include <delay.h>
 
-#include <display_7segment_4digit_2display.h>
+#include <display7segment4digit_decoder_float.h>
+#include <display7segment4digit2display_driver.h>
 
-void main(void){  
-    Config_7Segment();
+void main(void){
+    float volt = 54.3456;
+    uint8_t volt_segments[4];
+    
+    float amp = 2.615;
+    uint8_t amp_segments[4];
       
+    Display7Segment4Digit2Disply_Config();
+    
+    Display7Segment4Digit_DecodeFloat_2d(volt, &volt_segments[0]);
+    if(ACTIVATE_SEGMENT == 0){
+        Display7Segment4Digit_Toggle4Byte( &volt_segments[0] ); 
+    }
+
+    Display7Segment4Digit_DecodeFloat_2d(amp, &amp_segments[0]);
+    if(ACTIVATE_SEGMENT == 0){
+        Display7Segment4Digit_Toggle4Byte( &amp_segments[0] );
+    }
+          
     while(1){
-        //Int_LefToRight_Display1(4321); delay_ms(5);
-        //Float_LefToRight_Display2(0.123); delay_ms(5);
-        //Display1(4.321, 3); delay_ms(250);  
-        //Display2(1.234, 1); delay_ms(250);
-        DisplayAll(54.321, 0.432); delay_ms(4);    
+        Display7Segment4Digit2Disply_DriveDisplay1(volt_segments); delay_ms(5); 
+        Display7Segment4Digit2Disply_DriveDisplay2(amp_segments); delay_ms(5); 
     };
 }

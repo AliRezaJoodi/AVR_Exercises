@@ -12,12 +12,10 @@
 void main(void){
     uint8_t segments[6];
     uint8_t i=0; 
-//    float volt=0.521;
 
                  
     TM1637_Config();
 
-//    Display7Segment4Digit_DecodeDigits_f32_2dp(volt, &segments[0]); 
   
     for (i=0; i<6; ++i){
         Display7Segment1Digit_DecodeDigit(i, &segments[i]);    
