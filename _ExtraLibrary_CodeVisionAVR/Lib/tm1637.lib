@@ -113,21 +113,22 @@ uint8_t TM1637_WriteByte(uint8_t data){
 }
 
 //***************************************
+void TM1637_SendCommand(uint8_t command){
+    TM1637_Start();
+    TM1637_WriteByte(command); 
+    TM1637_Stop();
+}
+
+//***************************************
 void TM1637_SetOnOff(uint8_t status){
     WriteBit(tm1637_display, 3, status);
-    
-    TM1637_Start();
-    TM1637_WriteByte(tm1637_display); 
-    TM1637_Stop();
+    TM1637_SendCommand(tm1637_display);
 }
 
 //***************************************
 void TM1637_SetBrightness(uint8_t value_1To7){
     Write3Bit(tm1637_display, 0, value_1To7);
-    
-    TM1637_Start();
-    TM1637_WriteByte(tm1637_display); 
-    TM1637_Stop(); 
+    TM1637_SendCommand(tm1637_display);
 }
 
 //***************************************
@@ -135,24 +136,28 @@ void TM1637_Config(void){
     TM1637_CLK_SetInput();
     TM1637_DIO_SetInput();
     
-    TM1637_Start();
-    TM1637_WriteByte(TM1637_I2C_COMM1); 
-    TM1637_Stop();
-    
-    
+    TM1637_SendCommand(TM1637_I2C_COMM1);        
     TM1637_SetOnOff(1);
     TM1637_SetBrightness(7);  
 }
 
 //***************************************
-void TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t pos){
+void TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t address){
     uint8_t i=0;
 	TM1637_Start();
-	TM1637_WriteByte( TM1637_I2C_COMM2 + (pos & 0b111) );
+	TM1637_WriteByte( TM1637_I2C_COMM2 + (address & 0b111) );
 
 	for (i=0; i < length; ++i){
 	  TM1637_WriteByte( segments[i] );
     }
 
+	TM1637_Stop();   
+}
+
+//***************************************
+void TM1637_SetSegments_FixedAddress(uint8_t data, uint8_t address){
+	TM1637_Start();
+	TM1637_WriteByte( TM1637_I2C_COMM2 + (address & 0b111) );
+	TM1637_WriteByte(data);
 	TM1637_Stop();   
 }

@@ -13,12 +13,14 @@
 void TM1637_Config(void);
 
 #pragma used+
-void TM1637_Start(void);
-void TM1637_Stop(void);
-uint8_t TM1637_WriteByte(uint8_t data);
+//void TM1637_Start(void);
+//void TM1637_Stop(void);
+//uint8_t TM1637_WriteByte(uint8_t data);
+void TM1637_SendCommand(uint8_t command);
 void TM1637_SetOnOff(uint8_t status);
 void TM1637_SetBrightness(uint8_t value_1To7);
-void TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t pos);
+void TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t address);
+void TM1637_SetSegments_FixedAddress(uint8_t data, uint8_t address);
 #pragma used-
 
 
