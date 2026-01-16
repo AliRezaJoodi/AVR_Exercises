@@ -4,15 +4,8 @@
 
 #define TM1637_COMMAND_DATA_WRITE   0b01000000  // Data command setting: Write data to display register
 #define TM1637_COMMAND_DATA_READ    0b01000010  // Data command setting: Read key scan data
-
 #define TM1637_COMMAND_ADDRESS      0b11000000  // Address command setting
-//#define TM1637_I2C_COMM2    0xC0    //11    Address command setting
-
 #define TM1637_COMMAND_DISPLAY      0b10000000  // Display control
-//#define TM1637_I2C_COMM3    0x80	//10	Display and control command setting
-
-//uint8_t tm1637_command_address = TM1637_COMMAND_ADDRESS;
-//uint8_t tm1637_display = 0b10001111; 
 
 #define TM1637_Delay_us(VALUE)                         delay_us(VALUE);
 
