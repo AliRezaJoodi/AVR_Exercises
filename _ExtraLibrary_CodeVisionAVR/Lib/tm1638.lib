@@ -1,0 +1,285 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#include <tm1638.h>
+
+#define TM1638_COMMAND_DATA_WRITE   0b01000000  // Data command setting: Write data to display register
+#define TM1638_COMMAND_DATA_READ    0b01000010  // Data command setting: Read key scan data
+#define TM1638_COMMAND_DISPLAY      0b10000000  // Display control
+#define TM1638_COMMAND_ADDRESS      0b11000000  // Address command setting
+
+#define TM1638_Delay_us(VALUE)                         delay_us(VALUE);
+
+//***************************************
+static inline void TM1638_STB_WritePin(uint8_t status){
+    if(status){
+        ClearBit(TM1638_STB_DDR, TM1638_STB_BIT);
+        ClearBit(TM1638_STB_PORT, TM1638_STB_BIT);
+    }
+    else{
+        SetBit(TM1638_STB_DDR, TM1638_STB_BIT);
+        ClearBit(TM1638_STB_PORT, TM1638_STB_BIT);    
+    }
+}
+
+//***************************************
+static inline void TM1638_CLK_WritePin(uint8_t status){
+    if(status){
+        ClearBit(TM1638_CLK_DDR, TM1638_CLK_BIT);
+        ClearBit(TM1638_CLK_PORT, TM1638_CLK_BIT);
+    }
+    else{
+        SetBit(TM1638_CLK_DDR, TM1638_CLK_BIT);
+        ClearBit(TM1638_CLK_PORT, TM1638_CLK_BIT);    
+    }
+}
+
+//***************************************
+static inline void TM1638_DIO_SetInput(void){
+    ClearBit(TM1638_DIO_DDR, TM1638_DIO_BIT);
+    ClearBit(TM1638_DIO_PORT, TM1638_DIO_BIT);
+}
+
+//***************************************
+static inline void TM1638_DIO_WritePin(uint8_t status){
+    if(status){
+        TM1638_DIO_SetInput();
+    }
+    else{
+        SetBit(TM1638_DIO_DDR, TM1638_DIO_BIT);
+        ClearBit(TM1638_DIO_PORT, TM1638_DIO_BIT);    
+    }
+}
+
+//***************************************
+static inline uint8_t TM1638_DIO_GetInput(void){
+    //TM1638_DIO_SetInput();
+    return GetBit(TM1638_DIO_PIN, TM1638_DIO_BIT);
+}
+
+////***************************************
+//void TM1638_Start(void){
+//    TM1638_STB_WritePin(0);
+//}
+//
+////***************************************
+//void TM1638_Stop(void){
+//    TM1638_STB_WritePin(1);
+//    TM1638_Delay_us(TM1638_DELAY*2);
+//}
+
+//***************************************
+uint8_t TM1638_WriteByte(uint8_t data){
+  uint8_t i = 0;
+  
+  for(i = 0; i < 8; i++) {
+    TM1638_CLK_WritePin(0);
+    TM1638_Delay_us(TM1638_DELAY);
+
+    if (data & 0x01){
+        TM1638_DIO_WritePin(1);
+    }
+    else{ 
+        TM1638_DIO_WritePin(0);
+    }
+    TM1638_Delay_us(TM1638_DELAY);
+
+    TM1638_CLK_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+
+    data = data >> 1;
+  }
+  
+  return 0;
+}
+
+//***************************************
+void TM1638_SendCommand(uint8_t command){
+    TM1638_STB_WritePin(0);
+    
+    TM1638_WriteByte(command);
+     
+    TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+}
+
+//***************************************
+uint8_t TM1638_SetDisplay(uint8_t onoff, uint8_t brightness){
+    uint8_t error =0;
+    uint8_t command_display = TM1638_COMMAND_DISPLAY;
+    
+    if ( onoff > 1 ){
+        onoff = 1;
+        SetBit(error, 0);
+    }
+    
+    if ( brightness > 0b111 ){
+        brightness = 0b111;
+        SetBit(error, 1);
+    }
+    
+    WriteBit(command_display, 3, onoff);
+    Write3Bit(command_display, 0, brightness);
+    
+    TM1638_STB_WritePin(0);
+    
+    TM1638_WriteByte(command_display);
+     
+    TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+    
+    return error;
+}
+
+//***************************************
+void TM1638_Config(void){
+    TM1638_STB_WritePin(1);
+    TM1638_CLK_WritePin(1);
+    TM1638_DIO_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+    
+    TM1638_SetDisplay(1, 7);           
+}
+
+//***************************************
+void TM1638_ResetSegments(void){
+    uint8_t i=0;
+    
+    uint8_t TM1638_command_address = TM1638_COMMAND_ADDRESS;
+    Write4Bit(TM1638_command_address, 0, 0)	
+    
+    TM1638_STB_WritePin(0);
+    
+    TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
+     
+    TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+    
+	TM1638_STB_WritePin(0);
+	TM1638_WriteByte(TM1638_command_address);
+	for (i=0; i < 16; ++i){
+      TM1638_WriteByte(0x00);
+    }
+
+	TM1638_STB_WritePin(1); 
+    TM1638_Delay_us(TM1638_DELAY*2);  
+}
+
+//***************************************
+uint8_t TM1638_SetSegments(uint8_t segments[], uint8_t length, uint8_t address){
+    uint8_t error = 0;
+    uint8_t i=0;    
+    uint8_t command_address = TM1638_COMMAND_ADDRESS;
+    
+    if( address > 15 ){
+        address = 15;
+        SetBit(error, 0);   
+    }
+    
+    if( length > (16-address) ){
+        length = 16 - address;
+        SetBit(error, 1);    
+    }
+    else if( length == 0 ){
+        length = 1;
+        SetBit(error, 2); 
+    }
+    
+    Write4Bit(command_address, 0, address)	
+    
+    TM1638_STB_WritePin(0);
+    
+    TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
+     
+    TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+    
+	TM1638_STB_WritePin(0);
+    
+	TM1638_WriteByte(command_address);
+    
+	for (i=0; i < length; ++i){
+	  TM1638_WriteByte( segments[i] );
+    }
+
+	TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2); 
+    
+    return error;   
+}
+
+//***************************************
+uint8_t TM1638_SetSegments_WithoutSeg9Seg10(uint8_t segments[], uint8_t length, uint8_t pos){
+    uint8_t error = 0;
+    uint8_t address = 0;
+    uint8_t i=0;    
+    uint8_t command_address = TM1638_COMMAND_ADDRESS; 
+    
+    if( pos > 7 ){
+        pos = 7;
+        SetBit(error, 0); 
+    }
+    
+    if( length > (8-pos) ){
+        length = 8 - pos;
+        SetBit(error, 1);    
+    }
+    else if( length == 0 ){
+        length = 1;
+        SetBit(error, 2); 
+    }
+    
+    address = pos * 2;
+    Write4Bit(command_address, 0, address)	
+    
+    TM1638_STB_WritePin(0);
+    
+    TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
+     
+    TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+    
+	TM1638_STB_WritePin(0);
+    
+	TM1638_WriteByte(command_address);
+    
+	for (i=0; i < length; ++i){
+	  TM1638_WriteByte( segments[i] );
+      TM1638_WriteByte(0x00);
+    }
+
+	TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2); 
+    
+    return error;  
+}
+
+//***************************************
+uint8_t TM1638_SetSegments_FixedAddress(uint8_t data, uint8_t address){
+    uint8_t error = 0;
+    uint8_t command_address = TM1638_COMMAND_ADDRESS; 
+    
+    if( address > 15 ){
+        address = 15;
+        SetBit(error, 0);    
+    }
+    
+    Write4Bit(command_address, 0, address)
+
+    TM1638_STB_WritePin(0);
+    
+    TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
+     
+    TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2);
+        
+	TM1638_STB_WritePin(0);
+    
+	TM1638_WriteByte(command_address); 
+    TM1638_Delay_us(TM1638_DELAY*2);    
+	TM1638_WriteByte(data);
+    
+	TM1638_STB_WritePin(1);
+    TM1638_Delay_us(TM1638_DELAY*2)
+    
+    return error;   
+};
