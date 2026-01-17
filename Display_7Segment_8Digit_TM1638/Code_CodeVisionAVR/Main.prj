@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=3
+OpenedFiles=5
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=v1.0.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1546758544
+TimeStamp1=1546784978
 PageIndex1=1
 Top0=200
 Left0=438
@@ -35,23 +35,23 @@ Width1=1171
 Row1=125
 Column1=17
 State1=2
-OF2=..\..\_ExtraLibrary_CodeVisionAVR\Lib\tm1638.lib
+OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1546758320
+TimeStamp2=1546784560
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=3
-OF3=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638.h
-TimeStamp3=1546758320
-OF4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637.h
-TimeStamp4=1546613954
-OF5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_lm35.h
-TimeStamp5=1545667621
+ActiveTab=1
+OF3=..\..\_ExtraLibrary_CodeVisionAVR\Lib\tm1638.lib
+TimeStamp3=1546784859
+OF4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
+TimeStamp4=1546785331
+OF5=..\..\_ExtraLibrary_CodeVisionAVR\Lib\display7segment1digit_decoder.lib
+TimeStamp5=1546785282
 F1=v1.0.c
 [Compiler]
 RebuildAll=0
@@ -145,7 +145,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1009
+Build=1016
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1546784982
+COFFileTimeStamp=1546785446
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -389,9 +389,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1546759980
+TimeStamp=1546785467
 [BookmarksFoldedCode]
-Files=58
+Files=59
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -450,6 +450,7 @@ F55=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment4digit_decoder_value.h
 F56=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638.h
 F57=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638_hw.h
 F58=..\..\_ExtraLibrary_CodeVisionAVR\Lib\tm1638.lib
+F59=..\..\_ExtraLibrary_CodeVisionAVR\Lib\display7segment1digit_decoder.lib
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -485,7 +486,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1009
+Build=1016
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -607,8 +608,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1009
-L18=3726 line(s) compiled
+L17=Build: 1016
+L18=3758 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -626,7 +627,7 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L36=Program size: 812 words (1624 bytes), 9.9% of FLASH
+L36=Program size: 822 words (1644 bytes), 10.0% of FLASH
 L37=44 words (88 bytes), 5.1% reduced by Code Compression
 L38=0 words (0 bytes), 0.0% reduced by Code Compression
 Lines=37
@@ -634,12 +635,12 @@ Lines=37
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\List\Main.asm(2124): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\List\Main.asm(2136): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000658   1602     22   1624   16384   9.9%
+L9=[.cseg] 0x000000 0x00066c   1622     22   1644   16384  10.0%
 L10=[.dseg] 0x000060 0x000260      0      0      0    1024   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -658,11 +659,11 @@ HIDJoystick=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks3]
-TimeStamp=1546758544
-Row=16
-Column=21
+TimeStamp=1546784978
+Row=34
+Column=55
 ScrollPosX=0
-ScrollPosY=7
+ScrollPosY=39
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1512,11 +1513,11 @@ BK9=-1
 [FoldedCode49]
 Blocks=0
 [Bookmarks50]
-TimeStamp=1546563165
-Row=9
-Column=28
+TimeStamp=1546785331
+Row=10
+Column=13
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1626,9 +1627,9 @@ Blocks=0
 [FoldedCode40]
 Blocks=0
 [Bookmarks56]
-TimeStamp=1546758320
-Row=12
-Column=1
+TimeStamp=1546784560
+Row=15
+Column=39
 ScrollPosX=0
 ScrollPosY=11
 BK0=-1
@@ -1658,11 +1659,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks58]
-TimeStamp=1546784376
-Row=6
-Column=8
+TimeStamp=1546784859
+Row=206
+Column=17
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=163
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1673,15 +1674,7 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode3]
-Blocks=0
-[FoldedCode56]
-Blocks=0
-[FoldedCode50]
-Blocks=0
 [FoldedCode57]
-Blocks=0
-[FoldedCode58]
 Blocks=0
 [FoldedCode39]
 Blocks=0
@@ -1699,3 +1692,29 @@ F6=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638.h
 F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638_hw.h
 F9=C:\cvavr\inc\io.h
+[FoldedCode3]
+Blocks=0
+[Bookmarks59]
+TimeStamp=1546785282
+Row=2
+Column=39
+ScrollPosX=0
+ScrollPosY=59
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode59]
+Blocks=0
+[FoldedCode50]
+Blocks=0
+[FoldedCode58]
+Blocks=0
+[FoldedCode56]
+Blocks=0

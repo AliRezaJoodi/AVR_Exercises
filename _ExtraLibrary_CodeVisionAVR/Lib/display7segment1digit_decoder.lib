@@ -31,13 +31,29 @@ const uint8_t _7Segment_Data_chr[12]={
 };
 
 //*****************************************
-void Display7Segment1Digit_DecodeDigit(uint8_t digit_0To9,  uint8_t *seg){
-    *seg = _7Segment_Data_0To9[digit_0To9];
+uint8_t Display7Segment1Digit_DecodeDigit(uint8_t digit,  uint8_t *seg){
+    uint8_t error =0;
+    
+    if( digit > 9){
+        error =1;
+        return error;
+    }
+    
+    *seg = _7Segment_Data_0To9[digit];
+    return error;
 }
 
 //*****************************************
-void Display7Segment1Digit_DecodeChr(uint8_t index,  uint8_t *seg){
+uint8_t Display7Segment1Digit_DecodeChr(uint8_t index,  uint8_t *seg){
+    uint8_t error =0; 
+    
+    if( index > 11){
+        error =1;
+        return error;
+    }
+    
     *seg = _7Segment_Data_chr[index];
+    return error;
 }
 
 //*****************************************
