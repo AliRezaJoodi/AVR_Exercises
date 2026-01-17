@@ -21,7 +21,7 @@
 #define TM1638_DIO_PORT        PORTC
 #define TM1638_DIO_BIT         6
 
-#define TM1638_DELAY            (uint8_t)100  // uS
+#define TM1638_DELAY            (uint8_t)10  // uS
 
 
 #endif

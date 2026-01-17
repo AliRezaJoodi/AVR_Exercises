@@ -30,6 +30,14 @@ void main(void){
     segments[15]=0b00000000; 
                
     TM1638_SetSegments(segments, 16, 0); delay_ms(1000);
+    TM1638_SetDisplay(1, 0); delay_ms(1000);
+    TM1638_SetDisplay(1, 1); delay_ms(1000);
+    TM1638_SetDisplay(1, 2); delay_ms(1000);
+    TM1638_SetDisplay(1, 3); delay_ms(1000);
+    TM1638_SetDisplay(1, 4); delay_ms(1000);
+    TM1638_SetDisplay(1, 5); delay_ms(1000);
+    TM1638_SetDisplay(1, 6); delay_ms(1000); 
+    TM1638_SetDisplay(1, 7); delay_ms(1000);
     TM1638_ResetSegments(); delay_ms(1000);
         
     Display7Segment1Digit_DecodeDigit(9, &segments[0]);    

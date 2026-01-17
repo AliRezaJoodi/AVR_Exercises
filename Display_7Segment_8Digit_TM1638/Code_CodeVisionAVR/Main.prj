@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=5
+OpenedFiles=3
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=v1.0.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1546784978
+TimeStamp1=1546786035
 PageIndex1=1
 Top0=200
 Left0=438
@@ -47,12 +47,14 @@ DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
 ActiveTab=1
 OF3=..\..\_ExtraLibrary_CodeVisionAVR\Lib\tm1638.lib
-TimeStamp3=1546784859
+TimeStamp3=1546785980
 OF4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
 TimeStamp4=1546785331
 OF5=..\..\_ExtraLibrary_CodeVisionAVR\Lib\display7segment1digit_decoder.lib
 TimeStamp5=1546785282
 F1=v1.0.c
+OF6=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638_hw.h
+TimeStamp6=1546785740
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -145,7 +147,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1016
+Build=1023
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -211,7 +213,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1546785446
+COFFileTimeStamp=1546786036
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -389,7 +391,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1546785467
+TimeStamp=1546786148
 [BookmarksFoldedCode]
 Files=59
 F1=T3.c
@@ -486,7 +488,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1016
+Build=1023
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -608,8 +610,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1016
-L18=3758 line(s) compiled
+L17=Build: 1023
+L18=3766 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -627,20 +629,20 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L36=Program size: 822 words (1644 bytes), 10.0% of FLASH
-L37=44 words (88 bytes), 5.1% reduced by Code Compression
+L36=Program size: 857 words (1714 bytes), 10.5% of FLASH
+L37=67 words (134 bytes), 7.3% reduced by Code Compression
 L38=0 words (0 bytes), 0.0% reduced by Code Compression
 Lines=37
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\List\Main.asm(2136): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\List\Main.asm(2170): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x00066c   1622     22   1644   16384  10.0%
+L9=[.cseg] 0x000000 0x0006b2   1692     22   1714   16384  10.5%
 L10=[.dseg] 0x000060 0x000260      0      0      0    1024   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -659,11 +661,11 @@ HIDJoystick=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks3]
-TimeStamp=1546784978
-Row=34
-Column=55
+TimeStamp=1546786035
+Row=40
+Column=43
 ScrollPosX=0
-ScrollPosY=39
+ScrollPosY=47
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1628,10 +1630,10 @@ Blocks=0
 Blocks=0
 [Bookmarks56]
 TimeStamp=1546784560
-Row=15
-Column=39
+Row=32
+Column=20
 ScrollPosX=0
-ScrollPosY=11
+ScrollPosY=15
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1643,11 +1645,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks57]
-TimeStamp=1546747756
-Row=11
-Column=32
+TimeStamp=1546785740
+Row=23
+Column=43
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1659,11 +1661,29 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks58]
-TimeStamp=1546784859
-Row=206
-Column=17
+TimeStamp=1546785980
+Row=139
+Column=26
 ScrollPosX=0
-ScrollPosY=163
+ScrollPosY=131
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode39]
+Blocks=0
+[Bookmarks59]
+TimeStamp=1546785282
+Row=2
+Column=39
+ScrollPosX=0
+ScrollPosY=41
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1676,7 +1696,9 @@ BK8=-1
 BK9=-1
 [FoldedCode57]
 Blocks=0
-[FoldedCode39]
+[FoldedCode59]
+Blocks=0
+[FoldedCode50]
 Blocks=0
 [HeadersList]
 Files=1
@@ -1693,26 +1715,6 @@ F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638_hw.h
 F9=C:\cvavr\inc\io.h
 [FoldedCode3]
-Blocks=0
-[Bookmarks59]
-TimeStamp=1546785282
-Row=2
-Column=39
-ScrollPosX=0
-ScrollPosY=59
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode59]
-Blocks=0
-[FoldedCode50]
 Blocks=0
 [FoldedCode58]
 Blocks=0
