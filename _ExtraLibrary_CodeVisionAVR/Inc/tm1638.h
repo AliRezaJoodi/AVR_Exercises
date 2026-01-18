@@ -42,7 +42,7 @@ void TM1638_ResetSegments(void);
 Address increment mode.
     segments[]: Maximum 16-Byte for Seg1 to Seg10 pins status.
     length: 1 to 16
-    pos: 0 to 15
+    address: 0 to 15
 */
 uint8_t TM1638_SetSegments(uint8_t segments[], uint8_t length, uint8_t address);
 

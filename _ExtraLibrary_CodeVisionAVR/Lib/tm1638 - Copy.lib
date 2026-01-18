@@ -64,7 +64,7 @@ static inline uint8_t TM1638_DIO_GetInput(void){
 ////***************************************
 //void TM1638_Stop(void){
 //    TM1638_STB_WritePin(1);
-//    TM1638_Delay_us(TM1638_DELAY);
+//    TM1638_Delay_us(TM1638_DELAY*2);
 //}
 
 //***************************************
@@ -73,6 +73,8 @@ uint8_t TM1638_WriteByte(uint8_t data){
   
   for(i = 0; i < 8; i++) {
     TM1638_CLK_WritePin(0);
+    TM1638_Delay_us(TM1638_DELAY);
+
     if (data & 0x01){
         TM1638_DIO_WritePin(1);
     }
@@ -82,7 +84,7 @@ uint8_t TM1638_WriteByte(uint8_t data){
     TM1638_Delay_us(TM1638_DELAY);
 
     TM1638_CLK_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
 
     data = data >> 1;
   }
@@ -97,7 +99,7 @@ void TM1638_SendCommand(uint8_t command){
     TM1638_WriteByte(command);
      
     TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
 }
 
 //***************************************
@@ -123,7 +125,7 @@ uint8_t TM1638_SetDisplay(uint8_t onoff, uint8_t brightness){
     TM1638_WriteByte(command_display);
      
     TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
     
     return error;
 }
@@ -133,7 +135,7 @@ void TM1638_Config(void){
     TM1638_STB_WritePin(1);
     TM1638_CLK_WritePin(1);
     TM1638_DIO_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
     
     TM1638_SetDisplay(1, 7);           
 }
@@ -150,7 +152,7 @@ void TM1638_ResetSegments(void){
     TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
      
     TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
     
 	TM1638_STB_WritePin(0);
 	TM1638_WriteByte(TM1638_command_address);
@@ -159,7 +161,7 @@ void TM1638_ResetSegments(void){
     }
 
 	TM1638_STB_WritePin(1); 
-    TM1638_Delay_us(TM1638_DELAY);  
+    TM1638_Delay_us(TM1638_DELAY*2);  
 }
 
 //***************************************
@@ -189,7 +191,7 @@ uint8_t TM1638_SetSegments(uint8_t segments[], uint8_t length, uint8_t address){
     TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
      
     TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
     
 	TM1638_STB_WritePin(0);
     
@@ -200,7 +202,7 @@ uint8_t TM1638_SetSegments(uint8_t segments[], uint8_t length, uint8_t address){
     }
 
 	TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY); 
+    TM1638_Delay_us(TM1638_DELAY*2); 
     
     return error;   
 }
@@ -234,7 +236,7 @@ uint8_t TM1638_SetSegments_WithoutSeg9Seg10(uint8_t segments[], uint8_t length, 
     TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
      
     TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
     
 	TM1638_STB_WritePin(0);
     
@@ -246,7 +248,7 @@ uint8_t TM1638_SetSegments_WithoutSeg9Seg10(uint8_t segments[], uint8_t length, 
     }
 
 	TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY); 
+    TM1638_Delay_us(TM1638_DELAY*2); 
     
     return error;  
 }
@@ -268,16 +270,16 @@ uint8_t TM1638_SetSegments_FixedAddress(uint8_t data, uint8_t address){
     TM1638_WriteByte(TM1638_COMMAND_DATA_WRITE);
      
     TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY);
+    TM1638_Delay_us(TM1638_DELAY*2);
         
 	TM1638_STB_WritePin(0);
     
 	TM1638_WriteByte(command_address); 
-    TM1638_Delay_us(TM1638_DELAY);    
+    TM1638_Delay_us(TM1638_DELAY*2);    
 	TM1638_WriteByte(data);
     
 	TM1638_STB_WritePin(1);
-    TM1638_Delay_us(TM1638_DELAY)
+    TM1638_Delay_us(TM1638_DELAY*2)
     
     return error;   
 };

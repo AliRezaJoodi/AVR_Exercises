@@ -21,7 +21,13 @@
 #define TM1638_DIO_PORT        PORTC
 #define TM1638_DIO_BIT         6
 
-#define TM1638_DELAY            (uint8_t)10  // uS
+/*
+TM1638_DELAY Unit: uS  
+Clock Frequenc: 1 / (TM1638_DELAY*2)
+Typical clock frequency: 500KHz
+Maximum clock frequency: 1MHz
+*/
+#define TM1638_DELAY            1
 
 
 #endif
