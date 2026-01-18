@@ -3,15 +3,33 @@
 #include <mega16a.h>
 #include <delay.h>
 #include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
 
 #include <display7segment1digit_decoder.h>
 #include <tm1638.h>
 
-void main(void){
-    uint8_t segments[16];
-                
-    TM1638_Config();
+void UART_Config(void);
 
+void main(void){
+    char txt[];
+    uint8_t key[]={
+        0b00000001,   
+        0b00000010,
+        0b00000100,
+        0b00001000,
+    };
+    
+    uint8_t segments[16];
+   
+    UART_Config();             
+    TM1638_Config();
+    
+    sprintf(txt, "K1= %d \r", key[0]); puts(txt);
+    sprintf(txt, "K2= %d \r", key[1]); puts(txt);
+    sprintf(txt, "K3= %d \r", key[2]); puts(txt);
+    sprintf(txt, "K4= %d \r", key[3]); puts(txt);
+    
     Display7Segment1Digit_DecodeDigit(0, &segments[0]);
     segments[1]=0b00000000;    
     Display7Segment1Digit_DecodeDigit(1, &segments[2]); 
@@ -66,4 +84,19 @@ void main(void){
     
     while(1){                         
     };
+}
+
+//********************************************************
+void UART_Config(void){
+    // USART initialization
+    // Communication Parameters: 8 Data, 1 Stop, No Parity
+    // USART Receiver: On
+    // USART Transmitter: On
+    // USART Mode: Asynchronous
+    // USART Baud Rate: 9600
+    UCSRA=(0<<RXC) | (0<<TXC) | (0<<UDRE) | (0<<FE) | (0<<DOR) | (0<<UPE) | (0<<U2X) | (0<<MPCM);
+    UCSRB=(0<<RXCIE) | (0<<TXCIE) | (0<<UDRIE) | (1<<RXEN) | (1<<TXEN) | (0<<UCSZ2) | (0<<RXB8) | (0<<TXB8);
+    UCSRC=(1<<URSEL) | (0<<UMSEL) | (0<<UPM1) | (0<<UPM0) | (0<<USBS) | (1<<UCSZ1) | (1<<UCSZ0) | (0<<UCPOL);
+    UBRRH=0x00;
+    UBRRL=0x47;
 }

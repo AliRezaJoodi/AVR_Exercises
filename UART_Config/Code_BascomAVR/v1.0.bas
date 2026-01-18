@@ -1,7 +1,7 @@
 'GitHub Account: GitHub.com/AliRezaJoodi
 
 $regfile = "m32def.dat"
-$crystal = 8000000
+$crystal = 11059200
 
 $baud = 9600
 Config Com1 = Dummy , Synchrone = 0 , Parity = None , Stopbits = 1 , Databits = 8 , Clockpol = 0
@@ -11,12 +11,13 @@ Enable Interrupts
 
 Dim S As String * 16
 
-Gosub Test1
+'Gosub Test1
 Gosub Test2
 'Gosub Test3
 
 Do
-
+ 'Print "*** Function ***"
+ 'wait 1
 Loop
 
 End
@@ -24,7 +25,7 @@ End
 '**********************************************
 Test3:
    Dim A2 As Byte
-   Print "*** Function ***"
+   Print "Enter your chr:"
    Do
       A2 = Waitkey()
       Print "ASCII Decimal: " ; A2
@@ -36,7 +37,7 @@ Return
 '**********************************************
 Test2:
    Dim A As Byte
-   Print "*** Function ***"
+   Print "Enter your chr: "
    Do
       A = Inkey()
       If A <> 0 Then
