@@ -13,23 +13,28 @@ void UART_Config(void);
 
 void main(void){
     char txt[];
-    uint8_t key[]={
-        0b00000001,   
+    uint8_t key_last =0;
+    
+    uint8_t key[4]={
+        0b00000000,   
+        0b00000001,
         0b00000010,
         0b00000100,
-        0b00001000,
     };
     
     uint8_t segments[16];
    
     UART_Config();             
     TM1638_Config();
+     
+//    TM1638_SetSegments_GetButtons(&key[0]);
     
-    sprintf(txt, "K1= %d \r", key[0]); puts(txt);
-    sprintf(txt, "K2= %d \r", key[1]); puts(txt);
-    sprintf(txt, "K3= %d \r", key[2]); puts(txt);
-    sprintf(txt, "K4= %d \r", key[3]); puts(txt);
-    
+//    sprintf(txt, "K1= 0x%x \r", key[0]); puts(txt);
+//    sprintf(txt, "K2= 0x%x \r", key[1]); puts(txt);
+//    sprintf(txt, "K3= 0x%x \r", key[2]); puts(txt);
+//    sprintf(txt, "K4= 0x%x \r", key[3]); puts(txt);
+//    sprintf(txt, "0x%x 0x%x 0x%x 0x%x \r", key[0], key[1], key[2], key[3]); puts(txt);
+        
     Display7Segment1Digit_DecodeDigit(0, &segments[0]);
     segments[1]=0b00000000;    
     Display7Segment1Digit_DecodeDigit(1, &segments[2]); 
@@ -47,7 +52,7 @@ void main(void){
     Display7Segment1Digit_DecodeDigit(7, &segments[14]); 
     segments[15]=0b00000000; 
                
-    TM1638_SetSegments(segments, 16, 0); delay_ms(1000);
+    TM1638_Set10Segments(segments, 16, 0); delay_ms(1000);
     TM1638_SetDisplay(1, 0); delay_ms(1000);
     TM1638_SetDisplay(1, 1); delay_ms(1000);
     TM1638_SetDisplay(1, 2); delay_ms(1000);
@@ -67,10 +72,10 @@ void main(void){
     Display7Segment1Digit_DecodeDigit(5, &segments[6]); 
     Display7Segment1Digit_DecodeDigit(3, &segments[7]); 
            
-    TM1638_SetSegments_WithoutSeg9Seg10(segments, 8, 0); delay_ms(1000);
+    TM1638_Set8Segments_OverWriteSeg9Seg10(segments, 8, 0); delay_ms(1000);
     TM1638_ResetSegments(); delay_ms(1000);
 
-    TM1638_SetSegments_WithoutSeg9Seg10(segments, 2, 6); delay_ms(1000);
+    TM1638_Set8Segments_OverWriteSeg9Seg10(segments, 2, 6); delay_ms(1000);
     TM1638_ResetSegments(); delay_ms(1000);
         
     TM1638_SetSegments_FixedAddress(segments[6], 0); delay_ms(1000);
@@ -79,10 +84,22 @@ void main(void){
     
     TM1638_SendCommand(0b10000111); delay_ms(1000); 
     TM1638_SetDisplay(1, 7); delay_ms(1000);
-      
-    delay_ms(3000); TM1638_ResetSegments();
+     
+//    delay_ms(3000); TM1638_ResetSegments();
     
-    while(1){                         
+    while(1){
+//        TM1638_GetButtons( &key[0] ); 
+//        sprintf(txt, "0x%02x 0x%02x 0x%02x 0x%02x \r", key[0], key[1], key[2], key[3]); puts(txt); 
+//        delay_ms (500);   
+        TM1638_GetButtons_K3( &key[0] );
+//        key[0] = TM1638_ReturnButtons_K3();
+        if(key_last != key[0]){
+            key_last = key[0];
+            if( key[0] != 0){
+                sprintf(txt, "0x%02x \r", key[0]);
+                puts(txt);
+            }
+        }                              
     };
 }
 
