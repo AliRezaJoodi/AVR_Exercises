@@ -33,10 +33,10 @@ Display control:
 uint8_t TM1638_SetDisplay(uint8_t onoff, uint8_t brightness);
 
 /*
-Clear all digits
+Clear all digits and leds
 reset Seg1 to Seg10.
 */
-void TM1638_ResetSegments(void);
+void TM1638_ResetSegments_Seg1ToSeg10(void);
 
 /*
 Address increment mode.
@@ -44,27 +44,27 @@ Address increment mode.
     length: 1 to 16
     address: 0 to 15
 */
-uint8_t TM1638_Set10Segments(uint8_t segments[], uint8_t length, uint8_t address);
+uint8_t TM1638_SetSegments_Seg1ToSeg10(uint8_t segments[], uint8_t length, uint8_t address);
 
 /*
 Address increment mode.
-    segments[]: Maximum 8-Byte for Seg1 to Seg8 pins status.
-    length: 1 to 8
-    pos: 0 to 7
+    segments[]: Array of up to 8 bytes, representing the status of Seg1 to Seg8.
+    length: Number of digits (1 to 8).
+    pos: Starting position (0 to 7)
 Note: length <= (8-pos)
-Note: Will be wirte 0 value on the Seg9 and Seg10.
+Note: SEG9 and SEG10 will be written with value 0.
 */
-uint8_t TM1638_Set8Segments_OverWriteSeg9Seg10(uint8_t segments[], uint8_t length, uint8_t pos);
+uint8_t TM1638_SetSegments_Seg1ToSeg8_OverWriteSeg9Seg10(uint8_t segments[], uint8_t length, uint8_t pos);
 
 /*
 Address increment mode.
-    segments[]: Maximum 8-Byte for Seg1 to Seg8 pins status.
-    length: 1 to 8
-    pos: 0 to 7
+    segments[]: Array of up to 8 bytes, representing the status of Seg1 to Seg8.
+    length: Number of digits (1 to 8).
+    pos: Starting position (0 to 7)
 Note: length <= (8-pos)
-Note: Does not affect SEG9 and SEG10.
+Note: Does not affect on the SEG9 and SEG10.
 */
-uint8_t TM1638_Set8Segments_KeepSeg9Seg10(uint8_t segments[], uint8_t length, uint8_t pos);
+uint8_t TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(uint8_t segments[], uint8_t length, uint8_t pos);
 
 /*
 Write SRAM data in a fixed address mode
@@ -74,11 +74,30 @@ Write SRAM data in a fixed address mode
 uint8_t TM1638_SetSegments_FixedAddress(uint8_t data, uint8_t address);
 
 /*
+data: 8-Bit 
+    Bit 0: LED connected to SEG9 and GRID1 
+    ...
+    Bit 7: LED connected to SEG9 and GRID8
+Note: SEG10 will be written with value 0.
+*/
+void TM1638_SetLeds_Seg9(uint8_t data);
+
+/*
+data: 16-Bit 
+    Bit 0: LED connected to SEG9 and GRID1
+    Bit 1: LED connected to SEG10 and GRID1 
+    ...
+    Bit 14: LED connected to SEG9 and GRID8
+    Bit 15: LED connected to SEG10 and GRID8
+*/
+void TM1638_SetLeds_Seg9Seg10(uint16_t data);
+
+/*
 Multi press
 Scan buttons that connected to K1, K2, and K3 lines.
 key:    4-Byte
 */
-void TM1638_GetButtons(uint8_t *key);
+void TM1638_GetButtons_K1K2K3(uint8_t *key);
 
 /*
 Multi press
