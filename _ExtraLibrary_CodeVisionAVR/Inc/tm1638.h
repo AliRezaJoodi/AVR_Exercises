@@ -40,7 +40,7 @@ void TM1638_ResetSegments_Seg1ToSeg10(void);
 
 /*
 Address increment mode.
-    segments[]: Maximum 16-Byte, Even bytes for Seg1 to Seg8, odd bytes for Seg9 to Seg10.
+    segments[]: Array of up to 16 bytes, representing the status of Seg1 to Seg10.
     length: 1 to 16
     address: 0 to 15
 */
