@@ -33,10 +33,10 @@ Display control:
 uint8_t TM1638_SetDisplay(uint8_t onoff, uint8_t brightness);
 
 /*
-Clear all digits and leds
 reset Seg1 to Seg10.
+Clear all digits and leds
 */
-void TM1638_ResetSegments_Seg1ToSeg10(void);
+void TM1638_ResetSegments(void);
 
 /*
 Address increment mode.

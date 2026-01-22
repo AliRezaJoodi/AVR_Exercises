@@ -17,9 +17,11 @@ void main(void){
         Display7Segment1Digit_DecodeDigit(i, &segments[i]);    
     }
         
-    TM1637_SetSegments(segments, 6, 0); delay_ms(500);
-    TM1637_SetSegments_FixedAddress(segments[5], 2); delay_ms(500);
-    TM1637_SendCommand(0b10000111); delay_ms(500); 
+    TM1637_SetSegments(segments, 6, 0); delay_ms(1000); 
+    TM1637_SetSegments_FixedAddress(segments[5], 2); delay_ms(1000);
+    TM1637_ResetSegments(); delay_ms(1000);
+    TM1637_SetSegments_FixedAddress(segments[2], 5); delay_ms(1000);    
+    TM1637_SendCommand(0b10000111); delay_ms(1000); //Turn off the display 
     TM1637_SetDisplay(1, 7); 
     
     while(1){

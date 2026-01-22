@@ -30,7 +30,13 @@ Display control:
         6: Pulse width is set as 13/16.
         7: Pulse width is set as 14/16.     
 */
-void TM1637_SetDisplay(uint8_t onoff, uint8_t brightness);
+uint8_t TM1637_SetDisplay(uint8_t onoff, uint8_t brightness);
+
+/*
+Clear all digits.
+reset Seg1 to Seg10.
+*/
+void TM1637_ResetSegments(void);
 
 /*
 Write SRAM data in address auto increment 1 mode.
@@ -38,26 +44,20 @@ Write SRAM data in address auto increment 1 mode.
     length: 1 to 6
     address: 0 to 5
         0: GRID1
-        1: GRID2
-        2: GRID3
-        3: GRID4
-        4: GRID5
+        ...
         5: GRID6
 */
-void TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t address);
+uint8_t TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t address);
 
 /*
 Write SRAM data in a fixed address mode
     data: One Byte for SEG pins status.
     address: 0 to 5
         0: GRID1
-        1: GRID2
-        2: GRID3
-        3: GRID4
-        4: GRID5
+        ...
         5: GRID6
 */
-void TM1637_SetSegments_FixedAddress(uint8_t data, uint8_t address);
+uint8_t TM1637_SetSegments_FixedAddress(uint8_t data, uint8_t address);
 #pragma used-
 
 

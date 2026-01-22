@@ -145,7 +145,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=881
+Build=910
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1546658946
+COFFileTimeStamp=1547089706
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -482,7 +482,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=881
+Build=910
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -604,8 +604,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 881
-L18=3473 line(s) compiled
+L17=Build: 910
+L18=3547 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -613,7 +613,7 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 16 byte(s)
+L26=Estimated Data Stack usage: 18 byte(s)
 L27=
 L28=RAM Global variables size: 0 byte(s)
 L29=
@@ -623,20 +623,20 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L36=Program size: 463 words (926 bytes), 2.8% of FLASH
-L37=16 words (32 bytes), 3.3% reduced by Code Compression
+L36=Program size: 568 words (1136 bytes), 3.5% of FLASH
+L37=16 words (32 bytes), 2.7% reduced by Code Compression
 L38=0 words (0 bytes), 0.0% reduced by Code Compression
 Lines=37
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\List\Main.asm(1683): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\List\Main.asm(1807): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x00039e    904     22    926   32768   2.8%
+L9=[.cseg] 0x000000 0x000470   1114     22   1136   32768   3.5%
 L10=[.dseg] 0x000060 0x000260      0      0      0    2048   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1351,11 +1351,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks41]
-TimeStamp=1546658826
-Row=12
-Column=12
+TimeStamp=1547089604
+Row=46
+Column=0
 ScrollPosX=0
-ScrollPosY=44
+ScrollPosY=30
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1419,9 +1419,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1546527521
-Row=9
-Column=35
+TimeStamp=1547084571
+Row=18
+Column=42
 ScrollPosX=0
 ScrollPosY=1
 BK0=-1
@@ -1620,6 +1620,10 @@ Blocks=0
 Blocks=0
 [FoldedCode39]
 Blocks=0
+[FoldedCode3]
+Blocks=0
+[FoldedCode40]
+Blocks=0
 [FoldedCode45]
 Blocks=0
 [HeadersList]
@@ -1636,9 +1640,5 @@ F6=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
 F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637_hw.h
 F8=C:\cvavr\inc\io.h
 F9=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
-[FoldedCode3]
-Blocks=0
 [FoldedCode41]
-Blocks=0
-[FoldedCode40]
 Blocks=0
