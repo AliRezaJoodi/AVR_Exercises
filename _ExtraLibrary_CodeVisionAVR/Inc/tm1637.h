@@ -9,23 +9,26 @@
 #include <delay.h>
 
 #include <utility_bit.h>
- 
-#define TM1637_CLK_DDR         DDRC
-#define TM1637_CLK_PIN         PINC
-#define TM1637_CLK_PORT        PORTC
-#define TM1637_CLK_BIT         0
-
-#define TM1637_DIO_DDR         DDRC
-#define TM1637_DIO_PIN         PINC
-#define TM1637_DIO_PORT        PORTC
-#define TM1637_DIO_BIT         1
 
 #define TM1637_HALF_BIT_US     1
+ 
+typedef struct {
+    volatile uint8_t *ddr;
+    volatile uint8_t *port;
+    volatile uint8_t *pin;
+    uint8_t           index;
+} TM1637_Pin_t;
 
-void TM1637_Config(void);
+typedef struct {
+    TM1637_Pin_t clk;
+    TM1637_Pin_t dio;
+} TM1637_t;
+
+
+void TM1637_Config(TM1637_t *tm);
 
 #pragma used+
-void TM1637_SendCommand(uint8_t command);
+void TM1637_SendCommand(TM1637_t *tm, uint8_t command);
 
 /*
 Display control:
@@ -42,13 +45,13 @@ Display control:
         6: Pulse width is set as 13/16.
         7: Pulse width is set as 14/16.     
 */
-uint8_t TM1637_SetDisplay(uint8_t onoff, uint8_t brightness);
+uint8_t TM1637_SetDisplay(TM1637_t *tm, uint8_t onoff, uint8_t brightness);
 
 /*
 Clear all digits.
 reset Seg1 to Seg10.
 */
-void TM1637_ResetSegments(void);
+void TM1637_ResetSegments(TM1637_t *tm);
 
 /*
 Write SRAM data in address auto increment 1 mode.
@@ -59,7 +62,7 @@ Write SRAM data in address auto increment 1 mode.
         ...
         5: GRID6
 */
-uint8_t TM1637_SetSegments(uint8_t segments[], uint8_t length, uint8_t address);
+uint8_t TM1637_SetSegments(TM1637_t *tm, uint8_t segments[], uint8_t length, uint8_t address);
 
 /*
 Write SRAM data in a fixed address mode
@@ -69,7 +72,7 @@ Write SRAM data in a fixed address mode
         ...
         5: GRID6
 */
-uint8_t TM1637_SetSegments_FixedAddress(uint8_t data, uint8_t address);
+uint8_t TM1637_SetSegments_FixedAddress(TM1637_t *tm, uint8_t data, uint8_t address);
 #pragma used-
 
 
