@@ -7,7 +7,7 @@
 #include <stdint.h>
 #include <delay.h>
 
-#include <utility.h> 
+#include <utility_bit.h> 
 #include <tm1637_hw.h> 
 
 void TM1637_Config(void);

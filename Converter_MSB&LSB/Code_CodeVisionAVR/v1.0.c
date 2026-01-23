@@ -1,25 +1,27 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <mega32a.h>
+#include <stdint.h>
 #include <alcd.h>
 #include <delay.h>
 #include <stdlib.h>
 
+#include <utility_byte.h>
+
 void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
-unsigned int number=589;
-unsigned char number_msb;
-unsigned char number_lsb;
-
-#include <utility.h>
+uint16_t number = 589;
+uint8_t number_msb;
+uint8_t number_lsb;
 
 void main(void){
     LCD_Config(); 
     
-    number_msb=GetMsb(number);
-    number_lsb=GetLsb(number);
-    number=GetInt(number_msb,number_lsb);
+    number_msb = GetMsb(number);
+    number_lsb = GetLsb(number);
+    number = MakeU16(number_msb,number_lsb); 
+    
     LCD_DisplayMainPage();  
 
     while(1){  

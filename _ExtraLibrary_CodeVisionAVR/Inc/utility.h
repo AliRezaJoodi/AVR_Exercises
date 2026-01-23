@@ -3,10 +3,6 @@
 #ifndef _UTILITY_INCLUDED
 #define _UTILITY_INCLUDED  
 
-
-#define GetMsb(INT)                         ((INT&0xFF00) >> 8)
-#define GetLsb(INT)                         (INT&0x00FF)
-#define GetInt(MSB,LSB)                     ((MSB<<8)+(LSB&0x00FF))
     
 #define SetBit(ADDRESS, BIT)                ADDRESS = (ADDRESS) | (1<<(BIT));
 #define ClearBit(ADDRESS, BIT)              ADDRESS = (ADDRESS) & (~(1<<(BIT)));
