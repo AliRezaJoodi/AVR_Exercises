@@ -118,13 +118,13 @@ void TestLeds_Seg9(void){
     uint8_t i=0;
     
     for(i=0; i<8; ++i){
-        WriteBit(led_u8, i, 1);
+        WRITE_BIT(led_u8, i, 1);
         TM1638_SetLeds_Seg9(led_u8);
         delay_ms(500);
     } 
 
     for(i=0; i<8; ++i){
-        WriteBit(led_u8, i, 0);
+        WRITE_BIT(led_u8, i, 0);
         TM1638_SetLeds_Seg9(led_u8);
         delay_ms(500);
     } 
@@ -136,13 +136,13 @@ void TestLeds_Seg9Seg10(void){
     uint8_t i=0;
     
     for(i=0; i<16; ++i){
-        WriteBit(led_u16, i, 1);
+        WRITE_BIT(led_u16, i, 1);
         TM1638_SetLeds_Seg9Seg10(led_u16);
         delay_ms(500);
     } 
 
     for(i=0; i<16; ++i){
-        WriteBit(led_u16, i, 0);
+        WRITE_BIT(led_u16, i, 0);
         TM1638_SetLeds_Seg9Seg10(led_u16);
         delay_ms(500);
     } 

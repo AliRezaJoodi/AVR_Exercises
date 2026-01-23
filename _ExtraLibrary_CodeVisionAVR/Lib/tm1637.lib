@@ -7,7 +7,7 @@
 #define TM1637_COMMAND_ADDRESS      0b11000000  // Address command setting
 #define TM1637_COMMAND_DISPLAY      0b10000000  // Display control
 
-#define TM1637_DELAY_US(VALUE)                         delay_us(VALUE)
+#define TM1637_DELAY(VALUE)                         delay_us(VALUE)
 
 
 //***************************************
@@ -48,20 +48,20 @@ static inline uint8_t TM1637_DIO_GetPin(void){
 void TM1637_Start(void){
     TM1637_CLK_WritePin(1);
     TM1637_DIO_WritePin(1);
-    TM1637_DELAY_US(TM1637_DELAY*2);
+    TM1637_DELAY(TM1637_HALF_BIT_US*2);
     
     TM1637_DIO_WritePin(0);
-    TM1637_DELAY_US(TM1637_DELAY*2);
+    TM1637_DELAY(TM1637_HALF_BIT_US*2);
 }
 
 //***************************************
 void TM1637_Stop(void){
 	TM1637_DIO_WritePin(0);
     TM1637_CLK_WritePin(1);
-    TM1637_DELAY_US(TM1637_DELAY*2);
+    TM1637_DELAY(TM1637_HALF_BIT_US*2);
     
 	TM1637_DIO_WritePin(1);
-    TM1637_DELAY_US(TM1637_DELAY*2);
+    TM1637_DELAY(TM1637_HALF_BIT_US*2);
 }
 
 //***************************************
@@ -71,7 +71,7 @@ uint8_t TM1637_WriteByte(uint8_t data){
   
   for(i = 0; i < 8; i++) {
     TM1637_CLK_WritePin(0);
-    TM1637_DELAY_US(TM1637_DELAY);
+    TM1637_DELAY(TM1637_HALF_BIT_US);
 
     if (data & 0x01){
         TM1637_DIO_WritePin(1);
@@ -79,10 +79,10 @@ uint8_t TM1637_WriteByte(uint8_t data){
     else{ 
         TM1637_DIO_WritePin(0);
     }
-    TM1637_DELAY_US(TM1637_DELAY);
+    TM1637_DELAY(TM1637_HALF_BIT_US);
 
     TM1637_CLK_WritePin(1);
-    TM1637_DELAY_US(TM1637_DELAY*2);
+    TM1637_DELAY(TM1637_HALF_BIT_US*2);
 
     data = data >> 1;
   }
@@ -90,17 +90,17 @@ uint8_t TM1637_WriteByte(uint8_t data){
   // Prepare for receiving acknowledgement
   TM1637_CLK_WritePin(0);
   TM1637_DIO_SetInput();
-  TM1637_DELAY_US(TM1637_DELAY*4);
+  TM1637_DELAY(TM1637_HALF_BIT_US*4);
 
   // Read acknowledgement  
   TM1637_CLK_WritePin(1);
-  TM1637_DELAY_US(TM1637_DELAY*2); 
+  TM1637_DELAY(TM1637_HALF_BIT_US*2); 
   ack = TM1637_DIO_GetPin();
   if(ack == 0){ 
     TM1637_DIO_WritePin(0);
   } 
   TM1637_CLK_WritePin(0);
-  TM1637_DELAY_US(TM1637_DELAY*2);
+  TM1637_DELAY(TM1637_HALF_BIT_US*2);
   
   return ack;
 }
@@ -157,7 +157,7 @@ void TM1637_ResetSegments(void){
 void TM1637_Config(void){
     TM1637_CLK_WritePin(1);
     TM1637_DIO_WritePin(1);
-    TM1637_DELAY_US(TM1637_DELAY*2);
+    TM1637_DELAY(TM1637_HALF_BIT_US*2);
 
     TM1637_ResetSegments();
     TM1637_SetDisplay(1, 7);           

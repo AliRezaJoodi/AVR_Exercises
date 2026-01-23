@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=4
+OpenedFiles=3
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -38,20 +38,20 @@ State1=2
 OF2=..\..\_ExtraLibrary_CodeVisionAVR\Lib\tm1637.lib
 Active2=0
 EditorPanel2=0
-TimeStamp2=1547089560
+TimeStamp2=1547148887
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=4
+ActiveTab=1
 OF3=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637.h
-TimeStamp3=1547089736
-OF4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility.h
-TimeStamp4=1547108441
-OF5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_lm35.h
-TimeStamp5=1545667621
+TimeStamp3=1547121635
+OF4=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
+TimeStamp4=1547115548
+OF5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637_hw.h
+TimeStamp5=1547121635
 F1=v1.0.c
 [Compiler]
 RebuildAll=0
@@ -145,7 +145,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=937
+Build=946
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1547115661
+COFFileTimeStamp=1547157116
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -385,13 +385,13 @@ UserProgCmdLine=
 UserProgWorkDir=
 WaitUserProgFinish=1
 [Bookmarks0]
-Row=0
+Row=1
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1547110817
+TimeStamp=1547153956
 [BookmarksFoldedCode]
-Files=55
+Files=56
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -447,6 +447,7 @@ F52=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment4digit_decoder_time.h
 F53=..\..\_ExtraLibrary_CodeVisionAVR\Lib\display7segment4digit_decoder.lib
 F54=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment4digit_decoder.h
 F55=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment4digit_decoder_value.h
+F56=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -482,7 +483,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=937
+Build=946
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -604,8 +605,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 937
-L18=3538 line(s) compiled
+L17=Build: 946
+L18=3518 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -656,8 +657,8 @@ HIDJoystick=0
 Blocks=0
 [Bookmarks3]
 TimeStamp=1547089696
-Row=23
-Column=76
+Row=16
+Column=31
 ScrollPosX=0
 ScrollPosY=6
 BK0=-1
@@ -1335,11 +1336,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks40]
-TimeStamp=1547089560
-Row=30
-Column=35
+TimeStamp=1547148887
+Row=172
+Column=21
 ScrollPosX=0
-ScrollPosY=177
+ScrollPosY=164
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1351,11 +1352,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks41]
-TimeStamp=1547089736
-Row=48
-Column=17
+TimeStamp=1547157080
+Row=12
+Column=19
 ScrollPosX=0
-ScrollPosY=30
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1419,11 +1420,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1547084571
+TimeStamp=1547157080
 Row=8
-Column=32
+Column=0
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1618,27 +1619,44 @@ Blocks=0
 Blocks=0
 [FoldedCode44]
 Blocks=0
+[FoldedCode39]
+Blocks=0
+[Bookmarks56]
+TimeStamp=1547115548
+Row=6
+Column=11
+ScrollPosX=0
+ScrollPosY=3
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode56]
+Blocks=0
 [FoldedCode3]
+Blocks=0
+[FoldedCode45]
 Blocks=0
 [FoldedCode41]
 Blocks=0
 [FoldedCode40]
 Blocks=0
-[FoldedCode39]
-Blocks=0
-[FoldedCode45]
-Blocks=0
 [HeadersList]
 Files=1
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\v1.0.c
 [Header1]
-Files=9
+Files=8
 F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=C:\cvavr\inc\delay.h
 F4=C:\cvavr\inc\stdint.h
 F5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637.h
-F6=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
-F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637_hw.h
-F8=C:\cvavr\inc\io.h
-F9=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
+F6=C:\cvavr\inc\io.h
+F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
+F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h

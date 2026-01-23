@@ -7,8 +7,16 @@
 #include <stdint.h>
 #include <delay.h>
 
-#include <utility.h> 
+#include <utility_bit.h> 
 #include <tm1638_hw.h> 
+
+/*
+TM1637_BIT_US Unit: uS  
+Clock Frequenc: 1 / (TM1637_BIT_US*2)
+Typical clock frequency: 500KHz
+Maximum clock frequency: 1MHz
+*/
+#define TM1637_BIT_US            1
 
 void TM1638_Config(void);
 
