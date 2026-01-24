@@ -11,7 +11,7 @@
 #endasm
 #include <lcd.h>
 
-#include <button_static.h>
+#include <button_fixed.h>
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
