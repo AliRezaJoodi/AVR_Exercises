@@ -4,7 +4,7 @@
 #include <delay.h>
 #include <stdint.h>
 
-#include <tm1637.h>
+#include <tm1637_fixed.h>
 #include <display7segment4digit_decoder_time.h>
 
 void main(void){
