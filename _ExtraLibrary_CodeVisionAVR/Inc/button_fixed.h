@@ -1,7 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef _BUTTON_STATIC_INCLUDED
-#define _BUTTON_STATIC_INCLUDED
+#ifndef _BUTTON_FIXED_INCLUDED
+#define _BUTTON_FIXED_INCLUDED
 
 #include <io.h>
 #include <delay.h>
@@ -37,6 +37,6 @@ char Button3_AutoRepeat_NonBlocking(void);
 
 #pragma used-
 
-#pragma library button_static.lib
+#pragma library button_fixed.lib
 
 #endif
