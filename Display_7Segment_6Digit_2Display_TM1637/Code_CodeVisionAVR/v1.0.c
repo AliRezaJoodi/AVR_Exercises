@@ -32,8 +32,7 @@ void main(void){
     tm2.dio.port = &PORTD;
     tm2.dio.pin  = &PIND;
     tm2.dio.index  = 3;    
-    
-                
+                    
     TM1637_Config(&tm1);
     TM1637_Config(&tm2);
         
@@ -45,7 +44,10 @@ void main(void){
     TM1637_ResetSegments(&tm1); delay_ms(1000);
     TM1637_SetSegments_FixedAddress(&tm1, seg1[2], 5); delay_ms(1000);    
     TM1637_SendCommand(&tm1, 0b10000111); delay_ms(1000); //Turn off the display 
-    TM1637_SetDisplay(&tm1, 1, 7); 
+    TM1637_SetDisplay(&tm1, 1, 7); delay_ms(1000);
+    
+    TM1637_ResetSegments(&tm2);
+    TM1637_SetSegments_4Digits(&tm2, seg1); delay_ms(1000);
     
     while(1){
                                  

@@ -145,7 +145,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=949
+Build=950
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1547157292
+COFFileTimeStamp=1547216494
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -389,7 +389,7 @@ Row=1
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1547157295
+TimeStamp=1547216497
 [BookmarksFoldedCode]
 Files=57
 F1=T3.c
@@ -484,7 +484,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=949
+Build=950
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -606,7 +606,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 949
+L17=Build: 950
 L18=3518 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -633,7 +633,7 @@ Lines=37
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\List\Main.asm(1807): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637_Fixed\Code_CodeVisionAVR\List\Main.asm(1807): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637_Fixed\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -1646,21 +1646,6 @@ Blocks=0
 Blocks=0
 [FoldedCode40]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\delay.h
-F4=C:\cvavr\inc\stdint.h
-F5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637_fixed.h
-F6=C:\cvavr\inc\io.h
-F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
-F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
-[FoldedCode3]
-Blocks=0
 [Bookmarks57]
 TimeStamp=1547157272
 Row=3
@@ -1677,5 +1662,20 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_TM1637_Fixed\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\delay.h
+F4=C:\cvavr\inc\stdint.h
+F5=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1637_fixed.h
+F6=C:\cvavr\inc\io.h
+F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
+F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
+[FoldedCode3]
+Blocks=0
 [FoldedCode57]
 Blocks=0
