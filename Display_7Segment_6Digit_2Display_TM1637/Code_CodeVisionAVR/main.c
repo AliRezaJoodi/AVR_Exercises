@@ -1,8 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <mega32a.h>
-#include <delay.h>
-#include <stdint.h>
+#include "main.h"
 
 #include <tm1637.h>
 
@@ -13,25 +11,25 @@ void main(void){
     TM1637_t tm1;
     TM1637_t tm2;
       
-    tm1.clk.ddr  = &DDRC;
-    tm1.clk.port = &PORTC;
-    tm1.clk.pin  = &PINC;
-    tm1.clk.index  = 0;
+    tm1.clk.ddr     = &TM1637_TM1_CLK_DDR;
+    tm1.clk.port    = &TM1637_TM1_CLK_PORT;
+    tm1.clk.pin     = &TM1637_TM1_CLK_PIN;
+    tm1.clk.index   =  TM1637_TM1_CLK_BIT;
 
-    tm1.dio.ddr  = &DDRC;
-    tm1.dio.port = &PORTC;
-    tm1.dio.pin  = &PINC;
-    tm1.dio.index  = 1;
+    tm1.dio.ddr     = &TM1637_TM1_DIO_DDR;
+    tm1.dio.port    = &TM1637_TM1_DIO_PORT;
+    tm1.dio.pin     = &TM1637_TM1_DIO_PIN;
+    tm1.dio.index   =  TM1637_TM1_DIO_BIT;
         
-    tm2.clk.ddr  = &DDRD;
-    tm2.clk.port = &PORTD;
-    tm2.clk.pin  = &PIND;
-    tm2.clk.index  = 2;
+    tm2.clk.ddr     = &TM2637_TM2_CLK_DDR;
+    tm2.clk.port    = &TM2637_TM2_CLK_PORT;
+    tm2.clk.pin     = &TM2637_TM2_CLK_PIN;
+    tm2.clk.index   =  TM2637_TM2_CLK_BIT;
 
-    tm2.dio.ddr  = &DDRD;
-    tm2.dio.port = &PORTD;
-    tm2.dio.pin  = &PIND;
-    tm2.dio.index  = 3;    
+    tm2.dio.ddr     = &TM2637_TM2_DIO_DDR;
+    tm2.dio.port    = &TM2637_TM2_DIO_PORT;
+    tm2.dio.pin     = &TM2637_TM2_DIO_PIN;
+    tm2.dio.index   =  TM2637_TM2_DIO_BIT;    
                     
     TM1637_Config(&tm1);
     TM1637_Config(&tm2);

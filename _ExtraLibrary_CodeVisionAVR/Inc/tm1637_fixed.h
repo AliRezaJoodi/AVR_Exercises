@@ -3,24 +3,27 @@
 #ifndef _TM1637_FIXED_INCLUDED
 #define _TM1637_FIXED_INCLUDED
 
-
+#include <main.h>
 #include <stdint.h>
 #include <io.h>
 #include <delay.h>
 
 #include <utility_bit.h>
- 
-#define TM1637_CLK_DDR         DDRC
-#define TM1637_CLK_PIN         PINC
-#define TM1637_CLK_PORT        PORTC
-#define TM1637_CLK_BIT         0
 
-#define TM1637_DIO_DDR         DDRC
-#define TM1637_DIO_PIN         PINC
-#define TM1637_DIO_PORT        PORTC
-#define TM1637_DIO_BIT         1
+#ifndef _TM1637_FIXED_HARDWARE
+#define _TM1637_FIXED_HARDWARE     
+    #define TM1637_CLK_DDR         DDRC
+    #define TM1637_CLK_PIN         PINC
+    #define TM1637_CLK_PORT        PORTC
+    #define TM1637_CLK_BIT         0
 
-#define TM1637_HALF_BIT_US     1
+    #define TM1637_DIO_DDR         DDRC
+    #define TM1637_DIO_PIN         PINC
+    #define TM1637_DIO_PORT        PORTC
+    #define TM1637_DIO_BIT         1
+
+    #define TM1637_HALF_BIT_US     1
+#endif
 
 void TM1637_Config(void);
 

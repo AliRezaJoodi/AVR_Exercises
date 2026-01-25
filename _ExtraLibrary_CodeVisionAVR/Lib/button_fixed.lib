@@ -4,15 +4,15 @@
           
 //*************************************************
 void Button_Config(void){
-    #ifdef BUTTON1   
+    #ifdef BUTTON1_PIN   
         BUTTON1_DDR=0; BUTTON1_PORT=!PRESSED;
     #endif
 
-    #ifdef BUTTON2  
+    #ifdef BUTTON2_PIN  
         BUTTON2_DDR=0; BUTTON2_PORT=!PRESSED;
     #endif
 
-    #ifdef BUTTON3
+    #ifdef BUTTON3_PIN
         BUTTON3_DDR=0; BUTTON3_PORT=!PRESSED;
     #endif
 }

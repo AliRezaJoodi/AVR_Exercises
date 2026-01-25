@@ -13,6 +13,7 @@
 #define _TM1637_INCLUDED
 
 
+#include "main.h"
 #include <stdint.h>
 #include <io.h>
 #include <delay.h>
@@ -28,7 +29,9 @@
  * @note Typical clock frequency is 450 kHz
  * @note Maximum clock frequency is 500 kHz
  */
+#ifndef TM1637_HALF_BIT_US
 #define TM1637_HALF_BIT_US     1
+#endif
 
 /**
  * @brief TM1637 GPIO pin descriptor.

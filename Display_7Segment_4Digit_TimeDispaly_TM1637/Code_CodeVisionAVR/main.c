@@ -1,8 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <mega32a.h>
-#include <delay.h>
-#include <stdint.h>
+#include <main.h>
 
 #include <tm1637.h>
 #include <display7segment4digit_decoder_time.h>
@@ -36,15 +34,15 @@ void main(void){
 
     TM1637_t tm1;
     
-    tm1.clk.ddr  = &DDRC;
-    tm1.clk.port = &PORTC;
-    tm1.clk.pin  = &PINC;
-    tm1.clk.index  = 0;
+    tm1.clk.ddr     = &TM1637_CLK_DDR;
+    tm1.clk.port    = &TM1637_CLK_PORT;
+    tm1.clk.pin     = &TM1637_CLK_PIN;
+    tm1.clk.index   =  TM1637_CLK_BIT;
 
-    tm1.dio.ddr  = &DDRC;
-    tm1.dio.port = &PORTC;
-    tm1.dio.pin  = &PINC;
-    tm1.dio.index  = 1;
+    tm1.dio.ddr     = &TM1637_DIO_DDR;
+    tm1.dio.port    = &TM1637_DIO_PORT;
+    tm1.dio.pin     = &TM1637_DIO_PIN;
+    tm1.dio.index   =  TM1637_DIO_BIT;
                  
     TM1637_Config(&tm1);
 
