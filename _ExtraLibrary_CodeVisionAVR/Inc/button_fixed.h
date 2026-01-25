@@ -3,9 +3,11 @@
 #ifndef _BUTTON_FIXED_INCLUDED
 #define _BUTTON_FIXED_INCLUDED
 
-#include <main.h>
+//#include <main.h>
 #include <io.h>
 #include <delay.h>
+
+#include "hardware.h"
 
 #ifndef _BUTTON_FIXED_HARDWARE
 #define _BUTTON_FIXED_HARDWARE    

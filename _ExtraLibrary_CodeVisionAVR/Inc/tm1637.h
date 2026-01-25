@@ -13,12 +13,16 @@
 #define _TM1637_INCLUDED
 
 
-#include "main.h"
 #include <stdint.h>
 #include <io.h>
 #include <delay.h>
 
 #include <utility_bit.h>
+
+/**
+ * @note Default hardware macros can be overridden by the user.
+ */
+#include "hardware.h"
 
 /**
  * @brief Half bit delay time in microseconds.

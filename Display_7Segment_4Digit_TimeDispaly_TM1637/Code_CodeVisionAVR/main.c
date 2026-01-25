@@ -1,7 +1,11 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <main.h>
+#include <stdint.h>
+#include <mega32a.h>
+#include <delay.h>
 
+#include <utility_bit.h>
+#include "hardware.h"
 #include <tm1637.h>
 #include <display7segment4digit_decoder_time.h>
 

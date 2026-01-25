@@ -22,9 +22,9 @@
     #define BUTTONLAG1          30        //ms 
     #define BUTTONLAG2          1000      //Button Lag
             
-    #define BUTTON1_DDR         DDRB.1
-    #define BUTTON1_PORT        PORTB.1
-    #define BUTTON1_PIN         PINB.1
+    #define BUTTON1_DDR         DDRA.1
+    #define BUTTON1_PORT        PORTA.1
+    #define BUTTON1_PIN         PINA.1
     
     
 #endif

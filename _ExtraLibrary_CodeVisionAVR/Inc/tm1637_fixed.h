@@ -3,12 +3,13 @@
 #ifndef _TM1637_FIXED_INCLUDED
 #define _TM1637_FIXED_INCLUDED
 
-#include <main.h>
+
 #include <stdint.h>
 #include <io.h>
 #include <delay.h>
 
 #include <utility_bit.h>
+#include "hardware.h"
 
 #ifndef _TM1637_FIXED_HARDWARE
 #define _TM1637_FIXED_HARDWARE     
