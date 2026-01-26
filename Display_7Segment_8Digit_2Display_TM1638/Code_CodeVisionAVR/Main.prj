@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=..\..\_ExtraLibrary_CodeVisionAVR\Lib\tm1638.lib
 Active1=1
 EditorPanel1=0
-TimeStamp1=1547146992
+TimeStamp1=1547314397
 PageIndex1=1
 Top0=200
 Left0=438
@@ -45,7 +45,7 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=2
+ActiveTab=4
 OF3=main.c
 TimeStamp3=1547313363
 OF4=hardware.h
@@ -147,7 +147,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1268
+Build=1270
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
@@ -213,7 +213,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1547314107
+COFFileTimeStamp=1547314414
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -391,7 +391,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1547313737
+TimeStamp=1547314443
 [BookmarksFoldedCode]
 Files=63
 F1=T3.c
@@ -492,7 +492,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1268
+Build=1270
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -614,7 +614,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1268
+L17=Build: 1270
 L18=13174 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -1633,7 +1633,7 @@ Blocks=0
 [Bookmarks56]
 TimeStamp=1547313617
 Row=10
-Column=17
+Column=18
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1663,9 +1663,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks58]
-TimeStamp=1547146992
-Row=14
-Column=39
+TimeStamp=1547314397
+Row=7
+Column=41
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1744,10 +1744,10 @@ Blocks=0
 Blocks=0
 [Bookmarks62]
 TimeStamp=1547313363
-Row=8
-Column=14
+Row=13
+Column=30
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=51
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1758,12 +1758,10 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode62]
-Blocks=0
 [Bookmarks63]
 TimeStamp=1547313665
-Row=16
-Column=22
+Row=21
+Column=1
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1776,12 +1774,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode63]
-Blocks=0
-[FoldedCode56]
-Blocks=0
-[FoldedCode58]
-Blocks=0
 [HeadersList]
 Files=1
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_8Digit_TM1638\Code_CodeVisionAVR\main.c
@@ -1798,3 +1790,11 @@ F8=hardware.h
 F9=..\..\_ExtraLibrary_CodeVisionAVR\Inc\tm1638.h
 F10=..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
 F11=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
+[FoldedCode62]
+Blocks=0
+[FoldedCode63]
+Blocks=0
+[FoldedCode56]
+Blocks=0
+[FoldedCode58]
+Blocks=0
