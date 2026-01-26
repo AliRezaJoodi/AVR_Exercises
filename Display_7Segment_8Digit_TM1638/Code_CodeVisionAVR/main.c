@@ -1,12 +1,13 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#include <mega16a.h>
-#include <delay.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <mega16a.h>
+#include <delay.h>
 
-#include <display7segment1digit_decoder.h>
+#include "hardware.h"
 #include <tm1638.h>
+#include <display7segment1digit_decoder.h>
 
 void UART_Config(void);
 

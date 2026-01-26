@@ -9,21 +9,55 @@
 #include <delay.h>
 
 #include <utility_bit.h> 
+#include "hardware.h"
 
+#ifndef TM1638_STB_DDR
 #define TM1638_STB_DDR         DDRA
+#endif
+
+#ifndef TM1638_STB_PIN
 #define TM1638_STB_PIN         PINA
+#endif
+
+#ifndef TM1638_STB_PORT
 #define TM1638_STB_PORT        PORTA
+#endif
+
+#ifndef TM1638_STB_BIT
 #define TM1638_STB_BIT         7
+#endif
 
+#ifndef TM1638_CLK_DDR
 #define TM1638_CLK_DDR         DDRC
-#define TM1638_CLK_PIN         PINC
-#define TM1638_CLK_PORT        PORTC
-#define TM1638_CLK_BIT         7
+#endif
 
+#ifndef TM1638_CLK_PIN
+#define TM1638_CLK_PIN         PINC
+#endif
+
+#ifndef TM1638_CLK_PORT
+#define TM1638_CLK_PORT        PORTC
+#endif
+
+#ifndef TM1638_CLK_BIT
+#define TM1638_CLK_BIT         7
+#endif
+
+#ifndef TM1638_DIO_DDR
 #define TM1638_DIO_DDR         DDRC
+#endif
+
+#ifndef TM1638_DIO_PIN
 #define TM1638_DIO_PIN         PINC
+#endif
+
+#ifndef TM1638_DIO_PORT
 #define TM1638_DIO_PORT        PORTC
-#define TM1638_DIO_BIT         6 
+#endif
+
+#ifndef TM1638_DIO_BIT
+#define TM1638_DIO_BIT         6
+#endif 
 
 /*
 TM1637_BIT_US Unit: uS  
@@ -31,7 +65,9 @@ Clock Frequenc: 1 / (TM1637_BIT_US*2)
 Typical clock frequency: 500KHz
 Maximum clock frequency: 1MHz
 */
+#ifndef TM1637_BIT_US
 #define TM1637_BIT_US            1
+#endif 
 
 void TM1638_Config(void);
 
