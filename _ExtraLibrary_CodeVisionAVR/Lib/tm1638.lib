@@ -2,10 +2,10 @@
 
 #include <tm1638.h>
 
-#define TM1638_COMMAND_DATA_WRITE   0b01000000  // Data command setting: Write data to display register
-#define TM1638_COMMAND_DATA_READ    0b01000010  // Data command setting: Read key scan data
-#define TM1638_COMMAND_DISPLAY      0b10000000  // Display control
-#define TM1638_COMMAND_ADDRESS      0b11000000  // Address command setting
+#define TM1638_COMMAND_DATA_WRITE   0x40U  // Data command setting: Write data to display register
+#define TM1638_COMMAND_DATA_READ    0x42U  // Data command setting: Read key scan data
+#define TM1638_COMMAND_DISPLAY      0x80U  // Display control
+#define TM1638_COMMAND_ADDRESS      0xC0U  // Address command setting
 
 #define TM1638_DELAY(VALUE)                         delay_us(VALUE);
 
