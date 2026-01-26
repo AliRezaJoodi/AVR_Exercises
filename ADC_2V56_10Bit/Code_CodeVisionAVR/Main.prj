@@ -39,7 +39,7 @@ PageIndex1=1
 ActiveTab=1
 OF2=Attachment\hardware_v1.0.h
 TimeStamp2=1495697624
-OF3=..\..\_ExtraLibrary_CodeVisionAVR\Inc\adc.h
+OF3=..\..\_UserDrivers\Inc\adc.h
 TimeStamp3=1495697928
 F1=v1.0.c
 [Compiler]
@@ -147,7 +147,7 @@ RebuildAll=0
 LinkageInformationPresent=1
 COFFileTimeStamp=1495697929
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_ExtraLibrary_CodeVisionAVR\Inc
+IncludePath1=..\..\_UserDrivers\Inc
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -211,7 +211,7 @@ IncludePath61=
 IncludePath62=
 IncludePath63=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=..\..\_ExtraLibrary_CodeVisionAVR\Lib
+LibraryPath1=..\..\_UserDrivers\Lib
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -576,7 +576,7 @@ F2=Attachment\ADC.h
 F3=..\..\_Library_CodeVisionAVR\ADC.h
 F4=Attachment\HardwarePorting_v1.0.h
 F5=C:\cvavr\inc\alcd.h
-F6=..\..\_ExtraLibrary_CodeVisionAVR\Inc\adc.h
+F6=..\..\_UserDrivers\Inc\adc.h
 F7=Attachment\hardware_v1.0.h
 [Bookmarks1]
 TimeStamp=1495697928
@@ -697,8 +697,8 @@ F3=C:\cvavr\inc\stdlib.h
 F4=C:\cvavr\inc\delay.h
 F5=C:\cvavr\inc\alcd.h
 F6=Attachment\hardware_v1.0.h
-F7=..\..\_ExtraLibrary_CodeVisionAVR\Inc\adc.h
-F8=..\..\_ExtraLibrary_CodeVisionAVR\Inc\Utility.h
+F7=..\..\_UserDrivers\Inc\adc.h
+F8=..\..\_UserDrivers\Inc\Utility.h
 [FoldedCode1]
 Blocks=0
 [Bookmarks6]
