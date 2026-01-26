@@ -145,11 +145,11 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1004
+Build=1005
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\..\_ExtraLibrary_CodeVisionAVR\Inc
-IncludePath2=..\..\..\_ExtraLibrary_CodeVisionAVR\Inc\Legacy
+IncludePath1=..\..\..\_UserDrivers\Inc
+IncludePath2=..\..\..\_UserDrivers\Inc\Legacy
 IncludePath3=
 IncludePath4=
 IncludePath5=
@@ -180,8 +180,8 @@ IncludePath29=
 IncludePath30=
 IncludePath31=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=..\..\..\_ExtraLibrary_CodeVisionAVR\Lib
-LibraryPath2=..\..\..\_ExtraLibrary_CodeVisionAVR\Lib\Legacy
+LibraryPath1=..\..\..\_UserDrivers\Lib
+LibraryPath2=..\..\..\_UserDrivers\Lib\Legacy
 LibraryPath3=
 LibraryPath4=
 LibraryPath5=
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1547313175
+COFFileTimeStamp=1547338502
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -389,7 +389,7 @@ Row=1
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1547313179
+TimeStamp=1547338505
 [BookmarksFoldedCode]
 Files=64
 F1=T3.c
@@ -491,7 +491,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1004
+Build=1005
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -613,7 +613,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1004
+L17=Build: 1005
 L18=3648 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -1779,20 +1779,6 @@ Blocks=0
 Blocks=0
 [FoldedCode63]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\_Legacy\Display_7Segment_6Digit_TM1637_Fixed\Code_CodeVisionAVR\main.c
-[Header1]
-Files=9
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\mega32a.h
-F3=C:\cvavr\inc\mega32_bits.h
-F4=C:\cvavr\inc\delay.h
-F5=..\..\..\_ExtraLibrary_CodeVisionAVR\Inc\utility_bit.h
-F6=hardware.h
-F7=..\..\..\_ExtraLibrary_CodeVisionAVR\Inc\Legacy\tm1637_fixed.h
-F8=C:\cvavr\inc\io.h
-F9=..\..\..\_ExtraLibrary_CodeVisionAVR\Inc\display7segment1digit_decoder.h
 [Bookmarks64]
 TimeStamp=1547310471
 Row=7
@@ -1811,5 +1797,19 @@ BK8=-1
 BK9=-1
 [FoldedCode64]
 Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\_Legacy\Display_7Segment_6Digit_TM1637_Fixed\Code_CodeVisionAVR\main.c
+[Header1]
+Files=9
+F1=C:\cvavr\inc\stdint.h
+F2=C:\cvavr\inc\mega32a.h
+F3=C:\cvavr\inc\mega32_bits.h
+F4=C:\cvavr\inc\delay.h
+F5=..\..\..\_UserDrivers\Inc\utility_bit.h
+F6=hardware.h
+F7=..\..\..\_UserDrivers\Inc\Legacy\tm1637_fixed.h
+F8=C:\cvavr\inc\io.h
+F9=..\..\..\_UserDrivers\Inc\display7segment1digit_decoder.h
 [FoldedCode61]
 Blocks=0
