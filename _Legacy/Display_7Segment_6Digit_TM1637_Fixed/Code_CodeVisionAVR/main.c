@@ -10,14 +10,12 @@
 
 #include <tm1637_fixed.h>
 #include <display7segment1digit_decoder.h>
-#include <button_fixed.h>
 
 void main(void){
     uint8_t segments[6];
     uint8_t i=0; 
                 
     TM1637_Config();
-    Button_Config();
     
     for (i=0; i<6; ++i){
         Display7Segment1Digit_DecodeDigit(i, &segments[i]);    
