@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=4
+OpenedFiles=2
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -35,10 +35,10 @@ Width1=1171
 Row1=125
 Column1=17
 State1=2
-OF2=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_lm35.h
+OF2=_ExtraLibrary\_hardware.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1546236049
+TimeStamp2=1546239469
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -389,7 +389,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1546239824
+TimeStamp=1547341425
 [BookmarksFoldedCode]
 Files=36
 F1=T3.c
@@ -1277,11 +1277,11 @@ F10=..\..\_ExtraLibrary_CodeVisionAVR\Inc\sensor_lm35.h
 F11=..\..\_ExtraLibrary_CodeVisionAVR\Inc\average.h
 F12=..\..\_ExtraLibrary_CodeVisionAVR\Inc\changed.h
 F13=..\..\_ExtraLibrary_CodeVisionAVR\Inc\display_lcd_char.h
-[FoldedCode3]
-Blocks=0
 [FoldedCode36]
 Blocks=0
-[FoldedCode35]
-Blocks=0
 [FoldedCode21]
+Blocks=0
+[FoldedCode3]
+Blocks=0
+[FoldedCode35]
 Blocks=0
