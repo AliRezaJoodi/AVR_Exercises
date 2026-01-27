@@ -65,9 +65,8 @@ typedef struct {
 //    TM1638_Pin_t stb;
 //} TM1638_STB_t;
 
-void TM1638_Config(TM1638_STB_t *tm);
 
-#pragma used+
+void TM1638_Config(TM1638_STB_t *tm);
 void TM1638_SendCommand(TM1638_STB_t *tm, uint8_t command);
 
 /*
@@ -166,8 +165,6 @@ Multi press
 Scan 1 to 8 buttons that connected to K3 lines.
 */
 uint8_t TM1638_ReturnButtons_K3(TM1638_STB_t *tm);
-#pragma used-
-
 
 #pragma library tm1638.lib
 #endif

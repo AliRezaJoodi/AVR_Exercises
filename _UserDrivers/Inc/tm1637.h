@@ -86,7 +86,6 @@ typedef struct {
  */
 void TM1637_Config(TM1637_t *tm);
 
-#pragma used+
 /**
  * @brief Send a command to the TM1637 device.
  *
@@ -193,7 +192,6 @@ static inline void TM1637_SetSegments_4Digits(TM1637_t *tm, uint8_t segments[]){
  *         Bit 0: Address was out of range and corrected
  */
 uint8_t TM1637_SetSegments_FixedAddress(TM1637_t *tm, uint8_t data, uint8_t address);
-#pragma used-
 
 
 #pragma library tm1637.lib
