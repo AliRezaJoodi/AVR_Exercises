@@ -16,6 +16,20 @@ void TestLeds_Seg9(void);
 void TestSegments_Seg1ToSeg10(void);
 void TestSegments_Seg1ToSeg8(void);
 
+//    TM1638_STB_t tm1;
+//    tm1.stb.ddr     = &DDRA;
+//    tm1.stb.port    = &PORTA;
+//    tm1.stb.index   =  7;
+        
+//    tm1.ddr = &TM1638_STB_DDR;
+//    tm1.port = &TM1638_STB_PORT;
+//    tm1.index = TM1638_STB_BIT;
+TM1638_STB_t tm1 = {
+    &TM1638_STB1_DDR,
+    &TM1638_STB1_PORT,
+    TM1638_STB1_BIT
+}; 
+    
 void main(void){
     char txt[];
     uint8_t key_last =0;        
@@ -25,42 +39,43 @@ void main(void){
         0b00000010,
         0b00000100,
     };
-    
+
+        
     UART_Config();             
-    TM1638_Config();
+    TM1638_Config(&tm1);
     
     TestLeds_Seg9Seg10();
-    TM1638_ResetSegments(); delay_ms(1000);
+    TM1638_ResetSegments(&tm1); delay_ms(1000);
     
     TestLeds_Seg9();
-    TM1638_ResetSegments(); delay_ms(1000);
+    TM1638_ResetSegments(&tm1); delay_ms(1000);
     
     TestSegments_Seg1ToSeg10();    
-    TM1638_SetDisplay(1, 0); delay_ms(1000);
-    TM1638_SetDisplay(1, 1); delay_ms(1000);
-    TM1638_SetDisplay(1, 2); delay_ms(1000);
-    TM1638_SetDisplay(1, 3); delay_ms(1000);
-    TM1638_SetDisplay(1, 4); delay_ms(1000);
-    TM1638_SetDisplay(1, 5); delay_ms(1000);
-    TM1638_SetDisplay(1, 6); delay_ms(1000); 
-    TM1638_SetDisplay(1, 7); delay_ms(1000);
-    TM1638_ResetSegments(); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 0); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 1); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 2); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 3); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 4); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 5); delay_ms(1000);
+    TM1638_SetDisplay(&tm1, 1, 6); delay_ms(1000); 
+    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
+    TM1638_ResetSegments(&tm1); delay_ms(1000);
 
-    TM1638_SetSegments_FixedAddress(0b00000001, 0x0F); delay_ms(1000);
-    TM1638_SetSegments_FixedAddress(0b00000001, 0x01); delay_ms(1000);
+    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x0F); delay_ms(1000);
+    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x01); delay_ms(1000);
         
     TestSegments_Seg1ToSeg8();
     
-    TM1638_SendCommand(0b10000111); delay_ms(1000); 
-    TM1638_SetDisplay(1, 7); delay_ms(3000);    
-    TM1638_ResetSegments();
+    TM1638_SendCommand(&tm1, 0b10000111); delay_ms(1000); 
+    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(3000);    
+    TM1638_ResetSegments(&tm1);
     
-    TM1638_GetButtons_K1K2K3( &key[0] ); 
+    TM1638_GetButtons_K1K2K3(&tm1, &key[0] ); 
     sprintf(txt, "0x%02x 0x%02x 0x%02x 0x%02x \r", key[0], key[1], key[2], key[3]); puts(txt); 
 
     while(1){  
-        TM1638_GetButtons_K3( &key[0] );
-//        key[0] = TM1638_ReturnButtons_K3();
+        TM1638_GetButtons_K3(&tm1, &key[0]);
+//        key[0] = TM1638_ReturnButtons_K3(&tm1);
         if(key_last != key[0]){
             key_last = key[0];
             if( key[0] != 0){
@@ -84,7 +99,7 @@ void TestSegments_Seg1ToSeg8(void){
     Display7Segment1Digit_DecodeDigit(5, &segments[6]); 
     Display7Segment1Digit_DecodeDigit(3, &segments[7]);      
     
-    TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(segments, 8, 0);
+    TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(&tm1, segments, 8, 0);
     delay_ms(1000);
 }
 
@@ -109,7 +124,7 @@ void TestSegments_Seg1ToSeg10(void){
     Display7Segment1Digit_DecodeDigit(7, &segments[14]); 
     segments[15]=0b00000000; 
                
-    TM1638_SetSegments_Seg1ToSeg10(segments, 16, 0);
+    TM1638_SetSegments_Seg1ToSeg10(&tm1, segments, 16, 0);
     delay_ms(1000);
 }
 
@@ -120,13 +135,13 @@ void TestLeds_Seg9(void){
     
     for(i=0; i<8; ++i){
         WRITE_BIT(led_u8, i, 1);
-        TM1638_SetLeds_Seg9(led_u8);
+        TM1638_SetLeds_Seg9(&tm1, led_u8);
         delay_ms(500);
     } 
 
     for(i=0; i<8; ++i){
         WRITE_BIT(led_u8, i, 0);
-        TM1638_SetLeds_Seg9(led_u8);
+        TM1638_SetLeds_Seg9(&tm1, led_u8);
         delay_ms(500);
     } 
 }
@@ -138,13 +153,13 @@ void TestLeds_Seg9Seg10(void){
     
     for(i=0; i<16; ++i){
         WRITE_BIT(led_u16, i, 1);
-        TM1638_SetLeds_Seg9Seg10(led_u16);
+        TM1638_SetLeds_Seg9Seg10(&tm1, led_u16);
         delay_ms(500);
     } 
 
     for(i=0; i<16; ++i){
         WRITE_BIT(led_u16, i, 0);
-        TM1638_SetLeds_Seg9Seg10(led_u16);
+        TM1638_SetLeds_Seg9Seg10(&tm1, led_u16);
         delay_ms(500);
     } 
 }
