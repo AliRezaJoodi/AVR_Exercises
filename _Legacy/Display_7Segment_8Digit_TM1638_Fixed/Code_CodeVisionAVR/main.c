@@ -1,8 +1,8 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
-
+#include <mega16a.h>
 #include <stdint.h>
 #include <stdio.h>
-#include <mega16a.h>
+
 #include <delay.h>
 
 #include "hardware.h"
@@ -56,7 +56,7 @@ void main(void){
     TM1638_ResetSegments();
     
     TM1638_GetButtons_K1K2K3( &key[0] ); 
-    sprintf(txt, "0x%02x 0x%02x 0x%02x 0x%02x \r", key[0], key[1], key[2], key[3]); puts(txt); 
+    sprintf(txt, "0x%02X 0x%02X 0x%02X 0x%02X \r", key[0], key[1], key[2], key[3]); puts(txt); 
 
     while(1){  
         TM1638_GetButtons_K3( &key[0] );
@@ -64,7 +64,7 @@ void main(void){
         if(key_last != key[0]){
             key_last = key[0];
             if( key[0] != 0){
-                sprintf(txt, "0x%02x \r", key[0]);
+                sprintf(txt, "0x%02X \r", key[0]);
                 puts(txt);
             }
         }                              

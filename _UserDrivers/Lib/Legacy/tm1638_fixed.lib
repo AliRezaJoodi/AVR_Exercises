@@ -10,7 +10,7 @@
 #define TM1638_DELAY(VALUE)                         delay_us(VALUE);
 
 //***************************************
-static inline void TM1638_STB_WritePin(uint8_t status){
+void TM1638_STB_WritePin(uint8_t status){
     if(status){
         CLEAR_BIT(TM1638_STB_DDR, TM1638_STB_BIT);
         CLEAR_BIT(TM1638_STB_PORT, TM1638_STB_BIT);
@@ -22,7 +22,7 @@ static inline void TM1638_STB_WritePin(uint8_t status){
 }
 
 //***************************************
-static inline void TM1638_CLK_WritePin(uint8_t status){
+void TM1638_CLK_WritePin(uint8_t status){
     if(status){
         CLEAR_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
         CLEAR_BIT(TM1638_CLK_PORT, TM1638_CLK_BIT);
@@ -34,13 +34,13 @@ static inline void TM1638_CLK_WritePin(uint8_t status){
 }
 
 //***************************************
-static inline void TM1638_DIO_SetInput(void){
+void TM1638_DIO_SetInput(void){
     CLEAR_BIT(TM1638_DIO_DDR, TM1638_DIO_BIT);
     CLEAR_BIT(TM1638_DIO_PORT, TM1638_DIO_BIT);
 }
 
 //***************************************
-static inline void TM1638_DIO_WritePin(uint8_t status){
+void TM1638_DIO_WritePin(uint8_t status){
     if(status){
         TM1638_DIO_SetInput();
     }
@@ -51,7 +51,7 @@ static inline void TM1638_DIO_WritePin(uint8_t status){
 }
 
 //***************************************
-static inline uint8_t TM1638_DIO_GetPin(void){
+uint8_t TM1638_DIO_GetPin(void){
     return GET_BIT(TM1638_DIO_PIN, TM1638_DIO_BIT);
 }
 

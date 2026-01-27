@@ -14,13 +14,18 @@
 #define WRITE_3BIT(ADDRESS, FROM, VALUE)    ((ADDRESS) = ((ADDRESS) & ~(0x07U << (FROM))) | ((0x07U & (VALUE)) << (FROM)))
 #define WRITE_4BIT(ADDRESS, FROM, VALUE)    ((ADDRESS) = ((ADDRESS) & ~(0x0FU << (FROM))) | ((0x0FU & (VALUE)) << (FROM)))
 #define WRITE_5BIT(ADDRESS, FROM, VALUE)    ((ADDRESS) = ((ADDRESS) & ~(0x1FU << (FROM))) | ((0x1FU & (VALUE)) << (FROM)))
+#define WRITE_6BIT(ADDRESS, FROM, VALUE)    ((ADDRESS) = ((ADDRESS) & ~(0x3FU << (FROM))) | ((0x3FU & (VALUE)) << (FROM)))
+#define WRITE_7BIT(ADDRESS, FROM, VALUE)    ((ADDRESS) = ((ADDRESS) & ~(0x7FU << (FROM))) | ((0x7FU & (VALUE)) << (FROM)))
+#define WRITE_8BIT(ADDRESS, FROM, VALUE)    ((ADDRESS) = ((ADDRESS) & ~(0xFFU << (FROM))) | ((0xFFU & (VALUE)) << (FROM)))
 
-#define GET_BIT(ADDRESS, POS)           	(((ADDRESS) >> (POS)) 	& 0x01U)
-#define GET_2BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) 	& 0x03U)
-#define GET_3BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) 	& 0x07U)
-#define GET_4BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) 	& 0x0FU)
-#define GET_5BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) 	& 0x1FU)
-
+#define GET_BIT(ADDRESS,  POS )           	(((ADDRESS) >> (POS))  & 0x01U)
+#define GET_2BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) & 0x03U)
+#define GET_3BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) & 0x07U)
+#define GET_4BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) & 0x0FU)
+#define GET_5BIT(ADDRESS, FROM)           	(((ADDRESS) >> (FROM)) & 0x1FU)
+#define GET_6BIT(ADDRESS, FROM)             (((ADDRESS) >> (FROM)) & 0x3FU)
+#define GET_7BIT(ADDRESS, FROM)             (((ADDRESS) >> (FROM)) & 0x7FU)
+#define GET_8BIT(ADDRESS, FROM)             (((ADDRESS) >> (FROM)) & 0xFFU)
 
 #endif
 

@@ -70,8 +70,6 @@ Maximum clock frequency: 1MHz
 #endif 
 
 void TM1638_Config(void);
-
-#pragma used+
 void TM1638_SendCommand(uint8_t command);
 
 /*
@@ -170,8 +168,7 @@ Multi press
 Scan 1 to 8 buttons that connected to K3 lines.
 */
 uint8_t TM1638_ReturnButtons_K3(void);
-#pragma used-
 
 
-#pragma library tm1638.lib
+#pragma library tm1638_fixed.lib
 #endif

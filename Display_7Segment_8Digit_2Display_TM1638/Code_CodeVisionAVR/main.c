@@ -44,45 +44,52 @@ void main(void){
     UART_Config();             
     TM1638_Config(&tm1);
     
-    TestLeds_Seg9Seg10();
-    TM1638_ResetSegments(&tm1); delay_ms(1000);
+//    TestLeds_Seg9Seg10();
+//    TM1638_ResetSegments(&tm1); delay_ms(1000);
+//    
+//    TestLeds_Seg9();
+//    TM1638_ResetSegments(&tm1); delay_ms(1000);
+//    
+//    TestSegments_Seg1ToSeg10();    
+//    TM1638_SetDisplay(&tm1, 1, 0); delay_ms(1000);
+//    TM1638_SetDisplay(&tm1, 1, 1); delay_ms(1000);
+//    TM1638_SetDisplay(&tm1, 1, 2); delay_ms(1000);
+//    TM1638_SetDisplay(&tm1, 1, 3); delay_ms(1000);
+//    TM1638_SetDisplay(&tm1, 1, 4); delay_ms(1000);
+//    TM1638_SetDisplay(&tm1, 1, 5); delay_ms(1000);
+//    TM1638_SetDisplay(&tm1, 1, 6); delay_ms(1000); 
+//    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
+//    TM1638_ResetSegments(&tm1); delay_ms(1000);
+//
+//    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x0F); delay_ms(1000);
+//    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x01); delay_ms(1000);
+//        
+//    TestSegments_Seg1ToSeg8();
+//    
+//    TM1638_SendCommand(&tm1, 0b10000111); delay_ms(1000); 
+//    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(3000);    
+//    TM1638_ResetSegments(&tm1);
     
-    TestLeds_Seg9();
-    TM1638_ResetSegments(&tm1); delay_ms(1000);
-    
-    TestSegments_Seg1ToSeg10();    
-    TM1638_SetDisplay(&tm1, 1, 0); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 1); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 2); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 3); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 4); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 5); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 6); delay_ms(1000); 
-    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
-    TM1638_ResetSegments(&tm1); delay_ms(1000);
+//    TM1638_GetButtons_K1K2K3(&tm1, &key[0]); 
+//    sprintf(txt, "0x%02x 0x%02x 0x%02x 0x%02x \r", key[0], key[1], key[2], key[3]); puts(txt); 
 
-    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x0F); delay_ms(1000);
-    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x01); delay_ms(1000);
+    TM1638_GetButtons_K3(&tm1, &key[0]); 
+    sprintf(txt, "0x%02X\r", key[0]); puts(txt); 
+    sprintf(txt, " \r", key[0]); puts(txt);
         
-    TestSegments_Seg1ToSeg8();
-    
-    TM1638_SendCommand(&tm1, 0b10000111); delay_ms(1000); 
-    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(3000);    
-    TM1638_ResetSegments(&tm1);
-    
-    TM1638_GetButtons_K1K2K3(&tm1, &key[0] ); 
-    sprintf(txt, "0x%02x 0x%02x 0x%02x 0x%02x \r", key[0], key[1], key[2], key[3]); puts(txt); 
-
     while(1){  
-        TM1638_GetButtons_K3(&tm1, &key[0]);
+        TM1638_GetButtons_K3(&tm1, &key[0]); 
+        sprintf(txt, "0x%02X\r", key[0]); puts(txt); 
+        sprintf(txt, " \r", key[0]); puts(txt);
+        delay_ms(1000);
 //        key[0] = TM1638_ReturnButtons_K3(&tm1);
-        if(key_last != key[0]){
-            key_last = key[0];
-            if( key[0] != 0){
-                sprintf(txt, "0x%02x \r", key[0]);
-                puts(txt);
-            }
-        }                              
+//        if(key_last != key[0]){
+//            key_last = key[0];
+//            if( key[0] != 0){
+//                sprintf(txt, "0x%02x \r", key[0]);
+//                puts(txt);
+//            }
+//        }                              
     };
 }
 
