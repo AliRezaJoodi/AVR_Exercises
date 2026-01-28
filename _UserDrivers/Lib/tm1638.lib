@@ -1,7 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #include <tm1638.h>
-#include <stdio.h>
 
 #define TM1638_COMMAND_DATA_WRITE   0x40U  // Data command setting: Write data to display register
 #define TM1638_COMMAND_DATA_READ    0x42U  // Data command setting: Read key scan data
@@ -12,7 +11,7 @@
 
 //***************************************
 void TM1638_STB_WritePin(TM1638_STB_t *stb, uint8_t status){
-    if(status){
+    if(status){ 
         CLEAR_BIT(*stb->ddr, stb->index);
         CLEAR_BIT(*stb->port, stb->index);
     }
@@ -348,19 +347,23 @@ void TM1638_GetButtons_K3(TM1638_STB_t *tm, uint8_t *key){
     uint8_t i =0;
     uint8_t data =0;
     uint8_t buf =0;
-    char txt[];
-    
+
+//    DDRA.7=1; PORTA.7=0;
+//    SET_BIT(*tm->ddr, tm->index);
+//    CLEAR_BIT(*tm->port, tm->index);    
     TM1638_STB_WritePin(tm, 0);  
     TM1638_WriteByte(TM1638_COMMAND_DATA_READ); 
     TM1638_DELAY(TM1637_BIT_US*2);        
         
     for (i=0; i<4; ++i){
 	  buf = TM1638_ReadByte(); 
-      sprintf(txt, "0x%02X\r", buf); puts(txt);
       data = data | (buf<<i);
       TM1638_DELAY(TM1637_BIT_US*2);
     }
-     
+
+//    DDRA.7=0; PORTA.7=0;
+//    CLEAR_BIT(*tm->ddr, tm->index);
+//    CLEAR_BIT(*tm->port, tm->index);     
     TM1638_STB_WritePin(tm, 1);
     TM1638_DELAY(TM1637_BIT_US);
 
