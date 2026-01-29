@@ -6,12 +6,12 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=1
-OpenedFiles=3
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=main.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1547310604
+TimeStamp1=1547533174
 PageIndex1=1
 Top0=200
 Left0=438
@@ -45,9 +45,9 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=3
+ActiveTab=1
 OF3=..\..\_UserDrivers\Inc\tm1637.h
-TimeStamp3=1547310946
+TimeStamp3=1547533153
 OF4=..\..\_UserDrivers\Inc\tm1637.h
 TimeStamp4=1547308380
 OF5=..\..\_UserDrivers\Inc\tm1637_hw.h
@@ -145,7 +145,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1024
+Build=1032
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_UserDrivers\Inc
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1547340942
+COFFileTimeStamp=1547533176
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -389,7 +389,7 @@ Row=0
 Column=10
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1547340970
+TimeStamp=1547537466
 [BookmarksFoldedCode]
 Files=61
 F1=T3.c
@@ -488,7 +488,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1024
+Build=1032
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -610,10 +610,10 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1024
-L18=3680 line(s) compiled
+L17=Build: 1032
+L18=3706 line(s) compiled
 L19=No errors
-L20=No warnings
+L20=1 warning(s)
 L21=
 L22=Bit variables size: 0 byte(s)
 L23=
@@ -629,20 +629,20 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L36=Program size: 1486 words (2972 bytes), 9.1% of FLASH
-L37=278 words (556 bytes), 15.8% reduced by Code Compression
-L38=272 words (544 bytes), 15.2% reduced by Code Compression
+L36=Program size: 1519 words (3038 bytes), 9.3% of FLASH
+L37=288 words (576 bytes), 15.9% reduced by Code Compression
+L38=339 words (678 bytes), 13.5% reduced by Code Compression
 Lines=37
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_2Display_TM1637\Code_CodeVisionAVR\List\Main.asm(2713): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_2Display_TM1637\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_2Display_TM1637\Code_CodeVisionAVR\List\Main.asm(2757): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_2Display_TM1637\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000b9c   2960     12   2972   32768   9.1%
+L9=[.cseg] 0x000000 0x000bde   3026     12   3038   32768   9.3%
 L10=[.dseg] 0x000060 0x000260      0      0      0    2048   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1357,11 +1357,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks41]
-TimeStamp=1547310946
-Row=0
-Column=0
+TimeStamp=1547533153
+Row=73
+Column=21
 ScrollPosX=0
-ScrollPosY=20
+ScrollPosY=60
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1667,11 +1667,11 @@ Blocks=0
 [FoldedCode40]
 Blocks=0
 [Bookmarks58]
-TimeStamp=1547310604
-Row=28
-Column=49
+TimeStamp=1547533174
+Row=41
+Column=72
 ScrollPosX=0
-ScrollPosY=12
+ScrollPosY=42
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1684,10 +1684,10 @@ BK8=-1
 BK9=-1
 [Bookmarks59]
 TimeStamp=1547285142
-Row=5
-Column=7
+Row=13
+Column=19
 ScrollPosX=0
-ScrollPosY=6
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1718,23 +1718,6 @@ BK8=-1
 BK9=-1
 [FoldedCode60]
 Blocks=0
-[FoldedCode41]
-Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_2Display_TM1637\Code_CodeVisionAVR\main.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\mega32a.h
-F3=C:\cvavr\inc\mega32_bits.h
-F4=C:\cvavr\inc\delay.h
-F5=..\..\_UserDrivers\Inc\utility_bit.h
-F6=hardware.h
-F7=..\..\_UserDrivers\Inc\tm1637.h
-F8=C:\cvavr\inc\io.h
-[FoldedCode58]
-Blocks=0
 [Bookmarks61]
 TimeStamp=1547310946
 Row=0
@@ -1753,5 +1736,22 @@ BK8=-1
 BK9=-1
 [FoldedCode61]
 Blocks=0
+[HeadersList]
+Files=1
+F1=F:\GitHub\AVR_Exercises\Display_7Segment_6Digit_2Display_TM1637\Code_CodeVisionAVR\main.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\stdint.h
+F2=C:\cvavr\inc\mega32a.h
+F3=C:\cvavr\inc\mega32_bits.h
+F4=C:\cvavr\inc\delay.h
+F5=..\..\_UserDrivers\Inc\utility_bit.h
+F6=hardware.h
+F7=..\..\_UserDrivers\Inc\tm1637.h
+F8=C:\cvavr\inc\io.h
 [FoldedCode59]
+Blocks=0
+[FoldedCode41]
+Blocks=0
+[FoldedCode58]
 Blocks=0

@@ -147,7 +147,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1291
+Build=1292
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\_UserDrivers\Inc
@@ -213,7 +213,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1547418511
+COFFileTimeStamp=1547530569
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -391,7 +391,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1547419142
+TimeStamp=1547531814
 [BookmarksFoldedCode]
 Files=66
 F1=T3.c
@@ -495,7 +495,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1291
+Build=1292
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -617,7 +617,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1291
+L17=Build: 1292
 L18=13178 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -1747,8 +1747,8 @@ Blocks=0
 Blocks=0
 [Bookmarks62]
 TimeStamp=1547417927
-Row=58
-Column=23
+Row=63
+Column=55
 ScrollPosX=0
 ScrollPosY=54
 BK0=-1
@@ -1813,6 +1813,24 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode65]
+Blocks=0
+[Bookmarks66]
+TimeStamp=1547418072
+Row=20
+Column=66
+ScrollPosX=0
+ScrollPosY=11
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
 [HeadersList]
 Files=1
 F1=F:\GitHub\AVR_Exercises\_Legacy\Display_7Segment_8Digit_TM1638_Fixed\Code_CodeVisionAVR\main.c
@@ -1829,28 +1847,10 @@ F8=hardware.h
 F9=..\..\..\_UserDrivers\Inc\Legacy\tm1638_fixed.h
 F10=..\..\..\_UserDrivers\Inc\utility_bit.h
 F11=..\..\..\_UserDrivers\Inc\display7segment1digit_decoder.h
-[FoldedCode65]
-Blocks=0
 [FoldedCode62]
 Blocks=0
 [FoldedCode63]
 Blocks=0
-[Bookmarks66]
-TimeStamp=1547418072
-Row=369
-Column=24
-ScrollPosX=0
-ScrollPosY=336
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
 [FoldedCode66]
 Blocks=0
 [FoldedCode64]
