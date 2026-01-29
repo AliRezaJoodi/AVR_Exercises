@@ -11,6 +11,8 @@
 #include <utility_bit.h> 
 #include "hardware.h"
 
+#define _SFR_IO8(io_addr) (*(volatile uint8_t*)((io_addr) + 0x20))
+
 #ifndef TM1638_CLK_DDR
 #define TM1638_CLK_DDR         DDRC
 #endif

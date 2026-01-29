@@ -9,16 +9,24 @@
 
 #define TM1638_DELAY(VALUE)                         delay_us(VALUE);
 
+////***************************************
+//void TM1638_STB_WritePin(TM1638_STB_t *stb, uint8_t status){
+//    if(status){ 
+//        CLEAR_BIT(*stb->ddr, stb->index);
+//        CLEAR_BIT(*stb->port, stb->index);
+//    }
+//    else{
+//        SET_BIT(*stb->ddr, stb->index);
+//        CLEAR_BIT(*stb->port, stb->index);
+//    }
+//}
+
 //***************************************
 void TM1638_STB_WritePin(TM1638_STB_t *stb, uint8_t status){
-    if(status){ 
-        CLEAR_BIT(*stb->ddr, stb->index);
-        CLEAR_BIT(*stb->port, stb->index);
-    }
-    else{
-        SET_BIT(*stb->ddr, stb->index);
-        CLEAR_BIT(*stb->port, stb->index);
-    }
+    //SET_BIT(*stb->ddr, stb->index); 
+    //WRITE_BIT(*stb->port, stb->index, status);
+    SET_BIT(DDRA, 7);
+    WRITE_BIT(PORTA, 7, status);
 }
 
 //***************************************

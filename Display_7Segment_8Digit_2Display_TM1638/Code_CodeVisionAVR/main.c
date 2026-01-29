@@ -79,7 +79,8 @@ void main(void){
         if(key_last != key[0]){
             key_last = key[0];
             if(key[0] != 0){
-                itoa(key[0], txt); puts(txt); puts("\r");
+                //itoa(key[0], txt); puts(txt); puts("\r");
+                sprintf(txt, "0x%02X\r", key[0]); puts(txt);
                 delay_ms(1000); 
             }
         }                              

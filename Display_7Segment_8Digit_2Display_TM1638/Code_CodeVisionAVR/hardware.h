@@ -3,7 +3,6 @@
 #ifndef _HARDWARE_INCLUDED
 #define _HARDWARE_INCLUDED
 
-
 #define TM1638_STB1_DDR         DDRA
 #define TM1638_STB1_PORT        PORTA
 #define TM1638_STB1_BIT         7
