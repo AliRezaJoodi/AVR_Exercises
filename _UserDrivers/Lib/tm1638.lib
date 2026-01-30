@@ -9,28 +9,57 @@
 
 #define TM1638_DELAY(VALUE)                         delay_us(VALUE);
 
+#define TM1638_PIN_INPUT      0
+#define TM1638_PIN_OUTPUT     1
+
+//***************************************
+//void TM1638_STB_WritePin(TM1638_t *tm, uint8_t status){
+//    if(status){ 
+//        CLEAR_BIT( *(tm->stb.ddr), tm->stb.index );
+//        CLEAR_BIT( *(tm->stb.port), tm->stb.index );
+//    }
+//    else{
+//        SET_BIT( *(tm->stb.ddr), tm->stb.index );
+//        CLEAR_BIT( *(tm->stb.port), tm->stb.index );
+//    }
+//}
+
+//***************************************
+static inline void TM1638_STB_ConfigOutput(TM1638_t *tm){
+    SET_BIT(*(tm->stb.ddr), tm->stb.index);
+}
+
 //***************************************
 void TM1638_STB_WritePin(TM1638_t *tm, uint8_t status){
-    if(status){ 
-        CLEAR_BIT( *(tm->stb.ddr), tm->stb.index );
-        CLEAR_BIT( *(tm->stb.port), tm->stb.index );
-    }
-    else{
-        SET_BIT( *(tm->stb.ddr), tm->stb.index );
-        CLEAR_BIT( *(tm->stb.port), tm->stb.index );
-    }
+    WRITE_BIT( *(tm->stb.port), tm->stb.index, status );
+}
+
+//***************************************
+//void TM1638_CLK_WritePin(uint8_t status){
+//    if(status){
+//        CLEAR_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
+//        CLEAR_BIT(TM1638_CLK_PORT, TM1638_CLK_BIT);
+//    }
+//    else{
+//        SET_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
+//        CLEAR_BIT(TM1638_CLK_PORT, TM1638_CLK_BIT);    
+//    }
+//}
+
+//***************************************
+static inline void TM1638_CLK_ConfigOutput(void){
+    SET_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
 }
 
 //***************************************
 void TM1638_CLK_WritePin(uint8_t status){
-    if(status){
-        CLEAR_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
-        CLEAR_BIT(TM1638_CLK_PORT, TM1638_CLK_BIT);
-    }
-    else{
-        SET_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
-        CLEAR_BIT(TM1638_CLK_PORT, TM1638_CLK_BIT);    
-    }
+    WRITE_BIT(TM1638_CLK_PORT, TM1638_CLK_BIT, status);
+}
+
+//***************************************
+static inline void TM1638_DIO_ConfigPin(uint8_t mode){
+    WRITE_BIT(TM1638_DIO_DDR, TM1638_DIO_BIT, mode);
+    CLEAR_BIT(TM1638_DIO_PORT, TM1638_DIO_BIT);
 }
 
 //***************************************
@@ -130,6 +159,12 @@ void TM1638_ResetSegments(TM1638_t *tm){
 
 //***************************************
 void TM1638_Config(TM1638_t *tm){
+    TM1638_STB_ConfigOutput(tm);
+//    SET_BIT( *(tm->stb.ddr), tm->stb.index );
+    TM1638_CLK_ConfigOutput();
+//    SET_BIT(TM1638_CLK_DDR, TM1638_CLK_BIT);
+    SET_BIT(TM1638_DIO_DDR, TM1638_DIO_BIT);
+
     TM1638_STB_WritePin(tm, 1);
     TM1638_CLK_WritePin(1);
     TM1638_DIO_WritePin(1);
