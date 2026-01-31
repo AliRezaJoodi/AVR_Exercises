@@ -5,6 +5,9 @@
  * This file provides data structures and function prototypes
  * for controlling the TM1637 LED driver.
  *
+ * TM1637 uses a proprietary 2-wire protocol and is not I2C compatible.
+ * Do not share TM1637 CLK/DIO lines with I2C SDA/SCL buses
+ *
  * @author AliReza Joodi
  * @see https://github.com/AliRezaJoodi
  */
