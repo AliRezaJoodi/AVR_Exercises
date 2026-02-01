@@ -119,7 +119,7 @@ uint8_t TM1638_SetDisplay(TM1638_t *tm, uint8_t onoff, uint8_t brightness){
 }
 
 //***************************************
-void TM1638_ResetSegments(TM1638_t *tm){
+void TM1638_ClearDisplay(TM1638_t *tm){
     uint8_t i=0;
     
     uint8_t command_address = TM1638_COMMAND_ADDRESS;
@@ -148,12 +148,12 @@ void TM1638_Config(TM1638_t *tm){
     TM1638_DIO_ConfigPin(TM1638_PIN_OUTPUT);    
     TM1638_DIO_WritePin(1); // Idle bus 
   
-    TM1638_ResetSegments(tm);
+    TM1638_ClearDisplay(tm);
     TM1638_SetDisplay(tm, 1, 7);
 }
 
 //***************************************
-uint8_t TM1638_SetSegments_Seg1ToSeg10(TM1638_t *tm, uint8_t segments[], uint8_t length, uint8_t address){
+uint8_t TM1638_Set8SegmentsAndLeds(TM1638_t *tm, uint8_t segments[], uint8_t length, uint8_t address){
     uint8_t error = 0;
     uint8_t i=0;    
     uint8_t command_address = TM1638_COMMAND_ADDRESS;
@@ -193,7 +193,7 @@ uint8_t TM1638_SetSegments_Seg1ToSeg10(TM1638_t *tm, uint8_t segments[], uint8_t
 }
 
 //***************************************
-uint8_t TM1638_SetSegments_FixedAddress(TM1638_t *tm, uint8_t data, uint8_t address){
+uint8_t TM1638_SetFixedAddress(TM1638_t *tm, uint8_t data, uint8_t address){
     uint8_t error = 0;
     uint8_t command_address = TM1638_COMMAND_ADDRESS; 
     
@@ -219,7 +219,7 @@ uint8_t TM1638_SetSegments_FixedAddress(TM1638_t *tm, uint8_t data, uint8_t addr
 };
 
 //***************************************
-uint8_t TM1638_SetSegments_Seg1ToSeg8_OverWriteSeg9Seg10(TM1638_t *tm, uint8_t segments[], uint8_t length, uint8_t pos){
+uint8_t TM1638_Set8Segments_OverWriteLeds(TM1638_t *tm, uint8_t segments[], uint8_t length, uint8_t pos){
     uint8_t error = 0;
     uint8_t address = 0;
     uint8_t i=0;    
@@ -262,7 +262,7 @@ uint8_t TM1638_SetSegments_Seg1ToSeg8_OverWriteSeg9Seg10(TM1638_t *tm, uint8_t s
 }
 
 //***************************************
-uint8_t TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(TM1638_t *tm, uint8_t segments[], uint8_t length, uint8_t pos){
+uint8_t TM1638_Set8Segments(TM1638_t *tm, uint8_t segments[], uint8_t length, uint8_t pos){
     uint8_t error = 0;
     uint8_t address = 0;
     uint8_t i=0;    
@@ -284,7 +284,7 @@ uint8_t TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(TM1638_t *tm, uint8_t segmen
     address = pos * 2;
     
     for(i=0; i<length; ++i){
-        TM1638_SetSegments_FixedAddress(tm, segments[i], address);
+        TM1638_SetFixedAddress(tm, segments[i], address);
         address = address + 2;
     }
     
@@ -292,20 +292,38 @@ uint8_t TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(TM1638_t *tm, uint8_t segmen
 }
 
 //***************************************
-void TM1638_SetLeds_Seg9(TM1638_t *tm, uint8_t data){
-    uint8_t i=0;
- 
-    for(i=0; i<8; ++i){
-        TM1638_SetSegments_FixedAddress(tm, GET_BIT(data, i), (i*2)+1);   
+void TM1637_Set8Segments_4Digits_1st(TM1638_t *tm, uint8_t segments[]){
+    uint8_t i = 0; 
+    
+    for(i=0; i<4; ++i){
+        TM1638_SetFixedAddress(tm, segments[i], i*2);
     }
 }
 
 //***************************************
-void TM1638_SetLeds_Seg9Seg10(TM1638_t *tm, uint16_t data){
+void TM1637_Set8Segments_4Digits_2nd(TM1638_t *tm, uint8_t segments[]){
+    uint8_t i = 0; 
+    
+    for(i=0; i<4; ++i){
+        TM1638_SetFixedAddress(tm, segments[i], (i+4)*2);
+    }
+}
+
+//***************************************
+void TM1638_Set8Leds(TM1638_t *tm, uint8_t data){
     uint8_t i=0;
  
     for(i=0; i<8; ++i){
-        TM1638_SetSegments_FixedAddress(tm, GET_2BIT(data, i*2), (i*2)+1); 
+        TM1638_SetFixedAddress(tm, GET_BIT(data, i), (i*2)+1);   
+    }
+}
+
+//***************************************
+void TM1638_Set16Leds(TM1638_t *tm, uint16_t data){
+    uint8_t i=0;
+ 
+    for(i=0; i<8; ++i){
+        TM1638_SetFixedAddress(tm, GET_2BIT(data, i*2), (i*2)+1); 
     }
 }
 
@@ -332,7 +350,7 @@ uint8_t TM1638_ReadByte(void){
 }
 
 //***************************************
-void TM1638_GetButtons_K1K2K3(TM1638_t *tm, uint8_t *key){
+void TM1638_Get24Buttons(TM1638_t *tm, uint8_t *key){
     uint8_t i =0;
     
     TM1638_STB_WritePin(tm, 0);  
@@ -352,7 +370,7 @@ void TM1638_GetButtons_K1K2K3(TM1638_t *tm, uint8_t *key){
 }
 
 //***************************************
-void TM1638_GetButtons_K3(TM1638_t *tm, uint8_t *key){
+void TM1638_Get8Buttons(TM1638_t *tm, uint8_t *key){
     uint8_t i =0;
     uint8_t data =0;
     uint8_t buf =0;
@@ -377,9 +395,9 @@ void TM1638_GetButtons_K3(TM1638_t *tm, uint8_t *key){
 }
 
 //***************************************
-uint8_t TM1638_ReturnButtons_K3(TM1638_t *tm){
+uint8_t TM1638_Return8Buttons(TM1638_t *tm){
     uint8_t data = 0;
 
-    TM1638_GetButtons_K3(tm, &data);    
+    TM1638_Get8Buttons(tm, &data);    
     return data;
 }

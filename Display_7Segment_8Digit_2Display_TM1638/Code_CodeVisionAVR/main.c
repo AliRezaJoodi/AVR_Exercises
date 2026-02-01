@@ -8,10 +8,9 @@
 
 #include "hardware.h"
 #include <tm1638.h>
-#include <display7segment1digit_decoder.h>
 
 void UART_Config(void);
-    
+  
 void main(void){
     char txt[]; 
     uint8_t i=0;
@@ -32,52 +31,52 @@ void main(void){
 //*****************************************************
     for(i=0; i<16; ++i){
         WRITE_BIT(led_u16, i, 1);
-        TM1638_SetLeds_Seg9Seg10(&tm1, led_u16);
+        TM1638_Set16Leds(&tm1, led_u16);
         delay_ms(500);
     }
      
     for(i=0; i<16; ++i){
         WRITE_BIT(led_u16, i, 0);
-        TM1638_SetLeds_Seg9Seg10(&tm1, led_u16);
+        TM1638_Set16Leds(&tm1, led_u16);
         delay_ms(500);
     }
          
-    TM1638_ResetSegments(&tm1); delay_ms(1000);
+    TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
     for(i=0; i<8; ++i){
         WRITE_BIT(led_u8, i, 1);
-        TM1638_SetLeds_Seg9(&tm1, led_u8);
+        TM1638_Set8Leds(&tm1, led_u8);
         delay_ms(500);
     } 
     
     for(i=0; i<8; ++i){
         WRITE_BIT(led_u8, i, 0);
-        TM1638_SetLeds_Seg9(&tm1, led_u8);
+        TM1638_Set8Leds(&tm1, led_u8);
         delay_ms(500);
     }
        
-    TM1638_ResetSegments(&tm1); delay_ms(1000);
+    TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
-    Display7Segment1Digit_DecodeDigit(0, &segments[0]);
+    segments[0]=0x3FU;      // 0
     segments[1]=0b00000001;    
-    Display7Segment1Digit_DecodeDigit(1, &segments[2]); 
+    segments[2]=0x06U;      // 1 
     segments[3]=0b00000001;  
-    Display7Segment1Digit_DecodeDigit(2, &segments[4]); 
+    segments[4]=0x5BU;      // 2 
     segments[5]=0b00000000; 
-    Display7Segment1Digit_DecodeDigit(3, &segments[6]); 
+    segments[6]=0x4FU;      // 3
     segments[7]=0b00000000;  
-    Display7Segment1Digit_DecodeDigit(4, &segments[8]);    
+    segments[8]=0x66U;      // 4    
     segments[9]=0b00000000; 
-    Display7Segment1Digit_DecodeDigit(5, &segments[10]); 
+    segments[10]=0x6DU;     // 5 
     segments[11]=0b00000000; 
-    Display7Segment1Digit_DecodeDigit(6, &segments[12]); 
+    segments[12]=0x7DU;     // 6
     segments[13]=0b00000000;  
-    Display7Segment1Digit_DecodeDigit(7, &segments[14]); 
+    segments[14]=0x07U;     // 7
     segments[15]=0b00000000; 
                
-    TM1638_SetSegments_Seg1ToSeg10(&tm1, segments, 16, 0); delay_ms(1000);
+    TM1638_Set8SegmentsAndLeds(&tm1, segments, 16, 0); delay_ms(1000);
 
 //*****************************************************            
     TM1638_SetDisplay(&tm1, 1, 0); delay_ms(1000);
@@ -88,35 +87,43 @@ void main(void){
     TM1638_SetDisplay(&tm1, 1, 5); delay_ms(1000);
     TM1638_SetDisplay(&tm1, 1, 6); delay_ms(1000); 
     TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
-    TM1638_ResetSegments(&tm1); delay_ms(1000);
+    TM1638_ClearDisplay(&tm1); delay_ms(1000);
     
 //*****************************************************  
-    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x0F); delay_ms(1000);
-    TM1638_SetSegments_FixedAddress(&tm1, 0b00000001, 0x01); delay_ms(1000);
+    TM1638_SetFixedAddress(&tm1, 0b00000001, 0x0F); delay_ms(1000);
+    TM1638_SetFixedAddress(&tm1, 0b00000001, 0x01); delay_ms(1000);
     
 //*****************************************************        
-    Display7Segment1Digit_DecodeDigit(9, &segments[0]);    
-    Display7Segment1Digit_DecodeDigit(0, &segments[1]); 
-    Display7Segment1Digit_DecodeDigit(2, &segments[2]); 
-    Display7Segment1Digit_DecodeDigit(7, &segments[3]); 
-    Display7Segment1Digit_DecodeDigit(4, &segments[4]); 
-    Display7Segment1Digit_DecodeDigit(6, &segments[5]); 
-    Display7Segment1Digit_DecodeDigit(5, &segments[6]); 
-    Display7Segment1Digit_DecodeDigit(3, &segments[7]);      
+    segments[0]=0x3FU;      // 0 
+    segments[1]=0x06U;      // 1 
+    segments[2]=0x5BU;      // 2 
+    segments[3]=0x4FU;      // 3 
+    segments[4]=0x66U;      // 4    
+    segments[5]=0x6DU;      // 5 
+    segments[6]=0x7DU;      // 6 
+    segments[7]=0x07U;      // 7     
     
-    TM1638_SetSegments_Seg1ToSeg8_KeepSeg9Seg10(&tm1, segments, 8, 0); delay_ms(1000);
-
+    TM1638_Set8Segments(&tm1, segments, 8, 0); delay_ms(1000);
+    TM1638_ClearDisplay(&tm1);  delay_ms(1000);
+        
 //*****************************************************    
     TM1638_SendCommand(&tm1, 0b10000111); delay_ms(1000); 
-    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(2000);    
-    TM1638_ResetSegments(&tm1);
+    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);    
+    TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
+//*****************************************************
+    TM1637_Set8Segments_4Digits_1st(&tm1, segments); delay_ms(1000);
+    TM1638_ClearDisplay(&tm1);  delay_ms(1000); 
+     
+    TM1637_Set8Segments_4Digits_2nd(&tm1, segments); delay_ms(1000);
+    TM1638_ClearDisplay(&tm1);  delay_ms(1000);
+    
 //*****************************************************     
-//    TM1638_GetButtons_K1K2K3(&tm1, &key[0]); 
+//    TM1638_Get24Buttons(&tm1, &key[0]); 
         
     while(1){  
-        TM1638_GetButtons_K3(&tm1, &key[0]);      
-//        key[0] = TM1638_ReturnButtons_K3(&tm1);
+        TM1638_Get8Buttons(&tm1, &key[0]);      
+//        key[0] = TM1638_Return8Buttons(&tm1);
         if(key_last != key[0]){
             key_last = key[0];
             if(key[0] != 0){
