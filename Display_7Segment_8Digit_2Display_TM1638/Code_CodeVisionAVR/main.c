@@ -112,10 +112,10 @@ void main(void){
     TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
-    TM1637_Set8Segments_4Digits_1st(&tm1, segments); delay_ms(1000);
+    TM1638_Set8Segments_4Digits_1st(&tm1, segments); delay_ms(1000);
     TM1638_ClearDisplay(&tm1);  delay_ms(1000); 
      
-    TM1637_Set8Segments_4Digits_2nd(&tm1, segments); delay_ms(1000);
+    TM1638_Set8Segments_4Digits_2nd(&tm1, segments); delay_ms(1000);
     TM1638_ClearDisplay(&tm1);  delay_ms(1000);
     
 //*****************************************************     

@@ -136,7 +136,7 @@ uint8_t TM1637_SetDisplay(TM1637_t *tm, uint8_t onoff, uint8_t brightness);
  *
  * @param tm Pointer to TM1637 handle structure.
  */
-void TM1637_ResetSegments(TM1637_t *tm);
+void TM1637_ClearDisplay(TM1637_t *tm);
 
 /**
  * @brief Write multiple segment data to the TM1637 using address auto-increment mode.
@@ -160,7 +160,7 @@ void TM1637_ResetSegments(TM1637_t *tm);
  *          Bit 1: Length exceeded remaining digits and corrected
  *          Bit 2: Length was zero and corrected to 1
  */
-uint8_t TM1637_SetSegments(TM1637_t *tm, uint8_t segments[], uint8_t length, uint8_t address);
+uint8_t TM1637_Set8Segments(TM1637_t *tm, uint8_t segments[], uint8_t length, uint8_t address);
 
 /**
  * @brief Write segment data for 4 digits starting from the first digit.
@@ -171,8 +171,8 @@ uint8_t TM1637_SetSegments(TM1637_t *tm, uint8_t segments[], uint8_t length, uin
  * @param tm Pointer to TM1637 handle structure.
  * @param segments Array of 4 bytes representing segment data for digits 1 to 4.
  */
-static inline void TM1637_SetSegments_4Digits(TM1637_t *tm, uint8_t segments[]){
-    TM1637_SetSegments(tm, segments, 4, 0);
+static inline void TM1637_Set8Segments_4Digits(TM1637_t *tm, uint8_t segments[]){
+    TM1637_Set8Segments(tm, segments, 4, 0);
 }
 
 /**
@@ -194,7 +194,7 @@ static inline void TM1637_SetSegments_4Digits(TM1637_t *tm, uint8_t segments[]){
  * @return Error flags (bitfield):
  *         Bit 0: Address was out of range and corrected
  */
-uint8_t TM1637_SetSegments_FixedAddress(TM1637_t *tm, uint8_t data, uint8_t address);
+uint8_t TM1637_SetFixedAddress(TM1637_t *tm, uint8_t data, uint8_t address);
 
 
 #pragma library tm1637.lib

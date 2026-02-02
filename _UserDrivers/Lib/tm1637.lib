@@ -136,7 +136,7 @@ uint8_t TM1637_SetDisplay(TM1637_t *tm, uint8_t onoff, uint8_t brightness){
 }
 
 //***************************************
-void TM1637_ResetSegments(TM1637_t *tm){
+void TM1637_ClearDisplay(TM1637_t *tm){
     uint8_t i=0;    
     
     TM1637_Start(tm);
@@ -157,12 +157,12 @@ void TM1637_Config(TM1637_t *tm){
     TM1637_DIO_WritePin(tm, 1);
     TM1637_DELAY(TM1637_HALF_BIT_US*2);
 
-    TM1637_ResetSegments(tm);
+    TM1637_ClearDisplay(tm);
     TM1637_SetDisplay(tm, 1, 7);           
 }
 
 //***************************************
-uint8_t TM1637_SetSegments(TM1637_t *tm, uint8_t segments[], uint8_t length, uint8_t address){
+uint8_t TM1637_Set8Segments(TM1637_t *tm, uint8_t segments[], uint8_t length, uint8_t address){
     uint8_t error = 0;
     uint8_t i=0;    
     uint8_t command_address = TM1637_COMMAND_ADDRESS;
@@ -198,7 +198,7 @@ uint8_t TM1637_SetSegments(TM1637_t *tm, uint8_t segments[], uint8_t length, uin
 }
 
 //***************************************
-uint8_t TM1637_SetSegments_FixedAddress(TM1637_t *tm, uint8_t data, uint8_t address){
+uint8_t TM1637_SetFixedAddress(TM1637_t *tm, uint8_t data, uint8_t address){
     uint8_t error = 0;
     uint8_t command_address = TM1637_COMMAND_ADDRESS; 
     
@@ -214,5 +214,5 @@ uint8_t TM1637_SetSegments_FixedAddress(TM1637_t *tm, uint8_t data, uint8_t addr
     TM1637_WriteByte(tm, data);
     TM1637_Stop(tm); 
     
-    return error;   
+    return error;  
 }

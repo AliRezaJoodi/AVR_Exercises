@@ -51,7 +51,7 @@ void main(void){
     TM1637_Config(&tm1);
 
     Display7Segment4Digit_DecodeTime_HourMin(time_t, &segments[0]);        
-    TM1637_SetSegments_4Digits(&tm1, segments);
+    TM1637_Set8Segments_4Digits(&tm1, segments);
     
     while(1){
                                 

@@ -48,25 +48,25 @@ void main(void){
 
 //    sprintf(txt, "0x%02X\r", key[0]); puts(txt);
             
-    TM1637_SetSegments(&tm1, seg1, 6, 0);
-    TM1637_SetSegments(&tm2, seg2, 6, 0);
+    TM1637_Set8Segments(&tm1, seg1, 6, 0);
+    TM1637_Set8Segments(&tm2, seg2, 6, 0);
     delay_ms(1000);  
      
-    TM1637_SetSegments_FixedAddress(&tm1, seg1[5], 2); delay_ms(1000);
-    TM1637_ResetSegments(&tm1); delay_ms(1000);
-    TM1637_SetSegments_FixedAddress(&tm1, seg1[2], 5); delay_ms(1000);    
+    TM1637_SetFixedAddress(&tm1, seg1[5], 2); delay_ms(1000);
+    TM1637_ClearDisplay(&tm1); delay_ms(1000);
+    TM1637_SetFixedAddress(&tm1, seg1[2], 5); delay_ms(1000);    
     TM1637_SendCommand(&tm1, 0b10000111); delay_ms(1000); //Turn off the display 
     TM1637_SetDisplay(&tm1, 1, 7); delay_ms(1000);
     
-    TM1637_ResetSegments(&tm2);
-    TM1637_SetSegments_4Digits(&tm2, seg1); delay_ms(1000);
+    TM1637_ClearDisplay(&tm2);
+    TM1637_Set8Segments_4Digits(&tm2, seg1); delay_ms(1000);
     
     while(1){ 
 //        sprintf(txt, "0x%02X\r", key[0]); puts(txt);
-        TM1637_SetSegments(&tm1, seg1, 6, 0); delay_ms(500);
-        TM1637_SetSegments(&tm2, seg2, 6, 0); delay_ms(500);  
-        TM1637_ResetSegments(&tm1); 
-        TM1637_ResetSegments(&tm2);
+        TM1637_Set8Segments(&tm1, seg1, 6, 0); delay_ms(500);
+        TM1637_Set8Segments(&tm2, seg2, 6, 0); delay_ms(500);  
+        TM1637_ClearDisplay(&tm1); 
+        TM1637_ClearDisplay(&tm2);
         delay_ms(500);                            
     };
 }

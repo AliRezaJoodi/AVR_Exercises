@@ -234,7 +234,7 @@ uint8_t TM1638_Set8Segments(TM1638_t *tm, uint8_t segments[], uint8_t length, ui
  * @param segments Array of 4 bytes representing segment data for Grid 1 to Grid 4.
  *                Each byte represents the segment states for one digit.
  */
-void TM1637_Set8Segments_4Digits_1st(TM1638_t *tm, uint8_t segments[]);
+void TM1638_Set8Segments_4Digits_1st(TM1638_t *tm, uint8_t segments[]);
 
 /**
  * @brief Set digits 5 to 8 (Grid 5 to Grid 8) of the TM1637 display.
@@ -247,7 +247,7 @@ void TM1637_Set8Segments_4Digits_1st(TM1638_t *tm, uint8_t segments[]);
  * @param tm Pointer to TM1638 handle structure.
  * @param segments Array of 4 bytes representing segment data for Grid 5 to Grid 8.
  */
-void TM1637_Set8Segments_4Digits_2nd(TM1638_t *tm, uint8_t segments[]);
+void TM1638_Set8Segments_4Digits_2nd(TM1638_t *tm, uint8_t segments[]);
 
 /**
  * @brief Set the 8 LEDs connected to SEG9.
