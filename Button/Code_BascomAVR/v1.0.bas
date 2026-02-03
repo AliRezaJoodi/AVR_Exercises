@@ -15,7 +15,7 @@ Dim R As Word : R = 3000
 Dim I2 As Word : I2 = 0
 Dim Status_old As Byte
 
-Dim Value As Byte : Value = 0
+Dim Value As Byte : Value = 100
 Gosub Display_value
 
 Do
@@ -97,5 +97,4 @@ Display_value:
    Cls : Lcd "Number= " ; Value
    Locate 2 , 1 : Lcd "Get Button"
 Return
-
 
