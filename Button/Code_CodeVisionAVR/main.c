@@ -1,11 +1,12 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include "_ExtraLibrary\_hardware_v1.0.h"
-
-#include <mega32a.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <mega32a.h>
 #include <delay.h>
+
+#include "hardware.h"
 
 // Alphanumeric LCD Module functions
 #asm
@@ -13,7 +14,7 @@
 #endasm
 #include <lcd.h>
 
-#include <utility.h>
+#include <utility_bit.h>
 #include <button.h>
 
 void LCD_Config(void);
@@ -23,58 +24,55 @@ void main(void){
     uint8_t value=100;
     uint8_t value_last=0;
 
-Button_t button1_t = {
-    .btn_ddr  = &BUTTON1_DDR,
-    .btn_pin  = &BUTTON1_PIN,
-    .btn_port = &BUTTON1_PORT,
-    .btn_bit  = BUTTON1_BIT,
+Button_t button_incr = {
+    .hw_ddr  = &BUTTON1_DDR,
+    .hw_pin  = &BUTTON1_PIN,
+    .hw_port = &BUTTON1_PORT,
+    .hw_bit  = BUTTON1_BIT,
     .status   = 0,
     .counter  = 0
 };
 
-Button_t button2_t = {
-    .btn_ddr  = &BUTTON2_DDR,
-    .btn_pin  = &BUTTON2_PIN,
-    .btn_port = &BUTTON2_PORT,
-    .btn_bit  = BUTTON2_BIT,
+Button_t button_decr = {
+    .hw_ddr  = &BUTTON2_DDR,
+    .hw_pin  = &BUTTON2_PIN,
+    .hw_port = &BUTTON2_PORT,
+    .hw_bit  = BUTTON2_BIT,
     .status   = 0,
     .counter  = 0
 };
 
-Button_t button3_t = {
-    .btn_ddr  = &BUTTON3_DDR,
-    .btn_pin  = &BUTTON3_PIN,
-    .btn_port = &BUTTON3_PORT,
-    .btn_bit  = BUTTON3_BIT,
+Button_t button_clear = {
+    .hw_ddr  = &BUTTON3_DDR,
+    .hw_pin  = &BUTTON3_PIN,
+    .hw_port = &BUTTON3_PORT,
+    .hw_bit  = BUTTON3_BIT,
     .status   = 0,
     .counter  = 0
 };
 
-    Button_Config(&button1_t); Button_DisablePullUp(&button1_t);
-    Button_Config(&button2_t);
-    Button_Config(&button3_t);
+    Button_Config(&button_incr); 
+    Button_SetPullUp(&button_incr, 1);
+    Button_Config(&button_decr);
+    Button_Config(&button_clear);
         
     LCD_Config();
     LCD_DisplayMainPage(value);
    
     while(1){ 
-        if(Button_SingleClick(&button1_t)){
+        if( Button_GetAutoRepeat_NonBlocking(&button_incr) ){
             ++value;
         }
         
-        if(Button_AutoRepeat_NonBlocking(&button2_t)){
-            ++value;
+        if( Button_GetSingleClick(&button_decr) ){
+            --value;
         }
         
-        if(Button_LongPress_NonBlocking(&button3_t)){
-            ++value;
+        if( Button_GetLongPress_NonBlocking(&button_clear) ){
+            value=0;
         }
         
-//        if(Button_SingleClick_NonBlocking(&button2_t)){
-//            ++value;
-//        }
-        
-        if(value_last!=value){
+        if( value_last!=value ){
             value_last=value;
             LCD_DisplayMainPage(value);
         }

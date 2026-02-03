@@ -33,7 +33,7 @@
 
 #ifndef TM1638_HARDWARE
 #define TM1638_HARDWARE
-    #warning "TM1638_HARDWARE is not defined. Using default TM1638 pin configuration."
+    #warning "TM1638_HARDWARE is not defined; default configuration will be used."
     #define TM1638_CLK_DDR         DDRC
     #define TM1638_CLK_PORT        PORTC
     #define TM1638_CLK_BIT         7
