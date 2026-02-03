@@ -3,14 +3,15 @@
 #ifndef _BUTTON_FIXED_INCLUDED
 #define _BUTTON_FIXED_INCLUDED
 
-//#include <main.h>
+
 #include <io.h>
 #include <delay.h>
 
 #include "hardware.h"
 
-#ifndef _BUTTON_FIXED_HARDWARE
-#define _BUTTON_FIXED_HARDWARE    
+#ifndef BUTTON_FIXED_HARDWARE
+#define BUTTON_FIXED_HARDWARE
+    #warning "BUTTON_FIXED_HARDWARE is not defined; default configuration will be used."    
     #define PRESSED             0 
     #define BUTTONLAG1          30        //ms 
     #define BUTTONLAG2          1000      //Button Lag

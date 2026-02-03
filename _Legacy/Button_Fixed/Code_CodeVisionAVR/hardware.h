@@ -4,7 +4,7 @@
 #define _HARDWARE_INCLUDED
 
 
-#define _BUTTON_FIXED_HARDWARE    
+#define BUTTON_FIXED_HARDWARE    
     #define PRESSED             0 
     #define BUTTONLAG1          30        //ms 
     #define BUTTONLAG2          1000      //Button Lag

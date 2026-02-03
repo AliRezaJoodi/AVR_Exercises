@@ -37,6 +37,7 @@ void main(void){
 //********************************************************
 void LCD_DisplayMainPage(unsigned char value){
     char txt[16];
+    
     itoa(value,txt);
     lcd_clear();
     lcd_gotoxy(0,0); lcd_putsf("Number= "); lcd_puts(txt); lcd_putsf("  ");
@@ -45,7 +46,8 @@ void LCD_DisplayMainPage(unsigned char value){
 
 //********************************************************
 void LCD_Config(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16);
+    lcd_clear();   
 }
 
 
