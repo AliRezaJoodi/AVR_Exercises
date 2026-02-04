@@ -6,12 +6,12 @@
 //******************************************************
 uint16_t Average_BlockUpdate_u16(uint16_t value, AverageBlock_u16_t *avg){
     avg->sum += value;
-    avg->i++;
+    avg->count ++;
 
-    if(avg->i >= AVERAGE_COUNT){
+    if(avg->count >= AVERAGE_COUNT){
         avg->average = (uint16_t)(avg->sum / AVERAGE_COUNT);
         avg->sum = 0;
-        avg->i = 0;
+        avg->count = 0;
     }
 
     return avg->average;
@@ -20,16 +20,18 @@ uint16_t Average_BlockUpdate_u16(uint16_t value, AverageBlock_u16_t *avg){
 // Moving Average Method with Circular Buffer
 //******************************************************
 uint16_t Average_MovingWithCircularBuffer_u16(uint16_t value, AverageMoving_u16_t *avg){
-    avg->sum -= avg->buf[avg->i];
-    avg->buf[avg->i] = value;
+    avg->sum -= avg->buf[avg->index];
+    avg->buf[avg->index] = value;
     avg->sum += value;
 
-    avg->i++;
-    if(avg->i >= AVERAGE_COUNT)
-        avg->i = 0;
+    avg->index ++;
+    if(avg->index >= AVERAGE_COUNT){
+        avg->index = 0;
+    }
 
-    if(avg->count < AVERAGE_COUNT)
-        avg->count++;
+    if(avg->count < AVERAGE_COUNT){
+        avg->count ++;
+    }
 
     return (uint16_t)(avg->sum / avg->count);
 }

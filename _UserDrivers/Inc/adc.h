@@ -6,7 +6,7 @@
 
 #include <stdint.h>
 #include <delay.h>
-#include <utility.h>
+#include <utility_bit.h>
 
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
@@ -82,18 +82,18 @@
     #define ADC_SetClockSource(MODE)                 ADCSRA=(ADCSRA & 0b11111000) | MODE; 
     #define ADC_SetVoltageReference(MODE)            ADMUX=(ADMUX & 0b00111111) | MODE; 
     #define ADC_SetResolution(MODE)                  ADMUX=(ADMUX & 0b11011111) | MODE; 
-    #define ADC_EnableInterrupt(STATUS)              if(STATUS){SetBit(ADCSRA,ADIE);} else{ClearBit(ADCSRA,ADIE);}
+    #define ADC_EnableInterrupt(STATUS)              if(STATUS){SET_BIT(ADCSRA,ADIE);} else{CLEAR_BIT(ADCSRA,ADIE);}
     #define ADC_SetAutoTriggerSource(MODE)           SFIOR=(SFIOR & 0b00011111) | MODE;
-    #define ADC_EnableAutoTrigger(STATUS)            if(STATUS){SetBit(ADCSRA,ADATE);} else{ClearBit(ADCSRA,ADATE);}
+    #define ADC_EnableAutoTrigger(STATUS)            if(STATUS){SET_BIT(ADCSRA,ADATE);} else{CLEAR_BIT(ADCSRA,ADATE);}
     #define ADC_SetInputChannelAndGainSelections(CH) ADMUX=(ADMUX & 0b11100000) | CH; 
-    #define ADC_Enable(STATUS)                       if(STATUS){SetBit(ADCSRA,ADEN);} else{ClearBit(ADCSRA,ADEN);}        
-    #define ADC_StartConversion(STATUS)              if(STATUS){SetBit(ADCSRA,ADSC);} else{ClearBit(ADCSRA,ADSC);}
+    #define ADC_Enable(STATUS)                       if(STATUS){SET_BIT(ADCSRA,ADEN);} else{CLEAR_BIT(ADCSRA,ADEN);}        
+    #define ADC_StartConversion(STATUS)              if(STATUS){SET_BIT(ADCSRA,ADSC);} else{CLEAR_BIT(ADCSRA,ADSC);}
     
     // Check Commands
-    #define CHECK_ADC_ENABLE                GetBit(ADCSRA,ADEN)
-    #define CHECK_ADC_RESOLUTION_256        GetBit(ADMUX,ADLAR) 
-    #define CHECK_ADC_RESOLUTION_1024       (GetBit(ADMUX,ADLAR) ^ 0b00000001) 
-    #define END_ADC_CONVERSION              (GetBit(ADCSRA,ADIF) ^ 0b00000001) 
+    #define CHECK_ADC_ENABLE                GET_BIT(ADCSRA,ADEN)
+    #define CHECK_ADC_RESOLUTION_256        GET_BIT(ADMUX,ADLAR) 
+    #define CHECK_ADC_RESOLUTION_1024       (GET_BIT(ADMUX,ADLAR) ^ 0b00000001) 
+    #define END_ADC_CONVERSION              (GET_BIT(ADCSRA,ADIF) ^ 0b00000001) 
     
 #pragma used+
 
@@ -194,7 +194,7 @@ uint16_t ADC_GetCounts(unsigned char ch){
         delay_us(10);
         ADC_StartConversion(1);
         while(END_ADC_CONVERSION);
-        SetBit(ADCSRA,ADIF);
+        SET_BIT(ADCSRA,ADIF);
         
         if(CHECK_ADC_RESOLUTION_1024){return ADCW;}     // 10Bit Resolution
             else{return ADCH;}                          // 8Bit Resolution
