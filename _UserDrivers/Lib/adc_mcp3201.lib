@@ -7,24 +7,25 @@
 
 //********************************************************
 void MCP3201_Config(void){
-    MCP3201_CS_DDR=1; MCP3201_CS_PORT=1;    
+    MCP3201_CS_DDR = 1; 
+    MCP3201_CS_PORT = 1;    
 }
 
 //********************************************************
 unsigned int _MCP3201_Communication(void){
-    unsigned int value=0;
-    unsigned char msb=0;
-    unsigned char lsb=0;
+    unsigned int value = 0;
+    unsigned char msb = 0;
+    unsigned char lsb = 0;
     
-    MCP3201_CS_PORT=0;
-    msb=spi(0xFF); 
-    lsb=spi(0xFF);
-    MCP3201_CS_PORT=1;
+    MCP3201_CS_PORT = 0;
+    msb = spi(0xFF); 
+    lsb = spi(0xFF);
+    MCP3201_CS_PORT = 1;
     
-    msb=msb&0b00011111;
-    lsb=lsb&0b11111110; 
-    value=GetInt(msb,lsb);
-    value=value>>1;
+    msb = msb & 0b00011111;
+    lsb = lsb & 0b11111110; 
+    value = ( (uint16_t)msb << 8 ) | lsb;
+    value = value>>1;
        
     return value;
 }
@@ -35,7 +36,8 @@ float MCP3201_GetDifferentialADC(void){
     float mv=0;
 
     value_int=_MCP3201_Communication(); 
-    mv=value_int; mv=mv*_MCP3201_GAIN; 
+    mv=value_int;
+    mv=mv*_MCP3201_GAIN; 
     
     return mv;
 }

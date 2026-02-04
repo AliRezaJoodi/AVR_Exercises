@@ -1,22 +1,20 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
+#include <stdlib.h>
 #include <mega32a.h>
 #include <spi.h>
 #include <delay.h>
 #include <alcd.h>
-#include <stdlib.h>
 
-float volt1=0;
-
-#include "Attachment\hardware_v1.0.h"
+#include "hardware.h"
 #include <adc_mcp3201.h>
+
+float volt1 = 0;
 
 void SPI_Config(void);
 void LCD_Config(void);
-
-#pragma used+
-void LCD_DisplayMainPage();
-#pragma used-
+void LCD_DisplayMainPage(void);
         
 void main(void){
     SPI_Config();
@@ -24,7 +22,7 @@ void main(void){
     MCP3201_Config();
 
     while (1){ 
-        volt1=MCP3201_GetDifferentialADC();  
+        volt1 = MCP3201_GetDifferentialADC();  
         
         LCD_DisplayMainPage();
         delay_ms(500);
@@ -40,7 +38,8 @@ void LCD_DisplayMainPage(void){
 
 //********************************************************
 void LCD_Config(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16);
+    lcd_clear();   
 }
 
 //********************************************************
@@ -50,12 +49,12 @@ void SPI_Config(void){
     DDRB.6=0; PORTB.6=0;    //MISO
     DDRB.7=1; PORTB.7=0;    //SCK
 
-// SPI initialization
-// SPI Type: Master
-// SPI Clock Rate: 2000.000 kHz
-// SPI Clock Phase: Cycle Start
-// SPI Clock Polarity: Low
-// SPI Data Order: MSB First
-SPCR=(0<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
-SPSR=(0<<SPI2X);
+    // SPI initialization
+    // SPI Type: Master
+    // SPI Clock Rate: 2000.000 kHz
+    // SPI Clock Phase: Cycle Start
+    // SPI Clock Polarity: Low
+    // SPI Data Order: MSB First
+    SPCR=(0<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+    SPSR=(0<<SPI2X);
 }

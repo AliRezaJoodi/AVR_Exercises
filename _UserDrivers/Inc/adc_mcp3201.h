@@ -4,12 +4,14 @@
 // SPI Clock Polarity: Low
 // SPI Data Order: MSB First
 
+#ifndef _MCP3201_INCLUDED
+#define _MCP3201_INCLUDED
+
+
+#include <stdint.h>
 #include <io.h>
 #include <spi.h>
 #include <utility.h>
-
-#ifndef _MCP3201_INCLUDED
-#define _MCP3201_INCLUDED
 
 #ifndef MCP3201_HARDWARE
 #define MCP3201_HARDWARE
@@ -21,13 +23,10 @@
 #endif
 
 void MCP3201_Config(void);
-
-#pragma used+
 unsigned int _MCP3201_Communication(void);
 float MCP3201_GetDifferentialADC(void);
-#pragma used-
+
 
 #pragma library adc_mcp3201.lib
-
 #endif
 
