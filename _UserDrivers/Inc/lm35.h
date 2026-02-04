@@ -1,15 +1,28 @@
-// GitHub Account:  GitHub.com/AliRezaJoodi
-// Temp unit:       Celsius
+/**
+ * @brief   LM35 temperature sensor conversion utilities
+ *
+ * @details
+ * LM35 outputs a voltage linearly proportional to temperature
+ * in degrees Celsius (10 mV per 1 °C).
+ *
+ * Formula:
+ *  - Temperature (°C) = Voltage (mV) × 0.1
+ *
+ * @author  AliReza Joodi
+ * @see     https://github.com/AliRezaJoodi
+ */
 
 #ifndef _LM35_INCLUDED
 #define _LM35_INCLUDED
 
 
-#define LM35_GAIN           0.1     // 10mV=1^C
-#define LM35_RES            0.4     // Resolution = 0.488^C , (5000mV/1023)/10mV 
+static inline float LM35_ConvertMilliVoltToTemp(float volt_mv){
+    return (volt_mv * 0.1f);
+}
 
-#define LM35_ConvertMilliVoltToTemp(VALUE)      (VALUE*LM35_GAIN)   // Celsius
-#define LM35_ConvertVoltToTemp(VALUE)           LM35_ConvertMilliVoltToTemp(VALUE*1000) // Celsius
+static inline float LM35_ConvertVoltToTemp(float volt_v){
+    return (volt_v * 1000 * 0.1f);
+}
 
 
 #endif

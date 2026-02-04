@@ -12,15 +12,15 @@ void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
 uint16_t number = 589;
-uint8_t number_msb;
-uint8_t number_lsb;
+uint8_t number_msb = 0;
+uint8_t number_lsb = 0;
 
 void main(void){
     LCD_Config(); 
     
     number_msb = GetMsb(number);
     number_lsb = GetLsb(number);
-    number = MakeU16(number_msb,number_lsb); 
+    number = MakeU16(number_msb, number_lsb); 
     
     LCD_DisplayMainPage();  
 

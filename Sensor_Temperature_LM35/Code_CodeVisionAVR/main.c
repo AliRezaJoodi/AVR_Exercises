@@ -37,7 +37,7 @@ void main(void){
     LCD_Config();
 
     while(1){ 
-        input_mv = read_adc(LM35_CH) * 4.8875855; 
+        input_mv = read_adc(ADC_CH) * 4.8875855; 
         temp = LM35_ConvertMilliVoltToTemp(input_mv);
         LCD_DisplayMainPage(input_mv, temp);
         delay_ms(250);                                       

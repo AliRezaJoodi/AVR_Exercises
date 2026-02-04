@@ -4,10 +4,29 @@
 #define _CONVERTER_TEMP_INCLUDED
 
 
-#define TempConverter_KtoC(VALUE)                        (VALUE - 273.15)
-#define TempConverter_CtoK(VALUE)                        (VALUE + 273.15)
-#define TempConverter_CtoF(VALUE)                        ((VALUE * 1.8) + 32)
-#define TempConverter_FtoC(VALUE)                        ((VALUE - 32) / 1.8)
+static inline float Converter_Temp_KtoC(float value){
+    return (value - 273.15f);
+}
+
+static inline float Converter_Temp_KtoF(float value){
+    return (((value - 273.15f) * 1.8f) + 32.0f);
+}
+
+static inline float Converter_Temp_CtoK(float value){
+    return (value + 273.15f);
+}
+
+static inline float Converter_Temp_CtoF(float value){
+    return ((value * 1.8f) + 32.0f);
+}
+
+static inline float Converter_Temp_FtoC(float value){
+    return ((value - 32.0f) * 0.5555556f);
+}
+
+static inline float Converter_Temp_FtoK(float value){
+    return (((value - 32.0f) * 0.5555556f) + 273.15f);
+}
 
 
 #endif

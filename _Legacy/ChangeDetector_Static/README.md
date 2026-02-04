@@ -1,8 +1,7 @@
 ## Change Detector, Static
  
 MCU:		ATmega32  
-Display:    	UART
-Sensor:	    	LM35   
+Display:    	UART 
 
 ### Simulate
 v1.0  

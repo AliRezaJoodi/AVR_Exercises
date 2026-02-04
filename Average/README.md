@@ -1,8 +1,7 @@
 ## Averaging from Analog Input
  
 MCU:		ATmega32   
-Display:    	16x2 Alphanumeric LCD  
-Sensor:	    	LM35   
+Display:    	16x2 Alphanumeric LCD   
 
 ### Simulate
 v1.0  

@@ -1,9 +1,7 @@
 ## Averaging From Analog Input
  
 MCU:		ATmega32  
-Frequency:  	1.000000 MHz  
-Display:    	16x2 Alphanumeric LCD 
-Sensor:	    	LM35   
+Display:    	16x2 Alphanumeric LCD  
 
 ### Folder and Files Description
 It has included:
