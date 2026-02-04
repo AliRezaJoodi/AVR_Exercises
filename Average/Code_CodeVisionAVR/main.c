@@ -85,23 +85,6 @@ void main(void){
 }
 
 //********************************************************
-void ADC_Config(void){
-    // ADC initialization
-    // ADC Clock frequency: 500.000 kHz
-    // ADC Voltage Reference: AVCC pin
-    // ADC Auto Trigger Source: ADC Stopped
-    ADMUX=ADC_VREF_TYPE;
-    ADCSRA=(1<<ADEN) | (0<<ADSC) | (0<<ADATE) | (0<<ADIF) | (0<<ADIE) | (0<<ADPS2) | (0<<ADPS1) | (1<<ADPS0);
-    SFIOR=(0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0);
-}
-
-//********************************************************
-void LCD_Config(void){
-    lcd_init(16);
-    lcd_clear();   
-}
-
-//********************************************************
 void LCD_DisplayMainPage(float volt, uint8_t line){
     char txt[16];
     switch (line){
@@ -123,6 +106,24 @@ void LCD_DisplayMainPage(float volt, uint8_t line){
             break;
     }
 }
+
+//********************************************************
+void ADC_Config(void){
+    // ADC initialization
+    // ADC Clock frequency: 500.000 kHz
+    // ADC Voltage Reference: AVCC pin
+    // ADC Auto Trigger Source: ADC Stopped
+    ADMUX=ADC_VREF_TYPE;
+    ADCSRA=(1<<ADEN) | (0<<ADSC) | (0<<ADATE) | (0<<ADIF) | (0<<ADIE) | (0<<ADPS2) | (0<<ADPS1) | (1<<ADPS0);
+    SFIOR=(0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0);
+}
+
+//********************************************************
+void LCD_Config(void){
+    lcd_init(16);
+    lcd_clear();   
+}
+
 
 
 
