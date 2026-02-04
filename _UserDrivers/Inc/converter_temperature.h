@@ -1,7 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef _CONVERTER_TEMP_INCLUDED
-#define _CONVERTER_TEMP_INCLUDED
+#ifndef _CONVERTER_TEMPERATURE_INCLUDED
+#define _CONVERTER_TEMPERATURE_INCLUDED
 
 
 static inline float Converter_Temp_KtoC(float value){
