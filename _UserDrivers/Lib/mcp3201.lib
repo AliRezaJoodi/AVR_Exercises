@@ -1,0 +1,71 @@
+// GitHub Account: GitHub.com/AliRezaJoodi
+
+#include <mcp3201.h>
+
+#define MCP3201_RESOLUTION      4096U     //12-Bit
+
+#define MCP3201_PIN_INPUT       0U
+#define MCP3201_PIN_OUTPUT      1U
+
+static const float  MCP3201_GAIN = (float)(MCP3201_VREF) / (float)(MCP3201_RESOLUTION);
+
+//***************************************
+static inline void MCP3201_CS_ConfigPin(uint8_t mode){    
+    WRITE_BIT(MCP3201_CS_DDR, MCP3201_CS_BIT, mode);
+    
+    if(mode == MCP3201_PIN_INPUT){ 
+        CLEAR_BIT(MCP3201_CS_PORT, MCP3201_CS_BIT); // Disable pull-up
+    }
+    else{
+        SET_BIT(MCP3201_CS_PORT, MCP3201_CS_BIT); // Idle bus
+    }
+}
+
+//***************************************
+static inline void MCP3201_CS_WritePin(uint8_t status){
+    WRITE_BIT(MCP3201_CS_PORT, MCP3201_CS_BIT, status);
+}
+
+//********************************************************
+void MCP3201_Config(void){
+    MCP3201_CS_ConfigPin(MCP3201_PIN_OUTPUT); 
+    MCP3201_CS_WritePin(1);   
+}
+
+//********************************************************
+uint16_t MCP3201_GetCounts(void){
+    uint16_t value = 0;
+    uint8_t msb = 0;
+    uint8_t lsb = 0;
+    
+    MCP3201_CS_WritePin(0);
+    msb = spi(0xFF); 
+    lsb = spi(0xFF);
+    MCP3201_CS_WritePin(1);
+    
+    msb = msb & 0b00011111;
+    lsb = lsb & 0b11111110; 
+    value = ( (uint16_t)msb << 8 ) | lsb;
+    value = value>>1;
+       
+    return value;
+}
+
+//********************************************************
+float MCP3201_GetMilliVolt(void){
+    uint16_t counts = 0;
+
+    counts = MCP3201_GetCounts();   
+    return (float)(counts) * MCP3201_GAIN;
+}
+
+//********************************************************
+float MCP3201_ConvertCountsToMilliVolt(uint16_t counts){
+    if (counts >= MCP3201_RESOLUTION){
+        counts = MCP3201_RESOLUTION - 1;
+    }
+    
+    return (float)(counts) * MCP3201_GAIN;
+}
+
+

@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include <adc_mcp3201.h>
+#include <mcp3201.h>
 
 float volt1 = 0;
 
@@ -22,8 +22,8 @@ void main(void){
     MCP3201_Config();
 
     while (1){ 
-        volt1 = MCP3201_GetDifferentialADC();  
-        
+        volt1 = MCP3201_GetMilliVolt();
+        //volt1 =  MCP3201_ConvertCountsToMilliVolt( MCP3201_GetCounts() );  
         LCD_DisplayMainPage();
         delay_ms(500);
     }
@@ -31,9 +31,16 @@ void main(void){
 
 //********************************************************
 void LCD_DisplayMainPage(void){
-    char txt[16];
-    lcd_gotoxy(0,0); lcd_putsf("In(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf(" ");
-    lcd_gotoxy(0,1); lcd_putsf("ADC with MCP3201"); 
+    char txt[16]; 
+    
+    lcd_gotoxy(0, 0);
+    lcd_putsf("In(mV):");
+    ftoa(volt1, 1, txt);
+    lcd_puts(txt);
+    lcd_putsf(" ");
+    
+    lcd_gotoxy(0, 1);
+    lcd_putsf("ADC with MCP3201"); 
 }
 
 //********************************************************
