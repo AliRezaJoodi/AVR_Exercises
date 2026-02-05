@@ -6,6 +6,9 @@
 
 #include <stdint.h>
 
+/**
+ * @note Default hardware macros can be overridden by the user.
+ */ 
 #include "hardware.h"
 
 #ifndef AVERAGE_HARDWARE

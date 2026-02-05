@@ -10,20 +10,34 @@
 #include "hardware.h"
 #include <mcp3201.h>
 
-float volt1 = 0;
+float In1 = 0;
+float In2 = 0;
 
 void SPI_Config(void);
 void LCD_Config(void);
 void LCD_DisplayMainPage(void);
         
 void main(void){
+    MCP3201_t mcp1; 
+    MCP3201_t mcp2;
+    
+    mcp1.cs.ddr     = &MCP3201_CS1_DDR;
+    mcp1.cs.port    = &MCP3201_CS1_PORT;
+    mcp1.cs.index   =  MCP3201_CS1_BIT;
+
+    mcp2.cs.ddr     = &MCP3201_CS2_DDR;
+    mcp2.cs.port    = &MCP3201_CS2_PORT;
+    mcp2.cs.index   =  MCP3201_CS2_BIT;
+        
     SPI_Config();
     LCD_Config();
-    MCP3201_Config();
-
+    MCP3201_Config(&mcp1);
+    MCP3201_Config(&mcp2);
+    
     while (1){ 
-        volt1 = MCP3201_GetMilliVolt();
-        //volt1 =  MCP3201_ConvertCountsToMilliVolt( MCP3201_GetCounts() );  
+        In1 = MCP3201_GetMilliVolt(&mcp1);
+        In2 = MCP3201_GetMilliVolt(&mcp2);
+        
         LCD_DisplayMainPage();
         delay_ms(500);
     }
@@ -31,16 +45,19 @@ void main(void){
 
 //********************************************************
 void LCD_DisplayMainPage(void){
-    char txt[16]; 
+    char txt[5]; 
     
     lcd_gotoxy(0, 0);
-    lcd_putsf("In(mV):");
-    ftoa(volt1, 1, txt);
+    lcd_putsf("In1(mV):");
+    itoa(In1, txt);
     lcd_puts(txt);
-    lcd_putsf(" ");
+    lcd_putsf("   ");
     
     lcd_gotoxy(0, 1);
-    lcd_putsf("ADC with MCP3201"); 
+    lcd_putsf("In2(mV):");
+    itoa(In2, txt);
+    lcd_puts(txt);
+    lcd_putsf("   ");
 }
 
 //********************************************************

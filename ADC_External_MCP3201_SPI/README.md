@@ -1,4 +1,4 @@
-## External ADC With SPI Interface, MCP3201
+## External ADC, MCP3201, SPI Interface
               
 MCU:     	ATmega32  
 Display:        16x2 Character LCD  
