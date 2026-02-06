@@ -7,6 +7,10 @@
 #ifndef _MCP3201_INCLUDED
 #define _MCP3201_INCLUDED
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 #include <stdint.h>
 #include <io.h>
@@ -52,6 +56,9 @@ float MCP3201_GetMilliVolt(MCP3201_t *mcp);
 float MCP3201_ConvertCountsToMilliVolt(uint16_t counts);
 
 
-#pragma library mcp3201.lib
+#ifdef __cplusplus
+}
+#endif
+
 #endif
 

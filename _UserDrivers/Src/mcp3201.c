@@ -9,7 +9,7 @@
 
 static const float  MCP3201_GAIN = (float)(MCP3201_VREF) / (float)(MCP3201_RESOLUTION);
 
-//***************************************
+//********************************************************
 static inline void MCP3201_CS_ConfigPin(MCP3201_t *mcp, uint8_t mode){    
     WRITE_BIT( *(mcp->cs.ddr), mcp->cs.index, mode );
     
@@ -21,15 +21,20 @@ static inline void MCP3201_CS_ConfigPin(MCP3201_t *mcp, uint8_t mode){
     }
 }
 
-//***************************************
+//********************************************************
 static inline void MCP3201_CS_WritePin(MCP3201_t *mcp, uint8_t status){
     WRITE_BIT( *(mcp->cs.port), mcp->cs.index, status );
 }
 
 //********************************************************
+static inline uint8_t MCP3201_SPI_Transfer(uint8_t data){
+    return spi(data);
+}
+
+//********************************************************
 void MCP3201_Config(MCP3201_t *mcp){
     MCP3201_CS_ConfigPin(mcp, MCP3201_PIN_OUTPUT); 
-    MCP3201_CS_WritePin(mcp, 1);   
+    MCP3201_CS_WritePin(mcp, 1);    // Idle bus   
 }
 
 //********************************************************
@@ -39,8 +44,8 @@ uint16_t MCP3201_GetCounts(MCP3201_t *mcp){
     uint8_t lsb = 0;
     
     MCP3201_CS_WritePin(mcp, 0);
-    msb = spi(0xFF); 
-    lsb = spi(0xFF);
+    msb = MCP3201_SPI_Transfer(0xFF); 
+    lsb = MCP3201_SPI_Transfer(0xFF);
     MCP3201_CS_WritePin(mcp, 1);
     
     msb = msb & 0b00011111;
