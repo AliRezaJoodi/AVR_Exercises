@@ -6,6 +6,14 @@ Note: Setting on CodeVision AVR
 
 ![Setting on CodeVision AVR](_UserDrivers/Setting2.png)
 
+
+Note:  
+It uses shared libraries from:  
+[CrossPlatformLibraries](https://github.com/AliRezaJoodi/CrossPlatformLibraries)  
+Please download and place it in drive C:  
+(for example: C:\CrossPlatformLibraries)  
+
+
 1: Bascom AVR  
 2: CodeVision AVR  
 3: mikroC PRO for AVR 

@@ -1,10 +1,10 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <mega32a.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include <mega32a.h>
 #include <alcd.h>
 #include <delay.h>
-#include <stdlib.h>
 
 #include <utility_byte.h>
 
