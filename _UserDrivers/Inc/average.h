@@ -1,7 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef _AVERAGE_INCLUDED
-#define _AVERAGE_INCLUDED
+#ifndef AVERAGE_INCLUDED
+#define AVERAGE_INCLUDED
 
 
 #include <stdint.h>

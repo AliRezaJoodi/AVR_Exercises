@@ -47,19 +47,19 @@ void main(void){
            
     while(1){
         input1_u16 = read_adc(ADC_CH1);
-        if(Changed_Exact_u16(input1_u16, &input1_last_u16)){      //Difference = 4.88 mv
+        if(Changed_UpdateExact_u16(input1_u16, &input1_last_u16)){      //Difference = 4.88 mv
             buf = input1_u16 * 4.8875855;
             UART_MonitorTemp1_f32(buf);
         }
           
 //        input2_u16 = read_adc(ADC_CH2);
-//        if(Changed_Exact_u16(input2_u16, &input2_last_u16)){      //Difference = 4.88 mv
+//        if(Changed_UpdateExact_u16(input2_u16, &input2_last_u16)){      //Difference = 4.88 mv
 //            buf = input2_u16 * 4.8875855;
 //            UART_MonitorTemp2_f32(buf);
 //        }
           
         input2_u16 = read_adc(ADC_CH2);
-        if(Changed_Threshold_u16(input2_u16, &input2_last_u16, 20)){   //Difference = (4.88 mv)*x
+        if(Changed_UpdateThreshold_u16(input2_u16, &input2_last_u16, 20)){   //Difference = (4.88 mv)*x
             buf = input2_u16 * 4.8875855;
             UART_MonitorTemp2_f32(buf);
         }                                            

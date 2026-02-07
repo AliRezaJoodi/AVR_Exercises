@@ -252,7 +252,7 @@ Build=336
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\_UserDrivers\Inc
 IncludePath2=..\..\..\_UserDrivers\Inc\Legacy
-IncludePath3=C:\CrossPlatformLibraries\Common
+IncludePath3=C:\CrossPlatformLibraries\Utils
 IncludePath4=
 IncludePath5=
 IncludePath6=
@@ -1013,6 +1013,6 @@ F8=C:\cvavr\inc\delay.h
 F9=C:\cvavr\inc\alcd.h
 F10=hardware.h
 F11=..\..\..\_UserDrivers\Inc\Legacy\mcp3201_fixed.h
-F12=C:\CrossPlatformLibraries\Common\utility_bit.h
+F12=C:\CrossPlatformLibraries\Utils\utility_bit.h
 [FoldedCode18]
 Blocks=0
