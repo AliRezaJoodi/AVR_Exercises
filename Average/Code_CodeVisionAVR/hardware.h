@@ -1,8 +1,8 @@
-#ifndef _HARDWARE_INCLUDED
-#define _HARDWARE_INCLUDED
+#ifndef HARDWARE_INCLUDED
+#define HARDWARE_INCLUDED
 
 
-#define AVERAGE_HARDWARE     
+#define AVERAGE_CONFIG     
     #define AVERAGE_COUNT     10   // <256 
 
 #define ADC_CH1        7

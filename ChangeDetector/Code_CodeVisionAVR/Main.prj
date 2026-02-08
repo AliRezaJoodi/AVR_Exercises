@@ -390,7 +390,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1548227271
+TimeStamp=1548269730
 [BookmarksFoldedCode]
 Files=37
 F1=T3.c
@@ -1267,8 +1267,6 @@ F10=C:\CrossPlatformLibraries\Modules\changed.h
 Files=2
 F1=C:\CrossPlatformLibraries\Modules\changed.h
 F2=C:\cvavr\inc\stdint.h
-[FoldedCode34]
-Blocks=0
 [Bookmarks36]
 TimeStamp=1548227248
 Row=20
@@ -1285,8 +1283,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode36]
-Blocks=0
 [Bookmarks37]
 TimeStamp=1548227232
 Row=7
@@ -1303,6 +1299,10 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode34]
+Blocks=0
+[FoldedCode36]
+Blocks=0
 [FoldedCode37]
 Blocks=0
 [FoldedCode35]
