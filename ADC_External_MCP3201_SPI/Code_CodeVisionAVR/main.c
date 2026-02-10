@@ -31,8 +31,8 @@ void main(void){
         
     SPI_Config();
     LCD_Config();
-    MCP3201_Config(&mcp1);
-    MCP3201_Config(&mcp2);
+    MCP3201_Init(&mcp1);
+    MCP3201_Init(&mcp2);
     
     while (1){ 
         In1 = MCP3201_GetMilliVolt(&mcp1);
