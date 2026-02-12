@@ -19,22 +19,22 @@ void main(void){
     UART_Config();         
     putsf("Loading ...\r");
     
-    temp_k = Converter_Temp_CtoK(temp_c);
+    temp_k = ConvertTemp_CtoK(temp_c);
     ftoa(temp_k, 2, txt); putsf("\rTemp(^K): "); puts(txt); 
     
-    temp_f = Converter_Temp_CtoF(temp_c);
+    temp_f = ConvertTemp_CtoF(temp_c);
     ftoa(temp_f, 2, txt); putsf("\rTemp(^F): "); puts(txt); 
     
-    temp_c = Converter_Temp_KtoC(temp_k);
+    temp_c = ConvertTemp_KtoC(temp_k);
     ftoa(temp_c, 2, txt); putsf("\rTemp(^C): "); puts(txt); 
 
-    temp_f = Converter_Temp_KtoF(temp_k);
+    temp_f = ConvertTemp_KtoF(temp_k);
     ftoa(temp_f, 2, txt); putsf("\rTemp(^F): "); puts(txt); 
         
-    temp_c = Converter_Temp_FtoC(temp_f);
+    temp_c = ConvertTemp_FtoC(temp_f);
     ftoa(temp_c, 2, txt); putsf("\rTemp(^C): "); puts(txt);
     
-    temp_k = Converter_Temp_FtoK(temp_f);
+    temp_k = ConvertTemp_FtoK(temp_f);
     ftoa(temp_k, 2, txt); putsf("\rTemp(^K): "); puts(txt);
            
     while(1){                                    

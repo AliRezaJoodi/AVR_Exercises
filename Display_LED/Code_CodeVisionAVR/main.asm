@@ -1173,39 +1173,44 @@ __CLEAR_SRAM:
 	.EQU __sm_adc_noise_red=0x10
 	.SET power_ctrl_reg=mcucr
 	#endif
+;void Output_Init(void);
+;void main(void){
+; 0000 000A void main(void){
 
 	.CSEG
-_Output_Config:
-; .FSTART _Output_Config
-	SBI  0x1A,0
-	CBI  0x1B,0
-	SBI  0x1A,1
-	CBI  0x1B,1
-	RET
-; .FEND
-;void main(void){
-; 0000 0009 void main(void){
 _main:
 ; .FSTART _main
-; 0000 000A Output_Config();
-	RCALL _Output_Config
-; 0000 000B 
-; 0000 000C LED1=OUT1_ACTIVE;
+; 0000 000B Output_Init();
+	RCALL _Output_Init
+; 0000 000C 
+; 0000 000D while(1){
+_0x3:
+; 0000 000E LED1 = OUT1_ACTIVE; delay_ms(500);
 	SBI  0x1B,0
-; 0000 000D LED2_TURNON; delay_ms(1000); LED2_TURNOFF;
-	SBI  0x1B,1
-	LDI  R26,LOW(1000)
-	LDI  R27,HIGH(1000)
+	LDI  R26,LOW(500)
+	LDI  R27,HIGH(500)
 	CALL _delay_ms
-	CBI  0x1B,1
-; 0000 000E 
-; 0000 000F while(1){
-_0x11:
+; 0000 000F LED1 = !OUT1_ACTIVE; delay_ms(500);
+	CBI  0x1B,0
+	LDI  R26,LOW(500)
+	LDI  R27,HIGH(500)
+	CALL _delay_ms
 ; 0000 0010 }
-	RJMP _0x11
+	RJMP _0x3
 ; 0000 0011 }
-_0x14:
-	RJMP _0x14
+_0xA:
+	RJMP _0xA
+; .FEND
+;void Output_Init(void){
+; 0000 0014 void Output_Init(void){
+_Output_Init:
+; .FSTART _Output_Init
+; 0000 0015 OUT1_DDR = 1;
+	SBI  0x1A,0
+; 0000 0016 OUT1_PORT =! OUT1_ACTIVE;
+	CBI  0x1B,0
+; 0000 0017 }
+	RET
 ; .FEND
 
 	.CSEG
