@@ -1,5 +1,5 @@
-#ifndef _HARDWARE_INCLUDED
-#define _HARDWARE_INCLUDED
+#ifndef HARDWARE_INCLUDED
+#define HARDWARE_INCLUDED
 
 #define BUTTON_CONFIG
     #define BUTTON_SINGLE_CLICK_LAG     30U          // Single Click Lag, Value: 0~65535, Unit: ms  

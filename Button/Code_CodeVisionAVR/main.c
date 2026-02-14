@@ -6,16 +6,15 @@
 #include <mega32a.h>
 #include <delay.h>
 
-#include "hardware.h"
-
 // Alphanumeric LCD Module functions
 #asm
    .equ __lcd_port=0x12 ;PORTD
 #endasm
 #include <lcd.h>
 
-#include <utility_bit.h>
-#include <button.h>
+#include "hardware.h"
+#include "utility_bit.h"
+#include "button.h"
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
