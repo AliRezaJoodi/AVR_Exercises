@@ -29,8 +29,9 @@ Button_t button_incr = {
     .hw_pin  = &BUTTON1_PIN,
     .hw_port = &BUTTON1_PORT,
     .hw_bit  = BUTTON1_BIT,
-    .status   = 0,
-    .counter  = 0
+    .config  = BUTTON_MODE_PULLUP | BUTTON_ACTIVE_LOW,       
+    .state   = 0,
+    .counter = 0
 };
 
 Button_t button_decr = {
@@ -38,7 +39,8 @@ Button_t button_decr = {
     .hw_pin  = &BUTTON2_PIN,
     .hw_port = &BUTTON2_PORT,
     .hw_bit  = BUTTON2_BIT,
-    .status   = 0,
+    .config  = BUTTON_MODE_FLOATING | BUTTON_ACTIVE_LOW, 
+    .state   = 0,
     .counter  = 0
 };
 
@@ -47,12 +49,13 @@ Button_t button_clear = {
     .hw_pin  = &BUTTON3_PIN,
     .hw_port = &BUTTON3_PORT,
     .hw_bit  = BUTTON3_BIT,
-    .status   = 0,
-    .counter  = 0
+    .config  = BUTTON_MODE_FLOATING | BUTTON_ACTIVE_LOW, 
+    .state   = 0,
+    .counter = 0
 };
 
     Button_Config(&button_incr); 
-    Button_SetPullUp(&button_incr, 1);
+    //Button_SetPullUp(&button_incr, 1);
     Button_Config(&button_decr);
     Button_Config(&button_clear);
         
