@@ -23,54 +23,51 @@ void main(void){
     uint8_t value=100;
     uint8_t value_last=0;
 
-Button_t button_incr = {
-    .hw_ddr  = &BUTTON1_DDR,
-    .hw_pin  = &BUTTON1_PIN,
-    .hw_port = &BUTTON1_PORT,
-    .hw_bit  = BUTTON1_BIT,
-    .config  = BUTTON_MODE_PULLUP | BUTTON_ACTIVE_LOW,       
-    .state   = 0,
-    .counter = 0
-};
+    Button_t buttonIncr;
+    Button_t buttonDecr;
+    Button_t buttonClear;
 
-Button_t button_decr = {
-    .hw_ddr  = &BUTTON2_DDR,
-    .hw_pin  = &BUTTON2_PIN,
-    .hw_port = &BUTTON2_PORT,
-    .hw_bit  = BUTTON2_BIT,
-    .config  = BUTTON_MODE_FLOATING | BUTTON_ACTIVE_LOW, 
-    .state   = 0,
-    .counter  = 0
-};
+    buttonIncr.hw.ddr   = &BUTTON1_DDR;
+    buttonIncr.hw.port  = &BUTTON1_PORT;
+    buttonIncr.hw.pin   = &BUTTON1_PIN;
+    buttonIncr.hw.index =  BUTTON1_BIT;
+    buttonIncr.config   =  BUTTON_MODE_FLOATING | BUTTON_ACTIVE_LOW;
+    buttonIncr.state    =  0;
+    buttonIncr.counter  =  0;
 
-Button_t button_clear = {
-    .hw_ddr  = &BUTTON3_DDR,
-    .hw_pin  = &BUTTON3_PIN,
-    .hw_port = &BUTTON3_PORT,
-    .hw_bit  = BUTTON3_BIT,
-    .config  = BUTTON_MODE_FLOATING | BUTTON_ACTIVE_LOW, 
-    .state   = 0,
-    .counter = 0
-};
+    buttonDecr.hw.ddr   = &BUTTON2_DDR;
+    buttonDecr.hw.port  = &BUTTON2_PORT;
+    buttonDecr.hw.pin   = &BUTTON2_PIN;
+    buttonDecr.hw.index =  BUTTON2_BIT;
+    buttonDecr.config   =  BUTTON_MODE_PULLUP | BUTTON_ACTIVE_LOW;
+    buttonDecr.state    =  0;
+    buttonDecr.counter  =  0;
 
-    Button_Config(&button_incr); 
-    //Button_SetPullUp(&button_incr, 1);
-    Button_Config(&button_decr);
-    Button_Config(&button_clear);
+    buttonClear.hw.ddr   = &BUTTON3_DDR;
+    buttonClear.hw.port  = &BUTTON3_PORT;
+    buttonClear.hw.pin   = &BUTTON3_PIN;
+    buttonClear.hw.index =  BUTTON3_BIT;
+    buttonClear.config   =  BUTTON_MODE_FLOATING | BUTTON_ACTIVE_HIGH;
+    buttonClear.state    =  0;
+    buttonClear.counter  =  0;
+
+    Button_Config(&buttonIncr); 
+    Button_Config(&buttonDecr);
+    Button_Config(&buttonClear);
         
     LCD_Config();
     LCD_DisplayMainPage(value);
-   
+    
     while(1){ 
-        if( Button_GetAutoRepeat_NonBlocking(&button_incr) ){
+        if( Button_GetAutoRepeat_NonBlocking(&buttonIncr) ){
             ++value;
         }
         
-        if( Button_GetSingleClick(&button_decr) ){
+        if( Button_GetSingleClick(&buttonDecr) ){
             --value;
         }
         
-        if( Button_GetLongPress_NonBlocking(&button_clear) ){
+        if( Button_GetLongPress_NonBlocking(&buttonClear) ){
             value=0;
         }
         
