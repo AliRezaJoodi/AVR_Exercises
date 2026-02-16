@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=2
-OpenedFiles=4
+OpenedFiles=6
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -31,17 +31,17 @@ PageIndex1=1
 OF2=C:\CrossPlatformLibraries\Drivers\mcp3201.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1548425789
+TimeStamp2=1548710467
 PageIndex2=2
-ActiveTab=1
+ActiveTab=3
 OF3=C:\CrossPlatformLibraries\Platforms\AVR\CodeVisionAVR\mcp3201_port.h
-TimeStamp3=1548425304
+TimeStamp3=1548710468
 OF4=C:\CrossPlatformLibraries\Drivers\mcp3201.h
-TimeStamp4=1548425977
-OF5=hardware.h
-TimeStamp5=1548271105
-OF6=C:\CrossPlatformLibraries\Platforms\AVR\mcp3201_port_cv.c
-TimeStamp6=1548365832
+TimeStamp4=1548631373
+OF5=C:\CrossPlatformLibraries\Drivers\mcp3201_config.h
+TimeStamp5=1548710310
+OF6=hardware.h
+TimeStamp6=1548271105
 OF7=C:\CrossPlatformLibraries\Drivers\mcp3201_config.h
 TimeStamp7=1548271049
 F1=main.c
@@ -144,8 +144,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1548425978
-Build=481
+COFFileTimeStamp=1548710470
+Build=483
 GlobalVarAddr=624
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -255,7 +255,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=481
+Build=483
 IncludePath0=C:\cvavr\inc
 IncludePath1=C:\CrossPlatformLibraries\Utils
 IncludePath2=C:\CrossPlatformLibraries\Drivers
@@ -516,8 +516,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 481
-L18=19470 line(s) compiled
+L17=Build: 483
+L18=19490 line(s) compiled
 L19=No errors
 L20=1 warning(s)
 L21=
@@ -700,7 +700,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1548425991
+TimeStamp=1548710616
 [Bookmarks6]
 TimeStamp=1548031469
 Row=8
@@ -939,10 +939,10 @@ Blocks=0
 Blocks=0
 [Bookmarks18]
 TimeStamp=1548425303
-Row=66
-Column=64
+Row=27
+Column=48
 ScrollPosX=0
-ScrollPosY=55
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1278,11 +1278,11 @@ Blocks=0
 [FoldedCode33]
 Blocks=0
 [Bookmarks37]
-TimeStamp=1548425789
-Row=39
-Column=64
+TimeStamp=1548710467
+Row=6
+Column=75
 ScrollPosX=0
-ScrollPosY=30
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1294,11 +1294,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks38]
-TimeStamp=1548425977
-Row=11
-Column=43
+TimeStamp=1548631373
+Row=24
+Column=19
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=11
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1398,9 +1398,9 @@ Blocks=0
 [FoldedCode39]
 Blocks=0
 [Bookmarks44]
-TimeStamp=1548402485
-Row=7
-Column=20
+TimeStamp=1548710310
+Row=9
+Column=22
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1433,16 +1433,12 @@ BK9=-1
 Blocks=0
 [FoldedCode45]
 Blocks=0
-[FoldedCode19]
-Blocks=0
-[FoldedCode44]
-Blocks=0
 [Bookmarks46]
-TimeStamp=1548425304
-Row=45
-Column=0
+TimeStamp=1548710468
+Row=116
+Column=37
 ScrollPosX=0
-ScrollPosY=30
+ScrollPosY=108
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1509,6 +1505,10 @@ F11=hardware.h
 [FoldedCode18]
 Blocks=0
 [FoldedCode37]
+Blocks=0
+[FoldedCode19]
+Blocks=0
+[FoldedCode44]
 Blocks=0
 [FoldedCode38]
 Blocks=0
