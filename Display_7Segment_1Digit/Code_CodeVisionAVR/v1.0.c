@@ -35,6 +35,16 @@ void main(void){
 
             delay_ms(500);
         }
+
+        for(value=0; value<=1; ++value){
+            Seg7_1Digit_EncodeSymbol_ByRef(value, &segment[0]);
+            PORTD = segment[0];
+
+            Seg7_1Digit_ToggleSegments_ByRef(&segment[0]);
+            PORTB = segment[0];
+
+            delay_ms(500);
+        }
     };
 }
 

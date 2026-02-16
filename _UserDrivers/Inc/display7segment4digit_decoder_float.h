@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 #include <utility.h>
-#include <display7segment1digit_decoder.h>
+#include <seg7_1digit_encoder.h>
 
 #pragma used+
 uint8_t Display7Segment4Digit_DecodeFloat_2d(float value, uint8_t *seg);

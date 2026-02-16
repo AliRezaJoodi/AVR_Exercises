@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 #include <utility.h> 
-#include <display7segment1digit_decoder.h>
+#include <seg7_1digit_encoder.h>
 
 typedef struct {
     uint8_t hour;

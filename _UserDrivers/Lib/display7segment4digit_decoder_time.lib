@@ -7,7 +7,7 @@ uint8_t Display7Segment4Digit_CheckInvalidTime(Time_t time){
     if (23<time.hour || 59<time.minute || 59<time.second){
         return 1;   // Error
     }
-    
+
     return 0;
 }
 
@@ -15,66 +15,66 @@ uint8_t Display7Segment4Digit_CheckInvalidTime(Time_t time){
 uint8_t Display7Segment4Digit_DecodeTime_HourMin(Time_t time, uint8_t *seg){
     uint8_t value = 0;
     uint8_t digit = 0;
-    
+
     if( Display7Segment4Digit_CheckInvalidTime(time) ){
         for (digit=0; digit<4; ++digit){
-            *(seg + digit) = 0b01000000;  
+            *(seg + digit) = 0b01000000;
         }
         return 1;   // Error
     }
-    
-    value = time.minute;   
+
+    value = time.minute;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+3));
-    
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+3));
+
     value = time.minute / 10;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+2)); 
-    
-    
-    value = time.hour;   
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+2));
+
+
+    value = time.hour;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+1));
-    
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+1));
+
     value = time.hour / 10;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+0));
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+0));
 
     WriteBit( *(seg+3), 7, time.colon )
-    
-    return 0;    
+
+    return 0;
 }
 
 //*************************************************
 uint8_t Display7Segment4Digit_DecodeTime_MinSec(Time_t time, uint8_t *seg){
     uint8_t value = 0;
     uint8_t digit = 0;
-    
+
     if( Display7Segment4Digit_CheckInvalidTime(time) ){
         for (digit=0; digit<4; ++digit){
-            *(seg + digit) = 0b01000000;  
+            *(seg + digit) = 0b01000000;
         }
         return 1;   // Error
     }
-    
-    value = time.second;   
+
+    value = time.second;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+3));
-    
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+3));
+
     value = time.second / 10;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+2)); 
-    
-    
-    value = time.minute;   
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+2));
+
+
+    value = time.minute;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+1));
-    
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+1));
+
     value = time.minute / 10;
     digit = value % 10;
-    Display7Segment1Digit_DecodeDigit(digit, (seg+0));
+    Seg7_1Digit_EncodeDigit_ByRef(digit, (seg+0));
 
     WriteBit( *(seg+3), 7, time.colon )
-        
-    return 0;    
+
+    return 0;
 }
