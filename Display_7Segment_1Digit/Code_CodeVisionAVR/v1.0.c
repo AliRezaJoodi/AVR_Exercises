@@ -5,32 +5,44 @@
 #include <delay.h>
 
 #include <utility.h>
-#include <display7segment1digit_decoder.h>
+#include <seg7_1digit_encoder.h>
 
-void IO_Config(void);
+void IO_Init(void);
 
 void main(void){
     uint8_t value=0;
     uint8_t segment[1];
-    
-    IO_Config();
-    
+
+    IO_Init(); delay_ms(1000);
+
     while (1){
-        for(value=0; value<=9; ++value){ 
-            Display7Segment1Digit_DecodeDigit(value, &segment[0]);
-            //Display7Segment1Digit_DecodeChr(value, &segment[0]);
+        for(value=0; value<=9; ++value){
+            Seg7_1Digit_EncodeDigit_ByRef(value, &segment[0]);
             PORTD = segment[0];
-            
-            Display7Segment1Digit_ToggleSegments(&segment[0]);
-            PORTB = segment[0]; 
-            
+
+            Seg7_1Digit_ToggleSegments_ByRef(&segment[0]);
+            PORTB = segment[0];
+
+            delay_ms(500);
+        }
+
+        for(value=0; value<=10; ++value){
+            Seg7_1Digit_EncodeAlpha_ByRef(value, &segment[0]);
+            PORTD = segment[0];
+
+            Seg7_1Digit_ToggleSegments_ByRef(&segment[0]);
+            PORTB = segment[0];
+
             delay_ms(500);
         }
     };
 }
 
 //**************************************
-void IO_Config(void){    
-    DDRD=0xFF; PORTD=0xFF;
-    DDRB=0xFF; PORTB=0xFF;
+void IO_Init(void){
+    DDRD = 0xFF;
+    PORTD = 0x00;
+
+    DDRB = 0xFF;
+    PORTB = 0xFF;
 }
