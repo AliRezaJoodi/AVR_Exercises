@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=3
-OpenedFiles=3
+OpenedFiles=2
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -48,7 +48,7 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=3
+ActiveTab=2
 OF3=C:\CrossPlatformLibraries\Modules\seg7_4digit_encoder.h
 TimeStamp3=1548851370
 F1=main.c
@@ -139,7 +139,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=915
+Build=920
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
@@ -206,7 +206,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1548852347
+COFFileTimeStamp=1548858091
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -377,7 +377,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=915
+Build=920
 Chip=ATmega32A
 CPUClock=1000000
 MemoryModel=1
@@ -499,7 +499,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 915
+L17=Build: 920
 L18=745 line(s) compiled
 L19=No errors
 L20=3 warning(s)
@@ -562,7 +562,7 @@ Row=2
 Column=24
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1548852521
+TimeStamp=1548858100
 [BookmarksFoldedCode]
 Files=30
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
@@ -1088,7 +1088,7 @@ TimeStamp=1548852345
 Row=9
 Column=19
 ScrollPosX=0
-ScrollPosY=7
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1131,6 +1131,26 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[Bookmarks30]
+TimeStamp=1548842775
+Row=8
+Column=35
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode30]
+Blocks=0
+[FoldedCode29]
+Blocks=0
 [HeadersList]
 Files=3
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_4Digit_EncoderLib\Code_CodeVisionAVR\main.c
@@ -1153,27 +1173,7 @@ Files=3
 F1=C:\CrossPlatformLibraries\Modules\seg7_4digit_encoder.h
 F2=C:\cvavr\inc\stdint.h
 F3=C:\CrossPlatformLibraries\Modules\seg7_font.h
-[Bookmarks30]
-TimeStamp=1548842775
-Row=8
-Column=35
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode30]
-Blocks=0
 [FoldedCode27]
 Blocks=0
 [FoldedCode28]
-Blocks=0
-[FoldedCode29]
 Blocks=0
