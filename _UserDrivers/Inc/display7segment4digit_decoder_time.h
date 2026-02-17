@@ -1,8 +1,7 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
 #ifndef _DISPLAY7SEGMENT4DIGIT_DECODER_TIME_INCLOUDED
-    #define _DISPLAY7SEGMENT4DIGIT_DECODER_TIME_INCLOUDED
-
+#define _DISPLAY7SEGMENT4DIGIT_DECODER_TIME_INCLOUDED
 
 #include <stdint.h>
 
@@ -24,11 +23,8 @@ typedef struct {
 //    .colon  = 1
 //};
 
-#pragma used+
 uint8_t Display7Segment4Digit_DecodeTime_HourMin(Time_t time, uint8_t *seg);
 uint8_t Display7Segment4Digit_DecodeTime_MinSec(Time_t time, uint8_t *seg);
-#pragma used-
-
 
 #pragma library display7segment4digit_decoder_time.lib
 #endif

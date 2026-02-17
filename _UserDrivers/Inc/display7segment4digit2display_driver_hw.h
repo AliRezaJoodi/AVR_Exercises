@@ -1,14 +1,13 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#ifndef _DISPLAY7SEGMENT4DIGIT2DISPLAY_DRIVER_HW_INCLOUDED
-    #define _DISPLAY7SEGMENT4DIGIT2DISPLAY_DRIVER_HW_INCLOUDED
-
+#ifndef DISPLAY7SEGMENT4DIGIT2DISPLAY_DRIVER_HW_INCLOUDED
+#define DISPLAY7SEGMENT4DIGIT2DISPLAY_DRIVER_HW_INCLOUDED
 
 #include <io.h>
 
-#define ACTIVATE_DIGIT      1 
-#define ACTIVATE_SEGMENT    0 
-     
+#define ACTIVATE_DIGIT      1
+#define ACTIVATE_SEGMENT    0
+
 #define D1_0_DDR            DDRB.0
 #define D1_0_PORT           PORTB.0
 #define D1_0_PIN            PINB.0
@@ -88,7 +87,6 @@
 #define DP_PORT             PORTD.7
 #define DP_PIN              PIND.7
 #define DP_SEGMENT          DP_PORT
-
 
 #endif
 
