@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=2
-OpenedFiles=2
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -48,7 +48,7 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=2
+ActiveTab=1
 OF3=..\..\_ExtraLibrary_CodeVisionAVR\Lib\display7segment4digit2display_driver.lib
 TimeStamp3=1546628605
 F1=v1.0.c
@@ -561,7 +561,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1548757818
+TimeStamp=1548784342
 [BookmarksFoldedCode]
 Files=22
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
@@ -606,10 +606,10 @@ BK9=-1
 Blocks=0
 [Bookmarks2]
 TimeStamp=1548757680
-Row=25
-Column=60
+Row=6
+Column=49
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1001,8 +1001,6 @@ BK8=-1
 BK9=-1
 [FoldedCode21]
 Blocks=0
-[FoldedCode2]
-Blocks=0
 [Bookmarks22]
 TimeStamp=1548757788
 Row=8
@@ -1020,4 +1018,6 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode22]
+Blocks=0
+[FoldedCode2]
 Blocks=0

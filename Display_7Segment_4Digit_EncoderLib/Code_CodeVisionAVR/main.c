@@ -5,7 +5,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "display7segment4digit_decoder_float.h"
+#include "seg7_4digit_encoder.h"
 
 void IO_Init(void);
 
@@ -14,8 +14,8 @@ void main(void){
 
     IO_Init();
 
-    Display7Segment4Digit_DecodeFloat_2d(24.36, &segments[0]);
-    Display7Segment4Digit_Toggle4Byte( &segments[0] );
+    Seg7_4Digit_EncodeFloat_2DP(12.34, &segments[0]);
+    Seg7_4Digit_ToggleSegments( &segments[0] );
 
     while(1){
         PORTB=0x00; PORTD = segments[0]; PORTB.0=1;  delay_ms(5);
