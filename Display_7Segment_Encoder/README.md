@@ -1,4 +1,4 @@
-## Display 2-Number on the 2-Series of 4-Digit 7-segments
+## 7-segments Encoder
 
 MCU:            ATmega32  
 Frequency:     	1.000000 MHz   

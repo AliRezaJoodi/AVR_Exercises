@@ -1,4 +1,4 @@
-/** 
+/**
  * @brief TM1638 LED driver.
  *
  * TM1638 uses a proprietary 2-wire protocol and is not I2C compatible.
@@ -10,14 +10,14 @@
  * - LEDs 9 to 16 are connected to both SEG9 and SEG10.
  * - Buttons 1 to 8 are connected to K3.
  * - Buttons 9 to 16 are connected to K2 and K3.
- * - Buttons 17 to 24 are connected to K1, K2, and K3.  
+ * - Buttons 17 to 24 are connected to K1, K2, and K3.
  *
  * @author AliReza Joodi
  * @see https://github.com/AliRezaJoodi
  */
 
-#ifndef _TM1638_INCLUDED
-#define _TM1638_INCLUDED
+#ifndef TM1638_INCLUDED
+#define TM1638_INCLUDED
 
 
 #include <stdint.h>
@@ -28,7 +28,7 @@
 
 /**
  * @note Default hardware macros can be overridden by the user.
- */ 
+ */
 #include "hardware.h"
 
 #ifndef TM1638_HARDWARE
@@ -42,14 +42,14 @@
     #define TM1638_DIO_PIN         PINC
     #define TM1638_DIO_PORT        PORTC
     #define TM1638_DIO_BIT         6
-#endif 
+#endif
 
 #ifndef TM1638_HARDWARE_EXTRA
 #define TM1638_HARDWARE_EXTRA
     #define TM1638_STB1_DDR        DDRA
     #define TM1638_STB1_PORT       PORTA
     #define TM1638_STB1_BIT        7
-#endif 
+#endif
 
 /**
  * @brief Bit delay time in microseconds.
@@ -62,13 +62,13 @@
  */
 #ifndef TM1638_BIT_US
 #define TM1638_BIT_US            1
-#endif 
+#endif
 
 /**
  * @brief TM1638 GPIO pin descriptor.
  *
  * This structure describes a GPIO pin used by the TM1638 driver.
- */ 
+ */
 typedef struct {
     volatile uint8_t *ddr;
     volatile uint8_t *port;
@@ -82,7 +82,7 @@ typedef struct {
  * to control one TM1638 device instance.
  *
  * Example usage:
- * @code 
+ * @code
  * TM1638_t tm1;
  * tm1.stb.ddr     = &TM1638_STB1_DDR;
  * tm1.stb.port    = &TM1638_STB1_PORT;
@@ -196,7 +196,7 @@ uint8_t TM1638_Set8SegmentsAndLeds(TM1638_t *tm, uint8_t segments[], uint8_t len
  * @param segments Array of segment data (1 to 8 bytes).
  * @param length Number of digits to write. It must be 1 to 8 and <= (8 - pos).
  * @param pos Starting position on the display (0 to 7).
- * 
+ *
  * @return Error flags (bitfield):
  *          Bit 0: Starting position was invalid and corrected
  *          Bit 1: Length exceeded remaining digits and corrected
@@ -253,10 +253,10 @@ void TM1638_Set8Segments_4Digits_2nd(TM1638_t *tm, uint8_t segments[]);
  * @brief Set the 8 LEDs connected to SEG9.
  *
  * Each bit in the input byte controls one LED on SEG9:
- *   Bit 0: LED at SEG9/GRID1  
- *   Bit 1: LED at SEG9/GRID2  
- *   ...  
- *   Bit 7: LED at SEG9/GRID8  
+ *   Bit 0: LED at SEG9/GRID1
+ *   Bit 1: LED at SEG9/GRID2
+ *   ...
+ *   Bit 7: LED at SEG9/GRID8
  *
  * @note SEG10 LEDs are not affected and will be set to 0.
  *
@@ -269,13 +269,13 @@ void TM1638_Set8Leds(TM1638_t *tm, uint8_t data);
  * @brief Set the 16 LEDs connected to SEG9 and SEG10.
  *
  * Each bit pair in the 16-bit input controls one LED:
- *   Bit 0: LED at SEG9 and GRID1  
- *   Bit 1: LED at SEG10 and GRID1  
- *   Bit 2: LED at SEG9 and GRID2  
- *   Bit 3: LED at SEG10 and GRID2  
- *   ...  
- *   Bit 14: LED at SEG9 and GRID8  
- *   Bit 15: LED at SEG10 and GRID8  
+ *   Bit 0: LED at SEG9 and GRID1
+ *   Bit 1: LED at SEG10 and GRID1
+ *   Bit 2: LED at SEG9 and GRID2
+ *   Bit 3: LED at SEG10 and GRID2
+ *   ...
+ *   Bit 14: LED at SEG9 and GRID8
+ *   Bit 15: LED at SEG10 and GRID8
  *
  * @param tm Pointer to TM1638 handle structure.
  * @param data 16-bit value controlling the LEDs on SEG9 and SEG10.
