@@ -15,9 +15,6 @@
 #endasm
 #include <lcd.h>
 
-#define TASK_VOLT1          0
-#define TASK_VOLT2          1
-
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
 
@@ -40,47 +37,36 @@ void ADC_Config(void);
 
 void main(void){
     float volt1 = 0;
-    uint16_t volt1_u16=0; 
+    uint16_t volt1_u16=0;
     uint16_t volt1_last_u16=0;
-    AverageBlock_u16_t volt1_t = {0};
+    AverageBlock_t volt1AvgBlock = {0};
 
     float volt2 = 0;
     uint16_t volt2_u16=0;
     uint16_t volt2_last_u16=0;
-    AverageBlock_u16_t volt2_t = {0};
-     
-    uint8_t tasks=0;
-    
+    AverageMoving_t volt2AvgMoving = {0};
+
     LCD_Config();
     ADC_Config();
-      
-    while(1){ 
+
+    while(1){
         delay_ms(10);
+
         volt1_u16 = read_adc(ADC_CH1);
-        volt1_u16 = Average_BlockUpdate_u16(volt1_u16, &volt1_t);
+        volt1_u16 = Average_BlockUpdate(volt1_u16, &volt1AvgBlock);
         if( volt1_u16 != volt1_last_u16 ){
             volt1_last_u16 = volt1_u16;
             volt1 = volt1_u16 * 4.8875855;
-            SET_BIT(tasks, TASK_VOLT1);
+            LCD_DisplayMainPage(volt1, 1);
         }
-          
+
         volt2_u16 = read_adc(ADC_CH2);
-        volt2_u16 = Average_BlockUpdate_u16(volt2_u16, &volt2_t);
+        volt2_u16 = Average_MovingUpdate(volt2_u16, &volt2AvgMoving);
         if( volt2_u16 != volt2_last_u16 ){
             volt2_last_u16 = volt2_u16;
             volt2 = volt2_u16 * 4.8875855;
-            SET_BIT(tasks, TASK_VOLT2);
-        }
-                  
-        if(GET_BIT(tasks, TASK_VOLT1)){
-            CLEAR_BIT(tasks, TASK_VOLT1);
-            LCD_DisplayMainPage(volt1, 1);
-        }
-                  
-        if(GET_BIT(tasks, TASK_VOLT2)){
-            CLEAR_BIT(tasks, TASK_VOLT2);
             LCD_DisplayMainPage(volt2, 2);
-        }                                       
+        }
     };
 }
 
@@ -90,17 +76,17 @@ void LCD_DisplayMainPage(float volt, uint8_t line){
     switch (line){
         case 1:
             lcd_gotoxy(0,0);
-            lcd_putsf("Volt1(mv):"); 
-            itoa(volt, txt); 
+            lcd_putsf("Volt1(mv):");
+            itoa(volt, txt);
             lcd_puts(txt);
-            lcd_putsf("   "); 
+            lcd_putsf("  ");
             break;
         case 2:
             lcd_gotoxy(0,1);
             lcd_putsf("Volt2(mv):");
-            itoa(volt, txt); 
+            itoa(volt, txt);
             lcd_puts(txt);
-            lcd_putsf("   "); 
+            lcd_putsf("   ");
             break;
         default:
             break;
@@ -121,7 +107,7 @@ void ADC_Config(void){
 //********************************************************
 void LCD_Config(void){
     lcd_init(16);
-    lcd_clear();   
+    lcd_clear();
 }
 
 
