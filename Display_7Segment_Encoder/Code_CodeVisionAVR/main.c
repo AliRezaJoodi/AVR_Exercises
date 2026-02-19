@@ -11,7 +11,7 @@
 void IO_Init(void);
 
 void main(void){
-    uint8_t segments[4]={0, 0, 0, 0};
+    uint8_t segments[4] = {0, 0, 0, 0};
 //    segments[0] = seg7_font_digit[1];
 //    segments[1] = seg7_font_digit[2];
 //    segments[2] = seg7_font_digit[3];
@@ -19,8 +19,11 @@ void main(void){
 
     IO_Init();
 
-    Seg7_Encode4Digits_U16(4321, &segments[0]);
-    Seg7_Reverse4Bytes(&segments[0]);
+//    Seg7_Encode2Digits(21, &segments[0]);
+//    Seg7_Encode2Digits(43, &segments[2]);
+//    Seg7_Encode3Digits(321, &segments[0]);
+    Seg7_Encode4Digits(4321, &segments[0]);
+//    Seg7_Reverse4Bytes(&segments[0]);
 
     while(1){
         PORTB=0x00; PORTD = ~segments[0]; PORTB.0=1;  delay_ms(5);
