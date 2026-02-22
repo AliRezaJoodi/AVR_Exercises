@@ -1,6 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
-#include <stdio.h>
+#include <stdint.h>
 #include <mega32a.h>
 #include <delay.h>
 
