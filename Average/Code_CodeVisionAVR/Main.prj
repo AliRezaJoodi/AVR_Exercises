@@ -45,7 +45,7 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=1
+ActiveTab=3
 OF3=C:\CrossPlatformLibraries\Modules\average.h
 TimeStamp3=1548945062
 OF4=C:\CrossPlatformLibraries\Modules\average_config.h
@@ -392,7 +392,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1548947081
+TimeStamp=1549101768
 [BookmarksFoldedCode]
 Files=43
 F1=T3.c
@@ -1348,7 +1348,7 @@ TimeStamp=1548946289
 Row=23
 Column=133
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=25
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1364,7 +1364,7 @@ TimeStamp=1548945062
 Row=14
 Column=71
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=26
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1397,16 +1397,12 @@ F1=C:\CrossPlatformLibraries\Modules\average.h
 F2=C:\cvavr\inc\stdint.h
 F3=C:\CrossPlatformLibraries\Modules\average_config.h
 F4=hardware.h
-[FoldedCode39]
-Blocks=0
-[FoldedCode40]
-Blocks=0
 [Bookmarks43]
 TimeStamp=1548560890
 Row=26
 Column=61
 ScrollPosX=0
-ScrollPosY=15
+ScrollPosY=28
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1417,6 +1413,10 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode39]
+Blocks=0
+[FoldedCode40]
+Blocks=0
 [FoldedCode43]
 Blocks=0
 [FoldedCode37]
