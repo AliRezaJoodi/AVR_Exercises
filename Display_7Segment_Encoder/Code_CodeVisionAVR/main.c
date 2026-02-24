@@ -19,10 +19,17 @@ void main(void){
 
     IO_Init();
 
-//    Seg7_Encode2Digits(21, &segments[0]);
-//    Seg7_Encode2Digits(43, &segments[2]);
-//    Seg7_Encode3Digits(321, &segments[0]);
-    Seg7_Encode4Digits(4321, &segments[0]);
+//    Seg7_EncodeNumber_2Digits(&segments[2], 43);
+//    Seg7_EncodeNumber_2Digits(&segments[0], 21);
+//    Seg7_SetDecimalPoint_2Digits(&segments[0], 1);
+//    Seg7_Reverse2Bytes(&segments[0]);
+
+//    Seg7_EncodeNumber_3Digits(&segments[0], 321);
+//    Seg7_SetDecimalPoint_3Digits(&segments[0], 1);
+//    Seg7_Reverse3Bytes(&segments[0]);
+
+    Seg7_EncodeNumber_4Digits(&segments[0], 4321);
+    Seg7_SetDecimalPoint_4Digits(&segments[0], 3);
 //    Seg7_Reverse4Bytes(&segments[0]);
 
     while(1){
