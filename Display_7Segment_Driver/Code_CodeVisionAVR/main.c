@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <mega32a.h>
 #include <delay.h>
+#include <io.h>
 
 #include "hardware.h"
 #include "seg7_driver.h"
