@@ -7,7 +7,7 @@ OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=0
+AllowDisplayFunctionCallTree=1
 Top0=200
 Left0=267
 Height0=337
@@ -23,7 +23,7 @@ Active1=1
 Row1=174
 Column1=9
 State1=2
-TimeStamp1=1549207032
+TimeStamp1=1549271662
 OF2=C:\CrossPlatformLibraries\Drivers\seg7_driver.c
 Top2=149
 Left2=223
@@ -48,17 +48,17 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=4
-OF3=C:\CrossPlatformLibraries\Drivers\seg7_driver_config.h
-TimeStamp3=1549248012
-OF4=C:\CrossPlatformLibraries\Platforms\AVR\CodeVisionAVR\seg7_driver_port.h
-TimeStamp4=1549249388
-OF5=C:\CrossPlatformLibraries\Platforms\AVR\CodeVisionAVR\seg7_driver_hw.h
-TimeStamp5=1549248061
-OF6=C:\CrossPlatformLibraries\Drivers\seg7_driver.h
-TimeStamp6=1549245836
-OF7=hardware.h
-TimeStamp7=1549180623
+ActiveTab=7
+OF3=C:\CrossPlatformLibraries\Drivers\seg7_driver.h
+TimeStamp3=1549273883
+OF4=C:\CrossPlatformLibraries\Drivers\seg7_driver_config.h
+TimeStamp4=1549248012
+OF5=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_port.h
+TimeStamp5=1549280347
+OF6=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_hw.h
+TimeStamp6=1549282345
+OF7=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+TimeStamp7=1549283770
 TimeStamp0=1549249388
 F1=main.c
 F2=C:\CrossPlatformLibraries\Drivers\seg7_driver.c
@@ -147,7 +147,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=597
+Build=600
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
@@ -214,7 +214,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1549280348
+COFFileTimeStamp=1549283772
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -385,7 +385,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=597
+Build=600
 Chip=ATmega32A
 CPUClock=8000000
 MemoryModel=1
@@ -507,8 +507,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 597
-L18=3747 line(s) compiled
+L17=Build: 600
+L18=3915 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -570,9 +570,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1549249388
+TimeStamp=1549284099
 [BookmarksFoldedCode]
-Files=28
+Files=32
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
 F2=v1.0.c
 F3=C:\Program Files (x86)\CVAVR\inc\math.h
@@ -601,6 +601,10 @@ F25=C:\CrossPlatformLibraries\Drivers\seg7_driver_config.h
 F26=C:\cvavr\inc\stdint.h
 F27=C:\cvavr\inc\stdio.h
 F28=C:\CrossPlatformLibraries\Platforms\AVR\compiler_detect.h
+F29=C:\CrossPlatformLibraries\Platforms\AVR\compiler_detector.h
+F30=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_hw.h
+F31=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_port.h
+F32=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
 [Bookmarks1]
 TimeStamp=1433472353
 Row=183
@@ -802,11 +806,11 @@ Blocks=0
 [FoldedCode9]
 Blocks=0
 [Bookmarks11]
-TimeStamp=1549207032
-Row=24
-Column=13
+TimeStamp=1549271662
+Row=4
+Column=84
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -975,8 +979,8 @@ BK8=-1
 BK9=-1
 [Bookmarks21]
 TimeStamp=1549245554
-Row=15
-Column=31
+Row=1
+Column=21
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -994,7 +998,7 @@ TimeStamp=1549273883
 Row=40
 Column=22
 ScrollPosX=0
-ScrollPosY=35
+ScrollPosY=29
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1087,10 +1091,6 @@ BK8=-1
 BK9=-1
 [FoldedCode27]
 Blocks=0
-[FoldedCode11]
-Blocks=0
-[FoldedCode21]
-Blocks=0
 [FoldedCode26]
 Blocks=0
 [FoldedCode12]
@@ -1102,10 +1102,6 @@ Blocks=0
 [FoldedCode24]
 Blocks=0
 [FoldedCode13]
-Blocks=0
-[FoldedCode22]
-Blocks=0
-[FoldedCode25]
 Blocks=0
 [Bookmarks28]
 TimeStamp=1549280079
@@ -1125,6 +1121,72 @@ BK8=-1
 BK9=-1
 [FoldedCode28]
 Blocks=0
+[Bookmarks29]
+TimeStamp=1549280419
+Row=7
+Column=23
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode29]
+Blocks=0
+[Bookmarks30]
+TimeStamp=1549282345
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks31]
+TimeStamp=1549280347
+Row=13
+Column=3
+ScrollPosX=0
+ScrollPosY=171
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks32]
+TimeStamp=1549283770
+Row=29
+Column=86
+ScrollPosX=0
+ScrollPosY=3
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.c
@@ -1141,9 +1203,9 @@ F7=C:\CrossPlatformLibraries\Drivers\seg7_driver_config.h
 F8=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_port.h
 F9=C:\CrossPlatformLibraries\Utils\utility_bit.h
 F10=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_hw.h
-F11=C:\CrossPlatformLibraries\Platforms\AVR\compiler_detector.h
+F11=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
 [Header2]
-Files=10
+Files=11
 F1=C:\CrossPlatformLibraries\Drivers\seg7_driver.h
 F2=C:\cvavr\inc\stdint.h
 F3=C:\CrossPlatformLibraries\Drivers\seg7_driver_config.h
@@ -1151,6 +1213,21 @@ F4=hardware.h
 F5=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_port.h
 F6=C:\CrossPlatformLibraries\Utils\utility_bit.h
 F7=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_hw.h
-F8=C:\CrossPlatformLibraries\Platforms\AVR\compiler_detector.h
+F8=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
 F9=C:\cvavr\inc\io.h
 F10=C:\cvavr\inc\mega32a.h
+F11=C:\cvavr\inc\delay.h
+[FoldedCode11]
+Blocks=0
+[FoldedCode21]
+Blocks=0
+[FoldedCode32]
+Blocks=0
+[FoldedCode30]
+Blocks=0
+[FoldedCode31]
+Blocks=0
+[FoldedCode25]
+Blocks=0
+[FoldedCode22]
+Blocks=0
