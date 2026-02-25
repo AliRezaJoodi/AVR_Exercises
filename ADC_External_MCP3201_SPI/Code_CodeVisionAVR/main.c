@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include <mcp3201.h>
+#include "mcp3201.h"
 
 float In1 = 0;
 float In2 = 0;
@@ -16,11 +16,14 @@ float In2 = 0;
 void SPI_Config(void);
 void LCD_Config(void);
 void LCD_DisplayMainPage(void);
-        
+
 void main(void){
-    MCP3201_t mcp1; 
+    float In1_u16 = 0;
+    float In2_u16 = 0;
+
+    MCP3201_t mcp1;
     MCP3201_t mcp2;
-    
+
     mcp1.cs.ddr     = &MCP3201_CS1_DDR;
     mcp1.cs.port    = &MCP3201_CS1_PORT;
     mcp1.cs.index   =  MCP3201_CS1_BIT;
@@ -28,16 +31,19 @@ void main(void){
     mcp2.cs.ddr     = &MCP3201_CS2_DDR;
     mcp2.cs.port    = &MCP3201_CS2_PORT;
     mcp2.cs.index   =  MCP3201_CS2_BIT;
-        
+
     SPI_Config();
     LCD_Config();
     MCP3201_Init(&mcp1);
     MCP3201_Init(&mcp2);
-    
-    while (1){ 
-        In1 = MCP3201_GetMilliVolt(&mcp1);
-        In2 = MCP3201_GetMilliVolt(&mcp2);
-        
+
+    while (1){
+        In1_u16 = MCP3201_GetCounts(&mcp1);
+        In2_u16 = MCP3201_GetCounts(&mcp2);
+
+        In1 = (float)(In1_u16) * 5000.0f / 4095.0f;
+        In2 = (float)(In2_u16) * 5000.0f / 4095.0f;
+
         LCD_DisplayMainPage();
         delay_ms(500);
     }
@@ -45,14 +51,14 @@ void main(void){
 
 //********************************************************
 void LCD_DisplayMainPage(void){
-    char txt[5]; 
-    
+    char txt[5];
+
     lcd_gotoxy(0, 0);
     lcd_putsf("In1(mV):");
     itoa(In1, txt);
     lcd_puts(txt);
     lcd_putsf("   ");
-    
+
     lcd_gotoxy(0, 1);
     lcd_putsf("In2(mV):");
     itoa(In2, txt);
@@ -63,7 +69,7 @@ void LCD_DisplayMainPage(void){
 //********************************************************
 void LCD_Config(void){
     lcd_init(16);
-    lcd_clear();   
+    lcd_clear();
 }
 
 //********************************************************
