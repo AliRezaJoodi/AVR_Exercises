@@ -6,6 +6,7 @@ Frequency:     	8MHz
 ### Folder and Files Description
 It has included:
 - `Code_CodeVisionAVR` (Code with C Language)
+- `Code_MicrochipStudio` (Code with C Language)
 - `Simulate` (Simulator File)
 
 ### Simulate: v1.0
