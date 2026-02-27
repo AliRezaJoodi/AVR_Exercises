@@ -1,8 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef _HARDWARE_INCLUDED
-#define _HARDWARE_INCLUDED
-
+#ifndef HARDWARE_INCLUDED
+#define HARDWARE_INCLUDED
 
 #define TM1637_TM1_CLK_DDR         DDRC
 #define TM1637_TM1_CLK_PORT        PORTC
@@ -23,6 +22,5 @@
 #define TM2637_TM2_DIO_PORT        PORTD
 #define TM2637_TM2_DIO_PIN         PIND
 #define TM2637_TM2_DIO_BIT         3
-
 
 #endif
