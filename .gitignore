@@ -18,7 +18,6 @@ Project Backups
 *.rpt
 
 # CodeVisionAVR folders and files for ignore
-Debug
 Linker
 List
 Obj
@@ -46,7 +45,6 @@ Main.txt
 *.lib~
 
 # mikroC PRO for AVR folders and files for ignore
-*.cproj
 *.cfg
 *.dbg
 *.dct
@@ -57,3 +55,5 @@ Main.txt
 *.cp
 *.mcl
 
+Debug
+*.cproj
