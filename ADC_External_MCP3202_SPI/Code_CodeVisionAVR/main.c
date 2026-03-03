@@ -9,28 +9,28 @@
 float volt1=0;
 float volt2=0;
 
-#include "Attachment\hardware_v1.0.h"
-#include <adc_mcp3202.h>
- 
+#include "hardware.h"
+#include "mcp3202.h"
+
 void SPI_Config(void);
 void LCD_Config(void);
 
 #pragma used+
-void LCD_DisplayLoadingPage(void); 
+void LCD_DisplayLoadingPage(void);
 void LCD_DisplayMainPage();
 #pragma used-
-       
+
 void main(void){
     SPI_Config();
     LCD_Config();
     MCP3202_Config();
-    
+
     LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
 
-    while (1){ 
-        volt1=MCP3202_GetSingleEndedADC(0); 
-        volt2=MCP3202_GetDifferentialADC(01);  
-        
+    while (1){
+        volt1=MCP3202_GetSingleEndedADC(0);
+        volt2=MCP3202_GetDifferentialADC(01);
+
         LCD_DisplayMainPage();
         delay_ms(500);
     }
@@ -45,14 +45,14 @@ void LCD_DisplayMainPage(void){
 
 //********************************************************
 void LCD_Config(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16); lcd_clear();
 }
 
 //********************************************************
 void LCD_DisplayLoadingPage(void){
-    lcd_clear(); 
+    lcd_clear();
     lcd_gotoxy(0,0); lcd_putsf("External ADC");
-    lcd_gotoxy(0,1); lcd_putsf("With MCP3202"); 
+    lcd_gotoxy(0,1); lcd_putsf("With MCP3202");
 }
 
 //********************************************************
