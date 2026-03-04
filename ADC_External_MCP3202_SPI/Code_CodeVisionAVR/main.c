@@ -14,23 +14,33 @@ float volt2=0;
 
 void SPI_Config(void);
 void LCD_Config(void);
-
-#pragma used+
 void LCD_DisplayLoadingPage(void);
 void LCD_DisplayMainPage();
-#pragma used-
 
 void main(void){
+    uint16_t in1 = 0;
+    uint16_t in2 = 0;
+
+    MCP3202_t mcp1;
+
+    mcp1.cs.ddr     = &MCP3202_CS_DDR;
+    mcp1.cs.port    = &MCP3202_CS_PORT;
+    mcp1.cs.index   =  MCP3202_CS_BIT;
+
     SPI_Config();
     LCD_Config();
-    MCP3202_Config();
+    MCP3202_Init(&mcp1);
 
-    LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
+    LCD_DisplayLoadingPage();
+    delay_ms(500);
+    lcd_clear();
 
     while (1){
-        volt1=MCP3202_GetSingleEndedADC(0);
-        volt2=MCP3202_GetDifferentialADC(01);
+        in1 = MCP3202_GetCounts(&mcp1, MCP3202_CH0);
+        in2 = MCP3202_GetCounts(&mcp1, MCP3202_CH0CH1);
 
+        volt1 = in1 * 1.22;
+        volt2 = in2 * 1.22;
         LCD_DisplayMainPage();
         delay_ms(500);
     }
@@ -39,8 +49,8 @@ void main(void){
 //********************************************************
 void LCD_DisplayMainPage(void){
     char txt[16];
-    lcd_gotoxy(0,0); lcd_putsf("CH0(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf(" ");
-    lcd_gotoxy(0,1); lcd_putsf("Diff(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf(" ");
+    lcd_gotoxy(0,0); lcd_putsf("CH0(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf("   ");
+    lcd_gotoxy(0,1); lcd_putsf("Diff(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf("   ");
 }
 
 //********************************************************

@@ -9,28 +9,38 @@
 float volt1=0;
 float volt2=0;
 
-#include "Attachment\hardware_v1.0.h"
-#include <adc_mcp3204.h>
+#include "hardware.h"
+#include "mcp3204.h"
 
 void SPI_Config(void);
 void LCD_Config(void);
-
-#pragma used+
-void LCD_DisplayLoadingPage(void); 
+void LCD_DisplayLoadingPage(void);
 void LCD_DisplayMainPage();
-#pragma used-
-        
+
 void main(void){
+    uint16_t in1 = 0;
+    uint16_t in2 = 0;
+
+    MCP3204_t mcp1;
+
+    mcp1.cs.ddr     = &MCP3204_CS_DDR;
+    mcp1.cs.port    = &MCP3204_CS_PORT;
+    mcp1.cs.index   =  MCP3204_CS_BIT;
+
     SPI_Config();
     LCD_Config();
-    MCP3204_Config();
-    
-    LCD_DisplayLoadingPage(); delay_ms(500); lcd_clear();
+    MCP3204_Init(&mcp1);
 
-    while (1){ 
-        volt1=MCP3204_GetSingleEndedADC(0); 
-        volt2=MCP3204_GetDifferentialADC(23);  
-        
+    LCD_DisplayLoadingPage();
+    delay_ms(500);
+    lcd_clear();
+
+    while (1){
+        in1 = MCP3204_GetCounts(&mcp1, MCP3204_CH0);
+        in2 = MCP3204_GetCounts(&mcp1, MCP3204_CH2CH3);
+
+        volt1 = in1 * 1.22;
+        volt2 = in2 * 1.22;
         LCD_DisplayMainPage();
         delay_ms(500);
     }
@@ -39,20 +49,20 @@ void main(void){
 //********************************************************
 void LCD_DisplayMainPage(void){
     char txt[16];
-    lcd_gotoxy(0,0); lcd_putsf("CH0(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf(" ");
-    lcd_gotoxy(0,1); lcd_putsf("Diff(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf(" ");
+    lcd_gotoxy(0,0); lcd_putsf("CH0(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf("   ");
+    lcd_gotoxy(0,1); lcd_putsf("Diff(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf("   ");
 }
 
 //********************************************************
 void LCD_Config(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16); lcd_clear();
 }
 
 //********************************************************
 void LCD_DisplayLoadingPage(void){
-    lcd_clear(); 
+    lcd_clear();
     lcd_gotoxy(0,0); lcd_putsf("External ADC");
-    lcd_gotoxy(0,1); lcd_putsf("With MCP3204"); 
+    lcd_gotoxy(0,1); lcd_putsf("With MCP3202");
 }
 
 //********************************************************
