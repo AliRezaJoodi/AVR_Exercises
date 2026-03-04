@@ -49,8 +49,8 @@ void main(void){
 //********************************************************
 void LCD_DisplayMainPage(void){
     char txt[16];
-    lcd_gotoxy(0,0); lcd_putsf("CH0(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf("   ");
-    lcd_gotoxy(0,1); lcd_putsf("Diff(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf("   ");
+    lcd_gotoxy(0,0); lcd_putsf("In1(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf("   ");
+    lcd_gotoxy(0,1); lcd_putsf("In2(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf("   ");
 }
 
 //********************************************************

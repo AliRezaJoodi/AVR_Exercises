@@ -18,8 +18,8 @@ void LCD_Config(void);
 void LCD_DisplayMainPage(void);
 
 void main(void){
-    float In1_u16 = 0;
-    float In2_u16 = 0;
+    float in1_u16 = 0;
+    float in2_u16 = 0;
 
     MCP3201_t mcp1;
     MCP3201_t mcp2;
@@ -38,11 +38,11 @@ void main(void){
     MCP3201_Init(&mcp2);
 
     while (1){
-        In1_u16 = MCP3201_GetCounts(&mcp1);
-        In2_u16 = MCP3201_GetCounts(&mcp2);
+        in1_u16 = MCP3201_GetCounts(&mcp1);
+        in2_u16 = MCP3201_GetCounts(&mcp2);
 
-        In1 = (float)(In1_u16) * 5000.0f / 4095.0f;
-        In2 = (float)(In2_u16) * 5000.0f / 4095.0f;
+        In1 = (float)(in1_u16) * 5000.0f / 4095.0f;
+        In2 = (float)(in2_u16) * 5000.0f / 4095.0f;
 
         LCD_DisplayMainPage();
         delay_ms(500);
