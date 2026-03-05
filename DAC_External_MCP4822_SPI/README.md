@@ -1,8 +1,6 @@
-## External DAC With SPI Interface, MCP4822
+## External DAC with SPI Interface, MCP4822
               
 MCU:     	ATmega32  
-Frequency:     	8MHz (Internal)  
-Display:        16x2 Character LCD
 
 ### Folder and Files Description
 It has included:

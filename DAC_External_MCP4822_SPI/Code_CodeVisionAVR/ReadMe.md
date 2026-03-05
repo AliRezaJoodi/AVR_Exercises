@@ -1,4 +1,2 @@
-### Description
-
-v1.0:
+### Main.prj
 - Last opened with CodeVisionAVR v3.12

@@ -4,8 +4,8 @@
 // SPI Clock Polarity: Low
 // SPI Data Order: MSB First
 
-#include <dac_mcp4822.h>
-        
+#include "mcp4822.h"
+
 /* DACA or DACB Select bit
 1 = Write to DACB
 0 = Write to DACA */
@@ -31,22 +31,25 @@ void MCP4822_Config(void){
 
 //********************************************************
 void _MCP4822_WriteCommand(unsigned int data){
+    uint8_t msb = (uint8_t)(data >> 8);
+    uint8_t lsb = (uint8_t)(data & 0x00FF);
+
     MCP4822_CS_PORT=0;
-    spi(GetMsb(data));      //Send MSB 
-    spi(GetLsb(data));      //Send LSB 
-    MCP4822_CS_PORT=1; 
+    spi(msb);      //Send MSB
+    spi(lsb);      //Send LSB
+    MCP4822_CS_PORT=1;
     #asm("nop");            // Minimum Setup Time = 40ns
-    
+
     MCP4822_LDAC_PORT=0;
     #asm("nop");
-    #asm("nop");           // Minimum Pulse Width = 100ns 
+    #asm("nop");           // Minimum Pulse Width = 100ns
     MCP4822_LDAC_PORT=1;
 }
 
 //********************************************************
 void MCP4822_SetOutput(char ch, float volt){
     unsigned int data=0;
-    
+
     if(volt<=2.048){
         data=volt*MCP4822_GAIN;
         SetBit(data, _MCP4822_REGISTER_GA); // Gain=1x
@@ -55,19 +58,19 @@ void MCP4822_SetOutput(char ch, float volt){
         data=(volt/2)*MCP4822_GAIN;
         ClearBit(data, _MCP4822_REGISTER_GA);   // Gain=2x
     }
-    
+
     if(ch<=1){
         WriteBit(data, _MCP4822_REGISTER_AB, ch);
-        SetBit(data, _MCP4822_REGISTER_SHDN) 
-        _MCP4822_WriteCommand(data);  
+        SetBit(data, _MCP4822_REGISTER_SHDN)
+        _MCP4822_WriteCommand(data);
     }
 }
 
 //********************************************************
 void MCP4822_ShutDown(char ch){
     unsigned int data=0;
-    
-    if(ch<=1){ 
+
+    if(ch<=1){
         WriteBit(data, _MCP4822_REGISTER_AB, ch);
         ClearBit(data,_MCP4822_REGISTER_SHDN)
         _MCP4822_WriteCommand(data);
