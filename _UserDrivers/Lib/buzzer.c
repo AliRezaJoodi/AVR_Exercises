@@ -1,7 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 // MCU Frequency:   8Mhz
 
-#include <buzzer.h>
+#include "buzzer.h"
 
 //********************************************************
 void Buzzer_Config(void){
@@ -12,11 +12,11 @@ void Buzzer_Config(void){
 void Buzzer_MakeBeep_UpOrDownSound(void){
     BUZZER_PORT=BUZZER_ACTIVE;
     delay_ms(80);
-    BUZZER_PORT=!BUZZER_ACTIVE;  
+    BUZZER_PORT=!BUZZER_ACTIVE;
 }
 
 //*******************************************************
-void Buzzer_MakeBeep_SetSound(void){    
+void Buzzer_MakeBeep_SetSound(void){
     BUZZER_PORT=BUZZER_ACTIVE;
     delay_ms(220);
     BUZZER_PORT=!BUZZER_ACTIVE;
@@ -26,25 +26,25 @@ void Buzzer_MakeBeep_SetSound(void){
 void Buzzer_MakeBeep_ErrorSound(void){
     BUZZER_PORT=BUZZER_ACTIVE;
     delay_ms(500);
-    BUZZER_PORT=!BUZZER_ACTIVE;  
+    BUZZER_PORT=!BUZZER_ACTIVE;
 }
 
 //*******************************************************
 // Call in Main
-void Buzzer_MakeBeep(char mode){    
-    switch(mode){  
+void Buzzer_MakeBeep(char mode){
+    switch(mode){
         case BEEP_UP:
             Buzzer_MakeBeep_UpOrDownSound();
             break;
         case BEEP_DOWN:
             Buzzer_MakeBeep_UpOrDownSound();
             break;
-        case BEEP_SET: 
+        case BEEP_SET:
             Buzzer_MakeBeep_SetSound();
             break;
-        case BEEP_ERROR: 
+        case BEEP_ERROR:
             Buzzer_MakeBeep_ErrorSound();
             break;
     }
-} 
+}
 

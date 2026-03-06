@@ -1,26 +1,26 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 /*
 Beep modes:
-    0:  No Periodical Beep 
+    0:  No Periodical Beep
     1:  Making  A Periodical Single Beep
     2:  Making  A Periodical Double Beep
     3:  Making  A Periodical Continuous Beep
 */
 
-#ifndef _BUZZER_INCLUDED
-#define _BUZZER_INCLUDED
+#ifndef BUZZER_INCLUDED
+#define BUZZER_INCLUDED
 
 #ifndef BUZZER_HARDWARE
 #define BUZZER_HARDWARE
     #define BUZZER_DDR      DDRB.1
     #define BUZZER_PORT     PORTB.1
-    #define BUZZER_PIN      PINB.1 
-    #define BUZZER          BUZZER_PORT 
-    
-    #define ACTIVE_BUZZER   1 
+    #define BUZZER_PIN      PINB.1
+    #define BUZZER          BUZZER_PORT
+
+    #define ACTIVE_BUZZER   1
     #define BUZZERLAG       3       // Sound Period/Call Period  ==> 100ms/32.768ms
     #define PERIOD1         152     // Sound Period/Call Period  ==> 5000ms/32.768ms
-    #define PERIOD2         61      // Sound Period/Call Period  ==> 2000ms/32.768ms           
+    #define PERIOD2         61      // Sound Period/Call Period  ==> 2000ms/32.768ms
 #endif
 
 #ifndef SETBIT
@@ -32,7 +32,7 @@ Beep modes:
 #endif
 
 char single_beep=0;
-char _buzzer_task=0; 
+char _buzzer_task=0;
 char beep_mode=0;
 
 //******************************
@@ -55,16 +55,14 @@ OCR0=0x00;
 
     // Timer(s)/Counter(s) Interrupt(s) initialization
     //TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
-    #asm("sei") // Global enable interrupts 
+    #asm("sei") // Global enable interrupts
 }
 
 //******************************
 void ConfigBuzzer(void){
-    BUZZER_DDR=1; BUZZER_PORT=!ACTIVE_BUZZER; 
+    BUZZER_DDR=1; BUZZER_PORT=!ACTIVE_BUZZER;
     _ConfigTimer0();
 }
-
-#pragma used+
 
 //******************************
 void _EnableTimer0(void){
@@ -79,16 +77,16 @@ void _DisableTimer0(void){
 //******************************
 char _Cunt100ms(void){
     static unsigned char i=0;
-    ++i; if(i>=BUZZERLAG){i=0; return 1;}  
+    ++i; if(i>=BUZZERLAG){i=0; return 1;}
     return 0;
 }
 
 //******************************
 //Be Called Periodically
 void MakeABeep(char *status){
-    if(*status){ 
-        BUZZER=ACTIVE_BUZZER; 
-        if(_Cunt100ms()){*status=0; BUZZER=!ACTIVE_BUZZER;}   
+    if(*status){
+        BUZZER=ACTIVE_BUZZER;
+        if(_Cunt100ms()){*status=0; BUZZER=!ACTIVE_BUZZER;}
     }
 }
 
@@ -96,10 +94,10 @@ void MakeABeep(char *status){
 //Be Called Periodically
 void MakeThePeriodicalSingleBeep(void){
     static unsigned int i=0;
-    static char active=0; 
-    
-    ++i; 
-    if(i>=PERIOD1){i=0; active=1;} 
+    static char active=0;
+
+    ++i;
+    if(i>=PERIOD1){i=0; active=1;}
     MakeABeep(&active);
 }
 
@@ -107,10 +105,10 @@ void MakeThePeriodicalSingleBeep(void){
 //Be Called Periodically
 void MakeThePeriodicalDoubleBeep(void){
     static unsigned int i=0;
-    static char active=0; 
+    static char active=0;
 
-    ++i; 
-    if(i==PERIOD1){active=1;}  
+    ++i;
+    if(i==PERIOD1){active=1;}
     if(i>=(PERIOD1+(2*BUZZERLAG))){active=1;i=0;}
     MakeABeep(&active);
 }
@@ -119,10 +117,10 @@ void MakeThePeriodicalDoubleBeep(void){
 //Be Called Periodically
 void MakeThePeriodicalContinuousBeep(void){
     static unsigned int i=0;
-    static char active=0; 
+    static char active=0;
 
-    ++i; 
-    if(i>=PERIOD2){active=1;}  
+    ++i;
+    if(i>=PERIOD2){active=1;}
     if(i>=(PERIOD2+(5*BUZZERLAG))){active=1;i=0;}
     MakeABeep(&active);
 }
@@ -130,28 +128,26 @@ void MakeThePeriodicalContinuousBeep(void){
 //******************************
 // Call in the main
 void RunTheBuzzerTasks(void){
-    if(single_beep==1 || beep_mode>0){_EnableTimer0();} 
-     
+    if(single_beep==1 || beep_mode>0){_EnableTimer0();}
+
     if(_buzzer_task){
         _buzzer_task=0;
-        
+
         if(single_beep==0 && beep_mode==0){_DisableTimer0();}
         MakeABeep(&single_beep);
-    
-        switch(beep_mode){ 
-            case 1: 
+
+        switch(beep_mode){
+            case 1:
                 MakeThePeriodicalSingleBeep();
                 break;
-            case 2: 
+            case 2:
                 MakeThePeriodicalDoubleBeep();
                 break;
-            case 3: 
+            case 3:
                 MakeThePeriodicalContinuousBeep();
                 break;
         }
-    }     
+    }
 }
-
-#pragma used-
 
 #endif
