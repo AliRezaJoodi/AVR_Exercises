@@ -11,7 +11,7 @@ Variable                                                                        
 Register Allocation
 Variable                                                                          Register  Size
 ------------------------------------------------------------------------------------------------
-numer                                                                             R5           1
+number                                                                            R5           1
 _lcd_x                                                                            R4           1
 _lcd_y                                                                            R7           1
 _lcd_maxx                                                                         R6           1
@@ -19,24 +19,23 @@ _lcd_maxx                                                                       
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-main                                                                              0x00086     21
-LCD_DisplayMainPage                                                               0x0009B     25
-LCD_Config                                                                        0x000B4      6
-LCD_DisplayloadingPage                                                            0x000BA     11
-Keypad4x4_GetInitialNumber                                                        0x000C5    184
-Keypad4x4_ConvertNumber                                                           0x0017D     84
-itoa                                                                              0x001D1     46
-_lcd_delay_G101                                                                   0x001FF      4
-_lcd_ready                                                                        0x00203     17
-_lcd_write_nibble_G101                                                            0x00214     10
-_lcd_write_data                                                                   0x0021E     15
-_lcd_read_nibble_G101                                                             0x0022D      9
-lcd_read_byte0_G101                                                               0x00236      9
-lcd_gotoxy                                                                        0x0023F     16
-lcd_clear                                                                         0x0024F     19
-lcd_putchar                                                                       0x00262     26
-lcd_puts                                                                          0x0027C     15
-lcd_putsf                                                                         0x0028B     19
-_long_delay_G101                                                                  0x0029E      5
-_lcd_init_write_G101                                                              0x002A3     12
-lcd_init                                                                          0x002AF     51
+main                                                                              0x00086     18
+LCD_DisplayMainPage                                                               0x00098     25
+LCD_Config                                                                        0x000B1      6
+LCD_DisplayloadingPage                                                            0x000B7     11
+Keypad4x4_GetNumber                                                               0x000C2    195
+itoa                                                                              0x00185     46
+_lcd_delay_G101                                                                   0x001B3      4
+_lcd_ready                                                                        0x001B7     17
+_lcd_write_nibble_G101                                                            0x001C8     10
+_lcd_write_data                                                                   0x001D2     15
+_lcd_read_nibble_G101                                                             0x001E1      9
+lcd_read_byte0_G101                                                               0x001EA      9
+lcd_gotoxy                                                                        0x001F3     16
+lcd_clear                                                                         0x00203     19
+lcd_putchar                                                                       0x00216     26
+lcd_puts                                                                          0x00230     15
+lcd_putsf                                                                         0x0023F     19
+_long_delay_G101                                                                  0x00252      5
+_lcd_init_write_G101                                                              0x00257     12
+lcd_init                                                                          0x00263     51
