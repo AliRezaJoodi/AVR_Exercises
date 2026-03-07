@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=2
-OpenedFiles=4
+OpenedFiles=6
 OF1=main.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -18,7 +18,7 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=0
+AllowDisplayFunctionCallTree=1
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -26,20 +26,24 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1550225947
+TimeStamp1=1550227497
 PageIndex1=1
-OF2=hardware.h
+OF2=C:\CrossPlatformLibraries\Drivers\buzzer.c
 Active2=1
 EditorPanel2=0
-TimeStamp2=1550225973
+TimeStamp2=1550227526
 PageIndex2=2
-ActiveTab=2
-OF3=..\..\_UserDrivers\Lib\buzzer.c
-TimeStamp3=1550225676
-OF4=..\..\_UserDrivers\Inc\buzzer.h
-TimeStamp4=1550225973
+ActiveTab=1
+OF3=hardware.h
+TimeStamp3=1550227300
+OF4=C:\CrossPlatformLibraries\Drivers\buzzer.h
+TimeStamp4=1550226979
 F1=main.c
 F2=C:\CrossPlatformLibraries\Drivers\buzzer.c
+OF5=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_port.h
+TimeStamp5=1550227142
+OF6=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_hw.h
+TimeStamp6=1550227537
 [CompilerDebug]
 Chip=ATmega16A
 CPUClock=8000000
@@ -138,8 +142,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1550227575
-Build=191
+COFFileTimeStamp=1550227786
+Build=192
 GlobalVarAddr=610
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -249,7 +253,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=191
+Build=192
 IncludePath0=C:\cvavr\inc
 IncludePath1=C:\CrossPlatformLibraries\Utils
 IncludePath2=C:\CrossPlatformLibraries\Modules
@@ -494,7 +498,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 191
+L17=Build: 192
 L18=3544 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -533,12 +537,12 @@ L12=
 Lines=12
 [Bookmarks0]
 Row=0
-Column=0
+Column=7
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1550225978
+TimeStamp=1550227842
 [BookmarksFoldedCode]
-Files=16
+Files=17
 F1=v1.0.c
 F2=Attachment\Buzzer.h
 F3=..\..\_Library_CodeVisionAVR\Buzzer.h
@@ -555,6 +559,7 @@ F13=C:\CrossPlatformLibraries\Utils\utility_bit.h
 F14=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_port.h
 F15=C:\cvavr\inc\mega16_bits.h
 F16=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_hw.h
+F17=C:\CrossPlatformLibraries\Drivers\buzzer.c
 [Bookmarks1]
 TimeStamp=1550213496
 Row=8
@@ -707,11 +712,11 @@ Blocks=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks8]
-TimeStamp=1550225947
+TimeStamp=1550227497
 Row=18
-Column=31
+Column=26
 ScrollPosX=0
-ScrollPosY=6
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -722,8 +727,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode8]
-Blocks=0
 [Bookmarks9]
 TimeStamp=1550225676
 Row=20
@@ -745,9 +748,9 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks10]
-TimeStamp=1550225973
-Row=1
-Column=0
+TimeStamp=1550227300
+Row=8
+Column=29
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -760,12 +763,10 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode10]
-Blocks=0
 [Bookmarks11]
-TimeStamp=1550225973
-Row=0
-Column=0
+TimeStamp=1550226979
+Row=10
+Column=16
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -778,8 +779,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode11]
-Blocks=0
 [Bookmarks12]
 TimeStamp=1549306219
 Row=14
@@ -813,11 +812,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks14]
-TimeStamp=1550226691
-Row=14
-Column=0
+TimeStamp=1550227142
+Row=21
+Column=25
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=7
 BK0=-1
 BK1=-1
 BK2=-1
@@ -828,8 +827,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode14]
-Blocks=0
 [Bookmarks15]
 TimeStamp=982084135
 Row=0
@@ -849,9 +846,9 @@ BK9=-1
 [FoldedCode15]
 Blocks=0
 [Bookmarks16]
-TimeStamp=1550226836
-Row=12
-Column=39
+TimeStamp=1550227537
+Row=9
+Column=29
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -864,12 +861,26 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode16]
-Blocks=0
 [FoldedCode12]
 Blocks=0
 [FoldedCode13]
 Blocks=0
+[Bookmarks17]
+TimeStamp=1550227526
+Row=39
+Column=43
+ScrollPosX=0
+ScrollPosY=28
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\main.c
@@ -900,3 +911,15 @@ F8=C:\cvavr\inc\mega16_bits.h
 F9=C:\cvavr\inc\delay.h
 F10=C:\CrossPlatformLibraries\Utils\utility_bit.h
 F11=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_hw.h
+[FoldedCode8]
+Blocks=0
+[FoldedCode17]
+Blocks=0
+[FoldedCode16]
+Blocks=0
+[FoldedCode14]
+Blocks=0
+[FoldedCode11]
+Blocks=0
+[FoldedCode10]
+Blocks=0

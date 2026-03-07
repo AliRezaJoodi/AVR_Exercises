@@ -6,7 +6,7 @@
 ;Build configuration    : Release
 ;Chip type              : ATmega32A
 ;Program type           : Application
-;Clock frequency        : 1.000000 MHz
+;Clock frequency        : 8.000000 MHz
 ;Memory model           : Small
 ;Optimize for           : Size
 ;(s)printf features     : int, width
@@ -1079,11 +1079,10 @@ __DELAY_USW_LOOP:
 	.ENDM
 
 ;NAME DEFINITIONS FOR GLOBAL VARIABLES ALLOCATED TO REGISTERS
-	.DEF _numer_initial=R5
-	.DEF _numer=R4
-	.DEF __lcd_x=R7
-	.DEF __lcd_y=R6
-	.DEF __lcd_maxx=R9
+	.DEF _numer=R5
+	.DEF __lcd_x=R4
+	.DEF __lcd_y=R7
+	.DEF __lcd_maxx=R6
 
 	.CSEG
 	.ORG 0x00
@@ -1114,17 +1113,15 @@ __START_OF_CODE:
 	JMP  0x00
 	JMP  0x00
 
-_keypad_data:
-	.DB  0xD7,0xEB,0xDB,0xBB,0xED,0xDD,0xBD,0xEE
-	.DB  0xDE,0xBE,0x7E,0x7D,0x7B,0x77,0xB7,0xE7
-_tbl10_G106:
+_tbl10_G105:
 	.DB  0x10,0x27,0xE8,0x3,0x64,0x0,0xA,0x0
 	.DB  0x1,0x0
-_tbl16_G106:
+_tbl16_G105:
 	.DB  0x0,0x10,0x0,0x1,0x10,0x0,0x1,0x0
 
 _0x0:
-	.DB  0x20,0x20,0x0,0x3D,0x3E,0x0,0x34,0x78
+	.DB  0x20,0x20,0x0,0x34,0x78,0x34,0x20,0x4B
+	.DB  0x65,0x79,0x70,0x61,0x64,0x0,0x34,0x78
 	.DB  0x34,0x4B,0x65,0x79,0x70,0x61,0x64,0x20
 	.DB  0x44,0x72,0x69,0x76,0x65,0x72,0x0,0x4C
 	.DB  0x6F,0x61,0x64,0x69,0x6E,0x67,0x20,0x2E
@@ -1239,140 +1236,565 @@ __GLOBAL_INI_END:
 	.SET power_ctrl_reg=mcucr
 	#endif
    .equ __lcd_port=0x12 ;PORTD
-; 0000 000A #endasm
+; 0000 000B #endasm
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
 ;void LCD_Config(void);
 ;void LCD_DisplayloadingPage(void);
-;void LCD_DisplayMainPage(char, char);
-;unsigned char numer_initial, numer;
+;void LCD_DisplayMainPage(char);
+;unsigned char numer;
 ;void main(void){
-; 0000 0016 void main(void){
+; 0000 0017 void main(void){
 
 	.CSEG
 _main:
 ; .FSTART _main
-; 0000 0017 unsigned char numer_old=0;
-; 0000 0018 
-; 0000 0019 LCD_Config();
+; 0000 0018 unsigned char numer_old = 0;
+; 0000 0019 
+; 0000 001A LCD_Config();
 ;	numer_old -> R17
 	LDI  R17,0
 	RCALL _LCD_Config
-; 0000 001A LCD_DisplayloadingPage(); delay_ms(250); lcd_clear();
+; 0000 001B LCD_DisplayloadingPage(); delay_ms(250); lcd_clear();
 	RCALL _LCD_DisplayloadingPage
 	LDI  R26,LOW(250)
 	LDI  R27,0
 	CALL _delay_ms
 	CALL _lcd_clear
-; 0000 001B LCD_DisplayMainPage(255, 16);
-	LDI  R30,LOW(255)
-	ST   -Y,R30
-	LDI  R26,LOW(16)
-	RCALL _LCD_DisplayMainPage
 ; 0000 001C 
 ; 0000 001D while(1){
-_0x3:
-; 0000 001E numer_initial=_Keypad4x4_GetInitialNumber();
-	CALL __Keypad4x4_GetInitialNumber
+_0x21:
+; 0000 001E numer = Keypad4x4_GetInitialNumber();
+	RCALL _Keypad4x4_GetInitialNumber
 	MOV  R5,R30
-; 0000 001F //numer=_Keypad4x4_ConvertNumber(numer_initial);
-; 0000 0020 numer=Keypad4x4_GetNumber();
-	CALL _Keypad4x4_GetNumber
-	MOV  R4,R30
+; 0000 001F numer = Keypad4x4_ConvertNumber(numer);
+	MOV  R26,R5
+	RCALL _Keypad4x4_ConvertNumber
+	MOV  R5,R30
+; 0000 0020 //        numer=Keypad4x4_GetNumber();
 ; 0000 0021 
-; 0000 0022 if(numer<16 && numer_old!=numer){
-	LDI  R30,LOW(16)
-	CP   R4,R30
-	BRSH _0x7
-	CP   R4,R17
-	BRNE _0x8
-_0x7:
-	RJMP _0x6
-_0x8:
-; 0000 0023 numer_old= numer;
-	MOV  R17,R4
-; 0000 0024 LCD_DisplayMainPage(numer_initial, numer);
-	ST   -Y,R5
-	MOV  R26,R4
+; 0000 0022 if(numer_old != numer){
+	CP   R5,R17
+	BREQ _0x24
+; 0000 0023 numer_old = numer;
+	MOV  R17,R5
+; 0000 0024 LCD_DisplayMainPage(numer);
+	MOV  R26,R5
 	RCALL _LCD_DisplayMainPage
 ; 0000 0025 }
 ; 0000 0026 }
-_0x6:
-	RJMP _0x3
+_0x24:
+	RJMP _0x21
 ; 0000 0027 }
-_0x9:
-	RJMP _0x9
+_0x25:
+	RJMP _0x25
 ; .FEND
-;void LCD_DisplayMainPage(unsigned char x1, unsigned char x2){
-; 0000 002B void LCD_DisplayMainPage(unsigned char x1, unsigned char x2){
+;void LCD_DisplayMainPage(unsigned char x2){
+; 0000 002B void LCD_DisplayMainPage(unsigned char x2){
 _LCD_DisplayMainPage:
 ; .FSTART _LCD_DisplayMainPage
-; 0000 002C char buffer[16];
-; 0000 002D lcd_clear();
+; 0000 002C char txt[16];
+; 0000 002D 
+; 0000 002E lcd_clear();
 	ST   -Y,R26
 	SBIW R28,16
-;	x1 -> Y+17
 ;	x2 -> Y+16
-;	buffer -> Y+0
+;	txt -> Y+0
 	CALL SUBOPT_0x0
-; 0000 002E 
-; 0000 002F lcd_gotoxy(0,0); itoa(x1,buffer); lcd_puts(buffer); lcd_putsf("  ");
-	LDD  R30,Y+17
-	CALL SUBOPT_0x1
-; 0000 0030 lcd_gotoxy(4,0); lcd_putsf("=>");
-	LDI  R30,LOW(4)
+; 0000 002F lcd_gotoxy(0,0); itoa(x2, txt); lcd_puts(txt); lcd_putsf("  ");
+	LDD  R30,Y+16
+	LDI  R31,0
+	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(0)
-	CALL _lcd_gotoxy
+	MOVW R26,R28
+	ADIW R26,2
+	CALL _itoa
+	MOVW R26,R28
+	CALL _lcd_puts
+	__POINTW2FN _0x0,0
+	CALL SUBOPT_0x1
+; 0000 0030 lcd_gotoxy(0,1); lcd_putsf("4x4 Keypad");
 	__POINTW2FN _0x0,3
 	CALL _lcd_putsf
-; 0000 0031 lcd_gotoxy(7,0); itoa(x2,buffer); lcd_puts(buffer); lcd_putsf("  ");
-	LDI  R30,LOW(7)
-	ST   -Y,R30
-	LDI  R26,LOW(0)
-	CALL _lcd_gotoxy
-	LDD  R30,Y+16
-	CALL SUBOPT_0x1
-; 0000 0032 
-; 0000 0033 lcd_gotoxy(0,1); lcd_putsf("4x4Keypad Driver");
-	LDI  R30,LOW(0)
-	ST   -Y,R30
-	LDI  R26,LOW(1)
-	CALL _lcd_gotoxy
-	__POINTW2FN _0x0,6
-	CALL _lcd_putsf
-; 0000 0034 }
-	ADIW R28,18
+; 0000 0031 }
+	ADIW R28,17
 	RET
 ; .FEND
 ;void LCD_Config(void){
-; 0000 0037 void LCD_Config(void){
+; 0000 0034 void LCD_Config(void){
 _LCD_Config:
 ; .FSTART _LCD_Config
-; 0000 0038 lcd_init(16); lcd_clear();
+; 0000 0035 lcd_init(16); lcd_clear();
 	LDI  R26,LOW(16)
 	CALL _lcd_init
 	CALL _lcd_clear
-; 0000 0039 }
+; 0000 0036 }
 	RET
 ; .FEND
 ;void LCD_DisplayloadingPage(void){
-; 0000 003C void LCD_DisplayloadingPage(void){
+; 0000 0039 void LCD_DisplayloadingPage(void){
 _LCD_DisplayloadingPage:
 ; .FSTART _LCD_DisplayloadingPage
-; 0000 003D lcd_clear();
+; 0000 003A lcd_clear();
 	CALL SUBOPT_0x0
-; 0000 003E lcd_gotoxy(0,0); lcd_putsf("4x4Keypad Driver");
-	__POINTW2FN _0x0,6
+; 0000 003B lcd_gotoxy(0,0); lcd_putsf("4x4Keypad Driver");
+	__POINTW2FN _0x0,14
+	CALL SUBOPT_0x1
+; 0000 003C lcd_gotoxy(0,1); lcd_putsf("Loading ...");
+	__POINTW2FN _0x0,31
 	CALL _lcd_putsf
-; 0000 003F lcd_gotoxy(0,1); lcd_putsf("Loading ...");
-	LDI  R30,LOW(0)
-	ST   -Y,R30
-	LDI  R26,LOW(1)
-	CALL _lcd_gotoxy
-	__POINTW2FN _0x0,23
-	CALL _lcd_putsf
-; 0000 0040 }
+; 0000 003D }
 	RET
 ; .FEND
+	#ifndef __SLEEP_DEFINED__
+	#define __SLEEP_DEFINED__
+	.EQU __se_bit=0x80
+	.EQU __sm_mask=0x70
+	.EQU __sm_powerdown=0x20
+	.EQU __sm_powersave=0x30
+	.EQU __sm_standby=0x60
+	.EQU __sm_ext_standby=0x70
+	.EQU __sm_adc_noise_red=0x10
+	.SET power_ctrl_reg=mcucr
+	#endif
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	buf -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;	mode -> Y+0
+;uint8_t Keypad4x4_GetInitialNumber(void){
+; 0001 000D uint8_t Keypad4x4_GetInitialNumber(void){
+
+	.CSEG
+_Keypad4x4_GetInitialNumber:
+; .FSTART _Keypad4x4_GetInitialNumber
+; 0001 000E uint8_t numer = 0;
+; 0001 000F 
+; 0001 0010 //    Keypad4x4_ConfigPin(&KEYPAD_R1_DDR, &KEYPAD_R1_PORT, KEYPAD_R1_BIT, KEYPAD ...
+; 0001 0011 
+; 0001 0012 Keypad4x4_R1_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	ST   -Y,R17
+;	numer -> R17
+	LDI  R17,0
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x402600A
+	SBI  0x14,0
+	CBI  0x15,0
+	RJMP _0x402600B
+_0x402600A:
+	CBI  0x14,0
+	SBI  0x15,0
+_0x402600B:
+	ADIW R28,1
+; 0001 0013 Keypad4x4_R2_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x402700D
+	SBI  0x14,1
+	CBI  0x15,1
+	RJMP _0x402700E
+_0x402700D:
+	CBI  0x14,1
+	SBI  0x15,1
+_0x402700E:
+	ADIW R28,1
+; 0001 0014 Keypad4x4_R3_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x4028010
+	SBI  0x14,2
+	CBI  0x15,2
+	RJMP _0x4028011
+_0x4028010:
+	CBI  0x14,2
+	SBI  0x15,2
+_0x4028011:
+	ADIW R28,1
+; 0001 0015 Keypad4x4_R4_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x4029013
+	SBI  0x14,3
+	CBI  0x15,3
+	RJMP _0x4029014
+_0x4029013:
+	CBI  0x14,3
+	SBI  0x15,3
+_0x4029014:
+	ADIW R28,1
+; 0001 0016 Keypad4x4_C1_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x402A016
+	SBI  0x14,4
+	CBI  0x15,4
+	RJMP _0x402A017
+_0x402A016:
+	CBI  0x14,4
+	SBI  0x15,4
+_0x402A017:
+	ADIW R28,1
+; 0001 0017 Keypad4x4_C2_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x402B019
+	SBI  0x14,5
+	CBI  0x15,5
+	RJMP _0x402B01A
+_0x402B019:
+	CBI  0x14,5
+	SBI  0x15,5
+_0x402B01A:
+	ADIW R28,1
+; 0001 0018 Keypad4x4_C3_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x402C01C
+	SBI  0x14,6
+	CBI  0x15,6
+	RJMP _0x402C01D
+_0x402C01C:
+	CBI  0x14,6
+	SBI  0x15,6
+_0x402C01D:
+	ADIW R28,1
+; 0001 0019 Keypad4x4_C4_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x402D01F
+	SBI  0x14,7
+	CBI  0x15,7
+	RJMP _0x402D020
+_0x402D01F:
+	CBI  0x14,7
+	SBI  0x15,7
+_0x402D020:
+	ADIW R28,1
+; 0001 001A 
+; 0001 001B //    KEYPAD4x4_DDR=0b11110000; KEYPAD4x4_PORT=0b00001111; delay_us(2);
+; 0001 001C numer = KEYPAD4x4_PIN;
+	IN   R17,19
+; 0001 001D 
+; 0001 001E Keypad4x4_R1_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x802600A
+	SBI  0x14,0
+	CBI  0x15,0
+	RJMP _0x802600B
+_0x802600A:
+	CBI  0x14,0
+	SBI  0x15,0
+_0x802600B:
+	ADIW R28,1
+; 0001 001F Keypad4x4_R2_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x802700D
+	SBI  0x14,1
+	CBI  0x15,1
+	RJMP _0x802700E
+_0x802700D:
+	CBI  0x14,1
+	SBI  0x15,1
+_0x802700E:
+	ADIW R28,1
+; 0001 0020 Keypad4x4_R3_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x8028010
+	SBI  0x14,2
+	CBI  0x15,2
+	RJMP _0x8028011
+_0x8028010:
+	CBI  0x14,2
+	SBI  0x15,2
+_0x8028011:
+	ADIW R28,1
+; 0001 0021 Keypad4x4_R4_ConfigPin(KEYPAD4X4_MODE_OUTPUT);
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x8029013
+	SBI  0x14,3
+	CBI  0x15,3
+	RJMP _0x8029014
+_0x8029013:
+	CBI  0x14,3
+	SBI  0x15,3
+_0x8029014:
+	ADIW R28,1
+; 0001 0022 Keypad4x4_C1_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x802A016
+	SBI  0x14,4
+	CBI  0x15,4
+	RJMP _0x802A017
+_0x802A016:
+	CBI  0x14,4
+	SBI  0x15,4
+_0x802A017:
+	ADIW R28,1
+; 0001 0023 Keypad4x4_C2_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x802B019
+	SBI  0x14,5
+	CBI  0x15,5
+	RJMP _0x802B01A
+_0x802B019:
+	CBI  0x14,5
+	SBI  0x15,5
+_0x802B01A:
+	ADIW R28,1
+; 0001 0024 Keypad4x4_C3_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x802C01C
+	SBI  0x14,6
+	CBI  0x15,6
+	RJMP _0x802C01D
+_0x802C01C:
+	CBI  0x14,6
+	SBI  0x15,6
+_0x802C01D:
+	ADIW R28,1
+; 0001 0025 Keypad4x4_C4_ConfigPin(KEYPAD4X4_MODE_INPUT);
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LD   R30,Y
+	CPI  R30,0
+	BREQ _0x802D01F
+	SBI  0x14,7
+	CBI  0x15,7
+	RJMP _0x802D020
+_0x802D01F:
+	CBI  0x14,7
+	SBI  0x15,7
+_0x802D020:
+	ADIW R28,1
+; 0001 0026 
+; 0001 0027 //KEYPAD4x4_DDR=0b00001111; KEYPAD4x4_PORT=0b11110000; delay_us(2);
+; 0001 0028 numer=numer|KEYPAD4x4_PIN;
+	IN   R30,0x13
+	OR   R17,R30
+; 0001 0029 
+; 0001 002A return numer;
+	MOV  R30,R17
+	LD   R17,Y+
+	RET
+; 0001 002B }
+; .FEND
+;unsigned char Keypad4x4_ConvertNumber(unsigned char key){
+; 0001 0036 unsigned char Keypad4x4_ConvertNumber(unsigned char key){
+_Keypad4x4_ConvertNumber:
+; .FSTART _Keypad4x4_ConvertNumber
+; 0001 0037 switch (key){
+	ST   -Y,R26
+;	key -> Y+0
+	LD   R30,Y
+; 0001 0038 case N00:
+	CPI  R30,LOW(0xD7)
+	BRNE _0x20024
+; 0001 0039 return 0; break;
+	LDI  R30,LOW(0)
+	JMP  _0x20C0001
+; 0001 003A case N01:
+_0x20024:
+	CPI  R30,LOW(0xEB)
+	BRNE _0x20025
+; 0001 003B return 1; break;
+	JMP  _0x20C0002
+; 0001 003C case N02:
+_0x20025:
+	CPI  R30,LOW(0xDB)
+	BRNE _0x20026
+; 0001 003D return 2; break;
+	LDI  R30,LOW(2)
+	JMP  _0x20C0001
+; 0001 003E case N03:
+_0x20026:
+	CPI  R30,LOW(0xBB)
+	BRNE _0x20027
+; 0001 003F return 3; break;
+	LDI  R30,LOW(3)
+	JMP  _0x20C0001
+; 0001 0040 case N04:
+_0x20027:
+	CPI  R30,LOW(0xED)
+	BRNE _0x20028
+; 0001 0041 return 4; break;
+	LDI  R30,LOW(4)
+	JMP  _0x20C0001
+; 0001 0042 case N05:
+_0x20028:
+	CPI  R30,LOW(0xDD)
+	BRNE _0x20029
+; 0001 0043 return 5; break;
+	LDI  R30,LOW(5)
+	JMP  _0x20C0001
+; 0001 0044 case N06:
+_0x20029:
+	CPI  R30,LOW(0xBD)
+	BRNE _0x2002A
+; 0001 0045 return 6; break;
+	LDI  R30,LOW(6)
+	JMP  _0x20C0001
+; 0001 0046 case N07:
+_0x2002A:
+	CPI  R30,LOW(0xEE)
+	BRNE _0x2002B
+; 0001 0047 return 7; break;
+	LDI  R30,LOW(7)
+	JMP  _0x20C0001
+; 0001 0048 case N08:
+_0x2002B:
+	CPI  R30,LOW(0xDE)
+	BRNE _0x2002C
+; 0001 0049 return 8; break;
+	LDI  R30,LOW(8)
+	JMP  _0x20C0001
+; 0001 004A case N09:
+_0x2002C:
+	CPI  R30,LOW(0xBE)
+	BRNE _0x2002D
+; 0001 004B return 9; break;
+	LDI  R30,LOW(9)
+	JMP  _0x20C0001
+; 0001 004C case N10:
+_0x2002D:
+	CPI  R30,LOW(0x7E)
+	BRNE _0x2002E
+; 0001 004D return 10; break;
+	LDI  R30,LOW(10)
+	JMP  _0x20C0001
+; 0001 004E case N11:
+_0x2002E:
+	CPI  R30,LOW(0x7D)
+	BRNE _0x2002F
+; 0001 004F return 11; break;
+	LDI  R30,LOW(11)
+	JMP  _0x20C0001
+; 0001 0050 case N12:
+_0x2002F:
+	CPI  R30,LOW(0x7B)
+	BRNE _0x20030
+; 0001 0051 return 12; break;
+	LDI  R30,LOW(12)
+	JMP  _0x20C0001
+; 0001 0052 case N13:
+_0x20030:
+	CPI  R30,LOW(0x77)
+	BRNE _0x20031
+; 0001 0053 return 13; break;
+	LDI  R30,LOW(13)
+	JMP  _0x20C0001
+; 0001 0054 case N14:
+_0x20031:
+	CPI  R30,LOW(0xB7)
+	BRNE _0x20032
+; 0001 0055 return 14; break;
+	LDI  R30,LOW(14)
+	JMP  _0x20C0001
+; 0001 0056 case N15:
+_0x20032:
+	CPI  R30,LOW(0xE7)
+	BRNE _0x20034
+; 0001 0057 return 15; break;
+	LDI  R30,LOW(15)
+	JMP  _0x20C0001
+; 0001 0058 default:
+_0x20034:
+; 0001 0059 return 16;
+	LDI  R30,LOW(16)
+	JMP  _0x20C0001
+; 0001 005A }
+; 0001 005B }
+; .FEND
+;unsigned char Keypad4x4_GetNumber(void){
+; 0001 006B unsigned char Keypad4x4_GetNumber(void){
+; 0001 006C unsigned char numer_initial = 0;
+; 0001 006D 
+; 0001 006E numer_initial = Keypad4x4_GetInitialNumber();
+;	numer_initial -> R17
+; 0001 006F return Keypad4x4_ConvertNumber(numer_initial);
+; 0001 0070 }
 
 	.CSEG
 _itoa:
@@ -1511,7 +1933,7 @@ __lcd_write_data:
     swap  r26
 	RCALL __lcd_write_nibble_G101
     sbi   __lcd_port,__lcd_rd     ;RD=1
-	JMP  _0x20E0003
+	JMP  _0x20C0001
 ; .FEND
 __lcd_read_nibble_G101:
 ; .FSTART __lcd_read_nibble_G101
@@ -1546,9 +1968,10 @@ _lcd_gotoxy:
 	LDD  R26,Y+1
 	ADD  R26,R30
 	CALL __lcd_write_data
-	LDD  R7,Y+1
-	LDD  R6,Y+0
-	JMP  _0x20E0002
+	LDD  R4,Y+1
+	LDD  R7,Y+0
+	ADIW R28,2
+	RET
 ; .FEND
 _lcd_clear:
 ; .FSTART _lcd_clear
@@ -1562,8 +1985,8 @@ _lcd_clear:
 	LDI  R26,LOW(1)
 	CALL __lcd_write_data
 	LDI  R30,LOW(0)
-	MOV  R6,R30
 	MOV  R7,R30
+	MOV  R4,R30
 	RET
 ; .FEND
 _lcd_putchar:
@@ -1576,17 +1999,17 @@ _lcd_putchar:
     cpi  r26,10
     breq __lcd_putchar1
     clt
-	CP   R7,R9
+	CP   R4,R6
 	BRLO _0x2020004
 	__lcd_putchar1:
-	INC  R6
+	INC  R7
 	LDI  R30,LOW(0)
 	ST   -Y,R30
-	MOV  R26,R6
+	MOV  R26,R7
 	RCALL _lcd_gotoxy
 	brts __lcd_putchar0
 _0x2020004:
-	INC  R7
+	INC  R4
     rcall __lcd_ready
     sbi  __lcd_port,__lcd_rs ;RS=1
 	LD   R26,Y
@@ -1594,7 +2017,7 @@ _0x2020004:
 __lcd_putchar0:
     pop  r31
     pop  r30
-	JMP  _0x20E0003
+	JMP  _0x20C0001
 ; .FEND
 _lcd_puts:
 ; .FSTART _lcd_puts
@@ -1614,7 +2037,7 @@ _0x2020005:
 	RCALL _lcd_putchar
 	RJMP _0x2020005
 _0x2020007:
-	RJMP _0x20E0004
+	RJMP _0x20C0003
 ; .FEND
 _lcd_putsf:
 ; .FSTART _lcd_putsf
@@ -1636,7 +2059,7 @@ _0x2020008:
 	RCALL _lcd_putchar
 	RJMP _0x2020008
 _0x202000A:
-_0x20E0004:
+_0x20C0003:
 	LDD  R17,Y+0
 	ADIW R28,3
 	RET
@@ -1662,14 +2085,14 @@ __lcd_init_write_G101:
     ld    r26,y
 	CALL __lcd_write_nibble_G101
     sbi   __lcd_port,__lcd_rd     ;RD=1
-	RJMP _0x20E0003
+	RJMP _0x20C0001
 ; .FEND
 _lcd_init:
 ; .FSTART _lcd_init
 	ST   -Y,R26
     cbi   __lcd_port,__lcd_enable ;EN=0
     cbi   __lcd_port,__lcd_rs     ;RS=0
-	LDD  R9,Y+0
+	LDD  R6,Y+0
 	LD   R30,Y
 	SUBI R30,-LOW(128)
 	__PUTB1MN __base_y_G101,2
@@ -1697,96 +2120,16 @@ _lcd_init:
 	CPI  R30,LOW(0x5)
 	BREQ _0x202000B
 	LDI  R30,LOW(0)
-	RJMP _0x20E0003
+	RJMP _0x20C0001
 _0x202000B:
 	CALL __lcd_ready
 	LDI  R26,LOW(6)
 	CALL __lcd_write_data
 	CALL _lcd_clear
+_0x20C0002:
 	LDI  R30,LOW(1)
-_0x20E0003:
+_0x20C0001:
 	ADIW R28,1
-	RET
-; .FEND
-	#ifndef __SLEEP_DEFINED__
-	#define __SLEEP_DEFINED__
-	.EQU __se_bit=0x80
-	.EQU __sm_mask=0x70
-	.EQU __sm_powerdown=0x20
-	.EQU __sm_powersave=0x30
-	.EQU __sm_standby=0x60
-	.EQU __sm_ext_standby=0x70
-	.EQU __sm_adc_noise_red=0x10
-	.SET power_ctrl_reg=mcucr
-	#endif
-
-	.CSEG
-__Keypad4x4_GetInitialNumber:
-; .FSTART __Keypad4x4_GetInitialNumber
-	ST   -Y,R17
-	LDI  R30,LOW(15)
-	OUT  0x14,R30
-	LDI  R30,LOW(240)
-	OUT  0x15,R30
-	__DELAY_USB 2
-	IN   R17,19
-	OUT  0x14,R30
-	LDI  R30,LOW(15)
-	OUT  0x15,R30
-	__DELAY_USB 2
-	IN   R30,0x13
-	OR   R17,R30
-	MOV  R30,R17
-	LD   R17,Y+
-	RET
-; .FEND
-__Keypad4x4_ConvertNumber:
-; .FSTART __Keypad4x4_ConvertNumber
-	ST   -Y,R26
-	ST   -Y,R17
-	LDI  R17,0
-	LDD  R26,Y+1
-	CPI  R26,LOW(0xFF)
-	BREQ _0x2040003
-	LDI  R17,LOW(0)
-_0x2040005:
-	CPI  R17,16
-	BRSH _0x2040006
-	MOV  R30,R17
-	LDI  R31,0
-	SUBI R30,LOW(-_keypad_data*2)
-	SBCI R31,HIGH(-_keypad_data*2)
-	LPM  R30,Z
-	LDD  R26,Y+1
-	CP   R30,R26
-	BRNE _0x2040007
-	MOV  R30,R17
-	RJMP _0x20E0001
-_0x2040007:
-	SUBI R17,-LOW(1)
-	RJMP _0x2040005
-_0x2040006:
-_0x2040003:
-	LDI  R30,LOW(16)
-_0x20E0001:
-	LDD  R17,Y+0
-_0x20E0002:
-	ADIW R28,2
-	RET
-; .FEND
-_Keypad4x4_GetNumber:
-; .FSTART _Keypad4x4_GetNumber
-	ST   -Y,R17
-	ST   -Y,R16
-	LDI  R17,0
-	LDI  R16,0
-	RCALL __Keypad4x4_GetInitialNumber
-	MOV  R17,R30
-	MOV  R26,R17
-	RCALL __Keypad4x4_ConvertNumber
-	MOV  R16,R30
-	LD   R16,Y+
-	LD   R17,Y+
 	RET
 ; .FEND
 
@@ -1824,18 +2167,13 @@ SUBOPT_0x0:
 	LDI  R26,LOW(0)
 	JMP  _lcd_gotoxy
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:10 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:2 WORDS
 SUBOPT_0x1:
-	LDI  R31,0
-	ST   -Y,R31
+	CALL _lcd_putsf
+	LDI  R30,LOW(0)
 	ST   -Y,R30
-	MOVW R26,R28
-	ADIW R26,2
-	CALL _itoa
-	MOVW R26,R28
-	CALL _lcd_puts
-	__POINTW2FN _0x0,0
-	JMP  _lcd_putsf
+	LDI  R26,LOW(1)
+	JMP  _lcd_gotoxy
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:3 WORDS
 SUBOPT_0x2:
@@ -1856,7 +2194,7 @@ _delay_ms:
 	breq __delay_ms1
 __delay_ms0:
 	wdr
-	__DELAY_USW 0xFA
+	__DELAY_USW 0x7D0
 	sbiw r26,1
 	brne __delay_ms0
 __delay_ms1:
