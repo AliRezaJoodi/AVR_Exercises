@@ -12,15 +12,17 @@
 void SPI_Config(void);
 
 void main(void){
+    uint16_t data = (0U << 15) | (0U << 13) | (1U << 12) | (4095U);
     float ch0_volt = 1.234;
     float ch1_volt = 3.654;
 
     SPI_Config();
     MCP4822_Config();
 
-    MCP4822_SetOutput(0, ch0_volt);
-    MCP4822_SetOutput(1, ch1_volt);
+//    MCP4822_SetOutput(0, ch0_volt);
+//    MCP4822_SetOutput(1, ch1_volt);
     //MCP4822_ShutDown(0);
+    _MCP4822_WriteCommand(data);
 
     while(1){
     }
