@@ -3,8 +3,6 @@
 #include <mega32a.h>
 #include <delay.h>
 #include <spi.h>
-#include <stdlib.h>
-#include <delay.h>
 
 #include "hardware.h"
 #include "mcp4822.h"
@@ -12,17 +10,34 @@
 void SPI_Config(void);
 
 void main(void){
-    uint16_t data = (0U << 15) | (0U << 13) | (1U << 12) | (4095U);
-    float ch0_volt = 1.234;
-    float ch1_volt = 3.654;
+    MCP4822_t dac1;
+
+    dac1.cs.ddr     = &MCP4822_CS_DDR;
+    dac1.cs.port    = &MCP4822_CS_PORT;
+    dac1.cs.index   =  MCP4822_CS_BIT;
+    dac1.ldac.ddr   = &MCP4822_LDAC_DDR;
+    dac1.ldac.port  = &MCP4822_LDAC_PORT;
+    dac1.ldac.index =  MCP4822_LDAC_BIT;
 
     SPI_Config();
-    MCP4822_Config();
+    MCP4822_Init(&dac1);
 
-//    MCP4822_SetOutput(0, ch0_volt);
-//    MCP4822_SetOutput(1, ch1_volt);
-    //MCP4822_ShutDown(0);
-    _MCP4822_WriteCommand(data);
+//    MCP4822_SetOutput(&dac1, MCP4822_OUTPUT_A, MCP4822_GAIN_1X, 1000U);
+//    MCP4822_SetOutputA(&dac1, MCP4822_GAIN_1X, 1000U);
+    MCP4822_SetOutputA_1xGain(&dac1, 1000U);
+//    MCP4822_SetOutputA_2xGain(&dac1, 1000U);
+
+//    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_A);
+//    MCP4822_DisableOutputA(&dac1);
+
+
+//    MCP4822_SetOutput(&dac1, MCP4822_OUTPUT_B, MCP4822_GAIN_2X, 1000U);
+//    MCP4822_SetOutputB(&dac1, MCP4822_GAIN_1X, 1000U);
+//    MCP4822_SetOutputB_1xGain(&dac1, 1000U);
+    MCP4822_SetOutputB_2xGain(&dac1, 1000U);
+
+//    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_B);
+//    MCP4822_DisableOutputB(&dac1);
 
     while(1){
     }
