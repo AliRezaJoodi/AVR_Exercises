@@ -45,7 +45,7 @@ void main(void){
 
 //********************************************************
 void SPI_Config(void){
-    DDRB.4=1; PORTB.4=0;    //SS
+    //DDRB.4=1; PORTB.4=0;    //SS
     DDRB.5=1; PORTB.5=0;    //MOSI
     DDRB.6=0; PORTB.6=0;    //MISO
     DDRB.7=1; PORTB.7=0;    //SCK
