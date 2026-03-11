@@ -12,7 +12,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include <lm335.h>
+#include "lm335_converter.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
@@ -40,36 +40,36 @@ void main(void){
 
     ADC_Config();
     LCD_Config();
-    
+
     while (1){
         input_mv = read_adc(ADC_CH1) * 4.8875855;
         temp_k = LM335_ConvertMilliVoltToTemp(input_mv);
         LCD_DisplayMainPage(input_mv, temp_k);
-        delay_ms(300);                                        
+        delay_ms(300);
     };
 }
 
 //********************************************************
 void LCD_DisplayMainPage(float mv, float temp){
     char txt[16];
-     
+
     lcd_gotoxy(0,0);
     lcd_putsf("Input(mV):");
     itoa(mv, txt);
     lcd_puts(txt);
     lcd_putsf("  ");
-    
+
     lcd_gotoxy(0,1);
     lcd_putsf("Temp(^K):");
     ftoa(temp,1,txt);
     lcd_puts(txt);
-    lcd_putsf("  ");   
+    lcd_putsf("  ");
 }
 
 //********************************************************
 void LCD_Config(void){
     lcd_init(16);
-    lcd_clear();   
+    lcd_clear();
 }
 
 //********************************************************
