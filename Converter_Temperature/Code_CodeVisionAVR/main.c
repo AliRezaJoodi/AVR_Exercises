@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include <converter_temperature.h>
+#include "temperature_converter.h"
 
 void UART_Config(void);
 
@@ -13,31 +13,31 @@ void main(void){
     float temp_c = 50;
     float temp_k = 0;
     float temp_f = 0;
-    
-    char txt[16];
-         
-    UART_Config();         
-    putsf("Loading ...\r");
-    
-    temp_k = ConvertTemp_CtoK(temp_c);
-    ftoa(temp_k, 2, txt); putsf("\rTemp(^K): "); puts(txt); 
-    
-    temp_f = ConvertTemp_CtoF(temp_c);
-    ftoa(temp_f, 2, txt); putsf("\rTemp(^F): "); puts(txt); 
-    
-    temp_c = ConvertTemp_KtoC(temp_k);
-    ftoa(temp_c, 2, txt); putsf("\rTemp(^C): "); puts(txt); 
 
-    temp_f = ConvertTemp_KtoF(temp_k);
-    ftoa(temp_f, 2, txt); putsf("\rTemp(^F): "); puts(txt); 
-        
-    temp_c = ConvertTemp_FtoC(temp_f);
-    ftoa(temp_c, 2, txt); putsf("\rTemp(^C): "); puts(txt);
-    
-    temp_k = ConvertTemp_FtoK(temp_f);
+    char txt[16];
+
+    UART_Config();
+    putsf("Loading ...\r");
+
+    temp_k = Temp_ConvertCtoK(temp_c);
     ftoa(temp_k, 2, txt); putsf("\rTemp(^K): "); puts(txt);
-           
-    while(1){                                    
+
+    temp_f = Temp_ConvertCtoF(temp_c);
+    ftoa(temp_f, 2, txt); putsf("\rTemp(^F): "); puts(txt);
+
+    temp_c = Temp_ConvertKtoC(temp_k);
+    ftoa(temp_c, 2, txt); putsf("\rTemp(^C): "); puts(txt);
+
+    temp_f = Temp_ConvertKtoF(temp_k);
+    ftoa(temp_f, 2, txt); putsf("\rTemp(^F): "); puts(txt);
+
+    temp_c = Temp_ConvertFtoC(temp_f);
+    ftoa(temp_c, 2, txt); putsf("\rTemp(^C): "); puts(txt);
+
+    temp_k = Temp_ConvertFtoK(temp_f);
+    ftoa(temp_k, 2, txt); putsf("\rTemp(^K): "); puts(txt);
+
+    while(1){
     };
 }
 
