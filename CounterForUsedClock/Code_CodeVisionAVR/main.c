@@ -1,5 +1,6 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
 #include <mega32a.h>
 #include <delay.h>
 #include <stdio.h>
@@ -12,6 +13,7 @@
 #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
 
 #include "Attachment\TestFunctions.h"
+//#include "adc_converter.h"
 
 #define INTERRUPTS_ENABLE           #asm("sei")
 #define INTERRUPTS_DISABLE          #asm("cli")
@@ -22,9 +24,9 @@
 #define TIMER1_CLOCK_P64            TIMER1_CLOCK_STOP; TIMER1_RESET; TCCR1B|=0b00000011;
 #define TIMER1_CLOCK_P256           TIMER1_CLOCK_STOP; TIMER1_RESET; TCCR1B|=0b00000100;
 #define TIMER1_INTERRUPT_ENABLE     TIMSK|=0b00000100;
-#define TIMER1_INTERRUPT_DISABLE    TIMSK&=~0b00000100;  
+#define TIMER1_INTERRUPT_DISABLE    TIMSK&=~0b00000100;
 
-unsigned int t2=0; 
+unsigned int t2=0;
 #define VALUES_RESET                t2=0;
 
 void ConfigUSART(void);
@@ -37,32 +39,43 @@ void DisableTimer1(void);
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
     ++t2;
 }
-    
-void main(void){
-    float buffer=0;
-    char txt[16];
-         	
-    ConfigUSART(); putsf("Clock Used In The Functions\r");  
 
-    INTERRUPTS_ENABLE;    
+void main(void){
+    float buf_f32=0;
+    char txt[16];
+
+    uint16_t value_u16 = 0;
+    uint16_t value2_u16 = 0;
+    uint32_t value_u32 = 0;
+
+    uint16_t buf1_u32 = 0;
+    uint32_t buf2_u32 = 0;
+
+    value_u16 = 4095;
+    //value_u32 = 100000;
+
+    ConfigUSART(); putsf("Clock Used In The Functions\r");
+
+    INTERRUPTS_ENABLE;
     ConfigTimer1(); TIMER1_INTERRUPT_DISABLE;
-    
-    TIMER1_CLOCK_STOP; TIMER1_RESET; VALUES_RESET;
-    TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1; 
-    //buffer=Test3_A(512);
-    buffer=Test3_C(512);
-    TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
-    putsf("\rFunction_C="); DisplayValues(TCNT1); 
-    ftoa(buffer,3,txt); putsf("\rBuffer="); puts(txt);    
-    
+
     TIMER1_CLOCK_STOP; TIMER1_RESET; VALUES_RESET;
     TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1;
-    buffer=Test3_B(512);
+    value_u16 = Test1(value_u16);
+    TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
+    putsf("\rFunction_A="); DisplayValues(TCNT1);
+    itoa(value_u16, txt); putsf("\rBuffer="); puts(txt);
+    //ltoa(value_u32, txt); putsf("\rBuffer="); puts(txt);
+    //ftoa(buf1_u32, 0, txt); putsf("\rBuffer="); puts(txt);
+
+    TIMER1_CLOCK_STOP; TIMER1_RESET; VALUES_RESET;
+    TIMER1_INTERRUPT_ENABLE; TIMER1_CLOCK_P1;
+    buf2_u32 = Test2(value_u16);
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
     putsf("\rFunction_B="); DisplayValues(TCNT1);
-    ftoa(buffer,3,txt); putsf("\rBuffer="); puts(txt);
-    	
-    while(1){ 
+    ftoa(buf2_u32, 3, txt); putsf("\rBuffer="); puts(txt);
+
+    while(1){
     }
 }
 
@@ -108,11 +121,11 @@ void DisableTimer1(void){
 }
 
 //********************************************************
-void DisplayValues(unsigned int x){ 
-    char txt[16];     
-    //putsf("\rCount="); 
+void DisplayValues(unsigned int x){
+    char txt[16];
+    //putsf("\rCount=");
     itoa(x,txt); puts(txt);
-    //putsf("\rt2="); itoa(t2,txt); puts(txt); 
+    //putsf("\rt2="); itoa(t2,txt); puts(txt);
     //putsf("\r");
 }
 
