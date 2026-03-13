@@ -41,8 +41,8 @@ void main(void){
         in1_u16 = MCP3201_GetCounts(&mcp1);
         in2_u16 = MCP3201_GetCounts(&mcp2);
 
-        In1 = (float)(in1_u16) * 5000.0f / 4095.0f;
-        In2 = (float)(in2_u16) * 5000.0f / 4095.0f;
+        In1 = (float)(in1_u16) * 5000.0f / 4096.0f;
+        In2 = (float)(in2_u16) * 5000.0f / 4096.0f;
 
         LCD_DisplayMainPage();
         delay_ms(500);
