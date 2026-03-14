@@ -13,7 +13,7 @@
 #define CHKBIT(ADDRESS,BIT)         ((ADDRESS &(1<<BIT))>>BIT)
 
 #include "Attachment\TestFunctions.h"
-//#include "adc_converter.h"
+//#include "dac_converter.h"
 
 #define INTERRUPTS_ENABLE           #asm("sei")
 #define INTERRUPTS_DISABLE          #asm("cli")
@@ -44,6 +44,7 @@ void main(void){
     float buf_f32=0;
     char txt[16];
 
+    uint16_t value_u8 = 0;
     uint16_t value_u16 = 0;
     uint16_t value2_u16 = 0;
     uint32_t value_u32 = 0;
@@ -51,8 +52,9 @@ void main(void){
     uint16_t buf1_u32 = 0;
     uint32_t buf2_u32 = 0;
 
-    value_u16 = 4095;
-    //value_u32 = 100000;
+    value_u16 = 3287;
+    value_u32 = 2047500;
+    buf1_u32 = 2047.50;
 
     ConfigUSART(); putsf("Clock Used In The Functions\r");
 
@@ -64,6 +66,7 @@ void main(void){
     value_u16 = Test1(value_u16);
     TIMER1_CLOCK_STOP; TIMER1_INTERRUPT_DISABLE;
     putsf("\rFunction_A="); DisplayValues(TCNT1);
+    //itoa(value_u8, txt); putsf("\rBuffer="); puts(txt);
     itoa(value_u16, txt); putsf("\rBuffer="); puts(txt);
     //ltoa(value_u32, txt); putsf("\rBuffer="); puts(txt);
     //ftoa(buf1_u32, 0, txt); putsf("\rBuffer="); puts(txt);
