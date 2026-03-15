@@ -21,10 +21,13 @@ void main(void){
     uint8_t key_last = 0;
     uint8_t key[4] = {0x00, 0x00, 0x00, 0x00,};
 
-    TM1638_t tm1;
-    tm1.stb.ddr     = &TM1638_STB_DDR;
-    tm1.stb.port    = &TM1638_STB_PORT;
-    tm1.stb.index   =  TM1638_STB_BIT;
+    TM1638_t tm1 = {
+        .stb = {
+            .ddr   = &TM1638_STB_DDR,
+            .port  = &TM1638_STB_PORT,
+            .index =  TM1638_STB_BIT
+        }
+    };
 
     UART_Config();
     TM1638_Init(&tm1);
