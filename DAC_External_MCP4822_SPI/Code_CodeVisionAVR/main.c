@@ -6,19 +6,31 @@
 
 #include "hardware.h"
 #include "mcp4822.h"
-//#include "dac_converter.h"
 
 void SPI_Config(void);
 
 void main(void){
-    MCP4822_t dac1;
+    MCP4822_t dac1 = {
+        .cs = {
+            .ddr   = &MCP4822_CS_DDR,
+            .port  = &MCP4822_CS_PORT,
+            .index =  MCP4822_CS_BIT
+        },
+        .ldac = {
+            .ddr   = &MCP4822_LDAC_DDR,
+            .port  = &MCP4822_LDAC_PORT,
+            .index =  MCP4822_LDAC_BIT
+        }
+    };
 
-    dac1.cs.ddr     = &MCP4822_CS_DDR;
-    dac1.cs.port    = &MCP4822_CS_PORT;
-    dac1.cs.index   =  MCP4822_CS_BIT;
-    dac1.ldac.ddr   = &MCP4822_LDAC_DDR;
-    dac1.ldac.port  = &MCP4822_LDAC_PORT;
-    dac1.ldac.index =  MCP4822_LDAC_BIT;
+//    MCP4822_t dac1;
+//
+//    dac1.cs.ddr     = &MCP4822_CS_DDR;
+//    dac1.cs.port    = &MCP4822_CS_PORT;
+//    dac1.cs.index   =  MCP4822_CS_BIT;
+//    dac1.ldac.ddr   = &MCP4822_LDAC_DDR;
+//    dac1.ldac.port  = &MCP4822_LDAC_PORT;
+//    dac1.ldac.index =  MCP4822_LDAC_BIT;
 
     SPI_Config();
     MCP4822_Init(&dac1);
