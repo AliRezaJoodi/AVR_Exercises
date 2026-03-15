@@ -19,58 +19,75 @@
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
 
-void main(void){  
-    uint8_t value=100;
-    uint8_t value_last=0;
+void main(void){
+    uint8_t value = 100;
+    uint8_t value_last = 0;
 
-    Button_t buttonIncr;
-    Button_t buttonDecr;
-    Button_t buttonClear;
+    Button_t buttonIncr = {
+        .btn = {
+            .ddr   = &BUTTON_DDR,
+            .port  = &BUTTON_PORT,
+            .pin   = &BUTTON_PIN,
+            .index = BUTTON_BIT
+        },
+        .config = {
+            .pressed = BUTTON_ACTIVE_LOW,
+            .pull    = BUTTON_MODE_FLOATING
+        },
+        .state   = 0,
+        .counter = 0
+    };
 
-    buttonIncr.hw.ddr   = &BUTTON1_DDR;
-    buttonIncr.hw.port  = &BUTTON1_PORT;
-    buttonIncr.hw.pin   = &BUTTON1_PIN;
-    buttonIncr.hw.index =  BUTTON1_BIT;
-    buttonIncr.config   =  BUTTON_MODE_FLOATING | BUTTON_ACTIVE_LOW;
-    buttonIncr.state    =  0;
-    buttonIncr.counter  =  0;
+    Button_t buttonDecr = {
+        .btn = {
+            .ddr   = &BUTTON2_DDR,
+            .port  = &BUTTON2_PORT,
+            .pin   = &BUTTON2_PIN,
+            .index = BUTTON2_BIT
+        },
+        .config = {
+            .pressed = BUTTON_ACTIVE_LOW,
+            .pull    = BUTTON_MODE_PULLUP
+        },
+        .state   = 0,
+        .counter = 0
+    };
 
-    buttonDecr.hw.ddr   = &BUTTON2_DDR;
-    buttonDecr.hw.port  = &BUTTON2_PORT;
-    buttonDecr.hw.pin   = &BUTTON2_PIN;
-    buttonDecr.hw.index =  BUTTON2_BIT;
-    buttonDecr.config   =  BUTTON_MODE_PULLUP | BUTTON_ACTIVE_LOW;
-    buttonDecr.state    =  0;
-    buttonDecr.counter  =  0;
+    Button_t buttonClear = {
+        .btn = {
+            .ddr   = &BUTTON3_DDR,
+            .port  = &BUTTON3_PORT,
+            .pin   = &BUTTON3_PIN,
+            .index = BUTTON3_BIT
+        },
+        .config = {
+            .pressed = BUTTON_ACTIVE_HIGH,
+            .pull    = BUTTON_MODE_FLOATING
+        },
+        .state   = 0,
+        .counter = 0
+    };
 
-    buttonClear.hw.ddr   = &BUTTON3_DDR;
-    buttonClear.hw.port  = &BUTTON3_PORT;
-    buttonClear.hw.pin   = &BUTTON3_PIN;
-    buttonClear.hw.index =  BUTTON3_BIT;
-    buttonClear.config   =  BUTTON_MODE_FLOATING | BUTTON_ACTIVE_HIGH;
-    buttonClear.state    =  0;
-    buttonClear.counter  =  0;
-
-    Button_Config(&buttonIncr); 
+    Button_Config(&buttonIncr);
     Button_Config(&buttonDecr);
     Button_Config(&buttonClear);
-        
+
     LCD_Config();
     LCD_DisplayMainPage(value);
-    
-    while(1){ 
+
+    while(1){
         if( Button_GetAutoRepeat_NonBlocking(&buttonIncr) ){
             ++value;
         }
-        
+
         if( Button_GetSingleClick(&buttonDecr) ){
             --value;
         }
-        
+
         if( Button_GetLongPress_NonBlocking(&buttonClear) ){
             value=0;
         }
-        
+
         if( value_last!=value ){
             value_last=value;
             LCD_DisplayMainPage(value);
@@ -89,7 +106,7 @@ void LCD_DisplayMainPage(unsigned char value){
 
 //********************************************************
 void LCD_Config(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16); lcd_clear();
 }
 
 
