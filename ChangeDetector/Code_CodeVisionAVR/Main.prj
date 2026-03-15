@@ -5,13 +5,13 @@ CV=2.05.0 Professional
 A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
-Files=1
+Files=2
 OpenedFiles=2
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -53,6 +53,7 @@ TimeStamp4=1548227232
 OF5=..\..\_UserDrivers\Inc\sensor_lm35.h
 TimeStamp5=1545667621
 F1=main.c
+F2=C:\CrossPlatformLibraries\Modules\changed.c
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -145,7 +146,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=406
+Build=409
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_UserDrivers\Inc
@@ -211,7 +212,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1549101795
+COFFileTimeStamp=1550800947
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -464,7 +465,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=406
+Build=409
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -586,8 +587,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 406
-L18=12517 line(s) compiled
+L17=Build: 409
+L18=12622 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -606,19 +607,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 687 words (1374 bytes), 4.2% of FLASH
+L37=Program size: 692 words (1384 bytes), 4.2% of FLASH
 L38=23 words (46 bytes), 3.2% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\List\Main.asm(2021): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\List\Main.asm(2061): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x00055e   1296     78   1374   32768   4.2%
+L9=[.cseg] 0x000000 0x000568   1306     78   1384   32768   4.2%
 L10=[.dseg] 0x000060 0x000264      0      4      4    2048   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1282,9 +1283,14 @@ BK9=-1
 Blocks=0
 [FoldedCode35]
 Blocks=0
+[FoldedCode34]
+Blocks=0
+[FoldedCode37]
+Blocks=0
 [HeadersList]
-Files=1
+Files=2
 F1=F:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\main.c
+F2=C:\CrossPlatformLibraries\Modules\changed.c
 [Header1]
 Files=10
 F1=C:\cvavr\inc\stdint.h
@@ -1297,7 +1303,7 @@ F7=C:\cvavr\inc\stdlib.h
 F8=C:\cvavr\inc\delay.h
 F9=hardware.h
 F10=C:\CrossPlatformLibraries\Modules\changed.h
-[FoldedCode34]
-Blocks=0
-[FoldedCode37]
-Blocks=0
+[Header2]
+Files=2
+F1=C:\CrossPlatformLibraries\Modules\changed.h
+F2=C:\cvavr\inc\stdint.h
