@@ -21,16 +21,21 @@ void main(void){
     float in1_u16 = 0;
     float in2_u16 = 0;
 
-    MCP3201_t mcp1;
-    MCP3201_t mcp2;
+    MCP3201_t mcp1 = {
+        .cs = {
+            .ddr   = &MCP3201_CS_DDR,
+            .port  = &MCP3201_CS_PORT,
+            .index = MCP3201_CS_BIT
+        }
+    };
 
-    mcp1.cs.ddr     = &MCP3201_CS_DDR;
-    mcp1.cs.port    = &MCP3201_CS_PORT;
-    mcp1.cs.index   =  MCP3201_CS_BIT;
-
-    mcp2.cs.ddr     = &MCP3201_CS2_DDR;
-    mcp2.cs.port    = &MCP3201_CS2_PORT;
-    mcp2.cs.index   =  MCP3201_CS2_BIT;
+    MCP3201_t mcp2 = {
+        .cs = {
+            .ddr   = &MCP3201_CS2_DDR,
+            .port  = &MCP3201_CS2_PORT,
+            .index = MCP3201_CS2_BIT
+        }
+    };
 
     SPI_Config();
     LCD_Config();
