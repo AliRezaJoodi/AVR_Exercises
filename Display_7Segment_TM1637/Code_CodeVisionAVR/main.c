@@ -28,28 +28,35 @@ void main(void){
 //        0b00000000,
 //    };
 
-    TM1637_t tm1;
-    TM1637_t tm2;
+    TM1637_t tm1 = {
+        .clk = {
+            .ddr   = &TM1637_CLK_DDR,
+            .port  = &TM1637_CLK_PORT,
+            .pin   = &TM1637_CLK_PIN,
+            .index =  TM1637_CLK_BIT
+        },
+        .dio = {
+            .ddr   = &TM1637_DIO_DDR,
+            .port  = &TM1637_DIO_PORT,
+            .pin   = &TM1637_DIO_PIN,
+            .index =  TM1637_DIO_BIT
+        }
+    };
 
-    tm1.clk.ddr     = &TM1637_CLK_DDR;
-    tm1.clk.port    = &TM1637_CLK_PORT;
-    tm1.clk.pin     = &TM1637_CLK_PIN;
-    tm1.clk.index   =  TM1637_CLK_BIT;
-
-    tm1.dio.ddr     = &TM1637_DIO_DDR;
-    tm1.dio.port    = &TM1637_DIO_PORT;
-    tm1.dio.pin     = &TM1637_DIO_PIN;
-    tm1.dio.index   =  TM1637_DIO_BIT;
-
-    tm2.clk.ddr     = &TM1637_CLK2_DDR;
-    tm2.clk.port    = &TM1637_CLK2_PORT;
-    tm2.clk.pin     = &TM1637_CLK2_PIN;
-    tm2.clk.index   =  TM1637_CLK2_BIT;
-
-    tm2.dio.ddr     = &TM1637_DIO2_DDR;
-    tm2.dio.port    = &TM1637_DIO2_PORT;
-    tm2.dio.pin     = &TM1637_DIO2_PIN;
-    tm2.dio.index   =  TM1637_DIO2_BIT;
+    TM1637_t tm2 = {
+        .clk = {
+            .ddr   = &TM1637_CLK2_DDR,
+            .port  = &TM1637_CLK2_PORT,
+            .pin   = &TM1637_CLK2_PIN,
+            .index =  TM1637_CLK2_BIT
+        },
+        .dio = {
+            .ddr   = &TM1637_DIO2_DDR,
+            .port  = &TM1637_DIO2_PORT,
+            .pin   = &TM1637_DIO2_PIN,
+            .index =  TM1637_DIO2_BIT
+        }
+    };
 
     TM1637_Init(&tm1);
     TM1637_Init(&tm2);
