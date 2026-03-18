@@ -6,19 +6,20 @@
 
 #include <stdint.h>
 #include <delay.h>
-#include <utility_bit.h>
+#include "utility_bit.h"
 
 #ifndef EnableGlobalInterrupt
     #define EnableGlobalInterrupt(STATUS)     if(STATUS){#asm("sei")} else{#asm("cli")}
 #endif
-    
+
 #define ADC_GAIN_5V_10Bit               4.8875855       // 5000mV/1023
 #define ADC_GAIN_3V3_10Bit              3.22580645      // 3300mV/1023
-#define ADC_GAIN_2V56_10Bit             2.50244         // 2560mV/1023 
-#define ADC_GAIN_5V_08Bit               19.53125        // 5000mV/256 
+#define ADC_GAIN_2V56_10Bit             2.50244         // 2560mV/1023
+#define ADC_GAIN_5V_08Bit               19.53125        // 5000mV/256
 
-#define ADC_GAIN                        ADC_GAIN_5V_10Bit    
-    
+//#ifndef ADC_GAIN
+#define ADC_GAIN                        ADC_GAIN_5V_10Bit
+
     // Analog Channel and Gain Selections
     #define SINGLE0                         0b00000
     #define SINGLE1                         0b00001
@@ -48,27 +49,27 @@
     #define DIF12_1x                        0b11001
     #define DIF22_1x                        0b11010
     #define DIF32_1x                        0b11011
-    #define DIF42_1x                        0b11100  
-    
+    #define DIF42_1x                        0b11100
+
     // Voltage Reference Selections
     #define AREF_PIN                        (0<<REFS1) | (0<<REFS0)
-    #define AVCC_PIN                        (0<<REFS1) | (1<<REFS0) 
+    #define AVCC_PIN                        (0<<REFS1) | (1<<REFS0)
     #define INTERNAL_2V56                   (1<<REFS1) | (1<<REFS0)
-    
+
     // Resolution Selections
     #define R1024                           (0<<ADLAR)
     #define R256                            (1<<ADLAR)
-    
+
     // ADC Trigger Source Selections
-    #define FREE_RUNNING                    (0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0) 
+    #define FREE_RUNNING                    (0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0)
     #define ANALOG_COMPARATOR               (0<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
     #define EXTERNAL_NTERRUPT_REQUEST_0     (0<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
     #define TIMER0_COMPARE_MATCH            (0<<ADTS2) | (1<<ADTS1) | (1<<ADTS0)
     #define TIMER0_OVERFLOW               	(1<<ADTS2) | (0<<ADTS1) | (0<<ADTS0)
     #define TIMER_COMPARE_MATCH_B           (1<<ADTS2) | (0<<ADTS1) | (1<<ADTS0)
     #define TIMER1_OVERFLOW               	(1<<ADTS2) | (1<<ADTS1) | (0<<ADTS0)
-    #define TIMER1_CAPTURE_EVENT            (1<<ADTS2) | (1<<ADTS1) | (1<<ADTS0) 
-      
+    #define TIMER1_CAPTURE_EVENT            (1<<ADTS2) | (1<<ADTS1) | (1<<ADTS0)
+
     // ADC Clock Prescaler Selections
     #define P2               	            (0<<ADPS2) | (0<<ADPS1) | (1<<ADPS0)
     #define P4               	            (0<<ADPS2) | (1<<ADPS1) | (0<<ADPS0)
@@ -79,47 +80,47 @@
     #define P128               	            (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0)
 
     // Configuration Commands
-    #define ADC_SetClockSource(MODE)                 ADCSRA=(ADCSRA & 0b11111000) | MODE; 
-    #define ADC_SetVoltageReference(MODE)            ADMUX=(ADMUX & 0b00111111) | MODE; 
-    #define ADC_SetResolution(MODE)                  ADMUX=(ADMUX & 0b11011111) | MODE; 
+    #define ADC_SetClockSource(MODE)                 ADCSRA=(ADCSRA & 0b11111000) | MODE;
+    #define ADC_SetVoltageReference(MODE)            ADMUX=(ADMUX & 0b00111111) | MODE;
+    #define ADC_SetResolution(MODE)                  ADMUX=(ADMUX & 0b11011111) | MODE;
     #define ADC_EnableInterrupt(STATUS)              if(STATUS){SET_BIT(ADCSRA,ADIE);} else{CLEAR_BIT(ADCSRA,ADIE);}
     #define ADC_SetAutoTriggerSource(MODE)           SFIOR=(SFIOR & 0b00011111) | MODE;
     #define ADC_EnableAutoTrigger(STATUS)            if(STATUS){SET_BIT(ADCSRA,ADATE);} else{CLEAR_BIT(ADCSRA,ADATE);}
-    #define ADC_SetInputChannelAndGainSelections(CH) ADMUX=(ADMUX & 0b11100000) | CH; 
-    #define ADC_Enable(STATUS)                       if(STATUS){SET_BIT(ADCSRA,ADEN);} else{CLEAR_BIT(ADCSRA,ADEN);}        
+    #define ADC_SetInputChannelAndGainSelections(CH) ADMUX=(ADMUX & 0b11100000) | CH;
+    #define ADC_Enable(STATUS)                       if(STATUS){SET_BIT(ADCSRA,ADEN);} else{CLEAR_BIT(ADCSRA,ADEN);}
     #define ADC_StartConversion(STATUS)              if(STATUS){SET_BIT(ADCSRA,ADSC);} else{CLEAR_BIT(ADCSRA,ADSC);}
-    
+
     // Check Commands
     #define CHECK_ADC_ENABLE                GET_BIT(ADCSRA,ADEN)
-    #define CHECK_ADC_RESOLUTION_256        GET_BIT(ADMUX,ADLAR) 
-    #define CHECK_ADC_RESOLUTION_1024       (GET_BIT(ADMUX,ADLAR) ^ 0b00000001) 
-    #define END_ADC_CONVERSION              (GET_BIT(ADCSRA,ADIF) ^ 0b00000001) 
-    
+    #define CHECK_ADC_RESOLUTION_256        GET_BIT(ADMUX,ADLAR)
+    #define CHECK_ADC_RESOLUTION_1024       (GET_BIT(ADMUX,ADLAR) ^ 0b00000001)
+    #define END_ADC_CONVERSION              (GET_BIT(ADCSRA,ADIF) ^ 0b00000001)
+
 #pragma used+
 
     uint16_t input_int;
     char task_adc=0;
 
-//******************************************    
+//******************************************
 interrupt [ADC_INT] void adc_isr(void){
     if(CHECK_ADC_RESOLUTION_1024){input_int=ADCW;}      // 10Bit Resolution
-            else{input_int=ADCH;}                       // 8Bit Resolution 
+            else{input_int=ADCH;}                       // 8Bit Resolution
     task_adc=1;
 }
 
 //******************************************
-void ADC_Config_AVCC_10Bit_Interrupt(unsigned char ch){    
+void ADC_Config_AVCC_10Bit_Interrupt(unsigned char ch){
     ADC_SetClockSource(P16);
     ADC_SetVoltageReference(AVCC_PIN);
     ADC_SetResolution(R1024);
     ADC_EnableInterrupt(1);
     ADC_SetAutoTriggerSource(TIMER0_OVERFLOW);
-    ADC_EnableAutoTrigger(1);    
-    ADC_SetInputChannelAndGainSelections(ch); 
+    ADC_EnableAutoTrigger(1);
+    ADC_SetInputChannelAndGainSelections(ch);
     ADC_Enable(1);
     delay_us(10);
     ADC_StartConversion(1);
-    
+
     EnableGlobalInterrupt(1);
 }
 
@@ -130,12 +131,12 @@ void ADC_Config_AVCC_10Bit(void){
     ADC_SetResolution(R1024);
     ADC_EnableInterrupt(0);
     ADC_SetAutoTriggerSource(FREE_RUNNING);
-    ADC_EnableAutoTrigger(0);    
-    ADC_SetInputChannelAndGainSelections(0); 
+    ADC_EnableAutoTrigger(0);
+    ADC_SetInputChannelAndGainSelections(0);
     ADC_Enable(1);
     delay_us(10);
-    ADC_StartConversion(0); 
-    
+    ADC_StartConversion(0);
+
     EnableGlobalInterrupt(0);
 }
 
@@ -146,12 +147,12 @@ void ADC_Config_AREF_10Bit(void){
     ADC_SetResolution(R1024);
     ADC_EnableInterrupt(0);
     ADC_SetAutoTriggerSource(FREE_RUNNING);
-    ADC_EnableAutoTrigger(0);    
-    ADC_SetInputChannelAndGainSelections(0); 
+    ADC_EnableAutoTrigger(0);
+    ADC_SetInputChannelAndGainSelections(0);
     ADC_Enable(1);
     delay_us(10);
-    ADC_StartConversion(0); 
-    
+    ADC_StartConversion(0);
+
     EnableGlobalInterrupt(0);
 }
 
@@ -162,12 +163,12 @@ void ADC_Config_2V56_10Bit(void){
     ADC_SetResolution(R1024);
     ADC_EnableInterrupt(0);
     ADC_SetAutoTriggerSource(FREE_RUNNING);
-    ADC_EnableAutoTrigger(0);    
-    ADC_SetInputChannelAndGainSelections(0); 
+    ADC_EnableAutoTrigger(0);
+    ADC_SetInputChannelAndGainSelections(0);
     ADC_Enable(1);
     delay_us(10);
-    ADC_StartConversion(0); 
-    
+    ADC_StartConversion(0);
+
     EnableGlobalInterrupt(0);
 }
 
@@ -178,12 +179,12 @@ void ADC_Config_AVCC_08Bit(void){
     ADC_SetResolution(R256);
     ADC_EnableInterrupt(0);
     ADC_SetAutoTriggerSource(FREE_RUNNING);
-    ADC_EnableAutoTrigger(0);    
-    ADC_SetInputChannelAndGainSelections(0); 
+    ADC_EnableAutoTrigger(0);
+    ADC_SetInputChannelAndGainSelections(0);
     ADC_Enable(1);
     delay_us(10);
-    ADC_StartConversion(0); 
-    
+    ADC_StartConversion(0);
+
     EnableGlobalInterrupt(0);
 }
 
@@ -195,13 +196,13 @@ uint16_t ADC_GetCounts(unsigned char ch){
         ADC_StartConversion(1);
         while(END_ADC_CONVERSION);
         SET_BIT(ADCSRA,ADIF);
-        
+
         if(CHECK_ADC_RESOLUTION_1024){return ADCW;}     // 10Bit Resolution
             else{return ADCH;}                          // 8Bit Resolution
     }
     else{
         return 0;
-    }   
+    }
 }
 
 #define ADC_GetMilliVolt(CH)                    (ADC_GetCounts(CH)*ADC_GAIN)
