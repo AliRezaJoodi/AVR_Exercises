@@ -17,7 +17,7 @@ typedef struct {
 Oven_t oven = {
     .temp = 0,  // ^C
     .sp = 250,  // ^C
-    .hys = 2    // ^C
+    .hys = 10   // ^C
 };
 
 // Voltage Reference: AVCC pin
@@ -61,12 +61,21 @@ void main(void){
 
         control = Controller_OnOff(oven.temp, oven.sp, oven.hys);
 
-        if(control == 1){
-            WRITE_BIT(RLY_PORT, RLY_BIT, RLY_ACTIVATE);
+        switch(control){
+            case CTRL_ONOFF_LOW:
+                WRITE_BIT(RLY_PORT, RLY_BIT, RLY_ACTIVATE);
+                break;
+            case CTRL_ONOFF_HIGH:
+                WRITE_BIT(RLY_PORT, RLY_BIT, !RLY_ACTIVATE);
+                break;
         }
-        else if (control == 2){
-            WRITE_BIT(RLY_PORT, RLY_BIT, !RLY_ACTIVATE);
-        }
+
+//        if(control == 1){
+//            WRITE_BIT(RLY_PORT, RLY_BIT, RLY_ACTIVATE);
+//        }
+//        else if (control == 2){
+//            WRITE_BIT(RLY_PORT, RLY_BIT, !RLY_ACTIVATE);
+//        }
 
         if(oven.temp != temp_last){
             temp_last = oven.temp;
@@ -86,17 +95,18 @@ void main(void){
 void LCD_Display(void){
     char txt[];
     uint16_t buf = 0;
+    uint16_t half = oven.hys >> 1;
 
     lcd_gotoxy(0,0); lcd_putsf("Min SP  Max  PV");
 
-    buf = oven.sp - oven.hys;
+    buf = oven.sp - half;
     itoa(buf, txt);
     lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
 
     itoa(oven.sp, txt);
     lcd_gotoxy(4,1); lcd_puts(txt); lcd_putsf("  ");
 
-    buf = oven.sp + oven.hys;
+    buf = oven.sp + half;
     itoa(buf, txt);
     lcd_gotoxy(8,1); lcd_puts(txt); lcd_putsf("  ");
 
