@@ -9,7 +9,7 @@ D=06/20/2023
 Files=2
 OpenedFiles=3
 OF1=main.c
-ActiveTab=3
+ActiveTab=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=.
@@ -24,7 +24,7 @@ TimeStamp1=1550526717
 OF2=C:\CrossPlatformLibraries\Modules\calendar_converter.c
 TimeStamp2=1550526717
 OF3=C:\CrossPlatformLibraries\Modules\calendar_converter.h
-TimeStamp3=1550526717
+TimeStamp3=1551152775
 F1=main.c
 F2=C:\CrossPlatformLibraries\Modules\calendar_converter.c
 [CompilerDebug]
@@ -561,7 +561,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1550526739
+TimeStamp=1551152808
 [BookmarksFoldedCode]
 Files=14
 F1=C:\Users\Home\Desktop\RTC_DS1307\T1\v1.0.c
@@ -800,11 +800,11 @@ Blocks=0
 [FoldedCode12]
 Blocks=0
 [Bookmarks13]
-TimeStamp=1550526717
-Row=11
-Column=31
+TimeStamp=1551152775
+Row=57
+Column=3
 ScrollPosX=0
-ScrollPosY=4
+ScrollPosY=39
 BK0=-1
 BK1=-1
 BK2=-1
@@ -832,8 +832,6 @@ F7=C:\CrossPlatformLibraries\Modules\calendar_converter.h
 Files=2
 F1=C:\CrossPlatformLibraries\Modules\calendar_converter.h
 F2=C:\cvavr\inc\stdint.h
-[FoldedCode11]
-Blocks=0
 [Bookmarks14]
 TimeStamp=1550526717
 Row=36
@@ -850,6 +848,8 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode11]
+Blocks=0
 [FoldedCode14]
 Blocks=0
 [FoldedCode13]

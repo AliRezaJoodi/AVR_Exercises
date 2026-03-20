@@ -1,7 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
-#ifndef _CONTROLLER_PID_INCLUDED
-#define _CONTROLLER_PID_INCLUDED
+#ifndef CONTROLLER_PID_INCLUDED
+#define CONTROLLER_PID_INCLUDED
 
 #ifndef CONTROLLER_PID_HARDWARE
 #define CONTROLLER_PID_HARDWARE
@@ -10,9 +10,7 @@
     #define KD 0.1
 #endif
 
-#pragma used+
-float Controller_PID(float sp,float pv,char status);
-#pragma used-
+float Controller_PID(float sp, float pv, char status);
 
 #pragma library controller_pid.lib
 

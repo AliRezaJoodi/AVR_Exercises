@@ -1,5 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
 #include <mega16a.h>
 #include <delay.h>
 
@@ -9,9 +10,9 @@
 void main(void){
     Buzzer_Init();
 
-    Buzzer_MakeBeep_UpOrDownSound(); delay_ms(2000);
-    Buzzer_MakeBeep_SetSound(); delay_ms(2000);
-    Buzzer_MakeBeep_ErrorSound(); delay_ms(2000);
+    Buzzer_MakeBeep_UpDown(); delay_ms(2000);
+    Buzzer_MakeBeep_Set(); delay_ms(2000);
+    Buzzer_MakeBeep_Error(); delay_ms(2000);
 
     Buzzer_Active(BUZZER_COUNT2);
 
