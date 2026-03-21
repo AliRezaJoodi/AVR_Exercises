@@ -8,16 +8,22 @@
 #include "utility_bit.h"
 #include "controller_onoff.h"
 
-typedef struct {
-    volatile uint16_t temp;
-    uint16_t sp;
-    uint16_t hys;
-} Oven_t;
+//typedef struct {
+//    volatile uint16_t temp;
+//    uint16_t sp;
+//    uint16_t hys;
+//} Oven_t;
+//
+//Oven_t oven = {
+//    .temp = 0,  // ^C
+//    .sp = 250,  // ^C
+//    .hys = 10   // ^C
+//};
 
-Oven_t oven = {
-    .temp = 0,  // ^C
-    .sp = 250,  // ^C
-    .hys = 10   // ^C
+Ctrl_OnOff_t oven = {
+    .pv = 0,
+    .sp = 250,
+    .hysteresis = 10
 };
 
 // Voltage Reference: AVCC pin
@@ -44,7 +50,7 @@ void LCD_Display(void);
 
 void main(void){
     uint32_t buf = 0;
-    uint16_t temp_last = 0;
+    uint16_t pv_last = 0;
     uint8_t task_lcd = 0;
     uint8_t control = 0;
 
@@ -57,9 +63,10 @@ void main(void){
 
     while(1){
         buf = read_adc(TEMP_CH);
-        oven.temp = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
+        buf = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
 
-        control = Controller_OnOff(oven.temp, oven.sp, oven.hys);
+        oven.pv = (uint16_t)buf;
+        control = Controller_OnOff_u16(&oven);
 
         switch(control){
             case CTRL_ONOFF_LOW:
@@ -77,8 +84,8 @@ void main(void){
 //            WRITE_BIT(RLY_PORT, RLY_BIT, !RLY_ACTIVATE);
 //        }
 
-        if(oven.temp != temp_last){
-            temp_last = oven.temp;
+        if(oven.pv != pv_last){
+            pv_last = oven.pv;
             task_lcd = 1;
         }
 
@@ -95,7 +102,7 @@ void main(void){
 void LCD_Display(void){
     char txt[];
     uint16_t buf = 0;
-    uint16_t half = oven.hys >> 1;
+    uint16_t half = oven.hysteresis >> 1;
 
     lcd_gotoxy(0,0); lcd_putsf("Min SP  Max  PV");
 
@@ -110,7 +117,7 @@ void LCD_Display(void){
     itoa(buf, txt);
     lcd_gotoxy(8,1); lcd_puts(txt); lcd_putsf("  ");
 
-    itoa(oven.temp, txt);
+    itoa(oven.pv, txt);
     lcd_gotoxy(13,1); lcd_puts(txt); lcd_putsf("  ");
 }
 

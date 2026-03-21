@@ -26,17 +26,17 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1551052368
+TimeStamp1=1551179407
 PageIndex1=1
 OF2=C:\CrossPlatformLibraries\Modules\controller_onoff.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1551055226
+TimeStamp2=1551179243
 PageIndex2=2
 OF3=C:\CrossPlatformLibraries\Modules\controller_onoff.h
 Active3=0
 EditorPanel3=0
-TimeStamp3=1551053330
+TimeStamp3=1551179244
 PageIndex3=3
 OF4=hardware.h
 Active4=0
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1551055229
-Build=2763
+COFFileTimeStamp=1551179833
+Build=2776
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=2763
+Build=2776
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_UserDrivers\Inc
 IncludePath2=C:\CrossPlatformLibraries\Utils
@@ -522,8 +522,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 2763
-L18=14568 line(s) compiled
+L17=Build: 2776
+L18=14607 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -542,20 +542,20 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 677 words (1354 bytes), 4.1% of FLASH
-L38=27 words (54 bytes), 3.8% reduced by Code Compression
+L37=Program size: 688 words (1376 bytes), 4.2% of FLASH
+L38=29 words (58 bytes), 4.0% reduced by Code Compression
 Lines=38
 L39=14 words (28 bytes), 3.2% reduced by Code Compression
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Debug\List\Main.asm(2051): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Debug\List\Main.asm(2061): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x00054a   1288     66   1354   32768   4.1%
+L9=[.cseg] 0x000000 0x000560   1310     66   1376   32768   4.2%
 L10=[.dseg] 0x000060 0x00026e      0     14     14    2048   0.7%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -568,11 +568,11 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [Bookmarks0]
-Row=0
-Column=0
+Row=4
+Column=37
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1551055482
+TimeStamp=1551179491
 [BookmarksFoldedCode]
 Files=120
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
@@ -2766,11 +2766,11 @@ Blocks=0
 [FoldedCode113]
 Blocks=0
 [Bookmarks115]
-TimeStamp=1551052368
+TimeStamp=1551179407
 Row=68
-Column=48
+Column=38
 ScrollPosX=0
-ScrollPosY=56
+ScrollPosY=48
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2782,11 +2782,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks116]
-TimeStamp=1551055226
-Row=7
-Column=44
+TimeStamp=1551179243
+Row=5
+Column=37
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2814,11 +2814,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks118]
-TimeStamp=1551053330
-Row=12
+TimeStamp=1551179244
+Row=63
 Column=37
 ScrollPosX=0
-ScrollPosY=46
+ScrollPosY=25
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2867,6 +2867,14 @@ BK9=-1
 Blocks=0
 [FoldedCode11]
 Blocks=0
+[FoldedCode115]
+Blocks=0
+[FoldedCode116]
+Blocks=0
+[FoldedCode117]
+Blocks=0
+[FoldedCode118]
+Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\main.c
@@ -2886,11 +2894,3 @@ F9=C:\CrossPlatformLibraries\Modules\controller_onoff.h
 Files=2
 F1=C:\CrossPlatformLibraries\Modules\controller_onoff.h
 F2=C:\cvavr\inc\stdint.h
-[FoldedCode115]
-Blocks=0
-[FoldedCode116]
-Blocks=0
-[FoldedCode117]
-Blocks=0
-[FoldedCode118]
-Blocks=0
