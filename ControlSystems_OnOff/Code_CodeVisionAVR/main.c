@@ -8,24 +8,6 @@
 #include "utility_bit.h"
 #include "controller_onoff.h"
 
-//typedef struct {
-//    volatile uint16_t temp;
-//    uint16_t sp;
-//    uint16_t hys;
-//} Oven_t;
-//
-//Oven_t oven = {
-//    .temp = 0,  // ^C
-//    .sp = 250,  // ^C
-//    .hys = 10   // ^C
-//};
-
-Ctrl_OnOff_t oven = {
-    .pv = 0,
-    .sp = 250,
-    .hysteresis = 10
-};
-
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
 
@@ -45,11 +27,16 @@ return ADCW;
 void ADC_Init(void);
 void LCD_Config(void);
 void IO_Config(void);
-
-void LCD_Display(void);
+void LCD_Display(const Ctrl_OnOff_t *params);
 
 void main(void){
-    uint32_t buf = 0;
+    Ctrl_OnOff_t oven = {
+        .pv = 0,
+        .sp = 250,
+        .hysteresis = 10
+    };
+
+    int32_t buf = 0;
     uint16_t pv_last = 0;
     uint8_t task_lcd = 0;
     uint8_t control = 0;
@@ -63,10 +50,9 @@ void main(void){
 
     while(1){
         buf = read_adc(TEMP_CH);
-        buf = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
+        oven.pv = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
 
-        oven.pv = (uint16_t)buf;
-        control = Controller_OnOff_u16(&oven);
+        control = Controller_OnOff(&oven);
 
         switch(control){
             case CTRL_ONOFF_LOW:
@@ -77,13 +63,6 @@ void main(void){
                 break;
         }
 
-//        if(control == 1){
-//            WRITE_BIT(RLY_PORT, RLY_BIT, RLY_ACTIVATE);
-//        }
-//        else if (control == 2){
-//            WRITE_BIT(RLY_PORT, RLY_BIT, !RLY_ACTIVATE);
-//        }
-
         if(oven.pv != pv_last){
             pv_last = oven.pv;
             task_lcd = 1;
@@ -91,33 +70,31 @@ void main(void){
 
         if(task_lcd){
             task_lcd =0;
-            LCD_Display();
+            LCD_Display(&oven);
         }
-
-        //delay_ms(500); task_lcd = 1;
     }
 }
 
 //******************************************
-void LCD_Display(void){
-    char txt[];
+void LCD_Display(const Ctrl_OnOff_t *params){
+    char txt[6];
     uint16_t buf = 0;
-    uint16_t half = oven.hysteresis >> 1;
+    uint16_t half = params->hysteresis >> 1;
 
     lcd_gotoxy(0,0); lcd_putsf("Min SP  Max  PV");
 
-    buf = oven.sp - half;
+    buf = params->sp - half;
     itoa(buf, txt);
     lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
 
-    itoa(oven.sp, txt);
+    itoa(params->sp, txt);
     lcd_gotoxy(4,1); lcd_puts(txt); lcd_putsf("  ");
 
-    buf = oven.sp + half;
+    buf = params->sp + half;
     itoa(buf, txt);
     lcd_gotoxy(8,1); lcd_puts(txt); lcd_putsf("  ");
 
-    itoa(oven.pv, txt);
+    itoa(params->pv, txt);
     lcd_gotoxy(13,1); lcd_puts(txt); lcd_putsf("  ");
 }
 
