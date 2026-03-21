@@ -6,20 +6,18 @@
 #include <delay.h>
 #include <alcd.h>
 
-#include "Attachment\hardware_v1.0.h"
-#include "Attachment\oven.h"
-#include <display_lcd_char.h>
-#include <adc.h>
-#include <controller_pid.h>
+#include "hardware.h"
+#include "oven.h"
+#include "display_lcd_char.h"
+#include "adc.h"
+#include "controller_pid.h"
 
 void LCD_Config(void);
 
-#pragma used+
 void LCD_DisplayLoadingPage(void);
 void LCD_DisplayMainPage(float,float,float);
 void Timer1_Config(void);
 void PWM_Driver(float);
-#pragma used+
 
 void main(void){
     float in_v=0;
@@ -27,35 +25,35 @@ void main(void){
     float sp=250;
     float output_power=0;
     unsigned int display_counter=0;
-    
-    ADC_Config_AVCC_10Bit();      
-    LCD_Config(); LCD_DisplayLoadingPage();  
+
+    ADC_Config_AVCC_10Bit();
+    LCD_Config(); LCD_DisplayLoadingPage();
     Char_Define(char0, 0);
     Timer1_Config();
-   
-    delay_ms(250); lcd_clear(); 
-   
-    while(1){  
+
+    delay_ms(250); lcd_clear();
+
+    while(1){
         in_v=ADC_GetVolt(TEMP_CH);
         temp=Oven_ConvertVoltToTemp(in_v);
-        output_power=Controller_PID(sp,temp,1); 
-        PWM_Driver(output_power); 
-        
-        //++display_counter; 
+        output_power=Controller_PID(sp,temp,1);
+        PWM_Driver(output_power);
+
+        //++display_counter;
         //if(display_counter>100){LCD_DisplayMainPage(sp,temp,output_power); display_counter=0;}
-        LCD_DisplayMainPage(sp,temp,output_power);   
+        LCD_DisplayMainPage(sp,temp,output_power);
     }
 }
 
 //******************************************
 void LCD_DisplayMainPage(float sp,float pv,float output_power){
     char txt[16];
-    //lcd_clear(); 
-    lcd_gotoxy(0,0); //lcd_putsf("                "); 
-    
-    sprintf(txt,"SP:%3.0f",sp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" "); 
-    sprintf(txt,"PV:%3.0f",pv); lcd_gotoxy(8,0); lcd_puts(txt);  lcd_putchar(0); lcd_putsf(" ");  
-    
+    //lcd_clear();
+    lcd_gotoxy(0,0); //lcd_putsf("                ");
+
+    sprintf(txt,"SP:%3.0f",sp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" ");
+    sprintf(txt,"PV:%3.0f",pv); lcd_gotoxy(8,0); lcd_puts(txt);  lcd_putchar(0); lcd_putsf(" ");
+
     if(output_power>100){sprintf(txt,"PID=%3.1f(100%%) ",output_power); lcd_gotoxy(0,1); lcd_puts(txt);}
         else {sprintf(txt,"PID=%3.1f%%       ",output_power); lcd_gotoxy(0,1); lcd_puts(txt);}
     //lcd_gotoxy(0,1); lcd_putsf("PID Control");
@@ -63,12 +61,12 @@ void LCD_DisplayMainPage(float sp,float pv,float output_power){
 
 //******************************************
 void PWM_Driver(float x){
-    float y=0; 
+    float y=0;
     if(x<0){x=0;} else if(x>100){x=100;}     //x=0~100%
-    //x=100-x;   //inverse 
+    //x=100-x;   //inverse
     y=(x*1023)/100;   //y=0~1023
     if(y<=0){y=0;}  //y=0~1023
-    OCR1A=y;     
+    OCR1A=y;
 }
 
 //********************************************************
@@ -107,7 +105,7 @@ void Timer1_Config(void){
 //******************************************
 void LCD_DisplayLoadingPage(void){
     lcd_gotoxy(0,0); lcd_putsf("Loading ...");
-} 
+}
 
 //********************************************************
 void LCD_Config(void){
