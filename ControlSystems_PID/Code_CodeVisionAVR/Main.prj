@@ -7,8 +7,8 @@ A=
 C=
 D=11/9/2016
 Files=2
-OpenedFiles=2
-OF1=v1.0.c
+OpenedFiles=4
+OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
@@ -26,22 +26,22 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1515261508
+TimeStamp1=1551272151
 PageIndex1=1
-OF2=..\..\_UserDrivers\Inc\controller_pid.h
+OF2=hardware.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1551019707
+TimeStamp2=1551243509
 PageIndex2=4
-OF3=Attachment\Define_Char.h
+OF3=C:\CrossPlatformLibraries\Modules\controller_pid.c
 Active3=0
 EditorPanel3=0
-TimeStamp3=1434259174
+TimeStamp3=1551270390
 PageIndex3=5
-OF4=Attachment\Oven.h
+OF4=C:\CrossPlatformLibraries\Modules\controller_pid.h
 Active4=0
 EditorPanel4=0
-TimeStamp4=1434694851
+TimeStamp4=1551266997
 PageIndex4=3
 OF5=Attachment\Config_ADC.h
 Active5=0
@@ -49,7 +49,7 @@ EditorPanel5=0
 TimeStamp5=1434282084
 PageIndex5=2
 TimeStamp0=1245025309
-ActiveTab=2
+ActiveTab=0
 F1=main.c
 F2=C:\CrossPlatformLibraries\Modules\controller_pid.c
 [CompilerDebug]
@@ -150,15 +150,15 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1551197493
-Build=2739
+COFFileTimeStamp=1551330691
+Build=2851
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
 WarningShiftCount0=1
 WarningNegativeShift=1
 DisplayCodeSizeError=1
-GlobalVarAddr=624
+GlobalVarAddr=616
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
 Count=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=2739
+Build=2851
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_UserDrivers\Inc
 IncludePath2=C:\CrossPlatformLibraries\Utils
@@ -327,7 +327,7 @@ IncludePath61=
 IncludePath62=
 IncludePath63=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=..\..\_UserDrivers\Lib
+LibraryPath1=
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -522,41 +522,41 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 2739
-L18=15466 line(s) compiled
+L17=Build: 2851
+L18=15271 line(s) compiled
 L19=No errors
-L20=2 warning(s)
+L20=No warnings
 L21=
 L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 185 byte(s)
+L26=Estimated Data Stack usage: 72 byte(s)
 L27=
-L28=RAM Global variables area: 0x260 to 0x26F
-L29=RAM Global variables size: 16 byte(s)
+L28=RAM Global variables area: 0x260 to 0x267
+L29=RAM Global variables size: 8 byte(s)
 L30=
-L31=Hardware Stack area: 0x270 to 0x85F
-L32=Hardware Stack size: 1520 byte(s)
+L31=Hardware Stack area: 0x268 to 0x85F
+L32=Hardware Stack size: 1528 byte(s)
 L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 2993 words (5986 bytes), 18.3% of FLASH
-L38=322 words (644 bytes), 9.7% reduced by Code Compression
+L37=Program size: 1185 words (2370 bytes), 7.2% of FLASH
+L38=51 words (102 bytes), 4.1% reduced by Code Compression
 Lines=38
 L39=14 words (28 bytes), 3.2% reduced by Code Compression
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\Debug\List\Main.asm(4361): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\Debug\List\Main.asm(2535): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x001762   5834    152   5986   32768  18.3%
-L10=[.dseg] 0x000060 0x000270      0     16     16    2048   0.8%
+L9=[.cseg] 0x000000 0x000942   2242    128   2370   32768   7.2%
+L10=[.dseg] 0x000060 0x000268      0      8      8    2048   0.4%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
 Lines=12
@@ -568,13 +568,13 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [Bookmarks0]
-Row=0
-Column=0
+Row=18
+Column=54
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1551020076
+TimeStamp=1551272227
 [BookmarksFoldedCode]
-Files=118
+Files=124
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
 F2=T3.c
 F3=P3_change LCD pin.c
@@ -693,6 +693,12 @@ F115=..\..\_UserDrivers\Inc\adc.h
 F116=..\..\_UserDrivers\Inc\utility.h
 F117=..\..\_UserDrivers\Inc\controller_pid.h
 F118=Attachment\hardware_v1.0.h
+F119=main.c
+F120=C:\CrossPlatformLibraries\Modules\controller_pid.c
+F121=C:\CrossPlatformLibraries\Modules\controller_pid.h
+F122=hardware.h
+F123=oven.h
+F124=C:\cvavr\inc\stdint.h
 [Bookmarks1]
 TimeStamp=1231638592
 Row=358
@@ -870,11 +876,11 @@ Blocks=0
 [FoldedCode9]
 Blocks=0
 [Bookmarks11]
-TimeStamp=942822163
-Row=21
-Column=6
+TimeStamp=1537169668
+Row=26
+Column=9
 ScrollPosX=0
-ScrollPosY=15
+ScrollPosY=18
 BK0=-1
 BK1=-1
 BK2=-1
@@ -904,11 +910,11 @@ BK9=-1
 [FoldedCode12]
 Blocks=0
 [Bookmarks13]
-TimeStamp=1143434003
-Row=29
-Column=12
+TimeStamp=1211660405
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=42
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1422,10 +1428,6 @@ BK9=-1
 [FoldedCode36]
 Blocks=0
 [FoldedCode40]
-Blocks=0
-[FoldedCode13]
-Blocks=0
-[FoldedCode11]
 Blocks=0
 [Bookmarks42]
 TimeStamp=1232439505
@@ -2761,10 +2763,10 @@ Blocks=0
 Blocks=0
 [Bookmarks115]
 TimeStamp=1550910884
-Row=7
-Column=46
+Row=127
+Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=7
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2831,18 +2833,130 @@ BK8=-1
 BK9=-1
 [FoldedCode118]
 Blocks=0
-[FoldedCode115]
-Blocks=0
 [FoldedCode108]
 Blocks=0
 [FoldedCode117]
+Blocks=0
+[Bookmarks119]
+TimeStamp=1551272151
+Row=41
+Column=17
+ScrollPosX=0
+ScrollPosY=36
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks120]
+TimeStamp=1551270390
+Row=17
+Column=3
+ScrollPosX=0
+ScrollPosY=9
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks121]
+TimeStamp=1551266997
+Row=54
+Column=11
+ScrollPosX=0
+ScrollPosY=41
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks122]
+TimeStamp=1551243509
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode115]
+Blocks=0
+[Bookmarks123]
+TimeStamp=1551213940
+Row=8
+Column=19
+ScrollPosX=0
+ScrollPosY=3
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode123]
+Blocks=0
+[FoldedCode13]
+Blocks=0
+[Bookmarks124]
+TimeStamp=953301748
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=21
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode124]
+Blocks=0
+[FoldedCode119]
+Blocks=0
+[FoldedCode120]
+Blocks=0
+[FoldedCode121]
+Blocks=0
+[FoldedCode122]
+Blocks=0
+[FoldedCode11]
 Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\main.c
 F2=C:\CrossPlatformLibraries\Modules\controller_pid.c
 [Header1]
-Files=15
+Files=12
 F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=C:\cvavr\inc\stdio.h
@@ -2853,11 +2967,9 @@ F7=C:\cvavr\inc\delay.h
 F8=C:\cvavr\inc\stdint.h
 F9=C:\cvavr\inc\alcd.h
 F10=hardware.h
-F11=oven.h
-F12=..\..\_UserDrivers\Inc\display_lcd_char.h
-F13=..\..\_UserDrivers\Inc\adc.h
-F14=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F15=C:\CrossPlatformLibraries\Modules\controller_pid.h
+F11=..\..\_UserDrivers\Inc\display_lcd_char.h
+F12=C:\CrossPlatformLibraries\Modules\controller_pid.h
 [Header2]
-Files=1
+Files=2
 F1=C:\CrossPlatformLibraries\Modules\controller_pid.h
+F2=C:\cvavr\inc\stdint.h

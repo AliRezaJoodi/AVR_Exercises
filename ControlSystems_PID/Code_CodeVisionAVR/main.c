@@ -7,66 +7,108 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "oven.h"
 #include "display_lcd_char.h"
-#include "adc.h"
 #include "controller_pid.h"
 
-void LCD_Config(void);
+// Voltage Reference: AVCC pin
+#define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
 
+uint8_t pid_flog = 0;
+
+// Read the AD conversion result
+unsigned int read_adc(unsigned char adc_input){
+ADMUX=adc_input | ADC_VREF_TYPE;
+// Delay needed for the stabilization of the ADC input voltage
+delay_us(10);
+// Start the AD conversion
+ADCSRA|=(1<<ADSC);
+// Wait for the AD conversion to complete
+while ((ADCSRA & (1<<ADIF))==0);
+ADCSRA|=(1<<ADIF);
+return ADCW;
+}
+
+// Timer 0 overflow interrupt service routine
+interrupt [TIM0_OVF] void timer0_ovf_isr(void){
+    TCNT0=0x64;
+    pid_flog = 1;
+}
+
+void ADC_Init(void);
+void Timer0_Init(void);
+void LCD_Config(void);
 void LCD_DisplayLoadingPage(void);
-void LCD_DisplayMainPage(float,float,float);
+void LCD_DisplayMainPage(const CtrlPID_t *params, int16_t pwm);
 void Timer1_Config(void);
-void PWM_Driver(float);
 
 void main(void){
-    float in_v=0;
-    float temp=0;
-    float sp=250;
-    float output_power=0;
-    unsigned int display_counter=0;
+    CtrlPID_t oven = {
+        .kp = 150000,   // (1023 - error) * scale
+        .ki = 100,
+        .kd = 10 << PID_SCALE_32768,
 
-    ADC_Config_AVCC_10Bit();
-    LCD_Config(); LCD_DisplayLoadingPage();
+        .output_min = 0,
+        .output_max = 1023,
+        .scale = PID_SCALE_32768,
+        .dt = 5,
+
+        .value_i = 0,
+        .error_last = 0,
+
+        .sp = 250,
+        .pv = 0
+    };
+
+    int32_t buf = 0;
+    int32_t buf_last = 0;
+    uint8_t lcd_flog = 0;
+    int16_t out = 0;
+
+    ADC_Init();
+    LCD_Config();
+    LCD_DisplayLoadingPage();
     Char_Define(char0, 0);
     Timer1_Config();
+    Timer0_Init();
 
     delay_ms(250); lcd_clear();
+    #asm("sei") // Globally enable interrupts
 
     while(1){
-        in_v=ADC_GetVolt(TEMP_CH);
-        temp=Oven_ConvertVoltToTemp(in_v);
-        output_power=Controller_PID(sp,temp,1);
-        PWM_Driver(output_power);
+        buf = read_adc(TEMP_CH);
+        if(buf != buf_last){
+            buf_last = buf;
+            oven.pv = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
+            lcd_flog = 1;
+        }
 
-        //++display_counter;
-        //if(display_counter>100){LCD_DisplayMainPage(sp,temp,output_power); display_counter=0;}
-        LCD_DisplayMainPage(sp,temp,output_power);
+        if (pid_flog){
+            pid_flog = 0;
+            out = (uint16_t)Ctrl_PID_Update2(&oven);
+            OCR1A = out;
+        }
+
+        if(lcd_flog){
+            lcd_flog = 0;
+            LCD_DisplayMainPage(&oven, out);
+        }
     }
 }
 
 //******************************************
-void LCD_DisplayMainPage(float sp,float pv,float output_power){
-    char txt[16];
-    //lcd_clear();
-    lcd_gotoxy(0,0); //lcd_putsf("                ");
+void LCD_DisplayMainPage(const CtrlPID_t *params, int16_t pwm){
+    char txt[6];
 
-    sprintf(txt,"SP:%3.0f",sp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); lcd_putsf(" ");
-    sprintf(txt,"PV:%3.0f",pv); lcd_gotoxy(8,0); lcd_puts(txt);  lcd_putchar(0); lcd_putsf(" ");
+    lcd_gotoxy(0,0); lcd_putsf("SP  PV  PWM");
 
-    if(output_power>100){sprintf(txt,"PID=%3.1f(100%%) ",output_power); lcd_gotoxy(0,1); lcd_puts(txt);}
-        else {sprintf(txt,"PID=%3.1f%%       ",output_power); lcd_gotoxy(0,1); lcd_puts(txt);}
-    //lcd_gotoxy(0,1); lcd_putsf("PID Control");
-}
+    ltoa(params->sp, txt);
+    lcd_gotoxy(0,1); lcd_puts(txt); lcd_putsf("  ");
 
-//******************************************
-void PWM_Driver(float x){
-    float y=0;
-    if(x<0){x=0;} else if(x>100){x=100;}     //x=0~100%
-    //x=100-x;   //inverse
-    y=(x*1023)/100;   //y=0~1023
-    if(y<=0){y=0;}  //y=0~1023
-    OCR1A=y;
+    ltoa(params->pv, txt);
+    lcd_gotoxy(4,1); lcd_puts(txt); lcd_putsf("  ");
+
+    itoa(pwm, txt);
+    lcd_gotoxy(8,1); lcd_puts(txt); lcd_putsf("  ");
 }
 
 //********************************************************
@@ -111,5 +153,32 @@ void LCD_DisplayLoadingPage(void){
 void LCD_Config(void){
     lcd_init(16);
     lcd_clear();
+}
+
+//********************************************************
+void ADC_Init(void){
+    // ADC initialization
+    // ADC Clock frequency: 125.000 kHz
+    // ADC Voltage Reference: AVCC pin
+    // ADC Auto Trigger Source: ADC Stopped
+    ADMUX=ADC_VREF_TYPE;
+    ADCSRA=(1<<ADEN) | (0<<ADSC) | (0<<ADATE) | (0<<ADIF) | (0<<ADIE) | (1<<ADPS2) | (1<<ADPS1) | (0<<ADPS0);
+    SFIOR=(0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0);
+}
+
+//**********************************************
+void Timer0_Init(void){
+    // Timer/Counter 0 initialization
+    // Clock source: System Clock
+    // Clock value: 31.250 kHz
+    // Mode: Normal top=0xFF
+    // OC0 output: Disconnected
+    // Timer Period: 4.992 ms
+    TCCR0=(0<<WGM00) | (0<<COM01) | (0<<COM00) | (0<<WGM01) | (1<<CS02) | (0<<CS01) | (0<<CS00);
+    TCNT0=0x64;
+    OCR0=0x00;
+
+    // Timer(s)/Counter(s) Interrupt(s) initialization
+    TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (1<<TOIE0);
 }
 
