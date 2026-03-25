@@ -30,7 +30,7 @@ return ADCW;
 
 // Timer 0 overflow interrupt service routine
 interrupt [TIM0_OVF] void timer0_ovf_isr(void){
-    TCNT0=0x64;
+    TCNT0=0x06;
     pid_flog = 1;
 }
 
@@ -43,16 +43,16 @@ void Timer1_Config(void);
 
 void main(void){
     CtrlPID_t oven = {
-        .kp = 150000,   // (1023 - error) * scale
-        .ki = 100,
-        .kd = 10 << PID_SCALE_32768,
+        .kp = PID_FLOAT_TO_Q(4.547, PID_SCALE), // 1023 / error
+        .ki = PID_FLOAT_TO_Q(0.01, PID_SCALE),
+        .kd = PID_FLOAT_TO_Q(0.4547, PID_SCALE), // kp / 10
 
         .output_min = 0,
         .output_max = 1023,
-        .scale = PID_SCALE_32768,
-        .dt = 5,
+        .scale = PID_SCALE,
+        .dt = PID_DT_32MS,
 
-        .value_i = 0,
+        .i_sum = 0,
         .error_last = 0,
 
         .sp = 250,
@@ -170,12 +170,12 @@ void ADC_Init(void){
 void Timer0_Init(void){
     // Timer/Counter 0 initialization
     // Clock source: System Clock
-    // Clock value: 31.250 kHz
+    // Clock value: 7.813 kHz
     // Mode: Normal top=0xFF
     // OC0 output: Disconnected
-    // Timer Period: 4.992 ms
-    TCCR0=(0<<WGM00) | (0<<COM01) | (0<<COM00) | (0<<WGM01) | (1<<CS02) | (0<<CS01) | (0<<CS00);
-    TCNT0=0x64;
+    // Timer Period: 32 ms
+    TCCR0=(0<<WGM00) | (0<<COM01) | (0<<COM00) | (0<<WGM01) | (1<<CS02) | (0<<CS01) | (1<<CS00);
+    TCNT0=0x06;
     OCR0=0x00;
 
     // Timer(s)/Counter(s) Interrupt(s) initialization
