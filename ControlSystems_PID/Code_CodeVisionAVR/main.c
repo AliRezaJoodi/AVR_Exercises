@@ -1,13 +1,12 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
 #include <mega32a.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <delay.h>
 #include <alcd.h>
 
 #include "hardware.h"
-#include "display_lcd_char.h"
 #include "controller_pid.h"
 
 // Voltage Reference: AVCC pin
@@ -17,15 +16,15 @@ uint8_t pid_flog = 0;
 
 // Read the AD conversion result
 unsigned int read_adc(unsigned char adc_input){
-ADMUX=adc_input | ADC_VREF_TYPE;
-// Delay needed for the stabilization of the ADC input voltage
-delay_us(10);
-// Start the AD conversion
-ADCSRA|=(1<<ADSC);
-// Wait for the AD conversion to complete
-while ((ADCSRA & (1<<ADIF))==0);
-ADCSRA|=(1<<ADIF);
-return ADCW;
+    ADMUX=adc_input | ADC_VREF_TYPE;
+    // Delay needed for the stabilization of the ADC input voltage
+    delay_us(10);
+    // Start the AD conversion
+    ADCSRA|=(1<<ADSC);
+    // Wait for the AD conversion to complete
+    while ((ADCSRA & (1<<ADIF))==0);
+    ADCSRA|=(1<<ADIF);
+    return ADCW;
 }
 
 // Timer 0 overflow interrupt service routine
@@ -35,11 +34,10 @@ interrupt [TIM0_OVF] void timer0_ovf_isr(void){
 }
 
 void ADC_Init(void);
-void Timer0_Init(void);
 void LCD_Config(void);
-void LCD_DisplayLoadingPage(void);
 void LCD_DisplayMainPage(const CtrlPID_t *params, int16_t pwm);
-void Timer1_Config(void);
+void Timer0_Init(void);
+void Timer1_Init(void);
 
 void main(void){
     CtrlPID_t oven = {
@@ -66,12 +64,11 @@ void main(void){
 
     ADC_Init();
     LCD_Config();
-    LCD_DisplayLoadingPage();
-    Char_Define(char0, 0);
-    Timer1_Config();
+    Timer1_Init();
     Timer0_Init();
 
-    delay_ms(250); lcd_clear();
+    delay_ms(250);
+    lcd_clear();
     #asm("sei") // Globally enable interrupts
 
     while(1){
@@ -84,7 +81,7 @@ void main(void){
 
         if (pid_flog){
             pid_flog = 0;
-            out = (uint16_t)Ctrl_PID_Update2(&oven);
+            out = (uint16_t)Ctrl_PID_Update(&oven);
             OCR1A = out;
         }
 
@@ -112,7 +109,7 @@ void LCD_DisplayMainPage(const CtrlPID_t *params, int16_t pwm){
 }
 
 //********************************************************
-void Timer1_Config(void){
+void Timer1_Init(void){
     DDRD.4=1; PORTD.4=0;
     DDRD.5=1; PORTD.5=0;
 
@@ -142,11 +139,6 @@ void Timer1_Config(void){
     OCR1AL=0x00;
     OCR1BH=0x00;
     OCR1BL=0x00;
-}
-
-//******************************************
-void LCD_DisplayLoadingPage(void){
-    lcd_gotoxy(0,0); lcd_putsf("Loading ...");
 }
 
 //********************************************************
