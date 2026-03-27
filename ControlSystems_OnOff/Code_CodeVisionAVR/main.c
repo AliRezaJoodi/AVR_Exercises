@@ -27,13 +27,13 @@ return ADCW;
 void ADC_Init(void);
 void LCD_Config(void);
 void IO_Config(void);
-void LCD_Display(const Ctrl_OnOff_t *params);
+void LCD_Display(const CtrlOnOff_In_t *params);
 
 void main(void){
-    Ctrl_OnOff_t oven = {
-        .pv = 0,
+    CtrlOnOff_In_t oven = {
         .sp = 250,
-        .hysteresis = 10
+        .hysteresis = 10,
+        .pv = 0
     };
 
     int32_t buf = 0;
@@ -52,7 +52,7 @@ void main(void){
         buf = read_adc(TEMP_CH);
         oven.pv = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
 
-        control = Controller_OnOff(&oven);
+        control = Ctrl_OnOff_Update(&oven);
 
         switch(control){
             case CTRL_ONOFF_LOW:
@@ -76,7 +76,7 @@ void main(void){
 }
 
 //******************************************
-void LCD_Display(const Ctrl_OnOff_t *params){
+void LCD_Display(const CtrlOnOff_In_t *params){
     char txt[6];
     uint16_t buf = 0;
     uint16_t half = params->hysteresis >> 1;
