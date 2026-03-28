@@ -69,6 +69,7 @@ void main(void){
 
     delay_ms(250);
     lcd_clear();
+    Ctrl_PID_Reset(&oven);
     #asm("sei") // Globally enable interrupts
 
     while(1){
