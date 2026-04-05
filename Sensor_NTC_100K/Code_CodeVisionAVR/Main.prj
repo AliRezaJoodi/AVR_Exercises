@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=main.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1552162505
+TimeStamp1=1552231413
 PageIndex1=1
 Top0=200
 Left0=267
@@ -40,13 +40,13 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=3
-OF2=hardware.h
-TimeStamp2=1552162516
-OF3=C:\CrossPlatformLibraries\Modules\ntc100k.c
-TimeStamp3=1552162477
+ActiveTab=1
+OF2=C:\CrossPlatformLibraries\Modules\ntc100k.c
+TimeStamp2=1552231377
+OF3=hardware.h
+TimeStamp3=1552230247
 OF4=C:\CrossPlatformLibraries\Modules\ntc100k.h
-TimeStamp4=1552160224
+TimeStamp4=1552231778
 OF5=C:\CrossPlatformLibraries\Modules\ntc.h
 TimeStamp5=1552024738
 OF6=C:\CrossPlatformLibraries\Modules\ntc_100k.h
@@ -145,7 +145,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=581
+Build=583
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_UserDrivers\Inc
@@ -211,7 +211,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1552230260
+COFFileTimeStamp=1552231782
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -401,11 +401,11 @@ UserProgCmdLine=
 UserProgWorkDir=
 WaitUserProgFinish=1
 [Bookmarks0]
-Row=6
-Column=29
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1552165562
+TimeStamp=1552231824
 [BookmarksFoldedCode]
 Files=36
 F1=F:\Electronics\Projects Tools\AVR\Circuit & Source\ADC\Voltmeter_0-5V_Code Vision AVR\T1\T1.c
@@ -481,7 +481,7 @@ BK9=-1
 [CompilerDebug]
 RebuildAll=1
 LinkageInformationPresent=0
-Build=581
+Build=583
 UseEEPROMLocation0=1
 Chip=ATmega32A
 CPUClock=1000000
@@ -601,8 +601,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 581
-L18=14526 line(s) compiled
+L17=Build: 583
+L18=14289 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -628,7 +628,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Sensor_NTC_100K\Code_CodeVisionAVR\List\Main.asm(2380): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_NTC_100K\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Sensor_NTC_100K\Code_CodeVisionAVR\List\Main.asm(2379): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_NTC_100K\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -1082,11 +1082,11 @@ Blocks=0
 [FoldedCode24]
 Blocks=0
 [Bookmarks26]
-TimeStamp=1552162505
-Row=48
-Column=38
+TimeStamp=1552231413
+Row=52
+Column=25
 ScrollPosX=0
-ScrollPosY=37
+ScrollPosY=30
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1118,9 +1118,9 @@ Blocks=0
 [FoldedCode23]
 Blocks=0
 [Bookmarks28]
-TimeStamp=1552162516
-Row=8
-Column=20
+TimeStamp=1552230247
+Row=11
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1222,11 +1222,11 @@ Blocks=0
 [FoldedCode32]
 Blocks=0
 [Bookmarks34]
-TimeStamp=1552162477
-Row=70
-Column=5
+TimeStamp=1552231377
+Row=107
+Column=60
 ScrollPosX=0
-ScrollPosY=68
+ScrollPosY=86
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1238,11 +1238,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks35]
-TimeStamp=1552160224
-Row=12
-Column=38
+TimeStamp=1552231778
+Row=19
+Column=28
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=22
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1273,15 +1273,7 @@ BK9=-1
 Blocks=0
 [FoldedCode33]
 Blocks=0
-[FoldedCode26]
-Blocks=0
-[FoldedCode34]
-Blocks=0
 [FoldedCode18]
-Blocks=0
-[FoldedCode28]
-Blocks=0
-[FoldedCode35]
 Blocks=0
 [HeadersList]
 Files=2
@@ -1302,3 +1294,11 @@ Files=3
 F1=hardware.h
 F2=C:\CrossPlatformLibraries\Modules\ntc100k.h
 F3=C:\cvavr\inc\stdint.h
+[FoldedCode26]
+Blocks=0
+[FoldedCode34]
+Blocks=0
+[FoldedCode35]
+Blocks=0
+[FoldedCode28]
+Blocks=0

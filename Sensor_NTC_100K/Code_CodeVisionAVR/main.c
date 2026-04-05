@@ -51,7 +51,6 @@ void main(void){
 
         if (lcd_flag){
             lcd_flag = 0;
-
             mv = ConvertCountToMilliVolt(in);
             ohm = ConvertMilliVoltToOhm(mv, NTC100K_RESISTOR);
             temp = NTC100K_ConvertOhmToTemp(ohm);
