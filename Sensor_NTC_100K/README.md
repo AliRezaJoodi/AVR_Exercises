@@ -1,4 +1,4 @@
-## Thermometer With 100K NTC 
+## Thermometer with 100K NTC 
               
 MCU:     	ATmega32  
 Frequency:     	8MHz  

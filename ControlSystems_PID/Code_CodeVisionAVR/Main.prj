@@ -26,22 +26,22 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1551637241
+TimeStamp1=1551654372
 PageIndex1=1
 OF2=C:\CrossPlatformLibraries\Modules\controller_pid.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1551637241
+TimeStamp2=1551709099
 PageIndex2=4
 OF3=C:\CrossPlatformLibraries\Modules\controller_pid.c
 Active3=0
 EditorPanel3=0
-TimeStamp3=1551637241
+TimeStamp3=1551709099
 PageIndex3=5
 OF4=hardware.h
 Active4=0
 EditorPanel4=0
-TimeStamp4=1551443205
+TimeStamp4=1551654147
 PageIndex4=3
 OF5=Attachment\Config_ADC.h
 Active5=0
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1551654374
-Build=2994
+COFFileTimeStamp=1551709101
+Build=2996
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=2994
+Build=2996
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\_UserDrivers\Inc
 IncludePath2=C:\CrossPlatformLibraries\Utils
@@ -522,8 +522,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 2994
-L18=14690 line(s) compiled
+L17=Build: 2996
+L18=14706 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -572,7 +572,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1551639734
+TimeStamp=1551709367
 [BookmarksFoldedCode]
 Files=124
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
@@ -2838,11 +2838,11 @@ Blocks=0
 [FoldedCode117]
 Blocks=0
 [Bookmarks119]
-TimeStamp=1551637241
-Row=49
-Column=62
+TimeStamp=1551654372
+Row=88
+Column=28
 ScrollPosX=0
-ScrollPosY=37
+ScrollPosY=78
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2854,11 +2854,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks120]
-TimeStamp=1551637241
-Row=11
-Column=56
+TimeStamp=1551709099
+Row=49
+Column=18
 ScrollPosX=0
-ScrollPosY=38
+ScrollPosY=9
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2870,11 +2870,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks121]
-TimeStamp=1551637241
-Row=10
-Column=36
+TimeStamp=1551709099
+Row=142
+Column=34
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=107
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2886,9 +2886,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks122]
-TimeStamp=1551443205
-Row=2
-Column=36
+TimeStamp=1551654147
+Row=9
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -2943,14 +2943,6 @@ BK9=-1
 Blocks=0
 [FoldedCode11]
 Blocks=0
-[FoldedCode119]
-Blocks=0
-[FoldedCode120]
-Blocks=0
-[FoldedCode122]
-Blocks=0
-[FoldedCode121]
-Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\main.c
@@ -2970,3 +2962,11 @@ Files=3
 F1=hardware.h
 F2=C:\CrossPlatformLibraries\Modules\controller_pid.h
 F3=C:\cvavr\inc\stdint.h
+[FoldedCode119]
+Blocks=0
+[FoldedCode120]
+Blocks=0
+[FoldedCode122]
+Blocks=0
+[FoldedCode121]
+Blocks=0
