@@ -1,9 +1,8 @@
 RAM Allocation [bytes]
 Variable                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-tc_mv                                                                             0x0260       4
+_seed (stdlib.lib)                                                                0x0260       4
 _base_y (alcd.lib)                                                                0x0264       4
-_seed (stdlib.lib)                                                                0x0268       4
 
 EEPROM Allocation [bytes]
 Variable                                                                          Address   Size
@@ -12,35 +11,27 @@ Variable                                                                        
 Register Allocation
 Variable                                                                          Register  Size
 ------------------------------------------------------------------------------------------------
-tc_temp                                                                           R4,R5        2
-_lcd_x                                                                            R7           1
-_lcd_y                                                                            R6           1
-_lcd_maxx                                                                         R9           1
+_lcd_x                                                                            R5           1
+_lcd_y                                                                            R4           1
+_lcd_maxx                                                                         R7           1
 
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-read_adc                                                                          0x00D4F     15
-main                                                                              0x00D5E     59
-Display_Temp                                                                      0x00D99     68
-Config_LCD                                                                        0x00DDD      6
-ADC_Init                                                                          0x00DE3      7
-TC_ConvertMilliVoltToTemp                                                         0x00DEA     73
-put_buff_G100                                                                     0x00E33     58
-_ftoe_G100                                                                        0x00E6D    210
-_print_G100                                                                       0x00F3F    548
-sprintf                                                                           0x01163     60
-_lcd_write_nibble_G101                                                            0x0119F     20
-_lcd_write_data                                                                   0x011B3     12
-lcd_gotoxy                                                                        0x011BF     13
-lcd_clear                                                                         0x011CC     12
-lcd_putchar                                                                       0x011D8     21
-lcd_puts                                                                          0x011ED     15
-lcd_putsf                                                                         0x011FC     19
-lcd_init                                                                          0x0120F     45
-strcpyf                                                                           0x0123C     13
-strlen                                                                            0x01249     12
-strlenf                                                                           0x01255     13
-ftrunc                                                                            0x01262     49
-floor                                                                             0x01293     23
-ftoa                                                                              0x012AA    155
+read_adc                                                                          0x001BB     15
+main                                                                              0x001CA     92
+LCD_DisplayMainPage                                                               0x00226     41
+LCD_Config                                                                        0x0024F      6
+ADC_Init                                                                          0x00255      7
+TC_ConvertMicroVoltToTemp                                                         0x0025C    127
+TC_ConvertTempToMicroVolt                                                         0x002DB    116
+itoa                                                                              0x0034F     46
+ltoa                                                                              0x0037D     89
+_lcd_write_nibble_G102                                                            0x003D6     20
+_lcd_write_data                                                                   0x003EA     12
+lcd_gotoxy                                                                        0x003F6     13
+lcd_clear                                                                         0x00403     12
+lcd_putchar                                                                       0x0040F     21
+lcd_puts                                                                          0x00424     15
+lcd_putsf                                                                         0x00433     19
+lcd_init                                                                          0x00446     45

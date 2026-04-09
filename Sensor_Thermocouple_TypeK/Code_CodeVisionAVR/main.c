@@ -1,5 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <mega32a.h>
 #include <delay.h>
@@ -8,8 +10,8 @@
 #include "hardware.h"
 #include "thermocouple_k.h"
 
-float tc_mv=0;
-int tc_temp;
+//float tc_mv=0;
+//int tc_temp;
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
@@ -28,53 +30,84 @@ unsigned int read_adc(unsigned char adc_input){
 }
 
 void ADC_Init(void);
-void Config_LCD(void);
-void Display_Temp(float,int);
-void Test(void);
+void LCD_Config(void);
+//void Display_Temp(float,int);
+//void Test(void);
+void LCD_DisplayMainPage(int32_t uv, int16_t temp);
 
 void main(void){
-    int16_t buf = 0;
-    Config_LCD();
-    //Char_Define(char0, 0);
+    int16_t tc_buf = 0;
+    int16_t tc_buf_last = 0;
+    int32_t tc_mv, tc_uv;
+    int16_t tc_temp = 0;
+    int16_t cj_temp = 50;   // Cold Junction
+    int32_t cj_uv = 0;
+
+    uint8_t lcd_flag = 0;
+
+    LCD_Config();
     ADC_Init();
 
-    //Test();
-
     while (1){
-        buf = read_adc(TC_CH);
-        tc_mv = buf; tc_mv = (tc_mv * 5000) / 1024 ;
+        tc_buf = read_adc(TC_CH);
+        if(tc_buf != tc_buf_last){
+            tc_buf_last = tc_buf;
+            tc_mv = ((uint32_t)tc_buf * ADC_VREF) >> ADC_RESOLUTION_BIT;
+            tc_uv = (tc_mv * 1000) / TC_GAIN;
+            cj_uv = TC_ConvertTempToMicroVolt(cj_temp);
+            tc_temp = TC_ConvertMicroVoltToTemp(tc_uv + cj_uv);
 
-        //tc_mv=ADC_GetMilliVolt(TC_CH);
-        tc_temp=TC_ConvertMilliVoltToTemp(tc_mv);
-        Display_Temp(tc_mv,tc_temp);
-        delay_ms(250);
+            lcd_flag = 1;
+        }
+
+        if(lcd_flag){
+            lcd_flag = 0;
+            LCD_DisplayMainPage(tc_uv + cj_uv, tc_temp);
+        }
     }
 }
 
 //******************************************
-void Test(void){
-    tc_mv=TC_ConvertTempToMilliVolt(1000);
-    //tc_mv = -6.404;
-    //tc_temp=TC_ConvertMilliVoltToTemp(tc_mv);
-    Display_Temp(tc_mv,tc_temp);
-    while(1){}
+void LCD_DisplayMainPage(int32_t uv, int16_t temp){
+    char txt[6];
+
+    ltoa(uv, txt);
+    lcd_gotoxy(0,0);
+    lcd_putsf("TC(uV):");
+    lcd_puts(txt);
+    lcd_putsf("  ");
+
+    itoa(temp, txt);
+    lcd_gotoxy(0,1);
+    lcd_putsf("Temp(C):");
+    lcd_puts(txt);
+    lcd_putsf("  ");
 }
 
-//******************************************
-void Display_Temp(float in_mv,int temp){
-    char txt[16];
-    lcd_clear();
-    //lcd_gotoxy(0,1); lcd_putsf("Type K TC");
-    sprintf(txt,"TC:%4.3fmV",in_mv); lcd_gotoxy(0,0); lcd_puts(txt); //lcd_putsf("  ");
-    if(-270<=temp && temp<=1372){
-        //sprintf(txt,"%4.3fmV  %4d",in_mv, tc_temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); //lcd_putsf("  ");
-        sprintf(txt,"TC:%4d",tc_temp); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putchar(0); //lcd_putsf("  ");
-    }
-    else{lcd_gotoxy(0,1); lcd_putsf("TC:Null"); lcd_putsf("    ");};
-}
+////******************************************
+//void Test(void){
+//    tc_mv=TC_ConvertTempToMilliVolt(1000);
+//    //tc_mv = -6.404;
+//    //tc_temp=TC_ConvertMilliVoltToTemp(tc_mv);
+//    Display_Temp(tc_mv,tc_temp);
+//    while(1){}
+//}
+
+////******************************************
+//void Display_Temp(float in_mv,int temp){
+//    char txt[16];
+//    lcd_clear();
+//    //lcd_gotoxy(0,1); lcd_putsf("Type K TC");
+//    sprintf(txt,"TC:%4.3fmV",in_mv); lcd_gotoxy(0,0); lcd_puts(txt); //lcd_putsf("  ");
+//    if(-270<=temp && temp<=1372){
+//        //sprintf(txt,"%4.3fmV  %4d",in_mv, tc_temp); lcd_gotoxy(0,0); lcd_puts(txt); lcd_putchar(0); //lcd_putsf("  ");
+//        sprintf(txt,"TC:%4d",tc_temp); lcd_gotoxy(0,1); lcd_puts(txt); lcd_putchar(0); //lcd_putsf("  ");
+//    }
+//    else{lcd_gotoxy(0,1); lcd_putsf("TC:Null"); lcd_putsf("    ");};
+//}
 
 //********************************************************
-void Config_LCD(void){
+void LCD_Config(void){
     lcd_init(16);
     lcd_clear();
 }

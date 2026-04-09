@@ -4,9 +4,9 @@ MCU:        ATmega32
 Frequency:  1.000000 MHz  
 Display:    16x2 Character LCD  
 TC Type:    K  
-CJ Temp:    0^C   
+CJ Temp:    50^C   
 
-Note: It dosn't need to compensate because CJ temp is 0^C. 
+Note: It needs to compensate because CJ temp is 50^C. 
 
 ### Folder and Files Description
 It has included:
