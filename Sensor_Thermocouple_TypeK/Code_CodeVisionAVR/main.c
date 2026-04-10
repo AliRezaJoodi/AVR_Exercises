@@ -36,12 +36,20 @@ void LCD_Config(void);
 void LCD_DisplayMainPage(int32_t uv, int16_t temp);
 
 void main(void){
-    int16_t tc_buf = 0;
-    int16_t tc_buf_last = 0;
-    int32_t tc_mv, tc_uv;
-    int16_t tc_temp = 0;
-    int16_t cj_temp = 50;   // Cold Junction
-    int32_t cj_uv = 0;
+    typedef struct{
+        int32_t tc_uv;      // measured thermocouple voltage (TC = HJ - CJ)
+        int32_t cj_uv;      // cold junction equivalent voltage
+        int32_t hj_uv;      // hot junction equivalent voltage (HJ = TC + CJ)
+
+        int16_t cj_temp;
+        int16_t hj_temp;
+    } TC_K_t;
+
+    TC_K_t oven;
+
+    int16_t buf = 0;
+    int16_t buf_last = 0;
+    int32_t mv;
 
     uint8_t lcd_flag = 0;
 
@@ -49,20 +57,22 @@ void main(void){
     ADC_Init();
 
     while (1){
-        tc_buf = read_adc(TC_CH);
-        if(tc_buf != tc_buf_last){
-            tc_buf_last = tc_buf;
-            tc_mv = ((uint32_t)tc_buf * ADC_VREF) >> ADC_RESOLUTION_BIT;
-            tc_uv = (tc_mv * 1000) / TC_GAIN;
-            cj_uv = TC_ConvertTempToMicroVolt(cj_temp);
-            tc_temp = TC_ConvertMicroVoltToTemp(tc_uv + cj_uv);
+        buf = read_adc(TC_CH);
+        if(buf != buf_last){
+            buf_last = buf;
+            mv = ((uint32_t)buf * ADC_VREF) >> ADC_RESOLUTION_BIT;
+            oven.tc_uv = (mv * 1000) / TC_GAIN;
+            oven.cj_temp = 50;  // Must be measured using a temperature sensor, for example the LM35.
+            oven.cj_uv = TC_ConvertTempToMicroVolt(oven.cj_temp);
+            oven.hj_uv = oven.tc_uv + oven.cj_uv;
+            oven.hj_temp = TC_ConvertMicroVoltToTemp(oven.hj_uv);
 
             lcd_flag = 1;
         }
 
         if(lcd_flag){
             lcd_flag = 0;
-            LCD_DisplayMainPage(tc_uv + cj_uv, tc_temp);
+            LCD_DisplayMainPage(oven.hj_uv, oven.hj_temp);
         }
     }
 }
@@ -73,7 +83,7 @@ void LCD_DisplayMainPage(int32_t uv, int16_t temp){
 
     ltoa(uv, txt);
     lcd_gotoxy(0,0);
-    lcd_putsf("TC(uV):");
+    lcd_putsf("HJ(uV):");   // hot junction
     lcd_puts(txt);
     lcd_putsf("  ");
 
