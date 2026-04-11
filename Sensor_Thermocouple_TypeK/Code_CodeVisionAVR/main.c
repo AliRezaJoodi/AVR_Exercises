@@ -49,7 +49,7 @@ void main(void){
 
     int16_t buf = 0;
     int16_t buf_last = 0;
-    int32_t mv;
+    int32_t mv= 0;
 
     uint8_t lcd_flag = 0;
 
@@ -70,7 +70,7 @@ void main(void){
             lcd_flag = 1;
         }
 
-        if(lcd_flag){
+        if(lcd_flag == 1){
             lcd_flag = 0;
             LCD_DisplayMainPage(oven.hj_uv, oven.hj_temp);
         }
