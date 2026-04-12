@@ -33,7 +33,7 @@ Active2=0
 Row2=8
 Column2=5
 State2=2
-TimeStamp2=1548842775
+TimeStamp2=1552650828
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -46,9 +46,9 @@ EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
 PageIndex1=1
-ActiveTab=1
+ActiveTab=3
 OF3=C:\CrossPlatformLibraries\Modules\seg7_font.c
-TimeStamp3=1548842837
+TimeStamp3=1552650828
 F1=main.c
 F2=C:\CrossPlatformLibraries\Modules\seg7_font.c
 [Compiler]
@@ -136,7 +136,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=426
+Build=427
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
@@ -203,7 +203,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1548850113
+COFFileTimeStamp=1552650829
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -374,7 +374,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=426
+Build=427
 Chip=ATmega32
 CPUClock=1000000
 MemoryModel=1
@@ -496,8 +496,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 426
-L18=440 line(s) compiled
+L17=Build: 427
+L18=448 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -523,7 +523,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_1Digit\Code_CodeVisionAVR\List\main.asm(1400): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_1Digit\Code_CodeVisionAVR\main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_Font\Code_CodeVisionAVR\List\main.asm(1400): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_Font\Code_CodeVisionAVR\main.eep
 L5=
 L6=ATmega32 memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -559,7 +559,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1548850701
+TimeStamp=1552650836
 [BookmarksFoldedCode]
 Files=17
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
@@ -850,11 +850,11 @@ Blocks=0
 [FoldedCode14]
 Blocks=0
 [Bookmarks15]
-TimeStamp=1548842775
-Row=13
-Column=29
+TimeStamp=1552650828
+Row=20
+Column=47
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -867,26 +867,12 @@ BK8=-1
 BK9=-1
 [FoldedCode2]
 Blocks=0
-[HeadersList]
-Files=2
-F1=F:\GitHub\AVR_Exercises\Display_7Segment_1Digit\Code_CodeVisionAVR\main.c
-F2=C:\CrossPlatformLibraries\Modules\seg7_font.c
-[Header1]
-Files=4
-F1=C:\cvavr\inc\mega32.h
-F2=C:\cvavr\inc\stdint.h
-F3=C:\cvavr\inc\delay.h
-F4=C:\CrossPlatformLibraries\Modules\seg7_font.h
-[Header2]
-Files=2
-F1=C:\CrossPlatformLibraries\Modules\seg7_font.h
-F2=C:\cvavr\inc\stdint.h
 [Bookmarks16]
-TimeStamp=1548842837
-Row=0
-Column=0
+TimeStamp=1552650828
+Row=31
+Column=52
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=16
 BK0=-1
 BK1=-1
 BK2=-1
@@ -913,6 +899,20 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=2
+F1=F:\GitHub\AVR_Exercises\Display_7Segment_Font\Code_CodeVisionAVR\main.c
+F2=C:\CrossPlatformLibraries\Modules\seg7_font.c
+[Header1]
+Files=4
+F1=C:\cvavr\inc\mega32.h
+F2=C:\cvavr\inc\stdint.h
+F3=C:\cvavr\inc\delay.h
+F4=C:\CrossPlatformLibraries\Modules\seg7_font.h
+[Header2]
+Files=2
+F1=C:\CrossPlatformLibraries\Modules\seg7_font.h
+F2=C:\cvavr\inc\stdint.h
 [FoldedCode17]
 Blocks=0
 [FoldedCode16]
