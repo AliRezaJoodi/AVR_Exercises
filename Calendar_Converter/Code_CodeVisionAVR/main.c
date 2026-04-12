@@ -15,8 +15,8 @@ void main(void){
     date_t jalaali;
 
     gregorian.year = 26;
-    gregorian.month = 03;
-    gregorian.day= 10;
+    gregorian.month = 04;
+    gregorian.day= 12;
 
 //    jalaali.year = 04;
 //    jalaali.month = 12;
