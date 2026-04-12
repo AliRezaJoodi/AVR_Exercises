@@ -8,125 +8,125 @@
 #include "adc_converter.h"
 
 void UART_Config(void);
-void UART_Display1(uint16_t in, uint16_t out);
-void UART_Display2(uint16_t in, uint32_t out);
+void UART_Display1(uint16_t adc_count, uint16_t mv);
+void UART_Display2(uint16_t adc_count, uint32_t uv);
 
 void main(void){
-    uint16_t in_u16 = 0;
-    uint16_t out_u16 = 0;
-    uint32_t out_u32 = 0;
+    uint16_t adc_count = 0;
+    uint16_t mv = 0;
+    uint32_t uv = 0;
 
     UART_Config();
 
     putsf("\rADC_ConvertCountToMilliVolt_12Bit5V\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_12Bit5V(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 4096;
-    out_u16 = ADC_ConvertCountToMilliVolt_12Bit5V(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_12Bit5V(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 4096;
+    mv = ADC_ConvertCountToMilliVolt_12Bit5V(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMilliVolt_12Bit4V096\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_12Bit4V096(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 4096;
-    out_u16 = ADC_ConvertCountToMilliVolt_12Bit4V096(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_12Bit4V096(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 4096;
+    mv = ADC_ConvertCountToMilliVolt_12Bit4V096(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMicroVolt_12Bit3V3\r");
-    in_u16 = 1;
-    out_u32 = ADC_ConvertCountToMicroVolt_12Bit3V3(in_u16);
-    UART_Display2(in_u16, out_u32);
-    in_u16 = 4096;
-    out_u32 = ADC_ConvertCountToMicroVolt_12Bit3V3(in_u16);
-    UART_Display2(in_u16, out_u32);
+    adc_count = 1;
+    uv = ADC_ConvertCountToMicroVolt_12Bit3V3(adc_count);
+    UART_Display2(adc_count, uv);
+    adc_count = 4096;
+    uv = ADC_ConvertCountToMicroVolt_12Bit3V3(adc_count);
+    UART_Display2(adc_count, uv);
 
     putsf("\rADC_ConvertCountToMicroVolt_12Bit2V048\r");
-    in_u16 = 1;
-    out_u32 = ADC_ConvertCountToMicroVolt_12Bit2V048(in_u16);
-    UART_Display2(in_u16, out_u32);
-    in_u16 = 4096;
-    out_u32 = ADC_ConvertCountToMicroVolt_12Bit2V048(in_u16);
-    UART_Display2(in_u16, out_u32);
+    adc_count = 1;
+    uv = ADC_ConvertCountToMicroVolt_12Bit2V048(adc_count);
+    UART_Display2(adc_count, uv);
+    adc_count = 4096;
+    uv = ADC_ConvertCountToMicroVolt_12Bit2V048(adc_count);
+    UART_Display2(adc_count, uv);
 
     putsf("\rADC_ConvertCountToMilliVolt_10Bit5V\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit5V(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 1024;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit5V(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_10Bit5V(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 1024;
+    mv = ADC_ConvertCountToMilliVolt_10Bit5V(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMilliVolt_10Bit4V096\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit4V096(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 1024;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit4V096(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_10Bit4V096(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 1024;
+    mv = ADC_ConvertCountToMilliVolt_10Bit4V096(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMilliVolt_10Bit2V56\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit2V56(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 1024;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit2V56(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_10Bit2V56(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 1024;
+    mv = ADC_ConvertCountToMilliVolt_10Bit2V56(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMilliVolt_10Bit2V048\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit2V048(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 1024;
-    out_u16 = ADC_ConvertCountToMilliVolt_10Bit2V048(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_10Bit2V048(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 1024;
+    mv = ADC_ConvertCountToMilliVolt_10Bit2V048(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMilliVolt_8Bit5V\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_8Bit5V(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 255;
-    out_u16 = ADC_ConvertCountToMilliVolt_8Bit5V(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_8Bit5V(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 255;
+    mv = ADC_ConvertCountToMilliVolt_8Bit5V(adc_count);
+    UART_Display1(adc_count, mv);
 
     putsf("\rADC_ConvertCountToMilliVolt_8Bit2V56\r");
-    in_u16 = 1;
-    out_u16 = ADC_ConvertCountToMilliVolt_8Bit2V56(in_u16);
-    UART_Display1(in_u16, out_u16);
-    in_u16 = 255;
-    out_u16 = ADC_ConvertCountToMilliVolt_8Bit2V56(in_u16);
-    UART_Display1(in_u16, out_u16);
+    adc_count = 1;
+    mv = ADC_ConvertCountToMilliVolt_8Bit2V56(adc_count);
+    UART_Display1(adc_count, mv);
+    adc_count = 255;
+    mv = ADC_ConvertCountToMilliVolt_8Bit2V56(adc_count);
+    UART_Display1(adc_count, mv);
 
     while(1){
     };
 }
 
 //********************************************************
-void UART_Display1(uint16_t in, uint16_t out){
+void UART_Display1(uint16_t adc_count, uint16_t mv){
     char txt[20];
 
     putsf("In:");
-    itoa(in, txt);
+    itoa(adc_count, txt);
     puts(txt);
 
     putsf("  Out:");
-    itoa(out, txt);
+    itoa(mv, txt);
     puts(txt);
 
     putsf("\r");
 }
 
 //********************************************************
-void UART_Display2(uint16_t in, uint32_t out){
+void UART_Display2(uint16_t adc_count, uint32_t uv){
     char txt[20];
 
     putsf("In:");
-    itoa(in, txt);
+    itoa(adc_count, txt);
     puts(txt);
 
     putsf("  Out:");
-    ltoa(out, txt);
+    ltoa(uv, txt);
     puts(txt);
 
     putsf("\r");
