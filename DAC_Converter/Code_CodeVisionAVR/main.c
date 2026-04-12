@@ -8,8 +8,8 @@
 #include "dac_converter.h"
 
 void UART_Config(void);
-void UART_Display1(uint16_t in, uint16_t out);
-void UART_Display2(uint32_t in, uint16_t out);
+void UART_Display1(uint16_t mv, uint16_t dac_count);
+void UART_Display2(uint32_t uv, uint16_t dac_count);
 
 void main(void){
     uint16_t mv = 0;
@@ -53,30 +53,30 @@ void main(void){
 }
 
 //********************************************************
-void UART_Display1(uint16_t in, uint16_t out){
+void UART_Display1(uint16_t mv, uint16_t dac_count){
     char txt[20];
 
     putsf("In:");
-    itoa(in, txt);
+    itoa(mv, txt);
     puts(txt);
 
     putsf("  Out:");
-    itoa(out, txt);
+    itoa(dac_count, txt);
     puts(txt);
 
     putsf("\r");
 }
 
 //********************************************************
-void UART_Display2(uint32_t in, uint16_t out){
+void UART_Display2(uint32_t uv, uint16_t dac_count){
     char txt[20];
 
     putsf("In:");
-    ltoa(in, txt);
+    ltoa(uv, txt);
     puts(txt);
 
     putsf("  Out:");
-    itoa(out, txt);
+    itoa(dac_count, txt);
     puts(txt);
 
     putsf("\r");
