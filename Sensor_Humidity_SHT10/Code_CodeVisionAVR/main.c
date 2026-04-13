@@ -1,7 +1,7 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
 #include <stdint.h>
-#include <mega32.h>
+#include <mega32a.h>
 #include <delay.h>
 #include <stdio.h>
 
@@ -12,7 +12,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "shtxx.h"
+#include "sht1x.h"
 
 float temperature = 0;
 float humidity = 0;
