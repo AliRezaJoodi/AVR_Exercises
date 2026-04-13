@@ -1,7 +1,7 @@
 'GitHub Account: GitHub.com/AliRezaJoodi
 
 $regfile = "m32def.dat"
-$crystal = 8000000
+$crystal = 11059200
 
 $hwstack = 32                                               ' default use 32 for the hardware stack
 $swstack = 10                                               ' default use 10 for the SW stack

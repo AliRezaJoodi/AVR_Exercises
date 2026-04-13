@@ -1,8 +1,10 @@
-//#define SHTXX_HARDWARE
-//    #define DATA_DDR    DDRC.0
-//    #define DATA_PORT   PORTC.0
-//    #define DATA_PIN    PINC.0
-//
-//    #define SCK_DDR     DDRC.1
-//    #define SCK_PORT    PORTC.1
-//    #define SCK_PIN     PINC.1
+#define SHT1X_HARDWARE_EXTRA
+    #define SHT1X_SCK_DDR           DDRC
+    #define SHT1X_SCK_PORT          PORTC
+    #define SHT1X_SCK_PIN           PINC
+    #define SHT1X_SCK_BIT           0
+
+    #define SHT1X_DATA_DDR          DDRC
+    #define SHT1X_DATA_PORT         PORTC
+    #define SHT1X_DATA_PIN          PINC
+    #define SHT1X_DATA_BIT          1

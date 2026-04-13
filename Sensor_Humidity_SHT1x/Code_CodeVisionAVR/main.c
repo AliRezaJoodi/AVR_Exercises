@@ -19,13 +19,30 @@ float humidity = 0;
 void Display_Values(void);
 
 void main(void){
-    lcd_init(16); lcd_clear();
+    const SHT1x_t sht1 = {
+        .sck = {
+            .ddr   = &SHT1X_SCK_DDR,
+            .port  = &SHT1X_SCK_PORT,
+            .pin   = &SHT1X_SCK_PIN,
+            .index = SHT1X_SCK_BIT
+        },
+        .data = {
+            .ddr   = &SHT1X_DATA_DDR,
+            .port  = &SHT1X_DATA_PORT,
+            .pin   = &SHT1X_DATA_PIN,
+            .index = SHT1X_DATA_BIT
+        }
+    };
+
+    lcd_init(16);
+    lcd_clear();
+    SHT1x_Init(&sht1);
 
     while(1){
-        humidity = Get_Humidity();
-        temperature =  Get_Temp();
-        Display_Values();
-        delay_ms(250);
+//        humidity = Get_Humidity();
+//        temperature =  Get_Temp();
+//        Display_Values();
+//        delay_ms(250);
     }
 }
 
