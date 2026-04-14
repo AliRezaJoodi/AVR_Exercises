@@ -23,8 +23,8 @@ Active1=0
 Row1=36
 Column1=11
 State1=2
-TimeStamp1=1552814172
-OF2=C:\CrossPlatformLibraries\Drivers\sht1x.c
+TimeStamp1=1552855445
+OF2=hardware.h
 Top2=-30
 Left2=-4
 Height2=505
@@ -33,8 +33,8 @@ Active2=1
 Row2=15
 Column2=19
 State2=2
-TimeStamp2=1552812064
-OF3=hardware.h
+TimeStamp2=1552845948
+OF3=C:\CrossPlatformLibraries\Drivers\sht1x.h
 Top3=149
 Left3=394
 Height3=393
@@ -43,8 +43,8 @@ Active3=0
 Row3=29
 Column3=40
 State3=2
-TimeStamp3=1552787722
-OF4=C:\CrossPlatformLibraries\Drivers\sht1x.h
+TimeStamp3=1552843796
+OF4=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_port.h
 Top4=149
 Left4=394
 Height4=393
@@ -53,7 +53,7 @@ Active4=0
 Row4=31
 Column4=15
 State4=2
-TimeStamp4=1552812061
+TimeStamp4=1552845912
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -68,13 +68,13 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=5
+ActiveTab=6
 F1=main.c
 F2=C:\CrossPlatformLibraries\Drivers\sht1x.c
-OF5=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_port.h
-TimeStamp5=1552811489
-OF6=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_hw.h
-TimeStamp6=1552787884
+OF5=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_hw.h
+TimeStamp5=1552845948
+OF6=C:\CrossPlatformLibraries\Drivers\sht1x.c
+TimeStamp6=1552855445
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -161,7 +161,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=295
+Build=425
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=C:\CrossPlatformLibraries\Utils
@@ -227,7 +227,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1552814176
+COFFileTimeStamp=1552880797
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -398,7 +398,7 @@ UserProgCmdLine=
 UserProgWorkDir=
 WaitUserProgFinish=1
 [CompilerDebug]
-Build=295
+Build=425
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -520,16 +520,16 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 295
-L18=15750 line(s) compiled
+L17=Build: 425
+L18=14683 line(s) compiled
 L19=No errors
-L20=14 warning(s)
+L20=2 warning(s)
 L21=
 L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 21 byte(s)
+L26=Estimated Data Stack usage: 162 byte(s)
 L27=
 L28=RAM Global variables area: 0x260 to 0x26F
 L29=RAM Global variables size: 16 byte(s)
@@ -541,19 +541,19 @@ L34=Heap size: 0 byte(s)
 L35=
 Lines=38
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 480 words (960 bytes), 2.9% of FLASH
-L38=10 words (20 bytes), 2.0% reduced by Code Compression
+L37=Program size: 3845 words (7690 bytes), 23.5% of FLASH
+L38=465 words (930 bytes), 10.8% reduced by Code Compression
 [BuildInfoAssembler]
 Lines=12
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Sensor_Humidity_SHT1x\Code_CodeVisionAVR\List\main.asm(1912): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_Humidity_SHT1x\Code_CodeVisionAVR\main.eep
+L4=F:\GitHub\AVR_Exercises\Sensor_Humidity_SHT1x\Code_CodeVisionAVR\List\main.asm(5371): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Sensor_Humidity_SHT1x\Code_CodeVisionAVR\main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0003c0    866     94    960   32768   2.9%
+L9=[.cseg] 0x000000 0x001e0a   7596     94   7690   32768  23.5%
 L10=[.dseg] 0x000060 0x000270      0     16     16    2048   0.8%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -575,11 +575,11 @@ L27=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source
 L28=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\SHT10_OK\Hygrometer and Thermometer Using SHT10\Code_CodeVisionAVR\List\main.asm(4095): No EEPROM data, deleting F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\SHT10_OK\Hygrometer and Thermometer Using SHT10\Code_CodeVisionAVR\main.eep
 L29=
 [Bookmarks0]
-Row=4
-Column=45
+Row=1
+Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1552814211
+TimeStamp=1552855450
 [BookmarksFoldedCode]
 Files=20
 F1=C1.c
@@ -840,11 +840,11 @@ Blocks=0
 [FoldedCode5]
 Blocks=0
 [Bookmarks11]
-TimeStamp=1552814172
-Row=28
-Column=54
+TimeStamp=1552855445
+Row=46
+Column=17
 ScrollPosX=0
-ScrollPosY=23
+ScrollPosY=34
 BK0=-1
 BK1=-1
 BK2=-1
@@ -856,9 +856,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks12]
-TimeStamp=1552787722
-Row=0
-Column=24
+TimeStamp=1552845948
+Row=1
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -890,9 +890,9 @@ BK9=-1
 [FoldedCode13]
 Blocks=0
 [Bookmarks14]
-TimeStamp=1552812061
-Row=30
-Column=33
+TimeStamp=1552843796
+Row=9
+Column=19
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -907,8 +907,8 @@ BK8=-1
 BK9=-1
 [Bookmarks15]
 TimeStamp=1549306219
-Row=15
-Column=42
+Row=7
+Column=14
 ScrollPosX=0
 ScrollPosY=6
 BK0=-1
@@ -921,14 +921,12 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode15]
-Blocks=0
 [Bookmarks16]
-TimeStamp=1552812064
+TimeStamp=1552855445
 Row=6
-Column=15
+Column=28
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -940,9 +938,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks17]
-TimeStamp=1552787884
-Row=5
-Column=50
+TimeStamp=1552845948
+Row=1
+Column=25
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -956,11 +954,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks18]
-TimeStamp=1552811489
-Row=9
-Column=55
+TimeStamp=1552845912
+Row=13
+Column=17
 ScrollPosX=0
-ScrollPosY=38
+ScrollPosY=5
 BK0=-1
 BK1=-1
 BK2=-1
@@ -991,10 +989,10 @@ BK9=-1
 Blocks=0
 [Bookmarks20]
 TimeStamp=1550082744
-Row=5
-Column=18
+Row=36
+Column=0
 ScrollPosX=0
-ScrollPosY=12
+ScrollPosY=29
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1005,6 +1003,20 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode15]
+Blocks=0
+[FoldedCode11]
+Blocks=0
+[FoldedCode16]
+Blocks=0
+[FoldedCode17]
+Blocks=0
+[FoldedCode18]
+Blocks=0
+[FoldedCode14]
+Blocks=0
+[FoldedCode12]
+Blocks=0
 [FoldedCode20]
 Blocks=0
 [HeadersList]
@@ -1031,22 +1043,10 @@ Files=10
 F1=hardware.h
 F2=C:\CrossPlatformLibraries\Drivers\sht1x.h
 F3=C:\cvavr\inc\stdint.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\mega32a.h
-F6=C:\cvavr\inc\delay.h
-F7=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_port.h
-F8=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F9=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+F4=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_port.h
+F5=C:\CrossPlatformLibraries\Utils\utility_bit.h
+F6=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+F7=C:\cvavr\inc\io.h
+F8=C:\cvavr\inc\mega32a.h
+F9=C:\cvavr\inc\delay.h
 F10=C:\CrossPlatformLibraries\Platforms\AVR\sht1x_hw.h
-[FoldedCode11]
-Blocks=0
-[FoldedCode16]
-Blocks=0
-[FoldedCode17]
-Blocks=0
-[FoldedCode18]
-Blocks=0
-[FoldedCode14]
-Blocks=0
-[FoldedCode12]
-Blocks=0

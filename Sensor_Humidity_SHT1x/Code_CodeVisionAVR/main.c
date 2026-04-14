@@ -11,6 +11,8 @@
 #endasm
 #include <lcd.h>
 
+//#define __SYSTEM_CLOCK__ 2000000
+
 #include "hardware.h"
 #include "sht1x.h"
 
@@ -39,10 +41,10 @@ void main(void){
     SHT1x_Init(&sht1);
 
     while(1){
-//        humidity = Get_Humidity();
-//        temperature =  Get_Temp();
-//        Display_Values();
-//        delay_ms(250);
+        humidity = Get_Humidity(&sht1);
+        temperature =  Get_Temp(&sht1);
+        Display_Values();
+        delay_ms(500);
     }
 }
 

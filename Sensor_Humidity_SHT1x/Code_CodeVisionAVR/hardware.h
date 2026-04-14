@@ -1,3 +1,4 @@
+
 #define SHT1X_HARDWARE_EXTRA
     #define SHT1X_SCK_DDR           DDRC
     #define SHT1X_SCK_PORT          PORTC
