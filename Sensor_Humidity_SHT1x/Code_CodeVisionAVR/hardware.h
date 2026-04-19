@@ -1,4 +1,7 @@
 
+#define SHT1X_CONFIG
+    #define SHT1X_VDD               SHT1X_VDD_5V
+
 #define SHT1X_HARDWARE_EXTRA
     #define SHT1X_SCK_DDR           DDRC
     #define SHT1X_SCK_PORT          PORTC
