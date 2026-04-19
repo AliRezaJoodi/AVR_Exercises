@@ -1,7 +1,6 @@
 ## ADC Converter
                 
 MCU:   		ATmega32  
-Frequency:     	8MHz  
 
 ### Folder and Files Description
 It has included:
