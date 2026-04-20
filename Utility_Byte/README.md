@@ -1,7 +1,6 @@
 ## Integer to MSB and LSB Converter
 
-MCU:            ATmega32  
-Frequency:     	1MHz   
+MCU:            ATmega32    
 
 ### Folder and Files Description
 It has included:
