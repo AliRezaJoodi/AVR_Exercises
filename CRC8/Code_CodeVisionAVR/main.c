@@ -72,7 +72,3 @@ void UART_Config(void){
     UBRRH=0x00;
     UBRRL=0x47;
 }
-
-
-
-
