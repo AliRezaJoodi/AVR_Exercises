@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "utility_array.h"
+#include "utils/array.h"
 
 void UART_Init(void);
 void UART_DisplayValues(unsigned int);
