@@ -1,8 +1,7 @@
 ## Access to Bits
 
 MCU:    	ATmega32  
-Frequency: 	1.000000 MHz  
-
+ 
 ### Folder and Files Description
 It has included:
 - `Code_BascomAVR` (Code with Basic Language)
