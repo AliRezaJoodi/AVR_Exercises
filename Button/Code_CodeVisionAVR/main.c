@@ -13,8 +13,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "utility_bit.h"
-#include "button.h"
+#include "drivers/button.h"
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
@@ -24,7 +23,7 @@ void main(void){
     uint8_t value_last = 0;
 
     Button_t buttonIncr = {
-        .btn = {
+        .hw = {
             .ddr   = &BUTTON_DDR,
             .port  = &BUTTON_PORT,
             .pin   = &BUTTON_PIN,
@@ -39,7 +38,7 @@ void main(void){
     };
 
     Button_t buttonDecr = {
-        .btn = {
+        .hw = {
             .ddr   = &BUTTON2_DDR,
             .port  = &BUTTON2_PORT,
             .pin   = &BUTTON2_PIN,
@@ -54,7 +53,7 @@ void main(void){
     };
 
     Button_t buttonClear = {
-        .btn = {
+        .hw = {
             .ddr   = &BUTTON3_DDR,
             .port  = &BUTTON3_PORT,
             .pin   = &BUTTON3_PIN,
@@ -85,11 +84,11 @@ void main(void){
         }
 
         if( Button_GetLongPress_NonBlocking(&buttonClear) ){
-            value=0;
+            value = 0;
         }
 
-        if( value_last!=value ){
-            value_last=value;
+        if( value_last != value ){
+            value_last = value;
             LCD_DisplayMainPage(value);
         }
     };
