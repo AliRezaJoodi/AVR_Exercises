@@ -5,7 +5,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "buzzer.h"
+#include "drivers/buzzer.h"
 
 void main(void){
     Buzzer_Init();
