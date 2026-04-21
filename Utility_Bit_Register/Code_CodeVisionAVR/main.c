@@ -32,19 +32,19 @@ void main(void){
 
     delay_ms(1000);
 
-    Set_Bit_Reg8(led.ddr, led.index); delay_ms(500); // config output
-    Set_Bit_Reg8(led.port, led.index); delay_ms(500);
-    Clear_Bit_Reg8(led.port, led.index); delay_ms(1000);
-    Write_Bit_Reg8(led.port, led.index, 1); delay_ms(500);
-    Write_Bit_Reg8(led.port, led.index, 0); delay_ms(1000);
-    Toggle_Bit_Reg8(led.port, led.index); delay_ms(500);
-    Toggle_Bit_Reg8(led.port, led.index); delay_ms(1000);
+    SetBit_Reg8(led.ddr, led.index); delay_ms(500); // config output
+    SetBit_Reg8(led.port, led.index); delay_ms(500);
+    ClearBit_Reg8(led.port, led.index); delay_ms(1000);
+    WriteBit_Reg8(led.port, led.index, 1); delay_ms(500);
+    WriteBit_Reg8(led.port, led.index, 0); delay_ms(1000);
+    ToggleBit_Reg8(led.port, led.index); delay_ms(500);
+    ToggleBit_Reg8(led.port, led.index); delay_ms(1000);
 
-    Clear_Bit_Reg8(key.ddr, key.index); delay_ms(500);  // config input
-    Set_Bit_Reg8(key.port, key.index); delay_ms(500);   // config pull-up
+    ClearBit_Reg8(key.ddr, key.index); delay_ms(500);  // config input
+    SetBit_Reg8(key.port, key.index); delay_ms(500);   // config pull-up
 
     while(1){
-         Write_Bit_Reg8(led.port, led.index, Get_Bit_Reg8(key.pin, key.index));
+         WriteBit_Reg8(led.port, led.index, GetBit_Reg8(key.pin, key.index));
     };
 }
 
