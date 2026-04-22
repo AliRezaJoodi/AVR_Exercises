@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "mcp3201.h"
+#include "drivers/mcp3201.h"
 
 float In1 = 0;
 float In2 = 0;
