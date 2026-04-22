@@ -10,7 +10,7 @@ float volt1=0;
 float volt2=0;
 
 #include "hardware.h"
-#include "mcp3204.h"
+#include "drivers/mcp3204.h"
 
 void SPI_Config(void);
 void LCD_Config(void);
