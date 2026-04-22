@@ -10,7 +10,7 @@ float volt1=0;
 float volt2=0;
 
 #include "hardware.h"
-#include "mcp3208.h"
+#include "drivers/mcp3208.h"
 
 void SPI_Config(void);
 void LCD_Config(void);
@@ -64,7 +64,7 @@ void LCD_Config(void){
 void LCD_DisplayLoadingPage(void){
     lcd_clear();
     lcd_gotoxy(0,0); lcd_putsf("External ADC");
-    lcd_gotoxy(0,1); lcd_putsf("With MCP3202");
+    lcd_gotoxy(0,1); lcd_putsf("With MCP3208");
 }
 
 //********************************************************

@@ -18,7 +18,7 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
 EditorPanelMode=0
 ActiveEditorPanel=0
@@ -144,8 +144,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1551152059
-Build=413
+COFFileTimeStamp=1553368022
+Build=420
 GlobalVarAddr=624
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -255,13 +255,13 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=413
+Build=420
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_UserDrivers\Inc
-IncludePath2=C:\CrossPlatformLibraries\Utils
-IncludePath3=C:\CrossPlatformLibraries\Modules
-IncludePath4=C:\CrossPlatformLibraries\Drivers
-IncludePath5=C:\CrossPlatformLibraries\Platforms\AVR
+IncludePath1=C:\CrossPlatformLibraries
+IncludePath2=C:\CrossPlatformLibraries\Platforms\AVR
+IncludePath3=
+IncludePath4=
+IncludePath5=
 IncludePath6=
 IncludePath7=
 IncludePath8=
@@ -516,8 +516,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 413
-L18=19048 line(s) compiled
+L17=Build: 420
+L18=18450 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -536,19 +536,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 1657 words (3314 bytes), 10.1% of FLASH
+L37=Program size: 1666 words (3332 bytes), 10.2% of FLASH
 L38=62 words (124 bytes), 3.6% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3143): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3205): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000cf2   3220     94   3314   32768  10.1%
+L9=[.cseg] 0x000000 0x000d04   3238     94   3332   32768  10.2%
 L10=[.dseg] 0x000060 0x000270      0     16     16    2048   0.8%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1137,9 +1137,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks30]
-TimeStamp=1550149013
-Row=3
-Column=1
+TimeStamp=1553215085
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1153,11 +1153,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks31]
-TimeStamp=1551144233
-Row=1
-Column=63
+TimeStamp=1553215085
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=122
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1169,11 +1169,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks32]
-TimeStamp=1551152220
-Row=73
-Column=72
+TimeStamp=1553215084
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=65
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1184,12 +1184,24 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode18]
+Blocks=0
+[FoldedCode29]
+Blocks=0
+[FoldedCode22]
+Blocks=0
+[FoldedCode32]
+Blocks=0
+[FoldedCode31]
+Blocks=0
+[FoldedCode30]
+Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\main.c
 F2=C:\CrossPlatformLibraries\Drivers\mcp3208.c
 [Header1]
-Files=15
+Files=12
 F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=C:\cvavr\inc\spi.h
@@ -1200,33 +1212,19 @@ F7=C:\cvavr\inc\stdint.h
 F8=C:\cvavr\inc\alcd.h
 F9=C:\cvavr\inc\stdlib.h
 F10=hardware.h
-F11=C:\CrossPlatformLibraries\Drivers\mcp3208.h
-F12=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_port.h
-F13=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F14=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
-F15=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_hw.h
+F11=C:\CrossPlatformLibraries\drivers\mcp3208.h
+F12=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_types.h
 [Header2]
-Files=11
+Files=12
 F1=hardware.h
-F2=C:\CrossPlatformLibraries\Drivers\mcp3208.h
+F2=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_port.h
 F3=C:\cvavr\inc\stdint.h
-F4=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_port.h
-F5=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F6=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
-F7=C:\cvavr\inc\io.h
-F8=C:\cvavr\inc\mega32a.h
-F9=C:\cvavr\inc\mega32_bits.h
-F10=C:\cvavr\inc\delay.h
-F11=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_hw.h
-[FoldedCode18]
-Blocks=0
-[FoldedCode29]
-Blocks=0
-[FoldedCode30]
-Blocks=0
-[FoldedCode31]
-Blocks=0
-[FoldedCode32]
-Blocks=0
-[FoldedCode22]
-Blocks=0
+F4=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+F5=C:\cvavr\inc\io.h
+F6=C:\cvavr\inc\mega32a.h
+F7=C:\cvavr\inc\mega32_bits.h
+F8=C:\cvavr\inc\delay.h
+F9=C:\CrossPlatformLibraries\utils\bit_register.h
+F10=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_hw.h
+F11=C:\CrossPlatformLibraries\Platforms\AVR\mcp3208_types.h
+F12=C:\CrossPlatformLibraries\drivers\mcp3208.h
