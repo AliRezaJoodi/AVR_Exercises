@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "thermocouple_k.h"
+#include "modules/thermocouple_k.h"
 
 //float tc_mv=0;
 //int tc_temp;

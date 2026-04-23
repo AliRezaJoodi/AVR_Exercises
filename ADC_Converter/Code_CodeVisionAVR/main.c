@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "adc_converter.h"
+#include "modules/adc_converter.h"
 
 void UART_Config(void);
 void UART_Display1(uint16_t adc_count, uint16_t mv);

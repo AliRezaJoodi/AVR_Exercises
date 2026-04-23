@@ -5,8 +5,8 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "utility_bit.h"
-#include "controller_onoff.h"
+#include "utils/bit.h"
+#include "modules/controller_onoff.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))

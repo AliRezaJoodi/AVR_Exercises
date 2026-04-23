@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=2
-OpenedFiles=5
+OpenedFiles=4
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=main.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1548947076
+TimeStamp1=1553410086
 PageIndex1=1
 Top0=200
 Left0=438
@@ -38,24 +38,24 @@ State1=2
 OF2=C:\CrossPlatformLibraries\Modules\average.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1549412354
+TimeStamp2=1553409884
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=5
-OF3=C:\CrossPlatformLibraries\Modules\average.h
-TimeStamp3=1548945062
-OF4=C:\CrossPlatformLibraries\Modules\average_config.h
-TimeStamp4=1549412212
+ActiveTab=4
+OF3=C:\CrossPlatformLibraries\modules\average_config.h
+TimeStamp3=1553215084
+OF4=C:\CrossPlatformLibraries\modules\average.h
+TimeStamp4=1553410048
 OF5=hardware.h
 TimeStamp5=1549412391
-F1=main.c
-F2=C:\CrossPlatformLibraries\Modules\average.c
 OF6=C:\CrossPlatformLibraries\Utils\utility_bit.h
 TimeStamp6=1548560890
+F1=main.c
+F2=C:\CrossPlatformLibraries\Modules\average.c
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -148,12 +148,12 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=531
+Build=535
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_UserDrivers\Inc
-IncludePath2=C:\CrossPlatformLibraries\Utils
-IncludePath3=C:\CrossPlatformLibraries\Modules
+IncludePath1=C:\CrossPlatformLibraries
+IncludePath2=
+IncludePath3=
 IncludePath4=
 IncludePath5=
 IncludePath6=
@@ -214,7 +214,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1549412215
+COFFileTimeStamp=1553410087
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -392,7 +392,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1549412392
+TimeStamp=1553410112
 [BookmarksFoldedCode]
 Files=43
 F1=T3.c
@@ -473,7 +473,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=531
+Build=535
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -595,8 +595,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 531
-L18=13811 line(s) compiled
+L17=Build: 535
+L18=13700 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -622,7 +622,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Average\Code_CodeVisionAVR\List\Main.asm(2583): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Average\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Average\Code_CodeVisionAVR\List\Main.asm(2574): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Average\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -1308,11 +1308,11 @@ Blocks=0
 [FoldedCode24]
 Blocks=0
 [Bookmarks39]
-TimeStamp=1548947076
-Row=55
-Column=59
+TimeStamp=1553410086
+Row=8
+Column=2
 ScrollPosX=0
-ScrollPosY=42
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1328,9 +1328,9 @@ Blocks=0
 [FoldedCode16]
 Blocks=0
 [Bookmarks40]
-TimeStamp=1549412354
-Row=1
-Column=0
+TimeStamp=1553409884
+Row=4
+Column=46
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1344,11 +1344,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks41]
-TimeStamp=1549412212
-Row=24
-Column=56
+TimeStamp=1553215084
+Row=23
+Column=44
 ScrollPosX=0
-ScrollPosY=22
+ScrollPosY=15
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1360,11 +1360,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks42]
-TimeStamp=1548945062
-Row=9
-Column=87
+TimeStamp=1553410048
+Row=19
+Column=39
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=9
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1391,37 +1391,36 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode43]
+Blocks=0
+[FoldedCode37]
+Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Average\Code_CodeVisionAVR\main.c
 F2=C:\CrossPlatformLibraries\Modules\average.c
 [Header1]
-Files=10
+Files=9
 F1=C:\cvavr\inc\stdint.h
 F2=C:\cvavr\inc\stdlib.h
 F3=C:\cvavr\inc\mega32a.h
 F4=C:\cvavr\inc\mega32_bits.h
 F5=C:\cvavr\inc\delay.h
 F6=hardware.h
-F7=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F8=C:\CrossPlatformLibraries\Modules\average.h
-F9=C:\CrossPlatformLibraries\Modules\average_config.h
-F10=C:\cvavr\inc\lcd.h
+F7=C:\CrossPlatformLibraries\modules\average.h
+F8=C:\CrossPlatformLibraries\modules\average_config.h
+F9=C:\cvavr\inc\lcd.h
 [Header2]
 Files=4
 F1=hardware.h
-F2=C:\CrossPlatformLibraries\Modules\average.h
+F2=C:\CrossPlatformLibraries\modules\average.h
 F3=C:\cvavr\inc\stdint.h
-F4=C:\CrossPlatformLibraries\Modules\average_config.h
-[FoldedCode43]
-Blocks=0
+F4=C:\CrossPlatformLibraries\modules\average_config.h
 [FoldedCode39]
 Blocks=0
 [FoldedCode40]
 Blocks=0
-[FoldedCode37]
+[FoldedCode42]
 Blocks=0
 [FoldedCode41]
-Blocks=0
-[FoldedCode42]
 Blocks=0

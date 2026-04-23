@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "temperature_converter.h"
+#include "modules/temperature_converter.h"
 
 void UART_Config(void);
 

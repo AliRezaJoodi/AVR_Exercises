@@ -6,8 +6,8 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include <utility_bit.h>
-#include <average.h>
+//#include "utils/bit.h"
+#include "modules/average.h"
 
 // Alphanumeric LCD Module functions
 #asm

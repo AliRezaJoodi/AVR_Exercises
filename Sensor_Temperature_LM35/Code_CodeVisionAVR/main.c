@@ -1,5 +1,6 @@
 // GitHub Account:  GitHub.com/AliRezaJoodi
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <mega32a.h>
@@ -7,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "lm35_converter.h"
+#include "modules/lm35_converter.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))

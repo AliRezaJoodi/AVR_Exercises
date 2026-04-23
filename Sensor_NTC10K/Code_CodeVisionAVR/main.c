@@ -10,7 +10,7 @@
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
 
 #include "hardware.h"
-#include "ntc10k.h"
+#include "modules/ntc10k.h"
 
 // Read the AD conversion result
 unsigned int read_adc(unsigned char adc_input){

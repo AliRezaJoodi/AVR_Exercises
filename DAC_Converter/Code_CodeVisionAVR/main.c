@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "dac_converter.h"
+#include "modules/dac_converter.h"
 
 void UART_Config(void);
 void UART_Display1(uint16_t mv, uint16_t dac_count);

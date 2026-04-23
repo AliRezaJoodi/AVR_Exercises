@@ -5,8 +5,8 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "seg7_font.h"
-#include "seg7_encoder.h"
+#include "modules/seg7_font.h"
+#include "modules/seg7_encoder.h"
 
 void IO_Init(void);
 

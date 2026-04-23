@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "crc8.h"
+#include "utils/crc8.h"
 
 void UART_Config(void);
 void UART_Display(uint8_t data);
