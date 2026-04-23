@@ -1,12 +1,11 @@
 #ifndef HARDWARE_INCLUDED
 #define HARDWARE_INCLUDED
 
-#define SEG7_DRIVER_CONFIG
-    #define SEG7_DIGITS_COUNT       8
-    #define SEG7_DIGITS_ACTIVATE    1
-    #define SEG7_SEGMENTS_ACTIVATE  0
-
 #define SEG7_DRIVER_HARDWARE
+    #define SEG7_DIGITS_COUNT       8U
+    #define SEG7_DIGITS_ACTIVATE    1U
+    #define SEG7_SEGMENTS_ACTIVATE  0U
+
     #define SEG7_DIGIT0_DDR          DDRB
     #define SEG7_DIGIT0_PORT         PORTB
     #define SEG7_DIGIT0_BIT          0

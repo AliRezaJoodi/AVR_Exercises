@@ -6,7 +6,7 @@
 #include <io.h>
 
 #include "hardware.h"
-#include "seg7_driver.h"
+#include "drivers/seg7_driver.h"
 
 void main(void){
     uint8_t segments[8] = {
