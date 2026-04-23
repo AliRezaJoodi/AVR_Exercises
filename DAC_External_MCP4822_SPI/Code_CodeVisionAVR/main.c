@@ -5,7 +5,7 @@
 #include <spi.h>
 
 #include "hardware.h"
-#include "mcp4822.h"
+#include "drivers/mcp4822.h"
 
 void SPI_Config(void);
 
@@ -49,8 +49,9 @@ void main(void){
 //    MCP4822_SetOutputB_1xGain(&dac1, 1000U);
     MCP4822_SetOutputB_2xGain(&dac1, 1000U);
 
+    delay_ms(1000);
 //    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_B);
-//    MCP4822_DisableOutputB(&dac1);
+    MCP4822_DisableOutputB(&dac1);
 
     while(1){
     }
