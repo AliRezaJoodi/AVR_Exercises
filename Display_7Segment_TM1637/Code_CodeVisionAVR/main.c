@@ -6,9 +6,9 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 
-#include "utility_bit.h"
 #include "hardware.h"
-#include "tm1637.h"
+#include "utils/bit.h"
+#include "drivers/tm1637.h"
 
 void main(void){
     //char txt[];

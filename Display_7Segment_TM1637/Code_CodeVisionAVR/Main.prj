@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=2
-OpenedFiles=6
+OpenedFiles=7
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=main.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1550800296
+TimeStamp1=1553404880
 PageIndex1=1
 Top0=200
 Left0=438
@@ -38,24 +38,26 @@ State1=2
 OF2=C:\CrossPlatformLibraries\Drivers\tm1637.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1549994861
+TimeStamp2=1553406555
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=5
-OF3=hardware.h
-TimeStamp3=1550058675
-OF4=C:\CrossPlatformLibraries\Drivers\tm1637.h
-TimeStamp4=1551079569
+ActiveTab=1
+OF3=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_hw.h
+TimeStamp3=1553215085
+OF4=hardware.h
+TimeStamp4=1550058675
 OF5=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_port.h
-TimeStamp5=1551079619
+TimeStamp5=1553406076
+OF6=C:\CrossPlatformLibraries\drivers\tm1637.h
+TimeStamp6=1553405100
 F1=main.c
 F2=C:\CrossPlatformLibraries\Drivers\tm1637.c
-OF6=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_hw.h
-TimeStamp6=1550093162
+OF7=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_types.h
+TimeStamp7=1553405080
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -148,14 +150,14 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1106
+Build=1129
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=..\..\_UserDrivers\Inc
-IncludePath2=C:\CrossPlatformLibraries\Utils
-IncludePath3=C:\CrossPlatformLibraries\Drivers
-IncludePath4=C:\CrossPlatformLibraries\Modules
-IncludePath5=C:\CrossPlatformLibraries\Platforms\AVR
+IncludePath1=C:\CrossPlatformLibraries
+IncludePath2=C:\CrossPlatformLibraries\Platforms\AVR
+IncludePath3=
+IncludePath4=
+IncludePath5=
 IncludePath6=
 IncludePath7=
 IncludePath8=
@@ -183,7 +185,7 @@ IncludePath29=
 IncludePath30=
 IncludePath31=
 LibraryPath0=C:\cvavr\lib
-LibraryPath1=..\..\_UserDrivers\Lib
+LibraryPath1=
 LibraryPath2=
 LibraryPath3=
 LibraryPath4=
@@ -214,7 +216,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1551079637
+COFFileTimeStamp=1553406662
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -392,9 +394,9 @@ Row=0
 Column=10
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1551269991
+TimeStamp=1553406674
 [BookmarksFoldedCode]
-Files=67
+Files=73
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -462,6 +464,12 @@ F64=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_port.h
 F65=C:\CrossPlatformLibraries\Drivers\tm1637.h
 F66=C:\CrossPlatformLibraries\Utils\utility_bit.h
 F67=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_hw.h
+F68=C:\cvavr\inc\io.h
+F69=C:\cvavr\inc\mega32a.h
+F70=C:\CrossPlatformLibraries\utils\bit.h
+F71=C:\CrossPlatformLibraries\utils\bit_register.h
+F72=C:\CrossPlatformLibraries\utils\bit_value.h
+F73=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_types.h
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -497,7 +505,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1106
+Build=1129
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -619,8 +627,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1106
-L18=4465 line(s) compiled
+L17=Build: 1129
+L18=3867 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -628,7 +636,7 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 64 byte(s)
+L26=Estimated Data Stack usage: 67 byte(s)
 L27=
 L28=RAM Global variables size: 0 byte(s)
 L29=
@@ -638,20 +646,20 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L36=Program size: 1654 words (3308 bytes), 10.1% of FLASH
-L37=320 words (640 bytes), 16.2% reduced by Code Compression
+L36=Program size: 2060 words (4120 bytes), 12.6% of FLASH
+L37=477 words (954 bytes), 18.8% reduced by Code Compression
 L38=339 words (678 bytes), 13.5% reduced by Code Compression
 Lines=37
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\List\Main.asm(3137): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\List\Main.asm(3651): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000cec   3268     40   3308   32768  10.1%
+L9=[.cseg] 0x000000 0x001018   4080     40   4120   32768  12.6%
 L10=[.dseg] 0x000060 0x000260      0      0      0    2048   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1157,8 +1165,6 @@ BK9=-1
 Blocks=0
 [FoldedCode28]
 Blocks=0
-[FoldedCode29]
-Blocks=0
 [FoldedCode23]
 Blocks=0
 [FoldedCode22]
@@ -1179,8 +1185,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode30]
-Blocks=0
 [FoldedCode21]
 Blocks=0
 [Bookmarks31]
@@ -1415,8 +1419,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode17]
-Blocks=0
 [Bookmarks44]
 TimeStamp=1546591951
 Row=9
@@ -1674,11 +1676,11 @@ Blocks=0
 [FoldedCode3]
 Blocks=0
 [Bookmarks58]
-TimeStamp=1550800296
-Row=36
-Column=75
+TimeStamp=1553404880
+Row=11
+Column=73
 ScrollPosX=0
-ScrollPosY=24
+ScrollPosY=67
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1691,10 +1693,10 @@ BK8=-1
 BK9=-1
 [Bookmarks59]
 TimeStamp=1550058675
-Row=16
-Column=40
+Row=8
+Column=44
 ScrollPosX=0
-ScrollPosY=4
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1748,11 +1750,11 @@ Blocks=0
 [FoldedCode40]
 Blocks=0
 [Bookmarks62]
-TimeStamp=1549306219
-Row=14
-Column=39
+TimeStamp=1553215085
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1764,9 +1766,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks63]
-TimeStamp=1549994861
-Row=92
-Column=8
+TimeStamp=1553406555
+Row=15
+Column=11
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1780,11 +1782,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks64]
-TimeStamp=1551079619
-Row=36
-Column=39
+TimeStamp=1553406076
+Row=18
+Column=14
 ScrollPosX=0
-ScrollPosY=22
+ScrollPosY=32
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1796,11 +1798,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks65]
-TimeStamp=1551079569
-Row=184
-Column=35
+TimeStamp=1553405100
+Row=21
+Column=19
 ScrollPosX=0
-ScrollPosY=156
+ScrollPosY=19
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1829,12 +1831,10 @@ BK8=-1
 BK9=-1
 [FoldedCode66]
 Blocks=0
-[FoldedCode62]
-Blocks=0
 [Bookmarks67]
-TimeStamp=1550093162
-Row=1
-Column=26
+TimeStamp=1553215085
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1847,45 +1847,160 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[Bookmarks68]
+TimeStamp=1298953135
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks69]
+TimeStamp=1031371171
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode69]
+Blocks=0
+[FoldedCode30]
+Blocks=0
+[FoldedCode29]
+Blocks=0
+[Bookmarks70]
+TimeStamp=1553223256
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode70]
+Blocks=0
+[FoldedCode68]
+Blocks=0
+[FoldedCode62]
+Blocks=0
+[FoldedCode17]
+Blocks=0
+[Bookmarks71]
+TimeStamp=1553298090
+Row=172
+Column=33
+ScrollPosX=0
+ScrollPosY=169
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode71]
+Blocks=0
+[Bookmarks72]
+TimeStamp=1553295985
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=101
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode72]
+Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\main.c
 F2=C:\CrossPlatformLibraries\Drivers\tm1637.c
 [Header1]
-Files=11
+Files=8
 F1=C:\cvavr\inc\stdint.h
 F2=C:\cvavr\inc\mega32a.h
 F3=C:\cvavr\inc\mega32_bits.h
 F4=C:\cvavr\inc\delay.h
-F5=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F6=hardware.h
-F7=C:\CrossPlatformLibraries\Drivers\tm1637.h
-F8=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_port.h
-F9=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
-F10=C:\cvavr\inc\io.h
-F11=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_hw.h
+F5=hardware.h
+F6=C:\CrossPlatformLibraries\utils\bit.h
+F7=C:\CrossPlatformLibraries\drivers\tm1637.h
+F8=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_types.h
 [Header2]
-Files=11
+Files=13
 F1=hardware.h
-F2=C:\CrossPlatformLibraries\Drivers\tm1637.h
+F2=C:\CrossPlatformLibraries\utils\bit_value.h
 F3=C:\cvavr\inc\stdint.h
-F4=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F5=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_port.h
-F6=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
-F7=C:\cvavr\inc\io.h
-F8=C:\cvavr\inc\mega32a.h
-F9=C:\cvavr\inc\mega32_bits.h
-F10=C:\cvavr\inc\delay.h
+F4=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_port.h
+F5=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+F6=C:\cvavr\inc\io.h
+F7=C:\cvavr\inc\mega32a.h
+F8=C:\cvavr\inc\mega32_bits.h
+F9=C:\cvavr\inc\delay.h
+F10=C:\CrossPlatformLibraries\utils\bit_register.h
 F11=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_hw.h
+F12=C:\CrossPlatformLibraries\Platforms\AVR\tm1637_types.h
+F13=C:\CrossPlatformLibraries\drivers\tm1637.h
 [FoldedCode58]
 Blocks=0
 [FoldedCode63]
 Blocks=0
-[FoldedCode67]
-Blocks=0
-[FoldedCode64]
+[Bookmarks73]
+TimeStamp=1553405080
+Row=6
+Column=33
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode73]
 Blocks=0
 [FoldedCode65]
 Blocks=0
+[FoldedCode64]
+Blocks=0
 [FoldedCode59]
+Blocks=0
+[FoldedCode67]
 Blocks=0
