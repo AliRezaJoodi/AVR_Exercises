@@ -7,8 +7,9 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "utility_bit.h"
-#include "tm1638.h"
+#include "utils/bit.h"
+#include "utils/bit_value.h"
+#include "drivers/tm1638.h"
 
 void UART_Config(void);
 
@@ -34,13 +35,13 @@ void main(void){
 
 //*****************************************************
     for(i=0; i<=7; ++i){
-        led_u8 = write_bit_u8(led_u8, i, 1);
+        led_u8 = WriteBit_u8(led_u8, i, 1);
         TM1638_Set8Leds_S9S10x4(&tm1, led_u8);
         delay_ms(500);
     }
 
     for(i=0; i<=7; ++i){
-        led_u8 = write_bit_u8(led_u8, i, 0);
+        led_u8 = WriteBit_u8(led_u8, i, 0);
         TM1638_Set8Leds_S9S10x4(&tm1, led_u8);
         delay_ms(500);
     }
@@ -49,13 +50,13 @@ void main(void){
 
 //*****************************************************
     for(i=0; i<16; ++i){
-        led_u16 = write_bit_u16(led_u16, i, 1);
+        led_u16 = WriteBit_u16(led_u16, i, 1);
         TM1638_SetLeds(&tm1, led_u16);
         delay_ms(500);
     }
 
     for(i=0; i<16; ++i){
-        led_u16 = write_bit_u16(led_u16, i, 0);
+        led_u16 = WriteBit_u16(led_u16, i, 0);
         TM1638_SetLeds(&tm1, led_u16);
         delay_ms(500);
     }
@@ -64,13 +65,13 @@ void main(void){
 
 //*****************************************************
     for(i=0; i<8; ++i){
-        led_u8 = write_bit_u8(led_u8, i, 1);
+        led_u8 = WriteBit_u8(led_u8, i, 1);
         TM1638_Set8Leds_S9x8(&tm1, led_u8);
         delay_ms(500);
     }
 
     for(i=0; i<8; ++i){
-        led_u8 = write_bit_u8(led_u8, i, 0);
+        led_u8 = WriteBit_u8(led_u8, i, 0);
         TM1638_Set8Leds_S9x8(&tm1, led_u8);
         delay_ms(500);
     }
