@@ -12,7 +12,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "keypad4x4.h"
+#include "drivers/keypad4x4.h"
 
 void LCD_Config(void);
 void LCD_DisplayloadingPage(void);
@@ -27,7 +27,7 @@ void main(void){
     LCD_DisplayloadingPage(); delay_ms(250); lcd_clear();
 
     while(1){
-        number = Keypad4x4_GetNumber();
+        number = Keypad4x4_GetKey();
 
         if(number_last != number){
             number_last = number;
@@ -41,7 +41,7 @@ void LCD_DisplayMainPage(uint8_t number){
     char txt[16];
 
     lcd_clear();
-    lcd_gotoxy(0,0); itoa(number, txt); lcd_puts(txt); lcd_putsf("  ");
+    lcd_gotoxy(0,0); itoa(number, txt); lcd_puts(txt); lcd_putsf("    ");
     lcd_gotoxy(0,1); lcd_putsf("4x4 Keypad");
 }
 

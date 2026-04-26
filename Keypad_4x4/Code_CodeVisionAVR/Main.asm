@@ -1120,12 +1120,15 @@ _tbl16_G105:
 	.DB  0x0,0x10,0x0,0x1,0x10,0x0,0x1,0x0
 
 _0x0:
-	.DB  0x20,0x20,0x0,0x34,0x78,0x34,0x20,0x4B
-	.DB  0x65,0x79,0x70,0x61,0x64,0x0,0x34,0x78
-	.DB  0x34,0x4B,0x65,0x79,0x70,0x61,0x64,0x20
-	.DB  0x44,0x72,0x69,0x76,0x65,0x72,0x0,0x4C
-	.DB  0x6F,0x61,0x64,0x69,0x6E,0x67,0x20,0x2E
-	.DB  0x2E,0x2E,0x0
+	.DB  0x20,0x20,0x20,0x20,0x0,0x34,0x78,0x34
+	.DB  0x20,0x4B,0x65,0x79,0x70,0x61,0x64,0x0
+	.DB  0x34,0x78,0x34,0x4B,0x65,0x79,0x70,0x61
+	.DB  0x64,0x20,0x44,0x72,0x69,0x76,0x65,0x72
+	.DB  0x0,0x4C,0x6F,0x61,0x64,0x69,0x6E,0x67
+	.DB  0x20,0x2E,0x2E,0x2E,0x0
+_0x2005C:
+	.DB  0xFF,0x0,0x1,0xFF,0x2,0xFF,0xFF,0xFF
+	.DB  0x3,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
 _0x2000060:
 	.DB  0x1
 _0x2000000:
@@ -1135,6 +1138,10 @@ _0x2020003:
 	.DB  0x80,0xC0
 
 __GLOBAL_INI_TBL:
+	.DW  0x10
+	.DW  _table_ctz4_G001
+	.DW  _0x2005C*2
+
 	.DW  0x01
 	.DW  __seed_G100
 	.DW  _0x2000060*2
@@ -1237,26 +1244,6 @@ __GLOBAL_INI_END:
 	#endif
    .equ __lcd_port=0x12 ;PORTD
 ; 0000 000B #endasm
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	number -> R17
-;	number -> R17
 ;void LCD_Config(void);
 ;void LCD_DisplayloadingPage(void);
 ;void LCD_DisplayMainPage(char);
@@ -1281,14 +1268,14 @@ _main:
 	CALL _lcd_clear
 ; 0000 001C 
 ; 0000 001D while(1){
-_0xD:
-; 0000 001E number = Keypad4x4_GetNumber();
-	RCALL _Keypad4x4_GetNumber
+_0x3:
+; 0000 001E number = Keypad4x4_GetKey();
+	RCALL _Keypad4x4_GetKey
 	MOV  R5,R30
 ; 0000 001F 
 ; 0000 0020 if(number_last != number){
 	CP   R5,R17
-	BREQ _0x10
+	BREQ _0x6
 ; 0000 0021 number_last = number;
 	MOV  R17,R5
 ; 0000 0022 LCD_DisplayMainPage(number);
@@ -1296,11 +1283,11 @@ _0xD:
 	RCALL _LCD_DisplayMainPage
 ; 0000 0023 }
 ; 0000 0024 }
-_0x10:
-	RJMP _0xD
+_0x6:
+	RJMP _0x3
 ; 0000 0025 }
-_0x11:
-	RJMP _0x11
+_0x7:
+	RJMP _0x7
 ; .FEND
 ;void LCD_DisplayMainPage(uint8_t number){
 ; 0000 0028 void LCD_DisplayMainPage(uint8_t number){
@@ -1314,7 +1301,7 @@ _LCD_DisplayMainPage:
 ;	number -> Y+16
 ;	txt -> Y+0
 	CALL SUBOPT_0x0
-; 0000 002C lcd_gotoxy(0,0); itoa(number, txt); lcd_puts(txt); lcd_putsf("  ");
+; 0000 002C lcd_gotoxy(0,0); itoa(number, txt); lcd_puts(txt); lcd_putsf("    ");
 	LDD  R30,Y+16
 	LDI  R31,0
 	ST   -Y,R31
@@ -1327,7 +1314,7 @@ _LCD_DisplayMainPage:
 	__POINTW2FN _0x0,0
 	CALL SUBOPT_0x1
 ; 0000 002D lcd_gotoxy(0,1); lcd_putsf("4x4 Keypad");
-	__POINTW2FN _0x0,3
+	__POINTW2FN _0x0,5
 	CALL _lcd_putsf
 ; 0000 002E }
 	ADIW R28,17
@@ -1351,32 +1338,14 @@ _LCD_DisplayloadingPage:
 ; 0000 0037 lcd_clear();
 	CALL SUBOPT_0x0
 ; 0000 0038 lcd_gotoxy(0,0); lcd_putsf("4x4Keypad Driver");
-	__POINTW2FN _0x0,14
+	__POINTW2FN _0x0,16
 	CALL SUBOPT_0x1
 ; 0000 0039 lcd_gotoxy(0,1); lcd_putsf("Loading ...");
-	__POINTW2FN _0x0,31
+	__POINTW2FN _0x0,33
 	CALL _lcd_putsf
 ; 0000 003A }
 	RET
 ; .FEND
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	buf -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
 	#ifndef __SLEEP_DEFINED__
 	#define __SLEEP_DEFINED__
 	.EQU __se_bit=0x80
@@ -1388,274 +1357,907 @@ _LCD_DisplayloadingPage:
 	.EQU __sm_adc_noise_red=0x10
 	.SET power_ctrl_reg=mcucr
 	#endif
-;	number -> R17
-;	number -> R17
-;uint8_t Keypad4x4_GetNumber(void){
-; 0001 0007 uint8_t Keypad4x4_GetNumber(void){
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+4
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	status -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;static const uint8_t table_ctz4[16] = {
+;KEYPAD4X4_NO_INDEX, // 0000
+;0U,                 // 0001
+;1U,                 // 0010
+;KEYPAD4X4_NO_INDEX, // 0011
+;2U,                 // 0100
+;KEYPAD4X4_NO_INDEX, // 0101
+;KEYPAD4X4_NO_INDEX, // 0110
+;KEYPAD4X4_NO_INDEX, // 0111
+;3U,                 // 1000
+;KEYPAD4X4_NO_INDEX, // 1001
+;KEYPAD4X4_NO_INDEX, // 1010
+;KEYPAD4X4_NO_INDEX, // 1011
+;KEYPAD4X4_NO_INDEX, // 1100
+;KEYPAD4X4_NO_INDEX, // 1101
+;KEYPAD4X4_NO_INDEX, // 1110
+;KEYPAD4X4_NO_INDEX  // 1111
+;};
+
+	.DSEG
+;uint8_t Keypad4x4_GetKey(void){
+; 0001 001E uint8_t Keypad4x4_GetKey(void){
 
 	.CSEG
-_Keypad4x4_GetNumber:
-; .FSTART _Keypad4x4_GetNumber
-; 0001 0008 uint8_t number = 0U;
-; 0001 0009 
-; 0001 000A Keypad4x4_InitPins_Mode1();
-	ST   -Y,R17
+_Keypad4x4_GetKey:
+; .FSTART _Keypad4x4_GetKey
+; 0001 001F uint8_t number = 0xFFU;
+; 0001 0020 uint8_t rows = 0U, cols = 0U;
+; 0001 0021 
+; 0001 0022 Keypad4x4_R1_SetOutput();
+	CALL __SAVELOCR4
 ;	number -> R17
-	LDI  R17,0
-	CBI  0x14,0
-	SBI  0x15,0
-	CBI  0x14,1
-	SBI  0x15,1
-	CBI  0x14,2
-	SBI  0x15,2
-	CBI  0x14,3
-	SBI  0x15,3
-	SBI  0x14,4
-	CBI  0x15,4
-	SBI  0x14,5
-	CBI  0x15,5
-	SBI  0x14,6
-	CBI  0x15,6
-	SBI  0x14,7
-	CBI  0x15,7
-; 0001 000B number = Keypad4x4_GetPins_Mode1();
-	ST   -Y,R17
-	LDI  R17,0
-	MOV  R30,R17
-	ANDI R30,0xFE
-	MOV  R26,R30
-	IN   R30,0x13
+;	rows -> R16
+;	cols -> R19
+	LDI  R17,255
+	LDI  R16,0
+	LDI  R19,0
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0023 Keypad4x4_R1_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0024 
+; 0001 0025 Keypad4x4_R2_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0026 Keypad4x4_R2_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0027 
+; 0001 0028 Keypad4x4_R3_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(2)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0029 Keypad4x4_R3_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(2)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 002A 
+; 0001 002B Keypad4x4_R4_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 002C Keypad4x4_R4_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 002D 
+; 0001 002E cols |= (!Keypad4x4_C1_Read());
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(4)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
 	ANDI R30,LOW(0x1)
-	OR   R30,R26
-	MOV  R17,R30
-	ANDI R30,0xFD
-	MOV  R26,R30
-	IN   R30,0x13
-	LSR  R30
+	ADIW R28,3
+	CALL __LNEGB1
+	OR   R19,R30
+; 0001 002F cols |= (!Keypad4x4_C2_Read()) << 1;
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(5)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
 	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
 	LSL  R30
-	OR   R30,R26
-	MOV  R17,R30
-	ANDI R30,0xFB
-	MOV  R26,R30
-	IN   R30,0x13
-	LSR  R30
-	LSR  R30
+	OR   R19,R30
+; 0001 0030 cols |= (!Keypad4x4_C3_Read()) << 2;
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(6)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
 	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
 	LSL  R30
 	LSL  R30
-	OR   R30,R26
-	MOV  R17,R30
-	ANDI R30,0XF7
-	MOV  R26,R30
-	IN   R30,0x13
-	LSR  R30
-	LSR  R30
-	LSR  R30
+	OR   R19,R30
+; 0001 0031 cols |= (!Keypad4x4_C4_Read()) << 3;
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(7)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
 	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
 	LSL  R30
 	LSL  R30
 	LSL  R30
-	OR   R30,R26
-	MOV  R17,R30
-	LD   R17,Y+
-	MOV  R17,R30
-; 0001 000C 
-; 0001 000D Keypad4x4_InitPins_Mode2();
-	SBI  0x14,0
-	CBI  0x15,0
-	SBI  0x14,1
-	CBI  0x15,1
-	SBI  0x14,2
-	CBI  0x15,2
-	SBI  0x14,3
-	CBI  0x15,3
-	CBI  0x14,4
-	SBI  0x15,4
-	CBI  0x14,5
-	SBI  0x15,5
-	CBI  0x14,6
-	SBI  0x15,6
-	CBI  0x14,7
-	SBI  0x15,7
-; 0001 000E number |= Keypad4x4_GetPins_Mode2();
-	ST   -Y,R17
-	LDI  R17,0
-	MOV  R30,R17
-	ANDI R30,0xEF
-	MOV  R26,R30
-	IN   R30,0x13
-	SWAP R30
-	ANDI R30,LOW(0x1)
-	SWAP R30
-	ANDI R30,0xF0
-	OR   R30,R26
-	MOV  R17,R30
-	ANDI R30,0xDF
-	MOV  R26,R30
-	IN   R30,0x13
-	SWAP R30
-	ANDI R30,0xF
-	LSR  R30
-	ANDI R30,LOW(0x1)
-	SWAP R30
-	ANDI R30,0xF0
-	LSL  R30
-	OR   R30,R26
-	MOV  R17,R30
-	ANDI R30,0xBF
-	MOV  R26,R30
-	IN   R30,0x13
-	SWAP R30
-	ANDI R30,0xF
-	LSR  R30
-	LSR  R30
-	ANDI R30,LOW(0x1)
-	SWAP R30
-	ANDI R30,0xF0
-	LSL  R30
-	LSL  R30
-	OR   R30,R26
-	MOV  R17,R30
-	ANDI R30,0x7F
-	MOV  R26,R30
-	IN   R30,0x13
-	ROL  R30
-	LDI  R30,0
-	ROL  R30
-	ANDI R30,LOW(0x1)
-	ROR  R30
-	LDI  R30,0
-	ROR  R30
-	OR   R30,R26
-	MOV  R17,R30
-	LD   R17,Y+
-	OR   R17,R30
-; 0001 000F 
-; 0001 0010 switch (number){
-	MOV  R30,R17
-; 0001 0011 case KEYPAD4X4_N00:
-	CPI  R30,LOW(0xD7)
-	BRNE _0x20010
-; 0001 0012 return 0; break;
-	LDI  R30,LOW(0)
-	RJMP _0x20C0003
-; 0001 0013 case KEYPAD4X4_N01:
-_0x20010:
-	CPI  R30,LOW(0xEB)
-	BRNE _0x20011
-; 0001 0014 return 1; break;
-	LDI  R30,LOW(1)
-	RJMP _0x20C0003
-; 0001 0015 case KEYPAD4X4_N02:
-_0x20011:
-	CPI  R30,LOW(0xDB)
-	BRNE _0x20012
-; 0001 0016 return 2; break;
-	LDI  R30,LOW(2)
-	RJMP _0x20C0003
-; 0001 0017 case KEYPAD4X4_N03:
-_0x20012:
-	CPI  R30,LOW(0xBB)
-	BRNE _0x20013
-; 0001 0018 return 3; break;
-	LDI  R30,LOW(3)
-	RJMP _0x20C0003
-; 0001 0019 case KEYPAD4X4_N04:
-_0x20013:
-	CPI  R30,LOW(0xED)
-	BRNE _0x20014
-; 0001 001A return 4; break;
-	LDI  R30,LOW(4)
-	RJMP _0x20C0003
-; 0001 001B case KEYPAD4X4_N05:
-_0x20014:
-	CPI  R30,LOW(0xDD)
-	BRNE _0x20015
-; 0001 001C return 5; break;
-	LDI  R30,LOW(5)
-	RJMP _0x20C0003
-; 0001 001D case KEYPAD4X4_N06:
-_0x20015:
-	CPI  R30,LOW(0xBD)
-	BRNE _0x20016
-; 0001 001E return 6; break;
-	LDI  R30,LOW(6)
-	RJMP _0x20C0003
-; 0001 001F case KEYPAD4X4_N07:
-_0x20016:
-	CPI  R30,LOW(0xEE)
-	BRNE _0x20017
-; 0001 0020 return 7; break;
-	LDI  R30,LOW(7)
-	RJMP _0x20C0003
-; 0001 0021 case KEYPAD4X4_N08:
-_0x20017:
-	CPI  R30,LOW(0xDE)
-	BRNE _0x20018
-; 0001 0022 return 8; break;
-	LDI  R30,LOW(8)
-	RJMP _0x20C0003
-; 0001 0023 case KEYPAD4X4_N09:
-_0x20018:
-	CPI  R30,LOW(0xBE)
-	BRNE _0x20019
-; 0001 0024 return 9; break;
-	LDI  R30,LOW(9)
-	RJMP _0x20C0003
-; 0001 0025 case KEYPAD4X4_N10:
-_0x20019:
-	CPI  R30,LOW(0x7E)
-	BRNE _0x2001A
-; 0001 0026 return 10; break;
-	LDI  R30,LOW(10)
-	RJMP _0x20C0003
-; 0001 0027 case KEYPAD4X4_N11:
-_0x2001A:
-	CPI  R30,LOW(0x7D)
-	BRNE _0x2001B
-; 0001 0028 return 11; break;
-	LDI  R30,LOW(11)
-	RJMP _0x20C0003
-; 0001 0029 case KEYPAD4X4_N12:
-_0x2001B:
-	CPI  R30,LOW(0x7B)
-	BRNE _0x2001C
-; 0001 002A return 12; break;
-	LDI  R30,LOW(12)
-	RJMP _0x20C0003
-; 0001 002B case KEYPAD4X4_N13:
-_0x2001C:
-	CPI  R30,LOW(0x77)
-	BRNE _0x2001D
-; 0001 002C return 13; break;
-	LDI  R30,LOW(13)
-	RJMP _0x20C0003
-; 0001 002D case KEYPAD4X4_N14:
-_0x2001D:
-	CPI  R30,LOW(0xB7)
-	BRNE _0x2001E
-; 0001 002E return 14; break;
-	LDI  R30,LOW(14)
-	RJMP _0x20C0003
-; 0001 002F case KEYPAD4X4_N15:
-_0x2001E:
-	CPI  R30,LOW(0xE7)
-	BRNE _0x20020
-; 0001 0030 return 15; break;
-	LDI  R30,LOW(15)
-	RJMP _0x20C0003
-; 0001 0031 default:
-_0x20020:
-; 0001 0032 return 16;
-	LDI  R30,LOW(16)
-; 0001 0033 }
+	OR   R19,R30
+; 0001 0032 
+; 0001 0033 cols = table_ctz4[cols & 0x0F];
+	MOV  R30,R19
+	ANDI R30,LOW(0xF)
+	LDI  R31,0
+	SUBI R30,LOW(-_table_ctz4_G001)
+	SBCI R31,HIGH(-_table_ctz4_G001)
+	LD   R19,Z
 ; 0001 0034 
-; 0001 0035 return number;
-_0x20C0003:
-	LD   R17,Y+
+; 0001 0035 Keypad4x4_R1_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0036 Keypad4x4_R1_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0037 
+; 0001 0038 Keypad4x4_R2_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0039 Keypad4x4_R2_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 003A 
+; 0001 003B Keypad4x4_R3_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(2)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 003C Keypad4x4_R3_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(2)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 003D 
+; 0001 003E Keypad4x4_R4_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 003F Keypad4x4_R4_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0040 
+; 0001 0041 Keypad4x4_C1_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(4)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0042 Keypad4x4_C1_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(4)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0043 
+; 0001 0044 Keypad4x4_C2_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(5)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0045 Keypad4x4_C2_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(5)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0046 
+; 0001 0047 Keypad4x4_C3_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(6)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0048 Keypad4x4_C3_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(6)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0049 
+; 0001 004A Keypad4x4_C4_SetOutput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(7)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 004B Keypad4x4_C4_WriteLow();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(7)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 004C 
+; 0001 004D rows |= (!Keypad4x4_R1_Read());
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
+	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
+	OR   R16,R30
+; 0001 004E rows |= (!Keypad4x4_R2_Read()) << 1;
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(1)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
+	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
+	LSL  R30
+	OR   R16,R30
+; 0001 004F rows |= (!Keypad4x4_R3_Read()) << 2;
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(2)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
+	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
+	LSL  R30
+	LSL  R30
+	OR   R16,R30
+; 0001 0050 rows |= (!Keypad4x4_R4_Read()) << 3;
+	LDI  R30,LOW(51)
+	LDI  R31,HIGH(51)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R26,X
+	LD   R30,Y
+	CALL __LSRB12
+	ANDI R30,LOW(0x1)
+	ADIW R28,3
+	CALL __LNEGB1
+	LSL  R30
+	LSL  R30
+	LSL  R30
+	OR   R16,R30
+; 0001 0051 
+; 0001 0052 rows = table_ctz4[rows & 0x0F];
+	MOV  R30,R16
+	ANDI R30,LOW(0xF)
+	LDI  R31,0
+	SUBI R30,LOW(-_table_ctz4_G001)
+	SBCI R31,HIGH(-_table_ctz4_G001)
+	LD   R16,Z
+; 0001 0053 
+; 0001 0054 Keypad4x4_C1_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(4)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0055 Keypad4x4_C1_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(4)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0056 
+; 0001 0057 Keypad4x4_C2_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(5)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0058 Keypad4x4_C2_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(5)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 0059 
+; 0001 005A Keypad4x4_C3_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(6)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 005B Keypad4x4_C3_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(6)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 005C 
+; 0001 005D Keypad4x4_C4_SetInput();
+	LDI  R30,LOW(52)
+	LDI  R31,HIGH(52)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(7)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	COM  R30
+	AND  R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 005E Keypad4x4_C4_SetPullUp();
+	LDI  R30,LOW(53)
+	LDI  R31,HIGH(53)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(7)
+	ST   -Y,R26
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	LD   R1,X
+	LD   R30,Y
+	LDI  R26,LOW(1)
+	CALL __LSLB12
+	OR   R30,R1
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	ST   X,R30
+	ADIW R28,3
+; 0001 005F 
+; 0001 0060 return (cols << 2) | rows;
+	MOV  R30,R19
+	LSL  R30
+	LSL  R30
+	OR   R30,R16
+	CALL __LOADLOCR4
+	ADIW R28,4
 	RET
-; 0001 0036 }
+; 0001 0061 }
 ; .FEND
 
 	.CSEG
@@ -2014,6 +2616,8 @@ _0x20C0001:
 	.CSEG
 
 	.DSEG
+_table_ctz4_G001:
+	.BYTE 0x10
 __seed_G100:
 	.BYTE 0x4
 __base_y_G101:
@@ -2050,6 +2654,56 @@ SUBOPT_0x3:
 ;RUNTIME LIBRARY
 
 	.CSEG
+__SAVELOCR4:
+	ST   -Y,R19
+__SAVELOCR3:
+	ST   -Y,R18
+__SAVELOCR2:
+	ST   -Y,R17
+	ST   -Y,R16
+	RET
+
+__LOADLOCR4:
+	LDD  R19,Y+3
+__LOADLOCR3:
+	LDD  R18,Y+2
+__LOADLOCR2:
+	LDD  R17,Y+1
+	LD   R16,Y
+	RET
+
+__LSLB12:
+	TST  R30
+	MOV  R0,R30
+	MOV  R30,R26
+	BREQ __LSLB12R
+__LSLB12L:
+	LSL  R30
+	DEC  R0
+	BRNE __LSLB12L
+__LSLB12R:
+	RET
+
+__LSRB12:
+	TST  R30
+	MOV  R0,R30
+	MOV  R30,R26
+	BREQ __LSRB12R
+__LSRB12L:
+	LSR  R30
+	DEC  R0
+	BRNE __LSRB12L
+__LSRB12R:
+	RET
+
+__LNEGB1:
+	TST  R30
+	LDI  R30,1
+	BREQ __LNEGB1F
+	CLR  R30
+__LNEGB1F:
+	RET
+
 _delay_ms:
 	adiw r26,0
 	breq __delay_ms1

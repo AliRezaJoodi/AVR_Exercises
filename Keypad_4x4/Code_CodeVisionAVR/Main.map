@@ -1,8 +1,9 @@
 RAM Allocation [bytes]
 Variable                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-_seed (stdlib.lib)                                                                0x0260       4
-_base_y (lcd.lib)                                                                 0x0264       4
+table_ctz4 (keypad4x4.c)                                                          0x0260      16
+_seed (stdlib.lib)                                                                0x0270       4
+_base_y (lcd.lib)                                                                 0x0274       4
 
 EEPROM Allocation [bytes]
 Variable                                                                          Address   Size
@@ -19,23 +20,23 @@ _lcd_maxx                                                                       
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-main                                                                              0x00086     18
-LCD_DisplayMainPage                                                               0x00098     25
-LCD_Config                                                                        0x000B1      6
-LCD_DisplayloadingPage                                                            0x000B7     11
-Keypad4x4_GetNumber                                                               0x000C2    195
-itoa                                                                              0x00185     46
-_lcd_delay_G101                                                                   0x001B3      4
-_lcd_ready                                                                        0x001B7     17
-_lcd_write_nibble_G101                                                            0x001C8     10
-_lcd_write_data                                                                   0x001D2     15
-_lcd_read_nibble_G101                                                             0x001E1      9
-lcd_read_byte0_G101                                                               0x001EA      9
-lcd_gotoxy                                                                        0x001F3     16
-lcd_clear                                                                         0x00203     19
-lcd_putchar                                                                       0x00216     26
-lcd_puts                                                                          0x00230     15
-lcd_putsf                                                                         0x0023F     19
-_long_delay_G101                                                                  0x00252      5
-_lcd_init_write_G101                                                              0x00257     12
-lcd_init                                                                          0x00263     51
+main                                                                              0x00092     18
+LCD_DisplayMainPage                                                               0x000A4     25
+LCD_Config                                                                        0x000BD      6
+LCD_DisplayloadingPage                                                            0x000C3     11
+Keypad4x4_GetKey                                                                  0x000CE    765
+itoa                                                                              0x003CB     46
+_lcd_delay_G101                                                                   0x003F9      4
+_lcd_ready                                                                        0x003FD     17
+_lcd_write_nibble_G101                                                            0x0040E     10
+_lcd_write_data                                                                   0x00418     15
+_lcd_read_nibble_G101                                                             0x00427      9
+lcd_read_byte0_G101                                                               0x00430      9
+lcd_gotoxy                                                                        0x00439     16
+lcd_clear                                                                         0x00449     19
+lcd_putchar                                                                       0x0045C     26
+lcd_puts                                                                          0x00476     15
+lcd_putsf                                                                         0x00485     19
+_long_delay_G101                                                                  0x00498      5
+_lcd_init_write_G101                                                              0x0049D     12
+lcd_init                                                                          0x004A9     51

@@ -41,22 +41,4 @@
     #define KEYPAD4X4_C4_PIN        PINC
     #define KEYPAD4X4_C4_PORT       PORTC
     #define KEYPAD4X4_C4_BIT        7U
-
-    #define KEYPAD4X4_N00           215U
-    #define KEYPAD4X4_N01           235U
-    #define KEYPAD4X4_N02           219U
-    #define KEYPAD4X4_N03           187U
-    #define KEYPAD4X4_N04           237U
-    #define KEYPAD4X4_N05           221U
-    #define KEYPAD4X4_N06           189U
-    #define KEYPAD4X4_N07           238U
-    #define KEYPAD4X4_N08           222U
-    #define KEYPAD4X4_N09           190U
-    #define KEYPAD4X4_N10           126U
-    #define KEYPAD4X4_N11           125U
-    #define KEYPAD4X4_N12           123U
-    #define KEYPAD4X4_N13           119U
-    #define KEYPAD4X4_N14           183U
-    #define KEYPAD4X4_N15           231U
-
 #endif

@@ -31,7 +31,7 @@ void main(void){
         },
         .config = {
             .pressed = BUTTON_ACTIVE_LOW,
-            .pull    = BUTTON_MODE_FLOATING
+            .pull    = BUTTON_PULL_NONE
         },
         .state   = 0,
         .counter = 0
@@ -46,7 +46,7 @@ void main(void){
         },
         .config = {
             .pressed = BUTTON_ACTIVE_LOW,
-            .pull    = BUTTON_MODE_PULLUP
+            .pull    = BUTTON_PULL_UP
         },
         .state   = 0,
         .counter = 0
@@ -61,15 +61,15 @@ void main(void){
         },
         .config = {
             .pressed = BUTTON_ACTIVE_HIGH,
-            .pull    = BUTTON_MODE_FLOATING
+            .pull    = BUTTON_PULL_NONE
         },
         .state   = 0,
         .counter = 0
     };
 
-    Button_Config(&buttonIncr);
-    Button_Config(&buttonDecr);
-    Button_Config(&buttonClear);
+    Button_Init(&buttonIncr);
+    Button_Init(&buttonDecr);
+    Button_Init(&buttonClear);
 
     LCD_Config();
     LCD_DisplayMainPage(value);
