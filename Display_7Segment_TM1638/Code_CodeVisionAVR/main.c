@@ -26,7 +26,8 @@ void main(void){
         .stb = {
             .ddr   = &TM1638_STB_DDR,
             .port  = &TM1638_STB_PORT,
-            .index =  TM1638_STB_BIT
+            //.index =  TM1638_STB_BIT,
+            .mask =  TM1638_STB_MASK
         }
     };
 
@@ -139,11 +140,11 @@ void main(void){
     TM1638_ClearDisplay(&tm1);  delay_ms(1000);
 
 //*****************************************************
-    TM1638_GetButtons(&tm1, &key[0]);
+    TM1638_GetKeys(&tm1, &key[0]);
     putsf("Test");
 
     while(1){
-        key[0] = TM1638_Get8Buttons_K3(&tm1);
+        key[0] = TM1638_GetKeys_K3(&tm1);
 
         if(key_last != key[0]){
             key_last = key[0];

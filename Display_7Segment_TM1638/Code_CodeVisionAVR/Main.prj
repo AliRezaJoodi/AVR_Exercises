@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=2
-OpenedFiles=9
+OpenedFiles=8
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=C:\CrossPlatformLibraries\Drivers\tm1638.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1553469894
+TimeStamp1=1553732988
 PageIndex1=1
 Top0=200
 Left0=438
@@ -38,26 +38,26 @@ State1=2
 OF2=main.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1553408001
+TimeStamp2=1553732988
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=9
-OF3=C:\CrossPlatformLibraries\drivers\tm1638.h
-TimeStamp3=1553407475
-OF4=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_port.h
-TimeStamp4=1553469894
-OF5=hardware.h
-TimeStamp5=1553408469
+ActiveTab=6
+OF3=hardware.h
+TimeStamp3=1553668719
+OF4=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_types.h
+TimeStamp4=1553691513
+OF5=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_port.h
+TimeStamp5=1553730852
 OF6=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_hw.h
-TimeStamp6=1553408469
-OF7=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_types.h
-TimeStamp7=1553408018
-OF8=C:\CrossPlatformLibraries\utils\bit_register.h
-TimeStamp8=1553466752
+TimeStamp6=1553668698
+OF7=C:\CrossPlatformLibraries\utils\bit_register.h
+TimeStamp7=1553663196
+OF8=C:\CrossPlatformLibraries\drivers\tm1638.h
+TimeStamp8=1553733156
 F1=main.c
 F2=C:\CrossPlatformLibraries\Drivers\tm1638.c
 OF9=C:\CrossPlatformLibraries\utils\bit_value.h
@@ -154,7 +154,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1904
+Build=1951
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=C:\CrossPlatformLibraries
@@ -220,7 +220,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1553469896
+COFFileTimeStamp=1553740217
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -398,7 +398,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1553469994
+TimeStamp=1553738523
 [BookmarksFoldedCode]
 Files=76
 F1=T3.c
@@ -512,7 +512,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1904
+Build=1951
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -634,8 +634,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1904
-L18=16170 line(s) compiled
+L17=Build: 1951
+L18=16416 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -654,19 +654,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 3446 words (6892 bytes), 42.1% of FLASH
-L38=286 words (572 bytes), 7.7% reduced by Code Compression
+L37=Program size: 2663 words (5326 bytes), 32.5% of FLASH
+L38=182 words (364 bytes), 6.4% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\List\Main.asm(5407): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\List\Main.asm(4785): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x001aec   6830     62   6892   16384  42.1%
+L9=[.cseg] 0x000000 0x0014ce   5264     62   5326   16384  32.5%
 L10=[.dseg] 0x000060 0x000264      0      4      4    1024   0.4%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -1751,11 +1751,11 @@ Blocks=0
 [FoldedCode3]
 Blocks=0
 [Bookmarks62]
-TimeStamp=1553408001
-Row=9
-Column=0
+TimeStamp=1553732988
+Row=144
+Column=70
 ScrollPosX=0
-ScrollPosY=15
+ScrollPosY=138
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1767,11 +1767,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks63]
-TimeStamp=1553408469
-Row=6
-Column=36
+TimeStamp=1553668719
+Row=10
+Column=51
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=4
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1867,11 +1867,11 @@ Blocks=0
 [FoldedCode56]
 Blocks=0
 [Bookmarks68]
-TimeStamp=1553407475
-Row=23
-Column=52
+TimeStamp=1553733156
+Row=263
+Column=36
 ScrollPosX=0
-ScrollPosY=15
+ScrollPosY=230
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1883,11 +1883,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks69]
-TimeStamp=1553469894
-Row=294
-Column=29
+TimeStamp=1553732988
+Row=372
+Column=65
 ScrollPosX=0
-ScrollPosY=294
+ScrollPosY=365
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1899,11 +1899,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks70]
-TimeStamp=1553469894
-Row=51
-Column=61
+TimeStamp=1553730852
+Row=99
+Column=58
 ScrollPosX=0
-ScrollPosY=41
+ScrollPosY=87
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1931,11 +1931,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks72]
-TimeStamp=1553408469
-Row=11
-Column=50
+TimeStamp=1553668698
+Row=5
+Column=0
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1951,11 +1951,11 @@ Blocks=0
 [FoldedCode71]
 Blocks=0
 [Bookmarks73]
-TimeStamp=1553466752
-Row=113
-Column=23
+TimeStamp=1553663196
+Row=188
+Column=44
 ScrollPosX=0
-ScrollPosY=100
+ScrollPosY=178
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1987,11 +1987,11 @@ Blocks=0
 [FoldedCode17]
 Blocks=0
 [Bookmarks75]
-TimeStamp=1553408018
-Row=49
-Column=2
+TimeStamp=1553691513
+Row=9
+Column=0
 ScrollPosX=0
-ScrollPosY=37
+ScrollPosY=5
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2002,6 +2002,40 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[Bookmarks76]
+TimeStamp=1553295985
+Row=5
+Column=18
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode76]
+Blocks=0
+[FoldedCode62]
+Blocks=0
+[FoldedCode69]
+Blocks=0
+[FoldedCode68]
+Blocks=0
+[FoldedCode73]
+Blocks=0
+[FoldedCode72]
+Blocks=0
+[FoldedCode70]
+Blocks=0
+[FoldedCode75]
+Blocks=0
+[FoldedCode63]
+Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\main.c
@@ -2023,51 +2057,17 @@ F12=C:\CrossPlatformLibraries\drivers\tm1638.h
 F13=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_types.h
 [Header2]
 Files=14
-F1=hardware.h
-F2=C:\CrossPlatformLibraries\utils\bit.h
-F3=C:\cvavr\inc\stdint.h
+F1=C:\cvavr\inc\stdint.h
+F2=hardware.h
+F3=C:\CrossPlatformLibraries\utils\bit.h
 F4=C:\CrossPlatformLibraries\utils\bit_value.h
-F5=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_port.h
-F6=C:\CrossPlatformLibraries\utils\bit_register.h
-F7=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
-F8=C:\cvavr\inc\io.h
-F9=C:\cvavr\inc\mega16a.h
-F10=C:\cvavr\inc\mega16_bits.h
-F11=C:\cvavr\inc\delay.h
-F12=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_hw.h
-F13=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_types.h
+F5=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_types.h
+F6=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_port.h
+F7=C:\CrossPlatformLibraries\utils\bit_register.h
+F8=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+F9=C:\cvavr\inc\io.h
+F10=C:\cvavr\inc\mega16a.h
+F11=C:\cvavr\inc\mega16_bits.h
+F12=C:\cvavr\inc\delay.h
+F13=C:\CrossPlatformLibraries\Platforms\AVR\tm1638_hw.h
 F14=C:\CrossPlatformLibraries\drivers\tm1638.h
-[FoldedCode62]
-Blocks=0
-[FoldedCode69]
-Blocks=0
-[Bookmarks76]
-TimeStamp=1553295985
-Row=12
-Column=42
-ScrollPosX=0
-ScrollPosY=6
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode76]
-Blocks=0
-[FoldedCode73]
-Blocks=0
-[FoldedCode75]
-Blocks=0
-[FoldedCode72]
-Blocks=0
-[FoldedCode63]
-Blocks=0
-[FoldedCode70]
-Blocks=0
-[FoldedCode68]
-Blocks=0
