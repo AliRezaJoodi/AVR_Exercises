@@ -27,7 +27,8 @@ void main(void){
             .ddr   = &BUTTON_DDR,
             .port  = &BUTTON_PORT,
             .pin   = &BUTTON_PIN,
-            .index = BUTTON_BIT
+            //.index = BUTTON_BIT,
+            .mask  = BUTTON_MASK
         },
         .config = {
             .pressed = BUTTON_ACTIVE_LOW,
@@ -42,7 +43,8 @@ void main(void){
             .ddr   = &BUTTON2_DDR,
             .port  = &BUTTON2_PORT,
             .pin   = &BUTTON2_PIN,
-            .index = BUTTON2_BIT
+            //.index = BUTTON2_BIT,
+            .mask  = BUTTON2_MASK
         },
         .config = {
             .pressed = BUTTON_ACTIVE_LOW,
@@ -57,7 +59,8 @@ void main(void){
             .ddr   = &BUTTON3_DDR,
             .port  = &BUTTON3_PORT,
             .pin   = &BUTTON3_PIN,
-            .index = BUTTON3_BIT
+            //.index = BUTTON3_BIT,
+            .mask  = BUTTON3_MASK
         },
         .config = {
             .pressed = BUTTON_ACTIVE_HIGH,
