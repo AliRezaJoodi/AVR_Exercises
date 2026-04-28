@@ -33,13 +33,15 @@ void main(void){
             .ddr   = &TM1637_CLK_DDR,
             .port  = &TM1637_CLK_PORT,
             .pin   = &TM1637_CLK_PIN,
-            .index =  TM1637_CLK_BIT
+            //.index =  TM1637_CLK_BIT,
+            .mask =   TM1637_CLK_MASK
         },
         .dio = {
             .ddr   = &TM1637_DIO_DDR,
             .port  = &TM1637_DIO_PORT,
             .pin   = &TM1637_DIO_PIN,
-            .index =  TM1637_DIO_BIT
+            //.index =  TM1637_DIO_BIT,
+            .mask =   TM1637_DIO_MASK
         }
     };
 
@@ -48,13 +50,15 @@ void main(void){
             .ddr   = &TM1637_CLK2_DDR,
             .port  = &TM1637_CLK2_PORT,
             .pin   = &TM1637_CLK2_PIN,
-            .index =  TM1637_CLK2_BIT
+            //.index =  TM1637_CLK2_BIT,
+            .mask =   TM1637_CLK2_MASK
         },
         .dio = {
             .ddr   = &TM1637_DIO2_DDR,
             .port  = &TM1637_DIO2_PORT,
             .pin   = &TM1637_DIO2_PIN,
-            .index =  TM1637_DIO2_BIT
+            //.index =  TM1637_DIO2_BIT,
+            .mask =   TM1637_DIO2_MASK
         }
     };
 
