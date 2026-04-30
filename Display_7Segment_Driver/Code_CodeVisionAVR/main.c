@@ -10,14 +10,14 @@
 
 void main(void){
     uint8_t segments[8] = {
-        0x3FU,
-        0x06U,
-        0x5BU,
-        0x4FU,
-        0x66U,
-        0x6DU,
-        0x7DU,
-        0x07U
+        0x3FU,  /* 0 */
+        0x06U,  /* 1 */
+        0x5BU,  /* 2 */
+        0x4FU,  /* 3 */
+        0x66U,  /* 4 */
+        0x6DU,  /* 5 */
+        0x7DU,  /* 6 */
+        0x07U   /* 7 */
     };
 
 //    DDRD = 0xFF; PORTD = ~segments[7];

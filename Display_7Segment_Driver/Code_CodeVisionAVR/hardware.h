@@ -8,42 +8,42 @@
 
     #define SEG7_DIGIT0_DDR         DDRB
     #define SEG7_DIGIT0_PORT        PORTB
-    #define SEG7_DIGIT0_BIT         0
+    #define SEG7_DIGIT0_BIT         0U
     #define SEG7_DIGIT0_MASK        (1U << SEG7_DIGIT0_BIT)
 
     #define SEG7_DIGIT1_DDR         DDRB
     #define SEG7_DIGIT1_PORT        PORTB
-    #define SEG7_DIGIT1_BIT         1
+    #define SEG7_DIGIT1_BIT         1U
     #define SEG7_DIGIT1_MASK        (1U << SEG7_DIGIT1_BIT)
 
     #define SEG7_DIGIT2_DDR         DDRB
     #define SEG7_DIGIT2_PORT        PORTB
-    #define SEG7_DIGIT2_BIT         2
+    #define SEG7_DIGIT2_BIT         2U
     #define SEG7_DIGIT2_MASK        (1U << SEG7_DIGIT2_BIT)
 
     #define SEG7_DIGIT3_DDR         DDRB
     #define SEG7_DIGIT3_PORT        PORTB
-    #define SEG7_DIGIT3_BIT         3
+    #define SEG7_DIGIT3_BIT         3U
     #define SEG7_DIGIT3_MASK        (1U << SEG7_DIGIT3_BIT)
 
     #define SEG7_DIGIT4_DDR         DDRB
     #define SEG7_DIGIT4_PORT        PORTB
-    #define SEG7_DIGIT4_BIT         4
+    #define SEG7_DIGIT4_BIT         4U
     #define SEG7_DIGIT4_MASK        (1U << SEG7_DIGIT4_BIT)
 
     #define SEG7_DIGIT5_DDR         DDRB
     #define SEG7_DIGIT5_PORT        PORTB
-    #define SEG7_DIGIT5_BIT         5
+    #define SEG7_DIGIT5_BIT         5U
     #define SEG7_DIGIT5_MASK        (1U << SEG7_DIGIT5_BIT)
 
     #define SEG7_DIGIT6_DDR         DDRB
     #define SEG7_DIGIT6_PORT        PORTB
-    #define SEG7_DIGIT6_BIT         6
+    #define SEG7_DIGIT6_BIT         6U
     #define SEG7_DIGIT6_MASK        (1U << SEG7_DIGIT6_BIT)
 
     #define SEG7_DIGIT7_DDR         DDRB
     #define SEG7_DIGIT7_PORT        PORTB
-    #define SEG7_DIGIT7_BIT         7
+    #define SEG7_DIGIT7_BIT         7U
     #define SEG7_DIGIT7_MASK        (1U << SEG7_DIGIT7_BIT)
 
     #define SEG7_A_DDR              DDRD
