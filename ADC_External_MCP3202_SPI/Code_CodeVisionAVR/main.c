@@ -25,7 +25,8 @@ void main(void){
         .cs = {
             .ddr   = &MCP3202_CS_DDR,
             .port  = &MCP3202_CS_PORT,
-            .index = MCP3202_CS_BIT
+            //.index = MCP3202_CS_BIT,
+            .mask = MCP3202_CS_MASK
         }
     };
 

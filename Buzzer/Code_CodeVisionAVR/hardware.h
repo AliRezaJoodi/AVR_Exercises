@@ -10,5 +10,6 @@
     #define BUZZER_DDR          DDRB
     #define BUZZER_PORT         PORTB
     #define BUZZER_BIT          1U
+    #define BUZZER_MASK         (1U << BUZZER_BIT)
 
 #endif

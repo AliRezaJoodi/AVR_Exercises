@@ -1126,7 +1126,7 @@ _0x0:
 	.DB  0x64,0x20,0x44,0x72,0x69,0x76,0x65,0x72
 	.DB  0x0,0x4C,0x6F,0x61,0x64,0x69,0x6E,0x67
 	.DB  0x20,0x2E,0x2E,0x2E,0x0
-_0x2005C:
+_0x20060:
 	.DB  0xFF,0x0,0x1,0xFF,0x2,0xFF,0xFF,0xFF
 	.DB  0x3,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
 _0x2000060:
@@ -1140,7 +1140,7 @@ _0x2020003:
 __GLOBAL_INI_TBL:
 	.DW  0x10
 	.DW  _table_ctz4_G001
-	.DW  _0x2005C*2
+	.DW  _0x20060*2
 
 	.DW  0x01
 	.DW  __seed_G100
@@ -1358,6 +1358,8 @@ _LCD_DisplayloadingPage:
 	.SET power_ctrl_reg=mcucr
 	#endif
 ;	*reg -> Y+1
+;	mask -> Y+0
+;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+4
 ;	pos -> Y+0
@@ -1376,7 +1378,7 @@ _LCD_DisplayloadingPage:
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1
-;	pos -> Y+0
+;	mask -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1
@@ -1391,6 +1393,10 @@ _LCD_DisplayloadingPage:
 ;	pos -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
+;	*reg -> Y+1
+;	pos -> Y+0
+;	*reg -> Y+1
+;	mask -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1
@@ -1431,6 +1437,8 @@ _LCD_DisplayloadingPage:
 ;	*reg -> Y+2
 ;	pos -> Y+1
 ;	status -> Y+0
+;	*reg -> Y+1
+;	mask -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1
@@ -1488,15 +1496,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(0)
+	LDI  R26,LOW(1)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1506,16 +1512,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(0)
+	LDI  R26,LOW(1)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1526,15 +1530,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(1)
+	LDI  R26,LOW(2)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1544,16 +1546,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(1)
+	LDI  R26,LOW(2)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1564,15 +1564,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(2)
+	LDI  R26,LOW(4)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1582,16 +1580,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(2)
+	LDI  R26,LOW(4)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1602,15 +1598,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(3)
+	LDI  R26,LOW(8)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1620,16 +1614,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(3)
+	LDI  R26,LOW(8)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1640,14 +1632,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(4)
+	LDI  R26,LOW(16)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	OR   R19,R30
@@ -1656,14 +1651,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(5)
+	LDI  R26,LOW(32)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	LSL  R30
@@ -1673,14 +1671,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(6)
+	LDI  R26,LOW(64)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	LSL  R30
@@ -1691,14 +1692,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(7)
+	LDI  R26,LOW(128)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	LSL  R30
@@ -1719,16 +1723,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(0)
+	LDI  R26,LOW(1)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1738,15 +1740,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(0)
+	LDI  R26,LOW(1)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1757,16 +1757,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(1)
+	LDI  R26,LOW(2)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1776,15 +1774,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(1)
+	LDI  R26,LOW(2)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1795,16 +1791,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(2)
+	LDI  R26,LOW(4)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1814,15 +1808,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(2)
+	LDI  R26,LOW(4)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1833,16 +1825,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(3)
+	LDI  R26,LOW(8)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1852,15 +1842,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(3)
+	LDI  R26,LOW(8)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1871,15 +1859,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(4)
+	LDI  R26,LOW(16)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1889,16 +1875,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(4)
+	LDI  R26,LOW(16)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1909,15 +1893,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(5)
+	LDI  R26,LOW(32)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1927,16 +1909,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(5)
+	LDI  R26,LOW(32)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1947,15 +1927,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(6)
+	LDI  R26,LOW(64)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1965,16 +1943,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(6)
+	LDI  R26,LOW(64)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -1985,15 +1961,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(7)
+	LDI  R26,LOW(128)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2003,16 +1977,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(7)
+	LDI  R26,LOW(128)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2023,14 +1995,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(0)
+	LDI  R26,LOW(1)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	OR   R16,R30
@@ -2039,14 +2014,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(1)
+	LDI  R26,LOW(2)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	LSL  R30
@@ -2056,14 +2034,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(2)
+	LDI  R26,LOW(4)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	LSL  R30
@@ -2074,14 +2055,17 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(51)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(3)
+	LDI  R26,LOW(8)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R26,X
-	LD   R30,Y
-	CALL __LSRB12
-	ANDI R30,LOW(0x1)
+	LD   R30,X
+	LD   R26,Y
+	AND  R30,R26
+	LDI  R31,0
+	LDI  R26,LOW(0)
+	LDI  R27,HIGH(0)
+	CALL __NEW12
 	ADIW R28,3
 	CALL __LNEGB1
 	LSL  R30
@@ -2102,16 +2086,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(4)
+	LDI  R26,LOW(16)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2121,15 +2103,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(4)
+	LDI  R26,LOW(16)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2140,16 +2120,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(5)
+	LDI  R26,LOW(32)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2159,15 +2137,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(5)
+	LDI  R26,LOW(32)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2178,16 +2154,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(6)
+	LDI  R26,LOW(64)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2197,15 +2171,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(6)
+	LDI  R26,LOW(64)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2216,16 +2188,14 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(7)
+	LDI  R26,LOW(128)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
+	LD   R26,X
 	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
 	COM  R30
-	AND  R30,R1
+	AND  R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2235,15 +2205,13 @@ _Keypad4x4_GetKey:
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
 	ST   -Y,R30
-	LDI  R26,LOW(7)
+	LDI  R26,LOW(128)
 	ST   -Y,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
-	LD   R1,X
-	LD   R30,Y
-	LDI  R26,LOW(1)
-	CALL __LSLB12
-	OR   R30,R1
+	LD   R30,X
+	LD   R26,Y
+	OR   R30,R26
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	ST   X,R30
@@ -2672,28 +2640,13 @@ __LOADLOCR2:
 	LD   R16,Y
 	RET
 
-__LSLB12:
-	TST  R30
-	MOV  R0,R30
-	MOV  R30,R26
-	BREQ __LSLB12R
-__LSLB12L:
-	LSL  R30
-	DEC  R0
-	BRNE __LSLB12L
-__LSLB12R:
-	RET
-
-__LSRB12:
-	TST  R30
-	MOV  R0,R30
-	MOV  R30,R26
-	BREQ __LSRB12R
-__LSRB12L:
-	LSR  R30
-	DEC  R0
-	BRNE __LSRB12L
-__LSRB12R:
+__NEW12:
+	CP   R30,R26
+	CPC  R31,R27
+	LDI  R30,1
+	BRNE __NEW12T
+	CLR  R30
+__NEW12T:
 	RET
 
 __LNEGB1:

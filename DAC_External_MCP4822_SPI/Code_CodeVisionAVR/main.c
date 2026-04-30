@@ -14,12 +14,14 @@ void main(void){
         .cs = {
             .ddr   = &MCP4822_CS_DDR,
             .port  = &MCP4822_CS_PORT,
-            .index =  MCP4822_CS_BIT
+            //.index =  MCP4822_CS_BIT,
+            .mask  =  MCP4822_CS_MASK
         },
         .ldac = {
             .ddr   = &MCP4822_LDAC_DDR,
             .port  = &MCP4822_LDAC_PORT,
-            .index =  MCP4822_LDAC_BIT
+            //.index =  MCP4822_LDAC_BIT,
+            .mask  =  MCP4822_LDAC_MASK
         }
     };
 
@@ -37,7 +39,7 @@ void main(void){
 
 //    MCP4822_SetOutput(&dac1, MCP4822_OUTPUT_A, MCP4822_GAIN_1X, 1000U);
 //    MCP4822_SetOutputA(&dac1, MCP4822_GAIN_1X, 1000U);
-    MCP4822_SetOutputA_1xGain(&dac1, 1000U);
+    MCP4822_SetOutputA_1xGain(&dac1, 4095U);
 //    MCP4822_SetOutputA_2xGain(&dac1, 1000U);
 
 //    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_A);
@@ -47,9 +49,9 @@ void main(void){
 //    MCP4822_SetOutput(&dac1, MCP4822_OUTPUT_B, MCP4822_GAIN_2X, 1000U);
 //    MCP4822_SetOutputB(&dac1, MCP4822_GAIN_1X, 1000U);
 //    MCP4822_SetOutputB_1xGain(&dac1, 1000U);
-    MCP4822_SetOutputB_2xGain(&dac1, 1000U);
+    MCP4822_SetOutputB_2xGain(&dac1, 4095U);
 
-    delay_ms(1000);
+    delay_ms(2000);
 //    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_B);
     MCP4822_DisableOutputB(&dac1);
 

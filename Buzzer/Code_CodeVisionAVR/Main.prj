@@ -33,15 +33,15 @@ Active2=1
 EditorPanel2=0
 TimeStamp2=1553572077
 PageIndex2=2
-ActiveTab=4
+ActiveTab=5
 OF3=hardware.h
-TimeStamp3=1553571853
+TimeStamp3=1553841216
 OF4=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_hw.h
-TimeStamp4=1553571707
-OF5=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_port.h
-TimeStamp5=1553572088
-OF6=C:\CrossPlatformLibraries\drivers\buzzer.h
-TimeStamp6=1553340612
+TimeStamp4=1553841125
+OF5=C:\CrossPlatformLibraries\drivers\buzzer.h
+TimeStamp5=1553340612
+OF6=C:\CrossPlatformLibraries\utils\bit_register.h
+TimeStamp6=1553663196
 F1=main.c
 F2=C:\CrossPlatformLibraries\Drivers\buzzer.c
 [CompilerDebug]
@@ -142,8 +142,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1553572089
-Build=212
+COFFileTimeStamp=1553841217
+Build=215
 GlobalVarAddr=610
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -253,7 +253,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=212
+Build=215
 IncludePath0=C:\cvavr\inc
 IncludePath1=C:\CrossPlatformLibraries
 IncludePath2=C:\CrossPlatformLibraries\Platforms\AVR
@@ -498,8 +498,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 212
-L18=2988 line(s) compiled
+L17=Build: 215
+L18=3012 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -518,19 +518,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 447 words (894 bytes), 5.5% of FLASH
+L37=Program size: 444 words (888 bytes), 5.4% of FLASH
 Lines=38
 L38=1 words (2 bytes), 0.2% reduced by Code Compression
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Debug\List\Main.asm(1726): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Main.eep
+L4=F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Debug\List\Main.asm(1732): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x00037e    894      0    894   16384   5.5%
+L9=[.cseg] 0x000000 0x000378    888      0    888   16384   5.4%
 L10=[.dseg] 0x000060 0x000262      0      2      2    1024   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -540,7 +540,7 @@ Row=0
 Column=7
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1553572101
+TimeStamp=1553841312
 [BookmarksFoldedCode]
 Files=19
 F1=v1.0.c
@@ -750,9 +750,9 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks10]
-TimeStamp=1553571853
-Row=12
-Column=4
+TimeStamp=1553841216
+Row=13
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -767,10 +767,10 @@ BK8=-1
 BK9=-1
 [Bookmarks11]
 TimeStamp=1553340612
-Row=25
-Column=0
+Row=11
+Column=36
 ScrollPosX=0
-ScrollPosY=6
+ScrollPosY=2
 BK0=-1
 BK1=-1
 BK2=-1
@@ -814,11 +814,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks14]
-TimeStamp=1553572088
-Row=7
-Column=19
+TimeStamp=1553841188
+Row=16
+Column=46
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -848,9 +848,9 @@ BK9=-1
 [FoldedCode15]
 Blocks=0
 [Bookmarks16]
-TimeStamp=1553571707
-Row=5
-Column=22
+TimeStamp=1553841125
+Row=11
+Column=46
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -867,10 +867,10 @@ BK9=-1
 Blocks=0
 [Bookmarks17]
 TimeStamp=1553572077
-Row=11
-Column=24
+Row=12
+Column=36
 ScrollPosX=0
-ScrollPosY=6
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -902,11 +902,11 @@ Blocks=0
 [FoldedCode12]
 Blocks=0
 [Bookmarks19]
-TimeStamp=1553298090
+TimeStamp=1553663196
 Row=12
-Column=30
+Column=34
 ScrollPosX=0
-ScrollPosY=6
+ScrollPosY=8
 BK0=-1
 BK1=-1
 BK2=-1
@@ -917,8 +917,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode19]
-Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\main.c
@@ -944,13 +942,15 @@ F8=C:\cvavr\inc\delay.h
 F9=C:\CrossPlatformLibraries\utils\bit_register.h
 F10=C:\CrossPlatformLibraries\Platforms\AVR\buzzer_hw.h
 F11=C:\CrossPlatformLibraries\drivers\buzzer.h
+[FoldedCode14]
+Blocks=0
 [FoldedCode8]
 Blocks=0
 [FoldedCode17]
 Blocks=0
-[FoldedCode11]
+[FoldedCode19]
 Blocks=0
-[FoldedCode14]
+[FoldedCode11]
 Blocks=0
 [FoldedCode16]
 Blocks=0

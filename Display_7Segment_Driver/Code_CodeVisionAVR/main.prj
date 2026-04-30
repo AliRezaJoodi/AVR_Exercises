@@ -147,7 +147,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=657
+Build=665
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
@@ -214,7 +214,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1553578563
+COFFileTimeStamp=1553864487
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -385,7 +385,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=657
+Build=665
 Chip=ATmega32A
 CPUClock=8000000
 MemoryModel=1
@@ -507,8 +507,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 657
-L18=2809 line(s) compiled
+L17=Build: 665
+L18=2877 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -527,19 +527,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 1463 words (2926 bytes), 8.9% of FLASH
-L38=68 words (136 bytes), 4.4% reduced by Code Compression
+L37=Program size: 1415 words (2830 bytes), 8.6% of FLASH
+L38=68 words (136 bytes), 4.6% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\List\main.asm(2750): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.eep
+L4=F:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\List\main.asm(2726): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000b6e   2926      0   2926   32768   8.9%
+L9=[.cseg] 0x000000 0x000b0e   2830      0   2830   32768   8.6%
 L10=[.dseg] 0x000060 0x000263      0      3      3    2048   0.1%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1227,6 +1227,18 @@ BK8=-1
 BK9=-1
 [FoldedCode34]
 Blocks=0
+[FoldedCode11]
+Blocks=0
+[FoldedCode21]
+Blocks=0
+[FoldedCode22]
+Blocks=0
+[FoldedCode13]
+Blocks=0
+[FoldedCode30]
+Blocks=0
+[FoldedCode31]
+Blocks=0
 [HeadersList]
 Files=2
 F1=F:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.c
@@ -1252,15 +1264,3 @@ F8=C:\CrossPlatformLibraries\utils\bit_register.h
 F9=C:\CrossPlatformLibraries\utils\bit_value.h
 F10=C:\CrossPlatformLibraries\Platforms\AVR\seg7_driver_hw.h
 F11=C:\CrossPlatformLibraries\drivers\seg7_driver.h
-[FoldedCode11]
-Blocks=0
-[FoldedCode21]
-Blocks=0
-[FoldedCode22]
-Blocks=0
-[FoldedCode13]
-Blocks=0
-[FoldedCode30]
-Blocks=0
-[FoldedCode31]
-Blocks=0

@@ -5,5 +5,6 @@
     #define MCP3202_CS_DDR          DDRB
     #define MCP3202_CS_PORT         PORTB
     #define MCP3202_CS_BIT          4U
+    #define MCP3202_CS_MASK         (1U << MCP3202_CS_BIT)
 
 #endif
