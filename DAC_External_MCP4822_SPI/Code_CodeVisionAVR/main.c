@@ -10,7 +10,7 @@
 void SPI_Config(void);
 
 void main(void){
-    MCP4822_t dac1 = {
+    static const MCP4822_t dac1 = {
         .cs = {
             .ddr   = &MCP4822_CS_DDR,
             .port  = &MCP4822_CS_PORT,

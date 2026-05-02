@@ -28,7 +28,7 @@ void main(void){
 //        0b00000000,
 //    };
 
-    TM1637_t tm1 = {
+    static const TM1637_t tm1 = {
         .clk = {
             .ddr   = &TM1637_CLK_DDR,
             .port  = &TM1637_CLK_PORT,
@@ -45,7 +45,7 @@ void main(void){
         }
     };
 
-    TM1637_t tm2 = {
+    static const TM1637_t tm2 = {
         .clk = {
             .ddr   = &TM1637_CLK2_DDR,
             .port  = &TM1637_CLK2_PORT,

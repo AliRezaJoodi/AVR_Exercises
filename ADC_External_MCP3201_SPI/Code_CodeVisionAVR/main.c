@@ -21,7 +21,7 @@ void main(void){
     float in1_u16 = 0;
     float in2_u16 = 0;
 
-    MCP3201_t mcp1 = {
+    static const MCP3201_t mcp1 = {
         .cs = {
             .ddr   = &MCP3201_CS_DDR,
             .port  = &MCP3201_CS_PORT,
@@ -30,7 +30,7 @@ void main(void){
         }
     };
 
-    MCP3201_t mcp2 = {
+    static const MCP3201_t mcp2 = {
         .cs = {
             .ddr   = &MCP3201_CS2_DDR,
             .port  = &MCP3201_CS2_PORT,

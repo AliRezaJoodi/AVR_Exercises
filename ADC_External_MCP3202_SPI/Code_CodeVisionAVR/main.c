@@ -21,7 +21,7 @@ void main(void){
     uint16_t in1 = 0;
     uint16_t in2 = 0;
 
-    MCP3202_t mcp1 = {
+    static const MCP3202_t mcp1 = {
         .cs = {
             .ddr   = &MCP3202_CS_DDR,
             .port  = &MCP3202_CS_PORT,
