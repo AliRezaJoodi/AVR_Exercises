@@ -40,13 +40,13 @@ void main(void){
         .mask  = IN_MASK
     };
 
-    GPIO_SetOutputPinMask(&led); delay_ms(1000);
+    GPIO_ConfigOutputPinMask(&led); delay_ms(1000);
 
-    GPIO_WriteHighPin(&led); delay_ms(500);
-    GPIO_WriteLowPin(&led); delay_ms(1000);
+    GPIO_SetPin(&led); delay_ms(500);
+    GPIO_ClearPin(&led); delay_ms(1000);
 
-    GPIO_WriteHighPinMask(&led); delay_ms(500);
-    GPIO_WriteLowPinMask(&led); delay_ms(1000);
+    GPIO_SetPinMask(&led); delay_ms(500);
+    GPIO_ClearPinMask(&led); delay_ms(1000);
 
     GPIO_WritePin(&led, 1); delay_ms(500);
     GPIO_WritePin(&led, 0); delay_ms(1000);
@@ -57,14 +57,14 @@ void main(void){
     GPIO_TogglePinMask(&led); delay_ms(500);
     GPIO_TogglePinMask(&led); delay_ms(1000);
 
-    GPIO_SetInputPinMask(&key);
-    GPIO_SetPullUpPinMask(&key); delay_ms(1000);
-    GPIO_SetPullNonePinMask(&key); delay_ms(1000);
-    GPIO_SetPullUpPinMask(&key);
+    GPIO_ConfigInputPinMask(&key);
+    GPIO_ConfigPullUpPinMask(&key); delay_ms(1000);
+    GPIO_ConfigPullNonePinMask(&key); delay_ms(1000);
+    GPIO_ConfigPullUpPinMask(&key);
 
-    GPIO_SetOutputPinMask(&out_x4); delay_ms(1000);
-    GPIO_SetInputPinMask(&in_x4);
-    GPIO_SetPullUpPinMask(&in_x4); delay_ms(1000);
+    GPIO_ConfigOutputPinMask(&out_x4); delay_ms(1000);
+    GPIO_ConfigInputPinMask(&in_x4);
+    GPIO_ConfigPullUpPinMask(&in_x4); delay_ms(1000);
 
     while(1){
         PORTB.0 = GPIO_ReadPin(&key);
