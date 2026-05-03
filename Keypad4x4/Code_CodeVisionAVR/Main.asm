@@ -1484,7 +1484,7 @@ _Keypad4x4_GetKey:
 ; 0001 001F uint8_t number = 0xFFU;
 ; 0001 0020 uint8_t rows = 0U, cols = 0U;
 ; 0001 0021 
-; 0001 0022 Keypad4x4_R1_SetOutput();
+; 0001 0022 Keypad4x4_R1_ConfigOutput();
 	CALL __SAVELOCR4
 ;	number -> R17
 ;	rows -> R16
@@ -1507,7 +1507,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0023 Keypad4x4_R1_WriteLow();
+; 0001 0023 Keypad4x4_R1_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1525,7 +1525,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0024 
-; 0001 0025 Keypad4x4_R2_SetOutput();
+; 0001 0025 Keypad4x4_R2_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1541,7 +1541,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0026 Keypad4x4_R2_WriteLow();
+; 0001 0026 Keypad4x4_R2_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1559,7 +1559,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0027 
-; 0001 0028 Keypad4x4_R3_SetOutput();
+; 0001 0028 Keypad4x4_R3_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1575,7 +1575,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0029 Keypad4x4_R3_WriteLow();
+; 0001 0029 Keypad4x4_R3_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1593,7 +1593,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 002A 
-; 0001 002B Keypad4x4_R4_SetOutput();
+; 0001 002B Keypad4x4_R4_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1609,7 +1609,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 002C Keypad4x4_R4_WriteLow();
+; 0001 002C Keypad4x4_R4_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1718,7 +1718,7 @@ _Keypad4x4_GetKey:
 	SBCI R31,HIGH(-_table_ctz4_G001)
 	LD   R19,Z
 ; 0001 0034 
-; 0001 0035 Keypad4x4_R1_SetInput();
+; 0001 0035 Keypad4x4_R1_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1735,7 +1735,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0036 Keypad4x4_R1_SetPullUp();
+; 0001 0036 Keypad4x4_R1_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1752,7 +1752,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0037 
-; 0001 0038 Keypad4x4_R2_SetInput();
+; 0001 0038 Keypad4x4_R2_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1769,7 +1769,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0039 Keypad4x4_R2_SetPullUp();
+; 0001 0039 Keypad4x4_R2_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1786,7 +1786,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 003A 
-; 0001 003B Keypad4x4_R3_SetInput();
+; 0001 003B Keypad4x4_R3_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1803,7 +1803,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 003C Keypad4x4_R3_SetPullUp();
+; 0001 003C Keypad4x4_R3_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1820,7 +1820,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 003D 
-; 0001 003E Keypad4x4_R4_SetInput();
+; 0001 003E Keypad4x4_R4_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1837,7 +1837,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 003F Keypad4x4_R4_SetPullUp();
+; 0001 003F Keypad4x4_R4_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1854,7 +1854,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0040 
-; 0001 0041 Keypad4x4_C1_SetOutput();
+; 0001 0041 Keypad4x4_C1_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1870,7 +1870,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0042 Keypad4x4_C1_WriteLow();
+; 0001 0042 Keypad4x4_C1_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1888,7 +1888,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0043 
-; 0001 0044 Keypad4x4_C2_SetOutput();
+; 0001 0044 Keypad4x4_C2_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1904,7 +1904,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0045 Keypad4x4_C2_WriteLow();
+; 0001 0045 Keypad4x4_C2_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1922,7 +1922,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0046 
-; 0001 0047 Keypad4x4_C3_SetOutput();
+; 0001 0047 Keypad4x4_C3_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1938,7 +1938,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0048 Keypad4x4_C3_WriteLow();
+; 0001 0048 Keypad4x4_C3_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -1956,7 +1956,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0049 
-; 0001 004A Keypad4x4_C4_SetOutput();
+; 0001 004A Keypad4x4_C4_ConfigOutput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -1972,7 +1972,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 004B Keypad4x4_C4_WriteLow();
+; 0001 004B Keypad4x4_C4_Clear();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -2081,7 +2081,7 @@ _Keypad4x4_GetKey:
 	SBCI R31,HIGH(-_table_ctz4_G001)
 	LD   R16,Z
 ; 0001 0053 
-; 0001 0054 Keypad4x4_C1_SetInput();
+; 0001 0054 Keypad4x4_C1_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -2098,7 +2098,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0055 Keypad4x4_C1_SetPullUp();
+; 0001 0055 Keypad4x4_C1_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -2115,7 +2115,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0056 
-; 0001 0057 Keypad4x4_C2_SetInput();
+; 0001 0057 Keypad4x4_C2_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -2132,7 +2132,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 0058 Keypad4x4_C2_SetPullUp();
+; 0001 0058 Keypad4x4_C2_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -2149,7 +2149,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 0059 
-; 0001 005A Keypad4x4_C3_SetInput();
+; 0001 005A Keypad4x4_C3_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -2166,7 +2166,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 005B Keypad4x4_C3_SetPullUp();
+; 0001 005B Keypad4x4_C3_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
@@ -2183,7 +2183,7 @@ _Keypad4x4_GetKey:
 	ST   X,R30
 	ADIW R28,3
 ; 0001 005C 
-; 0001 005D Keypad4x4_C4_SetInput();
+; 0001 005D Keypad4x4_C4_ConfigInput();
 	LDI  R30,LOW(52)
 	LDI  R31,HIGH(52)
 	ST   -Y,R31
@@ -2200,7 +2200,7 @@ _Keypad4x4_GetKey:
 	LDD  R27,Y+1+1
 	ST   X,R30
 	ADIW R28,3
-; 0001 005E Keypad4x4_C4_SetPullUp();
+; 0001 005E Keypad4x4_C4_ConfigPullUp();
 	LDI  R30,LOW(53)
 	LDI  R31,HIGH(53)
 	ST   -Y,R31
