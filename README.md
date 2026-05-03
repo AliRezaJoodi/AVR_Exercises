@@ -8,7 +8,7 @@ Please download and place it in drive C:
 (for example: C:\CrossPlatformLibraries)
 
 Path on "CodeVisionAVR" is  
-![Setting on CodeVisionAVR](_UserDrivers/Setting1.png)  
+![Setting on CodeVisionAVR](Setting_CodeVisionAVR.png)  
 
 ### Table of Contents
 |Title|Bascom AVR|CodeVisionAVR|
