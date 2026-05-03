@@ -7,7 +7,7 @@ It uses shared libraries from:
 Please download and place it in drive C:  
 (for example: C:\CrossPlatformLibraries)
 
-Path on "CodeVisionAVR" is  
+Path on **CodeVisionAVR** is  
 ![Setting on CodeVisionAVR](Setting_CodeVisionAVR.png)  
 
 ### Table of Contents

@@ -37,23 +37,23 @@ void main(void){
     SPI_Config();
     MCP4822_Init(&dac1);
 
-//    MCP4822_SetOutput(&dac1, MCP4822_OUTPUT_A, MCP4822_GAIN_1X, 1000U);
-//    MCP4822_SetOutputA(&dac1, MCP4822_GAIN_1X, 1000U);
-    MCP4822_SetOutputA_1xGain(&dac1, 4095U);
-//    MCP4822_SetOutputA_2xGain(&dac1, 1000U);
+//    MCP4822_WriteChannel(&dac1, MCP4822_CH_A, MCP4822_FS_2V048, 1000U);
+//    MCP4822_WriteChannelA(&dac1, MCP4822_FS_2V048, 1000U);
+    MCP4822_WriteChannelA_2V048(&dac1, 4095U);
+//    MCP4822_WriteChannelA_4V096(&dac1, 1000U);
 
-//    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_A);
-//    MCP4822_DisableOutputA(&dac1);
+//    MCP4822_ShutdownChannel(&dac1, MCP4822_CH_A);
+//    MCP4822_ShutdownChannelA(&dac1);
 
 
-//    MCP4822_SetOutput(&dac1, MCP4822_OUTPUT_B, MCP4822_GAIN_2X, 1000U);
-//    MCP4822_SetOutputB(&dac1, MCP4822_GAIN_1X, 1000U);
-//    MCP4822_SetOutputB_1xGain(&dac1, 1000U);
-    MCP4822_SetOutputB_2xGain(&dac1, 4095U);
+//    MCP4822_WriteChannel(&dac1, MCP4822_CH_B, MCP4822_FS_4V096, 1000U);
+//    MCP4822_WriteChannelB(&dac1, MCP4822_FS_2V048, 1000U);
+//    MCP4822_WriteChannelB_2V048(&dac1, 1000U);
+    MCP4822_WriteChannelB_4V096(&dac1, 4095U);
 
     delay_ms(2000);
-//    MCP4822_DisableOutput(&dac1, MCP4822_OUTPUT_B);
-    MCP4822_DisableOutputB(&dac1);
+//    MCP4822_ShutdownChannel(&dac1, MCP4822_CH_B);
+    MCP4822_ShutdownChannelB(&dac1);
 
     while(1){
     }
