@@ -1,17 +1,14 @@
 ## AVR Programming Exercises
-A repository for my personal exercises.
-
-Note: Setting on CodeVision AVR  
-![Setting on CodeVision AVR](_UserDrivers/Setting1.png)
-
-![Setting on CodeVision AVR](_UserDrivers/Setting2.png)
-
+The repository for my personal exercises.
 
 Note:  
 It uses shared libraries from:  
 [CrossPlatformLibraries](https://github.com/AliRezaJoodi/CrossPlatformLibraries)  
 Please download and place it in drive C:  
-(for example: C:\CrossPlatformLibraries)  
+(for example: C:\CrossPlatformLibraries)
+
+Path on "CodeVisionAVR" is  
+![Setting on CodeVisionAVR](_UserDrivers/Setting1.png)  
 
 ### Table of Contents
 |Title|Bascom AVR|CodeVisionAVR|
