@@ -68,7 +68,7 @@ void main(void){
 
     while(1){
         PORTB.0 = GPIO_ReadPin(&key);
-        GPIO_WritePinMask(&out_x4, GPIO_ReadPinMask_Shifted(&in_x4));
+        GPIO_WritePinMask(&out_x4, GPIO_ReadPinMask(&in_x4));
     }
 }
 
