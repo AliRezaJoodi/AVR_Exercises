@@ -6,7 +6,6 @@ _Pending
 Code_GCC
 
 # Proteus folders and files for ignore
-CrossPlatformLibraries
 Project Backups
 *.workspace
 *.BMP
