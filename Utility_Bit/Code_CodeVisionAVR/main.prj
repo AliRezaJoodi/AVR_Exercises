@@ -24,7 +24,7 @@ Row1=87
 Column1=28
 State1=2
 TimeStamp1=1553227017
-OF2=C:\CrossPlatformLibraries\utils\bit.h
+OF2=..\..\..\CrossPlatformLibraries\utils\bit.h
 Top2=149
 Left2=223
 Height2=393
@@ -157,7 +157,7 @@ DebugBootLoader=0
 Build=122
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=C:\CrossPlatformLibraries
+IncludePath1=..\..\..\CrossPlatformLibraries
 IncludePath2=
 IncludePath3=
 IncludePath4=
@@ -585,8 +585,8 @@ F2=C:\cvavr\inc\delay.h
 F3=C:\cvavr\inc\mega32a.h
 F4=main.c
 F5=..\..\_UserDrivers\Inc\utility_bit.h
-F6=C:\CrossPlatformLibraries\Utils\utility_bit.h
-F7=C:\CrossPlatformLibraries\utils\bit.h
+F6=..\..\..\CrossPlatformLibraries\Utils\utility_bit.h
+F7=..\..\..\CrossPlatformLibraries\utils\bit.h
 [Bookmarks1]
 TimeStamp=1495765443
 Row=17
@@ -737,7 +737,7 @@ Files=4
 F1=C:\cvavr\inc\stdint.h
 F2=C:\cvavr\inc\mega32a.h
 F3=C:\cvavr\inc\delay.h
-F4=C:\CrossPlatformLibraries\utils\bit.h
+F4=..\..\..\CrossPlatformLibraries\utils\bit.h
 [FoldedCode4]
 Blocks=0
 [FoldedCode7]
