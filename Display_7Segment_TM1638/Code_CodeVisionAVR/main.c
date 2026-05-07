@@ -8,7 +8,8 @@
 
 #include "hardware.h"
 //#include "utils/bit.h"
-#include "utils/bit_value.h"
+#include "utils/bit_value8.h"
+#include "utils/bit_value16.h"
 #include "drivers/tm1638.h"
 
 void UART_Config(void);
