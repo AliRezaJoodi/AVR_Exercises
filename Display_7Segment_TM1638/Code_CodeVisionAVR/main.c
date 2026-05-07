@@ -7,7 +7,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "utils/bit.h"
+//#include "utils/bit.h"
 #include "utils/bit_value.h"
 #include "drivers/tm1638.h"
 
