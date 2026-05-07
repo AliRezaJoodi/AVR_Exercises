@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=2
-OpenedFiles=7
+OpenedFiles=2
 Top0=200
 Left0=438
 Height0=337
@@ -18,7 +18,7 @@ Row1=11
 Collumn1=0
 Active1=0
 State1=2
-OF2=C:\CrossPlatformLibraries\Platforms\AVR\keypad4x4_hw.h
+OF2=..\..\CrossPlatformLibraries\Platforms\avr8\keypad4x4_port.h
 Top2=-30
 Left2=-4
 Height2=505
@@ -28,14 +28,14 @@ Collumn2=0
 Active2=1
 State2=2
 Column1=32
-TimeStamp1=1553533536
+TimeStamp1=1554457745
 AllowDisplayFunctionCallTree=1
 OutputListFilesDirectory=
 OutputObjectFilesDirectory=
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=
 Column2=41
-TimeStamp2=1553858920
+TimeStamp2=1554460023
 OF3=C:\CrossPlatformLibraries\drivers\keypad4x4.h
 Top3=149
 Left3=394
@@ -81,15 +81,15 @@ DebugOutputLinkerFilesDirectory=Debug\Link
 TimeStamp0=1432526067
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=6
+ActiveTab=1
 OF6=C:\CrossPlatformLibraries\Platforms\AVR\keypad4x4_port.h
 TimeStamp6=1554195763
-F1=main.c
-F2=C:\CrossPlatformLibraries\Drivers\keypad4x4.c
 OF7=C:\CrossPlatformLibraries\Drivers\keypad4x4.c
 TimeStamp7=1554195682
 OF8=C:\CrossPlatformLibraries\utils\bit_value.h
 TimeStamp8=1553295985
+F1=main.c
+F2=..\..\CrossPlatformLibraries\Drivers\keypad4x4.c
 [Compiler]
 Chip=ATmega32A
 CPUClock=8000000
@@ -144,11 +144,11 @@ WarningPossiblyIncorrectAssignment=0
 WarningCOFFFileNameTruncation=0
 WarningDataStackUsage=0
 DebugBootLoader=0
-Build=1262
+Build=1264
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
-IncludePath1=C:\CrossPlatformLibraries
-IncludePath2=C:\CrossPlatformLibraries\Platforms\AVR
+IncludePath1=..\..\CrossPlatformLibraries
+IncludePath2=..\..\CrossPlatformLibraries\Platforms\avr8
 IncludePath3=
 IncludePath4=
 IncludePath5=
@@ -258,7 +258,7 @@ WarningFuncDeclaredNeverDefined=1
 WarningExternalDeclaredNeverDefined=1
 WarningStaticRamEepromStorageAllocConstStrLit=0
 WatchAVR8LAutoVariables=0
-COFFileTimeStamp=1554195893
+COFFileTimeStamp=1554460025
 IncludePath32=
 IncludePath33=
 IncludePath34=
@@ -430,9 +430,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554195897
+TimeStamp=1554460029
 [BookmarksFoldedCode]
-Files=22
+Files=24
 F1=F:\Electrician\Electronics\Projects Tools\AVR\Circuit & Source\Keypad\keypad 4-4_Code Vision AVR\Compiler_Code Vision  v2.03.4\T2.c
 F2=T2.c
 F3=F:\GoogleDriveWork\GitHub\AVR_Exercises\Keypad_4x4\Code_CodeVisionAVR\v1.1.c
@@ -455,6 +455,8 @@ F19=main.c
 F20=C:\CrossPlatformLibraries\Drivers\keypad4x4.c
 F21=C:\CrossPlatformLibraries\utils\bit_value.h
 F22=C:\CrossPlatformLibraries\utils\bit_register.h
+F23=..\..\CrossPlatformLibraries\Platforms\avr8\compiler_port.h
+F24=..\..\CrossPlatformLibraries\Platforms\avr8\keypad4x4_port.h
 [Bookmarks1]
 TimeStamp=1218610790
 Row=40
@@ -590,7 +592,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=1262
+Build=1264
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -625,8 +627,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1262
-L18=13310 line(s) compiled
+L17=Build: 1264
+L18=13306 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -653,7 +655,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Keypad4x4\Code_CodeVisionAVR\Main.asm(2673): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Keypad4x4\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Keypad4x4\Code_CodeVisionAVR\Main.asm(2671): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Keypad4x4\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -846,11 +848,11 @@ Blocks=0
 [FoldedCode8]
 Blocks=0
 [Bookmarks12]
-TimeStamp=1553858985
-Row=51
-Column=0
+TimeStamp=1554457745
+Row=16
+Column=61
 ScrollPosX=0
-ScrollPosY=28
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -964,11 +966,11 @@ Blocks=0
 [FoldedCode16]
 Blocks=0
 [Bookmarks19]
-TimeStamp=1553533536
-Row=29
-Column=36
+TimeStamp=1554457745
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=12
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1029,10 +1031,40 @@ BK8=-1
 BK9=-1
 [FoldedCode21]
 Blocks=0
+[FoldedCode20]
+Blocks=0
+[FoldedCode15]
+Blocks=0
+[FoldedCode22]
+Blocks=0
+[FoldedCode13]
+Blocks=0
+[FoldedCode14]
+Blocks=0
+[FoldedCode12]
+Blocks=0
+[Bookmarks23]
+TimeStamp=1554457135
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=9
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode23]
+Blocks=0
 [HeadersList]
 Files=2
-F1=F:\GitHub\AVR_Exercises\Keypad4x4\Code_CodeVisionAVR\main.c
-F2=C:\CrossPlatformLibraries\Drivers\keypad4x4.c
+F1=D:\GitHub\AVR_Exercises\Keypad4x4\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\AVR_Exercises\CrossPlatformLibraries\Drivers\keypad4x4.c
 [Header1]
 Files=7
 F1=C:\cvavr\inc\stdint.h
@@ -1041,30 +1073,36 @@ F3=C:\cvavr\inc\delay.h
 F4=C:\cvavr\inc\stdlib.h
 F5=C:\cvavr\inc\lcd.h
 F6=hardware.h
-F7=C:\CrossPlatformLibraries\drivers\keypad4x4.h
+F7=..\..\CrossPlatformLibraries\drivers\keypad4x4.h
 [Header2]
 Files=10
 F1=C:\cvavr\inc\stdint.h
 F2=hardware.h
-F3=C:\CrossPlatformLibraries\Platforms\AVR\keypad4x4_port.h
-F4=C:\CrossPlatformLibraries\Platforms\AVR\compiler_port.h
+F3=..\..\CrossPlatformLibraries\Platforms\avr8\keypad4x4_port.h
+F4=..\..\CrossPlatformLibraries\Platforms\avr8\compiler_port.h
 F5=C:\cvavr\inc\io.h
 F6=C:\cvavr\inc\mega32a.h
 F7=C:\cvavr\inc\delay.h
-F8=C:\CrossPlatformLibraries\utils\bit_register.h
-F9=C:\CrossPlatformLibraries\Platforms\AVR\keypad4x4_hw.h
-F10=C:\CrossPlatformLibraries\drivers\keypad4x4.h
+F8=..\..\CrossPlatformLibraries\utils\bit_register8.h
+F9=..\..\CrossPlatformLibraries\Platforms\avr8\keypad4x4_hw.h
+F10=..\..\CrossPlatformLibraries\drivers\keypad4x4.h
 [FoldedCode19]
 Blocks=0
-[FoldedCode20]
-Blocks=0
-[FoldedCode15]
-Blocks=0
-[FoldedCode22]
-Blocks=0
-[FoldedCode12]
-Blocks=0
-[FoldedCode13]
-Blocks=0
-[FoldedCode14]
+[Bookmarks24]
+TimeStamp=1554460023
+Row=9
+Column=29
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode24]
 Blocks=0
