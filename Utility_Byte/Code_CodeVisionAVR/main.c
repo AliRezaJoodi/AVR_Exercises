@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "utils/byte.h"
+#include "byte.h"
 
 void UART_Config(void);
 void UART_Display(uint16_t data);

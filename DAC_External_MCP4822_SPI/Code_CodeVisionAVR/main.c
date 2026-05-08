@@ -5,7 +5,7 @@
 #include <spi.h>
 
 #include "hardware.h"
-#include "drivers/mcp4822.h"
+#include "mcp4822.h"
 
 void SPI_Config(void);
 

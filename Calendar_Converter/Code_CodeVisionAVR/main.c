@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <mega32a.h>
 
-#include "modules/calendar_converter.h"
+#include "calendar_converter.h"
 
 void UART_Config(void);
 

@@ -7,10 +7,10 @@
 #include <delay.h>
 
 #include "hardware.h"
-//#include "utils/bit.h"
-#include "utils/bit_value8.h"
-#include "utils/bit_value16.h"
-#include "drivers/tm1638.h"
+//#include "bit.h"
+#include "bit_value8.h"
+#include "bit_value16.h"
+#include "tm1638.h"
 
 void UART_Config(void);
 

@@ -4,7 +4,7 @@
 #include <mega32a.h>
 #include <delay.h>
 
-#include "utils/bit.h"
+#include "bit.h"
 
 void main(void){
     typedef struct {

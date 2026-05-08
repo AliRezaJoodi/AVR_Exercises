@@ -7,8 +7,7 @@
 //#include <stdlib.h>
 
 #include "hardware.h"
-//#include "utils/bit.h"
-#include "drivers/tm1637.h"
+#include "tm1637.h"
 
 void main(void){
     //char txt[];

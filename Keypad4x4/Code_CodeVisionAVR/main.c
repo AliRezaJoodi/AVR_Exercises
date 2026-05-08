@@ -12,7 +12,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "drivers/keypad4x4.h"
+#include "keypad4x4.h"
 
 void LCD_Config(void);
 void LCD_DisplayloadingPage(void);

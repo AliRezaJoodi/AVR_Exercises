@@ -13,7 +13,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "drivers/button.h"
+#include "button.h"
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
