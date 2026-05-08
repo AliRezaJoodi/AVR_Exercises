@@ -45,13 +45,13 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=1
+ActiveTab=5
 OF3=hardware.h
 TimeStamp3=1554457745
 OF4=..\..\..\CrossPlatformLibraries\drivers\tm1637.h
 TimeStamp4=1554457135
-OF5=..\..\..\CrossPlatformLibraries\utils\bit_register.h
-TimeStamp5=1554551634
+OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_port.h
+TimeStamp5=1554551590
 OF6=..\..\..\CrossPlatformLibraries\drivers\tm1637.h
 TimeStamp6=1554457135
 F1=main.c
@@ -152,7 +152,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1192
+Build=1193
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
@@ -218,7 +218,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1554554946
+COFFileTimeStamp=1554583640
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -396,9 +396,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554554948
+TimeStamp=1554583654
 [BookmarksFoldedCode]
-Files=73
+Files=75
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -472,6 +472,8 @@ F70=..\..\..\CrossPlatformLibraries\utils\bit.h
 F71=..\..\..\CrossPlatformLibraries\utils\bit_register.h
 F72=..\..\..\CrossPlatformLibraries\utils\bit_value.h
 F73=..\..\..\CrossPlatformLibraries\platforms\avr8\tm1637_types.h
+F74=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
+F75=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_port.h
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -507,7 +509,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1192
+Build=1193
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -629,8 +631,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1192
-L18=3894 line(s) compiled
+L17=Build: 1193
+L18=3887 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -656,7 +658,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\List\Main.asm(3059): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\List\Main.asm(3015): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -1995,11 +1997,47 @@ F10=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_hw.h
 F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_types.h
 F13=..\..\..\CrossPlatformLibraries\Drivers\tm1637.h
+[Bookmarks74]
+TimeStamp=1554583233
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode74]
+Blocks=0
+[FoldedCode71]
+Blocks=0
 [FoldedCode58]
 Blocks=0
 [FoldedCode63]
 Blocks=0
-[FoldedCode71]
+[Bookmarks75]
+TimeStamp=1554551590
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode75]
 Blocks=0
 [FoldedCode65]
 Blocks=0

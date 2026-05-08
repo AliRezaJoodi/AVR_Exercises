@@ -1,5 +1,4 @@
-### Description
+### Main.prj
+This project file was created/saved with **CodeVisionAVR v3.12**.
 
-V1.0:
-- Last opened with CodeVisionAVR v3.12
-- Just Transfer
+Note: Just Transfer

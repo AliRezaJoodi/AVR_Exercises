@@ -1,2 +1,2 @@
-### v1.0
-- Saved in **CodeVisionAVR v3.12**
+### Main.prj
+This project file was created/saved with **CodeVisionAVR v3.12**.

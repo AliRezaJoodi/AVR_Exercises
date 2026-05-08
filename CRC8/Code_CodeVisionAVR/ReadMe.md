@@ -1,5 +1,2 @@
-### Description
-
-v1.0:
-- Last opened with CodeVisionAVR v3.12
-- Use of the TWI
+### Main.prj
+This project file was created/saved with **CodeVisionAVR v3.40**.

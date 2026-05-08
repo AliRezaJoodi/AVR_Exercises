@@ -1,2 +1,2 @@
 ### Main.prj
-- Last opened with CodeVisionAVR v3.12
+This project file was created/saved with **CodeVisionAVR v3.12**.
