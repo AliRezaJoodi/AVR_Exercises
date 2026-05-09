@@ -67,8 +67,8 @@ void main(void){
     SetBit_Reg8(key.port, key.index); delay_ms(10);   // config pull-up
 
     while(1){
-         WriteBit_Reg8(led.port, led.index, ReadBit_Reg8(key.pin, key.index));
-         WriteBit_Reg8(led2.port, led2.index, ReadBitMask_Reg8(key.pin, key.mask));
+         WriteBit_Reg8(led.port, led.index, GetBit_Reg8(key.pin, key.index));
+         WriteBit_Reg8(led2.port, led2.index, GetBitMask_Reg8(key.pin, key.mask));
     };
 }
 

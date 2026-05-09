@@ -7,7 +7,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "bit.h"
+//#include "bit.h"
 #include "bit_value8.h"
 #include "bit_value16.h"
 #include "tm1638.h"

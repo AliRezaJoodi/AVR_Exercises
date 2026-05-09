@@ -51,7 +51,7 @@ TimeStamp3=1554457745
 OF4=..\..\..\CrossPlatformLibraries\drivers\tm1637.h
 TimeStamp4=1554457135
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_port.h
-TimeStamp5=1554551590
+TimeStamp5=1554621923
 OF6=..\..\..\CrossPlatformLibraries\drivers\tm1637.h
 TimeStamp6=1554457135
 F1=main.c
@@ -152,7 +152,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1193
+Build=1194
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
@@ -218,7 +218,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1554583640
+COFFileTimeStamp=1554621924
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -396,7 +396,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554583654
+TimeStamp=1554621926
 [BookmarksFoldedCode]
 Files=75
 F1=T3.c
@@ -509,7 +509,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1193
+Build=1194
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -631,8 +631,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1193
-L18=3887 line(s) compiled
+L17=Build: 1194
+L18=3899 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -658,7 +658,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\List\Main.asm(3015): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\List\Main.asm(2979): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -1969,6 +1969,42 @@ Blocks=0
 Blocks=0
 [FoldedCode67]
 Blocks=0
+[Bookmarks74]
+TimeStamp=1554583233
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode74]
+Blocks=0
+[FoldedCode71]
+Blocks=0
+[Bookmarks75]
+TimeStamp=1554621923
+Row=91
+Column=14
+ScrollPosX=0
+ScrollPosY=73
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\Display_7Segment_TM1637\Code_CodeVisionAVR\main.c
@@ -1997,46 +2033,10 @@ F10=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_hw.h
 F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1637_types.h
 F13=..\..\..\CrossPlatformLibraries\Drivers\tm1637.h
-[Bookmarks74]
-TimeStamp=1554583233
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode74]
-Blocks=0
-[FoldedCode71]
-Blocks=0
 [FoldedCode58]
 Blocks=0
 [FoldedCode63]
 Blocks=0
-[Bookmarks75]
-TimeStamp=1554551590
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
 [FoldedCode75]
 Blocks=0
 [FoldedCode65]

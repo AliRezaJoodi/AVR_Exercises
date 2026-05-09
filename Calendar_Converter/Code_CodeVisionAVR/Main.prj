@@ -20,11 +20,11 @@ OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Link
 AllowDisplayFunctionCallTree=1
 CleanUp=2
-TimeStamp1=1553410169
+TimeStamp1=1554555151
 OF2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.c
-TimeStamp2=1553410185
+TimeStamp2=1554551719
 OF3=..\..\..\CrossPlatformLibraries\modules\calendar_converter.h
-TimeStamp3=1553215084
+TimeStamp3=1554457135
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.c
 [CompilerDebug]
@@ -131,8 +131,8 @@ UseEEPROMLocation0=1
 DisplayCodeSizeError=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1553410187
-Build=282
+COFFileTimeStamp=1554621863
+Build=283
 GlobalVarAddr=608
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -242,7 +242,7 @@ DisplayCodeSizeError=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=282
+Build=283
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -518,7 +518,7 @@ L13=Enhanced function parameters passing: Mode 2
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 282
+L17=Build: 283
 L18=10234 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -546,7 +546,7 @@ Lines=37
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\Debug\List\Main.asm(2405): No EEPROM data, deleting F:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\Debug\List\Main.asm(2405): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -561,7 +561,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1553410199
+TimeStamp=1554621865
 [BookmarksFoldedCode]
 Files=14
 F1=C:\Users\Home\Desktop\RTC_DS1307\T1\v1.0.c
@@ -764,9 +764,9 @@ BK9=-1
 [FoldedCode10]
 Blocks=0
 [Bookmarks11]
-TimeStamp=1553410169
-Row=6
-Column=18
+TimeStamp=1554555151
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -800,11 +800,11 @@ Blocks=0
 [FoldedCode12]
 Blocks=0
 [Bookmarks13]
-TimeStamp=1553215084
-Row=17
-Column=39
+TimeStamp=1554457135
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -816,8 +816,8 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks14]
-TimeStamp=1553410185
-Row=1
+TimeStamp=1554551719
+Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
@@ -833,8 +833,8 @@ BK8=-1
 BK9=-1
 [HeadersList]
 Files=2
-F1=F:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\main.c
-F2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.c
+F1=D:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Modules\calendar_converter.c
 [Header1]
 Files=7
 F1=C:\cvavr\inc\stdint.h
@@ -847,7 +847,7 @@ F7=..\..\..\CrossPlatformLibraries\modules\calendar_converter.h
 [Header2]
 Files=2
 F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\modules\calendar_converter.h
+F2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.h
 [FoldedCode11]
 Blocks=0
 [FoldedCode14]
