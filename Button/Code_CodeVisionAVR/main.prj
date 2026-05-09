@@ -2,12 +2,12 @@
 Toolset=AVR
 FormatVersion=2
 Files=2
-OpenedFiles=2
+OpenedFiles=1
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 Top0=200
 Left0=267
 Height0=337
@@ -590,7 +590,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554552206
+TimeStamp=1554587940
 [BookmarksFoldedCode]
 Files=35
 F1=v1.0.c
@@ -1306,7 +1306,7 @@ F9=C:\cvavr\inc\delay.h
 F10=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_hw.h
 F12=..\..\..\CrossPlatformLibraries\drivers\button.h
-[FoldedCode17]
-Blocks=0
 [FoldedCode35]
+Blocks=0
+[FoldedCode17]
 Blocks=0
