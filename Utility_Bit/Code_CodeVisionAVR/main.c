@@ -23,6 +23,16 @@ void main(void){
 
     uint8_t value = 0;
 
+    DDRD = 0xFFU;
+    SET_BITMASK(PORTD, 0b00000010); delay_ms(1000);
+    SET_BIT(PORTD, 0); delay_ms(1000);
+    SET_BITMASK_DIRECT(PORTD, 0b11000000); delay_ms(1000);
+    SET_BIT_DIRECT(PORTD, 0); delay_ms(1000);
+    SET_BITMASK(PORTD, 0xFFU); delay_ms(1000);
+
+    CLEAR_BITMASK(PORTD, 0xF0U); delay_ms(1000);
+    CLEAR_BIT(PORTD, 0); delay_ms(1000);
+
     delay_ms(1000);
 
     SET_BIT(*led.ddr, led.index); delay_ms(500); // PORTA.0 is output
@@ -37,10 +47,10 @@ void main(void){
 
     DDRC = 0xFF; delay_ms(500);
     value = 0b00001111; WRITE_4BIT(PORTC, 0, GET_4BIT(value,0)); delay_ms(500);
-    TOGGLE_4BIT(PORTC, 0); delay_ms(500);
+    TOGGLE_BITMASK(PORTC, 0x0FU); delay_ms(500);
     value = 0b00000110; WRITE_2BIT(PORTC, 2, GET_2BIT(value,1)); delay_ms(500);
 
-    CLEAR_4BIT(DDRB, 3);
+    CLEAR_BITMASK(PORTD, 0x78U);
 
     while(1){
          WRITE_4BIT(PORTC, 0, GET_4BIT(PINB,3));
