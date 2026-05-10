@@ -26,14 +26,18 @@ void main(void){
         .mask  = (1U << 0)
     };
 
-    test_bit_macro1();
-    test_bit_macro2(&led);
-
     SET_BITMASK(DDRD, 0xFFU);
-    CLEAR_BITMASK(DDRB, 0x78U);
+    CLEAR_BITMASK(DDRB, 0x78U); delay_ms(1000);
+
+//    test_bit_macro1();
+//    test_bit_macro2(&led);
+//
+//    SET_BIT(PORTD, 3); delay_ms(1000);
+//    WriteField_Reg8(&PORTD, 0b00111100U, 9U);
 
     while(1){
-        Write4Bit_Reg8(&PORTD, 0, Get4Bit_Reg8(&PINB, 3));
+//        Write4Bit_Reg8(&PORTD, 0, Get4Bit_Reg8(&PINB, 3));
+        WriteField_Reg8(&PORTD, 0x0FU, GetField_Reg8(&PINB, 0b01111000U));
     };
 }
 
@@ -51,8 +55,6 @@ void test_bit_macro2(const Pin_t *led){
 //**********************************************
 void test_bit_macro1(void){
     uint8_t value = 0;
-
-    SET_BITMASK(DDRD, 0xFFU); delay_ms(1000);
 
     SET_BIT(PORTD, 7); delay_ms(500);
     CLEAR_BIT(PORTD, 7); delay_ms(1000);
