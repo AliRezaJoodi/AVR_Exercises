@@ -25,19 +25,19 @@ void main(void){
     };
 
     static const GPIO_t out_x4 = {
-        .ddr   = &OUT_DDR,
-        .port  = &OUT_PORT,
-        .pin   = &OUT_PIN,
-        .index = OUT_BIT,
-        .mask  = OUT_MASK
+        .ddr   = &OUTx4_DDR,
+        .port  = &OUTx4_PORT,
+        .pin   = &OUTx4_PIN,
+        .index = OUTx4_BIT,
+        .mask  = OUTx4_MASK
     };
 
     static const GPIO_t in_x4 = {
-        .ddr   = &IN_DDR,
-        .port  = &IN_PORT,
-        .pin   = &IN_PIN,
-        .index = IN_BIT,
-        .mask  = IN_MASK
+        .ddr   = &INx4_DDR,
+        .port  = &INx4_PORT,
+        .pin   = &INx4_PIN,
+        .index = INx4_BIT,
+        .mask  = INx4_MASK
     };
 
     GPIO_ConfigOutputPinMask(&led); delay_ms(1000);
@@ -68,7 +68,7 @@ void main(void){
 
     while(1){
         PORTB.0 = GPIO_ReadPin(&key);
-        GPIO_WritePinMask(&out_x4, GPIO_ReadPinMask(&in_x4));
+        GPIO_WriteField(&out_x4, GPIO_ReadField(&in_x4));
     }
 }
 

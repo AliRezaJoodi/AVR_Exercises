@@ -13,15 +13,15 @@
 #define KEY_BIT     0U
 #define KEY_MASK    (1U << KEY_BIT)
 
-#define OUT_DDR     DDRC
-#define OUT_PORT    PORTC
-#define OUT_PIN     PINC
-#define OUT_BIT     2U
-#define OUT_MASK    (0x0FU << OUT_BIT)
+#define OUTx4_DDR     DDRC
+#define OUTx4_PORT    PORTC
+#define OUTx4_PIN     PINC
+#define OUTx4_BIT     2U
+#define OUTx4_MASK    (0x0FU << OUTx4_BIT)
 
-#define IN_DDR     DDRB
-#define IN_PORT    PORTB
-#define IN_PIN     PINB
-#define IN_BIT     3U
-#define IN_MASK    (0x0FU << IN_BIT)
+#define INx4_DDR     DDRB
+#define INx4_PORT    PORTB
+#define INx4_PIN     PINB
+#define INx4_BIT     3U
+#define INx4_MASK    (0x0FU << INx4_BIT)
 #endif
