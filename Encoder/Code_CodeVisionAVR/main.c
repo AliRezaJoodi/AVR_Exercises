@@ -19,10 +19,10 @@ void main(void){
     Display_Value();
     Config_Encoder();
 
-    while (1){ 
-        if(encoder_value!=encoder_value_old){
+    while (1){
+        if(encoder_value != encoder_value_old){
             Display_Value();
-            encoder_value_old=encoder_value;   
+            encoder_value_old = encoder_value;
         }
     }
 }
@@ -31,10 +31,10 @@ void main(void){
 void Display_Value(void){
     char txt[16];
     itoa(encoder_value,txt); lcd_gotoxy(0,0); lcd_putsf("Value:"); lcd_puts(txt); lcd_putsf("    ");
-    lcd_gotoxy(0,1); lcd_putsf("Encoder Driver");   
+    lcd_gotoxy(0,1); lcd_putsf("Encoder Driver");
 }
 
 //*************************************
 void Config_LCD(void){
-    lcd_init(16); lcd_clear();   
+    lcd_init(16); lcd_clear();
 }
