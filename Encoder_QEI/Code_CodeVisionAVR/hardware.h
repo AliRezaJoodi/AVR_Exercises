@@ -3,7 +3,7 @@
 
 #define QEI_HARDWARE
     #define QEI_PULL_UP             0U  /**< Disable */
-    #define QEI_AB_CLOSED           1U  /**< Enable */
+    #define QEI_AB_CLOSED           0U  /**< Enable */
     #define QEI_Z                   1U
 
 #define QEI_HARDWARE_EXTRA

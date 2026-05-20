@@ -1126,7 +1126,7 @@ _0x0:
 	.DB  0x64,0x20,0x44,0x72,0x69,0x76,0x65,0x72
 	.DB  0x0,0x4C,0x6F,0x61,0x64,0x69,0x6E,0x67
 	.DB  0x20,0x2E,0x2E,0x2E,0x0
-_0x2005F:
+_0x20056:
 	.DB  0xFF,0x0,0x1,0xFF,0x2,0xFF,0xFF,0xFF
 	.DB  0x3,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
 _0x2000060:
@@ -1140,7 +1140,7 @@ _0x2020003:
 __GLOBAL_INI_TBL:
 	.DW  0x10
 	.DW  _table_ctz4_G001
-	.DW  _0x2005F*2
+	.DW  _0x20056*2
 
 	.DW  0x01
 	.DW  __seed_G100
@@ -1362,83 +1362,48 @@ _LCD_DisplayloadingPage:
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
+;	mask -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1
 ;	mask -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
+;	*reg -> Y+0
+;	*reg -> Y+4
+;	mask -> Y+3
+;	value -> Y+2
+;	shift -> R17
+;	temp -> R16
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
+;	*reg -> Y+2
+;	pos -> Y+1
+;	value -> Y+0
 ;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
+;	value -> Y+0
+;	*reg -> Y+3
+;	mask -> Y+2
+;	shift -> R17
+;	fieldMask -> R16
 ;	*reg -> Y+1
 ;	mask -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+2
-;	pos -> Y+1
-;	status -> Y+0
-;	*reg -> Y+1
-;	mask -> Y+0
-;	*reg -> Y+1
-;	pos -> Y+0
 ;	*reg -> Y+1
 ;	pos -> Y+0
 ;	*reg -> Y+1

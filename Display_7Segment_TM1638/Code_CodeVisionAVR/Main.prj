@@ -53,11 +53,11 @@ TimeStamp4=1554457135
 OF5=..\..\..\CrossPlatformLibraries\utils\bit_value8.h
 TimeStamp5=1554715532
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1638_port.h
-TimeStamp6=1555311157
-OF7=C:\cvavr\inc\delay.h
-TimeStamp7=1537169696
-OF8=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
-TimeStamp8=1555305576
+TimeStamp6=1555316499
+OF7=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
+TimeStamp7=1555305576
+OF8=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1638_hw.h
+TimeStamp8=1554457135
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\Drivers\tm1638.c
 OF9=..\..\..\CrossPlatformLibraries\utils\bit_value16.h
@@ -156,7 +156,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=1988
+Build=1989
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
@@ -222,7 +222,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1555311159
+COFFileTimeStamp=1555316501
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -400,9 +400,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555311160
+TimeStamp=1555316759
 [BookmarksFoldedCode]
-Files=82
+Files=83
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -485,6 +485,7 @@ F79=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1638_port.h
 F80=..\..\..\CrossPlatformLibraries\utils\bit_value8.h
 F81=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 F82=..\..\..\CrossPlatformLibraries\utils\bit_register32.h
+F83=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1638_hw.h
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -520,7 +521,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=1988
+Build=1989
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -642,7 +643,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1988
+L17=Build: 1989
 L18=16471 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -662,19 +663,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 2783 words (5566 bytes), 34.0% of FLASH
-L38=189 words (378 bytes), 6.4% reduced by Code Compression
+L37=Program size: 2752 words (5504 bytes), 33.6% of FLASH
+L38=188 words (376 bytes), 6.4% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\List\Main.asm(4816): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\List\Main.asm(4779): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_TM1638\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0015be   5502     64   5566   16384  34.0%
+L9=[.cseg] 0x000000 0x001580   5440     64   5504   16384  33.6%
 L10=[.dseg] 0x000060 0x000269      0      9      9    1024   0.9%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -2065,9 +2066,9 @@ Blocks=0
 [FoldedCode76]
 Blocks=0
 [Bookmarks79]
-TimeStamp=1555311157
+TimeStamp=1555316499
 Row=99
-Column=27
+Column=69
 ScrollPosX=0
 ScrollPosY=86
 BK0=-1
@@ -2100,10 +2101,10 @@ BK8=-1
 BK9=-1
 [Bookmarks81]
 TimeStamp=1555305576
-Row=0
-Column=0
+Row=228
+Column=39
 ScrollPosX=0
-ScrollPosY=203
+ScrollPosY=215
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2170,13 +2171,31 @@ F10=C:\cvavr\inc\mega16_bits.h
 F11=C:\cvavr\inc\delay.h
 F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1638_hw.h
 F13=..\..\..\CrossPlatformLibraries\Drivers\tm1638.h
+[FoldedCode17]
+Blocks=0
 [FoldedCode62]
 Blocks=0
 [FoldedCode69]
 Blocks=0
-[FoldedCode81]
+[Bookmarks83]
+TimeStamp=1554457135
+Row=9
+Column=57
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode83]
 Blocks=0
-[FoldedCode17]
+[FoldedCode81]
 Blocks=0
 [FoldedCode79]
 Blocks=0
