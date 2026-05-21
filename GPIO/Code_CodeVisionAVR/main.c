@@ -8,67 +8,97 @@
 #include "gpio.h"
 
 void main(void){
-    static const GPIO_t led = {
-        .ddr   = &LED_DDR,
-        .port  = &LED_PORT,
-        .pin   = &LED_PIN,
-        .index = LED_BIT,
-        .mask  = LED_MASK
+    uint8_t value = 0;
+
+    static const GPIO_TypeDef GPIOA = {
+        .pin   = &PINA,
+        .ddr   = &DDRA,
+        .port  = &PORTA,
     };
 
-    static const GPIO_t key = {
-        .ddr   = &KEY_DDR,
-        .port  = &KEY_PORT,
-        .pin   = &KEY_PIN,
-        .index = KEY_BIT,
-        .mask  = KEY_MASK
+    static const GPIO_TypeDef GPIOB = {
+        .pin   = &PINB,
+        .ddr   = &DDRB,
+        .port  = &PORTB,
     };
 
-    static const GPIO_t out_x4 = {
-        .ddr   = &OUTx4_DDR,
-        .port  = &OUTx4_PORT,
-        .pin   = &OUTx4_PIN,
-        .index = OUTx4_BIT,
-        .mask  = OUTx4_MASK
+    static const GPIO_TypeDef GPIOC = {
+        .pin   = &PINC,
+        .ddr   = &DDRC,
+        .port  = &PORTC,
     };
 
-    static const GPIO_t in_x4 = {
-        .ddr   = &INx4_DDR,
-        .port  = &INx4_PORT,
-        .pin   = &INx4_PIN,
-        .index = INx4_BIT,
-        .mask  = INx4_MASK
+    typedef struct{
+        const GPIO_TypeDef *gpio;
+        const GPIO_Pin_t index;
+    } LED_t;
+
+    static const LED_t LED2 = {
+        .gpio   = &GPIOB,
+        .index  = GPIO_PIN_1,
     };
 
-    GPIO_ConfigOutputPinMask(&led); delay_ms(1000);
+    //Init Pins for LED2
+    GPIO_ConfigDirection(LED2.gpio, LED2.index, GPIO_MODE_OUTPUT);
+    GPIO_WritePin(LED2.gpio, LED2.index, 1);
 
-    GPIO_SetPin(&led); delay_ms(500);
-    GPIO_ClearPin(&led); delay_ms(1000);
+    //Init Pins for LED
+    GPIO_ConfigDirection(&GPIOB, GPIO_PIN_0, GPIO_MODE_OUTPUT);
+    GPIO_WritePin(&GPIOB, GPIO_PIN_0, 0);
+//    GPIO_SetPin(&GPIOB, GPIO_PIN_0); delay_ms(1000);
+//    GPIO_ClearPin(&GPIOB, GPIO_PIN_0); delay_ms(1000);
+//    GPIO_SetPinMask(&GPIOB, GPIO_PINMASK_0); delay_ms(1000);
+//    GPIO_ClearPinMask(&GPIOB, GPIO_PINMASK_0); delay_ms(1000);
+//    GPIO_TogglePinMask(&GPIOB, GPIO_PINMASK_0); delay_ms(1000);
+//    GPIO_TogglePinMask(&GPIOB, GPIO_PINMASK_0); delay_ms(1000);
+//    GPIO_TogglePin(&GPIOB, GPIO_PIN_0); delay_ms(1000);
+//    GPIO_TogglePin(&GPIOB, GPIO_PIN_0); delay_ms(1000);
 
-    GPIO_SetPinMask(&led); delay_ms(500);
-    GPIO_ClearPinMask(&led); delay_ms(1000);
+    //Init Pins for Button_On
+    GPIO_ConfigDirection(&GPIOA, GPIO_PIN_0, GPIO_MODE_INPUT);
+    GPIO_ConfigPull(&GPIOA, GPIO_PIN_0, GPIO_PULL_UP);
 
-    GPIO_WritePin(&led, 1); delay_ms(500);
-    GPIO_WritePin(&led, 0); delay_ms(1000);
+    //Init Pins for Button_Off
+    GPIO_ConfigDirection(&GPIOA, GPIO_PIN_1, GPIO_MODE_INPUT);
+    GPIO_ConfigPull(&GPIOA, GPIO_PIN_1, GPIO_PULL_NONE);
 
-    GPIO_TogglePin(&led); delay_ms(500);
-    GPIO_TogglePin(&led); delay_ms(1000);
+    //Init Pins for 4-channel input
+    GPIO_ConfigDirection(&GPIOB, GPIO_PIN_3, GPIO_MODE_INPUT);
+    GPIO_ConfigPull(&GPIOA, GPIO_PIN_3, GPIO_PULL_NONE);
 
-    GPIO_TogglePinMask(&led); delay_ms(500);
-    GPIO_TogglePinMask(&led); delay_ms(1000);
+    GPIO_ConfigDirection(&GPIOB, GPIO_PIN_4, GPIO_MODE_INPUT);
+    GPIO_ConfigPull(&GPIOA, GPIO_PIN_4, GPIO_PULL_NONE);
 
-    GPIO_ConfigInputPinMask(&key);
-    GPIO_ConfigPullUpPinMask(&key); delay_ms(1000);
-    GPIO_ConfigPullNonePinMask(&key); delay_ms(1000);
-    GPIO_ConfigPullUpPinMask(&key);
+    GPIO_ConfigDirection(&GPIOB, GPIO_PIN_5, GPIO_MODE_INPUT);
+    GPIO_ConfigPull(&GPIOA, GPIO_PIN_5, GPIO_PULL_NONE);
 
-    GPIO_ConfigOutputPinMask(&out_x4); delay_ms(1000);
-    GPIO_ConfigInputPinMask(&in_x4);
-    GPIO_ConfigPullUpPinMask(&in_x4); delay_ms(1000);
+    GPIO_ConfigDirection(&GPIOB, GPIO_PIN_6, GPIO_MODE_INPUT);
+    GPIO_ConfigPull(&GPIOA, GPIO_PIN_6, GPIO_PULL_NONE);
+
+    //Init Pins for 4-pin 7-Segment
+    GPIO_ConfigDirection(&GPIOC, GPIO_PIN_2, GPIO_MODE_OUTPUT);
+    GPIO_WritePin(&GPIOC, GPIO_PIN_2, 0);
+
+    GPIO_ConfigDirection(&GPIOC, GPIO_PIN_3, GPIO_MODE_OUTPUT);
+    GPIO_WritePin(&GPIOC, GPIO_PIN_3, 0);
+
+    GPIO_ConfigDirection(&GPIOC, GPIO_PIN_4, GPIO_MODE_OUTPUT);
+    GPIO_WritePin(&GPIOC, GPIO_PIN_4, 0);
+
+    GPIO_ConfigDirection(&GPIOC, GPIO_PIN_5, GPIO_MODE_OUTPUT);
+    GPIO_WritePin(&GPIOC, GPIO_PIN_5, 0);
 
     while(1){
-        PORTB.0 = GPIO_ReadPin(&key);
-        GPIO_WriteField(&out_x4, GPIO_ReadField(&in_x4));
+        if(GPIO_ReadPin(&GPIOA, GPIO_PIN_0) == 0){
+			GPIO_SetPin(&GPIOB, GPIO_PIN_0);
+		}
+
+		if(GPIO_ReadPin(&GPIOA, GPIO_PIN_1) == 0){
+			GPIO_ClearPin(&GPIOB, GPIO_PIN_0);
+		}
+
+	    value = GPIO_Read4Pin(&GPIOB, GPIO_PIN_3);
+		GPIO_Write4Pin(&GPIOC, GPIO_PIN_2, value);
     }
 }
 
