@@ -1,8 +1,8 @@
-### v2.0
+### v2.0.pdsprj
 - Usable for `Code_CodeVisionAVR`
 - Last save in **Proteus 8 Professional v8.13 SP0**
 
-### v1.0
+### v1.0.pdsprj
 - Usable for `Code_CodeVisionAVR`
 - Usable for `Code_BascomAVR`
 - Usable for `Code_mikroC PRO for AVR`

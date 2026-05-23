@@ -13,14 +13,25 @@
 #include <lcd.h>
 
 #include "hardware.h"
+#include "timebase.h"
+#include "bit_register8.h"
 #include "button.h"
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
+void Timer2_Init(void);
+
+// Timer2 overflow interrupt service routine
+interrupt [TIM2_OVF] void timer2_ovf_isr(void){
+    TCNT2=0x06; // Reinitialize Timer2 value
+
+    TimeBase_CountTicks();
+}
 
 void main(void){
     uint8_t value = 100;
     uint8_t value_last = 0;
+    uint8_t buf_u8 = 0;
 
     Button_t buttonIncr = {
         .hw = {
@@ -34,8 +45,8 @@ void main(void){
             .pressed = BUTTON_ACTIVE_LOW,
             .pull    = BUTTON_PULL_NONE
         },
-        .state   = 0,
-        .counter = 0
+        .last_tick = 0,
+        .state   = 0
     };
 
     Button_t buttonDecr = {
@@ -50,8 +61,8 @@ void main(void){
             .pressed = BUTTON_ACTIVE_LOW,
             .pull    = BUTTON_PULL_UP
         },
-        .state   = 0,
-        .counter = 0
+        .last_tick = 0,
+        .state   = 0
     };
 
     Button_t buttonClear = {
@@ -66,8 +77,8 @@ void main(void){
             .pressed = BUTTON_ACTIVE_HIGH,
             .pull    = BUTTON_PULL_NONE
         },
-        .state   = 0,
-        .counter = 0
+        .last_tick = 0,
+        .state   = 0
     };
 
     Button_Init(&buttonIncr);
@@ -77,16 +88,29 @@ void main(void){
     LCD_Config();
     LCD_DisplayMainPage(value);
 
+    Timer2_Init();
+    // Timer(s)/Counter(s) Interrupt(s) initialization
+    TIMSK=(0<<OCIE2) | (1<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
+
+    #asm("sei") // Globally enable interrupts
+    DDRC.0=1;
+    PORTC.0=0;
+
     while(1){
-        if( Button_GetAutoRepeat_NonBlocking(&buttonIncr) ){
-            ++value;
+        if((TimeBase_GetTicks() - buf_u8) >= 250){
+            ToggleBit_Reg8(&PORTC, 0);
+            buf_u8 = TimeBase_GetTicks();
         }
 
-        if( Button_GetSingleClick(&buttonDecr) ){
-            --value;
+        if( Button_GetAutoRepeat(&buttonIncr) ){
+            value++;
         }
 
-        if( Button_GetLongPress_NonBlocking(&buttonClear) ){
+        if( Button_GetTrigger(&buttonDecr) ){
+            value--;
+        }
+
+        if( Button_GetTrigger(&buttonClear) ){
             value = 0;
         }
 
@@ -95,6 +119,20 @@ void main(void){
             LCD_DisplayMainPage(value);
         }
     };
+}
+
+//********************************************************
+void Timer2_Init(void){
+    // Timer/Counter 2 initialization
+    // Clock source: System Clock
+    // Clock value: 250.000 kHz
+    // Mode: Normal top=0xFF
+    // OC2 output: Disconnected
+    // Timer Period: 1 ms
+    ASSR=0<<AS2;
+    TCCR2=(0<<PWM2) | (0<<COM21) | (0<<COM20) | (0<<CTC2) | (0<<CS22) | (1<<CS21) | (1<<CS20);
+    TCNT2=0x06;
+    OCR2=0x00;
 }
 
 //********************************************************
