@@ -19,9 +19,6 @@ interrupt [TIM2_OVF] void timer2_ovf_isr(void){
 }
 
 void main(void){
-    uint32_t last_tick = 0;
-    uint32_t now_tick = 0;
-
     Buzzer_Init();
 
     Timer2_Init();
@@ -30,20 +27,9 @@ void main(void){
 
     #asm("sei") // Globally enable interrupts
 
-    DDRD.3 = 1;
-    PORTD.3 = 0;
-    last_tick = TimeBase_GetTicks();
-
     Buzzer_Start(BUZZER_COUNT1);
 
     while(1){
-        now_tick = TimeBase_GetTicks();
-
-        if ((now_tick - last_tick) >= 250){
-            last_tick = now_tick;
-            ToggleBit_Reg8(&PORTD, 3);
-        }
-
         Buzzer_Refresh();
     }
 }
