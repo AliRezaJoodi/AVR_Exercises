@@ -31,7 +31,6 @@ interrupt [TIM2_OVF] void timer2_ovf_isr(void){
 void main(void){
     uint8_t value = 100;
     uint8_t value_last = 0;
-    uint8_t buf_u8 = 0;
 
     Button_t buttonIncr = {
         .hw = {
@@ -93,15 +92,8 @@ void main(void){
     TIMSK=(0<<OCIE2) | (1<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
 
     #asm("sei") // Globally enable interrupts
-    DDRC.0=1;
-    PORTC.0=0;
 
     while(1){
-        if((TimeBase_GetTicks() - buf_u8) >= 250){
-            ToggleBit_Reg8(&PORTC, 0);
-            buf_u8 = TimeBase_GetTicks();
-        }
-
         if( Button_GetAutoRepeat(&buttonIncr) ){
             value++;
         }
