@@ -20,4 +20,4 @@
     #define BUZZER_BIT          1U
     #define BUZZER_MASK         (1U << BUZZER_BIT)
 
-#endif
+#endif  /* HARDWARE_INCLUDED */
