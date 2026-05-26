@@ -27,7 +27,7 @@ void main(void){
 
     #asm("sei") // Globally enable interrupts
 
-    Buzzer_Start(BUZZER_COUNT1);
+    Buzzer_Start(BUZZER_COUNT2);
 
     while(1){
         Buzzer_Refresh();
