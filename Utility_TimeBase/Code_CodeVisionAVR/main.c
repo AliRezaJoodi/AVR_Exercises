@@ -18,8 +18,8 @@ interrupt [TIM2_OVF] void timer2_ovf_isr(void){
 }
 
 void main(void){
-    uint8_t last_tick = 0;
-    uint8_t now_tick = 0;
+    timebase_t tick_last = 0;
+    timebase_t tick_now = 0;
 
     Timer2_Init();
     // Timer(s)/Counter(s) Interrupt(s) initialization
@@ -28,14 +28,13 @@ void main(void){
     #asm("sei") // Globally enable interrupts
 
     DDRD.3 = 1; PORTD.3 = 0;
-
-    last_tick = TimeBase_GetTicks();
+    tick_last = TimeBase_GetTicks();
 
     while(1){
-        now_tick = TimeBase_GetTicks();
+        tick_now = TimeBase_GetTicks();
 
-        if ((uint8_t)(now_tick - last_tick) >= 250){
-            last_tick = now_tick;
+        if (TimeBase_CheckElapsed(tick_last, 250) == 1U){
+            tick_last = tick_now;
             ToggleBit_Reg8(&PORTD, 3);
         }
     }
