@@ -44,7 +44,7 @@ void main(void){
             .pressed = BUTTON_ACTIVE_LOW,
             .pull    = BUTTON_PULL_NONE
         },
-        .last_tick = 0,
+        .tick_last = 0,
         .state   = 0
     };
 
@@ -60,7 +60,7 @@ void main(void){
             .pressed = BUTTON_ACTIVE_LOW,
             .pull    = BUTTON_PULL_UP
         },
-        .last_tick = 0,
+        .tick_last = 0,
         .state   = 0
     };
 
@@ -76,7 +76,7 @@ void main(void){
             .pressed = BUTTON_ACTIVE_HIGH,
             .pull    = BUTTON_PULL_NONE
         },
-        .last_tick = 0,
+        .tick_last = 0,
         .state   = 0
     };
 
