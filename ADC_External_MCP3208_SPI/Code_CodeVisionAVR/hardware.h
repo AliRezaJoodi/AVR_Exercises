@@ -1,6 +1,9 @@
 #ifndef HARDWARE_INCLUDED
 #define HARDWARE_INCLUDED
 
+#define MCP3208_HARDWARE
+    #define MCP3208_TIMEOUT         1000U
+
 #define MCP3208_HARDWARE_EXTRA
     #define MCP3208_CS_DDR          DDRB
     #define MCP3208_CS_PORT         PORTB

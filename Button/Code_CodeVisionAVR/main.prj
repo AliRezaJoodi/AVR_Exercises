@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=3
-OpenedFiles=9
+OpenedFiles=7
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -23,7 +23,7 @@ Active1=0
 Row1=87
 Column1=28
 State1=2
-TimeStamp1=1555709298
+TimeStamp1=1555792174
 OF2=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_types.h
 Top2=149
 Left2=223
@@ -70,13 +70,13 @@ EditorPanel2=0
 PageIndex2=2
 ActiveTab=6
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_hw.h
-TimeStamp5=1555545243
-OF6=..\..\..\CrossPlatformLibraries\utils\timebase.c
-TimeStamp6=1555709569
-OF7=..\..\..\CrossPlatformLibraries\utils\timebase.h
-TimeStamp7=1555708153
+TimeStamp5=1555737739
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_port.h
+TimeStamp6=1555792174
+OF7=main.c
+TimeStamp7=1555708493
 OF8=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
-TimeStamp8=1555709511
+TimeStamp8=1555712968
 OF9=..\..\..\CrossPlatformLibraries\utils\timebase_type.h
 TimeStamp9=1555709432
 F1=main.c
@@ -170,7 +170,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=771
+Build=773
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
@@ -250,7 +250,7 @@ WarningExternalDeclaredNeverDefined=1
 WarningUnknownPragma=1
 WarningStaticRamEepromStorageAllocConstStrLit=0
 WatchAVR8LAutoVariables=0
-COFFileTimeStamp=1555709585
+COFFileTimeStamp=1555792176
 IncludePath32=
 IncludePath33=
 IncludePath34=
@@ -505,7 +505,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=771
+Build=773
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -550,8 +550,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 771
-L18=19153 line(s) compiled
+L17=Build: 773
+L18=19227 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -593,7 +593,7 @@ Row=1
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555709587
+TimeStamp=1555792321
 [BookmarksFoldedCode]
 Files=46
 F1=v1.0.c
@@ -948,10 +948,10 @@ BK9=-1
 Blocks=0
 [Bookmarks17]
 TimeStamp=1555708493
-Row=39
-Column=41
+Row=50
+Column=49
 ScrollPosX=0
-ScrollPosY=45
+ScrollPosY=75
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1253,11 +1253,11 @@ BK9=-1
 [FoldedCode33]
 Blocks=0
 [Bookmarks34]
-TimeStamp=1555709298
-Row=32
-Column=42
+TimeStamp=1555792174
+Row=14
+Column=45
 ScrollPosX=0
-ScrollPosY=30
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1285,11 +1285,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks36]
-TimeStamp=1555315851
-Row=28
-Column=22
+TimeStamp=1555792174
+Row=47
+Column=1
 ScrollPosX=0
-ScrollPosY=22
+ScrollPosY=31
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1333,9 +1333,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks39]
-TimeStamp=1555545243
-Row=14
-Column=35
+TimeStamp=1555737739
+Row=11
+Column=0
 ScrollPosX=0
 ScrollPosY=6
 BK0=-1
@@ -1350,10 +1350,10 @@ BK8=-1
 BK9=-1
 [Bookmarks40]
 TimeStamp=1555709084
-Row=75
-Column=10
+Row=5
+Column=79
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=69
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1403,11 +1403,11 @@ Blocks=0
 [FoldedCode41]
 Blocks=0
 [Bookmarks43]
-TimeStamp=1555709569
+TimeStamp=1555712972
 Row=0
 Column=0
 ScrollPosX=0
-ScrollPosY=16
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1435,7 +1435,7 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1555709511
+TimeStamp=1555712968
 Row=0
 Column=0
 ScrollPosX=0
@@ -1451,8 +1451,6 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode38]
-Blocks=0
-[FoldedCode36]
 Blocks=0
 [Bookmarks46]
 TimeStamp=1555709432
@@ -1470,7 +1468,13 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode17]
+[FoldedCode45]
+Blocks=0
+[FoldedCode46]
+Blocks=0
+[FoldedCode44]
+Blocks=0
+[FoldedCode43]
 Blocks=0
 [HeadersList]
 Files=3
@@ -1498,10 +1502,10 @@ F16=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_types.h
 [Header2]
 Files=15
 F1=C:\cvavr\inc\stdint.h
-F2=hardware.h
-F3=..\..\..\CrossPlatformLibraries\utils\timebase.h
-F4=..\..\..\CrossPlatformLibraries\utils\timebase_type.h
-F5=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
+F2=..\..\..\CrossPlatformLibraries\utils\timebase.h
+F3=..\..\..\CrossPlatformLibraries\utils\timebase_type.h
+F4=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
+F5=hardware.h
 F6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_types.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\button_port.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
@@ -1515,8 +1519,8 @@ F15=..\..\..\CrossPlatformLibraries\drivers\button.h
 [Header3]
 Files=10
 F1=C:\cvavr\inc\stdint.h
-F2=hardware.h
-F3=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
+F2=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
+F3=hardware.h
 F4=..\..\..\CrossPlatformLibraries\utils\timebase_type.h
 F5=..\..\..\CrossPlatformLibraries\utils\timebase.h
 F6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
@@ -1524,15 +1528,11 @@ F7=C:\cvavr\inc\io.h
 F8=C:\cvavr\inc\mega32a.h
 F9=C:\cvavr\inc\mega32_bits.h
 F10=C:\cvavr\inc\delay.h
+[FoldedCode17]
+Blocks=0
 [FoldedCode34]
 Blocks=0
-[FoldedCode43]
-Blocks=0
-[FoldedCode46]
-Blocks=0
-[FoldedCode45]
-Blocks=0
-[FoldedCode44]
+[FoldedCode36]
 Blocks=0
 [FoldedCode39]
 Blocks=0

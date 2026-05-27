@@ -1,6 +1,9 @@
 #ifndef HARDWARE_INCLUDED
 #define HARDWARE_INCLUDED
 
+#define MCP3202_HARDWARE
+    #define MCP3202_TIMEOUT         1000U
+
 #define MCP3202_HARDWARE_EXTRA
     #define MCP3202_CS_DDR          DDRB
     #define MCP3202_CS_PORT         PORTB

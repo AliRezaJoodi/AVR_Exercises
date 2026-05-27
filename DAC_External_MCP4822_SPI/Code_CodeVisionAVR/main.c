@@ -3,7 +3,6 @@
 #include <mega32a.h>
 #include <delay.h>
 #include <spi.h>
-
 #include "hardware.h"
 #include "mcp4822.h"
 

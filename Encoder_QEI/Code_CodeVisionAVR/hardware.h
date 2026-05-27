@@ -19,6 +19,13 @@
     #define QEI_B_BIT               3U
     #define QEI_B_MASK              (1U << QEI_B_BIT)
 
+#define QEI_HARDWARE_EXTRA2
+    #define QEI_Z_DDR               DDRB
+    #define QEI_Z_PIN               PINB
+    #define QEI_Z_PORT              PORTB
+    #define QEI_Z_BIT               2U
+    #define QEI_Z_MASK              (1U << QEI_Z_BIT)
+
 #endif
 
 
