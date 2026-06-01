@@ -46,9 +46,10 @@ void main(void){
 //        PORTD.0 = AJ_BitReg_IsBitSet_Position(&PINC, 1U);
         PORTD.0 = AJ_BitReg_AreBitsSet_Mask(&PINC, (1U << 1U));
 
-        //value = AJ_BitReg_GetField_Mask(&PINB, input4x_mask);
-        value = AJ_BitReg_Get4Bits_Position(&PINB, 3U);
-        AJ_BitReg_Write4Bits_Position(&PORTD, 4U, value);
+        value = AJ_BitReg_GetField_Mask(&PINB, input4x_mask);
+//        value = AJ_BitReg_Get4Bits_Position(&PINB, 3U);
+        AJ_BitReg_WriteField_Mask(&PORTD, 0xF0U, value);
+//        AJ_BitReg_Write4Bits_Position(&PORTD, 4U, value);
     };
 }
 
