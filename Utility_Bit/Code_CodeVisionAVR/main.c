@@ -4,6 +4,7 @@
 #include <mega32a.h>
 #include <delay.h>
 
+#include "hardware.h"
 #include "bit.h"
 
 typedef struct {
@@ -29,15 +30,15 @@ void main(void){
     BM_SET_BITMASK(DDRD, 0xFFU);
     BM_CLEAR_BITMASK(DDRB, 0x78U); delay_ms(1000);
 
-//    test_bit_macro1();
-//    test_bit_macro2(&led);
-//
-//    BM_SET_BIT(PORTD, 3); delay_ms(1000);
+    test_bit_macro1();
+    test_bit_macro2(&led);
+
+    BM_SET_BIT(PORTD, 3); delay_ms(1000);
 //    WriteBitField_Reg8(&PORTD, 0b00111100U, 9U);
 
     while(1){
 //        Write4Bit_Reg8(&PORTD, 0, Get4Bit_Reg8(&PINB, 3));
-        WriteBitField_Reg8(&PORTD, 0x0FU, GetBitField_Reg8(&PINB, 0b01111000U));
+//        WriteBitField_Reg8(&PORTD, 0x0FU, GetBitField_Reg8(&PINB, 0b01111000U));
     };
 }
 
