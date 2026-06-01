@@ -26,7 +26,7 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1555793548
+TimeStamp1=1556171536
 PageIndex1=1
 OF2=main.c
 Active2=0
@@ -34,17 +34,17 @@ EditorPanel2=0
 TimeStamp2=1555793640
 PageIndex2=2
 TimeStamp0=1446328168
-ActiveTab=1
+ActiveTab=7
 OF3=hardware.h
 TimeStamp3=1555793405
 OF4=..\..\..\CrossPlatformLibraries\drivers\mcp4822.h
-TimeStamp4=1554457135
+TimeStamp4=1556171530
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_port.h
-TimeStamp5=1555793405
-OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_types.h
-TimeStamp6=1554457135
-OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_hw.h
-TimeStamp7=1555793548
+TimeStamp5=1556171394
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_hw.h
+TimeStamp6=1555793548
+OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_type.h
+TimeStamp7=1556171401
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\Drivers\mcp4822.c
 OF8=main.c
@@ -147,8 +147,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1555793642
-Build=675
+COFFileTimeStamp=1556171537
+Build=676
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -258,7 +258,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=675
+Build=676
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -519,8 +519,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 675
-L18=6065 line(s) compiled
+L17=Build: 676
+L18=6068 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -564,7 +564,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=42
+Files=43
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -607,6 +607,7 @@ F39=..\..\..\CrossPlatformLibraries\platforms\avr8\mcp4822_types.h
 F40=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_hw.h
 F41=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_types.h
 F42=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_port.h
+F43=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_type.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -700,7 +701,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555793654
+TimeStamp=1556171544
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -1148,11 +1149,11 @@ Blocks=0
 [FoldedCode28]
 Blocks=0
 [Bookmarks30]
-TimeStamp=1554457135
-Row=23
-Column=24
+TimeStamp=1556171530
+Row=26
+Column=22
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=20
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1166,11 +1167,11 @@ BK9=-1
 [FoldedCode20]
 Blocks=0
 [Bookmarks31]
-TimeStamp=1555793548
-Row=15
-Column=24
+TimeStamp=1556171536
+Row=0
+Column=22
 ScrollPosX=0
-ScrollPosY=3
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1327,42 +1328,6 @@ Blocks=0
 Blocks=0
 [FoldedCode38]
 Blocks=0
-[HeadersList]
-Files=2
-F1=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Drivers\mcp4822.c
-[Header1]
-Files=10
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\delay.h
-F4=C:\cvavr\inc\stdint.h
-F5=C:\cvavr\inc\spi.h
-F6=C:\cvavr\inc\io.h
-F7=C:\cvavr\inc\stdbool.h
-F8=hardware.h
-F9=..\..\..\CrossPlatformLibraries\drivers\mcp4822.h
-F10=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_types.h
-[Header2]
-Files=14
-F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_types.h
-F2=C:\cvavr\inc\stdint.h
-F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_port.h
-F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
-F5=C:\cvavr\inc\io.h
-F6=C:\cvavr\inc\mega32a.h
-F7=C:\cvavr\inc\mega32_bits.h
-F8=C:\cvavr\inc\delay.h
-F9=..\..\..\CrossPlatformLibraries\utils\bit_register.h
-F10=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
-F11=..\..\..\CrossPlatformLibraries\utils\bit_register32.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_hw.h
-F13=hardware.h
-F14=..\..\..\CrossPlatformLibraries\Drivers\mcp4822.h
-[FoldedCode27]
-Blocks=0
-[FoldedCode31]
-Blocks=0
 [Bookmarks40]
 TimeStamp=1555793548
 Row=7
@@ -1379,8 +1344,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode40]
-Blocks=0
 [Bookmarks41]
 TimeStamp=1554457135
 Row=20
@@ -1400,11 +1363,11 @@ BK9=-1
 [FoldedCode41]
 Blocks=0
 [Bookmarks42]
-TimeStamp=1555793405
-Row=126
-Column=38
+TimeStamp=1556171394
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=116
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1415,6 +1378,62 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=2
+F1=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Drivers\mcp4822.c
+[Header1]
+Files=10
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\delay.h
+F4=C:\cvavr\inc\stdint.h
+F5=C:\cvavr\inc\spi.h
+F6=C:\cvavr\inc\io.h
+F7=C:\cvavr\inc\stdbool.h
+F8=hardware.h
+F9=..\..\..\CrossPlatformLibraries\drivers\mcp4822.h
+F10=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_type.h
+[Header2]
+Files=14
+F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_type.h
+F2=C:\cvavr\inc\stdint.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_port.h
+F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
+F5=C:\cvavr\inc\io.h
+F6=C:\cvavr\inc\mega32a.h
+F7=C:\cvavr\inc\mega32_bits.h
+F8=C:\cvavr\inc\delay.h
+F9=..\..\..\CrossPlatformLibraries\utils\bit_register.h
+F10=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
+F11=..\..\..\CrossPlatformLibraries\utils\bit_register32.h
+F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp4822_hw.h
+F13=hardware.h
+F14=..\..\..\CrossPlatformLibraries\Drivers\mcp4822.h
+[FoldedCode27]
+Blocks=0
+[FoldedCode31]
+Blocks=0
+[Bookmarks43]
+TimeStamp=1556171401
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode43]
+Blocks=0
+[FoldedCode40]
+Blocks=0
 [FoldedCode42]
 Blocks=0
 [FoldedCode30]

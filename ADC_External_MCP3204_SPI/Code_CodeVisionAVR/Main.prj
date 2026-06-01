@@ -35,15 +35,15 @@ TimeStamp2=1555793159
 PageIndex2=2
 ActiveTab=7
 OF3=..\..\..\CrossPlatformLibraries\drivers\mcp3204.h
-TimeStamp3=1554457135
+TimeStamp3=1556171482
 OF4=hardware.h
 TimeStamp4=1555793189
-OF5=..\..\..\CrossPlatformLibraries\utils\bit_register.h
-TimeStamp5=1554551634
-OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
-TimeStamp6=1555793189
-OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
-TimeStamp7=1555793171
+OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
+TimeStamp5=1556171367
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
+TimeStamp6=1555793171
+OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
+TimeStamp7=1556171371
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\Drivers\mcp3204.c
 OF8=..\..\..\CrossPlatformLibraries\utils\bit_register.h
@@ -146,8 +146,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1555793191
-Build=414
+COFFileTimeStamp=1556171484
+Build=415
 GlobalVarAddr=629
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -257,7 +257,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=414
+Build=415
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -518,7 +518,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 414
+L17=Build: 415
 L18=18507 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -563,7 +563,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=32
+Files=33
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -596,6 +596,7 @@ F29=..\..\..\CrossPlatformLibraries\utils\bit_register.h
 F30=..\..\..\CrossPlatformLibraries\platforms\avr8\mcp3204_types.h
 F31=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
 F32=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
+F33=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -687,7 +688,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555793196
+TimeStamp=1556171491
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -1097,11 +1098,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks28]
-TimeStamp=1554457135
-Row=0
-Column=0
+TimeStamp=1556171482
+Row=32
+Column=22
 ScrollPosX=0
-ScrollPosY=56
+ScrollPosY=15
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1152,6 +1153,40 @@ Blocks=0
 Blocks=0
 [FoldedCode26]
 Blocks=0
+[Bookmarks31]
+TimeStamp=1555793171
+Row=6
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks32]
+TimeStamp=1556171367
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode29]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\main.c
@@ -1169,7 +1204,7 @@ F8=C:\cvavr\inc\alcd.h
 F9=C:\cvavr\inc\stdlib.h
 F10=hardware.h
 F11=..\..\..\CrossPlatformLibraries\drivers\mcp3204.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_types.h
+F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
 [Header2]
 Files=12
 F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
@@ -1182,15 +1217,15 @@ F7=C:\cvavr\inc\delay.h
 F8=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 F9=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
 F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_types.h
+F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
 F12=..\..\..\CrossPlatformLibraries\Drivers\mcp3204.h
 [FoldedCode18]
 Blocks=0
 [FoldedCode25]
 Blocks=0
-[Bookmarks31]
-TimeStamp=1555793171
-Row=6
+[Bookmarks33]
+TimeStamp=1556171371
+Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
@@ -1204,27 +1239,11 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode33]
+Blocks=0
 [FoldedCode31]
 Blocks=0
-[Bookmarks32]
-TimeStamp=1555793189
-Row=94
-Column=38
-ScrollPosX=0
-ScrollPosY=91
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
 [FoldedCode32]
-Blocks=0
-[FoldedCode29]
 Blocks=0
 [FoldedCode22]
 Blocks=0

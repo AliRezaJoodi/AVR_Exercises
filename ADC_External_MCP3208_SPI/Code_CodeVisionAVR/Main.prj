@@ -35,15 +35,15 @@ TimeStamp2=1555793272
 PageIndex2=2
 ActiveTab=7
 OF3=..\..\..\CrossPlatformLibraries\drivers\mcp3208.h
-TimeStamp3=1554457135
+TimeStamp3=1556171503
 OF4=hardware.h
 TimeStamp4=1555793259
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_port.h
-TimeStamp5=1555793272
-OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_types.h
-TimeStamp6=1554457135
-OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_hw.h
-TimeStamp7=1555793259
+TimeStamp5=1556171382
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_hw.h
+TimeStamp6=1555793259
+OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_type.h
+TimeStamp7=1556171384
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\Drivers\mcp3208.c
 OF8=..\..\..\CrossPlatformLibraries\platforms\avr8\mcp3208_types.h
@@ -146,8 +146,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1555793274
-Build=445
+COFFileTimeStamp=1556171507
+Build=446
 GlobalVarAddr=629
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -257,7 +257,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=445
+Build=446
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -518,7 +518,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 445
+L17=Build: 446
 L18=18552 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -563,7 +563,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=37
+Files=38
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -601,6 +601,7 @@ F34=..\..\..\CrossPlatformLibraries\utils\bit_register.h
 F35=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_hw.h
 F36=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_types.h
 F37=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_port.h
+F38=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_type.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -692,7 +693,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555793281
+TimeStamp=1556171515
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -1176,11 +1177,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks32]
-TimeStamp=1554457135
-Row=0
-Column=0
+TimeStamp=1556171503
+Row=32
+Column=22
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=18
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1231,42 +1232,6 @@ Blocks=0
 Blocks=0
 [FoldedCode34]
 Blocks=0
-[HeadersList]
-Files=2
-F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Drivers\mcp3208.c
-[Header1]
-Files=12
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\spi.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\stdbool.h
-F6=C:\cvavr\inc\delay.h
-F7=C:\cvavr\inc\stdint.h
-F8=C:\cvavr\inc\alcd.h
-F9=C:\cvavr\inc\stdlib.h
-F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\drivers\mcp3208.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_types.h
-[Header2]
-Files=12
-F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_port.h
-F2=C:\cvavr\inc\stdint.h
-F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\mega32a.h
-F6=C:\cvavr\inc\mega32_bits.h
-F7=C:\cvavr\inc\delay.h
-F8=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
-F9=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_hw.h
-F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_types.h
-F12=..\..\..\CrossPlatformLibraries\Drivers\mcp3208.h
-[FoldedCode18]
-Blocks=0
-[FoldedCode29]
-Blocks=0
 [Bookmarks35]
 TimeStamp=1555793259
 Row=7
@@ -1283,8 +1248,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode35]
-Blocks=0
 [Bookmarks36]
 TimeStamp=1554457135
 Row=0
@@ -1304,11 +1267,11 @@ BK9=-1
 [FoldedCode36]
 Blocks=0
 [Bookmarks37]
-TimeStamp=1555793272
-Row=71
-Column=73
+TimeStamp=1556171382
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=52
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1319,6 +1282,62 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=2
+F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Drivers\mcp3208.c
+[Header1]
+Files=12
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\spi.h
+F4=C:\cvavr\inc\io.h
+F5=C:\cvavr\inc\stdbool.h
+F6=C:\cvavr\inc\delay.h
+F7=C:\cvavr\inc\stdint.h
+F8=C:\cvavr\inc\alcd.h
+F9=C:\cvavr\inc\stdlib.h
+F10=hardware.h
+F11=..\..\..\CrossPlatformLibraries\drivers\mcp3208.h
+F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_type.h
+[Header2]
+Files=12
+F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_port.h
+F2=C:\cvavr\inc\stdint.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
+F4=C:\cvavr\inc\io.h
+F5=C:\cvavr\inc\mega32a.h
+F6=C:\cvavr\inc\mega32_bits.h
+F7=C:\cvavr\inc\delay.h
+F8=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
+F9=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_hw.h
+F10=hardware.h
+F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3208_type.h
+F12=..\..\..\CrossPlatformLibraries\Drivers\mcp3208.h
+[FoldedCode18]
+Blocks=0
+[FoldedCode29]
+Blocks=0
+[Bookmarks38]
+TimeStamp=1556171384
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode38]
+Blocks=0
+[FoldedCode35]
+Blocks=0
 [FoldedCode37]
 Blocks=0
 [FoldedCode22]

@@ -31,21 +31,21 @@ PageIndex1=1
 OF2=..\..\..\CrossPlatformLibraries\drivers\qei.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1555794391
+TimeStamp2=1556171585
 PageIndex2=2
-ActiveTab=5
+ActiveTab=7
 OF3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_hw.h
 TimeStamp3=1555793775
-OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_types.h
-TimeStamp4=1555794391
+OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_port.h
+TimeStamp4=1556171565
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\drivers\qei.c
-OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_port.h
-TimeStamp5=1555793764
-OF6=..\..\..\CrossPlatformLibraries\drivers\qei.c
-TimeStamp6=1555793775
-OF7=hardware.h
-TimeStamp7=1555794165
+OF5=..\..\..\CrossPlatformLibraries\drivers\qei.c
+TimeStamp5=1556171585
+OF6=hardware.h
+TimeStamp6=1555794165
+OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_type.h
+TimeStamp7=1556171558
 OF8=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 TimeStamp8=1555305576
 [CompilerDebug]
@@ -146,8 +146,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1555794393
-Build=188
+COFFileTimeStamp=1556171587
+Build=189
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -257,7 +257,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=188
+Build=189
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\drivers
@@ -506,9 +506,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555794408
+TimeStamp=1556171593
 [BookmarksFoldedCode]
-Files=15
+Files=16
 F1=v1.0.c
 F2=v1.2.c
 F3=Attachment\Encoder.h
@@ -524,6 +524,7 @@ F12=C:\cvavr\inc\delay.h
 F13=..\..\..\CrossPlatformLibraries\drivers\qei.c
 F14=hardware.h
 F15=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_port.h
+F16=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_type.h
 [Bookmarks1]
 TimeStamp=1435375319
 Row=0
@@ -564,7 +565,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 188
+L17=Build: 189
 L18=17818 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -745,11 +746,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks9]
-TimeStamp=1555794391
-Row=62
-Column=20
+TimeStamp=1556171585
+Row=11
+Column=18
 ScrollPosX=0
-ScrollPosY=45
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -813,9 +814,9 @@ BK9=-1
 [FoldedCode12]
 Blocks=0
 [Bookmarks13]
-TimeStamp=1555793775
-Row=10
-Column=72
+TimeStamp=1556171585
+Row=3
+Column=18
 ScrollPosX=0
 ScrollPosY=3
 BK0=-1
@@ -845,11 +846,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks15]
-TimeStamp=1555793764
-Row=50
-Column=30
+TimeStamp=1556171565
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=24
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -861,6 +862,8 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode6]
+Blocks=0
+[FoldedCode10]
 Blocks=0
 [HeadersList]
 Files=2
@@ -876,7 +879,7 @@ F5=C:\cvavr\inc\stdlib.h
 F6=C:\cvavr\inc\alcd.h
 F7=hardware.h
 F8=..\..\..\CrossPlatformLibraries\drivers\qei.h
-F9=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_types.h
+F9=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_type.h
 F10=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_hw.h
 F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_port.h
 F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
@@ -885,7 +888,7 @@ F14=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 [Header2]
 Files=12
 F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_types.h
+F2=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_type.h
 F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_hw.h
 F4=hardware.h
 F5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\qei_port.h
@@ -900,11 +903,27 @@ F12=..\..\..\CrossPlatformLibraries\drivers\qei.h
 Blocks=0
 [FoldedCode13]
 Blocks=0
+[Bookmarks16]
+TimeStamp=1556171558
+Row=7
+Column=25
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode16]
+Blocks=0
 [FoldedCode14]
 Blocks=0
 [FoldedCode15]
-Blocks=0
-[FoldedCode10]
 Blocks=0
 [FoldedCode8]
 Blocks=0
