@@ -26,7 +26,7 @@ void main(void){
 void Test_u32(void){
     uint32_t value_u32 = 0x80000001UL;
 
-    value_u32 = AJ_BitU32_SetBits_Mask(value_u32, 0xF000030FUL);
+    value_u32 = AJ_BitU32_SetBits_Mask(value_u32, 0x03000030UL);
 
     while(1){
         PORTA =  AJ_BitU32_Get8Bits_Position(value_u32, 0U);
