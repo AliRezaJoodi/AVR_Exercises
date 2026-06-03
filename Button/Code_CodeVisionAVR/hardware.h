@@ -1,6 +1,9 @@
 #ifndef HARDWARE_INCLUDED
 #define HARDWARE_INCLUDED
 
+#define AJ_BIT_REG_CONFIG
+    #define AJ_BIT_REG_8BIT
+
 #define TIMEBASE_CONFIG
     #define TIMEBASE_REG8_U8
 

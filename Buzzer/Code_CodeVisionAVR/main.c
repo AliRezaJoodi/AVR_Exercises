@@ -19,6 +19,7 @@ interrupt [TIM2_OVF] void timer2_ovf_isr(void){
 }
 
 void main(void){
+    timebase_t tick_now = 0;
     Buzzer_Init();
 
     Timer2_Init();
@@ -27,10 +28,12 @@ void main(void){
 
     #asm("sei") // Globally enable interrupts
 
-    Buzzer_Start(BUZZER_COUNT2);
+    tick_now = TimeBase_GetTicks();
+    Buzzer_Start(tick_now, BUZZER_COUNT2);
 
     while(1){
-        Buzzer_Refresh();
+        tick_now = TimeBase_GetTicks();
+        Buzzer_Refresh(tick_now);
     }
 }
 

@@ -33,7 +33,7 @@ void main(void){
     while(1){
         tick_now = TimeBase_GetTicks();
 
-        if (TimeBase_CheckElapsed(tick_last, 250) == 1U){
+        if (TimeBase_HasElapsed(tick_now, tick_last, 250)){
             tick_last = tick_now;
             ToggleBit_Reg8(&PORTD, 3);
         }

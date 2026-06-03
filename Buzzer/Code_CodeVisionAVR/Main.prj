@@ -26,22 +26,22 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1555707557
+TimeStamp1=1556352550
 PageIndex1=1
 OF2=..\..\..\CrossPlatformLibraries\drivers\buzzer.h
 Active2=1
 EditorPanel2=0
-TimeStamp2=1555740708
+TimeStamp2=1556353034
 PageIndex2=2
-ActiveTab=5
+ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\drivers\buzzer.c
-TimeStamp3=1555792343
-OF4=hardware.h
-TimeStamp4=1555709474
-OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\buzzer_port.h
-TimeStamp5=1555792343
-OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\buzzer_hw.h
-TimeStamp6=1555737500
+TimeStamp3=1556352544
+OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\buzzer_port.h
+TimeStamp4=1556352055
+OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\buzzer_hw.h
+TimeStamp5=1555737500
+OF6=..\..\..\CrossPlatformLibraries\utils\timebase.h
+TimeStamp6=1556351783
 OF7=..\..\..\CrossPlatformLibraries\utils\timebase.h
 TimeStamp7=1555708153
 F1=main.c
@@ -151,8 +151,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1555792345
-Build=406
+COFFileTimeStamp=1556352805
+Build=420
 GlobalVarAddr=612
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -262,7 +262,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=406
+Build=420
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -507,8 +507,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 406
-L18=5524 line(s) compiled
+L17=Build: 420
+L18=5814 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -516,7 +516,7 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 16 byte(s)
+L26=Estimated Data Stack usage: 17 byte(s)
 L27=
 L28=RAM Global variables area: 0x260 to 0x263
 L29=RAM Global variables size: 4 byte(s)
@@ -534,7 +534,7 @@ L38=1 words (2 bytes), 0.4% reduced by Code Compression
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Debug\List\Main.asm(1654): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Debug\List\Main.asm(1705): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -549,9 +549,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1555792518
+TimeStamp=1556353098
 [BookmarksFoldedCode]
-Files=29
+Files=31
 F1=v1.0.c
 F2=Attachment\Buzzer.h
 F3=..\..\_Library_CodeVisionAVR\Buzzer.h
@@ -581,6 +581,8 @@ F26=..\..\..\CrossPlatformLibraries\utils\timebase.c
 F27=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
 F28=..\..\..\CrossPlatformLibraries\utils\timebase.h
 F29=..\..\..\CrossPlatformLibraries\utils\timebase_type.h
+F30=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F31=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
 [Bookmarks1]
 TimeStamp=1550213496
 Row=8
@@ -733,11 +735,11 @@ Blocks=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks8]
-TimeStamp=1555707557
-Row=29
-Column=30
+TimeStamp=1556352550
+Row=20
+Column=62
 ScrollPosX=0
-ScrollPosY=21
+ScrollPosY=14
 BK0=-1
 BK1=-1
 BK2=-1
@@ -769,9 +771,9 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks10]
-TimeStamp=1555709474
-Row=0
-Column=0
+TimeStamp=1556351996
+Row=4
+Column=22
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -947,11 +949,11 @@ Blocks=0
 [FoldedCode17]
 Blocks=0
 [Bookmarks20]
-TimeStamp=1555792343
-Row=24
-Column=29
+TimeStamp=1556352544
+Row=48
+Column=32
 ScrollPosX=0
-ScrollPosY=4
+ScrollPosY=33
 BK0=-1
 BK1=-1
 BK2=-1
@@ -979,11 +981,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks22]
-TimeStamp=1555792343
-Row=13
-Column=46
+TimeStamp=1556352055
+Row=10
+Column=17
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -995,11 +997,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks23]
-TimeStamp=1555740708
-Row=0
-Column=0
+TimeStamp=1556353034
+Row=19
+Column=3
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=12
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1075,11 +1077,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks28]
-TimeStamp=1555708153
-Row=0
-Column=0
+TimeStamp=1556351783
+Row=51
+Column=41
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=45
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1114,9 +1116,45 @@ BK9=-1
 Blocks=0
 [FoldedCode27]
 Blocks=0
-[FoldedCode28]
-Blocks=0
 [FoldedCode26]
+Blocks=0
+[Bookmarks30]
+TimeStamp=1556293296
+Row=58
+Column=43
+ScrollPosX=0
+ScrollPosY=47
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks31]
+TimeStamp=1556219246
+Row=13
+Column=20
+ScrollPosX=0
+ScrollPosY=6
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode30]
+Blocks=0
+[FoldedCode10]
+Blocks=0
+[FoldedCode31]
 Blocks=0
 [HeadersList]
 Files=3
@@ -1136,7 +1174,7 @@ F8=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
 F9=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
 F10=..\..\..\CrossPlatformLibraries\drivers\buzzer.h
 [Header2]
-Files=14
+Files=16
 F1=C:\cvavr\inc\stdint.h
 F2=..\..\..\CrossPlatformLibraries\utils\timebase.h
 F3=..\..\..\CrossPlatformLibraries\utils\timebase_type.h
@@ -1148,9 +1186,11 @@ F8=C:\cvavr\inc\io.h
 F9=C:\cvavr\inc\mega16a.h
 F10=C:\cvavr\inc\mega16_bits.h
 F11=C:\cvavr\inc\delay.h
-F12=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
-F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\buzzer_hw.h
-F14=..\..\..\CrossPlatformLibraries\drivers\buzzer.h
+F12=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F13=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F14=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
+F15=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\buzzer_hw.h
+F16=..\..\..\CrossPlatformLibraries\drivers\buzzer.h
 [Header3]
 Files=10
 F1=C:\cvavr\inc\stdint.h
@@ -1167,11 +1207,11 @@ F10=C:\cvavr\inc\delay.h
 Blocks=0
 [FoldedCode20]
 Blocks=0
+[FoldedCode28]
+Blocks=0
 [FoldedCode21]
 Blocks=0
 [FoldedCode22]
-Blocks=0
-[FoldedCode10]
 Blocks=0
 [FoldedCode23]
 Blocks=0

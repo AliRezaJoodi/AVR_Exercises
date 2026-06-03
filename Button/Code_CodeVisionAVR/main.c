@@ -29,6 +29,7 @@ interrupt [TIM2_OVF] void timer2_ovf_isr(void){
 }
 
 void main(void){
+    uint8_t tick_now = 0;
     uint8_t value = 100;
     uint8_t value_last = 0;
 
@@ -94,15 +95,17 @@ void main(void){
     #asm("sei") // Globally enable interrupts
 
     while(1){
-        if( Button_GetAutoRepeat(&buttonIncr) ){
+        tick_now = TimeBase_GetTicks();
+
+        if( Button_GetAutoRepeat(&buttonIncr, tick_now) ){
             value++;
         }
 
-        if( Button_GetTrigger(&buttonDecr) ){
+        if( Button_GetTrigger(&buttonDecr, tick_now) ){
             value--;
         }
 
-        if( Button_GetTrigger(&buttonClear) ){
+        if( Button_GetTrigger(&buttonClear, tick_now) ){
             value = 0;
         }
 
