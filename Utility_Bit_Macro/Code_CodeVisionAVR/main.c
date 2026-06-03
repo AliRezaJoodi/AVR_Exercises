@@ -4,7 +4,7 @@
 #include <mega32a.h>
 #include <delay.h>
 
-#include "bit_macro.h"
+#include "aj_bit_macro.h"
 
 typedef struct {
     volatile uint8_t *ddr;
@@ -26,13 +26,13 @@ void main(void){
         .mask  = (1U << 0)
     };
 
-    BM_SET_BITMASK(DDRD, 0xFFU);
-    BM_CLEAR_BITMASK(DDRB, 0x78U); delay_ms(1000);
+    AJ_SET_BITS_MASK(DDRD, 0xFFU);
+    AJ_CLEAR_BITS_MASK(DDRB, 0x78U); delay_ms(1000);
 
     test_bit_macro1();
     test_bit_macro2(&led);
 
-    BM_SET_BIT(PORTD, 3); delay_ms(1000);
+    AJ_SET_BIT_POS(PORTD, 3); delay_ms(1000);
 
     while(1){
 
@@ -41,38 +41,38 @@ void main(void){
 
 //**********************************************
 void test_bit_macro2(const Pin_t *led){
-    BM_SET_BIT(*led->ddr, led->index); delay_ms(500); // PORTA.0 is output
+    AJ_SET_BIT_POS(*led->ddr, led->index); delay_ms(500); // PORTA.0 is output
 
-    BM_SET_BIT(*led->port, led->index); delay_ms(500);
-    BM_CLEAR_BIT(*led->port, led->index); delay_ms(1000);
+    AJ_SET_BIT_POS(*led->port, led->index); delay_ms(500);
+    AJ_CLEAR_BIT_POS(*led->port, led->index); delay_ms(1000);
 
-    BM_WRITE_BIT(*led->port, led->index, 1); delay_ms(500);
-    BM_WRITE_BIT(*led->port, led->index, 0); delay_ms(1000);
+    AJ_WRITE_BIT_POS(*led->port, led->index, 1); delay_ms(500);
+    AJ_WRITE_BIT_POS(*led->port, led->index, 0); delay_ms(1000);
 }
 
 //**********************************************
 void test_bit_macro1(void){
     uint8_t value = 0;
 
-    BM_SET_BIT(PORTD, 7); delay_ms(500);
-    BM_CLEAR_BIT(PORTD, 7); delay_ms(1000);
+    AJ_SET_BIT_POS(PORTD, 7); delay_ms(500);
+    AJ_CLEAR_BIT_POS(PORTD, 7); delay_ms(1000);
 
-    BM_TOGGLE_BIT(PORTD, 0); delay_ms(500);
-    BM_TOGGLE_BIT(PORTD, 0); delay_ms(1000);
+    AJ_TOGGLE_BIT_POS(PORTD, 0); delay_ms(500);
+    AJ_TOGGLE_BIT_POS(PORTD, 0); delay_ms(1000);
 
-    BM_SET_BITMASK(PORTD, 0b11000000); delay_ms(500);
-    BM_CLEAR_BITMASK(PORTD, 0b11000000); delay_ms(1000);
+    AJ_SET_BITS_MASK(PORTD, 0b11000000); delay_ms(500);
+    AJ_CLEAR_BITS_MASK(PORTD, 0b11000000); delay_ms(1000);
 
-    BM_SET_BITMASK(PORTD, 0xFFU); delay_ms(1000);
+    AJ_SET_BITS_MASK(PORTD, 0xFFU); delay_ms(1000);
 
-    BM_SET_BITMASK(PORTD, 0x30U); delay_ms(1000);
-    BM_TOGGLE_BITMASK(PORTD, 0x30U); delay_ms(1000);
-    BM_TOGGLE_BITMASK(PORTD, 0x30U); delay_ms(1000);
-    BM_CLEAR_BITMASK(PORTD, 0x00U); delay_ms(1000);
+    AJ_SET_BITS_MASK(PORTD, 0x30U); delay_ms(1000);
+    AJ_TOGGLE_BITS_MASK(PORTD, 0x30U); delay_ms(1000);
+    AJ_TOGGLE_BITS_MASK(PORTD, 0x30U); delay_ms(1000);
+    AJ_CLEAR_BITS_MASK(PORTD, 0x00U); delay_ms(1000);
 
-    value=0b00100000; BM_WRITE_BIT(PORTD, 1, BM_GET_BIT(value,5)); delay_ms(1000);
-    value = 0b00011110; BM_WRITE_3BIT(PORTD, 4, BM_GET_3BIT(value,1)); delay_ms(500);
-    BM_CLEAR_BITMASK(PORTD, 0xFFU); delay_ms(1000);
+    value=0b00100000; AJ_WRITE_BIT_POS(PORTD, 1, AJ_GET_BIT_POS(value,5)); delay_ms(1000);
+    value = 0b00011110; AJ_WRITE_3BITS_POS(PORTD, 4, AJ_GET_3BITS_POS(value,1)); delay_ms(500);
+    AJ_CLEAR_BITS_MASK(PORTD, 0xFFU); delay_ms(1000);
 }
 
 
