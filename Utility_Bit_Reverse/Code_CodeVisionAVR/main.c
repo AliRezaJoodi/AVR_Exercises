@@ -51,7 +51,7 @@ void Test_u16(void){
 void Test_u8(void){
     uint8_t value_u8 = 0x31U;
 
-    value_u8 = AJ_Bit_Reflect_u8(value_u8);
+    value_u8 = AJ_Bit_Reverse_u8(value_u8);
 
     while(1){
         PORTA = value_u8;
