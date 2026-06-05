@@ -13,9 +13,8 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "timebase.h"
-#include "bit_register8.h"
-#include "button.h"
+#include "aj_timebase.h"
+#include "aj_button.h"
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
@@ -25,7 +24,7 @@ void Timer2_Init(void);
 interrupt [TIM2_OVF] void timer2_ovf_isr(void){
     TCNT2=0x06; // Reinitialize Timer2 value
 
-    TimeBase_CountTicks();
+    AJ_TimeBase_CountTicks();
 }
 
 void main(void){
@@ -33,57 +32,57 @@ void main(void){
     uint8_t value = 100;
     uint8_t value_last = 0;
 
-    Button_t buttonIncr = {
+    aj_Button_t buttonIncr = {
         .hw = {
-            .ddr   = &BUTTON_DDR,
-            .port  = &BUTTON_PORT,
-            .pin   = &BUTTON_PIN,
-            //.index = BUTTON_BIT,
-            .mask  = BUTTON_MASK
+            .ddr   = &AJ_BUTTON_DDR,
+            .port  = &AJ_BUTTON_PORT,
+            .pin   = &AJ_BUTTON_PIN,
+            //.index = AJ_BUTTON_POS,
+            .mask  = AJ_BUTTON_MASK
         },
         .config = {
-            .pressed = BUTTON_ACTIVE_LOW,
-            .pull    = BUTTON_PULL_NONE
+            .pressed = AJ_BUTTON_ACTIVE_LOW,
+            .pull    = AJ_BUTTON_PULL_NONE
         },
         .tick_last = 0,
         .state   = 0
     };
 
-    Button_t buttonDecr = {
+    aj_Button_t buttonDecr = {
         .hw = {
-            .ddr   = &BUTTON2_DDR,
-            .port  = &BUTTON2_PORT,
-            .pin   = &BUTTON2_PIN,
-            //.index = BUTTON2_BIT,
-            .mask  = BUTTON2_MASK
+            .ddr   = &AJ_BUTTON2_DDR,
+            .port  = &AJ_BUTTON2_PORT,
+            .pin   = &AJ_BUTTON2_PIN,
+            //.index = AJ_BUTTON2_POS,
+            .mask  = AJ_BUTTON2_MASK
         },
         .config = {
-            .pressed = BUTTON_ACTIVE_LOW,
-            .pull    = BUTTON_PULL_UP
+            .pressed = AJ_BUTTON_ACTIVE_LOW,
+            .pull    = AJ_BUTTON_PULL_UP
         },
         .tick_last = 0,
         .state   = 0
     };
 
-    Button_t buttonClear = {
+    aj_Button_t buttonClear = {
         .hw = {
-            .ddr   = &BUTTON3_DDR,
-            .port  = &BUTTON3_PORT,
-            .pin   = &BUTTON3_PIN,
-            //.index = BUTTON3_BIT,
-            .mask  = BUTTON3_MASK
+            .ddr   = &AJ_BUTTON3_DDR,
+            .port  = &AJ_BUTTON3_PORT,
+            .pin   = &AJ_BUTTON3_PIN,
+            //.index = AJ_BUTTON3_POS,
+            .mask  = AJ_BUTTON3_MASK
         },
         .config = {
-            .pressed = BUTTON_ACTIVE_HIGH,
-            .pull    = BUTTON_PULL_NONE
+            .pressed = AJ_BUTTON_ACTIVE_HIGH,
+            .pull    = AJ_BUTTON_PULL_NONE
         },
         .tick_last = 0,
         .state   = 0
     };
 
-    Button_Init(&buttonIncr);
-    Button_Init(&buttonDecr);
-    Button_Init(&buttonClear);
+    AJ_Button_Init(&buttonIncr);
+    AJ_Button_Init(&buttonDecr);
+    AJ_Button_Init(&buttonClear);
 
     LCD_Config();
     LCD_DisplayMainPage(value);
@@ -95,17 +94,17 @@ void main(void){
     #asm("sei") // Globally enable interrupts
 
     while(1){
-        tick_now = TimeBase_GetTicks();
+        tick_now = AJ_TimeBase_GetTicks();
 
-        if( Button_GetAutoRepeat(&buttonIncr, tick_now) ){
+        if( AJ_Button_GetAutoRepeat(&buttonIncr, tick_now) ){
             value++;
         }
 
-        if( Button_GetTrigger(&buttonDecr, tick_now) ){
+        if( AJ_Button_GetTrigger(&buttonDecr, tick_now) ){
             value--;
         }
 
-        if( Button_GetTrigger(&buttonClear, tick_now) ){
+        if( AJ_Button_GetTrigger(&buttonClear, tick_now) ){
             value = 0;
         }
 
