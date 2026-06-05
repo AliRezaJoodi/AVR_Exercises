@@ -68,7 +68,7 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=5
+ActiveTab=2
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_button_port.h
 TimeStamp5=1556452477
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_button_type.h
@@ -593,7 +593,7 @@ Row=1
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1556452596
+TimeStamp=1556452652
 [BookmarksFoldedCode]
 Files=56
 F1=v1.0.c
@@ -961,7 +961,7 @@ TimeStamp=1556452521
 Row=98
 Column=27
 ScrollPosX=0
-ScrollPosY=88
+ScrollPosY=5
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1639,8 +1639,6 @@ F7=C:\cvavr\inc\io.h
 F8=C:\cvavr\inc\mega32a.h
 F9=C:\cvavr\inc\mega32_bits.h
 F10=C:\cvavr\inc\delay.h
-[FoldedCode17]
-Blocks=0
 [Bookmarks52]
 TimeStamp=1556452521
 Row=17
@@ -1657,8 +1655,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode52]
-Blocks=0
 [Bookmarks53]
 TimeStamp=1556452168
 Row=30
@@ -1675,8 +1671,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode53]
-Blocks=0
 [Bookmarks54]
 TimeStamp=1556452569
 Row=1
@@ -1693,8 +1687,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode54]
-Blocks=0
 [Bookmarks55]
 TimeStamp=1556452477
 Row=23
@@ -1711,8 +1703,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode55]
-Blocks=0
 [Bookmarks56]
 TimeStamp=1556452521
 Row=35
@@ -1729,6 +1719,16 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode17]
+Blocks=0
+[FoldedCode52]
+Blocks=0
+[FoldedCode53]
+Blocks=0
+[FoldedCode54]
+Blocks=0
+[FoldedCode55]
+Blocks=0
 [FoldedCode56]
 Blocks=0
 [FoldedCode18]
