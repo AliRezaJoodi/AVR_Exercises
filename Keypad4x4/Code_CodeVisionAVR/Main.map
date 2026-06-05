@@ -1,7 +1,7 @@
 RAM Allocation [bytes]
 Variable                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-table_ctz4 (keypad4x4.c)                                                          0x0260      16
+table_ctz4 (aj_keypad4x4.c)                                                       0x0260      16
 _seed (stdlib.lib)                                                                0x0270       4
 _base_y (lcd.lib)                                                                 0x0274       4
 
@@ -24,19 +24,19 @@ main                                                                            
 LCD_DisplayMainPage                                                               0x000A4     25
 LCD_Config                                                                        0x000BD      6
 LCD_DisplayloadingPage                                                            0x000C3     11
-Keypad4x4_GetKey                                                                  0x000CE    693
-itoa                                                                              0x00383     46
-_lcd_delay_G101                                                                   0x003B1      4
-_lcd_ready                                                                        0x003B5     17
-_lcd_write_nibble_G101                                                            0x003C6     10
-_lcd_write_data                                                                   0x003D0     15
-_lcd_read_nibble_G101                                                             0x003DF      9
-lcd_read_byte0_G101                                                               0x003E8      9
-lcd_gotoxy                                                                        0x003F1     16
-lcd_clear                                                                         0x00401     19
-lcd_putchar                                                                       0x00414     26
-lcd_puts                                                                          0x0042E     15
-lcd_putsf                                                                         0x0043D     19
-_long_delay_G101                                                                  0x00450      5
-_lcd_init_write_G101                                                              0x00455     12
-lcd_init                                                                          0x00461     51
+AJ_Keypad4x4_GetKey                                                               0x000CE    669
+itoa                                                                              0x0036B     46
+_lcd_delay_G101                                                                   0x00399      4
+_lcd_ready                                                                        0x0039D     17
+_lcd_write_nibble_G101                                                            0x003AE     10
+_lcd_write_data                                                                   0x003B8     15
+_lcd_read_nibble_G101                                                             0x003C7      9
+lcd_read_byte0_G101                                                               0x003D0      9
+lcd_gotoxy                                                                        0x003D9     16
+lcd_clear                                                                         0x003E9     19
+lcd_putchar                                                                       0x003FC     26
+lcd_puts                                                                          0x00416     15
+lcd_putsf                                                                         0x00425     19
+_long_delay_G101                                                                  0x00438      5
+_lcd_init_write_G101                                                              0x0043D     12
+lcd_init                                                                          0x00449     51

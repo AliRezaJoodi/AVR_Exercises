@@ -12,7 +12,7 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "keypad4x4.h"
+#include "aj_keypad4x4.h"
 
 void LCD_Config(void);
 void LCD_DisplayloadingPage(void);
@@ -27,7 +27,7 @@ void main(void){
     LCD_DisplayloadingPage(); delay_ms(250); lcd_clear();
 
     while(1){
-        number = Keypad4x4_GetKey();
+        number = AJ_Keypad4x4_GetKey();
 
         if(number_last != number){
             number_last = number;
