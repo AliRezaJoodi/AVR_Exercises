@@ -4,17 +4,17 @@
 #define AJ_BIT_REG_CONFIG
     #define AJ_BIT_REG_8BIT
 
-#define TIMEBASE_CONFIG
-    #define TIMEBASE_REG8_U8
+#define AJ_TIMEBASE_CONFIG
+    #define AJ_TIMEBASE_REG8_U8
 
-#define BUZZER_HARDWARE
-    #define BUZZER_ACTIVE       1U
-    #define BUZZER_COUNT1       75U
-    #define BUZZER_COUNT2       180U
+#define AJ_BUZZER_HARDWARE
+    #define AJ_BUZZER_ACTIVE       1U
+    #define AJ_BUZZER_COUNT1       75U
+    #define AJ_BUZZER_COUNT2       180U
 
-    #define BUZZER_DDR          DDRB
-    #define BUZZER_PORT         PORTB
-    #define BUZZER_BIT          1U
-    #define BUZZER_MASK         (1U << BUZZER_BIT)
+    #define AJ_BUZZER_DDR          DDRB
+    #define AJ_BUZZER_PORT         PORTB
+    #define AJ_BUZZER_POS          1U
+    #define AJ_BUZZER_MASK         (1U << AJ_BUZZER_POS)
 
 #endif  /* HARDWARE_INCLUDED */

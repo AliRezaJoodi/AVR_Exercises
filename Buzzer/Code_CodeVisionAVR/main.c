@@ -5,9 +5,9 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "timebase.h"
+#include "aj_timebase.h"
 #include "bit_register8.h"
-#include "buzzer.h"
+#include "aj_buzzer.h"
 
 void Timer2_Init(void);
 
@@ -15,12 +15,12 @@ void Timer2_Init(void);
 interrupt [TIM2_OVF] void timer2_ovf_isr(void){
     TCNT2=0x06; // Reinitialize Timer2 value
 
-    TimeBase_CountTicks();
+    AJ_TimeBase_CountTicks();
 }
 
 void main(void){
-    timebase_t tick_now = 0;
-    Buzzer_Init();
+    aj_timebase_t tick_now = 0;
+    AJ_Buzzer_Init();
 
     Timer2_Init();
     // Timer(s)/Counter(s) Interrupt(s) initialization
@@ -28,12 +28,12 @@ void main(void){
 
     #asm("sei") // Globally enable interrupts
 
-    tick_now = TimeBase_GetTicks();
-    Buzzer_Start(tick_now, BUZZER_COUNT2);
+    tick_now = AJ_TimeBase_GetTicks();
+    AJ_Buzzer_Start(tick_now, AJ_BUZZER_COUNT2);
 
     while(1){
-        tick_now = TimeBase_GetTicks();
-        Buzzer_Refresh(tick_now);
+        tick_now = AJ_TimeBase_GetTicks();
+        AJ_Buzzer_Refresh(tick_now);
     }
 }
 
