@@ -5,8 +5,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "bit_register8.h"
-#include "timebase.h"
+#include "aj_timebase.h"
 
 void Timer2_Init(void);
 
@@ -14,12 +13,12 @@ void Timer2_Init(void);
 interrupt [TIM2_OVF] void timer2_ovf_isr(void){
     TCNT2=0x06; // Reinitialize Timer2 value
 
-    TimeBase_CountTicks();
+    AJ_TimeBase_CountTicks();
 }
 
 void main(void){
-    timebase_t tick_last = 0;
-    timebase_t tick_now = 0;
+    aj_timebase_t tick_last = 0;
+    aj_timebase_t tick_now = 0;
 
     Timer2_Init();
     // Timer(s)/Counter(s) Interrupt(s) initialization
@@ -28,14 +27,14 @@ void main(void){
     #asm("sei") // Globally enable interrupts
 
     DDRD.3 = 1; PORTD.3 = 0;
-    tick_last = TimeBase_GetTicks();
+    tick_last = AJ_TimeBase_GetTicks();
 
     while(1){
-        tick_now = TimeBase_GetTicks();
+        tick_now = AJ_TimeBase_GetTicks();
 
-        if (TimeBase_HasElapsed(tick_now, tick_last, 250)){
+        if (AJ_TimeBase_HasElapsed(tick_now, tick_last, 250)){
             tick_last = tick_now;
-            ToggleBit_Reg8(&PORTD, 3);
+            PORTD.3 = !PORTD.3;
         }
     }
 }
