@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "mcp3201.h"
+#include "aj_mcp3201.h"
 
 float In1 = 0;
 float In2 = 0;
@@ -21,32 +21,32 @@ void main(void){
     float in1_u16 = 0;
     float in2_u16 = 0;
 
-    static const MCP3201_t mcp1 = {
+    static const aj_MCP3201_t mcp1 = {
         .cs = {
-            .ddr   = &MCP3201_CS_DDR,
-            .port  = &MCP3201_CS_PORT,
-            //.index = MCP3201_CS_BIT,
-            .mask = MCP3201_CS_MASK
+            .ddr   = &AJ_MCP3201_CS_DDR,
+            .port  = &AJ_MCP3201_CS_PORT,
+            //.index = AJ_MCP3201_CS_POS,
+            .mask = AJ_MCP3201_CS_MASK
         }
     };
 
-    static const MCP3201_t mcp2 = {
+    static const aj_MCP3201_t mcp2 = {
         .cs = {
-            .ddr   = &MCP3201_CS2_DDR,
-            .port  = &MCP3201_CS2_PORT,
-            //.index = MCP3201_CS2_BIT,
-            .mask = MCP3201_CS2_MASK
+            .ddr   = &AJ_MCP3201_CS2_DDR,
+            .port  = &AJ_MCP3201_CS2_PORT,
+            //.index = AJ_MCP3201_CS2_POS,
+            .mask = AJ_MCP3201_CS2_MASK
         }
     };
 
     SPI_Config();
     LCD_Config();
-    MCP3201_Init(&mcp1);
-    MCP3201_Init(&mcp2);
+    AJ_MCP3201_Init(&mcp1);
+    AJ_MCP3201_Init(&mcp2);
 
     while (1){
-        in1_u16 = MCP3201_GetCounts(&mcp1);
-        in2_u16 = MCP3201_GetCounts(&mcp2);
+        in1_u16 = AJ_MCP3201_GetCounts(&mcp1);
+        in2_u16 = AJ_MCP3201_GetCounts(&mcp2);
 
         In1 = (float)(in1_u16) * 5000.0f / 4096.0f;
         In2 = (float)(in2_u16) * 5000.0f / 4096.0f;
