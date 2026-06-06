@@ -10,7 +10,7 @@ float volt1=0;
 float volt2=0;
 
 #include "hardware.h"
-#include "mcp3204.h"
+#include "aj_mcp3204.h"
 
 void SPI_Config(void);
 void LCD_Config(void);
@@ -21,26 +21,26 @@ void main(void){
     uint16_t in1 = 0;
     uint16_t in2 = 0;
 
-    static const MCP3204_t mcp1 = {
+    static const aj_MCP3204_t mcp1 = {
         .cs = {
-            .ddr   = &MCP3204_CS_DDR,
-            .port  = &MCP3204_CS_PORT,
-            //.index = MCP3204_CS_BIT,
-            .mask = MCP3204_CS_MASK
+            .ddr   = &AJ_MCP3204_CS_DDR,
+            .port  = &AJ_MCP3204_CS_PORT,
+            //.index = AJ_MCP3204_CS_POS,
+            .mask = AJ_MCP3204_CS_MASK
         }
     };
 
     SPI_Config();
     LCD_Config();
-    MCP3204_Init(&mcp1);
+    AJ_MCP3204_Init(&mcp1);
 
     LCD_DisplayLoadingPage();
     delay_ms(500);
     lcd_clear();
 
     while (1){
-        in1 = MCP3204_GetCounts(&mcp1, MCP3204_CH0);
-        in2 = MCP3204_GetCounts(&mcp1, MCP3204_CH2CH3);
+        in1 = AJ_MCP3204_GetCounts(&mcp1, AJ_MCP3204_CH0);
+        in2 = AJ_MCP3204_GetCounts(&mcp1, AJ_MCP3204_CH2CH3);
 
         volt1 = in1 * 1.22;
         volt2 = in2 * 1.22;

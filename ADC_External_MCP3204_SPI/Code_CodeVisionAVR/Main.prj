@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=2
-OpenedFiles=7
+OpenedFiles=2
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,28 +26,28 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1554554578
+TimeStamp1=1556508781
 PageIndex1=1
-OF2=..\..\..\CrossPlatformLibraries\Drivers\mcp3204.c
+OF2=hardware.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1555793159
+TimeStamp2=1556508437
 PageIndex2=2
-ActiveTab=7
+ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\drivers\mcp3204.h
 TimeStamp3=1556171482
 OF4=hardware.h
-TimeStamp4=1555793189
+TimeStamp4=1556481007
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
-TimeStamp5=1556171367
+TimeStamp5=1556481057
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
 TimeStamp6=1555793171
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
 TimeStamp7=1556171371
+OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+TimeStamp8=1556293296
 F1=main.c
-F2=..\..\..\CrossPlatformLibraries\Drivers\mcp3204.c
-OF8=..\..\..\CrossPlatformLibraries\utils\bit_register.h
-TimeStamp8=1554457135
+F2=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3204.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=8000000
@@ -146,8 +146,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1556171484
-Build=415
+COFFileTimeStamp=1556508846
+Build=429
 GlobalVarAddr=629
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -257,7 +257,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=415
+Build=429
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -518,8 +518,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 415
-L18=18507 line(s) compiled
+L17=Build: 429
+L18=18739 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -545,7 +545,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3035): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3042): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -563,7 +563,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=33
+Files=35
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -597,6 +597,8 @@ F30=..\..\..\CrossPlatformLibraries\platforms\avr8\mcp3204_types.h
 F31=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
 F32=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
 F33=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
+F34=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F35=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -688,7 +690,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1556171491
+TimeStamp=1556508855
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -928,11 +930,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks18]
-TimeStamp=1554554578
-Row=0
-Column=0
+TimeStamp=1556508781
+Row=8
+Column=41
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=23
 BK0=-1
 BK1=-1
 BK2=-1
@@ -992,9 +994,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks22]
-TimeStamp=1555793189
-Row=5
-Column=4
+TimeStamp=1556508437
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1170,11 +1172,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks32]
-TimeStamp=1556171367
-Row=0
+TimeStamp=1556481057
+Row=49
 Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=40
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1186,42 +1188,6 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode29]
-Blocks=0
-[HeadersList]
-Files=2
-F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Drivers\mcp3204.c
-[Header1]
-Files=12
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\spi.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\stdbool.h
-F6=C:\cvavr\inc\delay.h
-F7=C:\cvavr\inc\stdint.h
-F8=C:\cvavr\inc\alcd.h
-F9=C:\cvavr\inc\stdlib.h
-F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\drivers\mcp3204.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
-[Header2]
-Files=12
-F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_port.h
-F2=C:\cvavr\inc\stdint.h
-F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\compiler_port.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\mega32a.h
-F6=C:\cvavr\inc\mega32_bits.h
-F7=C:\cvavr\inc\delay.h
-F8=..\..\..\CrossPlatformLibraries\utils\bit_register8.h
-F9=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_hw.h
-F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\mcp3204_type.h
-F12=..\..\..\CrossPlatformLibraries\Drivers\mcp3204.h
-[FoldedCode18]
-Blocks=0
-[FoldedCode25]
 Blocks=0
 [Bookmarks33]
 TimeStamp=1556171371
@@ -1239,13 +1205,87 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[Bookmarks34]
+TimeStamp=1556293296
+Row=58
+Column=43
+ScrollPosX=0
+ScrollPosY=47
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks35]
+TimeStamp=1556219246
+Row=18
+Column=0
+ScrollPosX=0
+ScrollPosY=2
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode35]
+Blocks=0
+[FoldedCode25]
+Blocks=0
 [FoldedCode33]
 Blocks=0
 [FoldedCode31]
 Blocks=0
 [FoldedCode32]
 Blocks=0
-[FoldedCode22]
-Blocks=0
 [FoldedCode28]
+Blocks=0
+[FoldedCode34]
+Blocks=0
+[HeadersList]
+Files=2
+F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_SPI\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_mcp3204.c
+[Header1]
+Files=12
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\spi.h
+F4=C:\cvavr\inc\io.h
+F5=C:\cvavr\inc\stdbool.h
+F6=C:\cvavr\inc\delay.h
+F7=C:\cvavr\inc\stdint.h
+F8=C:\cvavr\inc\alcd.h
+F9=C:\cvavr\inc\stdlib.h
+F10=hardware.h
+F11=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3204.h
+F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3204_type.h
+[Header2]
+Files=14
+F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3204_type.h
+F2=C:\cvavr\inc\stdint.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3204_port.h
+F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler_port.h
+F5=C:\cvavr\inc\io.h
+F6=C:\cvavr\inc\mega32a.h
+F7=C:\cvavr\inc\mega32_bits.h
+F8=C:\cvavr\inc\delay.h
+F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
+F12=hardware.h
+F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3204_hw.h
+F14=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3204.h
+[FoldedCode18]
+Blocks=0
+[FoldedCode22]
 Blocks=0
