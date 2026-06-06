@@ -10,7 +10,7 @@ float volt1=0;
 float volt2=0;
 
 #include "hardware.h"
-#include "mcp3202.h"
+#include "aj_mcp3202.h"
 
 void SPI_Config(void);
 void LCD_Config(void);
@@ -21,26 +21,26 @@ void main(void){
     uint16_t in1 = 0;
     uint16_t in2 = 0;
 
-    static const MCP3202_t mcp1 = {
+    static const aj_MCP3202_t mcp1 = {
         .cs = {
-            .ddr   = &MCP3202_CS_DDR,
-            .port  = &MCP3202_CS_PORT,
-            //.index = MCP3202_CS_BIT,
-            .mask = MCP3202_CS_MASK
+            .ddr   = &AJ_MCP3202_CS_DDR,
+            .port  = &AJ_MCP3202_CS_PORT,
+            //.index = AJ_MCP3202_CS_POS,
+            .mask = AJ_MCP3202_CS_MASK
         }
     };
 
     SPI_Config();
     LCD_Config();
-    MCP3202_Init(&mcp1);
+    AJ_MCP3202_Init(&mcp1);
 
     LCD_DisplayLoadingPage();
     delay_ms(500);
     lcd_clear();
 
     while (1){
-        in1 = MCP3202_GetCounts(&mcp1, MCP3202_CH0);
-        in2 = MCP3202_GetCounts(&mcp1, MCP3202_CH0CH1);
+        in1 = AJ_MCP3202_GetCounts(&mcp1, AJ_MCP3202_CH0);
+        in2 = AJ_MCP3202_GetCounts(&mcp1, AJ_MCP3202_CH0CH1);
 
         volt1 = in1 * 1.22;
         volt2 = in2 * 1.22;
