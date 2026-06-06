@@ -8,24 +8,24 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "qei.h"
+#include "aj_qei.h"
 
 uint8_t lcd_task = 0;
 
-QEI_t qei = {
+aj_QEI_t qei = {
     .chA = {
-        .ddr   = &QEI_A_DDR,
-        .port  = &QEI_A_PORT,
-        .pin   = &QEI_A_PIN,
-        .index = QEI_A_BIT,
-        .mask  = QEI_A_MASK
+        .ddr    = &AJ_QEI_A_DDR,
+        .port   = &AJ_QEI_A_PORT,
+        .pin    = &AJ_QEI_A_PIN,
+        .pos    = AJ_QEI_A_POS,
+        .mask   = AJ_QEI_A_MASK
     },
     .chB = {
-        .ddr   = &QEI_B_DDR,
-        .port  = &QEI_B_PORT,
-        .pin   = &QEI_B_PIN,
-        .index = QEI_B_BIT,
-        .mask  = QEI_B_MASK
+        .ddr    = &AJ_QEI_B_DDR,
+        .port   = &AJ_QEI_B_PORT,
+        .pin    = &AJ_QEI_B_PIN,
+        .pos    = AJ_QEI_B_POS,
+        .mask   = AJ_QEI_B_MASK
     },
     .count = 0U,
     .last  = 0U
@@ -36,13 +36,13 @@ void LCD_Display(void);
 
 // External Interrupt 0 service routine
 interrupt [EXT_INT0] void ext_int0_isr(void){
-    QEI_Update(&qei);
+    AJ_QEI_Update(&qei);
     lcd_task = 1;
 }
 
 // External Interrupt 1 service routine
 interrupt [EXT_INT1] void ext_int1_isr(void){
-    QEI_Update(&qei);
+    AJ_QEI_Update(&qei);
 //    lcd_task = 1;
 }
 
@@ -53,15 +53,15 @@ void main(void){
     // INT1: On
     // INT1 Mode: Any change
     // INT2: Off
-    GICR|=(1<<INT1) | (1<<INT0) | (0<<INT2);
-    MCUCR=(0<<ISC11) | (1<<ISC10) | (0<<ISC01) | (1<<ISC00);
-    MCUCSR=(0<<ISC2);
-    GIFR=(1<<INTF1) | (1<<INTF0) | (0<<INTF2);
+    GICR |= (1<<INT1) | (1<<INT0) | (0<<INT2);
+    MCUCR = (0<<ISC11) | (1<<ISC10) | (0<<ISC01) | (1<<ISC00);
+    MCUCSR = (0<<ISC2);
+    GIFR = (1<<INTF1) | (1<<INTF0) | (0<<INTF2);
 
     LCD_Config();
     LCD_Display();
 
-    QEI_Init(&qei);
+    AJ_QEI_Init(&qei);
     #asm("sei")     // Globally enable interrupts
 
     while (1){
