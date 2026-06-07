@@ -6,7 +6,7 @@
 #include <io.h>
 
 #include "hardware.h"
-#include "seg7_driver.h"
+#include "aj_seg7_driver.h"
 
 void main(void){
     uint8_t segments[8] = {
@@ -22,10 +22,10 @@ void main(void){
 
 //    DDRD = 0xFF; PORTD = ~segments[7];
 //    DDRB = 0xFF; PORTB.0 = 1;
-    Seg7_Init();
-    Seg7_SetBuffer(&segments[0]);
+    AJ_Seg7_Init();
+    AJ_Seg7_SetBuffer(&segments[0]);
 
     while(1){
-        Seg7_Refresh(); delay_ms(5);
+        AJ_Seg7_Refresh(); delay_ms(5);
     };
 }
