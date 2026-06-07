@@ -7,10 +7,9 @@
 #include <delay.h>
 
 #include "hardware.h"
-//#include "bit.h"
-#include "bit_value8.h"
-#include "bit_value16.h"
-#include "tm1638.h"
+#include "aj_bit_u8.h"
+#include "aj_bit_u16.h"
+#include "aj_tm1638.h"
 
 void UART_Config(void);
 
@@ -23,62 +22,62 @@ void main(void){
     uint8_t key_last = 0;
     uint8_t key[4] = {0x00, 0x00, 0x00, 0x00,};
 
-    static const TM1638_t tm1 = {
+    static const aj_tm1638_t tm1 = {
         .stb = {
-            .ddr   = &TM1638_STB_DDR,
-            .port  = &TM1638_STB_PORT,
-            //.index =  TM1638_STB_BIT,
-            .mask =  TM1638_STB_MASK
+            .ddr   = &AJ_TM1638_STB_DDR,
+            .port  = &AJ_TM1638_STB_PORT,
+            //.index =  AJ_TM1638_STB_POS,
+            .mask =  AJ_TM1638_STB_MASK
         }
     };
 
     UART_Config();
-    TM1638_Init(&tm1);
+    AJ_TM1638_Init(&tm1);
 
 //*****************************************************
     for(i=0; i<=7; ++i){
-        led_u8 = WriteBit_u8(led_u8, i, 1);
-        TM1638_Set8Leds_S9S10x4(&tm1, led_u8);
+        led_u8 = AJ_BitU8_WriteBit_Position(led_u8, i, 1);
+        AJ_TM1638_Set8Leds_S9S10x4(&tm1, led_u8);
         delay_ms(500);
     }
 
     for(i=0; i<=7; ++i){
-        led_u8 = WriteBit_u8(led_u8, i, 0);
-        TM1638_Set8Leds_S9S10x4(&tm1, led_u8);
+        led_u8 = AJ_BitU8_WriteBit_Position(led_u8, i, 0);
+        AJ_TM1638_Set8Leds_S9S10x4(&tm1, led_u8);
         delay_ms(500);
     }
 
-    TM1638_ClearDisplay(&tm1); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
     for(i=0; i<16; ++i){
-        led_u16 = WriteBit_u16(led_u16, i, 1);
-        TM1638_SetLeds(&tm1, led_u16);
+        led_u16 = AJ_BitU16_WriteBit_Position(led_u16, i, 1);
+        AJ_TM1638_SetLeds(&tm1, led_u16);
         delay_ms(500);
     }
 
     for(i=0; i<16; ++i){
-        led_u16 = WriteBit_u16(led_u16, i, 0);
-        TM1638_SetLeds(&tm1, led_u16);
+        led_u16 = AJ_BitU16_WriteBit_Position(led_u16, i, 0);
+        AJ_TM1638_SetLeds(&tm1, led_u16);
         delay_ms(500);
     }
 
-    TM1638_ClearDisplay(&tm1); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
     for(i=0; i<8; ++i){
-        led_u8 = WriteBit_u8(led_u8, i, 1);
-        TM1638_Set8Leds_S9x8(&tm1, led_u8);
+        led_u8 = AJ_BitU8_WriteBit_Position(led_u8, i, 1);
+        AJ_TM1638_Set8Leds_S9x8(&tm1, led_u8);
         delay_ms(500);
     }
 
     for(i=0; i<8; ++i){
-        led_u8 = WriteBit_u8(led_u8, i, 0);
-        TM1638_Set8Leds_S9x8(&tm1, led_u8);
+        led_u8 = AJ_BitU8_WriteBit_Position(led_u8, i, 0);
+        AJ_TM1638_Set8Leds_S9x8(&tm1, led_u8);
         delay_ms(500);
     }
 
-    TM1638_ClearDisplay(&tm1); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
     segments[0]=0x3FU;      // 0
@@ -98,22 +97,22 @@ void main(void){
     segments[14]=0x07U;     // 7
     segments[15]=0b00000000;
 
-    TM1638_WriteDisplayRegister_AutoIncr(&tm1, segments, 16, 0); delay_ms(1000);
+    AJ_TM1638_WriteDisplayRegister_AutoIncr(&tm1, segments, 16, 0); delay_ms(1000);
 
 //*****************************************************
-    TM1638_SetDisplay(&tm1, 1, 0); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 1); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 2); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 3); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 4); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 5); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 6); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
-    TM1638_ClearDisplay(&tm1); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 0); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 1); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 2); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 3); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 4); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 5); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 6); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
-    TM1638_WriteDisplayRegister_Fixed(&tm1, 0b00000001, 0x0F); delay_ms(1000);
-    TM1638_WriteDisplayRegister_Fixed(&tm1, 0b00000001, 0x01); delay_ms(1000);
+    AJ_TM1638_WriteDisplayRegister_Fixed(&tm1, 0b00000001, 0x0F); delay_ms(1000);
+    AJ_TM1638_WriteDisplayRegister_Fixed(&tm1, 0b00000001, 0x01); delay_ms(1000);
 
 //*****************************************************
     segments[0]=0x3FU;      // 0
@@ -125,27 +124,27 @@ void main(void){
     segments[6]=0x7DU;      // 6
     segments[7]=0x07U;      // 7
 
-    TM1637_WriteDigits(&tm1, segments, 8, 0); delay_ms(1000);
-    TM1638_ClearDisplay(&tm1);  delay_ms(1000);
+    AJ_TM1637_WriteDigits(&tm1, segments, 8, 0); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1);  delay_ms(1000);
 
 //*****************************************************
-    TM1638_SendCommand(&tm1, 0b10000111); delay_ms(1000);
-    TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
-    TM1638_ClearDisplay(&tm1); delay_ms(1000);
+    AJ_TM1638_SendCommand(&tm1, 0b10000111); delay_ms(1000);
+    AJ_TM1638_SetDisplay(&tm1, 1, 7); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1); delay_ms(1000);
 
 //*****************************************************
-    TM1637_Write4Digits_G1G4(&tm1, segments); delay_ms(1000);
-    TM1638_ClearDisplay(&tm1);  delay_ms(1000);
+    AJ_TM1637_Write4Digits_G1G4(&tm1, segments); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1);  delay_ms(1000);
 
-    TM1637_Write4Digits_G5G8(&tm1, segments); delay_ms(1000);
-    TM1638_ClearDisplay(&tm1);  delay_ms(1000);
+    AJ_TM1637_Write4Digits_G5G8(&tm1, segments); delay_ms(1000);
+    AJ_TM1638_ClearDisplay(&tm1);  delay_ms(1000);
 
 //*****************************************************
-    TM1638_GetKeys(&tm1, &key[0]);
+    AJ_TM1638_GetKeys(&tm1, &key[0]);
     putsf("Test");
 
     while(1){
-        key[0] = TM1638_GetKeys_K3(&tm1);
+        key[0] = AJ_TM1638_GetKeys_K3(&tm1);
 
         if(key_last != key[0]){
             key_last = key[0];
