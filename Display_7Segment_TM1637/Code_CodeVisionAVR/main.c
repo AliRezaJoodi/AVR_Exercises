@@ -7,7 +7,7 @@
 //#include <stdlib.h>
 
 #include "hardware.h"
-#include "tm1637.h"
+#include "aj_tm1637.h"
 
 void main(void){
     //char txt[];
@@ -27,24 +27,24 @@ void main(void){
 //        0b00000000,
 //    };
 
-    static const TM1637_t tm1 = {
+    static const aj_tm1637_t tm1 = {
         .clk = {
-            .ddr   = &TM1637_CLK_DDR,
-            .port  = &TM1637_CLK_PORT,
-            .pin   = &TM1637_CLK_PIN,
-            //.index =  TM1637_CLK_BIT,
-            .mask =   TM1637_CLK_MASK
+            .ddr   = &AJ_TM1637_CLK_DDR,
+            .port  = &AJ_TM1637_CLK_PORT,
+            .pin   = &AJ_TM1637_CLK_PIN,
+            //.index =  AJ_TM1637_CLK_POS,
+            .mask =   AJ_TM1637_CLK_MASK
         },
         .dio = {
-            .ddr   = &TM1637_DIO_DDR,
-            .port  = &TM1637_DIO_PORT,
-            .pin   = &TM1637_DIO_PIN,
-            //.index =  TM1637_DIO_BIT,
-            .mask =   TM1637_DIO_MASK
+            .ddr   = &AJ_TM1637_DIO_DDR,
+            .port  = &AJ_TM1637_DIO_PORT,
+            .pin   = &AJ_TM1637_DIO_PIN,
+            //.index =  AJ_TM1637_DIO_POS,
+            .mask =   AJ_TM1637_DIO_MASK
         }
     };
 
-    static const TM1637_t tm2 = {
+    static const aj_tm1637_t tm2 = {
         .clk = {
             .ddr   = &TM1637_CLK2_DDR,
             .port  = &TM1637_CLK2_PORT,
@@ -61,32 +61,32 @@ void main(void){
         }
     };
 
-    TM1637_Init(&tm1);
-    TM1637_Init(&tm2);
+    AJ_TM1637_Init(&tm1);
+    AJ_TM1637_Init(&tm2);
 
-    TM1637_WriteDisplayRegister_AutoIncr(&tm1, seg1, 6, 0);
-    TM1637_WriteDisplayRegister_AutoIncr(&tm2, seg2, 6, 0);
+    AJ_TM1637_WriteDisplayRegister_AutoIncr(&tm1, seg1, 6, 0);
+    AJ_TM1637_WriteDisplayRegister_AutoIncr(&tm2, seg2, 6, 0);
     delay_ms(1000);
 
-    TM1637_WriteDisplayRegister_Fixed(&tm1, seg1[5], 2); delay_ms(1000);
-    TM1637_ClearDisplay(&tm1); delay_ms(1000);
-    TM1637_WriteDisplayRegister_Fixed(&tm1, seg1[2], 5); delay_ms(1000);
-    TM1637_SendCommand(&tm1, 0b10000111); delay_ms(1000); //Turn off the display
-    TM1637_SetDisplay(&tm1, 1, 7); delay_ms(1000);
+    AJ_TM1637_WriteDisplayRegister_Fixed(&tm1, seg1[5], 2); delay_ms(1000);
+    AJ_TM1637_ClearDisplay(&tm1); delay_ms(1000);
+    AJ_TM1637_WriteDisplayRegister_Fixed(&tm1, seg1[2], 5); delay_ms(1000);
+    AJ_TM1637_SendCommand(&tm1, 0b10000111); delay_ms(1000); //Turn off the display
+    AJ_TM1637_SetDisplay(&tm1, 1, 7); delay_ms(1000);
 
-    TM1637_ClearDisplay(&tm2);
-    TM1637_Write2Digits_G1G2(&tm2, seg1); delay_ms(1000); TM1637_ClearDisplay(&tm2); delay_ms(500);
-    TM1637_Write3Digits_G1G3(&tm2, seg1); delay_ms(1000); TM1637_ClearDisplay(&tm2); delay_ms(500);
-    TM1637_Write3Digits_G4G6(&tm2, seg1); delay_ms(1000); TM1637_ClearDisplay(&tm2); delay_ms(500);
-    TM1637_Write4Digits_G1G4(&tm2, seg1); delay_ms(1000); TM1637_ClearDisplay(&tm2); delay_ms(500);
-    TM1637_Write6Digits_G1G6(&tm2, seg1); delay_ms(1000); TM1637_ClearDisplay(&tm2); delay_ms(500);
+    AJ_TM1637_ClearDisplay(&tm2);
+    AJ_TM1637_Write2Digits_G1G2(&tm2, seg1); delay_ms(1000); AJ_TM1637_ClearDisplay(&tm2); delay_ms(500);
+    AJ_TM1637_Write3Digits_G1G3(&tm2, seg1); delay_ms(1000); AJ_TM1637_ClearDisplay(&tm2); delay_ms(500);
+    AJ_TM1637_Write3Digits_G4G6(&tm2, seg1); delay_ms(1000); AJ_TM1637_ClearDisplay(&tm2); delay_ms(500);
+    AJ_TM1637_Write4Digits_G1G4(&tm2, seg1); delay_ms(1000); AJ_TM1637_ClearDisplay(&tm2); delay_ms(500);
+    AJ_TM1637_Write6Digits_G1G6(&tm2, seg1); delay_ms(1000); AJ_TM1637_ClearDisplay(&tm2); delay_ms(500);
 
     while(1){
 //        sprintf(txt, "0x%02X\r", key[0]); puts(txt);
-        TM1637_WriteDisplayRegister_AutoIncr(&tm1, seg1, 6, 0); delay_ms(500);
-        TM1637_WriteDisplayRegister_AutoIncr(&tm2, seg2, 6, 0); delay_ms(500);
-        TM1637_ClearDisplay(&tm1);
-        TM1637_ClearDisplay(&tm2);
+        AJ_TM1637_WriteDisplayRegister_AutoIncr(&tm1, seg1, 6, 0); delay_ms(500);
+        AJ_TM1637_WriteDisplayRegister_AutoIncr(&tm2, seg2, 6, 0); delay_ms(500);
+        AJ_TM1637_ClearDisplay(&tm1);
+        AJ_TM1637_ClearDisplay(&tm2);
         delay_ms(500);
     };
 }
