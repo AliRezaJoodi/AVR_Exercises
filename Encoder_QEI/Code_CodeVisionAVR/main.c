@@ -12,7 +12,7 @@
 
 uint8_t lcd_task = 0;
 
-aj_QEI_t qei = {
+aj_qei_t qei = {
     .chA = {
         .ddr    = &AJ_QEI_A_DDR,
         .port   = &AJ_QEI_A_PORT,
