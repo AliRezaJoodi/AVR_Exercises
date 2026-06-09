@@ -21,7 +21,7 @@ void main(void){
     uint16_t in1 = 0;
     uint16_t in2 = 0;
 
-    static const aj_MCP3208_t mcp1 = {
+    static const aj_mcp3208_t mcp1 = {
         .cs = {
             .ddr   = &AJ_MCP3208_CS_DDR,
             .port  = &AJ_MCP3208_CS_PORT,

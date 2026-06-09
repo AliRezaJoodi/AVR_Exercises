@@ -11,13 +11,13 @@ void main(void){
     uint8_t value = 0;
 
     typedef struct{
-        const AJ_GPIO_PortReg_t *gpio;
-        const AJ_GPIO_PinPos_t index;
+        const aj_gpio_reg_t *gpio;
+        const aj_gpio_pin_pos_t pos;
     } LED_t;
 
     static const LED_t LED2 = {
         .gpio   = &GPIOB,
-        .index  = AJ_GPIO_PIN_1_POS,
+        .pos  = AJ_GPIO_PIN_1_POS,
     };
 
 //    AJ_GPIO_ConfigPinsAsInput_Mask(&GPIOC, AJ_GPIO_PIN_0_MASK | AJ_GPIO_PIN_1_MASK | AJ_GPIO_PIN_7_MASK);
@@ -28,8 +28,8 @@ void main(void){
 //    while(1){}
 
     //Init Pins for LED2
-    AJ_GPIO_ConfigDirection(LED2.gpio, LED2.index, AJ_GPIO_DIR_OUTPUT);
-    AJ_GPIO_WritePin_Position(LED2.gpio, LED2.index, 1);
+    AJ_GPIO_ConfigDirection(LED2.gpio, LED2.pos, AJ_GPIO_DIR_OUTPUT);
+    AJ_GPIO_WritePin_Position(LED2.gpio, LED2.pos, 1);
 
     //Init Pins for LED
     AJ_GPIO_ConfigDirection(&GPIOB, AJ_GPIO_PIN_0_POS, AJ_GPIO_DIR_OUTPUT);

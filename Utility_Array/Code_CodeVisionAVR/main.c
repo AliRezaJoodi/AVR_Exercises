@@ -5,14 +5,14 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "array.h"
+#include "aj_array_u16.h"
 
 void UART_Init(void);
 void UART_DisplayValues(unsigned int);
 
 void main(void){
     uint16_t buf_u16 = 0;
-    int16_t buf_i16 = 0;
+    //int16_t buf_i16 = 0;
     uint32_t buf_u32 = 0;
     float buf_f32=0;
     uint8_t i = 0;
@@ -35,26 +35,26 @@ void main(void){
     UART_Init();
     putsf("Test\r");
 
-    buf_u16 = Array_Min_u16(array1, ARRAY_SIZE(array1));
+    buf_u16 = AJ_ArrayU16_Min(array1, AJ_ARRAY_U16_SIZE(array1));
     itoa(buf_u16, txt); putsf("\rMin = "); puts(txt);
 
-    buf_u16 = Array_Max_u16(array1, ARRAY_SIZE(array1));
+    buf_u16 = AJ_ArrayU16_Max(array1, AJ_ARRAY_U16_SIZE(array1));
     itoa(buf_u16, txt); putsf("\rMax = "); puts(txt);
 
-    buf_u16 = Array_Average_u16(array1, ARRAY_SIZE(array1));
+    buf_u16 = AJ_ArrayU16_Average(array1, AJ_ARRAY_U16_SIZE(array1));
     itoa(buf_u16, txt); putsf("\rAverage = "); puts(txt);
 
-    buf_i16 = Array_Find_u16(array1, ARRAY_SIZE(array1), 8891);
-    itoa(buf_i16, txt); putsf("\rFind(Index) = "); puts(txt);
+    buf_u16 = AJ_ArrayU16_Find(array1, AJ_ARRAY_U16_SIZE(array1), 8891);
+    itoa(buf_u16, txt); putsf("\rFind(Index) = "); puts(txt);
 
-    Array_Reverse_u16(array1, ARRAY_SIZE(array1));
+    AJ_ArrayU16_Reverse(array1, AJ_ARRAY_U16_SIZE(array1));
     putsf("\r"); putsf("\r"); putsf("Array(Reverse):\r");
     for (i=0; i<10; ++i){
         buf_u16 = array1[i];
         itoa(buf_u16, txt); puts(txt); putsf("\r");
     }
 
-    Array_Clear_u16(array1, ARRAY_SIZE(array1));
+    AJ_ArrayU16_Clear(array1, AJ_ARRAY_U16_SIZE(array1));
     putsf("\r"); putsf("Array(Clear):\r");
     for (i=0; i<10; ++i){
         buf_u16 = array1[i];

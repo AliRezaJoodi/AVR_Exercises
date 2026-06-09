@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "byte.h"
+#include "aj_byte.h"
 
 void UART_Config(void);
 void UART_Display(uint16_t data);
@@ -17,14 +17,14 @@ void main(void){
     UART_Config();
 
     number = 589;
-    msb = GetMsb(number);
-    lsb = GetLsb(number);
-    number = MakeU16(msb, lsb);
+    msb = AJ_GetMsb(number);
+    lsb = AJ_GetLsb(number);
+    number = AJ_MakeU16(msb, lsb);
     putsf("MSB= "); UART_Display(msb);
     putsf("LSB= "); UART_Display(lsb);
     putsf("Number (u16)= "); UART_Display(number);
 
-    number2 = SwapU16(number);  //589 -> 19714
+    number2 = AJ_SwapU16(number);  //589 -> 19714
     putsf("Number After Swap(u16)= "); UART_Display(number2);
 
     while(1){

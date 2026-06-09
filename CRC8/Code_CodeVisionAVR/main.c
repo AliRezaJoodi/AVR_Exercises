@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "crc8.h"
+#include "aj_crc8.h"
 
 void UART_Config(void);
 void UART_Display(uint8_t data);
@@ -22,22 +22,22 @@ void main(void){
     putsf("\r");
 
     crc8 = 0;
-    crc8 = CRC8_ATM(crc8, data[0]);
-    crc8 = CRC8_ATM(crc8, data[1]);
-    crc8 = CRC8_ATM(crc8, data[2]);
-    putsf("CRC8_ATM= "); UART_Display(crc8);
+    crc8 = AJ_CRC8_ATM(crc8, data[0]);
+    crc8 = AJ_CRC8_ATM(crc8, data[1]);
+    crc8 = AJ_CRC8_ATM(crc8, data[2]);
+    putsf("AJ_CRC8_ATM= "); UART_Display(crc8);
 
     crc8 = 0;
-    crc8 = CRC8_Maxim(crc8, data[0]);
-    crc8 = CRC8_Maxim(crc8, data[1]);
-    crc8 = CRC8_Maxim(crc8, data[2]);
-    putsf("CRC8_Maxim= "); UART_Display(crc8);
+    crc8 = AJ_CRC8_Maxim(crc8, data[0]);
+    crc8 = AJ_CRC8_Maxim(crc8, data[1]);
+    crc8 = AJ_CRC8_Maxim(crc8, data[2]);
+    putsf("AJ_CRC8_Maxim= "); UART_Display(crc8);
 
     crc8 = 0;
-    crc8 = CRC8_J1850(crc8, data[0]);
-    crc8 = CRC8_J1850(crc8, data[1]);
-    crc8 = CRC8_J1850(crc8, data[2]);
-    putsf("CRC8_J1850= "); UART_Display(crc8);
+    crc8 = AJ_CRC8_J1850(crc8, data[0]);
+    crc8 = AJ_CRC8_J1850(crc8, data[1]);
+    crc8 = AJ_CRC8_J1850(crc8, data[2]);
+    putsf("AJ_CRC8_J1850= "); UART_Display(crc8);
 
     while(1){
     };

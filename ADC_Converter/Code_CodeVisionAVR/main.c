@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "adc_converter.h"
+#include "aj_adc_converter.h"
 
 void UART_Config(void);
 void UART_Display1(uint16_t adc_count, uint16_t mv);
@@ -18,84 +18,84 @@ void main(void){
 
     UART_Config();
 
-    putsf("\rADC_ConvertRawToMilliVolt_12Bit5V\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_12Bit5V\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_12Bit5V(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_12Bit5V(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 4096;
-    mv = ADC_ConvertRawToMilliVolt_12Bit5V(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_12Bit5V(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_12Bit4V096\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_12Bit4V096\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_12Bit4V096(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_12Bit4V096(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 4096;
-    mv = ADC_ConvertRawToMilliVolt_12Bit4V096(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_12Bit4V096(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMicroVolt_12Bit3V3\r");
+    putsf("\rAJ_ADC_ConvertRawToMicroVolt_12Bit3V3\r");
     adc_count = 1;
-    uv = ADC_ConvertRawToMicroVolt_12Bit3V3(adc_count);
+    uv = AJ_ADC_ConvertRawToMicroVolt_12Bit3V3(adc_count);
     UART_Display2(adc_count, uv);
     adc_count = 4096;
-    uv = ADC_ConvertRawToMicroVolt_12Bit3V3(adc_count);
+    uv = AJ_ADC_ConvertRawToMicroVolt_12Bit3V3(adc_count);
     UART_Display2(adc_count, uv);
 
-    putsf("\rADC_ConvertRawToMicroVolt_12Bit2V048\r");
+    putsf("\rAJ_ADC_ConvertRawToMicroVolt_12Bit2V048\r");
     adc_count = 1;
-    uv = ADC_ConvertRawToMicroVolt_12Bit2V048(adc_count);
+    uv = AJ_ADC_ConvertRawToMicroVolt_12Bit2V048(adc_count);
     UART_Display2(adc_count, uv);
     adc_count = 4096;
-    uv = ADC_ConvertRawToMicroVolt_12Bit2V048(adc_count);
+    uv = AJ_ADC_ConvertRawToMicroVolt_12Bit2V048(adc_count);
     UART_Display2(adc_count, uv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_10Bit5V\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_10Bit5V\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_10Bit5V(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit5V(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 1024;
-    mv = ADC_ConvertRawToMilliVolt_10Bit5V(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit5V(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_10Bit4V096\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_10Bit4V096\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_10Bit4V096(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit4V096(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 1024;
-    mv = ADC_ConvertRawToMilliVolt_10Bit4V096(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit4V096(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_10Bit2V56\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_10Bit2V56\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_10Bit2V56(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit2V56(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 1024;
-    mv = ADC_ConvertRawToMilliVolt_10Bit2V56(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit2V56(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_10Bit2V048\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_10Bit2V048\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_10Bit2V048(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit2V048(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 1024;
-    mv = ADC_ConvertRawToMilliVolt_10Bit2V048(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_10Bit2V048(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_8Bit5V\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_8Bit5V\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_8Bit5V(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_8Bit5V(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 255;
-    mv = ADC_ConvertRawToMilliVolt_8Bit5V(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_8Bit5V(adc_count);
     UART_Display1(adc_count, mv);
 
-    putsf("\rADC_ConvertRawToMilliVolt_8Bit2V56\r");
+    putsf("\rAJ_ADC_ConvertRawToMilliVolt_8Bit2V56\r");
     adc_count = 1;
-    mv = ADC_ConvertRawToMilliVolt_8Bit2V56(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_8Bit2V56(adc_count);
     UART_Display1(adc_count, mv);
     adc_count = 255;
-    mv = ADC_ConvertRawToMilliVolt_8Bit2V56(adc_count);
+    mv = AJ_ADC_ConvertRawToMilliVolt_8Bit2V56(adc_count);
     UART_Display1(adc_count, mv);
 
     while(1){

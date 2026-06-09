@@ -9,7 +9,7 @@ D=06/20/2023
 Files=2
 OpenedFiles=3
 OF1=main.c
-ActiveTab=3
+ActiveTab=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=.
@@ -20,13 +20,13 @@ OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Link
 AllowDisplayFunctionCallTree=1
 CleanUp=2
-TimeStamp1=1553410918
-OF2=..\..\..\CrossPlatformLibraries\Utils\crc8.c
-TimeStamp2=1553410917
-OF3=..\..\..\CrossPlatformLibraries\utils\crc8.h
-TimeStamp3=1553215085
+TimeStamp1=1556724123
+OF2=..\..\..\CrossPlatformLibraries\Utils\aj_crc8.c
+TimeStamp2=1556724123
+OF3=..\..\..\CrossPlatformLibraries\utils\aj_crc8.h
+TimeStamp3=1556724123
 F1=main.c
-F2=..\..\..\CrossPlatformLibraries\Utils\crc8.c
+F2=..\..\..\CrossPlatformLibraries\Utils\aj_crc8.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=11059200
@@ -131,8 +131,8 @@ UseEEPROMLocation0=1
 DisplayCodeSizeError=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1553410932
-Build=360
+COFFileTimeStamp=1556724125
+Build=364
 GlobalVarAddr=612
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -242,7 +242,7 @@ DisplayCodeSizeError=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=360
+Build=364
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -518,7 +518,7 @@ L13=Enhanced function parameters passing: Mode 2
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 360
+L17=Build: 364
 L18=12643 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -538,7 +538,7 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 518 words (1036 bytes), 3.2% of FLASH
+L37=Program size: 523 words (1046 bytes), 3.2% of FLASH
 L38=6 words (12 bytes), 1.1% reduced by Code Compression
 L39=70 words (140 bytes), 3.4% reduced by Code Compression
 Lines=38
@@ -546,12 +546,12 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\CRC8\Code_CodeVisionAVR\Debug\List\Main.asm(1829): No EEPROM data, deleting F:\GitHub\AVR_Exercises\CRC8\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\CRC8\Code_CodeVisionAVR\Debug\List\Main.asm(1830): No EEPROM data, deleting D:\GitHub\AVR_Exercises\CRC8\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x00040c    938     98   1036   32768   3.2%
+L9=[.cseg] 0x000000 0x000416    938    108   1046   32768   3.2%
 L10=[.dseg] 0x000060 0x000264      0      4      4    2048   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -561,9 +561,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1553410939
+TimeStamp=1556724163
 [BookmarksFoldedCode]
-Files=20
+Files=22
 F1=C:\Users\Home\Desktop\RTC_DS1307\T1\v1.0.c
 F2=C:\cvavr\inc\ds1307_twi.h
 F3=v1.0.c
@@ -584,6 +584,8 @@ F17=C:\cvavr\inc\stdlib.h
 F18=..\..\..\CrossPlatformLibraries\Modules\adc_converter.h
 F19=..\..\..\CrossPlatformLibraries\Utils\crc8.c
 F20=..\..\..\CrossPlatformLibraries\Utils\crc8.h
+F21=..\..\..\CrossPlatformLibraries\Utils\aj_crc8.c
+F22=..\..\..\CrossPlatformLibraries\utils\aj_crc8.h
 [Bookmarks1]
 TimeStamp=1456775532
 Row=0
@@ -770,11 +772,11 @@ BK9=-1
 [FoldedCode10]
 Blocks=0
 [Bookmarks11]
-TimeStamp=1553410918
-Row=7
-Column=16
+TimeStamp=1556724123
+Row=36
+Column=65
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=26
 BK0=-1
 BK1=-1
 BK2=-1
@@ -914,9 +916,9 @@ BK9=-1
 [FoldedCode18]
 Blocks=0
 [Bookmarks19]
-TimeStamp=1553410917
-Row=2
-Column=16
+TimeStamp=1554551612
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -930,11 +932,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks20]
-TimeStamp=1553215085
-Row=10
-Column=48
+TimeStamp=1554457135
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=46
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -945,10 +947,14 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode19]
+Blocks=0
+[FoldedCode20]
+Blocks=0
 [HeadersList]
 Files=2
-F1=F:\GitHub\AVR_Exercises\CRC8\Code_CodeVisionAVR\main.c
-F2=..\..\..\CrossPlatformLibraries\Utils\crc8.c
+F1=D:\GitHub\AVR_Exercises\CRC8\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Utils\aj_crc8.c
 [Header1]
 Files=8
 F1=C:\cvavr\inc\stdint.h
@@ -958,14 +964,46 @@ F4=C:\cvavr\inc\mega32a.h
 F5=C:\cvavr\inc\mega32_bits.h
 F6=C:\cvavr\inc\stdarg.h
 F7=C:\cvavr\inc\stdlib.h
-F8=..\..\..\CrossPlatformLibraries\utils\crc8.h
+F8=..\..\..\CrossPlatformLibraries\utils\aj_crc8.h
 [Header2]
 Files=2
 F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\utils\crc8.h
+F2=..\..\..\CrossPlatformLibraries\Utils\aj_crc8.h
 [FoldedCode11]
 Blocks=0
-[FoldedCode19]
+[Bookmarks21]
+TimeStamp=1556724123
+Row=5
+Column=24
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode21]
 Blocks=0
-[FoldedCode20]
+[Bookmarks22]
+TimeStamp=1556724123
+Row=72
+Column=21
+ScrollPosX=0
+ScrollPosY=60
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode22]
 Blocks=0

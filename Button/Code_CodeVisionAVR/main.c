@@ -32,7 +32,7 @@ void main(void){
     uint8_t value = 100;
     uint8_t value_last = 0;
 
-    aj_Button_t buttonIncr = {
+    aj_button_t buttonIncr = {
         .hw = {
             .ddr   = &AJ_BUTTON_DDR,
             .port  = &AJ_BUTTON_PORT,
@@ -48,7 +48,7 @@ void main(void){
         .state   = 0
     };
 
-    aj_Button_t buttonDecr = {
+    aj_button_t buttonDecr = {
         .hw = {
             .ddr   = &AJ_BUTTON2_DDR,
             .port  = &AJ_BUTTON2_PORT,
@@ -64,7 +64,7 @@ void main(void){
         .state   = 0
     };
 
-    aj_Button_t buttonClear = {
+    aj_button_t buttonClear = {
         .hw = {
             .ddr   = &AJ_BUTTON3_DDR,
             .port  = &AJ_BUTTON3_PORT,

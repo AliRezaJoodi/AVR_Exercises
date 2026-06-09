@@ -9,7 +9,7 @@
 void SPI_Config(void);
 
 void main(void){
-    static const aj_MCP4822_t dac1 = {
+    static const aj_mcp4822_t dac1 = {
         .cs = {
             .ddr   = &AJ_MCP4822_CS_DDR,
             .port  = &AJ_MCP4822_CS_PORT,
