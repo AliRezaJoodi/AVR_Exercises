@@ -21,7 +21,7 @@ PageIndex0=0
 OF1=main.c
 Active1=1
 EditorPanel1=0
-TimeStamp1=1554555169
+TimeStamp1=1556917008
 PageIndex1=1
 Top0=200
 Left0=438
@@ -35,25 +35,25 @@ Width1=1171
 Row1=125
 Column1=17
 State1=2
-OF2=..\..\..\CrossPlatformLibraries\Modules\changed.c
+OF2=..\..\..\CrossPlatformLibraries\modules\aj_change_u16.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1554551714
+TimeStamp2=1556917020
 PageIndex2=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=3
-OF3=..\..\..\CrossPlatformLibraries\modules\changed.h
-TimeStamp3=1554457135
+ActiveTab=2
+OF3=..\..\..\CrossPlatformLibraries\Modules\aj_change_u16.c
+TimeStamp3=1556917020
 OF4=..\..\..\CrossPlatformLibraries\Modules\changed.h
 TimeStamp4=1548227232
 OF5=..\..\_UserDrivers\Inc\sensor_lm35.h
 TimeStamp5=1545667621
 F1=main.c
-F2=..\..\..\CrossPlatformLibraries\Modules\changed.c
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_change_u16.c
 [Compiler]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -146,7 +146,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=411
+Build=433
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
@@ -212,7 +212,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1554621871
+COFFileTimeStamp=1556917024
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -387,12 +387,12 @@ UserProgWorkDir=
 WaitUserProgFinish=1
 [Bookmarks0]
 Row=0
-Column=0
+Column=8
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554621873
+TimeStamp=1556917047
 [BookmarksFoldedCode]
-Files=37
+Files=43
 F1=T3.c
 F2=c:\cvavreval\inc\lcd.h
 F3=v1.0.c
@@ -430,6 +430,12 @@ F34=main.c
 F35=hardware.h
 F36=..\..\..\CrossPlatformLibraries\Modules\changed.c
 F37=..\..\..\CrossPlatformLibraries\Modules\changed.h
+F38=..\..\..\CrossPlatformLibraries\modules\aj_changed.h
+F39=..\..\..\CrossPlatformLibraries\Modules\aj_changed.c
+F40=..\..\..\CrossPlatformLibraries\modules\aj_change.h
+F41=..\..\..\CrossPlatformLibraries\Modules\aj_change.c
+F42=..\..\..\CrossPlatformLibraries\Modules\aj_change_u16.c
+F43=..\..\..\CrossPlatformLibraries\modules\aj_change_u16.h
 [Bookmarks1]
 TimeStamp=1431806702
 Row=47
@@ -465,7 +471,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=411
+Build=433
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -587,8 +593,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 411
-L18=12665 line(s) compiled
+L17=Build: 433
+L18=12681 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -596,7 +602,7 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 30 byte(s)
+L26=Estimated Data Stack usage: 32 byte(s)
 L27=
 L28=RAM Global variables area: 0x260 to 0x263
 L29=RAM Global variables size: 4 byte(s)
@@ -607,19 +613,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 692 words (1384 bytes), 4.2% of FLASH
+L37=Program size: 687 words (1374 bytes), 4.2% of FLASH
 L38=23 words (46 bytes), 3.2% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\List\Main.asm(2061): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\List\Main.asm(2051): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000568   1306     78   1384   32768   4.2%
+L9=[.cseg] 0x000000 0x00055e   1296     78   1374   32768   4.2%
 L10=[.dseg] 0x000060 0x000264      0      4      4    2048   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -1212,11 +1218,11 @@ Blocks=0
 [FoldedCode33]
 Blocks=0
 [Bookmarks34]
-TimeStamp=1554555169
-Row=0
-Column=0
+TimeStamp=1556917008
+Row=39
+Column=19
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=30
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1248,9 +1254,9 @@ Blocks=0
 [FoldedCode27]
 Blocks=0
 [Bookmarks36]
-TimeStamp=1554551714
-Row=0
-Column=0
+TimeStamp=1556812987
+Row=1
+Column=10
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1265,10 +1271,10 @@ BK8=-1
 BK9=-1
 [Bookmarks37]
 TimeStamp=1554457135
-Row=0
-Column=0
+Row=8
+Column=11
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1281,10 +1287,86 @@ BK8=-1
 BK9=-1
 [FoldedCode35]
 Blocks=0
+[FoldedCode37]
+Blocks=0
+[FoldedCode36]
+Blocks=0
+[Bookmarks38]
+TimeStamp=1556816245
+Row=12
+Column=26
+ScrollPosX=0
+ScrollPosY=6
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks39]
+TimeStamp=1556816110
+Row=4
+Column=21
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode39]
+Blocks=0
+[FoldedCode38]
+Blocks=0
+[Bookmarks40]
+TimeStamp=1556916550
+Row=60
+Column=3
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks41]
+TimeStamp=1556916842
+Row=1
+Column=19
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode40]
+Blocks=0
+[FoldedCode41]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Modules\changed.c
+F2=D:\GitHub\CrossPlatformLibraries\Modules\aj_change_u16.c
 [Header1]
 Files=10
 F1=C:\cvavr\inc\stdint.h
@@ -1296,14 +1378,46 @@ F6=C:\cvavr\inc\stdarg.h
 F7=C:\cvavr\inc\stdlib.h
 F8=C:\cvavr\inc\delay.h
 F9=hardware.h
-F10=..\..\..\CrossPlatformLibraries\modules\changed.h
+F10=..\..\..\CrossPlatformLibraries\modules\aj_change_u16.h
 [Header2]
 Files=2
 F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\Modules\changed.h
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_change_u16.h
 [FoldedCode34]
 Blocks=0
-[FoldedCode36]
+[Bookmarks42]
+TimeStamp=1556917020
+Row=4
+Column=42
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode42]
 Blocks=0
-[FoldedCode37]
+[Bookmarks43]
+TimeStamp=1556917020
+Row=65
+Column=26
+ScrollPosX=0
+ScrollPosY=11
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode43]
 Blocks=0

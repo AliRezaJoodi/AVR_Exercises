@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "lm35_converter.h"
+#include "aj_lm35_converter.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
@@ -39,7 +39,7 @@ void main(void){
 
     while(1){
         input_mv = read_adc(ADC_CH) * 4.8875855;
-        temp = LM35_ConvertMilliVoltToTemp(input_mv);
+        temp = AJ_LM35_ConvertMilliVoltToTemp(input_mv);
         LCD_DisplayMainPage(input_mv, temp);
         delay_ms(250);
     };

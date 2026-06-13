@@ -6,8 +6,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-//#include "bit.h"
-#include "average.h"
+#include "aj_average.h"
 
 // Alphanumeric LCD Module functions
 #asm
@@ -39,12 +38,12 @@ void main(void){
     float volt1 = 0;
     uint16_t volt1_u16=0;
     uint16_t volt1_last_u16=0;
-    AverageBlock_t volt1AvgBlock = {0};
+    aj_average_block_t volt1AvgBlock = {0};
 
     float volt2 = 0;
     uint16_t volt2_u16=0;
     uint16_t volt2_last_u16=0;
-    AverageMoving_t volt2AvgMoving = {0};
+    aj_average_moving_t volt2AvgMoving = {0};
 
     LCD_Config();
     ADC_Config();
@@ -53,7 +52,7 @@ void main(void){
         delay_ms(10);
 
         volt1_u16 = read_adc(ADC_CH1);
-        volt1_u16 = Average_BlockUpdate(volt1_u16, &volt1AvgBlock);
+        volt1_u16 = AJ_Average_BlockUpdate(volt1_u16, &volt1AvgBlock);
         if( volt1_u16 != volt1_last_u16 ){
             volt1_last_u16 = volt1_u16;
             volt1 = volt1_u16 * 4.8875855;
@@ -61,7 +60,7 @@ void main(void){
         }
 
         volt2_u16 = read_adc(ADC_CH2);
-        volt2_u16 = Average_MovingUpdate(volt2_u16, &volt2AvgMoving);
+        volt2_u16 = AJ_Average_MovingUpdate(volt2_u16, &volt2AvgMoving);
         if( volt2_u16 != volt2_last_u16 ){
             volt2_last_u16 = volt2_u16;
             volt2 = volt2_u16 * 4.8875855;

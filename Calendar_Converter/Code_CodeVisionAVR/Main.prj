@@ -9,7 +9,7 @@ D=06/20/2023
 Files=2
 OpenedFiles=3
 OF1=main.c
-ActiveTab=2
+ActiveTab=3
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=.
@@ -20,13 +20,13 @@ OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Link
 AllowDisplayFunctionCallTree=1
 CleanUp=2
-TimeStamp1=1554555151
-OF2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.c
-TimeStamp2=1554551719
-OF3=..\..\..\CrossPlatformLibraries\modules\calendar_converter.h
-TimeStamp3=1554457135
+TimeStamp1=1556811778
+OF2=..\..\..\CrossPlatformLibraries\Modules\aj_calendar_converter.c
+TimeStamp2=1556811778
+OF3=..\..\..\CrossPlatformLibraries\modules\aj_calendar_converter.h
+TimeStamp3=1556811778
 F1=main.c
-F2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.c
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_calendar_converter.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=11059200
@@ -131,8 +131,8 @@ UseEEPROMLocation0=1
 DisplayCodeSizeError=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1554621863
-Build=283
+COFFileTimeStamp=1556811779
+Build=287
 GlobalVarAddr=608
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -242,7 +242,7 @@ DisplayCodeSizeError=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=283
+Build=287
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -518,7 +518,7 @@ L13=Enhanced function parameters passing: Mode 2
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 283
+L17=Build: 287
 L18=10234 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -561,9 +561,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554621865
+TimeStamp=1556811783
 [BookmarksFoldedCode]
-Files=14
+Files=16
 F1=C:\Users\Home\Desktop\RTC_DS1307\T1\v1.0.c
 F2=C:\cvavr\inc\ds1307_twi.h
 F3=v1.0.c
@@ -578,6 +578,8 @@ F11=main.c
 F12=..\..\..\CrossPlatformLibraries\Utils\converter_calendar.c
 F13=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.h
 F14=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.c
+F15=..\..\..\CrossPlatformLibraries\Modules\aj_calendar_converter.c
+F16=..\..\..\CrossPlatformLibraries\modules\aj_calendar_converter.h
 [Bookmarks1]
 TimeStamp=1456775532
 Row=0
@@ -764,9 +766,9 @@ BK9=-1
 [FoldedCode10]
 Blocks=0
 [Bookmarks11]
-TimeStamp=1554555151
-Row=0
-Column=0
+TimeStamp=1556811778
+Row=14
+Column=13
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -804,7 +806,7 @@ TimeStamp=1554457135
 Row=0
 Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=19
 BK0=-1
 BK1=-1
 BK2=-1
@@ -831,10 +833,14 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode13]
+Blocks=0
+[FoldedCode14]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\Calendar_Converter\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Modules\calendar_converter.c
+F2=D:\GitHub\CrossPlatformLibraries\Modules\aj_calendar_converter.c
 [Header1]
 Files=7
 F1=C:\cvavr\inc\stdint.h
@@ -843,14 +849,46 @@ F3=C:\cvavr\inc\io.h
 F4=C:\cvavr\inc\mega32a.h
 F5=C:\cvavr\inc\mega32_bits.h
 F6=C:\cvavr\inc\stdarg.h
-F7=..\..\..\CrossPlatformLibraries\modules\calendar_converter.h
+F7=..\..\..\CrossPlatformLibraries\modules\aj_calendar_converter.h
 [Header2]
 Files=2
 F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\Modules\calendar_converter.h
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_calendar_converter.h
 [FoldedCode11]
 Blocks=0
-[FoldedCode14]
+[Bookmarks15]
+TimeStamp=1556811778
+Row=63
+Column=67
+ScrollPosX=0
+ScrollPosY=56
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode15]
 Blocks=0
-[FoldedCode13]
+[Bookmarks16]
+TimeStamp=1556811778
+Row=58
+Column=67
+ScrollPosX=0
+ScrollPosY=47
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode16]
 Blocks=0

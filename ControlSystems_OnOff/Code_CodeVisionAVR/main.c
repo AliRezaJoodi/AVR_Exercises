@@ -5,8 +5,8 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "bit.h"
-#include "controller_onoff.h"
+#include "aj_bit_reg.h"
+#include "aj_ctrl_onoff.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
@@ -27,10 +27,10 @@ return ADCW;
 void ADC_Init(void);
 void LCD_Config(void);
 void IO_Config(void);
-void LCD_Display(const CtrlOnOff_In_t *params);
+void LCD_Display(const aj_ctrl_onoff_t *params);
 
 void main(void){
-    CtrlOnOff_In_t oven = {
+    aj_ctrl_onoff_t oven = {
         .sp = 250,
         .hysteresis = 10,
         .pv = 0
@@ -52,14 +52,14 @@ void main(void){
         buf = read_adc(TEMP_CH);
         oven.pv = (buf * 500) >> 10 ;  // mV = (Dn *5000) / 1024 , temp = mV / 10;
 
-        control = Ctrl_OnOff_Update(&oven);
+        control = AJ_Ctrl_OnOff_Update(&oven);
 
         switch(control){
-            case CTRL_ONOFF_LOW:
-                WRITE_BIT(RLY_PORT, RLY_BIT, RLY_ACTIVATE);
+            case AJ_CTRL_ONOFF_LOW:
+                AJ_BitReg_WriteBit_Position(&RLY_PORT, RLY_POS, RLY_ACTIVATE);
                 break;
-            case CTRL_ONOFF_HIGH:
-                WRITE_BIT(RLY_PORT, RLY_BIT, !RLY_ACTIVATE);
+            case AJ_CTRL_ONOFF_HIGH:
+                AJ_BitReg_WriteBit_Position(&RLY_PORT, RLY_POS, !RLY_ACTIVATE);
                 break;
         }
 
@@ -76,7 +76,7 @@ void main(void){
 }
 
 //******************************************
-void LCD_Display(const CtrlOnOff_In_t *params){
+void LCD_Display(const aj_ctrl_onoff_t *params){
     char txt[6];
     uint16_t buf = 0;
     uint16_t half = params->hysteresis >> 1;
@@ -101,8 +101,8 @@ void LCD_Display(const CtrlOnOff_In_t *params){
 //******************************************
 void IO_Config(void){
     //RLY_DDR = 0; RLY_PORT = !RLY_ACTIVATE;
-    SET_BIT(RLY_DDR, RLY_BIT);
-    WRITE_BIT(RLY_PORT,RLY_BIT, !RLY_ACTIVATE);
+    AJ_BitReg_SetBit_Position(&RLY_DDR, RLY_POS);
+    AJ_BitReg_WriteBit_Position(&RLY_PORT, RLY_POS, !RLY_ACTIVATE);
 }
 
 //********************************************************

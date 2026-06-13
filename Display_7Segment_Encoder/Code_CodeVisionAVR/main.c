@@ -5,8 +5,8 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "seg7_font.h"
-#include "seg7_encoder.h"
+#include "aj_seg7_font.h"
+#include "aj_seg7_encoder.h"
 
 void IO_Init(void);
 
@@ -19,18 +19,18 @@ void main(void){
 
     IO_Init();
 
-//    Seg7_EncodeNumber_2Digits(&segments[2], 43);
-//    Seg7_EncodeNumber_2Digits(&segments[0], 21);
-//    Seg7_SetDecimalPoint_2Digits(&segments[0], 1);
-//    Seg7_Reverse2Bytes(&segments[0]);
+//    AJ_Seg7_EncodeNumber_2Digits(&segments[2], 43);
+//    AJ_Seg7_EncodeNumber_2Digits(&segments[0], 21);
+//    AJ_Seg7_SetDecimalPoint_2Digits(&segments[0], 1);
+//    AJ_Seg7_Reverse2Bytes(&segments[0]);
 
-//    Seg7_EncodeNumber_3Digits(&segments[0], 321);
-//    Seg7_SetDecimalPoint_3Digits(&segments[0], 1);
-//    Seg7_Reverse3Bytes(&segments[0]);
+//    AJ_Seg7_EncodeNumber_3Digits(&segments[0], 321);
+//    AJ_Seg7_SetDecimalPoint_3Digits(&segments[0], 1);
+//    AJ_Seg7_Reverse3Bytes(&segments[0]);
 
-    Seg7_EncodeNumber_4Digits(&segments[0], 4321);
-    Seg7_SetDecimalPoint_4Digits(&segments[0], 3);
-//    Seg7_Reverse4Bytes(&segments[0]);
+    AJ_Seg7_EncodeNumber_4Digits(&segments[0], 4321);
+    AJ_Seg7_SetDecimalPoint_4Digits(&segments[0], 3);
+//    AJ_Seg7_Reverse4Bytes(&segments[0]);
 
     while(1){
         PORTB=0x00; PORTD = ~segments[0]; PORTB.0=1;  delay_ms(5);

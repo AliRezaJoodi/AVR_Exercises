@@ -7,7 +7,7 @@ A=
 C=
 D=11/9/2016
 Files=2
-OpenedFiles=3
+OpenedFiles=4
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,22 +26,22 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1553410301
+TimeStamp1=1556913160
 PageIndex1=1
-OF2=..\..\..\CrossPlatformLibraries\Modules\controller_onoff.c
+OF2=hardware.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1553410295
+TimeStamp2=1556912378
 PageIndex2=2
-OF3=..\..\..\CrossPlatformLibraries\modules\controller_onoff.h
+OF3=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_onoff.c
 Active3=0
 EditorPanel3=0
-TimeStamp3=1553215084
+TimeStamp3=1556913160
 PageIndex3=3
-OF4=hardware.h
+OF4=..\..\..\CrossPlatformLibraries\modules\aj_ctrl_onoff.h
 Active4=0
 EditorPanel4=0
-TimeStamp4=1551011140
+TimeStamp4=1556913160
 PageIndex4=4
 OF5=C:\cvavr\inc\stdlib.h
 Active5=0
@@ -49,9 +49,9 @@ EditorPanel5=0
 TimeStamp5=1537169668
 PageIndex5=5
 TimeStamp0=1245025309
-ActiveTab=3
+ActiveTab=1
 F1=main.c
-F2=..\..\..\CrossPlatformLibraries\Modules\controller_onoff.c
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_onoff.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=1000000
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1553410304
-Build=2798
+COFFileTimeStamp=1556913162
+Build=2806
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=2798
+Build=2806
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -522,8 +522,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 2798
-L18=14619 line(s) compiled
+L17=Build: 2806
+L18=14972 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -542,20 +542,20 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 779 words (1558 bytes), 4.8% of FLASH
-L38=34 words (68 bytes), 4.2% reduced by Code Compression
+L37=Program size: 876 words (1752 bytes), 5.3% of FLASH
+L38=39 words (78 bytes), 4.3% reduced by Code Compression
 Lines=38
 L39=14 words (28 bytes), 3.2% reduced by Code Compression
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Debug\List\Main.asm(2132): No EEPROM data, deleting F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Debug\List\Main.asm(2297): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000616   1488     70   1558   32768   4.8%
+L9=[.cseg] 0x000000 0x0006d8   1682     70   1752   32768   5.3%
 L10=[.dseg] 0x000060 0x000268      0      8      8    2048   0.4%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -572,9 +572,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1553410312
+TimeStamp=1556913196
 [BookmarksFoldedCode]
-Files=120
+Files=124
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
 F2=T3.c
 F3=P3_change LCD pin.c
@@ -695,6 +695,10 @@ F117=hardware.h
 F118=..\..\..\CrossPlatformLibraries\Modules\controller_onoff.h
 F119=C:\cvavr\inc\stdint.h
 F120=..\..\..\CrossPlatformLibraries\Utils\utility_bit.h
+F121=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
+F122=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F123=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_onoff.c
+F124=..\..\..\CrossPlatformLibraries\modules\aj_ctrl_onoff.h
 [Bookmarks1]
 TimeStamp=1231638592
 Row=358
@@ -2766,11 +2770,11 @@ Blocks=0
 [FoldedCode113]
 Blocks=0
 [Bookmarks115]
-TimeStamp=1553410301
-Row=7
-Column=16
+TimeStamp=1556913160
+Row=57
+Column=27
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=4
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2782,9 +2786,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks116]
-TimeStamp=1553410295
-Row=3
-Column=18
+TimeStamp=1556912844
+Row=6
+Column=51
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -2798,9 +2802,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks117]
-TimeStamp=1551011140
-Row=3
-Column=47
+TimeStamp=1556912378
+Row=4
+Column=25
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -2814,11 +2818,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks118]
-TimeStamp=1553215084
-Row=23
-Column=0
+TimeStamp=1554457135
+Row=13
+Column=30
 ScrollPosX=0
-ScrollPosY=15
+ScrollPosY=4
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2865,14 +2869,54 @@ BK9=-1
 Blocks=0
 [FoldedCode11]
 Blocks=0
-[FoldedCode117]
+[FoldedCode119]
+Blocks=0
+[Bookmarks121]
+TimeStamp=1556219246
+Row=14
+Column=71
+ScrollPosX=0
+ScrollPosY=6
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode121]
+Blocks=0
+[Bookmarks122]
+TimeStamp=1556293296
+Row=44
+Column=50
+ScrollPosX=0
+ScrollPosY=38
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode122]
+Blocks=0
+[FoldedCode118]
+Blocks=0
+[FoldedCode116]
 Blocks=0
 [HeadersList]
 Files=2
-F1=F:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\main.c
-F2=..\..\..\CrossPlatformLibraries\Modules\controller_onoff.c
+F1=D:\GitHub\AVR_Exercises\ControlSystems_OnOff\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Modules\aj_ctrl_onoff.c
 [Header1]
-Files=9
+Files=11
 F1=C:\cvavr\inc\stdint.h
 F2=C:\cvavr\inc\stdlib.h
 F3=C:\cvavr\inc\mega32a.h
@@ -2880,17 +2924,51 @@ F4=C:\cvavr\inc\mega32_bits.h
 F5=C:\cvavr\inc\delay.h
 F6=C:\cvavr\inc\alcd.h
 F7=hardware.h
-F8=..\..\..\CrossPlatformLibraries\utils\bit.h
-F9=..\..\..\CrossPlatformLibraries\modules\controller_onoff.h
+F8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F9=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F10=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
+F11=..\..\..\CrossPlatformLibraries\modules\aj_ctrl_onoff.h
 [Header2]
 Files=2
 F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\modules\controller_onoff.h
-[FoldedCode119]
-Blocks=0
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_onoff.h
 [FoldedCode115]
 Blocks=0
-[FoldedCode116]
+[Bookmarks123]
+TimeStamp=1556913160
+Row=2
+Column=32
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode123]
 Blocks=0
-[FoldedCode118]
+[Bookmarks124]
+TimeStamp=1556913160
+Row=35
+Column=28
+ScrollPosX=0
+ScrollPosY=24
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode124]
+Blocks=0
+[FoldedCode117]
 Blocks=0

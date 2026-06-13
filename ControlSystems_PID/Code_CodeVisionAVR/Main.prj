@@ -7,7 +7,7 @@ A=
 C=
 D=11/9/2016
 Files=2
-OpenedFiles=3
+OpenedFiles=4
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,22 +26,22 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1554555203
+TimeStamp1=1556916337
 PageIndex1=1
-OF2=..\..\..\CrossPlatformLibraries\Modules\controller_pid.c
+OF2=hardware.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1554551702
+TimeStamp2=1556916234
 PageIndex2=4
-OF3=..\..\..\CrossPlatformLibraries\modules\controller_pid.h
+OF3=..\..\..\CrossPlatformLibraries\modules\aj_ctrl_pid.h
 Active3=0
 EditorPanel3=0
-TimeStamp3=1554457135
+TimeStamp3=1556916316
 PageIndex3=5
-OF4=hardware.h
+OF4=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_pid.c
 Active4=0
 EditorPanel4=0
-TimeStamp4=1551654147
+TimeStamp4=1556916316
 PageIndex4=3
 OF5=Attachment\Config_ADC.h
 Active5=0
@@ -49,9 +49,9 @@ EditorPanel5=0
 TimeStamp5=1434282084
 PageIndex5=2
 TimeStamp0=1245025309
-ActiveTab=2
+ActiveTab=3
 F1=main.c
-F2=..\..\..\CrossPlatformLibraries\Modules\controller_pid.c
+F2=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_pid.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=8000000
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1554621879
-Build=3000
+COFFileTimeStamp=1556916362
+Build=3007
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=3000
+Build=3007
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -522,8 +522,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 3000
-L18=14750 line(s) compiled
+L17=Build: 3007
+L18=14748 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -572,9 +572,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1554621881
+TimeStamp=1556916367
 [BookmarksFoldedCode]
-Files=124
+Files=126
 F1=E:\Projects\Induction Furnace 10KW\Controler Bord\Compiler_Codevision AVR v3.12 2014\Tools_LCD\T3.c
 F2=T3.c
 F3=P3_change LCD pin.c
@@ -699,6 +699,8 @@ F121=..\..\..\CrossPlatformLibraries\Modules\controller_pid.h
 F122=hardware.h
 F123=oven.h
 F124=C:\cvavr\inc\stdint.h
+F125=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_pid.c
+F126=..\..\..\CrossPlatformLibraries\modules\aj_ctrl_pid.h
 [Bookmarks1]
 TimeStamp=1231638592
 Row=358
@@ -2838,11 +2840,11 @@ Blocks=0
 [FoldedCode117]
 Blocks=0
 [Bookmarks119]
-TimeStamp=1554555203
-Row=0
-Column=0
+TimeStamp=1556916337
+Row=96
+Column=44
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=79
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2854,9 +2856,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks120]
-TimeStamp=1554551702
-Row=0
-Column=0
+TimeStamp=1556915937
+Row=5
+Column=21
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -2871,10 +2873,10 @@ BK8=-1
 BK9=-1
 [Bookmarks121]
 TimeStamp=1554457135
-Row=0
-Column=0
+Row=103
+Column=21
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=96
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2886,9 +2888,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks122]
-TimeStamp=1551654147
-Row=9
-Column=0
+TimeStamp=1556916234
+Row=6
+Column=12
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -2943,12 +2945,14 @@ BK9=-1
 Blocks=0
 [FoldedCode11]
 Blocks=0
-[FoldedCode122]
+[FoldedCode121]
+Blocks=0
+[FoldedCode120]
 Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\ControlSystems_PID\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Modules\controller_pid.c
+F2=D:\GitHub\CrossPlatformLibraries\Modules\aj_ctrl_pid.c
 [Header1]
 Files=8
 F1=C:\cvavr\inc\stdint.h
@@ -2958,15 +2962,49 @@ F4=C:\cvavr\inc\stdlib.h
 F5=C:\cvavr\inc\delay.h
 F6=C:\cvavr\inc\alcd.h
 F7=hardware.h
-F8=..\..\..\CrossPlatformLibraries\modules\controller_pid.h
+F8=..\..\..\CrossPlatformLibraries\modules\aj_ctrl_pid.h
 [Header2]
 Files=3
 F1=C:\cvavr\inc\stdint.h
 F2=hardware.h
-F3=..\..\..\CrossPlatformLibraries\Modules\controller_pid.h
+F3=..\..\..\CrossPlatformLibraries\Modules\aj_ctrl_pid.h
 [FoldedCode119]
 Blocks=0
-[FoldedCode120]
+[Bookmarks125]
+TimeStamp=1556916316
+Row=62
+Column=36
+ScrollPosX=0
+ScrollPosY=48
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode125]
 Blocks=0
-[FoldedCode121]
+[Bookmarks126]
+TimeStamp=1556916316
+Row=141
+Column=36
+ScrollPosX=0
+ScrollPosY=8
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode126]
+Blocks=0
+[FoldedCode122]
 Blocks=0

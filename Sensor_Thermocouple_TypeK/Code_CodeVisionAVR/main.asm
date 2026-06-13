@@ -1423,19 +1423,19 @@ _0x6:
 	LDI  R31,HIGH(50)
 	STD  Y+16,R30
 	STD  Y+16+1,R31
-; 0000 0042 oven.cj_uv = TC_ConvertTempToMicroVolt(oven.cj_temp);
+; 0000 0042 oven.cj_uv = AJ_TC_K_ConvertTempToMicroVolt(oven.cj_temp);
 	LDD  R26,Y+16
 	LDD  R27,Y+16+1
-	RCALL _TC_ConvertTempToMicroVolt
+	RCALL _AJ_TC_K_ConvertTempToMicroVolt
 	CALL SUBOPT_0x0
 ; 0000 0043 oven.hj_uv = oven.tc_uv + oven.cj_uv;
 	CALL SUBOPT_0x1
 	__GETD2S 4
 	CALL __ADDD12
 	__PUTD1S 12
-; 0000 0044 oven.hj_temp = TC_ConvertMicroVoltToTemp(oven.hj_uv);
+; 0000 0044 oven.hj_temp = AJ_TC_K_ConvertMicroVoltToTemp(oven.hj_uv);
 	__GETD2S 12
-	RCALL _TC_ConvertMicroVoltToTemp
+	RCALL _AJ_TC_K_ConvertMicroVoltToTemp
 	STD  Y+18,R30
 	STD  Y+18+1,R31
 ; 0000 0045 
@@ -1712,12 +1712,12 @@ _ADC_Init:
 ;54479, // 1360^C
 ;54819  // 1370^C
 ;};
-;int16_t TC_ConvertMicroVoltToTemp(int32_t uv){
-; 0001 00B1 int16_t TC_ConvertMicroVoltToTemp(int32_t uv){
+;int16_t AJ_TC_K_ConvertMicroVoltToTemp(int32_t uv){
+; 0001 00B1 int16_t AJ_TC_K_ConvertMicroVoltToTemp(int32_t uv){
 
 	.CSEG
-_TC_ConvertMicroVoltToTemp:
-; .FSTART _TC_ConvertMicroVoltToTemp
+_AJ_TC_K_ConvertMicroVoltToTemp:
+; .FSTART _AJ_TC_K_ConvertMicroVoltToTemp
 ; 0001 00B2 int16_t i = 0;
 ; 0001 00B3 int32_t uv0 = 0;
 ; 0001 00B4 int32_t uv1 = 0;
@@ -1747,7 +1747,7 @@ _TC_ConvertMicroVoltToTemp:
 	CALL SUBOPT_0x3
 	CALL __CPD12
 	BRLT _0x20004
-; 0001 00B9 return TC_K_TEMP_MIN;
+; 0001 00B9 return AJ_TC_K_TEMP_MIN;
 	LDI  R30,LOW(65266)
 	LDI  R31,HIGH(65266)
 	RJMP _0x20C0005
@@ -1759,7 +1759,7 @@ _0x20004:
 	CALL SUBOPT_0x3
 	CALL __CPD21
 	BRLT _0x20005
-; 0001 00BD return TC_K_TEMP_MAX;
+; 0001 00BD return AJ_TC_K_TEMP_MAX;
 	LDI  R30,LOW(1370)
 	LDI  R31,HIGH(1370)
 	RJMP _0x20C0005
@@ -1786,7 +1786,7 @@ _0x20007:
 	CALL __GETD1PF
 	__PUTD1S 10
 ; 0001 00C4 
-; 0001 00C5 t0 = TC_K_TEMP_MIN + ((int32_t)i * 10);
+; 0001 00C5 t0 = AJ_TC_K_TEMP_MIN + ((int32_t)i * 10);
 	MOVW R26,R16
 	CALL __CWD2
 	CALL SUBOPT_0x6
@@ -1826,7 +1826,7 @@ _0x20009:
 	RJMP _0x20007
 _0x20008:
 ; 0001 00CB 
-; 0001 00CC return TC_K_ERROR;
+; 0001 00CC return AJ_TC_K_ERROR;
 	LDI  R30,LOW(1371)
 	LDI  R31,HIGH(1371)
 _0x20C0005:
@@ -1836,10 +1836,10 @@ _0x20C0005:
 	RET
 ; 0001 00CD }
 ; .FEND
-;int32_t TC_ConvertTempToMicroVolt(int16_t temp){
-; 0001 00D0 int32_t TC_ConvertTempToMicroVolt(int16_t temp){
-_TC_ConvertTempToMicroVolt:
-; .FSTART _TC_ConvertTempToMicroVolt
+;int32_t AJ_TC_K_ConvertTempToMicroVolt(int16_t temp){
+; 0001 00D0 int32_t AJ_TC_K_ConvertTempToMicroVolt(int16_t temp){
+_AJ_TC_K_ConvertTempToMicroVolt:
+; .FSTART _AJ_TC_K_ConvertTempToMicroVolt
 ; 0001 00D1 int16_t index = 0;
 ; 0001 00D2 int16_t t0 = 0;
 ; 0001 00D3 int16_t dt = 0;

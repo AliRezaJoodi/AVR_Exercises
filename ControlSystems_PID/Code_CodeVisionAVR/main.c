@@ -7,7 +7,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "controller_pid.h"
+#include "aj_ctrl_pid.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
@@ -35,19 +35,19 @@ interrupt [TIM0_OVF] void timer0_ovf_isr(void){
 
 void ADC_Init(void);
 void LCD_Config(void);
-void LCD_DisplayMainPage(const CtrlPID_t *params, int16_t pwm);
+void LCD_DisplayMainPage(const aj_ctrl_pid_t *params, int16_t pwm);
 void Timer0_Init(void);
 void Timer1_Init(void);
 
 void main(void){
-    CtrlPID_t oven = {
-        .kp = PID_FLOAT_TO_Q(4.547, PID_SCALE), // 1023 / error
-        .ki = PID_FLOAT_TO_Q(0.01, PID_SCALE),
-        .kd = PID_FLOAT_TO_Q(0.4547, PID_SCALE), // kp / 10
+    aj_ctrl_pid_t oven = {
+        .kp = AJ_PID_FLOAT_TO_Q(4.547, AJ_PID_SCAL), // 1023 / error
+        .ki = AJ_PID_FLOAT_TO_Q(0.01, AJ_PID_SCAL),
+        .kd = AJ_PID_FLOAT_TO_Q(0.4547, AJ_PID_SCAL), // kp / 10
 
         .output_min = 0,
         .output_max = 1023,
-        .scale = PID_SCALE,
+        .scale = AJ_PID_SCAL,
         .dt = PID_DT_32MS,
 
         .i_sum = 0,
@@ -69,7 +69,7 @@ void main(void){
 
     delay_ms(250);
     lcd_clear();
-    Ctrl_PID_Reset(&oven);
+    AJ_Ctrl_PID_Reset(&oven);
     #asm("sei") // Globally enable interrupts
 
     while(1){
@@ -82,7 +82,7 @@ void main(void){
 
         if (pid_flog){
             pid_flog = 0;
-            out = (uint16_t)Ctrl_PID_Update(&oven);
+            out = (uint16_t)AJ_Ctrl_PID_Update(&oven);
             OCR1A = out;
         }
 
@@ -94,7 +94,7 @@ void main(void){
 }
 
 //******************************************
-void LCD_DisplayMainPage(const CtrlPID_t *params, int16_t pwm){
+void LCD_DisplayMainPage(const aj_ctrl_pid_t *params, int16_t pwm){
     char txt[6];
 
     lcd_gotoxy(0,0); lcd_putsf("SP  PV  PWM");

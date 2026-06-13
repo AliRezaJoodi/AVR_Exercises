@@ -10,7 +10,7 @@
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
 
 #include "hardware.h"
-#include "ntc100k.h"
+#include "aj_ntc100k.h"
 
 // Read the AD conversion result
 unsigned int read_adc(unsigned char adc_input){
@@ -53,7 +53,7 @@ void main(void){
             lcd_flag = 0;
             mv = ConvertCountToMilliVolt(in);
             ohm = ConvertMilliVoltToOhm(mv, NTC100K_RESISTOR);
-            temp = NTC100K_ConvertOhmToTemp(ohm);
+            temp = AJ_NTC100K_ConvertOhmToTemp(ohm);
             LCD_DisplayMainPage(ohm, temp);
         }
     };

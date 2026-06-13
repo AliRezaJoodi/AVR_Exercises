@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <mega32a.h>
 
-#include "dac_converter.h"
+#include "aj_dac_converter.h"
 
 void UART_Config(void);
 void UART_Display1(uint16_t mv, uint16_t dac_count);
@@ -18,34 +18,34 @@ void main(void){
 
     UART_Config();
 
-    putsf("\rDAC_ConvertMilliVoltToCount_12Bit4V096\r");
+    putsf("\rAJ_DAC_ConvertMilliVoltToCount_12Bit4V096\r");
     mv = 4096 / 2;
-    dac_count = DAC_ConvertMilliVoltToCount_12Bit4V096(mv);
+    dac_count = AJ_DAC_ConvertMilliVoltToCount_12Bit4V096(mv);
     UART_Display1(mv, dac_count);
 
-    putsf("\rDAC_ConvertMicroVoltToCount_12Bit2V048\r");
+    putsf("\rAJ_DAC_ConvertMicroVoltToCount_12Bit2V048\r");
     uv = 2048000 / 2;
-    dac_count = DAC_ConvertMicroVoltToCount_12Bit2V048(uv);
+    dac_count = AJ_DAC_ConvertMicroVoltToCount_12Bit2V048(uv);
     UART_Display2(uv, dac_count);
 
-    putsf("\rDAC_ConvertMilliVoltToCount_10Bit5V\r");
+    putsf("\rAJ_DAC_ConvertMilliVoltToCount_10Bit5V\r");
     mv = 5000 / 2;
-    dac_count = DAC_ConvertMilliVoltToCount_10Bit5V(mv);
+    dac_count = AJ_DAC_ConvertMilliVoltToCount_10Bit5V(mv);
     UART_Display1(mv, dac_count);
 
-    putsf("\rDAC_ConvertMilliVoltToCount_10Bit4V096\r");
+    putsf("\rAJ_DAC_ConvertMilliVoltToCount_10Bit4V096\r");
     mv = 4096 / 2;
-    dac_count = DAC_ConvertMilliVoltToCount_10Bit4V096(mv);
+    dac_count = AJ_DAC_ConvertMilliVoltToCount_10Bit4V096(mv);
     UART_Display1(mv, dac_count);
 
-    putsf("\rDAC_ConvertMilliVoltToCount_10Bit3V3\r");
+    putsf("\rAJ_DAC_ConvertMilliVoltToCount_10Bit3V3\r");
     mv = 3300 / 2;
-    dac_count = DAC_ConvertMilliVoltToCount_10Bit3V3(mv);
+    dac_count = AJ_DAC_ConvertMilliVoltToCount_10Bit3V3(mv);
     UART_Display1(mv, dac_count);
 
-    putsf("\rDAC_ConvertMilliVoltToCount_10Bit2V048\r");
+    putsf("\rAJ_DAC_ConvertMilliVoltToCount_10Bit2V048\r");
     mv = 2048 / 2;
-    dac_count = DAC_ConvertMilliVoltToCount_10Bit2V048(mv);
+    dac_count = AJ_DAC_ConvertMilliVoltToCount_10Bit2V048(mv);
     UART_Display1(mv, dac_count);
 
     while(1){

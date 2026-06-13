@@ -4,15 +4,15 @@
 #include <stdio.h>
 #include <mega32a.h>
 
-#include "calendar_converter.h"
+#include "aj_calendar_converter.h"
 
 void UART_Config(void);
 
 void main(void){
     char txt[];
 
-    date_t gregorian;
-    date_t jalaali;
+    aj_date_t gregorian;
+    aj_date_t jalaali;
 
     gregorian.year = 26;
     gregorian.month = 04;
@@ -24,8 +24,8 @@ void main(void){
 
     UART_Config();
 
-    Calendar_ConvertGregorianToJalaali(&gregorian, &jalaali);
-    Calendar_ConvertJalaaliToGregorian(&jalaali, &gregorian);
+    AJ_Calendar_ConvertGregorianToJalaali(&gregorian, &jalaali);
+    AJ_Calendar_ConvertJalaaliToGregorian(&jalaali, &gregorian);
 
     sprintf(txt,"G: 20%02u/%02u/%02u\r", gregorian.year, gregorian.month, gregorian.day); puts(txt);
     sprintf(txt,"J: 14%02u/%02u/%02u\r", jalaali.year, jalaali.month, jalaali.day); puts(txt);

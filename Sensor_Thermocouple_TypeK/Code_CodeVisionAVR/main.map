@@ -23,8 +23,8 @@ main                                                                            
 LCD_DisplayMainPage                                                               0x0023C     39
 LCD_Config                                                                        0x00263      6
 ADC_Init                                                                          0x00269      7
-TC_ConvertMicroVoltToTemp                                                         0x00270    134
-TC_ConvertTempToMicroVolt                                                         0x002F6    129
+AJ_TC_K_ConvertMicroVoltToTemp                                                    0x00270    134
+AJ_TC_K_ConvertTempToMicroVolt                                                    0x002F6    129
 itoa                                                                              0x00377     46
 ltoa                                                                              0x003A5     83
 _lcd_write_nibble_G102                                                            0x003F8     20

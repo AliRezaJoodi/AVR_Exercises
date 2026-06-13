@@ -7,7 +7,7 @@
 #include <delay.h>
 
 #include "hardware.h"
-#include "changed.h"
+#include "aj_change_u16.h"
 
 // Voltage Reference: AVCC pin
 #define ADC_VREF_TYPE ((0<<REFS1) | (1<<REFS0) | (0<<ADLAR))
@@ -33,11 +33,11 @@ void UART_MonitorTemp2_f32(float value);
 void main(void){
     float buf=0;
 
-    uint16_t input1_u16=0;
-    uint16_t input1_last_u16=0;
+    uint16_t input1 = 0;
+    aj_change_u16_t input1_changed = {0};
 
-    uint16_t input2_u16=0;
-    uint16_t input2_last_u16=0;
+    uint16_t input2 = 0;
+    aj_change_u16_t input2_changed = {0};
 
     ADC_Config();
     UART_Config();
@@ -46,21 +46,15 @@ void main(void){
     delay_ms(500);
 
     while(1){
-        input1_u16 = read_adc(ADC_CH1);
-        if(Changed_Exact(input1_u16, &input1_last_u16)){      //Difference = 4.88 mv
-            buf = input1_u16 * 4.8875855;
+        input1 = read_adc(ADC_CH1);
+        if(AJ_ChangeU16_Exact(&input1_changed, input1)){      //Difference = 4.88 mv
+            buf = input1 * 4.8875855;
             UART_MonitorTemp1_f32(buf);
         }
 
-//        input2_u16 = read_adc(ADC_CH2);
-//        if(Changed_Exact(input2_u16, &input2_last_u16)){      //Difference = 4.88 mv
-//            buf = input2_u16 * 4.8875855;
-//            UART_MonitorTemp2_f32(buf);
-//        }
-
-        input2_u16 = read_adc(ADC_CH2);
-        if(Changed_Threshold(input2_u16, &input2_last_u16, 20)){   //Difference = (4.88 mv)*x
-            buf = input2_u16 * 4.8875855;
+        input2 = read_adc(ADC_CH2);
+        if(AJ_ChangeU16_Threshold(&input2_changed, input2, 20)){   //Difference = (4.88 mv)*x
+            buf = input2 * 4.8875855;
             UART_MonitorTemp2_f32(buf);
         }
     };

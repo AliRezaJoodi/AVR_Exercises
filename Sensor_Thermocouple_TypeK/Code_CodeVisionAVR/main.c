@@ -8,7 +8,7 @@
 #include <alcd.h>
 
 #include "hardware.h"
-#include "thermocouple_k.h"
+#include "aj_thermocouple_k.h"
 
 //float tc_mv=0;
 //int tc_temp;
@@ -63,9 +63,9 @@ void main(void){
             mv = ((uint32_t)buf * ADC_VREF) >> ADC_RESOLUTION_BIT;
             oven.tc_uv = (mv * 1000) / TC_GAIN;
             oven.cj_temp = 50;  // Must be measured using a temperature sensor, for example the LM35.
-            oven.cj_uv = TC_ConvertTempToMicroVolt(oven.cj_temp);
+            oven.cj_uv = AJ_TC_K_ConvertTempToMicroVolt(oven.cj_temp);
             oven.hj_uv = oven.tc_uv + oven.cj_uv;
-            oven.hj_temp = TC_ConvertMicroVoltToTemp(oven.hj_uv);
+            oven.hj_temp = AJ_TC_K_ConvertMicroVoltToTemp(oven.hj_uv);
 
             lcd_flag = 1;
         }
