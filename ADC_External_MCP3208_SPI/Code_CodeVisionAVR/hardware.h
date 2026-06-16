@@ -4,8 +4,9 @@
 #define AJ_BIT_REG_CONFIG
     #define AJ_BIT_REG_8BIT
 
-#define AJ_MCP3208_HARDWARE
-    #define AJ_MCP3208_TIMEOUT         1000U
+#define AJ_SPI_CONFIG
+    #define AJ_SPI_TIMEOUT              1000U   // A value of uint16_t
+    #define AJ_SPI_ERROR                0xFFU   // A value of uint8_t
 
 #define AJ_MCP3208_HARDWARE_EXTRA
     #define AJ_MCP3208_CS_DDR          DDRB

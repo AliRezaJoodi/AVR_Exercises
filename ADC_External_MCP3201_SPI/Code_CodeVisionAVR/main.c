@@ -45,8 +45,8 @@ void main(void){
     AJ_MCP3201_Init(&mcp2);
 
     while (1){
-        in1_u16 = AJ_MCP3201_GetCounts(&mcp1);
-        in2_u16 = AJ_MCP3201_GetCounts(&mcp2);
+        in1_u16 = AJ_MCP3201_GetRaw(&mcp1);
+        in2_u16 = AJ_MCP3201_GetRaw(&mcp2);
 
         In1 = (float)(in1_u16) * 5000.0f / 4096.0f;
         In2 = (float)(in2_u16) * 5000.0f / 4096.0f;

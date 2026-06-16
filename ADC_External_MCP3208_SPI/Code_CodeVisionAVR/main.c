@@ -39,8 +39,8 @@ void main(void){
     lcd_clear();
 
     while (1){
-        in1 = AJ_MCP3208_GetCounts(&mcp1, AJ_MCP3208_CH1);
-        in2 = AJ_MCP3208_GetCounts(&mcp1, AJ_MCP3208_CH6CH7);
+        in1 = AJ_MCP3208_GetRaw(&mcp1, AJ_MCP3208_CH1);
+        in2 = AJ_MCP3208_GetRaw(&mcp1, AJ_MCP3208_CH6CH7);
 
         volt1 = in1 * 1.2210012f;
         volt2 = in2 * 1.2210012f;
