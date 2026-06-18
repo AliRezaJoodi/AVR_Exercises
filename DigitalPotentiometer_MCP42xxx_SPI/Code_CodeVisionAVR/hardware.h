@@ -1,0 +1,31 @@
+#ifndef HARDWARE_INCLUDED
+#define HARDWARE_INCLUDED
+
+#define AJ_BIT_REG_CONFIG
+    #define AJ_BIT_REG_8BIT
+
+#define AJ_SPI_CONFIG
+    #define AJ_SPI_TIMEOUT              1000U   // A value of uint16_t
+    #define AJ_SPI_ERROR                0xFFU   // A value of uint8_t
+
+#define AJ_MCP42XXX_HARDWARE
+    #define AJ_MCP42XXX_SUPPORT_PIN_SHDN    1U
+    #define AJ_MCP42XXX_SUPPORT_PIN_RS      1U
+
+#define AJ_MCP42XXX_HARDWARE_EXTRA
+    #define AJ_MCP42XXX_CS_DDR          DDRB
+    #define AJ_MCP42XXX_CS_PORT         PORTB
+    #define AJ_MCP42XXX_CS_POS          4U
+    #define AJ_MCP42XXX_CS_MASK         (1U << AJ_MCP42XXX_CS_POS)
+
+    #define AJ_MCP42XXX_SHDN_DDR        DDRB
+    #define AJ_MCP42XXX_SHDN_PORT       PORTB
+    #define AJ_MCP42XXX_SHDN_POS        3U
+    #define AJ_MCP42XXX_SHDN_MASK       (1U << AJ_MCP42XXX_SHDN_POS)
+
+    #define AJ_MCP42XXX_RS_DDR          DDRB
+    #define AJ_MCP42XXX_RS_PORT         PORTB
+    #define AJ_MCP42XXX_RS_POS          2U
+    #define AJ_MCP42XXX_RS_MASK         (1U << AJ_MCP42XXX_RS_POS)
+
+#endif
