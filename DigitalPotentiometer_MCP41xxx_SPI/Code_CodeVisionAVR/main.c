@@ -9,7 +9,7 @@
 void SPI_Config(void);
 
 void main(void){
-    static const aj_mcp41xxx_t pot1 = {
+    static const aj_mcp41xxx_t mcp = {
         .cs = {
             .ddr   = &AJ_MCP41XXX_CS_DDR,
             .port  = &AJ_MCP41XXX_CS_PORT,
@@ -18,10 +18,10 @@ void main(void){
     };
 
     SPI_Config();
-    AJ_MCP41xxx_Init(&pot1);
+    AJ_MCP41xxx_Init(&mcp);
 
-    AJ_MCP41xxx_Shutdown(&pot1);
-    AJ_MCP41xxx_Write(&pot1, 255U);
+    AJ_MCP41xxx_Shutdown(&mcp);
+    AJ_MCP41xxx_Write(&mcp, 255U);
 
     while(1){
 
