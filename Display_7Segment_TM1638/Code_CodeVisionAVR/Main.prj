@@ -6,7 +6,7 @@ A=NeVaDa
 C=
 D=2013/04/19 02:06:42 Þ.Ù
 Files=2
-OpenedFiles=7
+OpenedFiles=8
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -45,7 +45,7 @@ DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
 DebugOutputExecutableFilesDirectory=Debug\Exe
 DebugOutputLinkerFilesDirectory=Debug\Link
-ActiveTab=4
+ActiveTab=8
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_tm1638.h
 TimeStamp3=1556614289
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_tm1638_type.h
@@ -56,8 +56,8 @@ OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_tm1638_hw.h
 TimeStamp6=1556613431
 OF7=..\..\..\CrossPlatformLibraries\Drivers\aj_tm1638.c
 TimeStamp7=1556614749
-OF8=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\tm1638_hw.h
-TimeStamp8=1554457135
+OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+TimeStamp8=1557640917
 OF9=..\..\..\CrossPlatformLibraries\utils\bit_value16.h
 TimeStamp9=1554475859
 OF10=..\..\..\CrossPlatformLibraries\utils\bit_value.h
@@ -400,7 +400,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1556618728
+TimeStamp=1557662084
 [BookmarksFoldedCode]
 Files=91
 F1=T3.c
@@ -1769,10 +1769,10 @@ Blocks=0
 Blocks=0
 [Bookmarks62]
 TimeStamp=1556614263
-Row=17
-Column=72
+Row=126
+Column=36
 ScrollPosX=0
-ScrollPosY=10
+ScrollPosY=115
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2184,11 +2184,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks85]
-TimeStamp=1556293296
-Row=171
-Column=59
+TimeStamp=1557640917
+Row=45
+Column=44
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=45
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2199,8 +2199,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode85]
-Blocks=0
 [Bookmarks86]
 TimeStamp=1556219246
 Row=17
@@ -2295,10 +2293,10 @@ BK8=-1
 BK9=-1
 [Bookmarks91]
 TimeStamp=1556614289
-Row=26
-Column=102
+Row=214
+Column=30
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=170
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2349,6 +2347,8 @@ F15=..\..\..\CrossPlatformLibraries\Drivers\aj_tm1638.h
 [FoldedCode62]
 Blocks=0
 [FoldedCode87]
+Blocks=0
+[FoldedCode85]
 Blocks=0
 [FoldedCode88]
 Blocks=0
