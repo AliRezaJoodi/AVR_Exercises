@@ -130,8 +130,8 @@ UseEEPROMLocation0=1
 DisplayCodeSizeError=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1556725052
-Build=334
+COFFileTimeStamp=1557904410
+Build=335
 GlobalVarAddr=612
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -241,7 +241,7 @@ DisplayCodeSizeError=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=334
+Build=335
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -517,7 +517,7 @@ L13=Enhanced function parameters passing: Mode 2
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 334
+L17=Build: 335
 L18=12510 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -560,7 +560,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1556725070
+TimeStamp=1557904412
 [BookmarksFoldedCode]
 Files=19
 F1=C:\Users\Home\Desktop\RTC_DS1307\T1\v1.0.c
@@ -911,21 +911,6 @@ BK8=-1
 BK9=-1
 [FoldedCode18]
 Blocks=0
-[HeadersList]
-Files=1
-F1=D:\GitHub\AVR_Exercises\ADC_Converter\Code_CodeVisionAVR\main.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\stdio.h
-F3=C:\cvavr\inc\io.h
-F4=C:\cvavr\inc\mega32a.h
-F5=C:\cvavr\inc\mega32_bits.h
-F6=C:\cvavr\inc\stdarg.h
-F7=C:\cvavr\inc\stdlib.h
-F8=..\..\..\CrossPlatformLibraries\modules\aj_adc_converter.h
-[FoldedCode11]
-Blocks=0
 [Bookmarks19]
 TimeStamp=1556725050
 Row=93
@@ -942,5 +927,20 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=D:\GitHub\AVR_Exercises\ADC_Converter\Code_CodeVisionAVR\main.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\stdint.h
+F2=C:\cvavr\inc\stdio.h
+F3=C:\cvavr\inc\io.h
+F4=C:\cvavr\inc\mega32a.h
+F5=C:\cvavr\inc\mega32_bits.h
+F6=C:\cvavr\inc\stdarg.h
+F7=C:\cvavr\inc\stdlib.h
+F8=..\..\..\CrossPlatformLibraries\modules\aj_adc_converter.h
+[FoldedCode11]
+Blocks=0
 [FoldedCode19]
 Blocks=0

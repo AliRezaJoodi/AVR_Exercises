@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=2
-OpenedFiles=6
+OpenedFiles=2
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -24,7 +24,7 @@ Row1=174
 Column1=9
 State1=2
 TimeStamp1=1556575961
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.c
 Top2=149
 Left2=223
 Height2=393
@@ -33,7 +33,7 @@ Active2=0
 Row2=8
 Column2=5
 State2=2
-TimeStamp2=1556577004
+TimeStamp2=1556575961
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -52,7 +52,7 @@ ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver.h
 TimeStamp3=1556575961
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
-TimeStamp4=1556577004
+TimeStamp4=1557904363
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_hw.h
 TimeStamp5=1556577004
 OF6=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.c
@@ -149,16 +149,16 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=734
+Build=737
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
-IncludePath4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -216,7 +216,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1556577006
+COFFileTimeStamp=1557927502
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -387,7 +387,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=734
+Build=737
 Chip=ATmega32A
 CPUClock=8000000
 MemoryModel=1
@@ -509,8 +509,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 734
-L18=3432 line(s) compiled
+L17=Build: 737
+L18=3491 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -536,7 +536,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\List\main.asm(2564): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.eep
+L4=D:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\List\main.asm(2573): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -572,7 +572,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1556577085
+TimeStamp=1557927505
 [BookmarksFoldedCode]
 Files=44
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
@@ -852,9 +852,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks13]
-TimeStamp=1556577004
-Row=14
-Column=72
+TimeStamp=1557898856
+Row=5
+Column=76
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1355,35 +1355,6 @@ Blocks=0
 Blocks=0
 [FoldedCode21]
 Blocks=0
-[HeadersList]
-Files=2
-F1=D:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_seg7_driver.c
-[Header1]
-Files=6
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\mega32a.h
-F3=C:\cvavr\inc\delay.h
-F4=C:\cvavr\inc\io.h
-F5=hardware.h
-F6=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver.h
-[Header2]
-Files=13
-F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
-F2=C:\cvavr\inc\stdint.h
-F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler_port.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\mega32a.h
-F6=C:\cvavr\inc\delay.h
-F7=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F8=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
-F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
-F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_u8.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_hw.h
-F13=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.h
-[FoldedCode11]
-Blocks=0
 [Bookmarks41]
 TimeStamp=1556575961
 Row=11
@@ -1400,8 +1371,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode41]
-Blocks=0
 [Bookmarks42]
 TimeStamp=1556577004
 Row=105
@@ -1418,14 +1387,12 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode42]
-Blocks=0
 [Bookmarks43]
-TimeStamp=1556577004
+TimeStamp=1557904363
 Row=328
-Column=76
+Column=73
 ScrollPosX=0
-ScrollPosY=236
+ScrollPosY=319
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1436,8 +1403,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode43]
-Blocks=0
 [Bookmarks44]
 TimeStamp=1556575961
 Row=56
@@ -1456,5 +1421,40 @@ BK8=-1
 BK9=-1
 [FoldedCode44]
 Blocks=0
+[FoldedCode42]
+Blocks=0
+[FoldedCode43]
+Blocks=0
 [FoldedCode13]
+Blocks=0
+[HeadersList]
+Files=2
+F1=D:\GitHub\AVR_Exercises\Display_7Segment_Driver\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_seg7_driver.c
+[Header1]
+Files=6
+F1=C:\cvavr\inc\stdint.h
+F2=C:\cvavr\inc\mega32a.h
+F3=C:\cvavr\inc\delay.h
+F4=C:\cvavr\inc\io.h
+F5=hardware.h
+F6=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver.h
+[Header2]
+Files=13
+F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
+F2=C:\cvavr\inc\stdint.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
+F4=C:\cvavr\inc\io.h
+F5=C:\cvavr\inc\mega32a.h
+F6=C:\cvavr\inc\delay.h
+F7=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F8=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+F9=hardware.h
+F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_u8.h
+F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_hw.h
+F13=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.h
+[FoldedCode11]
+Blocks=0
+[FoldedCode41]
 Blocks=0

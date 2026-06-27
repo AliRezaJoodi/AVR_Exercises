@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=2
-OpenedFiles=7
+OpenedFiles=2
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,20 +26,20 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1557115603
+TimeStamp1=1557898440
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3201.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1557117304
+TimeStamp2=1557898440
 PageIndex2=2
-ActiveTab=7
+ActiveTab=0
 OF3=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3201.c
-TimeStamp3=1557117194
+TimeStamp3=1557898440
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3201.h
-TimeStamp4=1557115603
+TimeStamp4=1557898440
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_port.h
-TimeStamp5=1557117236
+TimeStamp5=1557898452
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_type.h
 TimeStamp6=1556618233
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_hw.h
@@ -146,8 +146,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557117315
-Build=623
+COFFileTimeStamp=1557927269
+Build=626
 GlobalVarAddr=634
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -257,14 +257,14 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=623
+Build=626
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
-IncludePath4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -518,8 +518,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 623
-L18=18834 line(s) compiled
+L17=Build: 626
+L18=18880 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -545,7 +545,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3201_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2494): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3201_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3201_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2500): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3201_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -721,7 +721,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557117742
+TimeStamp=1557927271
 [Bookmarks6]
 TimeStamp=1548031469
 Row=8
@@ -959,11 +959,11 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks18]
-TimeStamp=1557115603
-Row=48
-Column=35
+TimeStamp=1557898440
+Row=47
+Column=34
 ScrollPosX=0
-ScrollPosY=7
+ScrollPosY=23
 BK0=-1
 BK1=-1
 BK2=-1
@@ -975,11 +975,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks19]
-TimeStamp=1557117304
-Row=7
-Column=0
+TimeStamp=1557898308
+Row=5
+Column=76
 ScrollPosX=0
-ScrollPosY=3
+ScrollPosY=1
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1677,9 +1677,9 @@ Blocks=0
 [FoldedCode54]
 Blocks=0
 [Bookmarks58]
-TimeStamp=1557117194
-Row=21
-Column=30
+TimeStamp=1557898440
+Row=12
+Column=27
 ScrollPosX=0
 ScrollPosY=9
 BK0=-1
@@ -1725,11 +1725,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks61]
-TimeStamp=1557117236
-Row=95
-Column=21
+TimeStamp=1557898452
+Row=56
+Column=19
 ScrollPosX=0
-ScrollPosY=49
+ScrollPosY=44
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1741,11 +1741,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks62]
-TimeStamp=1557115603
-Row=32
-Column=40
+TimeStamp=1557898440
+Row=56
+Column=22
 ScrollPosX=0
-ScrollPosY=27
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1792,42 +1792,6 @@ BK9=-1
 Blocks=0
 [FoldedCode63]
 Blocks=0
-[HeadersList]
-Files=2
-F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3201_SPI\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_mcp3201.c
-[Header1]
-Files=12
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\stdlib.h
-F3=C:\cvavr\inc\mega32a.h
-F4=C:\cvavr\inc\mega32_bits.h
-F5=C:\cvavr\inc\spi.h
-F6=C:\cvavr\inc\io.h
-F7=C:\cvavr\inc\stdbool.h
-F8=C:\cvavr\inc\delay.h
-F9=C:\cvavr\inc\alcd.h
-F10=hardware.h
-F11=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3201.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_type.h
-[Header2]
-Files=16
-F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_type.h
-F2=C:\cvavr\inc\stdint.h
-F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_port.h
-F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler_port.h
-F5=C:\cvavr\inc\io.h
-F6=C:\cvavr\inc\mega32a.h
-F7=C:\cvavr\inc\mega32_bits.h
-F8=C:\cvavr\inc\delay.h
-F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
-F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
-F12=hardware.h
-F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_hw.h
-F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
-F15=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
-F16=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3201.h
 [Bookmarks65]
 TimeStamp=1556220374
 Row=0
@@ -1866,17 +1830,53 @@ BK8=-1
 BK9=-1
 [FoldedCode66]
 Blocks=0
-[FoldedCode18]
-Blocks=0
-[FoldedCode58]
+[FoldedCode62]
 Blocks=0
 [FoldedCode59]
 Blocks=0
-[FoldedCode60]
-Blocks=0
 [FoldedCode61]
 Blocks=0
-[FoldedCode62]
+[FoldedCode60]
 Blocks=0
 [FoldedCode19]
+Blocks=0
+[HeadersList]
+Files=2
+F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3201_SPI\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_mcp3201.c
+[Header1]
+Files=12
+F1=C:\cvavr\inc\stdint.h
+F2=C:\cvavr\inc\stdlib.h
+F3=C:\cvavr\inc\mega32a.h
+F4=C:\cvavr\inc\mega32_bits.h
+F5=C:\cvavr\inc\spi.h
+F6=C:\cvavr\inc\io.h
+F7=C:\cvavr\inc\stdbool.h
+F8=C:\cvavr\inc\delay.h
+F9=C:\cvavr\inc\alcd.h
+F10=hardware.h
+F11=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3201.h
+F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_type.h
+[Header2]
+Files=16
+F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_type.h
+F2=C:\cvavr\inc\stdint.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_port.h
+F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
+F5=C:\cvavr\inc\io.h
+F6=C:\cvavr\inc\mega32a.h
+F7=C:\cvavr\inc\mega32_bits.h
+F8=C:\cvavr\inc\delay.h
+F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F10=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+F11=hardware.h
+F12=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F13=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
+F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
+F15=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3201_hw.h
+F16=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3201.h
+[FoldedCode18]
+Blocks=0
+[FoldedCode58]
 Blocks=0

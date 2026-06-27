@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=2
-OpenedFiles=7
+OpenedFiles=2
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -28,25 +28,25 @@ PageIndex0=0
 EditorPanel1=0
 TimeStamp1=1557360197
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1557167174
+TimeStamp2=1557175168
 PageIndex2=2
 TimeStamp0=1446328168
-ActiveTab=2
+ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx.c
 TimeStamp3=1557175168
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx.h
-TimeStamp4=1557360503
+TimeStamp4=1557360860
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_port.h
-TimeStamp5=1557360352
+TimeStamp5=1557898196
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_hw.h
 TimeStamp6=1557167164
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_type.h
 TimeStamp7=1557360185
-OF8=main.c
-TimeStamp8=1554457745
+OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+TimeStamp8=1557898169
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx.c
 [CompilerDebug]
@@ -147,8 +147,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557360733
-Build=773
+COFFileTimeStamp=1557927066
+Build=776
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -258,14 +258,14 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=773
+Build=776
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
-IncludePath4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -519,8 +519,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 773
-L18=5544 line(s) compiled
+L17=Build: 776
+L18=5592 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -539,19 +539,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 377 words (754 bytes), 2.3% of FLASH
+L37=Program size: 375 words (750 bytes), 2.3% of FLASH
 L38=1 words (2 bytes), 0.3% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(1698): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(1702): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0002f2    740     14    754   32768   2.3%
+L9=[.cseg] 0x000000 0x0002ee    736     14    750   32768   2.3%
 L10=[.dseg] 0x000060 0x000265      0      5      5    2048   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -715,7 +715,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557360754
+TimeStamp=1557927069
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -1245,9 +1245,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks35]
-TimeStamp=1557167174
-Row=9
-Column=79
+TimeStamp=1557898154
+Row=3
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1425,11 +1425,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1556293296
-Row=58
-Column=43
+TimeStamp=1557904250
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=38
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1440,8 +1440,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode45]
-Blocks=0
 [FoldedCode40]
 Blocks=0
 [FoldedCode42]
@@ -1629,9 +1627,25 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks56]
-TimeStamp=1557360352
-Row=42
-Column=83
+TimeStamp=1557898196
+Row=26
+Column=63
+ScrollPosX=0
+ScrollPosY=6
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks57]
+TimeStamp=1557360860
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1644,22 +1658,18 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[Bookmarks57]
-TimeStamp=1557360503
-Row=20
-Column=0
-ScrollPosX=0
-ScrollPosY=23
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
+[FoldedCode45]
+Blocks=0
+[FoldedCode57]
+Blocks=0
+[FoldedCode55]
+Blocks=0
+[FoldedCode56]
+Blocks=0
+[FoldedCode54]
+Blocks=0
+[FoldedCode35]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_SPI\Code_CodeVisionAVR\main.c
@@ -1681,15 +1691,15 @@ Files=16
 F1=C:\cvavr\inc\stdint.h
 F2=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_type.h
 F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_port.h
-F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler_port.h
+F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
 F5=C:\cvavr\inc\io.h
 F6=C:\cvavr\inc\mega32a.h
 F7=C:\cvavr\inc\mega32_bits.h
 F8=C:\cvavr\inc\delay.h
 F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
-F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
-F12=hardware.h
+F10=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+F11=hardware.h
+F12=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
 F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_hw.h
 F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F15=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
@@ -1697,14 +1707,4 @@ F16=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx.h
 [FoldedCode27]
 Blocks=0
 [FoldedCode53]
-Blocks=0
-[FoldedCode54]
-Blocks=0
-[FoldedCode55]
-Blocks=0
-[FoldedCode56]
-Blocks=0
-[FoldedCode57]
-Blocks=0
-[FoldedCode35]
 Blocks=0

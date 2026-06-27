@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=2
-OpenedFiles=7
+OpenedFiles=2
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,24 +26,24 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1557135452
+TimeStamp1=1557898664
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3208.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1557118177
+TimeStamp2=1557898664
 PageIndex2=2
-ActiveTab=3
+ActiveTab=0
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3208.h
-TimeStamp3=1557135452
+TimeStamp3=1557898664
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_port.h
-TimeStamp4=1557118165
+TimeStamp4=1557898664
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_type.h
 TimeStamp5=1556618517
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_hw.h
 TimeStamp6=1557118177
 OF7=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3208.c
-TimeStamp7=1557135452
+TimeStamp7=1557898664
 OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
 TimeStamp8=1556219246
 OF9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
@@ -148,8 +148,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557135457
-Build=470
+COFFileTimeStamp=1557927405
+Build=472
 GlobalVarAddr=629
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -259,14 +259,14 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=470
+Build=472
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
-IncludePath4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -520,8 +520,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 470
-L18=18906 line(s) compiled
+L17=Build: 472
+L18=18952 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -547,7 +547,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3148): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3154): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -703,7 +703,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557135458
+TimeStamp=1557927407
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -943,9 +943,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks18]
-TimeStamp=1557135452
-Row=42
-Column=31
+TimeStamp=1557898664
+Row=32
+Column=52
 ScrollPosX=0
 ScrollPosY=21
 BK0=-1
@@ -1007,9 +1007,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks22]
-TimeStamp=1557118177
-Row=9
-Column=0
+TimeStamp=1557898619
+Row=5
+Column=76
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1311,11 +1311,11 @@ BK9=-1
 [FoldedCode29]
 Blocks=0
 [Bookmarks39]
-TimeStamp=1556293296
-Row=58
-Column=43
+TimeStamp=1557898169
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=43
+ScrollPosY=50
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1352,14 +1352,12 @@ Blocks=0
 Blocks=0
 [FoldedCode40]
 Blocks=0
-[FoldedCode39]
-Blocks=0
 [Bookmarks41]
-TimeStamp=1557135452
+TimeStamp=1557898664
 Row=13
-Column=26
+Column=27
 ScrollPosX=0
-ScrollPosY=13
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1403,11 +1401,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks44]
-TimeStamp=1557118165
-Row=77
-Column=17
+TimeStamp=1557898664
+Row=69
+Column=27
 ScrollPosX=0
-ScrollPosY=64
+ScrollPosY=49
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1419,9 +1417,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1557135452
+TimeStamp=1557898664
 Row=54
-Column=26
+Column=27
 ScrollPosX=0
 ScrollPosY=40
 BK0=-1
@@ -1452,6 +1450,18 @@ BK8=-1
 BK9=-1
 [FoldedCode46]
 Blocks=0
+[FoldedCode39]
+Blocks=0
+[FoldedCode45]
+Blocks=0
+[FoldedCode42]
+Blocks=0
+[FoldedCode44]
+Blocks=0
+[FoldedCode43]
+Blocks=0
+[FoldedCode22]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\main.c
@@ -1475,30 +1485,20 @@ Files=16
 F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_type.h
 F2=C:\cvavr\inc\stdint.h
 F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_port.h
-F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler_port.h
+F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
 F5=C:\cvavr\inc\io.h
 F6=C:\cvavr\inc\mega32a.h
 F7=C:\cvavr\inc\mega32_bits.h
 F8=C:\cvavr\inc\delay.h
 F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
-F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
-F12=hardware.h
-F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_hw.h
-F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
-F15=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
+F10=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+F11=hardware.h
+F12=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F13=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
+F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
+F15=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_hw.h
 F16=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3208.h
 [FoldedCode18]
 Blocks=0
 [FoldedCode41]
-Blocks=0
-[FoldedCode42]
-Blocks=0
-[FoldedCode43]
-Blocks=0
-[FoldedCode44]
-Blocks=0
-[FoldedCode45]
-Blocks=0
-[FoldedCode22]
 Blocks=0

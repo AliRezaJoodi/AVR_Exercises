@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=2
-OpenedFiles=7
+OpenedFiles=2
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -28,12 +28,12 @@ PageIndex0=0
 EditorPanel1=0
 TimeStamp1=1557373672
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1557373722
+TimeStamp2=1557373232
 PageIndex2=2
-ActiveTab=4
+ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.c
 TimeStamp3=1557373232
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_hw.h
@@ -43,9 +43,9 @@ TimeStamp5=1557367152
 OF6=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.h
 TimeStamp6=1557375549
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_port.h
-TimeStamp7=1557373189
+TimeStamp7=1557892404
 OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-TimeStamp8=1556293296
+TimeStamp8=1557892411
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.c
 [CompilerDebug]
@@ -146,8 +146,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557375427
-Build=679
+COFFileTimeStamp=1557927022
+Build=683
 GlobalVarAddr=625
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -257,14 +257,14 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=679
+Build=683
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
-IncludePath4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -518,8 +518,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 679
-L18=19403 line(s) compiled
+L17=Build: 683
+L18=19468 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -545,7 +545,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Debug\List\Main.asm(2957): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Debug\List\Main.asm(2963): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -563,7 +563,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=71
+Files=72
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -635,6 +635,7 @@ F68=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_type.h
 F69=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_hw.h
 F70=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_port.h
 F71=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.h
+F72=..\..\..\CrossPlatformLibraries\utils\aj_target.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -726,7 +727,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557400880
+TimeStamp=1557927025
 [Bookmarks6]
 TimeStamp=1548031469
 Row=8
@@ -965,10 +966,10 @@ Blocks=0
 Blocks=0
 [Bookmarks18]
 TimeStamp=1557373672
-Row=35
-Column=68
+Row=27
+Column=53
 ScrollPosX=0
-ScrollPosY=90
+ScrollPosY=12
 BK0=-1
 BK1=-1
 BK2=-1
@@ -980,8 +981,8 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks19]
-TimeStamp=1557373722
-Row=14
+TimeStamp=1557892311
+Row=5
 Column=40
 ScrollPosX=0
 ScrollPosY=0
@@ -1654,11 +1655,11 @@ BK9=-1
 [FoldedCode37]
 Blocks=0
 [Bookmarks57]
-TimeStamp=1556293296
-Row=35
-Column=28
+TimeStamp=1557904250
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=32
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1809,8 +1810,6 @@ BK8=-1
 BK9=-1
 [FoldedCode65]
 Blocks=0
-[FoldedCode57]
-Blocks=0
 [Bookmarks66]
 TimeStamp=1556444963
 Row=0
@@ -1892,9 +1891,9 @@ Blocks=0
 [FoldedCode64]
 Blocks=0
 [Bookmarks70]
-TimeStamp=1557373189
-Row=12
-Column=88
+TimeStamp=1557892404
+Row=28
+Column=27
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1923,6 +1922,38 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode24]
+Blocks=0
+[Bookmarks72]
+TimeStamp=1557892323
+Row=12
+Column=40
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode72]
+Blocks=0
+[FoldedCode57]
+Blocks=0
+[FoldedCode71]
+Blocks=0
+[FoldedCode69]
+Blocks=0
+[FoldedCode70]
+Blocks=0
+[FoldedCode68]
+Blocks=0
+[FoldedCode19]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\main.c
@@ -1949,32 +1980,20 @@ Files=16
 F1=C:\cvavr\inc\stdint.h
 F2=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_type.h
 F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_port.h
-F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler_port.h
+F4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
 F5=C:\cvavr\inc\io.h
 F6=C:\cvavr\inc\mega32a.h
 F7=C:\cvavr\inc\mega32_bits.h
 F8=C:\cvavr\inc\delay.h
 F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
-F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg_config.h
-F12=hardware.h
+F10=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+F11=hardware.h
+F12=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
 F13=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F15=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.h
 F16=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_hw.h
-[FoldedCode24]
-Blocks=0
 [FoldedCode18]
 Blocks=0
 [FoldedCode67]
-Blocks=0
-[FoldedCode70]
-Blocks=0
-[FoldedCode71]
-Blocks=0
-[FoldedCode68]
-Blocks=0
-[FoldedCode69]
-Blocks=0
-[FoldedCode19]
 Blocks=0

@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=2
-OpenedFiles=5
+OpenedFiles=2
 OF1=main.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -28,10 +28,10 @@ PageIndex0=0
 EditorPanel1=0
 TimeStamp1=1557860161
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.c
 Active2=1
 EditorPanel2=0
-TimeStamp2=1557858704
+TimeStamp2=1557859574
 PageIndex2=2
 ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.c
@@ -152,8 +152,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557864083
-Build=525
+COFFileTimeStamp=1557926907
+Build=526
 GlobalVarAddr=612
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -263,14 +263,14 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=525
+Build=526
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
-IncludePath4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -508,8 +508,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 525
-L18=3517 line(s) compiled
+L17=Build: 526
+L18=3499 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -550,7 +550,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557864109
+TimeStamp=1557926909
 [BookmarksFoldedCode]
 Files=46
 F1=v1.0.c
@@ -1444,6 +1444,12 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode37]
+Blocks=0
+[FoldedCode46]
+Blocks=0
+[FoldedCode10]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\main.c
@@ -1457,7 +1463,7 @@ F4=C:\cvavr\inc\delay.h
 F5=hardware.h
 F6=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.h
 F7=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer_type.h
-F8=..\..\..\CrossPlatformLibraries\utils\aj_target.h
+F8=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
 [Header2]
 Files=14
 F1=C:\cvavr\inc\stdint.h
@@ -1468,7 +1474,7 @@ F5=C:\cvavr\inc\mega16a.h
 F6=C:\cvavr\inc\mega16_bits.h
 F7=C:\cvavr\inc\delay.h
 F8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F9=..\..\..\CrossPlatformLibraries\utils\aj_target.h
+F9=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
 F10=hardware.h
 F11=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
 F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_buzzer_hw.h
@@ -1477,10 +1483,4 @@ F14=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.h
 [FoldedCode8]
 Blocks=0
 [FoldedCode39]
-Blocks=0
-[FoldedCode46]
-Blocks=0
-[FoldedCode37]
-Blocks=0
-[FoldedCode10]
 Blocks=0

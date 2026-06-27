@@ -146,7 +146,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=433
+Build=434
 UseEEPROMLocation0=1
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
@@ -212,7 +212,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1556917024
+COFFileTimeStamp=1557904450
 OutputFormat=1
 EnhancedFunctionParameterPassing=1
 WarningCantInlineFunction=1
@@ -390,7 +390,7 @@ Row=0
 Column=8
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1556917047
+TimeStamp=1557904454
 [BookmarksFoldedCode]
 Files=43
 F1=T3.c
@@ -471,7 +471,7 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [CompilerDebug]
-Build=433
+Build=434
 RebuildAll=1
 LinkageInformationPresent=0
 UseEEPROMLocation0=1
@@ -593,7 +593,7 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 433
+L17=Build: 434
 L18=12681 line(s) compiled
 L19=No errors
 L20=No warnings
@@ -1363,6 +1363,38 @@ BK9=-1
 Blocks=0
 [FoldedCode41]
 Blocks=0
+[Bookmarks42]
+TimeStamp=1556917020
+Row=4
+Column=42
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks43]
+TimeStamp=1556917020
+Row=65
+Column=26
+ScrollPosX=0
+ScrollPosY=11
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\ChangeDetector\Code_CodeVisionAVR\main.c
@@ -1385,39 +1417,7 @@ F1=C:\cvavr\inc\stdint.h
 F2=..\..\..\CrossPlatformLibraries\Modules\aj_change_u16.h
 [FoldedCode34]
 Blocks=0
-[Bookmarks42]
-TimeStamp=1556917020
-Row=4
-Column=42
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
 [FoldedCode42]
 Blocks=0
-[Bookmarks43]
-TimeStamp=1556917020
-Row=65
-Column=26
-ScrollPosX=0
-ScrollPosY=11
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
 [FoldedCode43]
 Blocks=0

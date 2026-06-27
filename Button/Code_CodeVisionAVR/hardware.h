@@ -6,8 +6,8 @@
     #define AJ_TARGET_TICK_BITS    8U      /*!< Supported: 8, 16, 32 */
 
 #define AJ_BUTTON_HARDWARE
-    #define AJ_BUTTON_TIME_TRIGGER         30U
-    #define AJ_BUTTON_TIME_AUTO_REPEAT     100U
+    #define AJ_BUTTON_TICK_TRIGGER         30U
+    #define AJ_BUTTON_TICK_AUTO_REPEAT     100U
 
 #define AJ_BUTTON_HARDWARE_EXTRA
     #define AJ_BUTTON_DDR                  DDRB
