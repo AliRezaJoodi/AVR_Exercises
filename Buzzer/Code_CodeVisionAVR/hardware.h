@@ -1,11 +1,9 @@
 #ifndef HARDWARE_INCLUDED
 #define HARDWARE_INCLUDED
 
-#define AJ_BIT_REG_CONFIG
-    #define AJ_BIT_REG_8BIT
-
-#define AJ_TIMEBASE_CONFIG
-    #define AJ_TIMEBASE_REG8_U8
+#define AJ_TARGET_CONFIG
+    #define AJ_TARGET_MCU_BITS     8U      /*!< Supported: 8, 16, 32 */
+    #define AJ_TARGET_TICK_BITS    8U      /*!< Supported: 8, 16, 32 */
 
 #define AJ_BUZZER_HARDWARE
     #define AJ_BUZZER_ACTIVE       1U

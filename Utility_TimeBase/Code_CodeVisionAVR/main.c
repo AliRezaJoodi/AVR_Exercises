@@ -32,7 +32,7 @@ void main(void){
     while(1){
         tick_now = AJ_TimeBase_GetTicks();
 
-        if (AJ_TimeBase_HasElapsed(tick_now, tick_last, 250)){
+        if (AJ_TimeBase_HasElapsed(tick_now, tick_last, 500)){
             tick_last = tick_now;
             PORTD.3 = !PORTD.3;
         }

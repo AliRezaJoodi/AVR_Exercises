@@ -13,8 +13,9 @@
 #include <lcd.h>
 
 #include "hardware.h"
-#include "aj_timebase.h"
 #include "aj_button.h"
+
+uint8_t system_tick = 0U;
 
 void LCD_Config(void);
 void LCD_DisplayMainPage(unsigned char);
@@ -24,11 +25,10 @@ void Timer2_Init(void);
 interrupt [TIM2_OVF] void timer2_ovf_isr(void){
     TCNT2=0x06; // Reinitialize Timer2 value
 
-    AJ_TimeBase_CountTicks();
+    system_tick++;
 }
 
 void main(void){
-    uint8_t tick_now = 0;
     uint8_t value = 100;
     uint8_t value_last = 0;
 
@@ -94,17 +94,15 @@ void main(void){
     #asm("sei") // Globally enable interrupts
 
     while(1){
-        tick_now = AJ_TimeBase_GetTicks();
-
-        if( AJ_Button_GetAutoRepeat(&buttonIncr, tick_now) ){
+        if( AJ_Button_GetAutoRepeat(&buttonIncr, system_tick) ){
             value++;
         }
 
-        if( AJ_Button_GetTrigger(&buttonDecr, tick_now) ){
+        if( AJ_Button_GetTrigger(&buttonDecr, system_tick) ){
             value--;
         }
 
-        if( AJ_Button_GetTrigger(&buttonClear, tick_now) ){
+        if( AJ_Button_GetTrigger(&buttonClear, system_tick) ){
             value = 0;
         }
 
