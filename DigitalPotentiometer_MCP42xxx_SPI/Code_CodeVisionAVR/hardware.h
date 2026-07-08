@@ -10,8 +10,8 @@
     #define AJ_SPI_ERROR                0xFFU   // A value of uint8_t
 
 #define AJ_MCP42XXX_HARDWARE
-    #define AJ_MCP42XXX_SUPPORT_PIN_SHDN    1U
-    #define AJ_MCP42XXX_SUPPORT_PIN_RS      1U
+    #define AJ_MCP42XXX_SHDN_USED       1U
+    #define AJ_MCP42XXX_RS_USED         1U
 
 #define AJ_MCP42XXX_HARDWARE_EXTRA
     #define AJ_MCP42XXX_CS_DDR          DDRB
