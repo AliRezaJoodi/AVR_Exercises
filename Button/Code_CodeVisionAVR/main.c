@@ -37,15 +37,12 @@ void main(void){
             .ddr   = &AJ_BUTTON_DDR,
             .port  = &AJ_BUTTON_PORT,
             .pin   = &AJ_BUTTON_PIN,
-            //.index = AJ_BUTTON_POS,
             .mask  = AJ_BUTTON_MASK
         },
-        .config = {
-            .pressed = AJ_BUTTON_ACTIVE_LOW,
-            .pull    = AJ_BUTTON_PULL_NONE
-        },
+        .pressed = AJ_BUTTON_ACTIVE_LOW,
+        .pull    = AJ_BUTTON_PULL_NONE,
         .tick_last = 0,
-        .state   = 0
+        .status   = 0
     };
 
     aj_button_t buttonDecr = {
@@ -56,12 +53,10 @@ void main(void){
             //.index = AJ_BUTTON2_POS,
             .mask  = AJ_BUTTON2_MASK
         },
-        .config = {
-            .pressed = AJ_BUTTON_ACTIVE_LOW,
-            .pull    = AJ_BUTTON_PULL_UP
-        },
+        .pressed = AJ_BUTTON_ACTIVE_LOW,
+        .pull    = AJ_BUTTON_PULL_UP,
         .tick_last = 0,
-        .state   = 0
+        .status   = 0
     };
 
     aj_button_t buttonClear = {
@@ -69,15 +64,12 @@ void main(void){
             .ddr   = &AJ_BUTTON3_DDR,
             .port  = &AJ_BUTTON3_PORT,
             .pin   = &AJ_BUTTON3_PIN,
-            //.index = AJ_BUTTON3_POS,
             .mask  = AJ_BUTTON3_MASK
         },
-        .config = {
-            .pressed = AJ_BUTTON_ACTIVE_HIGH,
-            .pull    = AJ_BUTTON_PULL_NONE
-        },
+        .pressed = AJ_BUTTON_ACTIVE_HIGH,
+        .pull    = AJ_BUTTON_PULL_NONE,
         .tick_last = 0,
-        .state   = 0
+        .status   = 0
     };
 
     AJ_Button_Init(&buttonIncr);

@@ -6,8 +6,8 @@ CV=3.12 Advanced
 A=
 C=
 D=01/20/2023
-Files=2
-OpenedFiles=2
+Files=3
+OpenedFiles=5
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -31,16 +31,16 @@ PageIndex1=1
 OF2=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp4822.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1557118520
+TimeStamp2=1558755663
 PageIndex2=2
 TimeStamp0=1446328168
-ActiveTab=1
-OF3=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp4822.c
-TimeStamp3=1557118520
+ActiveTab=5
+OF3=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
+TimeStamp3=1558755411
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_port.h
-TimeStamp4=1557898740
-OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_type.h
-TimeStamp5=1556618085
+TimeStamp4=1558755654
+OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
+TimeStamp5=1558610039
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_hw.h
 TimeStamp6=1557118581
 OF7=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4822.h
@@ -49,6 +49,7 @@ OF8=main.c
 TimeStamp8=1554457745
 F1=main.c
 F2=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp4822.c
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=8000000
@@ -147,15 +148,15 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557927439
-Build=711
+COFFileTimeStamp=1558755714
+Build=712
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
 WarningShiftCount0=1
 WarningNegativeShift=1
 DisplayCodeSizeError=1
-GlobalVarAddr=618
+GlobalVarAddr=619
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
 Count=0
@@ -258,7 +259,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=711
+Build=712
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -519,8 +520,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 711
-L18=6108 line(s) compiled
+L17=Build: 712
+L18=7812 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -530,29 +531,29 @@ L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
 L26=Estimated Data Stack usage: 17 byte(s)
 L27=
-L28=RAM Global variables area: 0x260 to 0x269
-L29=RAM Global variables size: 10 byte(s)
+L28=RAM Global variables area: 0x260 to 0x26A
+L29=RAM Global variables size: 11 byte(s)
 L30=
-L31=Hardware Stack area: 0x26A to 0x85F
-L32=Hardware Stack size: 1526 byte(s)
+L31=Hardware Stack area: 0x26B to 0x85F
+L32=Hardware Stack size: 1525 byte(s)
 L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 617 words (1234 bytes), 3.8% of FLASH
+L37=Program size: 641 words (1282 bytes), 3.9% of FLASH
 L38=1 words (2 bytes), 0.2% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2026): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2058): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0004d2   1216     18   1234   32768   3.8%
-L10=[.dseg] 0x000060 0x00026a      0     10     10    2048   0.5%
+L9=[.cseg] 0x000000 0x000502   1264     18   1282   32768   3.9%
+L10=[.dseg] 0x000060 0x00026b      0     11     11    2048   0.5%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
 Lines=12
@@ -564,7 +565,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=52
+Files=53
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -617,6 +618,7 @@ F49=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_type.h
 F50=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_port.h
 F51=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F52=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
+F53=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -710,7 +712,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557927441
+TimeStamp=1558755720
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -939,8 +941,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode17]
-Blocks=0
 [Bookmarks18]
 TimeStamp=982084312
 Row=0
@@ -1450,9 +1450,9 @@ Blocks=0
 [FoldedCode31]
 Blocks=0
 [Bookmarks46]
-TimeStamp=1557118520
-Row=42
-Column=21
+TimeStamp=1558755663
+Row=13
+Column=22
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1514,11 +1514,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks50]
-TimeStamp=1557898740
-Row=95
-Column=61
+TimeStamp=1558755654
+Row=128
+Column=38
 ScrollPosX=0
-ScrollPosY=90
+ScrollPosY=115
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1530,11 +1530,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks51]
-TimeStamp=1557117047
-Row=31
-Column=70
+TimeStamp=1558755411
+Row=32
+Column=63
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=7
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1546,11 +1546,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks52]
-TimeStamp=1557117308
-Row=18
-Column=31
+TimeStamp=1558610039
+Row=6
+Column=60
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=1
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1561,24 +1561,19 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode52]
-Blocks=0
-[FoldedCode51]
-Blocks=0
 [FoldedCode47]
 Blocks=0
 [FoldedCode48]
-Blocks=0
-[FoldedCode50]
 Blocks=0
 [FoldedCode49]
 Blocks=0
 [FoldedCode35]
 Blocks=0
 [HeadersList]
-Files=2
+Files=3
 F1=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\main.c
 F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_mcp4822.c
+F3=D:\GitHub\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.c
 [Header1]
 Files=10
 F1=C:\cvavr\inc\mega32a.h
@@ -1609,7 +1604,44 @@ F13=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F14=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F15=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_hw.h
 F16=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp4822.h
+[Header3]
+Files=9
+F1=C:\cvavr\inc\stdint.h
+F2=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
+F3=C:\cvavr\inc\io.h
+F4=C:\cvavr\inc\mega32a.h
+F5=C:\cvavr\inc\mega32_bits.h
+F6=C:\cvavr\inc\delay.h
+F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
+F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
+F9=hardware.h
+[FoldedCode17]
+Blocks=0
+[Bookmarks53]
+TimeStamp=1557888738
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode53]
+Blocks=0
 [FoldedCode27]
 Blocks=0
 [FoldedCode46]
+Blocks=0
+[FoldedCode52]
+Blocks=0
+[FoldedCode50]
+Blocks=0
+[FoldedCode51]
 Blocks=0
