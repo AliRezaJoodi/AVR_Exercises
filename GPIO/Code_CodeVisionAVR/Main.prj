@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=2
-OpenedFiles=7
+OpenedFiles=3
 OF1=main.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -28,24 +28,24 @@ PageIndex0=0
 EditorPanel1=0
 TimeStamp1=1557640692
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.c
 Active2=1
 EditorPanel2=0
-TimeStamp2=1557892022
+TimeStamp2=1557892027
 PageIndex2=2
-ActiveTab=7
-OF3=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.c
-TimeStamp3=1557892027
+ActiveTab=3
+OF3=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
+TimeStamp3=1557640905
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_config.h
 TimeStamp4=1557661518
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_type.h
 TimeStamp5=1556618779
 OF6=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
 TimeStamp6=1557892068
-F1=main.c
-F2=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.c
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
 TimeStamp7=1557640905
+F1=main.c
+F2=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.c
 [CompilerDebug]
 Chip=ATmega32A
 CPUClock=8000000
@@ -144,8 +144,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1557892069
-Build=592
+COFFileTimeStamp=1559016144
+Build=593
 GlobalVarAddr=629
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -255,12 +255,12 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=592
+Build=593
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
 IncludePath3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
-IncludePath4=
+IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
 IncludePath5=
 IncludePath6=
 IncludePath7=
@@ -500,8 +500,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 592
-L18=4061 line(s) compiled
+L17=Build: 593
+L18=4084 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -542,9 +542,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557892082
+TimeStamp=1559016172
 [BookmarksFoldedCode]
-Files=37
+Files=38
 F1=v1.0.c
 F2=Attachment\Buzzer.h
 F3=..\..\_Library_CodeVisionAVR\Buzzer.h
@@ -582,6 +582,7 @@ F34=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.c
 F35=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_type.h
 F36=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_config.h
 F37=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F38=C:\cvavr\inc\io.h
 [Bookmarks1]
 TimeStamp=1550213496
 Row=8
@@ -961,8 +962,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode20]
-Blocks=0
 [FoldedCode19]
 Blocks=0
 [Bookmarks21]
@@ -1083,8 +1082,6 @@ BK8=-1
 BK9=-1
 [FoldedCode23]
 Blocks=0
-[FoldedCode24]
-Blocks=0
 [Bookmarks28]
 TimeStamp=1555962071
 Row=20
@@ -1152,11 +1149,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks32]
-TimeStamp=1557892068
-Row=70
-Column=0
+TimeStamp=1558880908
+Row=37
+Column=72
 ScrollPosX=0
-ScrollPosY=50
+ScrollPosY=38
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1184,7 +1181,7 @@ TimeStamp=1557640905
 Row=54
 Column=53
 ScrollPosX=0
-ScrollPosY=23
+ScrollPosY=76
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1200,7 +1197,7 @@ TimeStamp=1557892027
 Row=2
 Column=21
 ScrollPosX=0
-ScrollPosY=7
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1212,11 +1209,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks35]
-TimeStamp=1556618779
-Row=11
-Column=17
+TimeStamp=1559011170
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1244,8 +1241,8 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks37]
-TimeStamp=1556220374
-Row=14
+TimeStamp=1557904269
+Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
@@ -1259,7 +1256,37 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode36]
+Blocks=0
+[FoldedCode10]
+Blocks=0
+[Bookmarks38]
+TimeStamp=1298953135
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode38]
+Blocks=0
+[FoldedCode24]
+Blocks=0
 [FoldedCode37]
+Blocks=0
+[FoldedCode20]
+Blocks=0
+[FoldedCode32]
+Blocks=0
+[FoldedCode35]
 Blocks=0
 [HeadersList]
 Files=2
@@ -1274,7 +1301,7 @@ F4=C:\cvavr\inc\delay.h
 F5=hardware.h
 F6=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
 F7=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F8=..\..\..\CrossPlatformLibraries\utils\aj_target.h
+F8=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
 F9=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
 F10=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_config.h
 F11=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_type.h
@@ -1291,19 +1318,11 @@ F8=hardware.h
 F9=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_type.h
 F10=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
 F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F12=..\..\..\CrossPlatformLibraries\utils\aj_target.h
+F12=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
 F13=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
 [FoldedCode8]
 Blocks=0
 [FoldedCode34]
 Blocks=0
 [FoldedCode33]
-Blocks=0
-[FoldedCode32]
-Blocks=0
-[FoldedCode35]
-Blocks=0
-[FoldedCode36]
-Blocks=0
-[FoldedCode10]
 Blocks=0

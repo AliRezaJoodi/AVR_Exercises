@@ -5,7 +5,7 @@
     #define AJ_TARGET_MCU_BITS     8U      /*!< Supported: 8, 16, 32 */
     #define AJ_TARGET_TICK_BITS    8U      /*!< Supported: 8, 16, 32 */
 
-#define AJ_KEYPAD4X4_HARDWARE
+#define AJ_KEYPAD4X4_CONFIG_PLATFORM
     #define AJ_KEYPAD4X4_R1_DDR        DDRC
     #define AJ_KEYPAD4X4_R1_PIN        PINC
     #define AJ_KEYPAD4X4_R1_PORT       PORTC

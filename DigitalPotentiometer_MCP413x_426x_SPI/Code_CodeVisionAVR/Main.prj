@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=4
+OpenedFiles=5
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -34,13 +34,13 @@ EditorPanel2=0
 TimeStamp2=1558820529
 PageIndex2=2
 TimeStamp0=1446328168
-ActiveTab=1
+ActiveTab=5
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x.h
 TimeStamp3=1558841115
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4251.h
 TimeStamp4=1558849128
-OF5=hardware.h
-TimeStamp5=1558820529
+OF5=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+TimeStamp5=1558906594
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp413x_426x_type_platform.h
 TimeStamp6=1558781476
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp413x_426x_config_platform.h
@@ -148,8 +148,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1558849130
-Build=1104
+COFFileTimeStamp=1558906596
+Build=1108
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -259,7 +259,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=1104
+Build=1108
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -520,8 +520,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1104
-L18=8949 line(s) compiled
+L17=Build: 1108
+L18=9009 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -736,7 +736,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1558849197
+TimeStamp=1558906616
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -1136,7 +1136,7 @@ TimeStamp=1558841986
 Row=11
 Column=32
 ScrollPosX=0
-ScrollPosY=37
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1267,10 +1267,10 @@ BK8=-1
 BK9=-1
 [Bookmarks35]
 TimeStamp=1558820529
-Row=15
-Column=26
+Row=5
+Column=31
 ScrollPosX=0
-ScrollPosY=6
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1582,9 +1582,9 @@ Blocks=0
 [FoldedCode44]
 Blocks=0
 [Bookmarks52]
-TimeStamp=1558755411
-Row=15
-Column=10
+TimeStamp=1558906442
+Row=17
+Column=38
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1879,8 +1879,8 @@ BK8=-1
 BK9=-1
 [Bookmarks69]
 TimeStamp=1558841115
-Row=36
-Column=17
+Row=37
+Column=80
 ScrollPosX=0
 ScrollPosY=79
 BK0=-1
@@ -1950,7 +1950,7 @@ TimeStamp=1558849128
 Row=2
 Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=21
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1962,11 +1962,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks74]
-TimeStamp=1558716634
+TimeStamp=1558868044
 Row=20
-Column=45
+Column=43
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=32
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2013,10 +2013,6 @@ BK8=-1
 BK9=-1
 [FoldedCode68]
 Blocks=0
-[FoldedCode71]
-Blocks=0
-[FoldedCode52]
-Blocks=0
 [FoldedCode72]
 Blocks=0
 [FoldedCode76]
@@ -2026,11 +2022,11 @@ Blocks=0
 [FoldedCode67]
 Blocks=0
 [Bookmarks77]
-TimeStamp=1557892323
-Row=7
-Column=24
+TimeStamp=1558906594
+Row=23
+Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=29
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2041,9 +2037,11 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode77]
-Blocks=0
 [FoldedCode75]
+Blocks=0
+[FoldedCode71]
+Blocks=0
+[FoldedCode52]
 Blocks=0
 [FoldedCode74]
 Blocks=0
@@ -2101,6 +2099,8 @@ F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
 [FoldedCode27]
+Blocks=0
+[FoldedCode77]
 Blocks=0
 [FoldedCode73]
 Blocks=0

@@ -2,19 +2,19 @@
 #define HARDWARE_INCLUDED
 
 #define AJ_TARGET_CONFIG
-    #define AJ_TARGET_MCU_BITS     8U      /*!< Supported: 8, 16, 32 */
-    #define AJ_TARGET_TICK_BITS    8U      /*!< Supported: 8, 16, 32 */
+    #define AJ_TARGET_MCU_BITS              8U      /*!< Supported: 8, 16, 32 */
+    #define AJ_TARGET_TICK_BITS             8U      /*!< Supported: 8, 16, 32 */
 
-#define AJ_BUTTON_HARDWARE
-    #define AJ_BUTTON_TICK_TRIGGER         30U
-    #define AJ_BUTTON_TICK_AUTO_REPEAT     100U
+#define AJ_BUTTON_CONFIG
+    #define AJ_BUTTON_TICK_TRIGGER          30U
+    #define AJ_BUTTON_TICK_AUTO_REPEAT      200U
 
-#define AJ_BUTTON_HARDWARE_EXTRA
-    #define AJ_BUTTON_DDR                  DDRB
-    #define AJ_BUTTON_PIN                  PINB
-    #define AJ_BUTTON_PORT                 PORTB
-    #define AJ_BUTTON_POS                  0U
-    #define AJ_BUTTON_MASK                 (1U << AJ_BUTTON_POS)
+#define AJ_BUTTON_CONFIG_PLATFORM_EXTRA
+    #define AJ_BUTTON_DDR                   DDRB
+    #define AJ_BUTTON_PIN                   PINB
+    #define AJ_BUTTON_PORT                  PORTB
+    #define AJ_BUTTON_POS                   0U
+    #define AJ_BUTTON_MASK                  (1U << AJ_BUTTON_POS)
 
 #define AJ_BUTTON2_DDR         DDRB
 #define AJ_BUTTON2_PIN         PINB

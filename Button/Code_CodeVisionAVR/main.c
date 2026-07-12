@@ -50,7 +50,6 @@ void main(void){
             .ddr   = &AJ_BUTTON2_DDR,
             .port  = &AJ_BUTTON2_PORT,
             .pin   = &AJ_BUTTON2_PIN,
-            //.index = AJ_BUTTON2_POS,
             .mask  = AJ_BUTTON2_MASK
         },
         .pressed = AJ_BUTTON_ACTIVE_LOW,
