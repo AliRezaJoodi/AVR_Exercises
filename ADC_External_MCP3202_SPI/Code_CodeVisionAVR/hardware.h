@@ -8,7 +8,7 @@
 #define AJ_SPI_CONFIG
     #define AJ_SPI_TIMEOUT              1000U   // A value of uint16_t
 
-#define AJ_MCP3202_HARDWARE_EXTRA
+#define AJ_MCP3202_CONFIG_PLATFORM_EXTRA
     #define AJ_MCP3202_CS_DDR          DDRB
     #define AJ_MCP3202_CS_PORT         PORTB
     #define AJ_MCP3202_CS_POS          4U

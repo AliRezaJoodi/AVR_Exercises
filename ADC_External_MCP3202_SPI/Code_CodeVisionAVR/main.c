@@ -1,71 +1,66 @@
 // GitHub Account: GitHub.com/AliRezaJoodi
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <mega32a.h>
 #include <spi.h>
 #include <delay.h>
 #include <alcd.h>
 #include <stdlib.h>
 
-float volt1=0;
-float volt2=0;
-
 #include "hardware.h"
 #include "aj_mcp3202.h"
 
 void SPI_Config(void);
-void LCD_Config(void);
-void LCD_DisplayLoadingPage(void);
-void LCD_DisplayMainPage();
+void UART_Config(void);
 
 void main(void){
-    uint16_t in1 = 0;
-    uint16_t in2 = 0;
+    char txt[20];
+    uint16_t raw = 0;
+    float mv = 0;
 
     static const aj_mcp3202_t mcp1 = {
         .cs = {
             .ddr   = &AJ_MCP3202_CS_DDR,
             .port  = &AJ_MCP3202_CS_PORT,
-            //.index = AJ_MCP3202_CS_POS,
             .mask = AJ_MCP3202_CS_MASK
         }
     };
 
     SPI_Config();
-    LCD_Config();
+    UART_Config();
     AJ_MCP3202_Init(&mcp1);
 
-    LCD_DisplayLoadingPage();
-    delay_ms(500);
-    lcd_clear();
+    putsf("Test UART");
+    delay_ms(1000);
+
+    raw = AJ_MCP3202_ReadRaw_Ch0(&mcp1);
+    mv = raw * 1;
+    putsf("\r");
+    putsf("\r"); putsf("CH0(Raw):"); itoa(raw, txt); puts(txt);
+    putsf("\r"); putsf("CH0(mV):"); ftoa(mv, 1, txt); puts(txt);
+
+    raw = AJ_MCP3202_ReadRaw_Ch1(&mcp1);
+    mv = raw * 1;
+    putsf("\r");
+    putsf("\r"); putsf("CH1(Raw):"); itoa(raw, txt); puts(txt);
+    putsf("\r"); putsf("CH1(mV):"); ftoa(mv, 1, txt); puts(txt);
+
+    raw = AJ_MCP3202_ReadRaw_Ch0Ch1(&mcp1);
+    mv = raw * 1;
+    putsf("\r");
+    putsf("\r"); putsf("CH0CH1(Raw):"); itoa(raw, txt); puts(txt);
+    putsf("\r"); putsf("CH0CH1(mV):"); ftoa(mv, 1, txt); puts(txt);
+
+//    raw = AJ_MCP3202_ReadRaw_Ch1Ch0(&mcp1);
+//    mv = raw * 1;
+//    putsf("\r");
+//    putsf("\r"); putsf("CH1CH0(Raw):"); itoa(raw, txt); puts(txt);
+//    putsf("\r"); putsf("CH1CH0(mV):"); ftoa(mv, 1, txt); puts(txt);
 
     while (1){
-        in1 = AJ_MCP3202_ReadRaw(&mcp1, AJ_MCP3202_CH0);
-        in2 = AJ_MCP3202_ReadRaw(&mcp1, AJ_MCP3202_CH0CH1);
 
-        volt1 = in1 * 1.22;
-        volt2 = in2 * 1.22;
-        LCD_DisplayMainPage();
-        delay_ms(500);
     }
-}
-
-//********************************************************
-void LCD_DisplayMainPage(void){
-    char txt[16];
-    lcd_gotoxy(0,0); lcd_putsf("In1(mV):"); ftoa(volt1,1,txt); lcd_puts(txt); lcd_putsf("   ");
-    lcd_gotoxy(0,1); lcd_putsf("In2(mV):"); ftoa(volt2,1,txt); lcd_puts(txt); lcd_putsf("   ");
-}
-
-//********************************************************
-void LCD_Config(void){
-    lcd_init(16); lcd_clear();
-}
-
-//********************************************************
-void LCD_DisplayLoadingPage(void){
-    lcd_clear();
-    lcd_gotoxy(0,0); lcd_putsf("External ADC");
-    lcd_gotoxy(0,1); lcd_putsf("With MCP3202");
 }
 
 //********************************************************
@@ -83,4 +78,19 @@ void SPI_Config(void){
 // SPI Data Order: MSB First
 SPCR=(0<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
 SPSR=(0<<SPI2X);
+}
+
+//********************************************************
+void UART_Config(void){
+    // USART initialization
+    // Communication Parameters: 8 Data, 1 Stop, No Parity
+    // USART Receiver: Off
+    // USART Transmitter: On
+    // USART Mode: Asynchronous
+    // USART Baud Rate: 9600
+    UCSRA=(0<<RXC) | (0<<TXC) | (0<<UDRE) | (0<<FE) | (0<<DOR) | (0<<UPE) | (0<<U2X) | (0<<MPCM);
+    UCSRB=(0<<RXCIE) | (0<<TXCIE) | (0<<UDRIE) | (0<<RXEN) | (1<<TXEN) | (0<<UCSZ2) | (0<<RXB8) | (0<<TXB8);
+    UCSRC=(1<<URSEL) | (0<<UMSEL) | (0<<UPM1) | (0<<UPM0) | (0<<USBS) | (1<<UCSZ1) | (1<<UCSZ0) | (0<<UCPOL);
+    UBRRH=0x00;
+    UBRRL=0x47;
 }

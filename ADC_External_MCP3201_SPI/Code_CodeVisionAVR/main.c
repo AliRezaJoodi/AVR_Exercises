@@ -25,7 +25,6 @@ void main(void){
         .cs = {
             .ddr   = &AJ_MCP3201_CS_DDR,
             .port  = &AJ_MCP3201_CS_PORT,
-            //.index = AJ_MCP3201_CS_POS,
             .mask = AJ_MCP3201_CS_MASK
         }
     };
@@ -34,7 +33,6 @@ void main(void){
         .cs = {
             .ddr   = &AJ_MCP3201_CS2_DDR,
             .port  = &AJ_MCP3201_CS2_PORT,
-            //.index = AJ_MCP3201_CS2_POS,
             .mask = AJ_MCP3201_CS2_MASK
         }
     };
