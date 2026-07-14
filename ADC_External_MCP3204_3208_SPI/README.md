@@ -1,12 +1,9 @@
-## External ADC With SPI Interface, MCP3208
+## External ADC, MCP3208, MCP3204, SPI Interface
               
 MCU:     	ATmega32   
 Display:        16x2 Character LCD
 
-Note: This library is usable for MCP3201/MCP3202/MCP3204 
-
 ### Folder and Files Description
-It has included:
 - `Code_CodeVisionAVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
