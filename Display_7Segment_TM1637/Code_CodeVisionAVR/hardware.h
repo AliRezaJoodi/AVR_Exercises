@@ -7,7 +7,7 @@
     #define AJ_TARGET_MCU_BITS          8U      /*!< Supported: 8, 16, 32 */
     #define AJ_TARGET_TICK_BITS         8U      /*!< Supported: 8, 16, 32 */
 
-#define AJ_TM1637_HARDWARE_EXTRA
+#define AJ_TM1637_CONFIG_PLATFORM_EXTRA
     #define AJ_TM1637_CLK_DDR         DDRC
     #define AJ_TM1637_CLK_PORT        PORTC
     #define AJ_TM1637_CLK_PIN         PINC

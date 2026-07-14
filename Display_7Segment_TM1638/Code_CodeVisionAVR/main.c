@@ -26,7 +26,6 @@ void main(void){
         .stb = {
             .ddr   = &AJ_TM1638_STB_DDR,
             .port  = &AJ_TM1638_STB_PORT,
-            //.index =  AJ_TM1638_STB_POS,
             .mask =  AJ_TM1638_STB_MASK
         }
     };

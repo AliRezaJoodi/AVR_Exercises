@@ -5,11 +5,12 @@
     #define AJ_TARGET_MCU_BITS          8U      /*!< Supported: 8, 16, 32 */
     #define AJ_TARGET_TICK_BITS         8U      /*!< Supported: 8, 16, 32 */
 
-#define AJ_SEG7_DRIVER_HARDWARE
+#define AJ_SEG7_DRIVER_CONFIG
     #define AJ_SEG7_DIGITS_COUNT       8U
     #define AJ_SEG7_DIGITS_ACTIVATE    1U
     #define AJ_SEG7_SEGMENTS_ACTIVATE  0U
 
+#define AJ_SEG7_DRIVER_CONFIG_PLATFORM
     #define AJ_SEG7_DIGIT0_DDR         DDRB
     #define AJ_SEG7_DIGIT0_PORT        PORTB
     #define AJ_SEG7_DIGIT0_POS         0U

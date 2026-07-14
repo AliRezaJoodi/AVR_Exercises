@@ -2,7 +2,7 @@
 Toolset=AVR
 FormatVersion=2
 Files=2
-OpenedFiles=2
+OpenedFiles=6
 OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=.
@@ -33,7 +33,7 @@ Active2=0
 Row2=8
 Column2=5
 State2=2
-TimeStamp2=1556575961
+TimeStamp2=1559105693
 CleanUp=2
 ActiveBuildConfiguration=1
 DebugOutputListFilesDirectory=Debug\List
@@ -48,15 +48,15 @@ EditorPanel1=0
 PageIndex1=1
 EditorPanel2=0
 PageIndex2=2
-ActiveTab=1
+ActiveTab=3
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver.h
-TimeStamp3=1556575961
+TimeStamp3=1559105827
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
-TimeStamp4=1557904363
-OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_hw.h
-TimeStamp5=1556577004
-OF6=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.c
-TimeStamp6=1556575961
+TimeStamp4=1559105652
+OF5=hardware.h
+TimeStamp5=1559105366
+OF6=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver_config.h
+TimeStamp6=1559105747
 OF7=..\..\..\CrossPlatformLibraries\utils\aj_bit_u8.h
 TimeStamp7=1556263872
 TimeStamp0=1549249388
@@ -149,7 +149,7 @@ WarningCOFFArrayDim=1
 WarningCOFFDataComplex=1
 LinkerWarnings=1
 DebugBootLoader=0
-Build=737
+Build=747
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=C:\cvavr\inc
@@ -216,7 +216,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-COFFileTimeStamp=1557927502
+COFFileTimeStamp=1559105840
 OutputFormat=1
 AVR8LHardwareStackSize=16
 EnhancedFunctionParameterPassing=1
@@ -387,7 +387,7 @@ WaitUserProgFinish=1
 [DefinedSymbols]
 Count=0
 [CompilerDebug]
-Build=737
+Build=747
 Chip=ATmega32A
 CPUClock=8000000
 MemoryModel=1
@@ -509,8 +509,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 737
-L18=3491 line(s) compiled
+L17=Build: 747
+L18=3710 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -572,9 +572,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1557927505
+TimeStamp=1559105874
 [BookmarksFoldedCode]
-Files=44
+Files=46
 F1=F:\GoogleDriveWork\Electronics\Projects_Example_Home\AVR\My Circuit & Source\Clock with Seven Segment\Compiler_Code Vision AVR\v1.0.c
 F2=v1.0.c
 F3=C:\Program Files (x86)\CVAVR\inc\math.h
@@ -619,6 +619,8 @@ F41=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.c
 F42=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_hw.h
 F43=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
 F44=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver.h
+F45=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_config_platform.h
+F46=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver_config.h
 [Bookmarks1]
 TimeStamp=1433472353
 Row=183
@@ -821,8 +823,8 @@ Blocks=0
 Blocks=0
 [Bookmarks11]
 TimeStamp=1556575961
-Row=17
-Column=60
+Row=8
+Column=24
 ScrollPosX=0
 ScrollPosY=8
 BK0=-1
@@ -852,9 +854,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks13]
-TimeStamp=1557898856
-Row=5
-Column=76
+TimeStamp=1559105366
+Row=3
+Column=20
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1356,11 +1358,11 @@ Blocks=0
 [FoldedCode21]
 Blocks=0
 [Bookmarks41]
-TimeStamp=1556575961
-Row=11
-Column=51
+TimeStamp=1559105693
+Row=1
+Column=34
 ScrollPosX=0
-ScrollPosY=22
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1372,9 +1374,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks42]
-TimeStamp=1556577004
-Row=105
-Column=27
+TimeStamp=1559102281
+Row=5
+Column=68
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1388,11 +1390,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks43]
-TimeStamp=1557904363
-Row=328
-Column=73
+TimeStamp=1559105652
+Row=12
+Column=0
 ScrollPosX=0
-ScrollPosY=319
+ScrollPosY=18
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1404,11 +1406,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks44]
-TimeStamp=1556575961
-Row=56
-Column=69
+TimeStamp=1559105827
+Row=29
+Column=117
 ScrollPosX=0
-ScrollPosY=46
+ScrollPosY=24
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1419,13 +1421,25 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode44]
-Blocks=0
 [FoldedCode42]
 Blocks=0
-[FoldedCode43]
-Blocks=0
-[FoldedCode13]
+[Bookmarks45]
+TimeStamp=1559105698
+Row=107
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode45]
 Blocks=0
 [HeadersList]
 Files=2
@@ -1440,21 +1454,46 @@ F4=C:\cvavr\inc\io.h
 F5=hardware.h
 F6=..\..\..\CrossPlatformLibraries\drivers\aj_seg7_driver.h
 [Header2]
-Files=13
-F1=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
-F2=C:\cvavr\inc\stdint.h
-F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\mega32a.h
-F6=C:\cvavr\inc\delay.h
-F7=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-F8=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
-F9=hardware.h
-F10=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
-F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_u8.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_hw.h
-F13=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.h
+Files=14
+F1=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver_config.h
+F2=hardware.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_port.h
+F4=C:\cvavr\inc\stdint.h
+F5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
+F6=C:\cvavr\inc\io.h
+F7=C:\cvavr\inc\mega32a.h
+F8=C:\cvavr\inc\delay.h
+F9=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
+F10=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
+F11=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F12=..\..\..\CrossPlatformLibraries\utils\aj_bit_u8.h
+F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_seg7_driver_config_platform.h
+F14=..\..\..\CrossPlatformLibraries\Drivers\aj_seg7_driver.h
 [FoldedCode11]
 Blocks=0
 [FoldedCode41]
+Blocks=0
+[Bookmarks46]
+TimeStamp=1559105747
+Row=20
+Column=22
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode46]
+Blocks=0
+[FoldedCode13]
+Blocks=0
+[FoldedCode43]
+Blocks=0
+[FoldedCode44]
 Blocks=0
