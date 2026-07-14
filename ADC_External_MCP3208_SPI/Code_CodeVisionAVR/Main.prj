@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=5
+OpenedFiles=4
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -31,13 +31,13 @@ PageIndex1=1
 OF2=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3208.c
 Active2=0
 EditorPanel2=0
-TimeStamp2=1558755584
+TimeStamp2=1559102281
 PageIndex2=2
-ActiveTab=4
+ActiveTab=2
 OF3=hardware.h
 TimeStamp3=1558755584
-OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
-TimeStamp4=1558755411
+OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_type.h
+TimeStamp4=1559102281
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_port.h
 TimeStamp5=1558755584
 OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3208_hw.h
@@ -149,8 +149,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1558755604
-Build=473
+COFFileTimeStamp=1559140506
+Build=475
 GlobalVarAddr=630
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -260,7 +260,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=473
+Build=475
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -521,8 +521,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 473
-L18=20651 line(s) compiled
+L17=Build: 475
+L18=20706 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -548,7 +548,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3182): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(3181): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3208_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -705,7 +705,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1558755606
+TimeStamp=1559131768
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -1010,8 +1010,8 @@ BK8=-1
 BK9=-1
 [Bookmarks22]
 TimeStamp=1558755584
-Row=8
-Column=70
+Row=2
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1355,11 +1355,11 @@ Blocks=0
 [FoldedCode40]
 Blocks=0
 [Bookmarks41]
-TimeStamp=1558755584
+TimeStamp=1559102281
 Row=89
-Column=31
+Column=6
 ScrollPosX=0
-ScrollPosY=71
+ScrollPosY=10
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1387,11 +1387,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks43]
-TimeStamp=1556618517
-Row=61
-Column=27
+TimeStamp=1559102281
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=37
+ScrollPosY=16
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1403,11 +1403,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks44]
-TimeStamp=1558755584
-Row=89
-Column=41
+TimeStamp=1559102281
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=76
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1419,11 +1419,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1557898664
-Row=54
-Column=27
+TimeStamp=1559102281
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=40
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1454,11 +1454,35 @@ BK9=-1
 Blocks=0
 [FoldedCode39]
 Blocks=0
-[FoldedCode45]
-Blocks=0
 [FoldedCode42]
 Blocks=0
+[Bookmarks47]
+TimeStamp=1559102281
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode44]
+Blocks=0
+[FoldedCode47]
+Blocks=0
+[FoldedCode18]
+Blocks=0
+[FoldedCode41]
+Blocks=0
 [FoldedCode43]
+Blocks=0
+[FoldedCode22]
 Blocks=0
 [HeadersList]
 Files=3
@@ -1508,29 +1532,5 @@ F6=C:\cvavr\inc\delay.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
-[FoldedCode18]
-Blocks=0
-[FoldedCode41]
-Blocks=0
-[FoldedCode44]
-Blocks=0
-[Bookmarks47]
-TimeStamp=1558755411
-Row=31
-Column=75
-ScrollPosX=0
-ScrollPosY=19
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode47]
-Blocks=0
-[FoldedCode22]
+[FoldedCode45]
 Blocks=0

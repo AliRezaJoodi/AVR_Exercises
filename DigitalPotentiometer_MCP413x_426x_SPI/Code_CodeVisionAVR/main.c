@@ -28,8 +28,8 @@ void main(void){
 //    AJ_MCP4251_ForceShutdown(&mcp);
 //    AJ_MCP4251_ReleaseShutdown(&mcp);
 
-    AJ_MCP4251_WritePot0(&mcp, 128U);
-    AJ_MCP4251_WritePot1(&mcp, 128U);
+    AJ_MCP4251_WriteCount_Pot0(&mcp, 128U);
+    AJ_MCP4251_WriteCount_Pot1(&mcp, 128U);
 
 //    AJ_MCP4251_DisableTerminalControl(&mcp, AJ_MCP4251_TCON_P0HW);
 //    AJ_MCP4251_DisableTerminalControl(&mcp, AJ_MCP4251_TCON_P1HW);

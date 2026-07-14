@@ -25,7 +25,6 @@ void main(void){
         .cs = {
             .ddr   = &AJ_MCP3208_CS_DDR,
             .port  = &AJ_MCP3208_CS_PORT,
-            //.index = AJ_MCP3208_CS_POS,
             .mask = AJ_MCP3208_CS_MASK
         }
     };
