@@ -1,4 +1,5 @@
-## Digital Potentiometer with SPI Interface, MCP42xxx
+## Digital Potentiometer, MCP42xxx, MCP41xxx, SPI Interface, 
+Test my library from CrossPlatformLibraries.    
 
 ### Simulate: v1.0
 ![](Simulate/v1.0.png)
@@ -8,6 +9,7 @@
 
 ### Folders and Files
 - `Code_CodeVisionAVR` (Code with C Language)
+- `Simulate` (Simulator File)
 
 ### Useful Links
 GitHub Profile:  

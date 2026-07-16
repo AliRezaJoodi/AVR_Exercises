@@ -8,11 +8,11 @@
 #define AJ_SPI_CONFIG
     #define AJ_SPI_TIMEOUT              1000U   // A value of uint16_t
 
-#define AJ_MCP42XXX_HARDWARE
+#define AJ_MCP42XXX_CONFIG
     #define AJ_MCP42XXX_SHDN_USED       1U
     #define AJ_MCP42XXX_RS_USED         1U
 
-#define AJ_MCP42XXX_HARDWARE_EXTRA
+#define AJ_MCP42XXX_CONFIG_PLATFORM_EXTRA
     #define AJ_MCP42XXX_CS_DDR          DDRB
     #define AJ_MCP42XXX_CS_PORT         PORTB
     #define AJ_MCP42XXX_CS_POS          4U

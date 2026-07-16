@@ -4,7 +4,7 @@
 #include <delay.h>
 #include <spi.h>
 #include "hardware.h"
-#include "aj_mcp42xxx.h"
+#include "aj_mcp41xxx_42xxx.h"
 
 void SPI_Config(void);
 
