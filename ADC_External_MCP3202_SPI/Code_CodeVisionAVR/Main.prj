@@ -33,11 +33,11 @@ Active2=0
 EditorPanel2=0
 TimeStamp2=1559133753
 PageIndex2=2
-ActiveTab=2
+ActiveTab=4
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3202.h
 TimeStamp3=1559133464
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3202_type.h
-TimeStamp4=1559133464
+TimeStamp4=1559171124
 OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp3202_config_platform.h
 TimeStamp5=1559065276
 OF6=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3202.h
@@ -147,8 +147,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559133762
-Build=508
+COFFileTimeStamp=1559268470
+Build=511
 GlobalVarAddr=622
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -258,7 +258,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=508
+Build=511
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -519,8 +519,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 508
-L18=21382 line(s) compiled
+L17=Build: 511
+L18=21394 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -698,7 +698,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559140053
+TimeStamp=1559268473
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -942,7 +942,7 @@ TimeStamp=1559133479
 Row=35
 Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=69
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1207,10 +1207,10 @@ Blocks=0
 Blocks=0
 [Bookmarks33]
 TimeStamp=1559133753
-Row=16
-Column=75
+Row=6
+Column=0
 ScrollPosX=0
-ScrollPosY=12
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1340,9 +1340,9 @@ BK9=-1
 [FoldedCode40]
 Blocks=0
 [Bookmarks41]
-TimeStamp=1559133464
-Row=17
-Column=17
+TimeStamp=1559171124
+Row=10
+Column=0
 ScrollPosX=0
 ScrollPosY=7
 BK0=-1
@@ -1378,6 +1378,8 @@ Blocks=0
 [FoldedCode22]
 Blocks=0
 [FoldedCode39]
+Blocks=0
+[FoldedCode36]
 Blocks=0
 [HeadersList]
 Files=3
@@ -1432,8 +1434,6 @@ F6=C:\cvavr\inc\delay.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
-[FoldedCode36]
-Blocks=0
 [FoldedCode18]
 Blocks=0
 [FoldedCode33]
