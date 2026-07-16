@@ -9,31 +9,38 @@
 void SPI_Config(void);
 
 void main(void){
-    static const aj_mcp4251_t mcp = {
+    static const aj_mcp4251_t mcp4251 = {
         .cs = {
-            .ddr   = &AJ_MCP413X_426X_CS_DDR,
-            .port  = &AJ_MCP413X_426X_CS_PORT,
-            .mask = AJ_MCP413X_426X_CS_MASK
+            .ddr   = &AJ_MCP4251_CS_DDR,
+            .port  = &AJ_MCP4251_CS_PORT,
+            .mask = AJ_MCP4251_CS_MASK
         },
         .shdn = {
-            .ddr   = &AJ_MCP413X_426X_SHDN_DDR,
-            .port  = &AJ_MCP413X_426X_SHDN_PORT,
-            .mask = AJ_MCP413X_426X_SHDN_MASK
+            .ddr   = &AJ_MCP4251_SHDN_DDR,
+            .port  = &AJ_MCP4251_SHDN_PORT,
+            .mask = AJ_MCP4251_SHDN_MASK
         }
     };
 
     SPI_Config();
-    AJ_MCP4251_Init(&mcp);
+    AJ_MCP4251_Init(&mcp4251);
+    //delay_ms(500);
 
-//    AJ_MCP4251_ForceShutdown(&mcp);
-//    AJ_MCP4251_ReleaseShutdown(&mcp);
+//    AJ_MCP4251_WriteCount(&mcp4251, AJ_MCP4251_POT0, 64);
+//    AJ_MCP4251_WriteCount(&mcp4251, AJ_MCP4251_POT1, 200);
 
-    AJ_MCP4251_WriteCount_Pot0(&mcp, 128U);
-    AJ_MCP4251_WriteCount_Pot1(&mcp, 128U);
+    AJ_MCP4251_WriteCount_Pot0(&mcp4251, 25);
+    AJ_MCP4251_WriteCount_Pot1(&mcp4251, 150);
 
-//    AJ_MCP4251_DisableTerminalControl(&mcp, AJ_MCP4251_TCON_P0HW);
-//    AJ_MCP4251_DisableTerminalControl(&mcp, AJ_MCP4251_TCON_P1HW);
-//    AJ_MCP4251_EnableTerminalControl(&mcp, AJ_MCP4251_TCON_P0HW);
+//    AJ_MCP4251_WriteCount_Pot0(&mcp4251, 64);
+//    AJ_MCP4251_WriteCount_Pot1(&mcp4251, 190);
+
+//    AJ_MCP4251_ForceShutdown(&mcp4251);
+//    AJ_MCP4251_ReleaseShutdown(&mcp4251);
+
+//    AJ_MCP4251_DisableTerminalControl(&mcp4251, AJ_MCP4251_TERMINAL_P0HW);
+//    AJ_MCP4251_DisableTerminalControl(&mcp4251, AJ_MCP4251_TERMINAL_P1HW);
+//    AJ_MCP4251_EnableTerminalControl(&mcp4251, AJ_MCP4251_TERMINAL_P0HW);
 
     while(1){
 

@@ -16,20 +16,16 @@
     #define AJ_MCP413X_426X_SHDN_USED       1U      /**< 0: Not used, 1: Used. */
     #define AJ_MCP413X_426X_WP_USED         0U      /**< 0: Not used, 1: Used. */
 
-#define AJ_MCP413X_426X_CONFIG_PLATFORM_EXTRA
-    #define AJ_MCP413X_426X_CS_DDR          DDRB
-    #define AJ_MCP413X_426X_CS_PORT         PORTB
-    #define AJ_MCP413X_426X_CS_POS          4U
-    #define AJ_MCP413X_426X_CS_MASK         (1U << AJ_MCP413X_426X_CS_POS)
+#define AJ_MCP4251_CONFIG_PLATFORM_EXTRA
+    #define AJ_MCP4251_CS_DDR          DDRB
+    #define AJ_MCP4251_CS_PORT         PORTB
+    #define AJ_MCP4251_CS_POS          4U
+    #define AJ_MCP4251_CS_MASK         (1U << AJ_MCP4251_CS_POS)
 
-    #define AJ_MCP413X_426X_SHDN_DDR        DDRB
-    #define AJ_MCP413X_426X_SHDN_PORT       PORTB
-    #define AJ_MCP413X_426X_SHDN_POS        3U
-    #define AJ_MCP413X_426X_SHDN_MASK       (1U << AJ_MCP413X_426X_SHDN_POS)
+    #define AJ_MCP4251_SHDN_DDR        DDRB
+    #define AJ_MCP4251_SHDN_PORT       PORTB
+    #define AJ_MCP4251_SHDN_POS        3U
+    #define AJ_MCP4251_SHDN_MASK       (1U << AJ_MCP4251_SHDN_POS)
 
-    #define AJ_MCP413X_426X_WP_DDR          DDRB
-    #define AJ_MCP413X_426X_WP_PORT         PORTB
-    #define AJ_MCP413X_426X_WP_POS          2U
-    #define AJ_MCP413X_426X_WP_MASK         (1U << AJ_MCP413X_426X_WP_POS)
 
 #endif
