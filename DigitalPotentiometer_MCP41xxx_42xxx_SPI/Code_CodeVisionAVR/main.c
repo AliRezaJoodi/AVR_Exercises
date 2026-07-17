@@ -4,45 +4,50 @@
 #include <delay.h>
 #include <spi.h>
 #include "hardware.h"
-#include "aj_mcp41xxx_42xxx.h"
+#include "aj_mcp42010.h"
+#include "aj_mcp41010.h"
 
 void SPI_Config(void);
 
 void main(void){
-    static const aj_mcp42xxx_t mcp = {
+    static const aj_mcp42010_t mcp4210 = {
         .cs = {
-            .ddr   = &AJ_MCP42XXX_CS_DDR,
-            .port  = &AJ_MCP42XXX_CS_PORT,
-            .mask = AJ_MCP42XXX_CS_MASK
+            .ddr  = &AJ_MCP42010_CS_DDR,
+            .port = &AJ_MCP42010_CS_PORT,
+            .mask = AJ_MCP42010_CS_MASK
         },
         .shdn = {
-            .ddr   = &AJ_MCP42XXX_SHDN_DDR,
-            .port  = &AJ_MCP42XXX_SHDN_PORT,
-            .mask = AJ_MCP42XXX_SHDN_MASK
+            .ddr  = &AJ_MCP42010_SHDN_DDR,
+            .port = &AJ_MCP42010_SHDN_PORT,
+            .mask = AJ_MCP42010_SHDN_MASK
         },
         .rs = {
-            .ddr   = &AJ_MCP42XXX_RS_DDR,
-            .port  = &AJ_MCP42XXX_RS_PORT,
-            .mask = AJ_MCP42XXX_RS_MASK
+            .ddr  = &AJ_MCP42010_RS_DDR,
+            .port = &AJ_MCP42010_RS_PORT,
+            .mask = AJ_MCP42010_RS_MASK
+        }
+    };
+
+    static const aj_mcp41010_t mcp4110 = {
+        .cs = {
+            .ddr  = &AJ_MCP41010_CS_DDR,
+            .port = &AJ_MCP41010_CS_PORT,
+            .mask = AJ_MCP41010_CS_MASK
         }
     };
 
     SPI_Config();
-    AJ_MCP42xxx_Init(&mcp);
+    AJ_MCP42010_Init(&mcp4210);
+    AJ_MCP41010_Init(&mcp4110);
 
-    AJ_MCP42xxx_ForceShutdown(&mcp);
-    AJ_MCP42xxx_ReleaseShutdown(&mcp);
+    AJ_MCP41010_WriteCount_Pot0(&mcp4110, 25);
+//    AJ_MCP41010_Shutdown_Pot0(&mcp4110);
 
-    AJ_MCP42xxx_HardwareReset(&mcp);
+    AJ_MCP42010_WriteCount_Pot0(&mcp4210, 50);
+    AJ_MCP42010_WriteCount_Pot1(&mcp4210, 150);
 
-    AJ_MCP42xxx_ShutdownPot0(&mcp);
-    AJ_MCP42xxx_WritePot0(&mcp, 25U);
-
-    AJ_MCP42xxx_ShutdownPot1(&mcp);
-    AJ_MCP42xxx_WritePot1(&mcp, 25U);
-
-    AJ_MCP42xxx_ShutdownAll(&mcp);
-    AJ_MCP42xxx_WriteAll(&mcp, 25U);
+//    AJ_MCP41010_Shutdown_Pot0(&mcp4210);
+//    AJ_MCP42010_ForceShutdown(&mcp4210);
 
     while(1){
 
