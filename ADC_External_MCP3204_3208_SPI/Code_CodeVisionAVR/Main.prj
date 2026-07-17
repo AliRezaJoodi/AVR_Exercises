@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=2
+OpenedFiles=3
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -33,9 +33,9 @@ Active2=0
 EditorPanel2=0
 TimeStamp2=1559272936
 PageIndex2=2
-ActiveTab=1
+ActiveTab=3
 OF3=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp3204_3208.c
-TimeStamp3=1559268339
+TimeStamp3=1559364321
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3204_3208.h
 TimeStamp4=1559269386
 OF5=..\..\..\CrossPlatformLibraries\drivers\aj_mcp3204_3208_config.h
@@ -149,8 +149,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559337090
-Build=620
+COFFileTimeStamp=1559364324
+Build=621
 GlobalVarAddr=627
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -260,7 +260,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=620
+Build=621
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -521,8 +521,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 620
-L18=22167 line(s) compiled
+L17=Build: 621
+L18=22169 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -548,7 +548,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2057): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2059): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -717,7 +717,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559337133
+TimeStamp=1559364326
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -1593,11 +1593,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks54]
-TimeStamp=1559336111
-Row=11
-Column=36
+TimeStamp=1559364321
+Row=23
+Column=4
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1702,7 +1702,11 @@ BK8=-1
 BK9=-1
 [FoldedCode56]
 Blocks=0
-[FoldedCode54]
+[FoldedCode55]
+Blocks=0
+[FoldedCode59]
+Blocks=0
+[FoldedCode45]
 Blocks=0
 [HeadersList]
 Files=3
@@ -1763,13 +1767,9 @@ F6=C:\cvavr\inc\delay.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
-[FoldedCode55]
-Blocks=0
-[FoldedCode59]
-Blocks=0
-[FoldedCode45]
-Blocks=0
 [FoldedCode18]
+Blocks=0
+[FoldedCode54]
 Blocks=0
 [FoldedCode22]
 Blocks=0
