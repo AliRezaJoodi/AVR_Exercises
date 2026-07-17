@@ -26,14 +26,8 @@ void main(void){
     AJ_MCP4251_Init(&mcp4251);
     //delay_ms(500);
 
-//    AJ_MCP4251_WriteCount(&mcp4251, AJ_MCP4251_POT0, 64);
-//    AJ_MCP4251_WriteCount(&mcp4251, AJ_MCP4251_POT1, 200);
-
     AJ_MCP4251_WriteCount_Pot0(&mcp4251, 25);
     AJ_MCP4251_WriteCount_Pot1(&mcp4251, 150);
-
-//    AJ_MCP4251_WriteCount_Pot0(&mcp4251, 64);
-//    AJ_MCP4251_WriteCount_Pot1(&mcp4251, 190);
 
 //    AJ_MCP4251_ForceShutdown(&mcp4251);
 //    AJ_MCP4251_ReleaseShutdown(&mcp4251);

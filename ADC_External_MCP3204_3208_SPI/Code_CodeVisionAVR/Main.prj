@@ -26,7 +26,7 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1559272583
+TimeStamp1=1559337042
 PageIndex1=1
 OF2=hardware.h
 Active2=0
@@ -149,8 +149,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559272943
-Build=604
+COFFileTimeStamp=1559337090
+Build=620
 GlobalVarAddr=627
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -260,7 +260,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=604
+Build=620
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -521,8 +521,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 604
-L18=22177 line(s) compiled
+L17=Build: 620
+L18=22167 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -530,7 +530,7 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 33 byte(s)
+L26=Estimated Data Stack usage: 32 byte(s)
 L27=
 L28=RAM Global variables area: 0x260 to 0x272
 L29=RAM Global variables size: 19 byte(s)
@@ -541,19 +541,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 639 words (1278 bytes), 3.9% of FLASH
-L38=33 words (66 bytes), 4.9% reduced by Code Compression
+L37=Program size: 631 words (1262 bytes), 3.9% of FLASH
+L38=33 words (66 bytes), 5.0% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2044): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2057): No EEPROM data, deleting D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0004fe   1114    164   1278   32768   3.9%
+L9=[.cseg] 0x000000 0x0004ee   1098    164   1262   32768   3.9%
 L10=[.dseg] 0x000060 0x000273      0     19     19    2048   0.9%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -717,7 +717,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559273594
+TimeStamp=1559337133
 [Bookmarks6]
 TimeStamp=1515261508
 Row=31
@@ -957,11 +957,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks18]
-TimeStamp=1559272583
-Row=13
-Column=23
+TimeStamp=1559337042
+Row=53
+Column=32
 ScrollPosX=0
-ScrollPosY=30
+ScrollPosY=32
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1431,11 +1431,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks45]
-TimeStamp=1559272129
-Row=53
-Column=32
+TimeStamp=1559336770
+Row=114
+Column=0
 ScrollPosX=0
-ScrollPosY=36
+ScrollPosY=95
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1593,11 +1593,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks54]
-TimeStamp=1559268339
-Row=4
-Column=25
+TimeStamp=1559336111
+Row=11
+Column=36
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=5
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1609,11 +1609,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks55]
-TimeStamp=1559272864
-Row=38
-Column=23
+TimeStamp=1559336111
+Row=77
+Column=65
 ScrollPosX=0
-ScrollPosY=25
+ScrollPosY=63
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1658,8 +1658,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode45]
-Blocks=0
 [FoldedCode57]
 Blocks=0
 [Bookmarks58]
@@ -1680,8 +1678,6 @@ BK8=-1
 BK9=-1
 [FoldedCode58]
 Blocks=0
-[FoldedCode54]
-Blocks=0
 [FoldedCode52]
 Blocks=0
 [FoldedCode50]
@@ -1689,11 +1685,11 @@ Blocks=0
 [FoldedCode49]
 Blocks=0
 [Bookmarks59]
-TimeStamp=1559272621
-Row=5
-Column=24
+TimeStamp=1559337088
+Row=33
+Column=0
 ScrollPosX=0
-ScrollPosY=4
+ScrollPosY=23
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1704,6 +1700,10 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[FoldedCode56]
+Blocks=0
+[FoldedCode54]
+Blocks=0
 [HeadersList]
 Files=3
 F1=D:\GitHub\AVR_Exercises\ADC_External_MCP3204_3208_SPI\Code_CodeVisionAVR\main.c
@@ -1763,11 +1763,11 @@ F6=C:\cvavr\inc\delay.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
+[FoldedCode55]
+Blocks=0
 [FoldedCode59]
 Blocks=0
-[FoldedCode56]
-Blocks=0
-[FoldedCode55]
+[FoldedCode45]
 Blocks=0
 [FoldedCode18]
 Blocks=0

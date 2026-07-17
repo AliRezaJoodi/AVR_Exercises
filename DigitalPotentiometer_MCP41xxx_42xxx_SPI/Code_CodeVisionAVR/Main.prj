@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=4
+OpenedFiles=5
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -35,12 +35,12 @@ TimeStamp2=1559333239
 PageIndex2=2
 TimeStamp0=1446328168
 ActiveTab=4
-OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx_42xxx_type.h
-TimeStamp3=1559327875
-OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41010.h
-TimeStamp4=1559333860
+OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp42010.h
+TimeStamp3=1559335057
+OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx_42xxx.h
+TimeStamp4=1559334560
 OF5=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx_42xxx.c
-TimeStamp5=1559301972
+TimeStamp5=1559328363
 OF6=..\..\..\CrossPlatformLibraries\drivers\aj_mcp41xxx_42xxx_type.h
 TimeStamp6=1559301750
 OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp41xxx_42xxx_config_platform.h
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559333330
-Build=938
+COFFileTimeStamp=1559335086
+Build=947
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=938
+Build=947
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -522,8 +522,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 938
-L18=10886 line(s) compiled
+L17=Build: 947
+L18=10782 line(s) compiled
 L19=No errors
 L20=1 warning(s)
 L21=
@@ -549,7 +549,7 @@ Lines=38
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_42xxx_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(1954): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_42xxx_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_42xxx_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(1936): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DigitalPotentiometer_MCP41xxx_42xxx_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -738,7 +738,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559333863
+TimeStamp=1559335118
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -1952,11 +1952,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks73]
-TimeStamp=1559328365
-Row=59
-Column=0
+TimeStamp=1559334560
+Row=71
+Column=27
 ScrollPosX=0
-ScrollPosY=40
+ScrollPosY=63
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1985,18 +1985,14 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode69]
-Blocks=0
 [FoldedCode72]
 Blocks=0
-[FoldedCode73]
-Blocks=0
 [Bookmarks75]
-TimeStamp=1559331151
-Row=27
-Column=21
+TimeStamp=1559335057
+Row=68
+Column=35
 ScrollPosX=0
-ScrollPosY=20
+ScrollPosY=54
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2007,9 +2003,49 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode75]
-Blocks=0
 [FoldedCode74]
+Blocks=0
+[Bookmarks76]
+TimeStamp=1559333860
+Row=11
+Column=38
+ScrollPosX=0
+ScrollPosY=28
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks77]
+TimeStamp=1559333186
+Row=7
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode77]
+Blocks=0
+[FoldedCode70]
+Blocks=0
+[FoldedCode66]
+Blocks=0
+[FoldedCode76]
+Blocks=0
+[FoldedCode67]
 Blocks=0
 [HeadersList]
 Files=3
@@ -2073,49 +2109,13 @@ F6=C:\cvavr\inc\delay.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
-[Bookmarks76]
-TimeStamp=1559333860
-Row=11
-Column=38
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[Bookmarks77]
-TimeStamp=1559333186
-Row=7
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode77]
-Blocks=0
-[FoldedCode70]
-Blocks=0
-[FoldedCode66]
-Blocks=0
 [FoldedCode27]
 Blocks=0
-[FoldedCode76]
+[FoldedCode69]
 Blocks=0
-[FoldedCode67]
+[FoldedCode73]
+Blocks=0
+[FoldedCode75]
 Blocks=0
 [FoldedCode35]
 Blocks=0

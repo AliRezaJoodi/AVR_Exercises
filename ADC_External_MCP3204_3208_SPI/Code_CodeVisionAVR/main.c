@@ -42,16 +42,16 @@ void main(void){
     putsf("Test UART");
     delay_ms(500);
 
-    raw = AJ_MCP3204_ReadRaw(&mcb3204, AJ_MCP3204_CH0);
+    raw = AJ_MCP3204_ReadRaw_Ch0(&mcb3204);
     putsf("\r"); putsf("MCP3204_CH0(Raw):"); itoa(raw, txt); puts(txt);
 
-    raw = AJ_MCP3204_ReadRaw(&mcb3204, AJ_MCP3204_CH2CH3);
+    raw = AJ_MCP3204_ReadRaw_Ch2Ch3(&mcb3204);
     putsf("\r"); putsf("MCP3204_CH2CH3(Raw):"); itoa(raw, txt); puts(txt);
 
-    raw = AJ_MCP3208_ReadRaw(&mcb3208, AJ_MCP3208_CH5CH4);
+    raw = AJ_MCP3208_ReadRaw_Ch5Ch4(&mcb3208);
     putsf("\r"); putsf("MCP3208_CH5CH4(Raw):"); itoa(raw, txt); puts(txt);
 
-    raw = AJ_MCP3208_ReadRaw(&mcb3208, AJ_MCP3208_CH7CH6);
+    raw = AJ_MCP3208_ReadRaw_Ch7Ch6(&mcb3208);
     putsf("\r"); putsf("MCP3208_CH7CH6(Raw):"); itoa(raw, txt); puts(txt);
 
     while (1){
