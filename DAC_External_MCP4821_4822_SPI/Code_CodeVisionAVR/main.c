@@ -3,45 +3,40 @@
 #include <mega32a.h>
 #include <delay.h>
 #include <spi.h>
+
 #include "hardware.h"
-#include "aj_mcp4821_4822.h"
+#include "aj_mcp4822.h"
 
 void SPI_Config(void);
 
 void main(void){
-    static const aj_mcp4821_4822_t dac1 = {
+    static const aj_mcp4822_t mcp4822 = {
         .cs = {
-            .ddr   = &AJ_MCP4821_4822_CS_DDR,
-            .port  = &AJ_MCP4821_4822_CS_PORT,
-            .mask  =  AJ_MCP4821_4822_CS_MASK
+            .ddr   = &AJ_MCP4822_CS_DDR,
+            .port  = &AJ_MCP4822_CS_PORT,
+            .mask  =  AJ_MCP4822_CS_MASK
         },
         .ldac = {
-            .ddr   = &AJ_MCP4821_4822_LDAC_DDR,
-            .port  = &AJ_MCP4821_4822_LDAC_PORT,
-            .mask  =  AJ_MCP4821_4822_LDAC_MASK
+            .ddr   = &AJ_MCP4822_LDAC_DDR,
+            .port  = &AJ_MCP4822_LDAC_PORT,
+            .mask  =  AJ_MCP4822_LDAC_MASK
         }
     };
 
     SPI_Config();
-    AJ_MCP4821_4822_Init(&dac1);
-
-//    AJ_MCP4821_4822_WriteCount(&dac1, AJ_MCP4821_4822_CH_A, AJ_MCP4821_4822_FS_2V048, 1000U);
-//    AJ_MCP4821_4822_WriteCountA(&dac1, AJ_MCP4821_4822_FS_2V048, 1000U);
-//    AJ_MCP4821_4822_WriteCountA_2V048(&dac1, 4095U);
-//    AJ_MCP4821_4822_WriteCountA_4V096(&dac1, 1000U);
-
-//    AJ_MCP4821_4822_ShutdownChannel(&dac1, AJ_MCP4821_4822_CH_A);
-//    AJ_MCP4821_4822_ShutdownChannelA(&dac1);
+    AJ_MCP4822_Init(&mcp4822);
 
 
-//    AJ_MCP4821_4822_WriteCount(&dac1, MCP4821_4822_CH_B, AJ_MCP4821_4822_FS_4V096, 1000U);
-//    AJ_MCP4821_4822_WriteCountB(&dac1, AJ_MCP4821_4822_FS_2V048, 1000U);
-//    AJ_MCP4821_4822_WriteCountB_2V048(&dac1, 1000U);
-//    AJ_MCP4821_4822_WriteCountB_4V096(&dac1, 4095U);
+    AJ_MCP4822_WriteCount_ChA_2V048(&mcp4822, 4096/2);
+    AJ_MCP4822_WriteCount_ChB_2V048(&mcp4822, 4096/2);
 
-//    delay_ms(2000);
-//    AJ_MCP4821_4822_ShutdownChannel(&dac1, AJ_MCP4821_4822_CH_B);
-//    AJ_MCP4821_4822_ShutdownChannelB(&dac1);
+    AJ_MCP4822_Shutdown_ChA(&mcp4822);
+    AJ_MCP4822_Shutdown_ChB(&mcp4822);
+
+    AJ_MCP4822_WriteCount_ChA_4V096(&mcp4822, 4096/2);
+    AJ_MCP4822_WriteCount_ChB_4V096(&mcp4822, 4096/2);
+
+
 
     while(1){
     }

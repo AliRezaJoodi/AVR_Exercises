@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=9
+OpenedFiles=3
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,7 +26,7 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1559387663
+TimeStamp1=1559410549
 PageIndex1=1
 OF2=hardware.h
 Active2=0
@@ -34,9 +34,9 @@ EditorPanel2=0
 TimeStamp2=1559391481
 PageIndex2=2
 TimeStamp0=1446328168
-ActiveTab=6
-OF3=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp4821_4822.c
-TimeStamp3=1559391823
+ActiveTab=0
+OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4822.h
+TimeStamp3=1559410379
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822.h
 TimeStamp4=1559391598
 OF5=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822_type.h
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559392392
-Build=742
+COFFileTimeStamp=1559412468
+Build=768
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=742
+Build=768
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -522,16 +522,16 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 742
-L18=8334 line(s) compiled
+L17=Build: 768
+L18=8338 line(s) compiled
 L19=No errors
-L20=2 warning(s)
+L20=No warnings
 L21=
 L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 7 byte(s)
+L26=Estimated Data Stack usage: 17 byte(s)
 L27=
 L28=RAM Global variables area: 0x260 to 0x26F
 L29=RAM Global variables size: 16 byte(s)
@@ -542,19 +542,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 212 words (424 bytes), 1.3% of FLASH
-L38=0 words (0 bytes), 0.0% reduced by Code Compression
+L37=Program size: 679 words (1358 bytes), 4.1% of FLASH
+L38=15 words (30 bytes), 2.2% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(1598): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\DAC_External_MCP4821_4822_SPI\Code_CodeVisionAVR\Debug\List\Main.asm(2067): No EEPROM data, deleting D:\GitHub\AVR_Exercises\DAC_External_MCP4821_4822_SPI\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0001a8    406     18    424   32768   1.3%
+L9=[.cseg] 0x000000 0x00054e   1340     18   1358   32768   4.1%
 L10=[.dseg] 0x000060 0x000270      0     16     16    2048   0.8%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
@@ -567,7 +567,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=61
+Files=62
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -629,6 +629,7 @@ F58=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4821_4822_port.h
 F59=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4821_4822_config_platform.h
 F60=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822_type.h
 F61=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822.h
+F62=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_config_platform.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -722,7 +723,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559392496
+TimeStamp=1559410697
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -1116,11 +1117,11 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks27]
-TimeStamp=1559387663
-Row=32
-Column=60
+TimeStamp=1559410549
+Row=33
+Column=54
 ScrollPosX=0
-ScrollPosY=23
+ScrollPosY=26
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1251,8 +1252,8 @@ BK8=-1
 BK9=-1
 [Bookmarks35]
 TimeStamp=1559391481
-Row=22
-Column=45
+Row=14
+Column=28
 ScrollPosX=0
 ScrollPosY=3
 BK0=-1
@@ -1476,11 +1477,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks47]
-TimeStamp=1556618104
-Row=72
-Column=70
+TimeStamp=1559410379
+Row=16
+Column=64
 ScrollPosX=0
-ScrollPosY=166
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1541,8 +1542,8 @@ BK8=-1
 BK9=-1
 [Bookmarks51]
 TimeStamp=1559385261
-Row=39
-Column=23
+Row=32
+Column=128
 ScrollPosX=0
 ScrollPosY=18
 BK0=-1
@@ -1571,8 +1572,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode47]
-Blocks=0
 [FoldedCode17]
 Blocks=0
 [Bookmarks53]
@@ -1613,8 +1612,6 @@ BK8=-1
 BK9=-1
 [FoldedCode54]
 Blocks=0
-[FoldedCode51]
-Blocks=0
 [FoldedCode49]
 Blocks=0
 [FoldedCode50]
@@ -1624,11 +1621,11 @@ Blocks=0
 [FoldedCode48]
 Blocks=0
 [Bookmarks55]
-TimeStamp=1559391261
-Row=13
-Column=20
+TimeStamp=1559409177
+Row=10
+Column=36
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=4
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1639,13 +1636,145 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[Bookmarks56]
+TimeStamp=1559405965
+Row=42
+Column=29
+ScrollPosX=0
+ScrollPosY=19
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks57]
+TimeStamp=1559387161
+Row=1
+Column=19
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks58]
+TimeStamp=1559391825
+Row=142
+Column=3
+ScrollPosX=0
+ScrollPosY=127
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks59]
+TimeStamp=1559405980
+Row=3
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks60]
+TimeStamp=1559391330
+Row=40
+Column=19
+ScrollPosX=0
+ScrollPosY=28
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks61]
+TimeStamp=1559410095
+Row=63
+Column=0
+ScrollPosX=0
+ScrollPosY=54
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode51]
+Blocks=0
+[FoldedCode55]
+Blocks=0
+[FoldedCode57]
+Blocks=0
+[FoldedCode58]
+Blocks=0
+[FoldedCode59]
+Blocks=0
+[FoldedCode60]
+Blocks=0
+[FoldedCode56]
+Blocks=0
+[FoldedCode61]
+Blocks=0
+[Bookmarks62]
+TimeStamp=1559412466
+Row=13
+Column=104
+ScrollPosX=0
+ScrollPosY=0
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode27]
+Blocks=0
+[FoldedCode35]
+Blocks=0
 [HeadersList]
 Files=3
-F1=D:\GitHub\AVR_Exercises\DAC_External_MCP4822_SPI\Code_CodeVisionAVR\main.c
+F1=D:\GitHub\AVR_Exercises\DAC_External_MCP4821_4822_SPI\Code_CodeVisionAVR\main.c
 F2=D:\GitHub\CrossPlatformLibraries\Drivers\aj_mcp4821_4822.c
 F3=D:\GitHub\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.c
 [Header1]
-Files=13
+Files=15
 F1=C:\cvavr\inc\mega32a.h
 F2=C:\cvavr\inc\mega32_bits.h
 F3=C:\cvavr\inc\delay.h
@@ -1654,11 +1783,13 @@ F5=C:\cvavr\inc\spi.h
 F6=C:\cvavr\inc\io.h
 F7=C:\cvavr\inc\stdbool.h
 F8=hardware.h
-F9=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822.h
-F10=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822_type.h
-F11=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822_config.h
-F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4821_4822_type_platform.h
-F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4821_4822_config_platform.h
+F9=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4822.h
+F10=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822.h
+F11=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822_type.h
+F12=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4821_4822_config.h
+F13=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4821_4822_type_platform.h
+F14=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4821_4822_config_platform.h
+F15=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_mcp4822_config_platform.h
 [Header2]
 Files=18
 F1=..\..\..\CrossPlatformLibraries\Drivers\aj_mcp4821_4822_config.h
@@ -1690,117 +1821,7 @@ F6=C:\cvavr\inc\delay.h
 F7=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
 F8=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi_config.h
 F9=hardware.h
-[FoldedCode27]
+[FoldedCode62]
 Blocks=0
-[Bookmarks56]
-TimeStamp=1559391823
-Row=42
-Column=71
-ScrollPosX=0
-ScrollPosY=11
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode56]
-Blocks=0
-[Bookmarks57]
-TimeStamp=1559387161
-Row=20
-Column=17
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode57]
-Blocks=0
-[Bookmarks58]
-TimeStamp=1559391825
-Row=142
-Column=3
-ScrollPosX=0
-ScrollPosY=127
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode58]
-Blocks=0
-[FoldedCode55]
-Blocks=0
-[Bookmarks59]
-TimeStamp=1559392389
-Row=7
-Column=73
-ScrollPosX=0
-ScrollPosY=3
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode59]
-Blocks=0
-[Bookmarks60]
-TimeStamp=1559391330
-Row=16
-Column=25
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode60]
-Blocks=0
-[Bookmarks61]
-TimeStamp=1559391598
-Row=28
-Column=74
-ScrollPosX=0
-ScrollPosY=54
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode61]
-Blocks=0
-[FoldedCode35]
+[FoldedCode47]
 Blocks=0
