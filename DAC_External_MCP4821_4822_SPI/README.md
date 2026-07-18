@@ -1,9 +1,8 @@
-## External DAC with SPI Interface, MCP4822
+## External DAC, MCP4822, MCP4821, SPI Interface, 
               
 MCU:     	ATmega32  
 
 ### Folder and Files Description
-It has included:
 - `Code_CodeVisionAVR` (Code with C Language)
 - `Simulate` (Simulator File)
 
