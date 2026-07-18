@@ -6,6 +6,7 @@
 
 #include "hardware.h"
 #include "aj_mcp4822.h"
+#include "aj_mcp4821.h"
 
 void SPI_Config(void);
 
@@ -23,20 +24,43 @@ void main(void){
         }
     };
 
+    static const aj_mcp4821_t mcp4821 = {
+        .cs = {
+            .ddr   = &AJ_MCP4821_CS_DDR,
+            .port  = &AJ_MCP4821_CS_PORT,
+            .mask  =  AJ_MCP4821_CS_MASK
+        },
+        .ldac = {
+            .ddr   = &AJ_MCP4821_LDAC_DDR,
+            .port  = &AJ_MCP4821_LDAC_PORT,
+            .mask  =  AJ_MCP4821_LDAC_MASK
+        },
+        .shdn = {
+            .ddr   = &AJ_MCP4821_SHDN_DDR,
+            .port  = &AJ_MCP4821_SHDN_PORT,
+            .mask  =  AJ_MCP4821_SHDN_MASK
+        }
+    };
+
     SPI_Config();
     AJ_MCP4822_Init(&mcp4822);
-
+    AJ_MCP4821_Init(&mcp4821);
 
     AJ_MCP4822_WriteCount_ChA_2V048(&mcp4822, 4096/2);
     AJ_MCP4822_WriteCount_ChB_2V048(&mcp4822, 4096/2);
 
-    AJ_MCP4822_Shutdown_ChA(&mcp4822);
-    AJ_MCP4822_Shutdown_ChB(&mcp4822);
+//    AJ_MCP4822_Shutdown_ChA(&mcp4822);
+//    AJ_MCP4822_Shutdown_ChB(&mcp4822);
 
     AJ_MCP4822_WriteCount_ChA_4V096(&mcp4822, 4096/2);
     AJ_MCP4822_WriteCount_ChB_4V096(&mcp4822, 4096/2);
 
+    AJ_MCP4821_WriteCount_ChA_2V048(&mcp4821, 4096/2);
+    AJ_MCP4821_Shutdown_ChA(&mcp4821);
+    AJ_MCP4821_WriteCount_ChA_4V096(&mcp4821, 4096/4);
 
+    AJ_MCP4821_ForceShutdown(&mcp4821);
+    AJ_MCP4821_ReleaseShutdown(&mcp4821);
 
     while(1){
     }

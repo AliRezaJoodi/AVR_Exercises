@@ -23,4 +23,20 @@
     #define AJ_MCP4822_LDAC_POS             3U
     #define AJ_MCP4822_LDAC_MASK            (1U << AJ_MCP4822_LDAC_POS)
 
+#define AJ_MCP4821_CONFIG_PLATFORM_EXTRA
+    #define AJ_MCP4821_CS_DDR               DDRB
+    #define AJ_MCP4821_CS_PORT              PORTB
+    #define AJ_MCP4821_CS_POS               2U
+    #define AJ_MCP4821_CS_MASK              (1U << AJ_MCP4821_CS_POS)
+
+    #define AJ_MCP4821_LDAC_DDR             DDRB
+    #define AJ_MCP4821_LDAC_PORT            PORTB
+    #define AJ_MCP4821_LDAC_POS             1U
+    #define AJ_MCP4821_LDAC_MASK            (1U << AJ_MCP4821_LDAC_POS)
+
+    #define AJ_MCP4821_SHDN_DDR             DDRB
+    #define AJ_MCP4821_SHDN_PORT            PORTB
+    #define AJ_MCP4821_SHDN_POS             0U
+    #define AJ_MCP4821_SHDN_MASK            (1U << AJ_MCP4821_SHDN_POS)
+
 #endif
