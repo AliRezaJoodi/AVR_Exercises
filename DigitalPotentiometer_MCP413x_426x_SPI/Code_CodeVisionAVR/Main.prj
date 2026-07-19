@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=5
+OpenedFiles=7
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -34,17 +34,17 @@ EditorPanel2=0
 TimeStamp2=1559251713
 PageIndex2=2
 TimeStamp0=1446328168
-ActiveTab=3
+ActiveTab=5
 OF3=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x.c
 TimeStamp3=1559260619
 OF4=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x.h
-TimeStamp4=1559334406
+TimeStamp4=1559433025
 OF5=..\..\..\CrossPlatformLibraries\drivers\aj_mcp4251.h
-TimeStamp5=1559335607
-OF6=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x_type.h
-TimeStamp6=1559257393
-OF7=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x_config.h
-TimeStamp7=1559253538
+TimeStamp5=1559456484
+OF6=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x_config.h
+TimeStamp6=1559456457
+OF7=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x_type.h
+TimeStamp7=1559257393
 OF8=..\..\..\CrossPlatformLibraries\drivers\aj_mcp413x_426x_type.h
 TimeStamp8=1558781454
 F1=main.c
@@ -148,8 +148,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559335610
-Build=1183
+COFFileTimeStamp=1559456486
+Build=1185
 XminiBootLoader=0
 XminiBootEnd=0
 XminiAppEnd=0
@@ -259,7 +259,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=1183
+Build=1185
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -520,8 +520,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 1183
-L18=9109 line(s) compiled
+L17=Build: 1185
+L18=9045 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -737,7 +737,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559364369
+TimeStamp=1559456494
 [Bookmarks6]
 TimeStamp=1550188760
 Row=9
@@ -1879,11 +1879,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks69]
-TimeStamp=1559334406
-Row=67
-Column=27
+TimeStamp=1559433025
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=62
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1947,11 +1947,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks73]
-TimeStamp=1559335607
-Row=63
-Column=101
+TimeStamp=1559456484
+Row=33
+Column=0
 ScrollPosX=0
-ScrollPosY=67
+ScrollPosY=59
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1963,9 +1963,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks74]
-TimeStamp=1559253538
-Row=18
-Column=36
+TimeStamp=1559456457
+Row=48
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1982,8 +1982,8 @@ BK9=-1
 Blocks=0
 [Bookmarks75]
 TimeStamp=1559257393
-Row=13
-Column=0
+Row=12
+Column=19
 ScrollPosX=0
 ScrollPosY=7
 BK0=-1
@@ -2058,10 +2058,6 @@ BK8=-1
 BK9=-1
 [FoldedCode72]
 Blocks=0
-[FoldedCode74]
-Blocks=0
-[FoldedCode75]
-Blocks=0
 [FoldedCode78]
 Blocks=0
 [HeadersList]
@@ -2121,6 +2117,10 @@ F9=hardware.h
 [FoldedCode27]
 Blocks=0
 [FoldedCode67]
+Blocks=0
+[FoldedCode75]
+Blocks=0
+[FoldedCode74]
 Blocks=0
 [FoldedCode73]
 Blocks=0

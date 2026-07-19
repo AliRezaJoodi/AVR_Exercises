@@ -41,7 +41,7 @@ void main(void){
     AJ_MCP41010_Init(&mcp4110);
 
     AJ_MCP41010_WriteCount_Pot0(&mcp4110, 25);
-//    AJ_MCP41010_Shutdown_Pot0(&mcp4110);
+    AJ_MCP41010_Shutdown_Pot0(&mcp4110);
 
     AJ_MCP42010_WriteCount_Pot0(&mcp4210, 50);
     AJ_MCP42010_WriteCount_Pot1(&mcp4210, 150);
