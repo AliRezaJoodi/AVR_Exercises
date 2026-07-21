@@ -7,7 +7,7 @@ A=
 C=
 D=01/20/2023
 Files=3
-OpenedFiles=5
+OpenedFiles=7
 OF1=main.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
@@ -26,24 +26,24 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1557373672
+TimeStamp1=1559596722
 PageIndex1=1
-OF2=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.c
+OF2=hardware.h
 Active2=0
 EditorPanel2=0
-TimeStamp2=1559039249
+TimeStamp2=1559596580
 PageIndex2=2
 ActiveTab=4
-OF3=hardware.h
-TimeStamp3=1559010107
-OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_port.h
-TimeStamp4=1559039249
-OF5=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.h
-TimeStamp5=1559011126
-OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_config_platform.h
-TimeStamp6=1559009967
-OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_port.h
-TimeStamp7=1557892404
+OF3=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.h
+TimeStamp3=1559587453
+OF4=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.c
+TimeStamp4=1559588020
+OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_port.h
+TimeStamp5=1559102281
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.h
+TimeStamp6=1559385261
+OF7=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_config_platform.h
+TimeStamp7=1559596468
 OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
 TimeStamp8=1557892411
 F1=main.c
@@ -51,7 +51,7 @@ F2=..\..\..\CrossPlatformLibraries\drivers\aj_max6675.c
 F3=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.c
 [CompilerDebug]
 Chip=ATmega32A
-CPUClock=8000000
+CPUClock=11059200
 MemoryModel=1
 OptimizeSize=1
 OptimizationLevel=2
@@ -147,9 +147,9 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559039252
-Build=693
-GlobalVarAddr=626
+COFFileTimeStamp=1559596725
+Build=748
+GlobalVarAddr=627
 EEPROMVarAddr=0
 XminiBootLoader=0
 XminiBootEnd=0
@@ -161,7 +161,7 @@ DisplayCodeSizeError=1
 Count=0
 [Compiler]
 Chip=ATmega32A
-CPUClock=8000000
+CPUClock=11059200
 MemoryModel=1
 OptimizeSize=1
 OptimizationLevel=2
@@ -258,7 +258,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=693
+Build=748
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -505,7 +505,7 @@ WaitUserProgFinish=1
 [BuildInfoCompiler]
 L1=Build configuration: Debug
 L2=Chip: ATmega32A
-L3=Clock frequency: 8.000000 MHz
+L3=Clock frequency: 11.059200 MHz
 L4=Program type: Application
 L5=Memory model: Small
 L6=Optimize for: Size
@@ -519,8 +519,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 693
-L18=21379 line(s) compiled
+L17=Build: 748
+L18=21368 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -528,31 +528,31 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 41 byte(s)
+L26=Estimated Data Stack usage: 71 byte(s)
 L27=
-L28=RAM Global variables area: 0x260 to 0x271
-L29=RAM Global variables size: 18 byte(s)
+L28=RAM Global variables area: 0x260 to 0x272
+L29=RAM Global variables size: 19 byte(s)
 L30=
-L31=Hardware Stack area: 0x272 to 0x85F
-L32=Hardware Stack size: 1518 byte(s)
+L31=Hardware Stack area: 0x273 to 0x85F
+L32=Hardware Stack size: 1517 byte(s)
 L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 1484 words (2968 bytes), 9.1% of FLASH
-L38=49 words (98 bytes), 3.2% reduced by Code Compression
+L37=Program size: 1368 words (2736 bytes), 8.3% of FLASH
+L38=45 words (90 bytes), 3.2% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Debug\List\Main.asm(2987): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Debug\List\Main.asm(2889): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Sensor_Thermocouple_TypeK_MAX6675\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000b98   2894     74   2968   32768   9.1%
-L10=[.dseg] 0x000060 0x000272      0     18     18    2048   0.9%
+L9=[.cseg] 0x000000 0x000ab0   2636    100   2736   32768   8.3%
+L10=[.dseg] 0x000060 0x000273      0     19     19    2048   0.9%
 L11=[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 L12=
 Lines=12
@@ -564,7 +564,7 @@ HIDKeyboard=0
 HIDMouse=0
 HIDJoystick=0
 [BookmarksFoldedCode]
-Files=75
+Files=76
 F1=C:\Program Files (x86)\CVAVR\inc\stdlib.h
 F2=C:\Program Files (x86)\CVAVR\inc\stdio.h
 F3=C:\Program Files (x86)\CVAVR\inc\alcd.h
@@ -640,6 +640,7 @@ F72=..\..\..\CrossPlatformLibraries\utils\aj_target.h
 F73=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_config_platform.h
 F74=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_max6675_type_platform.h
 F75=..\..\..\CrossPlatformLibraries\drivers\aj_max6675_type.h
+F76=C:\cvavr\inc\stdio.h
 [Bookmarks1]
 TimeStamp=942820115
 Row=26
@@ -731,7 +732,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559039832
+TimeStamp=1559596891
 [Bookmarks6]
 TimeStamp=1548031469
 Row=8
@@ -969,11 +970,11 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks18]
-TimeStamp=1557373672
-Row=108
-Column=76
+TimeStamp=1559596722
+Row=51
+Column=37
 ScrollPosX=0
-ScrollPosY=92
+ScrollPosY=51
 BK0=-1
 BK1=-1
 BK2=-1
@@ -985,11 +986,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks19]
-TimeStamp=1559010107
-Row=10
-Column=22
+TimeStamp=1559596580
+Row=19
+Column=23
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=3
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1534,10 +1535,10 @@ Blocks=0
 Blocks=0
 [Bookmarks50]
 TimeStamp=1537169668
-Row=26
-Column=13
+Row=28
+Column=36
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=13
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1548,8 +1549,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode50]
-Blocks=0
 [FoldedCode48]
 Blocks=0
 [Bookmarks51]
@@ -1659,11 +1658,11 @@ BK9=-1
 [FoldedCode37]
 Blocks=0
 [Bookmarks57]
-TimeStamp=1557904250
-Row=0
-Column=0
+TimeStamp=1559102281
+Row=70
+Column=19
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=70
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1779,11 +1778,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks64]
-TimeStamp=1558906442
-Row=50
-Column=33
+TimeStamp=1559385261
+Row=59
+Column=32
 ScrollPosX=0
-ScrollPosY=42
+ScrollPosY=48
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1843,11 +1842,11 @@ Blocks=0
 [FoldedCode58]
 Blocks=0
 [Bookmarks67]
-TimeStamp=1559039249
-Row=23
-Column=27
+TimeStamp=1559588020
+Row=27
+Column=17
 ScrollPosX=0
-ScrollPosY=15
+ScrollPosY=14
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1893,11 +1892,11 @@ BK9=-1
 [FoldedCode56]
 Blocks=0
 [Bookmarks70]
-TimeStamp=1559039249
-Row=12
-Column=20
+TimeStamp=1559102281
+Row=50
+Column=17
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=39
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1909,11 +1908,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks71]
-TimeStamp=1559011126
-Row=0
-Column=0
+TimeStamp=1559587453
+Row=85
+Column=43
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=64
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1944,16 +1943,12 @@ BK8=-1
 BK9=-1
 [FoldedCode72]
 Blocks=0
-[FoldedCode57]
-Blocks=0
-[FoldedCode64]
-Blocks=0
 [FoldedCode69]
 Blocks=0
 [Bookmarks73]
-TimeStamp=1559010083
-Row=7
-Column=67
+TimeStamp=1559596468
+Row=11
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1969,11 +1964,11 @@ BK9=-1
 [FoldedCode68]
 Blocks=0
 [Bookmarks74]
-TimeStamp=1559010250
+TimeStamp=1559102281
 Row=0
 Column=0
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=2
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1985,11 +1980,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks75]
-TimeStamp=1559010307
-Row=8
-Column=34
+TimeStamp=1559586608
+Row=29
+Column=0
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=15
 BK0=-1
 BK1=-1
 BK2=-1
@@ -2000,11 +1995,31 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode75]
-Blocks=0
 [FoldedCode74]
 Blocks=0
-[FoldedCode73]
+[FoldedCode75]
+Blocks=0
+[Bookmarks76]
+TimeStamp=1211660405
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=29
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode76]
+Blocks=0
+[FoldedCode50]
+Blocks=0
+[FoldedCode57]
 Blocks=0
 [HeadersList]
 Files=3
@@ -2013,13 +2028,13 @@ F2=D:\GitHub\CrossPlatformLibraries\drivers\aj_max6675.c
 F3=D:\GitHub\CrossPlatformLibraries\platforms\avr8\peripherals\aj_spi.c
 [Header1]
 Files=16
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\stdlib.h
-F3=C:\cvavr\inc\stdio.h
-F4=C:\cvavr\inc\io.h
-F5=C:\cvavr\inc\mega32a.h
-F6=C:\cvavr\inc\mega32_bits.h
-F7=C:\cvavr\inc\stdarg.h
+F1=C:\cvavr\inc\stdio.h
+F2=C:\cvavr\inc\io.h
+F3=C:\cvavr\inc\mega32a.h
+F4=C:\cvavr\inc\mega32_bits.h
+F5=C:\cvavr\inc\stdarg.h
+F6=C:\cvavr\inc\stdlib.h
+F7=C:\cvavr\inc\stdint.h
 F8=C:\cvavr\inc\spi.h
 F9=C:\cvavr\inc\stdbool.h
 F10=C:\cvavr\inc\delay.h
@@ -2063,9 +2078,13 @@ F9=hardware.h
 Blocks=0
 [FoldedCode67]
 Blocks=0
-[FoldedCode71]
+[FoldedCode73]
+Blocks=0
+[FoldedCode64]
 Blocks=0
 [FoldedCode70]
+Blocks=0
+[FoldedCode71]
 Blocks=0
 [FoldedCode19]
 Blocks=0
