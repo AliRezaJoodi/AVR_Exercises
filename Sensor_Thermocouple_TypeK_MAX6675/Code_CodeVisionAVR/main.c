@@ -16,14 +16,13 @@ void SPI_Config(void);
 
 void main(void){
     char txt[20];
-    char txt2[20];
-    uint16_t raw1, raw1_last = 0;
-    float temperature1;
+    uint16_t raw;
+    float temperature;
 
-    uint16_t raw2, raw2_last = 0;
-    float temperature2;
+    uint16_t raw1_last = 0;
+    uint16_t raw2_last = 0;
 
-    static const aj_max6675_t tc1 = {
+    static const aj_max6675_t max1 = {
         .cs = {
             .ddr  = &AJ_MAX6675_CS1_DDR,
             .port = &AJ_MAX6675_CS1_PORT,
@@ -41,7 +40,7 @@ void main(void){
 
     UART_Config();
     SPI_Config();
-    AJ_MAX6675_Init(&tc1);
+    AJ_MAX6675_Init(&max1);
     AJ_MAX6675_Init(&max2);
 
     putsf("Test UART");
@@ -49,27 +48,24 @@ void main(void){
     DDRA = 0xFF;
 
     while (1){
-        raw1 = AJ_MAX6675_ReadRaw(&tc1);
-        PORTA = raw1;
+        raw = AJ_MAX6675_ReadRaw(&max1);
 
-        if(raw1 != raw1_last){
-            raw1_last = raw1;
-            temperature1 = raw1 * 0.25;
+        if(raw != raw1_last){
+            raw1_last = raw;
+            temperature = raw * 0.25;
 //            putsf("\r"); putsf("TC1(Raw):"); itoa(raw, txt); puts(txt);
-            putsf("\r"); putsf("TC1(^C):"); ftoa(temperature1, 2, txt); puts(txt);
+            putsf("\r"); putsf("TC1(^C):"); ftoa(temperature, 2, txt); puts(txt);
             delay_ms(100);
         }
-        delay_ms(100);
 
-        raw2 = AJ_MAX6675_ReadRaw(&max2);
-        if(raw2 != raw2_last){
-            raw2_last = raw2;
-            temperature2 = raw2 * 0.25;
+        raw = AJ_MAX6675_ReadRaw(&max2);
+
+        if(raw != raw2_last){
+            raw2_last = raw;
+            temperature = raw * 0.25;
 //            putsf("\r"); putsf("TC2(Raw):"); itoa(raw, txt); puts(txt);
-            putsf("\r"); putsf("TC2(^C):"); ftoa(temperature2, 2, txt2); puts(txt2);
-            delay_ms(100);
+            putsf("\r"); putsf("TC2(^C):"); ftoa(temperature, 2, txt); puts(txt);
         }
-        delay_ms(100);
     }
 }
 

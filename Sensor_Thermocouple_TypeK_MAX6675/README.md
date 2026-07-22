@@ -6,8 +6,12 @@ Test my library from CrossPlatformLibraries.
 
 ### Features 
 - **MCU:** ATmega32A 
-- **Display:** 16x2 LCD
-- **Thermocouple:** Type-K                  
+- **Display:** UART
+- **Thermocouple:** Type-K x2                  
+
+Note:  
+In Proteus, the values of two MAX6675 sensors may appear swapped.    
+This is not a firmware or driver issue; it is a Proteus simulation/model limitation.  
 
 ### Folders and Files
 - `Code_CodeVisionAVR` (Code with C Language)
