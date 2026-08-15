@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=2
-OpenedFiles=3
+OpenedFiles=1
 OF1=main.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -33,7 +33,7 @@ Active2=1
 EditorPanel2=0
 TimeStamp2=1557892027
 PageIndex2=2
-ActiveTab=3
+ActiveTab=1
 OF3=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
 TimeStamp3=1557640905
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_config.h
@@ -144,8 +144,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1559016144
-Build=593
+COFFileTimeStamp=1561294410
+Build=597
 GlobalVarAddr=629
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -255,7 +255,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=593
+Build=597
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
@@ -500,8 +500,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 593
-L18=4084 line(s) compiled
+L17=Build: 597
+L18=4192 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -527,7 +527,7 @@ L38=33 words (66 bytes), 2.7% reduced by Code Compression
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\GPIO\Code_CodeVisionAVR\Debug\List\Main.asm(2716): No EEPROM data, deleting D:\GitHub\AVR_Exercises\GPIO\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\GPIO\Code_CodeVisionAVR\Debug\List\Main.asm(2684): No EEPROM data, deleting D:\GitHub\AVR_Exercises\GPIO\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega32A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
@@ -542,7 +542,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1559016172
+TimeStamp=1561294413
 [BookmarksFoldedCode]
 Files=38
 F1=v1.0.c
@@ -739,7 +739,7 @@ TimeStamp=1557640692
 Row=88
 Column=38
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=72
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1177,11 +1177,11 @@ Blocks=0
 [FoldedCode26]
 Blocks=0
 [Bookmarks33]
-TimeStamp=1557640905
-Row=54
-Column=53
+TimeStamp=1561294340
+Row=82
+Column=107
 ScrollPosX=0
-ScrollPosY=76
+ScrollPosY=93
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1193,23 +1193,7 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks34]
-TimeStamp=1557892027
-Row=2
-Column=21
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[Bookmarks35]
-TimeStamp=1559011170
+TimeStamp=1559102281
 Row=0
 Column=0
 ScrollPosX=0
@@ -1224,12 +1208,28 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[Bookmarks36]
-TimeStamp=1557661518
-Row=9
-Column=40
+[Bookmarks35]
+TimeStamp=1559102281
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=5
+ScrollPosY=27
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[Bookmarks36]
+TimeStamp=1559102281
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=6
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1256,8 +1256,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode36]
-Blocks=0
 [FoldedCode10]
 Blocks=0
 [Bookmarks38]
@@ -1286,7 +1284,13 @@ Blocks=0
 Blocks=0
 [FoldedCode32]
 Blocks=0
+[FoldedCode34]
+Blocks=0
+[FoldedCode36]
+Blocks=0
 [FoldedCode35]
+Blocks=0
+[FoldedCode33]
 Blocks=0
 [HeadersList]
 Files=2
@@ -1302,7 +1306,7 @@ F5=hardware.h
 F6=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
 F7=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
 F8=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
-F9=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F9=..\..\..\CrossPlatformLibraries\platforms\common\aj_typedef.h
 F10=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_config.h
 F11=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_type.h
 [Header2]
@@ -1319,10 +1323,6 @@ F9=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio_type.h
 F10=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals\aj_gpio.h
 F11=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
 F12=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
-F13=..\..\..\CrossPlatformLibraries\utils\aj_ctz.h
+F13=..\..\..\CrossPlatformLibraries\platforms\common\aj_typedef.h
 [FoldedCode8]
-Blocks=0
-[FoldedCode34]
-Blocks=0
-[FoldedCode33]
 Blocks=0
