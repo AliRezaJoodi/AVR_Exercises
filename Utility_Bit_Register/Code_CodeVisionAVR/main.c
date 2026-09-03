@@ -9,7 +9,7 @@
 
 void main(void){
     uint8_t input4x_mask = 0;
-    uint8_t value = 0;
+//    uint8_t value = 0;
 
     AJ_BitReg_SetBit_Position(&DDRD, 0U);
 
@@ -46,11 +46,9 @@ void main(void){
 //        PORTD.0 = AJ_BitReg_IsBitSet_Position(&PINC, 1U);
         PORTD.0 = AJ_BitReg_IsBitSet_Mask(&PINC, (1U << 1U));
 
-        value = AJ_BitReg_GetField_Mask(&PINB, input4x_mask);
+//        value = AJ_BitReg_GetField_Mask(&PINB, input4x_mask);
 //        value = AJ_BitReg_GetField_Position(&PINB, 3U, 4U);
 
-//        AJ_BitReg_WriteField_Mask(&PORTD, 0xF0U, value);
-        AJ_BitReg_WriteField_Position(&PORTD, 4U, 4U, value);
 //        AJ_BitReg_Write4Bit_Position(&PORTD, 4U, value);
     };
 }

@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=2
-OpenedFiles=3
+OpenedFiles=6
 OF1=main.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -31,17 +31,17 @@ PageIndex1=1
 OF2=..\..\..\CrossPlatformLibraries\utils\aj_timebase.c
 Active2=1
 EditorPanel2=0
-TimeStamp2=1561985609
+TimeStamp2=1562610477
 PageIndex2=2
-ActiveTab=3
+ActiveTab=5
 OF3=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
-TimeStamp3=1561986066
+TimeStamp3=1562610190
 OF4=..\..\..\CrossPlatformLibraries\utils\aj_timebase_type.h
 TimeStamp4=1559102281
-OF5=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
-TimeStamp5=1559102281
-OF6=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
-TimeStamp6=1557860657
+OF5=hardware.h
+TimeStamp5=1562610742
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_target.h
+TimeStamp6=1562607483
 OF7=..\..\..\CrossPlatformLibraries\utils\timebase.h
 TimeStamp7=1555532474
 OF8=..\..\..\CrossPlatformLibraries\utils\timebase_config.h
@@ -150,8 +150,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1561986045
-Build=480
+COFFileTimeStamp=1562618444
+Build=483
 GlobalVarAddr=610
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -261,7 +261,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=480
+Build=483
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -506,8 +506,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 480
-L18=2918 line(s) compiled
+L17=Build: 483
+L18=1323 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -526,19 +526,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 164 words (328 bytes), 2.0% of FLASH
+L37=Program size: 181 words (362 bytes), 2.2% of FLASH
 Lines=38
 L38=0 words (0 bytes), 0.0% reduced by Code Compression
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Utility_TimeBase\Code_CodeVisionAVR\Debug\List\Main.asm(1386): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Utility_TimeBase\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Utility_TimeBase\Code_CodeVisionAVR\Debug\List\Main.asm(1353): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Utility_TimeBase\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000148    328      0    328   16384   2.0%
+L9=[.cseg] 0x000000 0x00016a    362      0    362   16384   2.2%
 L10=[.dseg] 0x000060 0x000262      0      2      2    1024   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -548,9 +548,9 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1561986464
+TimeStamp=1562618450
 [BookmarksFoldedCode]
-Files=35
+Files=36
 F1=v1.0.c
 F2=Attachment\Buzzer.h
 F3=..\..\_Library_CodeVisionAVR\Buzzer.h
@@ -586,6 +586,7 @@ F32=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
 F33=..\..\..\CrossPlatformLibraries\utils\aj_target.h
 F34=..\..\..\CrossPlatformLibraries\utils\aj_timebase_type.h
 F35=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
+F36=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_target.h
 [Bookmarks1]
 TimeStamp=1550213496
 Row=8
@@ -739,8 +740,8 @@ Blocks=0
 Blocks=0
 [Bookmarks8]
 TimeStamp=1561985867
-Row=15
-Column=16
+Row=10
+Column=61
 ScrollPosX=0
 ScrollPosY=4
 BK0=-1
@@ -774,8 +775,8 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks10]
-TimeStamp=1557860518
-Row=6
+TimeStamp=1562610742
+Row=3
 Column=0
 ScrollPosX=0
 ScrollPosY=0
@@ -1130,11 +1131,11 @@ Blocks=0
 [FoldedCode28]
 Blocks=0
 [Bookmarks30]
-TimeStamp=1561985609
-Row=26
-Column=53
+TimeStamp=1562610477
+Row=5
+Column=0
 ScrollPosX=0
-ScrollPosY=17
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1166,11 +1167,11 @@ Blocks=0
 [FoldedCode25]
 Blocks=0
 [Bookmarks32]
-TimeStamp=1561986066
-Row=40
-Column=49
+TimeStamp=1562610190
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=52
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1215,36 +1216,6 @@ BK8=-1
 BK9=-1
 [FoldedCode33]
 Blocks=0
-[FoldedCode34]
-Blocks=0
-[FoldedCode10]
-Blocks=0
-[HeadersList]
-Files=2
-F1=D:\GitHub\AVR_Exercises\Utility_TimeBase\Code_CodeVisionAVR\main.c
-F2=D:\GitHub\CrossPlatformLibraries\utils\aj_timebase.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\stdint.h
-F2=C:\cvavr\inc\mega16a.h
-F3=C:\cvavr\inc\mega16_bits.h
-F4=C:\cvavr\inc\delay.h
-F5=hardware.h
-F6=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
-F7=..\..\..\CrossPlatformLibraries\utils\aj_timebase_type.h
-F8=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
-[Header2]
-Files=10
-F1=C:\cvavr\inc\stdint.h
-F2=..\..\..\CrossPlatformLibraries\utils\aj_timebase_type.h
-F3=..\..\..\CrossPlatformLibraries\platforms\common\aj_target.h
-F4=hardware.h
-F5=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
-F6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
-F7=C:\cvavr\inc\io.h
-F8=C:\cvavr\inc\mega16a.h
-F9=C:\cvavr\inc\mega16_bits.h
-F10=C:\cvavr\inc\delay.h
 [Bookmarks35]
 TimeStamp=1559102281
 Row=0
@@ -1263,9 +1234,51 @@ BK8=-1
 BK9=-1
 [FoldedCode35]
 Blocks=0
+[Bookmarks36]
+TimeStamp=1562607483
+Row=30
+Column=20
+ScrollPosX=0
+ScrollPosY=22
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[HeadersList]
+Files=2
+F1=D:\GitHub\AVR_Exercises\Utility_TimeBase\Code_CodeVisionAVR\main.c
+F2=D:\GitHub\CrossPlatformLibraries\utils\aj_timebase.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\stdint.h
+F2=C:\cvavr\inc\mega16a.h
+F3=C:\cvavr\inc\mega16_bits.h
+F4=C:\cvavr\inc\delay.h
+F5=hardware.h
+F6=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
+F7=..\..\..\CrossPlatformLibraries\utils\aj_timebase_type.h
+F8=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_target.h
+[Header2]
+Files=4
+F1=..\..\..\CrossPlatformLibraries\utils\aj_timebase_type.h
+F2=C:\cvavr\inc\stdint.h
+F3=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_target.h
+F4=hardware.h
 [FoldedCode8]
 Blocks=0
 [FoldedCode30]
+Blocks=0
+[FoldedCode36]
+Blocks=0
+[FoldedCode10]
+Blocks=0
+[FoldedCode34]
 Blocks=0
 [FoldedCode32]
 Blocks=0
