@@ -26,24 +26,24 @@ Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1557860161
+TimeStamp1=1566878449
 PageIndex1=1
-OF2=hardware.h
+OF2=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.c
 Active2=1
 EditorPanel2=0
-TimeStamp2=1558868215
+TimeStamp2=1566815533
 PageIndex2=2
-ActiveTab=3
-OF3=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
-TimeStamp3=1562607133
+ActiveTab=2
+OF3=hardware.h
+TimeStamp3=1566878542
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
-TimeStamp4=1559102281
-OF5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
-TimeStamp5=1559102281
-OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
-TimeStamp6=1559102281
-OF7=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer_type.h
-TimeStamp7=1559102281
+TimeStamp4=1566882988
+OF5=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.c
+TimeStamp5=1566815533
+OF6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_buzzer_port.h
+TimeStamp6=1566815534
+OF7=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.h
+TimeStamp7=1566815533
 OF8=..\..\..\CrossPlatformLibraries\utils\aj_bit_reg.h
 TimeStamp8=1561176951
 OF9=..\..\..\CrossPlatformLibraries\utils\aj_timebase.h
@@ -152,8 +152,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1562338257
-Build=558
+COFFileTimeStamp=1566882999
+Build=560
 GlobalVarAddr=612
 EEPROMVarAddr=0
 XminiBootLoader=0
@@ -263,14 +263,14 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=558
+Build=560
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
 IncludePath3=..\..\..\CrossPlatformLibraries\drivers
 IncludePath4=..\..\..\CrossPlatformLibraries\platforms\common
-IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
-IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath5=..\..\..\CrossPlatformLibraries\platforms\avr8\ports
+IncludePath6=..\..\..\CrossPlatformLibraries\platforms\avr8\peripherals
 IncludePath7=
 IncludePath8=
 IncludePath9=
@@ -508,8 +508,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 558
-L18=5215 line(s) compiled
+L17=Build: 560
+L18=5334 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -550,7 +550,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1562610670
+TimeStamp=1566883123
 [BookmarksFoldedCode]
 Files=51
 F1=v1.0.c
@@ -756,11 +756,11 @@ Blocks=0
 [FoldedCode1]
 Blocks=0
 [Bookmarks8]
-TimeStamp=1557860161
-Row=29
-Column=31
+TimeStamp=1566878449
+Row=16
+Column=55
 ScrollPosX=0
-ScrollPosY=2
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -792,9 +792,9 @@ Blocks=0
 [FoldedCode6]
 Blocks=0
 [Bookmarks10]
-TimeStamp=1558868215
-Row=8
-Column=20
+TimeStamp=1566878542
+Row=4
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1138,11 +1138,11 @@ Blocks=0
 [FoldedCode26]
 Blocks=0
 [Bookmarks30]
-TimeStamp=1562607133
-Row=0
-Column=0
+TimeStamp=1566874155
+Row=185
+Column=41
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=178
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1212,9 +1212,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks34]
-TimeStamp=1561166090
-Row=26
-Column=21
+TimeStamp=1566815534
+Row=22
+Column=63
 ScrollPosX=0
 ScrollPosY=11
 BK0=-1
@@ -1260,11 +1260,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks37]
-TimeStamp=1561164426
-Row=52
-Column=37
+TimeStamp=1566815533
+Row=40
+Column=53
 ScrollPosX=0
-ScrollPosY=46
+ScrollPosY=29
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1292,11 +1292,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks39]
-TimeStamp=1561164569
-Row=0
-Column=0
+TimeStamp=1566815533
+Row=3
+Column=24
 ScrollPosX=0
-ScrollPosY=14
+ScrollPosY=1
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1396,11 +1396,11 @@ BK9=-1
 [FoldedCode43]
 Blocks=0
 [Bookmarks45]
-TimeStamp=1559102281
-Row=8
-Column=60
+TimeStamp=1566882988
+Row=54
+Column=0
 ScrollPosX=0
-ScrollPosY=31
+ScrollPosY=42
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1467,8 +1467,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode39]
-Blocks=0
 [Bookmarks49]
 TimeStamp=1559169993
 Row=0
@@ -1487,8 +1485,6 @@ BK8=-1
 BK9=-1
 [FoldedCode48]
 Blocks=0
-[FoldedCode34]
-Blocks=0
 [FoldedCode32]
 Blocks=0
 [FoldedCode49]
@@ -1496,8 +1492,6 @@ Blocks=0
 [FoldedCode15]
 Blocks=0
 [FoldedCode42]
-Blocks=0
-[FoldedCode37]
 Blocks=0
 [FoldedCode47]
 Blocks=0
@@ -1539,6 +1533,14 @@ BK8=-1
 BK9=-1
 [FoldedCode51]
 Blocks=0
+[FoldedCode50]
+Blocks=0
+[FoldedCode34]
+Blocks=0
+[FoldedCode30]
+Blocks=0
+[FoldedCode37]
+Blocks=0
 [HeadersList]
 Files=2
 F1=D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\main.c
@@ -1577,13 +1579,11 @@ F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_buzzer_config_platfo
 F13=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer_type.h
 F14=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer_config.h
 F15=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.h
-[FoldedCode50]
-Blocks=0
 [FoldedCode8]
 Blocks=0
-[FoldedCode45]
+[FoldedCode39]
 Blocks=0
-[FoldedCode30]
+[FoldedCode45]
 Blocks=0
 [FoldedCode10]
 Blocks=0

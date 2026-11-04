@@ -34,13 +34,13 @@ ActiveEditorPanel=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1495697928
+TimeStamp1=1566878449
 PageIndex1=1
-ActiveTab=1
+ActiveTab=3
 OF2=Attachment\hardware_v1.0.h
-TimeStamp2=1495697624
+TimeStamp2=1566878449
 OF3=..\..\_UserDrivers\Inc\adc.h
-TimeStamp3=1495697928
+TimeStamp3=1566878450
 F1=v1.0.c
 [Compiler]
 Chip=ATmega32A
@@ -143,7 +143,7 @@ WarningExternalDeclaredNeverDefined=1
 WarningUnknownPragma=1
 WarningStaticRamEepromStorageAllocConstStrLit=0
 WatchAVR8LAutoVariables=0
-RebuildAll=0
+RebuildAll=1
 LinkageInformationPresent=1
 COFFileTimeStamp=1495697929
 IncludePath0=C:\cvavr\inc
@@ -527,30 +527,30 @@ L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
 L17=Build: 23
-L18=14047 line(s) compiled
-L19=No errors
-L20=No warnings
+L18=1063 line(s) compiled
+L19=4 error(s)
+L20=1 warning(s)
 L21=
 L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 40 byte(s)
+L26=Estimated Data Stack usage: 0 byte(s)
 L27=
-L28=RAM Global variables area: 0x260 to 0x26B
-L29=RAM Global variables size: 12 byte(s)
-L30=
-L31=Hardware Stack area: 0x26C to 0x85F
-L32=Hardware Stack size: 1524 byte(s)
-L33=
-L34=Heap size: 0 byte(s)
-L35=
-Lines=38
+L28=RAM Global variables size: 0 byte(s)
+L29=
+L30=Hardware Stack area: 0x260 to 0x85F
+L31=Hardware Stack size: 1536 byte(s)
+L32=
+L33=Heap size: 0 byte(s)
+L34=
+L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
+Lines=35
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
 L37=Program size: 1363 words (2726 bytes), 8.3% of FLASH
 L38=49 words (98 bytes), 3.5% reduced by Code Compression
 [BuildInfoAssembler]
-Lines=12
+Lines=0
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
@@ -568,7 +568,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1495697938
+TimeStamp=1566880026
 [BookmarksFoldedCode]
 Files=7
 F1=v1.0.c
@@ -579,11 +579,11 @@ F5=C:\cvavr\inc\alcd.h
 F6=..\..\_UserDrivers\Inc\adc.h
 F7=Attachment\hardware_v1.0.h
 [Bookmarks1]
-TimeStamp=1495697928
-Row=21
-Column=27
+TimeStamp=1566878449
+Row=0
+Column=0
 ScrollPosX=0
-ScrollPosY=9
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -686,27 +686,12 @@ BK8=-1
 BK9=-1
 [FoldedCode5]
 Blocks=0
-[HeadersList]
-Files=1
-F1=F:\GitHub\AVR_Exercises\ADC_2V56_10Bit\Code_CodeVisionAVR\v1.0.c
-[Header1]
-Files=8
-F1=C:\cvavr\inc\mega32a.h
-F2=C:\cvavr\inc\mega32_bits.h
-F3=C:\cvavr\inc\stdlib.h
-F4=C:\cvavr\inc\delay.h
-F5=C:\cvavr\inc\alcd.h
-F6=Attachment\hardware_v1.0.h
-F7=..\..\_UserDrivers\Inc\adc.h
-F8=..\..\_UserDrivers\Inc\Utility.h
-[FoldedCode1]
-Blocks=0
 [Bookmarks6]
-TimeStamp=1495697928
-Row=207
-Column=51
+TimeStamp=1566878450
+Row=107
+Column=0
 ScrollPosX=0
-ScrollPosY=186
+ScrollPosY=87
 BK0=-1
 BK1=-1
 BK2=-1
@@ -717,12 +702,10 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode6]
-Blocks=0
 [Bookmarks7]
-TimeStamp=1495697624
-Row=1
-Column=21
+TimeStamp=1566878449
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -735,5 +718,22 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=D:\GitHub\AVR_Exercises\ADC_2V56_10Bit\Code_CodeVisionAVR\v1.0.c
+[Header1]
+Files=8
+F1=C:\cvavr\inc\mega32a.h
+F2=C:\cvavr\inc\mega32_bits.h
+F3=C:\cvavr\inc\stdlib.h
+F4=C:\cvavr\inc\delay.h
+F5=C:\cvavr\inc\stdint.h
+F6=C:\cvavr\inc\alcd.h
+F7=Attachment\hardware_v1.0.h
+F8=..\..\_UserDrivers\Inc\adc.h
+[FoldedCode1]
+Blocks=0
+[FoldedCode6]
+Blocks=0
 [FoldedCode7]
 Blocks=0
