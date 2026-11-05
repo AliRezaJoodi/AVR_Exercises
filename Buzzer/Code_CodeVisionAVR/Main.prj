@@ -7,7 +7,7 @@ A=
 C=
 D=02/05/2023
 Files=2
-OpenedFiles=4
+OpenedFiles=3
 OF1=main.c
 Active1=0
 DebugOutputListFilesDirectory=Debug\List
@@ -34,8 +34,8 @@ EditorPanel2=0
 TimeStamp2=1566815533
 PageIndex2=2
 ActiveTab=2
-OF3=hardware.h
-TimeStamp3=1566878542
+OF3=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.h
+TimeStamp3=1566882483
 OF4=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_compiler.h
 TimeStamp4=1566882988
 OF5=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.c
@@ -152,9 +152,9 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1566882999
-Build=560
-GlobalVarAddr=612
+COFFileTimeStamp=1566943863
+Build=564
+GlobalVarAddr=610
 EEPROMVarAddr=0
 XminiBootLoader=0
 XminiBootEnd=0
@@ -263,7 +263,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=560
+Build=564
 IncludePath0=C:\cvavr\inc
 IncludePath1=..\..\..\CrossPlatformLibraries\utils
 IncludePath2=..\..\..\CrossPlatformLibraries\modules
@@ -508,8 +508,8 @@ L13=Enhanced function parameters passing: Mode 1
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 560
-L18=5334 line(s) compiled
+L17=Build: 564
+L18=5338 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -517,31 +517,31 @@ L22=Bit variables size: 0 byte(s)
 L23=
 L24=Data Stack area: 0x60 to 0x25F
 L25=Data Stack size: 512 byte(s)
-L26=Estimated Data Stack usage: 9 byte(s)
+L26=Estimated Data Stack usage: 23 byte(s)
 L27=
-L28=RAM Global variables area: 0x260 to 0x263
-L29=RAM Global variables size: 4 byte(s)
+L28=RAM Global variables area: 0x260 to 0x261
+L29=RAM Global variables size: 2 byte(s)
 L30=
-L31=Hardware Stack area: 0x264 to 0x45F
-L32=Hardware Stack size: 508 byte(s)
+L31=Hardware Stack area: 0x262 to 0x45F
+L32=Hardware Stack size: 510 byte(s)
 L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 275 words (550 bytes), 3.4% of FLASH
+L37=Program size: 278 words (556 bytes), 3.4% of FLASH
 Lines=38
-L38=4 words (8 bytes), 1.4% reduced by Code Compression
+L38=0 words (0 bytes), 0.0% reduced by Code Compression
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Debug\List\Main.asm(1618): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Main.eep
+L4=D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Debug\List\Main.asm(1611): No EEPROM data, deleting D:\GitHub\AVR_Exercises\Buzzer\Code_CodeVisionAVR\Main.eep
 L5=
 L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000226    550      0    550   16384   3.4%
-L10=[.dseg] 0x000060 0x000264      0      4      4    1024   0.4%
+L9=[.cseg] 0x000000 0x00022c    556      0    556   16384   3.4%
+L10=[.dseg] 0x000060 0x000262      0      2      2    1024   0.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
 Lines=12
@@ -550,7 +550,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1566883123
+TimeStamp=1566930391
 [BookmarksFoldedCode]
 Files=51
 F1=v1.0.c
@@ -757,10 +757,10 @@ Blocks=0
 Blocks=0
 [Bookmarks8]
 TimeStamp=1566878449
-Row=16
-Column=55
+Row=9
+Column=34
 ScrollPosX=0
-ScrollPosY=0
+ScrollPosY=1
 BK0=-1
 BK1=-1
 BK2=-1
@@ -793,8 +793,8 @@ Blocks=0
 Blocks=0
 [Bookmarks10]
 TimeStamp=1566878542
-Row=4
-Column=0
+Row=7
+Column=22
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1260,11 +1260,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks37]
-TimeStamp=1566815533
-Row=40
-Column=53
+TimeStamp=1566882483
+Row=64
+Column=19
 ScrollPosX=0
-ScrollPosY=29
+ScrollPosY=57
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1293,10 +1293,10 @@ BK8=-1
 BK9=-1
 [Bookmarks39]
 TimeStamp=1566815533
-Row=3
-Column=24
+Row=10
+Column=42
 ScrollPosX=0
-ScrollPosY=1
+ScrollPosY=5
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1400,7 +1400,7 @@ TimeStamp=1566882988
 Row=54
 Column=0
 ScrollPosX=0
-ScrollPosY=42
+ScrollPosY=11
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1418,11 +1418,11 @@ Blocks=0
 [FoldedCode38]
 Blocks=0
 [Bookmarks46]
-TimeStamp=1559102281
-Row=14
-Column=11
+TimeStamp=1566815533
+Row=13
+Column=21
 ScrollPosX=0
-ScrollPosY=8
+ScrollPosY=0
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1436,9 +1436,9 @@ BK9=-1
 [FoldedCode41]
 Blocks=0
 [Bookmarks47]
-TimeStamp=1561165942
-Row=7
-Column=28
+TimeStamp=1566934616
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1452,9 +1452,9 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks48]
-TimeStamp=1559102281
-Row=7
-Column=51
+TimeStamp=1566815534
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1483,8 +1483,6 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
-[FoldedCode48]
-Blocks=0
 [FoldedCode32]
 Blocks=0
 [FoldedCode49]
@@ -1493,18 +1491,14 @@ Blocks=0
 Blocks=0
 [FoldedCode42]
 Blocks=0
-[FoldedCode47]
-Blocks=0
-[FoldedCode46]
-Blocks=0
 [FoldedCode44]
 Blocks=0
 [Bookmarks50]
-TimeStamp=1561179040
-Row=29
-Column=52
+TimeStamp=1566874641
+Row=31
+Column=30
 ScrollPosX=0
-ScrollPosY=3
+ScrollPosY=19
 BK0=-1
 BK1=-1
 BK2=-1
@@ -1533,13 +1527,27 @@ BK8=-1
 BK9=-1
 [FoldedCode51]
 Blocks=0
-[FoldedCode50]
-Blocks=0
 [FoldedCode34]
 Blocks=0
 [FoldedCode30]
 Blocks=0
+[FoldedCode45]
+Blocks=0
+[FoldedCode8]
+Blocks=0
+[FoldedCode39]
+Blocks=0
 [FoldedCode37]
+Blocks=0
+[FoldedCode46]
+Blocks=0
+[FoldedCode50]
+Blocks=0
+[FoldedCode47]
+Blocks=0
+[FoldedCode48]
+Blocks=0
+[FoldedCode10]
 Blocks=0
 [HeadersList]
 Files=2
@@ -1579,11 +1587,3 @@ F12=..\..\..\CrossPlatformLibraries\platforms\avr8\ports\aj_buzzer_config_platfo
 F13=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer_type.h
 F14=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer_config.h
 F15=..\..\..\CrossPlatformLibraries\drivers\aj_buzzer.h
-[FoldedCode8]
-Blocks=0
-[FoldedCode39]
-Blocks=0
-[FoldedCode45]
-Blocks=0
-[FoldedCode10]
-Blocks=0

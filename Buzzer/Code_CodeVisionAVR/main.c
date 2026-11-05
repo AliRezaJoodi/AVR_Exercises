@@ -7,15 +7,13 @@
 #include "hardware.h"
 #include "aj_buzzer.h"
 
-volatile uint8_t system_tick = 0U;
-
 void Timer2_Init(void);
 
 // Timer2 overflow interrupt service routine
 interrupt [TIM2_OVF] void timer2_ovf_isr(void){
     TCNT2=0x06; // Reinitialize Timer2 value
 
-    system_tick ++;
+    AJ_Buzzer_Handler();
 }
 
 void main(void){
@@ -27,10 +25,9 @@ void main(void){
 
     #asm("sei") // Globally enable interrupts
 
-    AJ_Buzzer_Start(system_tick, AJ_BUZZER_COUNT2);
+    AJ_Buzzer_Start(AJ_BUZZER_COUNT2);
 
     while(1){
-        AJ_Buzzer_Refresh(system_tick);
     }
 }
 
